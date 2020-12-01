@@ -16,6 +16,5 @@ namespace quiz_management.Views.Student
         {
             InitializeComponent();
         }
-
     }
 }
