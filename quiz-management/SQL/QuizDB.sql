@@ -160,3 +160,5 @@ CREATE TABLE cTDongGop
 )
 
 ALTER TABLE dbo.cTDongGop ADD CONSTRAINT FK_cTDongGop_dongGop FOREIGN KEY(maDongGop) REFERENCES dbo.dongGop(maDongGop)
+
+SELECT * FROM dbo.boDe
