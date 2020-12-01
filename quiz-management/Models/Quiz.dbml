@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuizDB" Class="QuizDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\SQL\QuizDB.mdf;Integrated Security=True" SettingsObjectName="quiz_management.Properties.Settings" SettingsPropertyName="QuizDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.boDe" Member="boDes">
+    <Type Name="boDe">
+      <Column Name="maBoDe" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="thoiGian" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="tongSoCau" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="maMon" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="boDe_ketQua" Member="ketQuas" ThisKey="maBoDe" OtherKey="maBoDe" Type="ketQua" />
+      <Association Name="boDe_cTBoDe" Member="cTBoDes" ThisKey="maBoDe" OtherKey="maBoDe" Type="cTBoDe" />
+      <Association Name="monHoc_boDe" Member="monHoc" ThisKey="maMon" OtherKey="maMonHoc" Type="monHoc" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cauHoi" Member="cauHois">
+    <Type Name="cauHoi">
+      <Column Name="maCauHoi" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="maMonHoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cauHoi" Member="cauHoi1" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="doKho" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="cauHoi_dapAn" Member="dapAns" ThisKey="maCauHoi" OtherKey="maCauHoi" Type="dapAn" />
+      <Association Name="cauHoi_cTKetQua" Member="cTKetQuas" ThisKey="maCauHoi" OtherKey="maCauHoi" Type="cTKetQua" />
+      <Association Name="cauHoi_cTBoDe" Member="cTBoDes" ThisKey="maCauHoi" OtherKey="maCauHoi" Type="cTBoDe" />
+    </Type>
+  </Table>
+  <Table Name="dbo.thongTin" Member="thongTins">
+    <Type Name="thongTin">
+      <Column Name="maNguoidung" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tenNguoiDung" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ngaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="nguoiDung_thongTin" Member="nguoiDung" ThisKey="maNguoidung" OtherKey="maNguoiDung" Type="nguoiDung" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.nguoiDung" Member="nguoiDungs">
+    <Type Name="nguoiDung">
+      <Column Name="maNguoiDung" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tenTaiKhoan" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="matKhau" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="phanQuyen" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TrangThai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="nguoiDung_thongTin" Member="thongTin" ThisKey="maNguoiDung" OtherKey="maNguoidung" Type="thongTin" Cardinality="One" />
+      <Association Name="nguoiDung_luyenTap" Member="luyenTaps" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="luyenTap" />
+      <Association Name="nguoiDung_ketQua" Member="ketQuas" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="ketQua" />
+      <Association Name="nguoiDung_dongGop" Member="dongGops" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="dongGop" />
+    </Type>
+  </Table>
+  <Table Name="dbo.monHoc" Member="monHocs">
+    <Type Name="monHoc">
+      <Column Name="maMonHoc" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tenMonHoc" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="monHoc_boDe" Member="boDes" ThisKey="maMonHoc" OtherKey="maMon" Type="boDe" />
+      <Association Name="monHoc_dongGop" Member="dongGops" ThisKey="maMonHoc" OtherKey="maMonHoc" Type="dongGop" />
+    </Type>
+  </Table>
+  <Table Name="dbo.luyenTap" Member="luyenTaps">
+    <Type Name="luyenTap">
+      <Column Name="maNguoiDung" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="soCauDung" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="soCauSai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="nguoiDung_luyenTap" Member="nguoiDung" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="nguoiDung" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lichThi" Member="lichThis">
+    <Type Name="lichThi">
+      <Column Name="maNguoiDung" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="maMonHoc" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ngayThi" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ketQua" Member="ketQuas">
+    <Type Name="ketQua">
+      <Column Name="maKetQua" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="maNguoiDung" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="maBoDe" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cauDung" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cauSai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="chuaLam" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ngayLam" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="trangThai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="thoiGian" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diem" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="ketQua_cTKetQua" Member="cTKetQuas" ThisKey="maKetQua" OtherKey="maKetQua" Type="cTKetQua" />
+      <Association Name="boDe_ketQua" Member="boDe" ThisKey="maBoDe" OtherKey="maBoDe" Type="boDe" IsForeignKey="true" />
+      <Association Name="nguoiDung_ketQua" Member="nguoiDung" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="nguoiDung" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dongGop" Member="dongGops">
+    <Type Name="dongGop">
+      <Column Name="maDongGop" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="maNguoiDung" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="maMonHoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="trangthai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="cauHoi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="dongGop_cTDongGop" Member="cTDongGops" ThisKey="maDongGop" OtherKey="maDongGop" Type="cTDongGop" />
+      <Association Name="monHoc_dongGop" Member="monHoc" ThisKey="maMonHoc" OtherKey="maMonHoc" Type="monHoc" IsForeignKey="true" />
+      <Association Name="nguoiDung_dongGop" Member="nguoiDung" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="nguoiDung" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dapAn" Member="dapAns">
+    <Type Name="dapAn">
+      <Column Name="maCauHoi" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="maCauTraloi" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cauTraLoi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="dapAn" Member="dapAn1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="dapAn_cTKetQua" Member="cTKetQuas" ThisKey="maCauHoi,maCauTraloi" OtherKey="maCauHoi,maCauTraLoi" Type="cTKetQua" />
+      <Association Name="cauHoi_dapAn" Member="cauHoi" ThisKey="maCauHoi" OtherKey="maCauHoi" Type="cauHoi" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cTKetQua" Member="cTKetQuas">
+    <Type Name="cTKetQua">
+      <Column Name="maKetQua" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="maCauHoi" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="maCauTraLoi" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="thoiGian" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="cauHoi_cTKetQua" Member="cauHoi" ThisKey="maCauHoi" OtherKey="maCauHoi" Type="cauHoi" IsForeignKey="true" />
+      <Association Name="dapAn_cTKetQua" Member="dapAn" ThisKey="maCauHoi,maCauTraLoi" OtherKey="maCauHoi,maCauTraloi" Type="dapAn" IsForeignKey="true" />
+      <Association Name="ketQua_cTKetQua" Member="ketQua" ThisKey="maKetQua" OtherKey="maKetQua" Type="ketQua" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cTDongGop" Member="cTDongGops">
+    <Type Name="cTDongGop">
+      <Column Name="maDongGop" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cauTraLoi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="dapAn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="dongGop_cTDongGop" Member="dongGop" ThisKey="maDongGop" OtherKey="maDongGop" Type="dongGop" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cTBoDe" Member="cTBoDes">
+    <Type Name="cTBoDe">
+      <Column Name="maBoDe" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="maCauHoi" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="boDe_cTBoDe" Member="boDe" ThisKey="maBoDe" OtherKey="maBoDe" Type="boDe" IsForeignKey="true" />
+      <Association Name="cauHoi_cTBoDe" Member="cauHoi" ThisKey="maCauHoi" OtherKey="maCauHoi" Type="cauHoi" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

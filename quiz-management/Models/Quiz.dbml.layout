@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 17.125, 13.125" name="Quiz">
+  <DataContextMoniker Name="/QuizDataContext" />
+  <nestedChildShapes>
+    <classShape Id="3c010063-809b-4ad7-ac70-b83007afedcd" absoluteBounds="1.5, 2.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/QuizDataContext/boDe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="00b79cc6-ea27-4fac-aac0-ff99ea0f0356" absoluteBounds="1.5150000000000001, 3.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f901544c-96e4-4c60-bea1-eef9208e7047" absoluteBounds="11.125, 6.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/QuizDataContext/cauHoi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cdfffb52-ed0e-4571-8fa4-868524a6dd15" absoluteBounds="11.14, 7.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1e609e0b-beeb-44f1-aaf4-08c1848b4fa5" absoluteBounds="6.625, 8.75, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/QuizDataContext/thongTin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e9ff1d8c-e0e9-459c-b22f-59520b94f5b6" absoluteBounds="6.6400000000000006, 9.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2407f0af-c425-4139-a8bb-50c8c7888969" absoluteBounds="1.625, 8.875, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/QuizDataContext/nguoiDung" />
+      <nestedChildShapes>
+        <elementListCompartment Id="15265885-80ac-4b63-8227-91097b813010" absoluteBounds="1.6400000000000006, 9.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="35170107-c561-49ab-9bbb-4d00f05690b4" absoluteBounds="5.375, 2.125, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/QuizDataContext/monHoc" />
+      <nestedChildShapes>
+        <elementListCompartment Id="92266fd7-7b5b-4c36-99ca-4c32995eafa7" absoluteBounds="5.39, 2.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="be87d969-a675-490f-ba83-3edbb14bec8c" absoluteBounds="6.625, 11.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/QuizDataContext/luyenTap" />
+      <nestedChildShapes>
+        <elementListCompartment Id="29def3a4-6af2-46e9-959e-b2dfe4f33d53" absoluteBounds="6.6400000000000006, 11.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d6aab823-337d-4091-a430-a88d003dcf97" absoluteBounds="14.625, 9, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/QuizDataContext/lichThi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="80fce1bd-3219-4b47-881a-c18e24fccada" absoluteBounds="14.64, 9.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="95885565-f93c-457a-bba2-9379837fcf95" absoluteBounds="9.5, 3.25, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/QuizDataContext/ketQua" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7d608129-911a-4016-84db-9ab0220394e3" absoluteBounds="9.515, 3.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="24243616-d1d3-4314-9463-ab87d7338391" absoluteBounds="6.625, 5.625, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/QuizDataContext/dongGop" />
+      <nestedChildShapes>
+        <elementListCompartment Id="22a9e2b6-f694-47b4-9ade-bb54b9c8557e" absoluteBounds="6.6400000000000006, 6.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b61c3aa3-9d61-4cc6-af88-c9eafd26ba4e" absoluteBounds="12.875, 11.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/QuizDataContext/dapAn" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b81567b4-10ec-4105-8cd7-1fdb5241e23b" absoluteBounds="12.89, 11.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="53832ea4-dd47-456a-9ea9-45a8dd5ebaba" absoluteBounds="14.875, 5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/QuizDataContext/cTKetQua" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f369be4b-9906-4049-9d1a-ee2bdb76e7f1" absoluteBounds="14.89, 5.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e4d6edae-4484-46c0-9c12-33adf32af83c" absoluteBounds="9.25, 9.625, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/QuizDataContext/cTDongGop" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4b14684e-9c8d-46f6-9ef5-bc482dff6bfb" absoluteBounds="9.265, 10.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f4c71206-dae4-4aa6-b136-b1dce7a9d502" absoluteBounds="14.625, 2.5, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/QuizDataContext/cTBoDe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="353948b1-664f-4187-8818-54ce8b682eb7" absoluteBounds="14.64, 2.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.625 : 9.50564697265625); (6.625 : 9.50564697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QuizDataContext/nguoiDung/nguoiDung_thongTin" />
+      <nodes>
+        <classShapeMoniker Id="2407f0af-c425-4139-a8bb-50c8c7888969" />
+        <classShapeMoniker Id="1e609e0b-beeb-44f1-aaf4-08c1848b4fa5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.375 : 3.09699625651042); (3.5 : 3.09699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QuizDataContext/monHoc/monHoc_boDe" />
+      <nodes>
+        <classShapeMoniker Id="35170107-c561-49ab-9bbb-4d00f05690b4" />
+        <classShapeMoniker Id="3c010063-809b-4ad7-ac70-b83007afedcd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.625 : 10.6458968098958); (2.625 : 11.9142976888021); (6.625 : 11.9142976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QuizDataContext/nguoiDung/nguoiDung_luyenTap" />
+      <nodes>
+        <classShapeMoniker Id="2407f0af-c425-4139-a8bb-50c8c7888969" />
+        <classShapeMoniker Id="be87d969-a675-490f-ba83-3edbb14bec8c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.5 : 3.9175439453125); (6.91666666666667 : 3.9175439453125 : JumpStart); (7.08333333333333 : 3.9175439453125 : JumpEnd); (9.5 : 3.9175439453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QuizDataContext/boDe/boDe_ketQua" />
+      <nodes>
+        <classShapeMoniker Id="3c010063-809b-4ad7-ac70-b83007afedcd" />
+        <classShapeMoniker Id="95885565-f93c-457a-bba2-9379837fcf95" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.59375 : 8.875); (3.59375 : 5.03929768880208); (6.91666666666667 : 5.03929768880208 : JumpStart); (7.08333333333333 : 5.03929768880208 : JumpEnd); (9.5 : 5.03929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QuizDataContext/nguoiDung/nguoiDung_ketQua" />
+      <nodes>
+        <classShapeMoniker Id="2407f0af-c425-4139-a8bb-50c8c7888969" />
+        <classShapeMoniker Id="95885565-f93c-457a-bba2-9379837fcf95" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7 : 3.31899251302083); (7 : 5.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QuizDataContext/monHoc/monHoc_dongGop" />
+      <nodes>
+        <classShapeMoniker Id="35170107-c561-49ab-9bbb-4d00f05690b4" />
+        <classShapeMoniker Id="24243616-d1d3-4314-9463-ab87d7338391" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.0625 : 8.875); (2.0625 : 6.60659912109375); (3.51041666666667 : 6.60659912109375 : JumpStart); (3.67708333333333 : 6.60659912109375 : JumpEnd); (6.625 : 6.60659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QuizDataContext/nguoiDung/nguoiDung_dongGop" />
+      <nodes>
+        <classShapeMoniker Id="2407f0af-c425-4139-a8bb-50c8c7888969" />
+        <classShapeMoniker Id="24243616-d1d3-4314-9463-ab87d7338391" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(12.0937495 : 8.45359537760417); (12.0937495 : 12.0392976888021); (12.875 : 12.0392976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QuizDataContext/cauHoi/cauHoi_dapAn" />
+      <nodes>
+        <classShapeMoniker Id="f901544c-96e4-4c60-bea1-eef9208e7047" />
+        <classShapeMoniker Id="b61c3aa3-9d61-4cc6-af88-c9eafd26ba4e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.125 : 7.66429768880208); (13.7916666666667 : 7.66429768880208 : JumpStart); (13.9583333333333 : 7.66429768880208 : JumpEnd); (15.875 : 7.66429768880208); (15.875 : 6.57859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QuizDataContext/cauHoi/cauHoi_cTKetQua" />
+      <nodes>
+        <classShapeMoniker Id="f901544c-96e4-4c60-bea1-eef9208e7047" />
+        <classShapeMoniker Id="53832ea4-dd47-456a-9ea9-45a8dd5ebaba" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.875 : 11.25); (13.875 : 5.9866246110026); (14.875 : 5.9866246110026)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QuizDataContext/dapAn/dapAn_cTKetQua" />
+      <nodes>
+        <classShapeMoniker Id="b61c3aa3-9d61-4cc6-af88-c9eafd26ba4e" />
+        <classShapeMoniker Id="53832ea4-dd47-456a-9ea9-45a8dd5ebaba" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.5 : 5.33214884440104); (12.2604166666667 : 5.33214884440104 : JumpStart); (12.4270833333333 : 5.33214884440104 : JumpEnd); (14.875 : 5.33214884440104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QuizDataContext/ketQua/ketQua_cTKetQua" />
+      <nodes>
+        <classShapeMoniker Id="95885565-f93c-457a-bba2-9379837fcf95" />
+        <classShapeMoniker Id="53832ea4-dd47-456a-9ea9-45a8dd5ebaba" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.625 : 6.56755150227865); (9.34375 : 6.56755150227865); (9.34375 : 9.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QuizDataContext/dongGop/dongGop_cTDongGop" />
+      <nodes>
+        <classShapeMoniker Id="24243616-d1d3-4314-9463-ab87d7338391" />
+        <classShapeMoniker Id="e4d6edae-4484-46c0-9c12-33adf32af83c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.5 : 3.61826572916667); (6.91666666666667 : 3.61826572916667 : JumpStart); (7.08333333333333 : 3.61826572916667 : JumpEnd); (9.25 : 3.61826572916667); (9.25 : 2.25); (15.625 : 2.25); (15.625 : 2.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QuizDataContext/boDe/boDe_cTBoDe" />
+      <nodes>
+        <classShapeMoniker Id="3c010063-809b-4ad7-ac70-b83007afedcd" />
+        <classShapeMoniker Id="f4c71206-dae4-4aa6-b136-b1dce7a9d502" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(12.34375 : 6.875); (12.34375 : 2.84375); (14.625 : 2.84375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QuizDataContext/cauHoi/cauHoi_cTBoDe" />
+      <nodes>
+        <classShapeMoniker Id="f901544c-96e4-4c60-bea1-eef9208e7047" />
+        <classShapeMoniker Id="f4c71206-dae4-4aa6-b136-b1dce7a9d502" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
