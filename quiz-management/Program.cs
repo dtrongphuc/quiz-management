@@ -1,4 +1,5 @@
 ﻿using quiz_management.Views;
+using quiz_management.Views.Student;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace quiz_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainView());
+            Application.Run(new RegisterView());
         }
     }
 }
