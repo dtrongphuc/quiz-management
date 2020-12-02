@@ -1,8 +1,8 @@
 ﻿CREATE TABLE nguoiDung
 (
 	maNguoiDung INT IDENTITY,
-	tenTaiKhoan VARCHAR(20) UNIQUE,
-	matKhau VARCHAR(30),
+	tenTaiKhoan VARCHAR(100) UNIQUE,
+	matKhau VARCHAR(max),
 	phanQuyen INT,
 	TrangThai INT
 	
