@@ -47,6 +47,8 @@ namespace quiz_management.Presenters.Register
                 {
                     tenTaiKhoan = username,
                     matKhau = pwHash,
+                    phanQuyen = 0,
+                    TrangThai = 1
                 });
 
                 db.SubmitChanges();

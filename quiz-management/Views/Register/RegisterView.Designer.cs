@@ -29,53 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnSubmit = new System.Windows.Forms.Button();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtUsername = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lbRegister = new System.Windows.Forms.Label();
-            this.txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtBirthday = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.Username_Validator = new quiz_management.Validate.RequiredFieldValidator(this.components);
             this.FullName_Validator = new quiz_management.Validate.RequiredFieldValidator(this.components);
             this.Date_Validator = new quiz_management.Validate.RequiredFieldValidator(this.components);
             this.Password_Validator = new quiz_management.Validate.RequiredFieldValidator(this.components);
             this.ConfirmPassword_Validator = new quiz_management.Validate.RequiredFieldValidator(this.components);
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtFullName = new System.Windows.Forms.TextBox();
+            this.txtBirthday = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtPasswordConfirm = new System.Windows.Forms.TextBox();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnSubmit
-            // 
-            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(182, 328);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(122, 46);
-            this.btnSubmit.TabIndex = 11;
-            this.btnSubmit.Text = "Đăng ký";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(154, 210);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(251, 23);
-            this.txtPassword.TabIndex = 10;
-            // 
-            // txtUsername
-            // 
-            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(154, 58);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(2);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(251, 23);
-            this.txtUsername.TabIndex = 9;
             // 
             // label2
             // 
@@ -112,16 +83,6 @@
             this.lbRegister.Text = "Đăng Ký";
             this.lbRegister.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // txtConfirmPassword
-            // 
-            this.txtConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmPassword.Location = new System.Drawing.Point(154, 266);
-            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(2);
-            this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.Size = new System.Drawing.Size(251, 23);
-            this.txtConfirmPassword.TabIndex = 13;
-            this.txtConfirmPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtConfirmPassword_Validating);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -132,15 +93,6 @@
             this.label1.Size = new System.Drawing.Size(113, 15);
             this.label1.TabIndex = 12;
             this.label1.Text = "Nhập lại mật khẩu: ";
-            // 
-            // txtName
-            // 
-            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(154, 106);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(251, 23);
-            this.txtName.TabIndex = 15;
             // 
             // label4
             // 
@@ -153,14 +105,45 @@
             this.label4.TabIndex = 14;
             this.label4.Text = "Họ và tên:";
             // 
-            // txtBirthday
+            // Username_Validator
             // 
-            this.txtBirthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBirthday.Location = new System.Drawing.Point(154, 155);
-            this.txtBirthday.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBirthday.Name = "txtBirthday";
-            this.txtBirthday.Size = new System.Drawing.Size(251, 23);
-            this.txtBirthday.TabIndex = 17;
+            this.Username_Validator.ControlToValidate = null;
+            this.Username_Validator.ErrorMessage = null;
+            this.Username_Validator.InitialValue = null;
+            this.Username_Validator.IsValid = false;
+            this.Username_Validator.Regex = null;
+            // 
+            // FullName_Validator
+            // 
+            this.FullName_Validator.ControlToValidate = null;
+            this.FullName_Validator.ErrorMessage = null;
+            this.FullName_Validator.InitialValue = null;
+            this.FullName_Validator.IsValid = false;
+            this.FullName_Validator.Regex = null;
+            // 
+            // Date_Validator
+            // 
+            this.Date_Validator.ControlToValidate = null;
+            this.Date_Validator.ErrorMessage = null;
+            this.Date_Validator.InitialValue = null;
+            this.Date_Validator.IsValid = false;
+            this.Date_Validator.Regex = null;
+            // 
+            // Password_Validator
+            // 
+            this.Password_Validator.ControlToValidate = null;
+            this.Password_Validator.ErrorMessage = null;
+            this.Password_Validator.InitialValue = null;
+            this.Password_Validator.IsValid = false;
+            this.Password_Validator.Regex = null;
+            // 
+            // ConfirmPassword_Validator
+            // 
+            this.ConfirmPassword_Validator.ControlToValidate = null;
+            this.ConfirmPassword_Validator.ErrorMessage = null;
+            this.ConfirmPassword_Validator.InitialValue = null;
+            this.ConfirmPassword_Validator.IsValid = false;
+            this.ConfirmPassword_Validator.Regex = null;
             // 
             // label5
             // 
@@ -173,60 +156,64 @@
             this.label5.TabIndex = 16;
             this.label5.Text = "Ngày sinh:";
             // 
-            // Username_Validator
+            // txtUsername
             // 
-            this.Username_Validator.ControlToValidate = this.txtUsername;
-            this.Username_Validator.ErrorMessage = null;
-            this.Username_Validator.InitialValue = null;
-            this.Username_Validator.IsValid = false;
-            this.Username_Validator.Regex = null;
+            this.txtUsername.Location = new System.Drawing.Point(198, 65);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(228, 20);
+            this.txtUsername.TabIndex = 17;
             // 
-            // FullName_Validator
+            // txtFullName
             // 
-            this.FullName_Validator.ControlToValidate = this.txtName;
-            this.FullName_Validator.ErrorMessage = null;
-            this.FullName_Validator.InitialValue = null;
-            this.FullName_Validator.IsValid = false;
-            this.FullName_Validator.Regex = null;
+            this.txtFullName.Location = new System.Drawing.Point(198, 114);
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.Size = new System.Drawing.Size(228, 20);
+            this.txtFullName.TabIndex = 18;
             // 
-            // Date_Validator
+            // txtBirthday
             // 
-            this.Date_Validator.ControlToValidate = this.txtBirthday;
-            this.Date_Validator.ErrorMessage = null;
-            this.Date_Validator.InitialValue = null;
-            this.Date_Validator.IsValid = false;
-            this.Date_Validator.Regex = null;
+            this.txtBirthday.Location = new System.Drawing.Point(198, 158);
+            this.txtBirthday.Name = "txtBirthday";
+            this.txtBirthday.Size = new System.Drawing.Size(228, 20);
+            this.txtBirthday.TabIndex = 19;
             // 
-            // Password_Validator
+            // txtPassword
             // 
-            this.Password_Validator.ControlToValidate = this.txtPassword;
-            this.Password_Validator.ErrorMessage = null;
-            this.Password_Validator.InitialValue = null;
-            this.Password_Validator.IsValid = false;
-            this.Password_Validator.Regex = null;
+            this.txtPassword.Location = new System.Drawing.Point(198, 212);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(228, 20);
+            this.txtPassword.TabIndex = 20;
             // 
-            // ConfirmPassword_Validator
+            // txtPasswordConfirm
             // 
-            this.ConfirmPassword_Validator.ControlToValidate = this.txtConfirmPassword;
-            this.ConfirmPassword_Validator.ErrorMessage = null;
-            this.ConfirmPassword_Validator.InitialValue = null;
-            this.ConfirmPassword_Validator.IsValid = false;
-            this.ConfirmPassword_Validator.Regex = null;
+            this.txtPasswordConfirm.Location = new System.Drawing.Point(198, 268);
+            this.txtPasswordConfirm.Name = "txtPasswordConfirm";
+            this.txtPasswordConfirm.Size = new System.Drawing.Size(228, 20);
+            this.txtPasswordConfirm.TabIndex = 21;
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Location = new System.Drawing.Point(198, 324);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(135, 50);
+            this.btnSubmit.TabIndex = 22;
+            this.btnSubmit.Text = "Đăng ký";
+            this.btnSubmit.UseVisualStyleBackColor = true;
             // 
             // RegisterView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(471, 406);
-            this.Controls.Add(this.txtBirthday);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtConfirmPassword);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSubmit);
+            this.Controls.Add(this.txtPasswordConfirm);
             this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtBirthday);
+            this.Controls.Add(this.txtFullName);
             this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbRegister);
@@ -239,23 +226,22 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbRegister;
-        private System.Windows.Forms.TextBox txtConfirmPassword;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtBirthday;
-        private System.Windows.Forms.Label label5;
         private Validate.RequiredFieldValidator Username_Validator;
         private Validate.RequiredFieldValidator FullName_Validator;
         private Validate.RequiredFieldValidator Date_Validator;
         private Validate.RequiredFieldValidator Password_Validator;
         private Validate.RequiredFieldValidator ConfirmPassword_Validator;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox txtFullName;
+        private System.Windows.Forms.TextBox txtBirthday;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtPasswordConfirm;
+        private System.Windows.Forms.Button btnSubmit;
     }
 }
