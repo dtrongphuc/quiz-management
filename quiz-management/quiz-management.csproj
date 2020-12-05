@@ -67,6 +67,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Quiz.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Presenters\Login\LoginPresenter.cs" />
     <Compile Include="Presenters\Register\RegisterPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Validate\RequiredFieldValidator.Designer.cs">
       <DependentUpon>RequiredFieldValidator.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Login\ILoginView.cs" />
     <Compile Include="Views\Login\LoginView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,9 +136,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Presenters\Login\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
       <Visible>False</Visible>
