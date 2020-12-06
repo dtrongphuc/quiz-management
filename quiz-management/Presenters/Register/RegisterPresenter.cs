@@ -38,32 +38,41 @@ namespace quiz_management.Presenters.Register
 
             using (var db = new QuizDataContext())
             {
-                if (db.nguoiDungs.SingleOrDefault(u => u.tenTaiKhoan == username) != null)
+                try
                 {
-                    view.ShowMessage("Tên tài khoản đã tồn tại");
-                    return;
+                    if (db.nguoiDungs.SingleOrDefault(u => u.tenTaiKhoan == username) != null)
+                    {
+                        view.ShowMessage("Tên tài khoản đã tồn tại");
+                        return;
+                    }
+
+                    var user = new nguoiDung
+                    {
+                        tenTaiKhoan = username,
+                        matKhau = pwHash,
+                        phanQuyen = 0,
+                        TrangThai = 1
+                    };
+
+                    db.nguoiDungs.InsertOnSubmit(user);
+
+                    db.SubmitChanges();
+                    var userId = user.maNguoiDung;
+
+                    db.thongTins.InsertOnSubmit(new thongTin
+                    {
+                        maNguoidung = userId,
+                        tenNguoiDung = view.FullName,
+                        ngaySinh = DateTime.ParseExact(view.Birthday, "dd/MM/yyyy", null)
+                    });
+                    db.SubmitChanges();
+                    view.ShowMessage("Tạo tài khoản thành công");
                 }
-
-                var user = new nguoiDung
+                catch
                 {
-                    tenTaiKhoan = username,
-                    matKhau = pwHash,
-                    phanQuyen = 0,
-                    TrangThai = 1
-                };
-
-                db.nguoiDungs.InsertOnSubmit(user);
-
-                db.SubmitChanges();
-                var userId = user.maNguoiDung;
-
-                db.thongTins.InsertOnSubmit(new thongTin
-                {
-                    maNguoidung = userId,
-                    tenNguoiDung = view.FullName,
-                    ngaySinh = DateTime.ParseExact(view.Birthday, "dd/MM/yyyy", null)
-                });
-                db.SubmitChanges();
+                    view.ShowMessage("Đã xảy ra lỗi");
+                }
+                
             }
         }
     }

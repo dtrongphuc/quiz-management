@@ -46,6 +46,8 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtPasswordConfirm = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtLink = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label2
@@ -75,7 +77,7 @@
             this.lbRegister.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbRegister.AutoSize = true;
             this.lbRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRegister.Location = new System.Drawing.Point(234, 18);
+            this.lbRegister.Location = new System.Drawing.Point(194, 21);
             this.lbRegister.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbRegister.Name = "lbRegister";
             this.lbRegister.Size = new System.Drawing.Size(88, 24);
@@ -193,18 +195,41 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(198, 324);
+            this.btnSubmit.Location = new System.Drawing.Point(164, 316);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(135, 50);
             this.btnSubmit.TabIndex = 22;
             this.btnSubmit.Text = "Đăng ký";
             this.btnSubmit.UseVisualStyleBackColor = true;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(161, 385);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(89, 13);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Đã có tài khoản?";
+            // 
+            // txtLink
+            // 
+            this.txtLink.AutoSize = true;
+            this.txtLink.Location = new System.Drawing.Point(263, 385);
+            this.txtLink.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.txtLink.Name = "txtLink";
+            this.txtLink.Size = new System.Drawing.Size(60, 13);
+            this.txtLink.TabIndex = 23;
+            this.txtLink.TabStop = true;
+            this.txtLink.Text = "Đăng nhập";
+            // 
             // RegisterView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(471, 406);
+            this.ClientSize = new System.Drawing.Size(472, 434);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtLink);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.txtPasswordConfirm);
             this.Controls.Add(this.txtPassword);
@@ -243,5 +268,7 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtPasswordConfirm;
         private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.LinkLabel txtLink;
     }
 }
