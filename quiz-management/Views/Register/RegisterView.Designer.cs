@@ -34,11 +34,6 @@
             this.lbRegister = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.Username_Validator = new quiz_management.Validate.RequiredFieldValidator(this.components);
-            this.FullName_Validator = new quiz_management.Validate.RequiredFieldValidator(this.components);
-            this.Date_Validator = new quiz_management.Validate.RequiredFieldValidator(this.components);
-            this.Password_Validator = new quiz_management.Validate.RequiredFieldValidator(this.components);
-            this.ConfirmPassword_Validator = new quiz_management.Validate.RequiredFieldValidator(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtFullName = new System.Windows.Forms.TextBox();
@@ -47,7 +42,12 @@
             this.txtPasswordConfirm = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtLink = new System.Windows.Forms.LinkLabel();
+            this.ToLoginView = new System.Windows.Forms.LinkLabel();
+            this.Username_Validator = new quiz_management.Validate.RequiredFieldValidator(this.components);
+            this.FullName_Validator = new quiz_management.Validate.RequiredFieldValidator(this.components);
+            this.Date_Validator = new quiz_management.Validate.RequiredFieldValidator(this.components);
+            this.Password_Validator = new quiz_management.Validate.RequiredFieldValidator(this.components);
+            this.ConfirmPassword_Validator = new quiz_management.Validate.RequiredFieldValidator(this.components);
             this.SuspendLayout();
             // 
             // label2
@@ -106,46 +106,6 @@
             this.label4.Size = new System.Drawing.Size(61, 15);
             this.label4.TabIndex = 14;
             this.label4.Text = "Họ và tên:";
-            // 
-            // Username_Validator
-            // 
-            this.Username_Validator.ControlToValidate = null;
-            this.Username_Validator.ErrorMessage = null;
-            this.Username_Validator.InitialValue = null;
-            this.Username_Validator.IsValid = false;
-            this.Username_Validator.Regex = null;
-            // 
-            // FullName_Validator
-            // 
-            this.FullName_Validator.ControlToValidate = null;
-            this.FullName_Validator.ErrorMessage = null;
-            this.FullName_Validator.InitialValue = null;
-            this.FullName_Validator.IsValid = false;
-            this.FullName_Validator.Regex = null;
-            // 
-            // Date_Validator
-            // 
-            this.Date_Validator.ControlToValidate = null;
-            this.Date_Validator.ErrorMessage = null;
-            this.Date_Validator.InitialValue = null;
-            this.Date_Validator.IsValid = false;
-            this.Date_Validator.Regex = null;
-            // 
-            // Password_Validator
-            // 
-            this.Password_Validator.ControlToValidate = null;
-            this.Password_Validator.ErrorMessage = null;
-            this.Password_Validator.InitialValue = null;
-            this.Password_Validator.IsValid = false;
-            this.Password_Validator.Regex = null;
-            // 
-            // ConfirmPassword_Validator
-            // 
-            this.ConfirmPassword_Validator.ControlToValidate = null;
-            this.ConfirmPassword_Validator.ErrorMessage = null;
-            this.ConfirmPassword_Validator.InitialValue = null;
-            this.ConfirmPassword_Validator.IsValid = false;
-            this.ConfirmPassword_Validator.Regex = null;
             // 
             // label5
             // 
@@ -212,16 +172,56 @@
             this.label6.TabIndex = 24;
             this.label6.Text = "Đã có tài khoản?";
             // 
-            // txtLink
+            // ToLoginView
             // 
-            this.txtLink.AutoSize = true;
-            this.txtLink.Location = new System.Drawing.Point(263, 385);
-            this.txtLink.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.txtLink.Name = "txtLink";
-            this.txtLink.Size = new System.Drawing.Size(60, 13);
-            this.txtLink.TabIndex = 23;
-            this.txtLink.TabStop = true;
-            this.txtLink.Text = "Đăng nhập";
+            this.ToLoginView.AutoSize = true;
+            this.ToLoginView.Location = new System.Drawing.Point(254, 385);
+            this.ToLoginView.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ToLoginView.Name = "ToLoginView";
+            this.ToLoginView.Size = new System.Drawing.Size(60, 13);
+            this.ToLoginView.TabIndex = 23;
+            this.ToLoginView.TabStop = true;
+            this.ToLoginView.Text = "Đăng nhập";
+            // 
+            // Username_Validator
+            // 
+            this.Username_Validator.ControlToValidate = null;
+            this.Username_Validator.ErrorMessage = null;
+            this.Username_Validator.InitialValue = null;
+            this.Username_Validator.IsValid = false;
+            this.Username_Validator.Regex = null;
+            // 
+            // FullName_Validator
+            // 
+            this.FullName_Validator.ControlToValidate = null;
+            this.FullName_Validator.ErrorMessage = null;
+            this.FullName_Validator.InitialValue = null;
+            this.FullName_Validator.IsValid = false;
+            this.FullName_Validator.Regex = null;
+            // 
+            // Date_Validator
+            // 
+            this.Date_Validator.ControlToValidate = null;
+            this.Date_Validator.ErrorMessage = null;
+            this.Date_Validator.InitialValue = null;
+            this.Date_Validator.IsValid = false;
+            this.Date_Validator.Regex = null;
+            // 
+            // Password_Validator
+            // 
+            this.Password_Validator.ControlToValidate = null;
+            this.Password_Validator.ErrorMessage = null;
+            this.Password_Validator.InitialValue = null;
+            this.Password_Validator.IsValid = false;
+            this.Password_Validator.Regex = null;
+            // 
+            // ConfirmPassword_Validator
+            // 
+            this.ConfirmPassword_Validator.ControlToValidate = null;
+            this.ConfirmPassword_Validator.ErrorMessage = null;
+            this.ConfirmPassword_Validator.InitialValue = null;
+            this.ConfirmPassword_Validator.IsValid = false;
+            this.ConfirmPassword_Validator.Regex = null;
             // 
             // RegisterView
             // 
@@ -229,7 +229,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(472, 434);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtLink);
+            this.Controls.Add(this.ToLoginView);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.txtPasswordConfirm);
             this.Controls.Add(this.txtPassword);
@@ -244,6 +244,7 @@
             this.Controls.Add(this.lbRegister);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RegisterView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterView";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -269,6 +270,6 @@
         private System.Windows.Forms.TextBox txtPasswordConfirm;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.LinkLabel txtLink;
+        private System.Windows.Forms.LinkLabel ToLoginView;
     }
 }

@@ -34,7 +34,7 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.tblinkRegister = new System.Windows.Forms.LinkLabel();
+            this.ToRegisterView = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -75,7 +75,7 @@
             // 
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(153, 102);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(255, 23);
             this.txtUsername.TabIndex = 3;
@@ -84,7 +84,7 @@
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(153, 165);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(255, 23);
             this.txtPassword.TabIndex = 4;
@@ -93,23 +93,23 @@
             // 
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.Location = new System.Drawing.Point(205, 220);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(122, 46);
             this.btnSubmit.TabIndex = 5;
             this.btnSubmit.Text = "Đăng nhập";
             this.btnSubmit.UseVisualStyleBackColor = true;
             // 
-            // tblinkRegister
+            // ToRegisterView
             // 
-            this.tblinkRegister.AutoSize = true;
-            this.tblinkRegister.Location = new System.Drawing.Point(296, 280);
-            this.tblinkRegister.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.tblinkRegister.Name = "tblinkRegister";
-            this.tblinkRegister.Size = new System.Drawing.Size(47, 13);
-            this.tblinkRegister.TabIndex = 6;
-            this.tblinkRegister.TabStop = true;
-            this.tblinkRegister.Text = "Đăng ký";
+            this.ToRegisterView.AutoSize = true;
+            this.ToRegisterView.Location = new System.Drawing.Point(298, 280);
+            this.ToRegisterView.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ToRegisterView.Name = "ToRegisterView";
+            this.ToRegisterView.Size = new System.Drawing.Size(47, 13);
+            this.ToRegisterView.TabIndex = 6;
+            this.ToRegisterView.TabStop = true;
+            this.ToRegisterView.Text = "Đăng ký";
             // 
             // label3
             // 
@@ -127,15 +127,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(514, 315);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.tblinkRegister);
+            this.Controls.Add(this.ToRegisterView);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbLogin);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LoginView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginStudentView";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -150,7 +151,7 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.LinkLabel tblinkRegister;
+        private System.Windows.Forms.LinkLabel ToRegisterView;
         private System.Windows.Forms.Label label3;
     }
 }

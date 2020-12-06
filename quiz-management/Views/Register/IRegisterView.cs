@@ -14,6 +14,9 @@ namespace quiz_management.Views.Register
         string Birthday { get; set; }
         
         event EventHandler Submit;
+        event EventHandler SwitchToLoginView;
+
         void ShowMessage(string text);
+        void ShowLoginView();
     }
 }
