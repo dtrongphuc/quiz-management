@@ -34,7 +34,7 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.txtLink = new System.Windows.Forms.LinkLabel();
+            this.ồ = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -100,16 +100,16 @@
             this.btnSubmit.Text = "Đăng nhập";
             this.btnSubmit.UseVisualStyleBackColor = true;
             // 
-            // txtLink
+            // ồ
             // 
-            this.txtLink.AutoSize = true;
-            this.txtLink.Location = new System.Drawing.Point(298, 280);
-            this.txtLink.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.txtLink.Name = "txtLink";
-            this.txtLink.Size = new System.Drawing.Size(47, 13);
-            this.txtLink.TabIndex = 6;
-            this.txtLink.TabStop = true;
-            this.txtLink.Text = "Đăng ký";
+            this.ồ.AutoSize = true;
+            this.ồ.Location = new System.Drawing.Point(298, 280);
+            this.ồ.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ồ.Name = "ồ";
+            this.ồ.Size = new System.Drawing.Size(47, 13);
+            this.ồ.TabIndex = 6;
+            this.ồ.TabStop = true;
+            this.ồ.Text = "Đăng ký";
             // 
             // label3
             // 
@@ -127,7 +127,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(514, 315);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtLink);
+            this.Controls.Add(this.ồ);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
@@ -150,7 +150,7 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.LinkLabel txtLink;
+        private System.Windows.Forms.LinkLabel ồ;
         private System.Windows.Forms.Label label3;
     }
 }
