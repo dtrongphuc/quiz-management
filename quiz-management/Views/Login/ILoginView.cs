@@ -12,6 +12,9 @@ namespace quiz_management.Views.Login
         string Password { get; set; }
 
         event EventHandler Submit;
+        event EventHandler SwitchToRegisterView;
+
         void ShowMessage(string text);
+        void ShowRegisterView();
     }
 }
