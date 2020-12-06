@@ -13,7 +13,7 @@ namespace quiz_management.Views.Teacher.Main
 {
     public partial class MainTeacherView : Form
     {
-        private bool isCollapsed;
+        
         private bool isCollapsed1;
         private bool isCollapsed2;
         public MainTeacherView()
