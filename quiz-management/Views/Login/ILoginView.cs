@@ -16,5 +16,8 @@ namespace quiz_management.Views.Login
 
         void ShowMessage(string text);
         void ShowRegisterView();
+        void ShowStudentView();
+        void ShowTeacherView();
+        void ShowAdminView();
     }
 }

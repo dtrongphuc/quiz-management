@@ -17,6 +17,12 @@ namespace quiz_management.Presenters.Login
         {
             view = v;
             view.Submit += View_Submit;
+            view.SwitchToRegisterView += View_SwitchToRegisterView;
+        }
+
+        private void View_SwitchToRegisterView(object sender, EventArgs e)
+        {
+            view.ShowRegisterView();
         }
 
         private void View_Submit(object sender, EventArgs e)
@@ -38,18 +44,37 @@ namespace quiz_management.Presenters.Login
                     {
                         if (hashBytes[i + 16] != hash[i])
                         {
-                            view.ShowMessage("Mat khau khong chinh xac");
+                            view.ShowMessage("Mật khẩu không chính xác");
                             return;
                         }
                     }
 
-                    view.ShowMessage("Dang nhap thanh cong");
-
+                    int role = user.phanQuyen.GetValueOrDefault();
+                    RoleToView(role);
                 }
                 else
                 {
-                    view.ShowMessage("Khong ton tai tai khoan");
+                    view.ShowMessage("Không tồn tại tài khoản");
                 }
+            }
+        }
+
+        private void RoleToView(int role)
+        {
+            switch(role)
+            {
+                case 1:
+                    view.ShowStudentView();
+                    break;
+                case 2:
+                    view.ShowTeacherView();
+                    break;
+                case 3:
+                    view.ShowAdminView();
+                    break;
+                default:
+                    view.ShowMessage("Không xác định được quyền hạn của tài khoản");
+                    break;
             }
         }
     }

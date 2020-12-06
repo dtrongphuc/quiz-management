@@ -56,7 +56,7 @@ namespace quiz_management.Presenters.Register
                     {
                         tenTaiKhoan = username,
                         matKhau = pwHash,
-                        phanQuyen = 0,
+                        phanQuyen = 1,
                         TrangThai = 1
                     };
 
