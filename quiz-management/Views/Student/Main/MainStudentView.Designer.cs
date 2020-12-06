@@ -29,11 +29,11 @@ namespace quiz_management.Views.Student.Main
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbTestDOB = new System.Windows.Forms.Label();
-            this.txtTitle1 = new System.Windows.Forms.Label();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtStudentDOB = new System.Windows.Forms.TextBox();
-            this.txtStudentID = new System.Windows.Forms.TextBox();
+            this.txtStudentDOBview = new System.Windows.Forms.TextBox();
+            this.txtStudentIDview = new System.Windows.Forms.TextBox();
             this.lbStudentID = new System.Windows.Forms.Label();
             this.btnPrintTranScript = new System.Windows.Forms.Button();
             this.btnUpdateInfoStudent = new System.Windows.Forms.Button();
@@ -44,9 +44,9 @@ namespace quiz_management.Views.Student.Main
             this.btnExamResultView = new System.Windows.Forms.Button();
             this.lbDOB = new System.Windows.Forms.Label();
             this.txtTitle2 = new System.Windows.Forms.Label();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtTitle1 = new System.Windows.Forms.Label();
+            this.txtclassview = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -78,39 +78,58 @@ namespace quiz_management.Views.Student.Main
             // 
             // label1
             // 
+            this.groupBox1.Controls.Add(this.txtclassview);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.txtStudentDOBview);
+            this.groupBox1.Controls.Add(this.txtStudentIDview);
+            this.groupBox1.Controls.Add(this.lbStudentID);
+            this.groupBox1.Controls.Add(this.btnPrintTranScript);
+            this.groupBox1.Controls.Add(this.btnUpdateInfoStudent);
+            this.groupBox1.Controls.Add(this.btnTestScheduleView);
+            this.groupBox1.Controls.Add(this.btnExamResultView);
+            this.groupBox1.Controls.Add(this.lbDOB);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(403, 605);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Thông tin cá nhân";
+            // 
+            // label1
+            // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(57, 41);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(76, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 24);
+            this.label1.Size = new System.Drawing.Size(222, 29);
             this.label1.TabIndex = 10;
             this.label1.Text = "Nguyễn Hiếu Nghĩa";
             // 
-            // txtStudentDOB
+            // txtStudentDOBview
             // 
-            this.txtStudentDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStudentDOB.Location = new System.Drawing.Point(100, 135);
-            this.txtStudentDOB.Margin = new System.Windows.Forms.Padding(2);
-            this.txtStudentDOB.Name = "txtStudentDOB";
-            this.txtStudentDOB.Size = new System.Drawing.Size(153, 23);
-            this.txtStudentDOB.TabIndex = 9;
+            this.txtStudentDOBview.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStudentDOBview.Location = new System.Drawing.Point(132, 151);
+            this.txtStudentDOBview.Name = "txtStudentDOBview";
+            this.txtStudentDOBview.ReadOnly = true;
+            this.txtStudentDOBview.Size = new System.Drawing.Size(203, 27);
+            this.txtStudentDOBview.TabIndex = 9;
             // 
-            // txtStudentID
+            // txtStudentIDview
             // 
-            this.txtStudentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStudentID.Location = new System.Drawing.Point(100, 89);
-            this.txtStudentID.Margin = new System.Windows.Forms.Padding(2);
-            this.txtStudentID.Name = "txtStudentID";
-            this.txtStudentID.Size = new System.Drawing.Size(153, 23);
-            this.txtStudentID.TabIndex = 7;
+            this.txtStudentIDview.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStudentIDview.Location = new System.Drawing.Point(132, 102);
+            this.txtStudentIDview.Name = "txtStudentIDview";
+            this.txtStudentIDview.ReadOnly = true;
+            this.txtStudentIDview.Size = new System.Drawing.Size(203, 27);
+            this.txtStudentIDview.TabIndex = 7;
             // 
             // lbStudentID
             // 
             this.lbStudentID.AutoSize = true;
             this.lbStudentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStudentID.Location = new System.Drawing.Point(12, 94);
-            this.lbStudentID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbStudentID.Location = new System.Drawing.Point(14, 109);
             this.lbStudentID.Name = "lbStudentID";
             this.lbStudentID.Size = new System.Drawing.Size(50, 17);
             this.lbStudentID.TabIndex = 6;
@@ -197,8 +216,7 @@ namespace quiz_management.Views.Student.Main
             // 
             this.lbDOB.AutoSize = true;
             this.lbDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDOB.Location = new System.Drawing.Point(12, 141);
-            this.lbDOB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbDOB.Location = new System.Drawing.Point(12, 158);
             this.lbDOB.Name = "lbDOB";
             this.lbDOB.Size = new System.Drawing.Size(75, 17);
             this.lbDOB.TabIndex = 1;
@@ -275,7 +293,85 @@ namespace quiz_management.Views.Student.Main
             // 
             // MainStudentView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.btnFeekback.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFeekback.Location = new System.Drawing.Point(378, 437);
+            this.btnFeekback.Name = "btnFeekback";
+            this.btnFeekback.Size = new System.Drawing.Size(185, 60);
+            this.btnFeekback.TabIndex = 12;
+            this.btnFeekback.Text = "Câu Hỏi Góp Ý";
+            this.btnFeekback.UseVisualStyleBackColor = true;
+            // 
+            // btnOfficialExam
+            // 
+            this.btnOfficialExam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOfficialExam.Location = new System.Drawing.Point(261, 345);
+            this.btnOfficialExam.Name = "btnOfficialExam";
+            this.btnOfficialExam.Size = new System.Drawing.Size(185, 60);
+            this.btnOfficialExam.TabIndex = 11;
+            this.btnOfficialExam.Text = "Thi Chính Thức";
+            this.btnOfficialExam.UseVisualStyleBackColor = true;
+            // 
+            // btnPracticExam
+            // 
+            this.btnPracticExam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPracticExam.Location = new System.Drawing.Point(149, 437);
+            this.btnPracticExam.Name = "btnPracticExam";
+            this.btnPracticExam.Size = new System.Drawing.Size(185, 60);
+            this.btnPracticExam.TabIndex = 10;
+            this.btnPracticExam.Text = "Thi Thử";
+            this.btnPracticExam.UseVisualStyleBackColor = true;
+            // 
+            // lbTestDOB
+            // 
+            this.lbTestDOB.AutoSize = true;
+            this.lbTestDOB.Location = new System.Drawing.Point(593, 566);
+            this.lbTestDOB.Name = "lbTestDOB";
+            this.lbTestDOB.Size = new System.Drawing.Size(80, 17);
+            this.lbTestDOB.TabIndex = 2;
+            this.lbTestDOB.Text = "01/12/2020";
+            // 
+            // txtTitle2
+            // 
+            this.txtTitle2.AutoSize = true;
+            this.txtTitle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitle2.Location = new System.Drawing.Point(125, 159);
+            this.txtTitle2.Name = "txtTitle2";
+            this.txtTitle2.Size = new System.Drawing.Size(464, 32);
+            this.txtTitle2.TabIndex = 1;
+            this.txtTitle2.Text = "Trường đại học Khoa Học Tự Nhiện ";
+            // 
+            // txtTitle1
+            // 
+            this.txtTitle1.AutoSize = true;
+            this.txtTitle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitle1.Location = new System.Drawing.Point(288, 109);
+            this.txtTitle1.Name = "txtTitle1";
+            this.txtTitle1.Size = new System.Drawing.Size(140, 20);
+            this.txtTitle1.TabIndex = 0;
+            this.txtTitle1.Text = "Thi trắc nghiệm";
+            // 
+            // txtclassview
+            // 
+            this.txtclassview.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtclassview.Location = new System.Drawing.Point(132, 197);
+            this.txtclassview.Name = "txtclassview";
+            this.txtclassview.ReadOnly = true;
+            this.txtclassview.Size = new System.Drawing.Size(203, 27);
+            this.txtclassview.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(14, 204);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 20);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Lớp";
+            // 
+            // MainView
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(851, 489);
             this.Controls.Add(this.splitContainer1);
@@ -314,5 +410,17 @@ namespace quiz_management.Views.Student.Main
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label lbStudentID;
+        private System.Windows.Forms.TextBox txtStudentDOBview;
+        private System.Windows.Forms.TextBox txtStudentIDview;
+        private System.Windows.Forms.Button btnPracticExam;
+        private System.Windows.Forms.Label lbTestDOB;
+        private System.Windows.Forms.Label txtTitle2;
+        private System.Windows.Forms.Label txtTitle1;
+        private System.Windows.Forms.Button btnFeekback;
+        private System.Windows.Forms.Button btnOfficialExam;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtclassview;
+        private System.Windows.Forms.Label label2;
     }
 }
