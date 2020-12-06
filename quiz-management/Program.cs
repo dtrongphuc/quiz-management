@@ -1,5 +1,6 @@
 ﻿using quiz_management.Views;
 using quiz_management.Views.Student;
+using quiz_management.Views.Teacher.Main;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace quiz_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PracticExamView());
+            Application.Run(new Views.Teacher.Main.MainTeacherView());
         }
     }
 }
