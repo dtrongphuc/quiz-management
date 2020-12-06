@@ -215,7 +215,7 @@
             // txtLink
             // 
             this.txtLink.AutoSize = true;
-            this.txtLink.Location = new System.Drawing.Point(264, 385);
+            this.txtLink.Location = new System.Drawing.Point(254, 385);
             this.txtLink.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtLink.Name = "txtLink";
             this.txtLink.Size = new System.Drawing.Size(60, 13);
