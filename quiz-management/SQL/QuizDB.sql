@@ -10,17 +10,44 @@
 	PRIMARY KEY (maNguoiDung)
 )
 
+CREATE TABLE Lop
+(
+	maKhoiLop varchar(5),
+	maLopHoc INT IDENTITY,
+	tenLopHoc NVARCHAR(10)
+
+	CONSTRAINT PK_Lop
+	PRIMARY KEY (maLopHoc)
+)
+alter table Lop add constraint FK_lop_khoiLop FOREIGN KEY(maKhoiLop) references khoiLop(maKhoiLop)
+
+
+
+CREATE TABLE khoiLop
+(
+	maKhoiLop varchar(5),
+	tenKhoiLop varchar(10)
+
+	CONSTRAINT PK_khoiLop
+	PRIMARY KEY (maKhoiLop)
+)
+
+
+
 
 CREATE TABLE thongTin
 (
 	maNguoidung INT,
 	tenNguoiDung NVARCHAR(50),
 	ngaySinh DATE,
+	maLopHoc INT
 	
 	CONSTRAINT PK_thongtin
 	PRIMARY KEY (maNguoidung)
 )
 
+
+ALTER TABLE thongtin ADD CONSTRAINT FK_thongtin_lop FOREIGN KEY(maLopHoc) REFERENCES lop(maLopHoc)
 ALTER TABLE dbo.thongTin ADD CONSTRAINT FK_thongtin_nguoidung FOREIGN KEY(maNguoidung) REFERENCES dbo.nguoiDung(maNguoidung)
 
 CREATE TABLE monHoc
@@ -37,13 +64,15 @@ CREATE TABLE boDe
 	maBoDe INT IDENTITY,
 	thoiGian DATE,
 	tongSoCau INT,
-	maMon INT
+	maMon INT,
+	maKhoi varchar(5)
 
 	CONSTRAINT PK_boDe
 	PRIMARY KEY (maBoDe)
 )
 
 ALTER TABLE dbo.boDe ADD CONSTRAINT FK_boDe_monHoc FOREIGN KEY(maMon) REFERENCES dbo.monHoc(maMonHoc)
+ALTER TABLE boDe ADD CONSTRAINT FK_boDe_khoiLop FOREIGN KEY(maKhoi) REFERENCES khoiLop(maKhoiLop)
 
 CREATE TABLE cauHoi
 (
@@ -161,4 +190,3 @@ CREATE TABLE cTDongGop
 
 ALTER TABLE dbo.cTDongGop ADD CONSTRAINT FK_cTDongGop_dongGop FOREIGN KEY(maDongGop) REFERENCES dbo.dongGop(maDongGop)
 
-SELECT * FROM dbo.boDe
