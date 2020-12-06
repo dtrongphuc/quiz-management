@@ -25,9 +25,19 @@ namespace quiz_management.Views.Student
         public string Birthday { get => txtBirthday.Text.Trim(); set => txtBirthday.Text = value; }
 
         public event EventHandler Submit;
+        public event EventHandler SwitchToLoginView;
+
         public void ShowMessage(string text)
         {
             MessageBox.Show(text);
+        }
+
+        public void ShowLoginView()
+        {
+            this.Hide();
+            LoginView screen = new LoginView();
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
         }
 
         public RegisterView()
@@ -44,6 +54,11 @@ namespace quiz_management.Views.Student
                     return;
                 }
                 Submit?.Invoke(btnSubmit, e);
+            };
+
+            ToLoginView.Click += (_, e) =>
+            {
+                SwitchToLoginView.Invoke(ToLoginView, e);
             };
         }
 

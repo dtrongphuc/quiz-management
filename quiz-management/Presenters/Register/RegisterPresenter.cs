@@ -17,6 +17,12 @@ namespace quiz_management.Presenters.Register
         {
             view = v;
             view.Submit += View_Submit;
+            view.SwitchToLoginView += View_SwitchToLoginView;
+        }
+
+        private void View_SwitchToLoginView(object sender, EventArgs e)
+        {
+            view.ShowLoginView();
         }
 
         private void View_Submit(object sender, EventArgs e)

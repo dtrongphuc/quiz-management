@@ -20,9 +20,19 @@ namespace quiz_management.Views.Student
         public string Password { get => txtPassword.Text.Trim(); set => txtPassword.Text = value; }
         
         public event EventHandler Submit;
+        public event EventHandler SwitchToRegisterView;
+
         public void ShowMessage(string text)
         {
             MessageBox.Show(text);
+        }
+
+        public void ShowRegisterView()
+        {
+            this.Hide();
+            RegisterView screen = new RegisterView();
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
         }
 
         public LoginView()
@@ -39,6 +49,11 @@ namespace quiz_management.Views.Student
                     return;
                 }
                 Submit?.Invoke(btnSubmit, e);
+            };
+
+            ToRegisterView.Click += (_, e) =>
+            {
+                SwitchToRegisterView.Invoke(ToRegisterView, e);
             };
         }
     }
