@@ -43,14 +43,26 @@ namespace quiz_management.Presenters.Register
                     view.ShowMessage("Tên tài khoản đã tồn tại");
                     return;
                 }
-                db.nguoiDungs.InsertOnSubmit(new nguoiDung
+
+                var user = new nguoiDung
                 {
                     tenTaiKhoan = username,
                     matKhau = pwHash,
                     phanQuyen = 0,
                     TrangThai = 1
-                });
+                };
 
+                db.nguoiDungs.InsertOnSubmit(user);
+
+                db.SubmitChanges();
+                var userId = user.maNguoiDung;
+
+                db.thongTins.InsertOnSubmit(new thongTin
+                {
+                    maNguoidung = userId,
+                    tenNguoiDung = view.FullName,
+                    ngaySinh = DateTime.ParseExact(view.Birthday, "dd/MM/yyyy", null)
+                });
                 db.SubmitChanges();
             }
         }

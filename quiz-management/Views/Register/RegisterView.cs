@@ -20,7 +20,7 @@ namespace quiz_management.Views.Student
         ErrorProvider errorProvider = new ErrorProvider();
 
         public string Username { get => txtUsername.Text.Trim(); set => txtUsername.Text = value; }
-        public string Password { get => txtFullName.Text.Trim(); set => txtFullName.Text = value; }
+        public string Password { get => txtPassword.Text.Trim(); set => txtPassword.Text = value; }
         public string FullName { get => txtFullName.Text.Trim(); set => txtFullName.Text = value; }
         public string Birthday { get => txtBirthday.Text.Trim(); set => txtBirthday.Text = value; }
 
