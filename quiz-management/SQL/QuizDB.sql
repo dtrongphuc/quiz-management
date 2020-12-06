@@ -46,6 +46,9 @@ CREATE TABLE thongTin
 	PRIMARY KEY (maNguoidung)
 )
 
+ALTER TABLE thongTin
+ADD CONSTRAINT df_maLopHoc
+DEFAULT NUll FOR maLopHoc;
 
 ALTER TABLE thongtin ADD CONSTRAINT FK_thongtin_lop FOREIGN KEY(maLopHoc) REFERENCES lop(maLopHoc)
 ALTER TABLE dbo.thongTin ADD CONSTRAINT FK_thongtin_nguoidung FOREIGN KEY(maNguoidung) REFERENCES dbo.nguoiDung(maNguoidung)
