@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace quiz_management.Views
+namespace quiz_management.Views.Student.Main
 {
-    public partial class MainView : Form
+    public partial class MainStudentView : Form
     {
-        public MainView()
+        public MainStudentView()
         {
             InitializeComponent();
         }
