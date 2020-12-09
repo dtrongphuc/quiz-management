@@ -110,6 +110,27 @@ namespace quiz_management.Views.Student.Main
             this.label2.TabIndex = 11;
             this.label2.Text = "Lớp";
             // 
+            // txtclassview
+            // 
+            this.txtclassview.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtclassview.Location = new System.Drawing.Point(99, 160);
+            this.txtclassview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtclassview.Name = "txtclassview";
+            this.txtclassview.ReadOnly = true;
+            this.txtclassview.Size = new System.Drawing.Size(153, 23);
+            this.txtclassview.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(10, 166);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 17);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Lớp";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
