@@ -52,11 +52,11 @@
             this.btnUpdateInfoStudent = new System.Windows.Forms.Button();
             this.btnTestScheduleView = new System.Windows.Forms.Button();
             this.btnExamResultView = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txbNgaySinh = new System.Windows.Forms.TextBox();
+            this.txbMaSo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.tbTenGV = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtTitle2 = new System.Windows.Forms.Label();
             this.txtTitle1 = new System.Windows.Forms.Label();
@@ -79,10 +79,6 @@
             this.btnTKHS = new System.Windows.Forms.Button();
             this.btnThongKe = new System.Windows.Forms.Button();
             this.timerQLDeThi = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.timeQLKyThi = new System.Windows.Forms.Timer(this.components);
             this.timerQLThiThu = new System.Windows.Forms.Timer(this.components);
             this.timerThongKe = new System.Windows.Forms.Timer(this.components);
@@ -129,7 +125,7 @@
             // 
             // btnDongGop
             // 
-            this.btnDongGop.BackColor = System.Drawing.Color.Silver;
+            this.btnDongGop.BackColor = System.Drawing.Color.Gainsboro;
             this.btnDongGop.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDongGop.FlatAppearance.BorderSize = 0;
             this.btnDongGop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -144,7 +140,7 @@
             // 
             // btnDetailQuiz
             // 
-            this.btnDetailQuiz.BackColor = System.Drawing.Color.Silver;
+            this.btnDetailQuiz.BackColor = System.Drawing.Color.Gainsboro;
             this.btnDetailQuiz.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDetailQuiz.FlatAppearance.BorderSize = 0;
             this.btnDetailQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -159,7 +155,7 @@
             // 
             // btnEditQuiz
             // 
-            this.btnEditQuiz.BackColor = System.Drawing.Color.Silver;
+            this.btnEditQuiz.BackColor = System.Drawing.Color.Gainsboro;
             this.btnEditQuiz.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEditQuiz.FlatAppearance.BorderSize = 0;
             this.btnEditQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -174,7 +170,7 @@
             // 
             // btnAddQuiz
             // 
-            this.btnAddQuiz.BackColor = System.Drawing.Color.Silver;
+            this.btnAddQuiz.BackColor = System.Drawing.Color.Gainsboro;
             this.btnAddQuiz.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAddQuiz.FlatAppearance.BorderSize = 0;
             this.btnAddQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -189,7 +185,7 @@
             // 
             // btnQuizManager
             // 
-            this.btnQuizManager.BackColor = System.Drawing.Color.Silver;
+            this.btnQuizManager.BackColor = System.Drawing.Color.Gainsboro;
             this.btnQuizManager.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQuizManager.FlatAppearance.BorderSize = 0;
             this.btnQuizManager.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -221,7 +217,7 @@
             // 
             // btnXoaDeThi
             // 
-            this.btnXoaDeThi.BackColor = System.Drawing.Color.Silver;
+            this.btnXoaDeThi.BackColor = System.Drawing.Color.Gainsboro;
             this.btnXoaDeThi.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnXoaDeThi.FlatAppearance.BorderSize = 0;
             this.btnXoaDeThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -236,7 +232,7 @@
             // 
             // btnSuaDeThi
             // 
-            this.btnSuaDeThi.BackColor = System.Drawing.Color.Silver;
+            this.btnSuaDeThi.BackColor = System.Drawing.Color.Gainsboro;
             this.btnSuaDeThi.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSuaDeThi.FlatAppearance.BorderSize = 0;
             this.btnSuaDeThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -251,7 +247,7 @@
             // 
             // btnTaoDeThi
             // 
-            this.btnTaoDeThi.BackColor = System.Drawing.Color.Silver;
+            this.btnTaoDeThi.BackColor = System.Drawing.Color.Gainsboro;
             this.btnTaoDeThi.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTaoDeThi.FlatAppearance.BorderSize = 0;
             this.btnTaoDeThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -266,7 +262,7 @@
             // 
             // btnQLDeThi
             // 
-            this.btnQLDeThi.BackColor = System.Drawing.Color.Silver;
+            this.btnQLDeThi.BackColor = System.Drawing.Color.Gainsboro;
             this.btnQLDeThi.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQLDeThi.FlatAppearance.BorderSize = 0;
             this.btnQLDeThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -298,7 +294,7 @@
             // 
             // btnOnTap
             // 
-            this.btnOnTap.BackColor = System.Drawing.Color.Silver;
+            this.btnOnTap.BackColor = System.Drawing.Color.Gainsboro;
             this.btnOnTap.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnOnTap.FlatAppearance.BorderSize = 0;
             this.btnOnTap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -313,7 +309,7 @@
             // 
             // btnThi
             // 
-            this.btnThi.BackColor = System.Drawing.Color.Silver;
+            this.btnThi.BackColor = System.Drawing.Color.Gainsboro;
             this.btnThi.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnThi.FlatAppearance.BorderSize = 0;
             this.btnThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -328,7 +324,7 @@
             // 
             // btnLamBaiThi
             // 
-            this.btnLamBaiThi.BackColor = System.Drawing.Color.Silver;
+            this.btnLamBaiThi.BackColor = System.Drawing.Color.Gainsboro;
             this.btnLamBaiThi.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnLamBaiThi.FlatAppearance.BorderSize = 0;
             this.btnLamBaiThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -355,11 +351,11 @@
             this.groupBox1.Controls.Add(this.btnUpdateInfoStudent);
             this.groupBox1.Controls.Add(this.btnTestScheduleView);
             this.groupBox1.Controls.Add(this.btnExamResultView);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txbNgaySinh);
+            this.groupBox1.Controls.Add(this.txbMaSo);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.tbTenGV);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
@@ -381,6 +377,7 @@
             // 
             // btnUpdateInfoStudent
             // 
+            this.btnUpdateInfoStudent.BackColor = System.Drawing.Color.Gainsboro;
             this.btnUpdateInfoStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateInfoStudent.Location = new System.Drawing.Point(82, 382);
             this.btnUpdateInfoStudent.Margin = new System.Windows.Forms.Padding(2);
@@ -388,10 +385,11 @@
             this.btnUpdateInfoStudent.Size = new System.Drawing.Size(139, 49);
             this.btnUpdateInfoStudent.TabIndex = 21;
             this.btnUpdateInfoStudent.Text = "Sửa thông tin cá nhân";
-            this.btnUpdateInfoStudent.UseVisualStyleBackColor = true;
+            this.btnUpdateInfoStudent.UseVisualStyleBackColor = false;
             // 
             // btnTestScheduleView
             // 
+            this.btnTestScheduleView.BackColor = System.Drawing.Color.Transparent;
             this.btnTestScheduleView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTestScheduleView.Location = new System.Drawing.Point(82, 300);
             this.btnTestScheduleView.Margin = new System.Windows.Forms.Padding(2);
@@ -399,10 +397,11 @@
             this.btnTestScheduleView.Size = new System.Drawing.Size(139, 47);
             this.btnTestScheduleView.TabIndex = 20;
             this.btnTestScheduleView.Text = "Xem lịch thi";
-            this.btnTestScheduleView.UseVisualStyleBackColor = true;
+            this.btnTestScheduleView.UseVisualStyleBackColor = false;
             // 
             // btnExamResultView
             // 
+            this.btnExamResultView.BackColor = System.Drawing.Color.Gainsboro;
             this.btnExamResultView.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExamResultView.Location = new System.Drawing.Point(82, 222);
             this.btnExamResultView.Margin = new System.Windows.Forms.Padding(2);
@@ -410,21 +409,21 @@
             this.btnExamResultView.Size = new System.Drawing.Size(139, 49);
             this.btnExamResultView.TabIndex = 19;
             this.btnExamResultView.Text = "Xem kết quả thi";
-            this.btnExamResultView.UseVisualStyleBackColor = true;
+            this.btnExamResultView.UseVisualStyleBackColor = false;
             // 
-            // textBox2
+            // txbNgaySinh
             // 
-            this.textBox2.Location = new System.Drawing.Point(111, 168);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(169, 27);
-            this.textBox2.TabIndex = 17;
+            this.txbNgaySinh.Location = new System.Drawing.Point(111, 168);
+            this.txbNgaySinh.Name = "txbNgaySinh";
+            this.txbNgaySinh.Size = new System.Drawing.Size(169, 27);
+            this.txbNgaySinh.TabIndex = 17;
             // 
-            // textBox1
+            // txbMaSo
             // 
-            this.textBox1.Location = new System.Drawing.Point(111, 107);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(169, 27);
-            this.textBox1.TabIndex = 16;
+            this.txbMaSo.Location = new System.Drawing.Point(111, 107);
+            this.txbMaSo.Name = "txbMaSo";
+            this.txbMaSo.Size = new System.Drawing.Size(169, 27);
+            this.txbMaSo.TabIndex = 16;
             // 
             // label3
             // 
@@ -444,16 +443,16 @@
             this.label2.TabIndex = 13;
             this.label2.Text = " Mã Số:";
             // 
-            // label1
+            // tbTenGV
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(46, 48);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 24);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Giáo Viên Siêu Cấp";
+            this.tbTenGV.AutoSize = true;
+            this.tbTenGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTenGV.Location = new System.Drawing.Point(46, 48);
+            this.tbTenGV.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.tbTenGV.Name = "tbTenGV";
+            this.tbTenGV.Size = new System.Drawing.Size(175, 24);
+            this.tbTenGV.TabIndex = 12;
+            this.tbTenGV.Text = "Giáo Viên Siêu Cấp";
             // 
             // groupBox2
             // 
@@ -518,7 +517,7 @@
             // 
             // btnTongKetKT
             // 
-            this.btnTongKetKT.BackColor = System.Drawing.Color.Silver;
+            this.btnTongKetKT.BackColor = System.Drawing.Color.Gainsboro;
             this.btnTongKetKT.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTongKetKT.FlatAppearance.BorderSize = 0;
             this.btnTongKetKT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -533,7 +532,7 @@
             // 
             // btnXemDSThi
             // 
-            this.btnXemDSThi.BackColor = System.Drawing.Color.Silver;
+            this.btnXemDSThi.BackColor = System.Drawing.Color.Gainsboro;
             this.btnXemDSThi.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnXemDSThi.FlatAppearance.BorderSize = 0;
             this.btnXemDSThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -548,7 +547,7 @@
             // 
             // btnXoaKyThi
             // 
-            this.btnXoaKyThi.BackColor = System.Drawing.Color.Silver;
+            this.btnXoaKyThi.BackColor = System.Drawing.Color.Gainsboro;
             this.btnXoaKyThi.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnXoaKyThi.FlatAppearance.BorderSize = 0;
             this.btnXoaKyThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -563,7 +562,7 @@
             // 
             // btnSuaKyThi
             // 
-            this.btnSuaKyThi.BackColor = System.Drawing.Color.Silver;
+            this.btnSuaKyThi.BackColor = System.Drawing.Color.Gainsboro;
             this.btnSuaKyThi.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSuaKyThi.FlatAppearance.BorderSize = 0;
             this.btnSuaKyThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -578,7 +577,7 @@
             // 
             // btnTaoKyThi
             // 
-            this.btnTaoKyThi.BackColor = System.Drawing.Color.Silver;
+            this.btnTaoKyThi.BackColor = System.Drawing.Color.Gainsboro;
             this.btnTaoKyThi.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTaoKyThi.FlatAppearance.BorderSize = 0;
             this.btnTaoKyThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -593,7 +592,7 @@
             // 
             // btnQLKyThi
             // 
-            this.btnQLKyThi.BackColor = System.Drawing.Color.Silver;
+            this.btnQLKyThi.BackColor = System.Drawing.Color.Gainsboro;
             this.btnQLKyThi.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQLKyThi.FlatAppearance.BorderSize = 0;
             this.btnQLKyThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -625,7 +624,7 @@
             // 
             // btnXoaKTThu
             // 
-            this.btnXoaKTThu.BackColor = System.Drawing.Color.Silver;
+            this.btnXoaKTThu.BackColor = System.Drawing.Color.Gainsboro;
             this.btnXoaKTThu.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnXoaKTThu.FlatAppearance.BorderSize = 0;
             this.btnXoaKTThu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -640,7 +639,7 @@
             // 
             // btnSuaKTThu
             // 
-            this.btnSuaKTThu.BackColor = System.Drawing.Color.Silver;
+            this.btnSuaKTThu.BackColor = System.Drawing.Color.Gainsboro;
             this.btnSuaKTThu.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSuaKTThu.FlatAppearance.BorderSize = 0;
             this.btnSuaKTThu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -655,7 +654,7 @@
             // 
             // btnTaoKTThu
             // 
-            this.btnTaoKTThu.BackColor = System.Drawing.Color.Silver;
+            this.btnTaoKTThu.BackColor = System.Drawing.Color.Gainsboro;
             this.btnTaoKTThu.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTaoKTThu.FlatAppearance.BorderSize = 0;
             this.btnTaoKTThu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -670,7 +669,7 @@
             // 
             // btnQLOnTap
             // 
-            this.btnQLOnTap.BackColor = System.Drawing.Color.Silver;
+            this.btnQLOnTap.BackColor = System.Drawing.Color.Gainsboro;
             this.btnQLOnTap.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQLOnTap.FlatAppearance.BorderSize = 0;
             this.btnQLOnTap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -703,7 +702,7 @@
             // 
             // btnTKCauHoi
             // 
-            this.btnTKCauHoi.BackColor = System.Drawing.Color.Silver;
+            this.btnTKCauHoi.BackColor = System.Drawing.Color.Gainsboro;
             this.btnTKCauHoi.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTKCauHoi.FlatAppearance.BorderSize = 0;
             this.btnTKCauHoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -718,7 +717,7 @@
             // 
             // btnTKKyThi
             // 
-            this.btnTKKyThi.BackColor = System.Drawing.Color.Silver;
+            this.btnTKKyThi.BackColor = System.Drawing.Color.Gainsboro;
             this.btnTKKyThi.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTKKyThi.FlatAppearance.BorderSize = 0;
             this.btnTKKyThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -733,7 +732,7 @@
             // 
             // btnTKHS
             // 
-            this.btnTKHS.BackColor = System.Drawing.Color.Silver;
+            this.btnTKHS.BackColor = System.Drawing.Color.Gainsboro;
             this.btnTKHS.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTKHS.FlatAppearance.BorderSize = 0;
             this.btnTKHS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -748,7 +747,7 @@
             // 
             // btnThongKe
             // 
-            this.btnThongKe.BackColor = System.Drawing.Color.Silver;
+            this.btnThongKe.BackColor = System.Drawing.Color.Gainsboro;
             this.btnThongKe.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnThongKe.FlatAppearance.BorderSize = 0;
             this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -768,68 +767,6 @@
             // 
             this.timerQLDeThi.Interval = 15;
             this.timerQLDeThi.Tick += new System.EventHandler(this.timerQLDeThi_Tick);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Silver;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F);
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(0, 137);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(214, 41);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Silver;
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Tai Le", 12F);
-            this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(0, 96);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(214, 41);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.Silver;
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Tai Le", 12F);
-            this.button6.ForeColor = System.Drawing.Color.Black;
-            this.button6.Location = new System.Drawing.Point(0, 55);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(214, 41);
-            this.button6.TabIndex = 3;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.Silver;
-            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.ForeColor = System.Drawing.Color.Black;
-            this.button7.Image = global::quiz_management.Properties.Resources.Expand_Arrow_20px;
-            this.button7.Location = new System.Drawing.Point(0, 0);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(214, 55);
-            this.button7.TabIndex = 2;
-            this.button7.Text = "Quản Lý thi Thử";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button7.UseVisualStyleBackColor = false;
             // 
             // timeQLKyThi
             // 
@@ -881,11 +818,11 @@
         private System.Windows.Forms.Button btnQuizManager;
         private System.Windows.Forms.Timer timerQLCauHoi;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label tbTenGV;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txbMaSo;
+        private System.Windows.Forms.TextBox txbNgaySinh;
         private System.Windows.Forms.Button btnTestScheduleView;
         private System.Windows.Forms.Button btnUpdateInfoStudent;
         private System.Windows.Forms.Button btnPrintTranScript;
@@ -900,11 +837,8 @@
         private System.Windows.Forms.Button btnQLDeThi;
         private System.Windows.Forms.Button btnDongGop;
         private System.Windows.Forms.Button btnExamResultView;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        
+        
         private System.Windows.Forms.Panel panelLamBaiThi;
         private System.Windows.Forms.Button btnOnTap;
         private System.Windows.Forms.Button btnThi;
