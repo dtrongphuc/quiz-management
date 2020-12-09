@@ -94,16 +94,52 @@
     <None Include="Models\Quiz.dbml.layout">
       <DependentUpon>Quiz.dbml</DependentUpon>
     </None>
+    <Compile Include="Views\Student\ContribuQuestions\MainCQuestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Student\ContribuQuestions\MainCQuestion.Designer.cs">
+      <DependentUpon>MainCQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Student\Exam\OfficialExamView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Student\Exam\OfficialExamView.Designer.cs">
+      <DependentUpon>OfficialExamView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Student\InfoPersonal\InfoPersonalView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Student\InfoPersonal\InfoPersonalView.Designer.cs">
+      <DependentUpon>InfoPersonalView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Student\InfoPersonal\ResultExamView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Student\InfoPersonal\ResultExamView.Designer.cs">
+      <DependentUpon>ResultExamView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Student\InfoPersonal\TestScheduleView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Student\InfoPersonal\TestScheduleView.Designer.cs">
+      <DependentUpon>TestScheduleView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Student\InfoPersonal\UpdateInfoStudentView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Student\InfoPersonal\UpdateInfoStudentView.Designer.cs">
+      <DependentUpon>UpdateInfoStudentView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Student\Main\MainStudentView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Student\Main\MainStudentView.Designer.cs">
       <DependentUpon>MainStudentView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Student\PracticExamView.cs">
+    <Compile Include="Views\Student\Exam\PracticExamView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Student\PracticExamView.Designer.cs">
+    <Compile Include="Views\Student\Exam\PracticExamView.Designer.cs">
       <DependentUpon>PracticExamView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Teacher\Main\MainTeacherView.cs">
@@ -128,10 +164,28 @@
     <EmbeddedResource Include="Views\Register\RegisterView.resx">
       <DependentUpon>RegisterView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Student\ContribuQuestions\MainCQuestion.resx">
+      <DependentUpon>MainCQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Student\Exam\OfficialExamView.resx">
+      <DependentUpon>OfficialExamView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Student\InfoPersonal\InfoPersonalView.resx">
+      <DependentUpon>InfoPersonalView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Student\InfoPersonal\ResultExamView.resx">
+      <DependentUpon>ResultExamView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Student\InfoPersonal\TestScheduleView.resx">
+      <DependentUpon>TestScheduleView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Student\InfoPersonal\UpdateInfoStudentView.resx">
+      <DependentUpon>UpdateInfoStudentView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Student\Main\MainStudentView.resx">
       <DependentUpon>MainStudentView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Student\PracticExamView.resx">
+    <EmbeddedResource Include="Views\Student\Exam\PracticExamView.resx">
       <DependentUpon>PracticExamView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Teacher\Main\MainTeacherView.resx">
