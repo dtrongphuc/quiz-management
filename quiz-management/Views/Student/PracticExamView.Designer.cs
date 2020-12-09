@@ -30,6 +30,9 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -62,9 +65,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -112,10 +112,38 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(381, 98);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(79, 17);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Mã đề: 123";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(25, 98);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 17);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Lớp 12";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(23, 60);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(181, 25);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Nguyễn Hiếu Nghĩa";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(645, 111);
+            this.label5.Location = new System.Drawing.Point(645, 98);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 17);
             this.label5.TabIndex = 2;
@@ -125,7 +153,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(717, 98);
+            this.label4.Location = new System.Drawing.Point(722, 85);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 32);
             this.label4.TabIndex = 1;
@@ -135,7 +163,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(336, 49);
+            this.label1.Location = new System.Drawing.Point(343, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(178, 38);
             this.label1.TabIndex = 0;
@@ -155,7 +183,7 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.groupBox3);
             this.splitContainer2.Size = new System.Drawing.Size(847, 419);
-            this.splitContainer2.SplitterDistance = 171;
+            this.splitContainer2.SplitterDistance = 182;
             this.splitContainer2.TabIndex = 0;
             // 
             // groupBox2
@@ -184,14 +212,14 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(171, 419);
+            this.groupBox2.Size = new System.Drawing.Size(182, 419);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chọn đề";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(24, 334);
+            this.button1.Location = new System.Drawing.Point(28, 343);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(172, 54);
             this.button1.TabIndex = 3;
@@ -428,23 +456,27 @@
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(672, 419);
+            this.groupBox3.Size = new System.Drawing.Size(661, 419);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Trả lời";
             // 
             // checkedListBox1
             // 
+            this.checkedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedListBox1.ColumnWidth = 250;
+            this.checkedListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Items.AddRange(new object[] {
             "A: 123",
             "B: 123",
             "C: 345",
             "D: 556"});
-            this.checkedListBox1.Location = new System.Drawing.Point(58, 219);
-            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(10);
+            this.checkedListBox1.Location = new System.Drawing.Point(58, 218);
+            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(5);
+            this.checkedListBox1.MultiColumn = true;
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(483, 89);
+            this.checkedListBox1.Size = new System.Drawing.Size(483, 110);
             this.checkedListBox1.TabIndex = 5;
             // 
             // button3
@@ -458,7 +490,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(495, 376);
+            this.button2.Location = new System.Drawing.Point(495, 366);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(81, 31);
             this.button2.TabIndex = 3;
@@ -489,34 +521,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Câu 1";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(26, 35);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(181, 25);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Nguyễn Hiếu Nghĩa";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(28, 70);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 17);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Lớp 12";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(381, 113);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 17);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Mã đề: 123";
-            // 
             // PracticExamView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -524,6 +528,7 @@
             this.ClientSize = new System.Drawing.Size(847, 571);
             this.Controls.Add(this.splitContainer1);
             this.Name = "PracticExamView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PracticExamView";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
