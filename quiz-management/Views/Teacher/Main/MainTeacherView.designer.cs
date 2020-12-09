@@ -108,6 +108,7 @@
             this.flowLayoutPanel2.Controls.Add(this.panelQLCauHoi);
             this.flowLayoutPanel2.Controls.Add(this.panelDeThi);
             this.flowLayoutPanel2.Controls.Add(this.panelLamBaiThi);
+            this.flowLayoutPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flowLayoutPanel2.Location = new System.Drawing.Point(31, 179);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(219, 339);
@@ -193,6 +194,7 @@
             this.btnQuizManager.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQuizManager.FlatAppearance.BorderSize = 0;
             this.btnQuizManager.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuizManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuizManager.ForeColor = System.Drawing.Color.Black;
             this.btnQuizManager.Image = global::quiz_management.Properties.Resources.Expand_Arrow_20px;
             this.btnQuizManager.Location = new System.Drawing.Point(0, 0);
@@ -270,7 +272,7 @@
             this.btnQLDeThi.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQLDeThi.FlatAppearance.BorderSize = 0;
             this.btnQLDeThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQLDeThi.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQLDeThi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLDeThi.ForeColor = System.Drawing.Color.Black;
             this.btnQLDeThi.Image = global::quiz_management.Properties.Resources.Expand_Arrow_20px;
             this.btnQLDeThi.Location = new System.Drawing.Point(0, 0);
@@ -332,6 +334,7 @@
             this.btnLamBaiThi.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnLamBaiThi.FlatAppearance.BorderSize = 0;
             this.btnLamBaiThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLamBaiThi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLamBaiThi.ForeColor = System.Drawing.Color.Black;
             this.btnLamBaiThi.Image = global::quiz_management.Properties.Resources.Expand_Arrow_20px;
             this.btnLamBaiThi.Location = new System.Drawing.Point(0, 0);
@@ -370,7 +373,7 @@
             // 
             // btnPrintTranScript
             // 
-            this.btnPrintTranScript.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintTranScript.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrintTranScript.Location = new System.Drawing.Point(82, 466);
             this.btnPrintTranScript.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrintTranScript.Name = "btnPrintTranScript";
@@ -381,7 +384,7 @@
             // 
             // btnUpdateInfoStudent
             // 
-            this.btnUpdateInfoStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateInfoStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateInfoStudent.Location = new System.Drawing.Point(82, 382);
             this.btnUpdateInfoStudent.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateInfoStudent.Name = "btnUpdateInfoStudent";
@@ -392,7 +395,7 @@
             // 
             // btnTestScheduleView
             // 
-            this.btnTestScheduleView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTestScheduleView.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTestScheduleView.Location = new System.Drawing.Point(82, 300);
             this.btnTestScheduleView.Margin = new System.Windows.Forms.Padding(2);
             this.btnTestScheduleView.Name = "btnTestScheduleView";
@@ -403,7 +406,7 @@
             // 
             // btnExamResultView
             // 
-            this.btnExamResultView.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExamResultView.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExamResultView.Location = new System.Drawing.Point(82, 222);
             this.btnExamResultView.Margin = new System.Windows.Forms.Padding(2);
             this.btnExamResultView.Name = "btnExamResultView";
@@ -496,6 +499,7 @@
             this.flowLayoutPanel1.Controls.Add(this.panelQLKyThi);
             this.flowLayoutPanel1.Controls.Add(this.panelQLOnTap);
             this.flowLayoutPanel1.Controls.Add(this.panelThongKe);
+            this.flowLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flowLayoutPanel1.Location = new System.Drawing.Point(275, 179);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(219, 384);
@@ -597,6 +601,7 @@
             this.btnQLKyThi.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQLKyThi.FlatAppearance.BorderSize = 0;
             this.btnQLKyThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQLKyThi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLKyThi.ForeColor = System.Drawing.Color.Black;
             this.btnQLKyThi.Image = global::quiz_management.Properties.Resources.Expand_Arrow_20px;
             this.btnQLKyThi.Location = new System.Drawing.Point(0, 0);
@@ -674,7 +679,7 @@
             this.btnQLOnTap.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQLOnTap.FlatAppearance.BorderSize = 0;
             this.btnQLOnTap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQLOnTap.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQLOnTap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLOnTap.ForeColor = System.Drawing.Color.Black;
             this.btnQLOnTap.Image = global::quiz_management.Properties.Resources.Expand_Arrow_20px;
             this.btnQLOnTap.Location = new System.Drawing.Point(0, 0);
@@ -752,6 +757,7 @@
             this.btnThongKe.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnThongKe.FlatAppearance.BorderSize = 0;
             this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThongKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThongKe.ForeColor = System.Drawing.Color.Black;
             this.btnThongKe.Image = global::quiz_management.Properties.Resources.Expand_Arrow_20px;
             this.btnThongKe.Location = new System.Drawing.Point(0, 0);
