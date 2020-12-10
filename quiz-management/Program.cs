@@ -1,5 +1,6 @@
 ﻿using quiz_management.Views;
 using quiz_management.Views.Student;
+using quiz_management.Views.Student.ContribuQuestions;
 using quiz_management.Views.Student.Exam;
 using quiz_management.Views.Student.Main;
 using quiz_management.Views.Teacher.Main;
@@ -21,7 +22,7 @@ namespace quiz_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginView());
+            Application.Run(new MainCQuestionView());
         }
     }
 }
