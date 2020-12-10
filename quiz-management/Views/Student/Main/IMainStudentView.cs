@@ -9,7 +9,6 @@ namespace quiz_management.Views.Student.Main
 {
     interface IMainStudentView
     {
-        nguoiDung User { get; }
         string DOBHS { set; }
         string IdHS { set; }
         string NameHS { set; }

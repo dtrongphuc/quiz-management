@@ -37,7 +37,7 @@ namespace quiz_management.Views.Student
             screen.Show();
         }
 
-        public void ShowStudentView(string userCode)
+        public void ShowStudentView(int userCode)
         {
             this.Hide();
             MainStudentView screen = new MainStudentView(userCode);
@@ -45,7 +45,7 @@ namespace quiz_management.Views.Student
             screen.Show();
         }
 
-        public void ShowTeacherView(string userCode)
+        public void ShowTeacherView(int userCode)
         {
             this.Hide();
             //RegisterView screen = new RegisterView();
@@ -53,7 +53,7 @@ namespace quiz_management.Views.Student
             //screen.Show();
         }
 
-        public void ShowAdminView(string userCode)
+        public void ShowAdminView(int userCode)
         {
             this.Hide();
             //RegisterView screen = new RegisterView();

@@ -17,8 +17,8 @@ namespace quiz_management.Views.Login
 
         void ShowMessage(string text);
         void ShowRegisterView();
-        void ShowStudentView(string userCode);
-        void ShowTeacherView(string userCode);
-        void ShowAdminView(string userCode);
+        void ShowStudentView(int userCode);
+        void ShowTeacherView(int userCode);
+        void ShowAdminView(int userCode);
     }
 }

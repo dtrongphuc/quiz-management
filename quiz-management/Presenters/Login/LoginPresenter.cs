@@ -49,7 +49,7 @@ namespace quiz_management.Presenters.Login
                         }
                     }
                     int role = user.phanQuyen.GetValueOrDefault();
-                    string userCode = user.maNguoiDung.ToString();
+                    int userCode = user.maNguoiDung;
                     RoleToView(userCode, role);
                 }
                 else
@@ -59,7 +59,7 @@ namespace quiz_management.Presenters.Login
             }
         }
 
-        private void RoleToView(string userCode, int role)
+        private void RoleToView(int userCode, int role)
         {
 
             switch (role)

@@ -16,17 +16,16 @@ namespace quiz_management.Views.Student.Main
     {
         MainStudentPresenter presenter;
 
-        public MainStudentView(string code)
+        public MainStudentView(int code)
         {
             InitializeComponent();
-            presenter = new MainStudentPresenter(this);
+            presenter = new MainStudentPresenter(this, code);
             btnInfoStudent.Click += (_, e) =>
             {
                 EditProfile?.Invoke(btnInfoStudent, e);
             };
         }
 
-        public nguoiDung User{ get => user; }
         public string DOBHS { set => txtStudentDOBview.Text = value;}
         public string IdHS { set => txtStudentIDview.Text = value; }
         public string NameHS { set => lbStudentNameview.Text = value; }
