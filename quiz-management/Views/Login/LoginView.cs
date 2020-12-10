@@ -1,4 +1,5 @@
-﻿using quiz_management.Presenters.Login;
+﻿using quiz_management.Models;
+using quiz_management.Presenters.Login;
 using quiz_management.Views.Login;
 using quiz_management.Views.Student.Main;
 using System;
@@ -36,15 +37,15 @@ namespace quiz_management.Views.Student
             screen.Show();
         }
 
-        public void ShowStudentView()
+        public void ShowStudentView(int userCode)
         {
             this.Hide();
-            MainStudentView screen = new MainStudentView();
+            MainStudentView screen = new MainStudentView(userCode);
             screen.FormClosed += (_, e) => this.Close();
             screen.Show();
         }
 
-        public void ShowTeacherView()
+        public void ShowTeacherView(int userCode)
         {
             this.Hide();
             //RegisterView screen = new RegisterView();
@@ -52,7 +53,7 @@ namespace quiz_management.Views.Student
             //screen.Show();
         }
 
-        public void ShowAdminView()
+        public void ShowAdminView(int userCode)
         {
             this.Hide();
             //RegisterView screen = new RegisterView();

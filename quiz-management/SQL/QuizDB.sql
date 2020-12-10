@@ -193,4 +193,102 @@ CREATE TABLE cTDongGop
 
 ALTER TABLE dbo.cTDongGop ADD CONSTRAINT FK_cTDongGop_dongGop FOREIGN KEY(maDongGop) REFERENCES dbo.dongGop(maDongGop)
 
-select * from nguoiDung
+INSERT INTO dbo.monHoc
+(
+    tenMonHoc
+)
+VALUES
+(N'Lịch Sử' -- tenMonHoc - nvarchar(20)
+    )
+	GO
+
+INSERT INTO dbo.Lop
+(
+    maKhoiLop,
+    tenLopHoc
+)
+VALUES
+(   'K10', -- maKhoiLop - varchar(5)
+    N'10A1' -- tenLopHoc - nvarchar(10)
+    )
+GO
+
+INSERT INTO dbo.khoiLop
+(
+    maKhoiLop,
+    tenKhoiLop
+)
+VALUES
+(   'K10', -- maKhoiLop - varchar(5)
+    '10'  -- tenKhoiLop - varchar(10)
+    )
+GO
+
+INSERT INTO dbo.boDe
+(
+    thoiGian,
+    tongSoCau,
+    maMon,
+    maKhoi
+)
+VALUES
+(   GETDATE(), -- thoiGian - date
+    20,         -- tongSoCau - int
+    1,         -- maMon - int
+    'K10'         -- maKhoi - varchar(5)
+    )
+GO
+
+INSERT INTO dbo.cauHoi
+(
+    maMonHoc,
+    cauHoi,
+    doKho
+)
+VALUES
+(   1,   -- maMonHoc - int
+    N'Ý nào sau đây không phù hợp với loài vượn cổ trong quá trình tiến hóa thành người ?', -- cauHoi - nvarchar(100)
+    1    -- doKho - int
+    )
+GO
+
+INSERT INTO dbo.cTBoDe
+(
+    maBoDe,
+    maCauHoi
+)
+VALUES
+(   1, -- maBoDe - int
+    1  -- maCauHoi - int
+    )
+GO
+
+INSERT INTO dbo.dapAn
+(
+    maCauHoi,
+    maCauTraloi,
+    cauTraLoi,
+    dapAn
+)
+VALUES
+(   1,   -- maCauHoi - int
+    1,   -- maCauTraloi - int
+    N'Sống cách đây 6 triệu năm.', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+(   1,   -- maCauHoi - int
+    2,   -- maCauTraloi - int
+    N'Có thể đứng và đi bằng 2 chân.', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   1,   -- maCauHoi - int
+    3,   -- maCauTraloi - int
+    N'Tay được dung để cầm nắm.', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   1,   -- maCauHoi - int
+    4,   -- maCauTraloi - int
+    N'Chia thành các chủng tộc lớn.', -- cauTraLoi - nvarchar(100)
+    1    -- dapAn - int
+    )
+GO

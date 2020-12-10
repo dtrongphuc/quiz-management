@@ -30,6 +30,7 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtStudentClass = new System.Windows.Forms.Label();
             this.txtTimeSeconds = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtExamCode = new System.Windows.Forms.Label();
@@ -72,7 +73,6 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtStudentClass = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -127,6 +127,15 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
+            // 
+            // txtStudentClass
+            // 
+            this.txtStudentClass.AutoSize = true;
+            this.txtStudentClass.Location = new System.Drawing.Point(56, 82);
+            this.txtStudentClass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.txtStudentClass.Name = "txtStudentClass";
+            this.txtStudentClass.Size = new System.Drawing.Size(0, 13);
+            this.txtStudentClass.TabIndex = 14;
             // 
             // txtTimeSeconds
             // 
@@ -641,16 +650,6 @@
             this.label2.Size = new System.Drawing.Size(50, 17);
             this.label2.TabIndex = 6;
             this.label2.Text = "Câu 1";
-            // 
-            // txtStudentClass
-            // 
-            this.txtStudentClass.AutoSize = true;
-            this.txtStudentClass.Location = new System.Drawing.Point(56, 82);
-            this.txtStudentClass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.txtStudentClass.Name = "txtStudentClass";
-            this.txtStudentClass.Size = new System.Drawing.Size(28, 13);
-            this.txtStudentClass.TabIndex = 14;
-            this.txtStudentClass.Text = "Lớp:";
             // 
             // OfficialExamView
             // 

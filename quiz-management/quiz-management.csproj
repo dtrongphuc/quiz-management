@@ -74,6 +74,7 @@
     <Compile Include="Presenters\Student\Exam\OfficialExamPresenter.cs" />
     <Compile Include="Presenters\Student\Main\MainStudentPresenter.cs" />
     <Compile Include="Presenters\Student\ContribuQuestions\ContribuQuestionPresenter.cs" />
+    <Compile Include="Presenters\Student\Main\MainStudentPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validate\RequiredFieldValidator.cs">

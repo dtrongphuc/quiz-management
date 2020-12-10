@@ -2,6 +2,7 @@
 using quiz_management.Views.Register;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -64,7 +65,6 @@ namespace quiz_management.Presenters.Register
 
                     db.SubmitChanges();
                     var userId = user.maNguoiDung;
-
                     db.thongTins.InsertOnSubmit(new thongTin
                     {
                         maNguoidung = userId,
@@ -74,7 +74,7 @@ namespace quiz_management.Presenters.Register
                     db.SubmitChanges();
                     view.ShowMessage("Tạo tài khoản thành công");
                 }
-                catch
+                catch (Exception)
                 {
                     view.ShowMessage("Đã xảy ra lỗi");
                 }

@@ -11,12 +11,14 @@ namespace quiz_management.Presenters.Student.Main
     class MainStudentPresenter
     {
         IMainStudentView view;
-        thongTin info=null;
-        string lop=null;
-        public MainStudentPresenter(IMainStudentView v)
+        int currentUserCode;
+
+        thongTin info = null;
+        string lop = null;
+        public MainStudentPresenter(IMainStudentView v, int code)
         {
             view = v;
-
+            currentUserCode = code;
             Initialize();
         }
 
@@ -28,7 +30,7 @@ namespace quiz_management.Presenters.Student.Main
                 info = (thongTin)user.nguoiDungs.Join(user.thongTins,
                 p => p.maNguoiDung,
                 c => c.maNguoidung,
-                (p, c) => new { p = p, c = c }).Where(a => a.p.maNguoiDung == view.User.maNguoiDung)
+                (p, c) => new { p = p, c = c }).Where(a => a.p.maNguoiDung == currentUserCode)
                 .Select(kq => kq.c);
 
                 lop = user.thongTins.Join(user.Lops,
