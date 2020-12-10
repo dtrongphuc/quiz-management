@@ -48,9 +48,9 @@ namespace quiz_management.Presenters.Login
                             return;
                         }
                     }
-
                     int role = user.phanQuyen.GetValueOrDefault();
-                    RoleToView(role);
+                    string userCode = user.maNguoiDung.ToString();
+                    RoleToView(userCode, role);
                 }
                 else
                 {
@@ -59,18 +59,19 @@ namespace quiz_management.Presenters.Login
             }
         }
 
-        private void RoleToView(int role)
+        private void RoleToView(string userCode, int role)
         {
-            switch(role)
+
+            switch (role)
             {
                 case 1:
-                    view.ShowStudentView();
+                    view.ShowStudentView(userCode);
                     break;
                 case 2:
-                    view.ShowTeacherView();
+                    view.ShowTeacherView(userCode);
                     break;
                 case 3:
-                    view.ShowAdminView();
+                    view.ShowAdminView(userCode);
                     break;
                 default:
                     view.ShowMessage("Không xác định được quyền hạn của tài khoản");

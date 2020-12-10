@@ -1,4 +1,6 @@
-﻿using System;
+﻿using quiz_management.Models;
+using quiz_management.Presenters.Student.Main;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +12,14 @@ using System.Windows.Forms;
 
 namespace quiz_management.Views.Student.Main
 {
-    public partial class MainStudentView : Form
+    public partial class MainStudentView : Form, IMainStudentView
     {
-        public MainStudentView()
+        MainStudentPresenter presenter;
+
+        public MainStudentView(string code)
         {
             InitializeComponent();
+            presenter = new MainStudentPresenter(this, code);
         }
     }
 }

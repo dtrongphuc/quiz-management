@@ -73,6 +73,7 @@
     <Compile Include="Presenters\Register\RegisterPresenter.cs" />
     <Compile Include="Presenters\Student\Exam\OfficialExamPresenter.cs" />
     <Compile Include="Presenters\Student\ContribuQuestions\ContribuQuestionPresenter.cs" />
+    <Compile Include="Presenters\Student\Main\MainStudentPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validate\RequiredFieldValidator.cs">
@@ -136,6 +137,7 @@
     <Compile Include="Views\Student\InfoPersonal\UpdateInfoStudentView.Designer.cs">
       <DependentUpon>UpdateInfoStudentView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Student\Main\IMainStudentView.cs" />
     <Compile Include="Views\Student\Main\MainStudentView.cs">
       <SubType>Form</SubType>
     </Compile>

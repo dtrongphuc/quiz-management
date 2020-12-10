@@ -1,4 +1,5 @@
-﻿using System;
+﻿using quiz_management.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,8 +17,8 @@ namespace quiz_management.Views.Login
 
         void ShowMessage(string text);
         void ShowRegisterView();
-        void ShowStudentView();
-        void ShowTeacherView();
-        void ShowAdminView();
+        void ShowStudentView(string userCode);
+        void ShowTeacherView(string userCode);
+        void ShowAdminView(string userCode);
     }
 }
