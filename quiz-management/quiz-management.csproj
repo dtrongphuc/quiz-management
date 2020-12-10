@@ -69,6 +69,7 @@
     </Compile>
     <Compile Include="Presenters\Login\LoginPresenter.cs" />
     <Compile Include="Presenters\Register\RegisterPresenter.cs" />
+    <Compile Include="Presenters\Student\ContribuQuestions\ContribuQuestionPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validate\RequiredFieldValidator.cs">
@@ -94,11 +95,12 @@
     <None Include="Models\Quiz.dbml.layout">
       <DependentUpon>Quiz.dbml</DependentUpon>
     </None>
-    <Compile Include="Views\Student\ContribuQuestions\MainCQuestion.cs">
+    <Compile Include="Views\Student\ContribuQuestions\IMainCQuestionView.cs" />
+    <Compile Include="Views\Student\ContribuQuestions\MainCQuestionView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Student\ContribuQuestions\MainCQuestion.Designer.cs">
-      <DependentUpon>MainCQuestion.cs</DependentUpon>
+    <Compile Include="Views\Student\ContribuQuestions\MainCQuestionView.Designer.cs">
+      <DependentUpon>MainCQuestionView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Student\Exam\OfficialExamView.cs">
       <SubType>Form</SubType>
@@ -164,8 +166,8 @@
     <EmbeddedResource Include="Views\Register\RegisterView.resx">
       <DependentUpon>RegisterView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Student\ContribuQuestions\MainCQuestion.resx">
-      <DependentUpon>MainCQuestion.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Student\ContribuQuestions\MainCQuestionView.resx">
+      <DependentUpon>MainCQuestionView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Student\Exam\OfficialExamView.resx">
       <DependentUpon>OfficialExamView.cs</DependentUpon>
