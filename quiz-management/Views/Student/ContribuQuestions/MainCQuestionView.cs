@@ -14,7 +14,9 @@ namespace quiz_management.Views.Student.ContribuQuestions
     public partial class MainCQuestionView : Form, IMainCQuestionView
     {
         ContribuQuestionPresenter presenter;
-        public BindingList<string> classes { get => throw new NotImplementedException();; set => throw new NotImplementedException(); }
+        public string StudentID { get => lbStudentID.Text; set => lbStudentID.Text = value; }
+
+        public BindingList<string> classes { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public string Subject { get => throw new NotImplementedException(); }
         public string Question { get => tbQuestion.Text; set => tbQuestion.Text = value; }
@@ -30,6 +32,13 @@ namespace quiz_management.Views.Student.ContribuQuestions
         public string AnswerE => tbAnswerE.Text;
 
         public string AnswerF => tbAnswerF.Text;
+        bool IMainCQuestionView.cbResultA => cbResultA.Checked;
+        bool IMainCQuestionView.cbResultB => cbResultB.Checked;
+        bool IMainCQuestionView.cbResultC => cbResultC.Checked;
+        bool IMainCQuestionView.cbResultD => cbResultD.Checked;
+        bool IMainCQuestionView.cbResultE => cbResultE.Checked;
+        bool IMainCQuestionView.cbResultF => cbResultF.Checked;
+
 
         public event EventHandler Send;
         public event EventHandler Pre;

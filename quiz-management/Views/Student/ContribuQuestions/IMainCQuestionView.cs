@@ -9,6 +9,7 @@ namespace quiz_management.Views.Student.ContribuQuestions
 {
     interface IMainCQuestionView
     {
+        string StudentID { get; set; }
         BindingList<string> classes { get; set; }
         string Subject { get;}
         string Question { get; set; }
@@ -18,6 +19,13 @@ namespace quiz_management.Views.Student.ContribuQuestions
         string AnswerD { get; }
         string AnswerE { get; }
         string AnswerF { get; }
+
+        bool cbResultA { get; }
+        bool cbResultB { get; }
+        bool cbResultC { get; }
+        bool cbResultD { get; }
+        bool cbResultE { get; }
+        bool cbResultF { get; }
         event EventHandler Send;
         event EventHandler Pre;
     }

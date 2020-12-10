@@ -1,5 +1,6 @@
 ﻿using quiz_management.Models;
 using quiz_management.Views.Student.ContribuQuestions;
+using quiz_management.Views.Student.Main;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,13 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
             string answerD = view.AnswerD;
             string answerE = view.AnswerE;
             string answerF = view.AnswerF;
+
+            bool checkA = view.cbResultA;
+            bool checkB = view.cbResultB;
+            bool checkC = view.cbResultC;
+            bool checkD = view.cbResultD;
+            bool checkE = view.cbResultE;
+            bool checkF = view.cbResultF;
             using (var db = new QuizDataContext())
             {
                 var idContribution_next = db.dongGops.ToList();
@@ -34,15 +42,77 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
                 {
                     maNguoiDung = 1,
                     maMonHoc = 1,
-                    trangthai = 1,
+                    trangthai = 0,
                     ngay = DateTime.Now,
                     cauHoi = Questionsstring
                 });
-                db.cTDongGops.InsertOnSubmit(new cTDongGop
+                db.SubmitChanges();
+
+                if (answerA != "")
                 {
-                    maDongGop = idContribution_next.Count()+1,
-                    cauTraLoi = answerA,
-                });
+                    db.cTDongGops.InsertOnSubmit(new cTDongGop
+                    {
+                        maDongGop = idContribution_next.Count() + 1,
+                        cauTraLoi = answerA,
+
+                    });
+                    db.SubmitChanges();
+                }
+                if (answerB != "")
+                {
+                    db.cTDongGops.InsertOnSubmit(
+                        new cTDongGop
+                        {
+                            maDongGop = idContribution_next.Count() + 1,
+                            cauTraLoi = answerB,
+
+                        });
+                    db.SubmitChanges();
+                }
+                if (answerC != "")
+                {
+                    db.cTDongGops.InsertOnSubmit(
+                        new cTDongGop
+                        {
+                            maDongGop = idContribution_next.Count() + 1,
+                            cauTraLoi = answerC,
+
+                        });
+                    db.SubmitChanges();
+                }
+                if (answerD != "")
+                {
+                    db.cTDongGops.InsertOnSubmit(
+                        new cTDongGop
+                        {
+                            maDongGop = idContribution_next.Count() + 1,
+                            cauTraLoi = answerD,
+
+                        });
+                    db.SubmitChanges();
+                }
+                if (answerE != "")
+                {
+                    db.cTDongGops.InsertOnSubmit(
+                        new cTDongGop
+                        {
+                            maDongGop = idContribution_next.Count() + 1,
+                            cauTraLoi = answerE,
+
+                        });
+                    db.SubmitChanges();
+                } 
+                if (answerF != "")
+                {
+                    db.cTDongGops.InsertOnSubmit(
+                        new cTDongGop
+                        {
+                            maDongGop = idContribution_next.Count() + 1,
+                            cauTraLoi = answerF,
+
+                        });
+                    db.SubmitChanges();
+                }
             }
         }
 
