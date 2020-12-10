@@ -15,11 +15,11 @@ namespace quiz_management.Views.Student.Main
     public partial class MainStudentView : Form, IMainStudentView
     {
         MainStudentPresenter presenter;
-        nguoiDung user;
-        public MainStudentView(nguoiDung u)
+        string iduser;
+        public MainStudentView(string u)
         {
             InitializeComponent();
-            user = u;
+            iduser = u;
             presenter = new MainStudentPresenter(this);
             btnInfoStudent.Click += (_, e) =>
             {
@@ -27,7 +27,7 @@ namespace quiz_management.Views.Student.Main
             };
         }
 
-        public nguoiDung User{ get => user; }
+        public string IdUser{ get => iduser; }
         public string DOBHS { set => txtStudentDOBview.Text = value;}
         public string IdHS { set => txtStudentIDview.Text = value; }
         public string NameHS { set => lbStudentNameview.Text = value; }
