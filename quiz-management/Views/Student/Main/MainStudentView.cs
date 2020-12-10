@@ -19,7 +19,19 @@ namespace quiz_management.Views.Student.Main
         public MainStudentView(string code)
         {
             InitializeComponent();
-            presenter = new MainStudentPresenter(this, code);
+            presenter = new MainStudentPresenter(this);
+            btnInfoStudent.Click += (_, e) =>
+            {
+                EditProfile?.Invoke(btnInfoStudent, e);
+            };
         }
+
+        public nguoiDung User{ get => user; }
+        public string DOBHS { set => txtStudentDOBview.Text = value;}
+        public string IdHS { set => txtStudentIDview.Text = value; }
+        public string NameHS { set => lbStudentNameview.Text = value; }
+        public string LopHS { set => txtclassview.Text = value; }
+
+        public event EventHandler EditProfile;
     }
 }

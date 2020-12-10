@@ -1,4 +1,5 @@
-﻿using System;
+﻿using quiz_management.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,13 @@ namespace quiz_management.Views.Student.Main
 {
     interface IMainStudentView
     {
+        nguoiDung User { get; }
+        string DOBHS { set; }
+        string IdHS { set; }
+        string NameHS { set; }
+        string LopHS { set; }
+
+        event EventHandler EditProfile;
+
     }
 }
