@@ -121,9 +121,8 @@ namespace quiz_management.Views.Student.Main
             this.lbStudentNameview.Location = new System.Drawing.Point(57, 41);
             this.lbStudentNameview.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbStudentNameview.Name = "lbStudentNameview";
-            this.lbStudentNameview.Size = new System.Drawing.Size(177, 24);
+            this.lbStudentNameview.Size = new System.Drawing.Size(0, 24);
             this.lbStudentNameview.TabIndex = 10;
-            this.lbStudentNameview.Text = "Nguyễn Hiếu Nghĩa";
             // 
             // txtStudentDOBview
             // 
