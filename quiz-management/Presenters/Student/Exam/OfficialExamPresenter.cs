@@ -12,7 +12,7 @@ namespace quiz_management.Presenters.Student.Exam
         IOfficialExamView view;
         public int time = 1800;
 
-        public OfficialExamPresenter(IOfficialExamView v)
+        public OfficialExamPresenter(IOfficialExamView v, int userCode)
         {
             view = v;
             view.StudentName = "Dương Trọng Phúc";

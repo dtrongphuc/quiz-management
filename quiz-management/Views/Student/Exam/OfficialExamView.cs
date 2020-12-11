@@ -30,10 +30,10 @@ namespace quiz_management.Views.Student.Exam
         public event EventHandler Next;
         public event EventHandler Prev;
 
-        public OfficialExamView()
+        public OfficialExamView(int userCode)
         {
             InitializeComponent();
-            presenter = new OfficialExamPresenter(this);
+            presenter = new OfficialExamPresenter(this, userCode);
             SetTimer();
 
             btnSubmit.Click += (_, e) =>
