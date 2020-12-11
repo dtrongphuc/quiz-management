@@ -76,7 +76,10 @@ CREATE TABLE boDe
 
 ALTER TABLE dbo.boDe ADD CONSTRAINT FK_boDe_monHoc FOREIGN KEY(maMon) REFERENCES dbo.monHoc(maMonHoc)
 ALTER TABLE boDe ADD CONSTRAINT FK_boDe_khoiLop FOREIGN KEY(maKhoi) REFERENCES khoiLop(maKhoiLop)
-
+update boDe set thoiGian=1800 where maBoDe=1
+alter table boDe drop column thoiGian
+alter table boDe add thoiGian int
+select * from boDe
 
 CREATE TABLE cauHoi
 (
