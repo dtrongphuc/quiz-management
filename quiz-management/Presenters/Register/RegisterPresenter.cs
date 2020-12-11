@@ -17,6 +17,7 @@ namespace quiz_management.Presenters.Register
         public RegisterPresenter(IRegisterView v)
         {
             view = v;
+            SetClassesDataSource();
             view.Submit += View_Submit;
             view.SwitchToLoginView += View_SwitchToLoginView;
         }
@@ -30,6 +31,7 @@ namespace quiz_management.Presenters.Register
         {
             string username = view.Username;
             string password = view.Password;
+            dynamic selected = view.SelectedClass;
 
             byte[] salt;
             new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
@@ -65,12 +67,16 @@ namespace quiz_management.Presenters.Register
 
                     db.SubmitChanges();
                     var userId = user.maNguoiDung;
-                    db.thongTins.InsertOnSubmit(new thongTin
+
+                    var userInfor = new thongTin
                     {
                         maNguoidung = userId,
                         tenNguoiDung = view.FullName,
-                        ngaySinh = DateTime.ParseExact(view.Birthday, "dd/MM/yyyy", null)
-                    });
+                        ngaySinh = DateTime.ParseExact(view.Birthday, "dd/MM/yyyy", null),
+                        maLopHoc = selected?.maLopHoc
+                    };
+
+                    db.thongTins.InsertOnSubmit(userInfor);
                     db.SubmitChanges();
                     view.ShowMessage("Tạo tài khoản thành công");
                 }
@@ -80,6 +86,18 @@ namespace quiz_management.Presenters.Register
                 }
                 
             }
+        }
+
+        private void SetClassesDataSource()
+        {
+            using(var db = new QuizDataContext())
+            {
+                var classes = db.Lops.Select(c => new { c.maLopHoc, c.tenLopHoc });
+                if(classes != null)
+                {
+                    view.ComboboxDataSource = classes;
+                }
+            };
         }
     }
 }

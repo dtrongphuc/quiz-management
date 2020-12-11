@@ -38,7 +38,7 @@ namespace quiz_management.Views.Student.Main
             this.txtStudentDOBview = new System.Windows.Forms.TextBox();
             this.txtStudentIDview = new System.Windows.Forms.TextBox();
             this.lbStudentID = new System.Windows.Forms.Label();
-            this.btnFeekback = new System.Windows.Forms.Button();
+            this.btnQuestions = new System.Windows.Forms.Button();
             this.btnOfficialExam = new System.Windows.Forms.Button();
             this.btnPrintTranScript = new System.Windows.Forms.Button();
             this.btnInfoStudent = new System.Windows.Forms.Button();
@@ -62,10 +62,10 @@ namespace quiz_management.Views.Student.Main
             // 
             this.btnPracticExam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPracticExam.Location = new System.Drawing.Point(112, 355);
-            this.btnPracticExam.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPracticExam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPracticExam.Name = "btnPracticExam";
             this.btnPracticExam.Size = new System.Drawing.Size(139, 49);
-            this.btnPracticExam.TabIndex = 10;
+            this.btnPracticExam.TabIndex = 7;
             this.btnPracticExam.Text = "Thi Thử";
             this.btnPracticExam.UseVisualStyleBackColor = true;
             // 
@@ -92,14 +92,16 @@ namespace quiz_management.Views.Student.Main
             // 
             // txtclassview
             // 
+            this.txtclassview.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtclassview.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtclassview.Enabled = false;
             this.txtclassview.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtclassview.Location = new System.Drawing.Point(99, 160);
-            this.txtclassview.Margin = new System.Windows.Forms.Padding(2);
+            this.txtclassview.Location = new System.Drawing.Point(99, 166);
+            this.txtclassview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtclassview.Name = "txtclassview";
             this.txtclassview.ReadOnly = true;
-            this.txtclassview.Size = new System.Drawing.Size(153, 23);
-            this.txtclassview.TabIndex = 12;
+            this.txtclassview.Size = new System.Drawing.Size(153, 16);
+            this.txtclassview.TabIndex = 11;
             // 
             // label2
             // 
@@ -119,31 +121,34 @@ namespace quiz_management.Views.Student.Main
             this.lbStudentNameview.Location = new System.Drawing.Point(57, 41);
             this.lbStudentNameview.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbStudentNameview.Name = "lbStudentNameview";
-            this.lbStudentNameview.Size = new System.Drawing.Size(177, 24);
+            this.lbStudentNameview.Size = new System.Drawing.Size(0, 24);
             this.lbStudentNameview.TabIndex = 10;
-            this.lbStudentNameview.Text = "Nguyễn Hiếu Nghĩa";
             // 
             // txtStudentDOBview
             // 
+            this.txtStudentDOBview.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtStudentDOBview.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtStudentDOBview.Enabled = false;
             this.txtStudentDOBview.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStudentDOBview.Location = new System.Drawing.Point(99, 123);
-            this.txtStudentDOBview.Margin = new System.Windows.Forms.Padding(2);
+            this.txtStudentDOBview.Location = new System.Drawing.Point(99, 129);
+            this.txtStudentDOBview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtStudentDOBview.Name = "txtStudentDOBview";
             this.txtStudentDOBview.ReadOnly = true;
-            this.txtStudentDOBview.Size = new System.Drawing.Size(153, 23);
-            this.txtStudentDOBview.TabIndex = 9;
+            this.txtStudentDOBview.Size = new System.Drawing.Size(153, 16);
+            this.txtStudentDOBview.TabIndex = 10;
             // 
             // txtStudentIDview
             // 
+            this.txtStudentIDview.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtStudentIDview.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtStudentIDview.Enabled = false;
             this.txtStudentIDview.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStudentIDview.Location = new System.Drawing.Point(99, 83);
-            this.txtStudentIDview.Margin = new System.Windows.Forms.Padding(2);
+            this.txtStudentIDview.Location = new System.Drawing.Point(99, 89);
+            this.txtStudentIDview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtStudentIDview.Name = "txtStudentIDview";
             this.txtStudentIDview.ReadOnly = true;
-            this.txtStudentIDview.Size = new System.Drawing.Size(153, 23);
-            this.txtStudentIDview.TabIndex = 7;
+            this.txtStudentIDview.Size = new System.Drawing.Size(153, 16);
+            this.txtStudentIDview.TabIndex = 9;
             // 
             // lbStudentID
             // 
@@ -156,25 +161,25 @@ namespace quiz_management.Views.Student.Main
             this.lbStudentID.TabIndex = 6;
             this.lbStudentID.Text = "Mã số:";
             // 
-            // btnFeekback
+            // btnQuestions
             // 
-            this.btnFeekback.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFeekback.Location = new System.Drawing.Point(284, 355);
-            this.btnFeekback.Margin = new System.Windows.Forms.Padding(2);
-            this.btnFeekback.Name = "btnFeekback";
-            this.btnFeekback.Size = new System.Drawing.Size(139, 49);
-            this.btnFeekback.TabIndex = 12;
-            this.btnFeekback.Text = "Câu Hỏi Góp Ý";
-            this.btnFeekback.UseVisualStyleBackColor = true;
+            this.btnQuestions.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuestions.Location = new System.Drawing.Point(284, 355);
+            this.btnQuestions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnQuestions.Name = "btnQuestions";
+            this.btnQuestions.Size = new System.Drawing.Size(139, 49);
+            this.btnQuestions.TabIndex = 8;
+            this.btnQuestions.Text = "Câu Hỏi Góp Ý";
+            this.btnQuestions.UseVisualStyleBackColor = true;
             // 
             // btnOfficialExam
             // 
             this.btnOfficialExam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOfficialExam.Location = new System.Drawing.Point(112, 279);
-            this.btnOfficialExam.Margin = new System.Windows.Forms.Padding(2);
+            this.btnOfficialExam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnOfficialExam.Name = "btnOfficialExam";
             this.btnOfficialExam.Size = new System.Drawing.Size(139, 49);
-            this.btnOfficialExam.TabIndex = 11;
+            this.btnOfficialExam.TabIndex = 5;
             this.btnOfficialExam.Text = "Thi Chính Thức";
             this.btnOfficialExam.UseVisualStyleBackColor = true;
             // 
@@ -182,10 +187,10 @@ namespace quiz_management.Views.Student.Main
             // 
             this.btnPrintTranScript.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrintTranScript.Location = new System.Drawing.Point(71, 401);
-            this.btnPrintTranScript.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPrintTranScript.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPrintTranScript.Name = "btnPrintTranScript";
             this.btnPrintTranScript.Size = new System.Drawing.Size(139, 52);
-            this.btnPrintTranScript.TabIndex = 5;
+            this.btnPrintTranScript.TabIndex = 4;
             this.btnPrintTranScript.Text = "In Bảng Điểm";
             this.btnPrintTranScript.UseVisualStyleBackColor = true;
             // 
@@ -193,10 +198,10 @@ namespace quiz_management.Views.Student.Main
             // 
             this.btnInfoStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInfoStudent.Location = new System.Drawing.Point(71, 221);
-            this.btnInfoStudent.Margin = new System.Windows.Forms.Padding(2);
+            this.btnInfoStudent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnInfoStudent.Name = "btnInfoStudent";
             this.btnInfoStudent.Size = new System.Drawing.Size(139, 49);
-            this.btnInfoStudent.TabIndex = 4;
+            this.btnInfoStudent.TabIndex = 1;
             this.btnInfoStudent.Text = "Thông Tin Cá Nhân";
             this.btnInfoStudent.UseVisualStyleBackColor = true;
             // 
@@ -204,10 +209,10 @@ namespace quiz_management.Views.Student.Main
             // 
             this.btnExamResultView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExamResultView.Location = new System.Drawing.Point(71, 342);
-            this.btnExamResultView.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExamResultView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExamResultView.Name = "btnExamResultView";
             this.btnExamResultView.Size = new System.Drawing.Size(139, 49);
-            this.btnExamResultView.TabIndex = 2;
+            this.btnExamResultView.TabIndex = 3;
             this.btnExamResultView.Text = "Xem Kết Quả Thi";
             this.btnExamResultView.UseVisualStyleBackColor = true;
             // 
@@ -248,10 +253,10 @@ namespace quiz_management.Views.Student.Main
             this.groupBox1.Controls.Add(this.lbDOB);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(305, 483);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(304, 483);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin cá nhân";
@@ -260,10 +265,10 @@ namespace quiz_management.Views.Student.Main
             // 
             this.btnTestScheduleView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTestScheduleView.Location = new System.Drawing.Point(71, 280);
-            this.btnTestScheduleView.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTestScheduleView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTestScheduleView.Name = "btnTestScheduleView";
             this.btnTestScheduleView.Size = new System.Drawing.Size(139, 47);
-            this.btnTestScheduleView.TabIndex = 3;
+            this.btnTestScheduleView.TabIndex = 2;
             this.btnTestScheduleView.Text = "Xem Lịch Thi";
             this.btnTestScheduleView.UseVisualStyleBackColor = true;
             // 
@@ -271,7 +276,7 @@ namespace quiz_management.Views.Student.Main
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -282,14 +287,14 @@ namespace quiz_management.Views.Student.Main
             // 
             this.splitContainer1.Panel2.Controls.Add(this.groupBox2);
             this.splitContainer1.Size = new System.Drawing.Size(842, 483);
-            this.splitContainer1.SplitterDistance = 305;
+            this.splitContainer1.SplitterDistance = 304;
             this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 1;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btn);
-            this.groupBox2.Controls.Add(this.btnFeekback);
+            this.groupBox2.Controls.Add(this.btnQuestions);
             this.groupBox2.Controls.Add(this.btnOfficialExam);
             this.groupBox2.Controls.Add(this.btnPracticExam);
             this.groupBox2.Controls.Add(this.lbTestDOB);
@@ -297,10 +302,10 @@ namespace quiz_management.Views.Student.Main
             this.groupBox2.Controls.Add(this.txtTitle1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(534, 483);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(535, 483);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nội dung";
@@ -309,10 +314,10 @@ namespace quiz_management.Views.Student.Main
             // 
             this.btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn.Location = new System.Drawing.Point(284, 280);
-            this.btn.Margin = new System.Windows.Forms.Padding(2);
+            this.btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn.Name = "btn";
             this.btn.Size = new System.Drawing.Size(139, 49);
-            this.btn.TabIndex = 13;
+            this.btn.TabIndex = 6;
             this.btn.Text = "Xem Thống Kê Thi Thử";
             this.btn.UseVisualStyleBackColor = true;
             // 
@@ -323,6 +328,7 @@ namespace quiz_management.Views.Student.Main
             this.ClientSize = new System.Drawing.Size(842, 483);
             this.Controls.Add(this.splitContainer1);
             this.Name = "MainStudentView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainStudentView";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -347,10 +353,9 @@ namespace quiz_management.Views.Student.Main
         private System.Windows.Forms.TextBox txtStudentDOBview;
         private System.Windows.Forms.TextBox txtStudentIDview;
         private System.Windows.Forms.Label lbStudentID;
-        private System.Windows.Forms.Button btnFeekback;
+        private System.Windows.Forms.Button btnQuestions;
         private System.Windows.Forms.Button btnOfficialExam;
         private System.Windows.Forms.Button btnPrintTranScript;
-        private System.Windows.Forms.Button btnInfoStudent;
         private System.Windows.Forms.Button btnExamResultView;
         private System.Windows.Forms.Label lbDOB;
         private System.Windows.Forms.Label txtTitle2;
@@ -359,5 +364,6 @@ namespace quiz_management.Views.Student.Main
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btn;
+        public System.Windows.Forms.Button btnInfoStudent;
     }
 }

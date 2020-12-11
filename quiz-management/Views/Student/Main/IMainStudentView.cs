@@ -16,6 +16,11 @@ namespace quiz_management.Views.Student.Main
         string LopHS { set; }
 
         event EventHandler EditProfile;
+        event EventHandler ContribuQuestion;
+        event EventHandler OfficialExamClick;
+
         void ShowEditProfileStudentView(int userCode);
+        void ShowContribuQuestionsView(int userCode);
+        void ShowOfficialExamView(int userCode);
     }
 }

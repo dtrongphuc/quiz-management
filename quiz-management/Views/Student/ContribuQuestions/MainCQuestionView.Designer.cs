@@ -43,7 +43,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.btnSend = new System.Windows.Forms.Button();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.linkGobackMain = new System.Windows.Forms.LinkLabel();
             this.tbAnswerA = new System.Windows.Forms.TextBox();
             this.tbAnswerB = new System.Windows.Forms.TextBox();
             this.tbAnswerD = new System.Windows.Forms.TextBox();
@@ -114,21 +114,25 @@
             // 
             // cbbSubject
             // 
+            this.cbbSubject.DisplayMember = "tenMonHoc";
             this.cbbSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbSubject.FormattingEnabled = true;
             this.cbbSubject.Location = new System.Drawing.Point(574, 123);
             this.cbbSubject.Name = "cbbSubject";
             this.cbbSubject.Size = new System.Drawing.Size(121, 28);
             this.cbbSubject.TabIndex = 5;
+            this.cbbSubject.ValueMember = "tenMonHoc";
             // 
             // cbbLevel
             // 
+            this.cbbLevel.DisplayMember = "tenLopHoc";
             this.cbbLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbLevel.FormattingEnabled = true;
             this.cbbLevel.Location = new System.Drawing.Point(278, 118);
             this.cbbLevel.Name = "cbbLevel";
             this.cbbLevel.Size = new System.Drawing.Size(121, 28);
             this.cbbLevel.TabIndex = 6;
+            this.cbbLevel.ValueMember = "tenLopHoc";
             // 
             // label5
             // 
@@ -209,15 +213,15 @@
             this.btnSend.Text = "Gửi đóng góp";
             this.btnSend.UseVisualStyleBackColor = true;
             // 
-            // linkLabel1
+            // linkGobackMain
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(33, 36);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(49, 17);
-            this.linkLabel1.TabIndex = 15;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Trở về";
+            this.linkGobackMain.AutoSize = true;
+            this.linkGobackMain.Location = new System.Drawing.Point(33, 36);
+            this.linkGobackMain.Name = "linkGobackMain";
+            this.linkGobackMain.Size = new System.Drawing.Size(49, 17);
+            this.linkGobackMain.TabIndex = 15;
+            this.linkGobackMain.TabStop = true;
+            this.linkGobackMain.Text = "Trở về";
             // 
             // tbAnswerA
             // 
@@ -394,7 +398,7 @@
             this.Controls.Add(this.tbAnswerC);
             this.Controls.Add(this.tbAnswerB);
             this.Controls.Add(this.tbAnswerA);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.linkGobackMain);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
@@ -411,6 +415,7 @@
             this.Controls.Add(this.tbQuestion);
             this.Controls.Add(this.label1);
             this.Name = "MainCQuestionView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainCQuestion";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -434,7 +439,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnSend;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel linkGobackMain;
         private System.Windows.Forms.TextBox tbAnswerA;
         private System.Windows.Forms.TextBox tbAnswerB;
         private System.Windows.Forms.TextBox tbAnswerD;
