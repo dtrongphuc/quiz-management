@@ -24,6 +24,7 @@ namespace quiz_management.Presenters.Student.Main
 
         private void Initialize()
         {
+            
             view.EditProfile += View_EditProfile;
             view.ContribuQuestion += View_ContribuQuestion;
             using (var user = new QuizDataContext())
@@ -34,15 +35,17 @@ namespace quiz_management.Presenters.Student.Main
                 (p, c) => new { p = p, c = c }).Where(a => a.p.maNguoiDung == currentUserCode)
                 .Select(kq => kq.c).ToList();
 
-                info = i[0];
+                if (i.Count > 0)
+                {
+                    info = i[0];
+                    var x = user.thongTins.Join(user.Lops,
+                        p => p.maLopHoc,
+                        c => c.maLopHoc,
+                        (p, c) => new { p = p, c = c }).Where(a => a.p.maLopHoc == info.maLopHoc).Select(kq => kq.c.tenLopHoc);
+                    var temp2 = x.ToList();
 
-                var x = user.thongTins.Join(user.Lops,
-                p => p.maLopHoc,
-                c => c.maLopHoc,
-                (p, c) => new { p = p, c = c }).Where(a => a.p.maLopHoc == info.maLopHoc).Select(kq => kq.c.tenLopHoc);
-                var temp2 = x.ToList();
-                if (temp2.Count > 0) lop = temp2[0]; else lop = null;
-               
+                    if (temp2.Count > 0) lop = temp2[0];
+                }
             }
             FillLH();
         }
