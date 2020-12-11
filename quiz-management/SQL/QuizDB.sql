@@ -9,7 +9,7 @@
 	CONSTRAINT PK_nguoiDung
 	PRIMARY KEY (maNguoiDung)
 )
-select * from boDe
+
 CREATE TABLE Lop
 (
 	maKhoiLop varchar(5),

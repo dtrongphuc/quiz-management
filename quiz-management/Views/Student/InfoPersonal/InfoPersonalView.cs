@@ -24,29 +24,7 @@ namespace quiz_management.Views.Student.InfoPersonal
         public List<string> _lop { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         event EventHandler IInfoPersonalView.Update
-        {
-            add
-            {
-                throw new NotImplementedException();
-            }
-
-            remove
-            {
-                throw new NotImplementedException();
-            }
-        }
-
         event EventHandler IInfoPersonalView.Close
-        {
-            add
-            {
-                throw new NotImplementedException();
-            }
-
-            remove
-            {
-                throw new NotImplementedException();
-            }
-        }
+        
     }
 }
