@@ -32,7 +32,6 @@ namespace quiz_management.Views.Student.Main
                 ContribuQuestion?.Invoke(btnQuestions, e);
             };
         }
-
       
         public string DOBHS { set => txtStudentDOBview.Text = value;}
         public string IdHS { set => txtStudentIDview.Text = value; }

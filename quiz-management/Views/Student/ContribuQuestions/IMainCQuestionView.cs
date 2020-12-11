@@ -1,4 +1,6 @@
-﻿using System;
+﻿using quiz_management.Models;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -9,9 +11,9 @@ namespace quiz_management.Views.Student.ContribuQuestions
 {
     interface IMainCQuestionView
     {
-        string StudentID { get; set; }
-        BindingList<string> classes { get; set; }
-        string Subject { get;}
+        string StudentID { set; }
+        List<Lop> classes { set; }
+        List<monHoc> Subjects { set; }
         string Question { get; set; }
         string AnswerA { get; }
         string AnswerB { get; }
@@ -27,6 +29,7 @@ namespace quiz_management.Views.Student.ContribuQuestions
         bool cbResultE { get; }
         bool cbResultF { get; }
         event EventHandler Send;
-        event EventHandler Pre;
+        event EventHandler GoBackMain;
+        void ShowMainStudentView(int code);
     }
 }

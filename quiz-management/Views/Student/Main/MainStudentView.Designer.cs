@@ -316,6 +316,7 @@ namespace quiz_management.Views.Student.Main
             this.Controls.Add(this.splitContainer1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainStudentView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainStudentView";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

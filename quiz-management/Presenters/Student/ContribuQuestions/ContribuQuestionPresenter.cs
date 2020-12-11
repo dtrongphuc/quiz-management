@@ -12,11 +12,19 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
     class ContribuQuestionPresenter
     {
         IMainCQuestionView view;
-        public ContribuQuestionPresenter(IMainCQuestionView v)
+        int currentUserCode;
+        public ContribuQuestionPresenter(IMainCQuestionView v, int code)
         {
             view = v;
-            //LoadClass();
+            currentUserCode = code;
+            LoadClass(code);
             view.Send += Send_CLick;
+            view.GoBackMain += View_GoBackMain;
+        }
+
+        private void View_GoBackMain(object sender, EventArgs e)
+        {
+            view.ShowMainStudentView(currentUserCode);
         }
 
         private void Send_CLick(object sender, EventArgs e)
@@ -120,14 +128,20 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
         {
         }
 
-        public void LoadClass()
+        public void LoadClass(int code)
         {
+            view.StudentID = code.ToString();
             using (var db = new QuizDataContext())
             {
                 var classlist = db.Lops.ToList();
+                var subjects = db.monHocs.ToList();
                 if (classlist != null)
                 {
-
+                    view.classes = classlist;
+                }
+                if (subjects != null)
+                {
+                    view.Subjects = subjects;
                 }
             }
         }
