@@ -12,7 +12,7 @@ namespace quiz_management.Views.Student.InfoPersonal
 {
     public partial class UpdateInfoStudentView : Form
     {
-        public UpdateInfoStudentView()
+        public UpdateInfoStudentView(int code)
         {
             InitializeComponent();
         }

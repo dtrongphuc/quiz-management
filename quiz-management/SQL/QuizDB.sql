@@ -292,3 +292,8 @@ VALUES
     1    -- dapAn - int
     )
 GO
+
+select * from nguoiDung
+select * from thongtin
+select * from lop
+update thongtin set maLopHoc = 1

@@ -27,16 +27,21 @@ namespace quiz_management.Presenters.Student.Main
             view.EditProfile += View_EditProfile;
             using (var user = new QuizDataContext())
             {
-                info = (thongTin)user.nguoiDungs.Join(user.thongTins,
+                var i = user.nguoiDungs.Join(user.thongTins,
                 p => p.maNguoiDung,
                 c => c.maNguoidung,
                 (p, c) => new { p = p, c = c }).Where(a => a.p.maNguoiDung == currentUserCode)
-                .Select(kq => kq.c);
+                .Select(kq => kq.c).ToList();
 
-                lop = user.thongTins.Join(user.Lops,
+                info = i[0];
+
+                var x = user.thongTins.Join(user.Lops,
                 p => p.maLopHoc,
                 c => c.maLopHoc,
-                (p, c) => new { p = p, c = c }).Where(a => a.p.maLopHoc == info.maLopHoc).Select(kq => kq.c.tenLopHoc).ToString();
+                (p, c) => new { p = p, c = c }).Where(a => a.p.maLopHoc == info.maLopHoc).Select(kq => kq.c.tenLopHoc);
+                var temp2 = x.ToList();
+                if (temp2.Count > 0) lop = temp2[0]; else lop = null;
+               
             }
             FillLH();
         }
@@ -45,16 +50,17 @@ namespace quiz_management.Presenters.Student.Main
         {
             if (info != null)
             {
+                
                 view.IdHS = info.maNguoidung.ToString();
                 view.NameHS = info.tenNguoiDung;
-                view.DOBHS = info.ngaySinh.ToString();
+                view.DOBHS = info.ngaySinh.Value.Day + "/" + info.ngaySinh.Value.Month + "/" + info.ngaySinh.Value.Year;
                 view.LopHS = lop;
             }
         }
 
         private void View_EditProfile(object sender, EventArgs e)
         {
-            
+            view.ShowEditProfileStudentView(currentUserCode);
         }
 
     }

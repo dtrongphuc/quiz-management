@@ -72,7 +72,6 @@
     <Compile Include="Presenters\Login\LoginPresenter.cs" />
     <Compile Include="Presenters\Register\RegisterPresenter.cs" />
     <Compile Include="Presenters\Student\Exam\OfficialExamPresenter.cs" />
-    <Compile Include="Presenters\Student\Main\MainStudentPresenter.cs" />
     <Compile Include="Presenters\Student\ContribuQuestions\ContribuQuestionPresenter.cs" />
     <Compile Include="Presenters\Student\Main\MainStudentPresenter.cs" />
     <Compile Include="Program.cs" />

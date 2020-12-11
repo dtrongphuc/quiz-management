@@ -9,13 +9,13 @@ namespace quiz_management.Views.Student.Main
 {
     interface IMainStudentView
     {
-        string IdUser { get; }
+       
         string DOBHS { set; }
         string IdHS { set; }
         string NameHS { set; }
         string LopHS { set; }
 
         event EventHandler EditProfile;
-
+        void ShowEditProfileStudentView(int userCode);
     }
 }
