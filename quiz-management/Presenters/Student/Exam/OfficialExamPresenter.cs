@@ -12,7 +12,6 @@ namespace quiz_management.Presenters.Student.Exam
     {
         IOfficialExamView view;
         private int currentUserCode;
-        public int time = 1800;
 
         public OfficialExamPresenter(IOfficialExamView v, int userCode)
         {
@@ -21,7 +20,6 @@ namespace quiz_management.Presenters.Student.Exam
 
             GetData();
 
-            view.ExamTime = time;
         }
 
         private void GetData()
@@ -32,11 +30,12 @@ namespace quiz_management.Presenters.Student.Exam
                 var user = db.nguoiDungs.SingleOrDefault(u => u.maNguoiDung == currentUserCode);
                 string name = user.thongTin.tenNguoiDung as string;
                 string className = db.Lops.SingleOrDefault(l => l.maLopHoc == user.thongTin.maLopHoc).tenLopHoc as string;
-
                 // Set user data
                 SetUserDataView(name, className);
 
                 // Fetch exam data
+                var exam = db.boDes.SingleOrDefault(d => d.maBoDe == 1);
+                SetExamDataView(exam);
             };
         }
 
@@ -47,9 +46,11 @@ namespace quiz_management.Presenters.Student.Exam
             view.StudentClass = className;
         }
 
-        private void SetExamDataView()
+        private void SetExamDataView(boDe exam)
         {
-
+            if (exam == null) return;
+            view.ExamTime = (int)exam.thoiGian;
+            view.ExamCode = exam.maBoDe.ToString();
         }
     }
 }

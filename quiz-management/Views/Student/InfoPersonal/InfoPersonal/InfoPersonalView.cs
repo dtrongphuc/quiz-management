@@ -11,15 +11,11 @@ using System.Windows.Forms;
 
 namespace quiz_management.Views.Student.InfoPersonal
 {
-    public partial class InfoPersonalView : Form,IInfoPersonalView
+    public partial class InfoPersonalView : Form
     {
         public InfoPersonalView()
         {
             InitializeComponent();
         }
-
-
-      
-        
     }
 }
