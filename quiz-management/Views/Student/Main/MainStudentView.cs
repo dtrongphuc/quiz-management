@@ -1,5 +1,6 @@
 ﻿using quiz_management.Models;
 using quiz_management.Presenters.Student.Main;
+using quiz_management.Views.Student.ContribuQuestions;
 using quiz_management.Views.Student.InfoPersonal;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,10 @@ namespace quiz_management.Views.Student.Main
             {
                 EditProfile?.Invoke(btnInfoStudent, e);
             };
+            btnQuestions.Click += (_, e) =>
+            {
+                ContribuQuestion?.Invoke(btnQuestions, e);
+            };
         }
 
       
@@ -35,6 +40,15 @@ namespace quiz_management.Views.Student.Main
         public string LopHS { set => txtclassview.Text = value; }
 
         public event EventHandler EditProfile;
+        public event EventHandler ContribuQuestion;
+
+        public void ShowContribuQuestionsView(int userCode)
+        {
+            this.Hide();
+            MainCQuestionView screen = new MainCQuestionView(userCode);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
+        }
 
         public void ShowEditProfileStudentView(int userCode)
         {

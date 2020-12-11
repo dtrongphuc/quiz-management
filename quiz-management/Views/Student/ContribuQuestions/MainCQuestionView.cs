@@ -43,7 +43,7 @@ namespace quiz_management.Views.Student.ContribuQuestions
         public event EventHandler Send;
         public event EventHandler Pre;
 
-        public MainCQuestionView()
+        public MainCQuestionView(int code)
         {
             presenter = new ContribuQuestionPresenter(this);
             InitializeComponent();

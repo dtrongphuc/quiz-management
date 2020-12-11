@@ -25,6 +25,7 @@ namespace quiz_management.Presenters.Student.Main
         private void Initialize()
         {
             view.EditProfile += View_EditProfile;
+            view.ContribuQuestion += View_ContribuQuestion;
             using (var user = new QuizDataContext())
             {
                 var i = user.nguoiDungs.Join(user.thongTins,
@@ -63,5 +64,9 @@ namespace quiz_management.Presenters.Student.Main
             view.ShowEditProfileStudentView(currentUserCode);
         }
 
+        private void View_ContribuQuestion(object sender, EventArgs e)
+        {
+            view.ShowContribuQuestionsView(currentUserCode);
+        }
     }
 }
