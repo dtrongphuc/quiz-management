@@ -137,7 +137,7 @@
     <Compile Include="Views\Student\InfoPersonal\UpdateInfoStudentView.Designer.cs">
       <DependentUpon>UpdateInfoStudentView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Student\Interface\IInfoPersonalView.cs" />
+    <Compile Include="Views\Student\InfoPersonal\Interface\IInfoPersonalView.cs" />
     <Compile Include="Views\Student\Main\IMainStudentView.cs" />
     <Compile Include="Views\Student\Main\MainStudentView.cs">
       <SubType>Form</SubType>
