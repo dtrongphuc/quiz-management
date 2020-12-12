@@ -48,6 +48,8 @@
             this.Date_Validator = new quiz_management.Validate.RequiredFieldValidator(this.components);
             this.Password_Validator = new quiz_management.Validate.RequiredFieldValidator(this.components);
             this.ConfirmPassword_Validator = new quiz_management.Validate.RequiredFieldValidator(this.components);
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbClass = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label2
@@ -77,7 +79,7 @@
             this.lbRegister.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbRegister.AutoSize = true;
             this.lbRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRegister.Location = new System.Drawing.Point(194, 21);
+            this.lbRegister.Location = new System.Drawing.Point(277, 21);
             this.lbRegister.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbRegister.Name = "lbRegister";
             this.lbRegister.Size = new System.Drawing.Size(88, 24);
@@ -120,42 +122,42 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(198, 65);
+            this.txtUsername.Location = new System.Drawing.Point(155, 65);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(228, 20);
+            this.txtUsername.Size = new System.Drawing.Size(346, 20);
             this.txtUsername.TabIndex = 17;
             // 
             // txtFullName
             // 
-            this.txtFullName.Location = new System.Drawing.Point(198, 114);
+            this.txtFullName.Location = new System.Drawing.Point(155, 114);
             this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(228, 20);
+            this.txtFullName.Size = new System.Drawing.Size(346, 20);
             this.txtFullName.TabIndex = 18;
             // 
             // txtBirthday
             // 
-            this.txtBirthday.Location = new System.Drawing.Point(198, 158);
+            this.txtBirthday.Location = new System.Drawing.Point(155, 158);
             this.txtBirthday.Name = "txtBirthday";
-            this.txtBirthday.Size = new System.Drawing.Size(228, 20);
+            this.txtBirthday.Size = new System.Drawing.Size(127, 20);
             this.txtBirthday.TabIndex = 19;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(198, 212);
+            this.txtPassword.Location = new System.Drawing.Point(155, 212);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(228, 20);
+            this.txtPassword.Size = new System.Drawing.Size(346, 20);
             this.txtPassword.TabIndex = 20;
             // 
             // txtPasswordConfirm
             // 
-            this.txtPasswordConfirm.Location = new System.Drawing.Point(198, 268);
+            this.txtPasswordConfirm.Location = new System.Drawing.Point(155, 268);
             this.txtPasswordConfirm.Name = "txtPasswordConfirm";
-            this.txtPasswordConfirm.Size = new System.Drawing.Size(228, 20);
+            this.txtPasswordConfirm.Size = new System.Drawing.Size(346, 20);
             this.txtPasswordConfirm.TabIndex = 21;
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(164, 316);
+            this.btnSubmit.Location = new System.Drawing.Point(245, 320);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(135, 50);
             this.btnSubmit.TabIndex = 22;
@@ -165,7 +167,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(161, 385);
+            this.label6.Location = new System.Drawing.Point(242, 389);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(89, 13);
@@ -175,7 +177,7 @@
             // ToLoginView
             // 
             this.ToLoginView.AutoSize = true;
-            this.ToLoginView.Location = new System.Drawing.Point(254, 385);
+            this.ToLoginView.Location = new System.Drawing.Point(335, 389);
             this.ToLoginView.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ToLoginView.Name = "ToLoginView";
             this.ToLoginView.Size = new System.Drawing.Size(60, 13);
@@ -223,11 +225,32 @@
             this.ConfirmPassword_Validator.IsValid = false;
             this.ConfirmPassword_Validator.Regex = null;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(334, 162);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(31, 15);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "Lớp:";
+            // 
+            // cbClass
+            // 
+            this.cbClass.FormattingEnabled = true;
+            this.cbClass.Location = new System.Drawing.Point(380, 157);
+            this.cbClass.Name = "cbClass";
+            this.cbClass.Size = new System.Drawing.Size(121, 21);
+            this.cbClass.TabIndex = 26;
+            // 
             // RegisterView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 434);
+            this.ClientSize = new System.Drawing.Size(626, 434);
+            this.Controls.Add(this.cbClass);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.ToLoginView);
             this.Controls.Add(this.btnSubmit);
@@ -271,5 +294,7 @@
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.LinkLabel ToLoginView;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cbClass;
     }
 }

@@ -19,7 +19,7 @@ namespace quiz_management.Views.Student.Exam
         public int TimeCount;
 
         public string StudentName { set => txtStudentName.Text = value; }
-        public string StudentClass { set => lbClass.Text = value; }
+        public string StudentClass { set => txtClass.Text = value; }
         public string ExamCode { set => txtExamCode.Text = value; }
         public int ExamTime { set => TimeCount = value; }
         public int Completed { set => txtCompleted.Text = value.ToString(); }
@@ -30,10 +30,10 @@ namespace quiz_management.Views.Student.Exam
         public event EventHandler Next;
         public event EventHandler Prev;
 
-        public OfficialExamView()
+        public OfficialExamView(int userCode)
         {
             InitializeComponent();
-            presenter = new OfficialExamPresenter(this);
+            presenter = new OfficialExamPresenter(this, userCode);
             SetTimer();
 
             btnSubmit.Click += (_, e) =>

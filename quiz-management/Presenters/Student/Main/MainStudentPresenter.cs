@@ -24,9 +24,10 @@ namespace quiz_management.Presenters.Student.Main
 
         private void Initialize()
         {
-            
             view.EditProfile += View_EditProfile;
             view.ContribuQuestion += View_ContribuQuestion;
+            view.OfficialExamClick += View_OfficialExamClick;
+
             using (var user = new QuizDataContext())
             {
                 var i = user.nguoiDungs.Join(user.thongTins,
@@ -48,6 +49,11 @@ namespace quiz_management.Presenters.Student.Main
                 }
             }
             FillLH();
+        }
+
+        private void View_OfficialExamClick(object sender, EventArgs e)
+        {
+            view.ShowOfficialExamView(currentUserCode);
         }
 
         private void FillLH()

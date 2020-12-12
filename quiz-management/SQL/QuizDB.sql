@@ -65,7 +65,7 @@ CREATE TABLE monHoc
 CREATE TABLE boDe
 (
 	maBoDe INT IDENTITY,
-	thoiGian DATE,
+	thoiGian INT,
 	tongSoCau INT,
 	maMon INT,
 	maKhoi varchar(5)
@@ -76,6 +76,10 @@ CREATE TABLE boDe
 
 ALTER TABLE dbo.boDe ADD CONSTRAINT FK_boDe_monHoc FOREIGN KEY(maMon) REFERENCES dbo.monHoc(maMonHoc)
 ALTER TABLE boDe ADD CONSTRAINT FK_boDe_khoiLop FOREIGN KEY(maKhoi) REFERENCES khoiLop(maKhoiLop)
+update boDe set thoiGian=1800 where maBoDe=1
+alter table boDe drop column thoiGian
+alter table boDe add thoiGian int
+select * from boDe
 
 CREATE TABLE cauHoi
 (
@@ -232,7 +236,7 @@ INSERT INTO dbo.boDe
     maKhoi
 )
 VALUES
-(   GETDATE(), -- thoiGian - date
+(   30, -- thoiGian - INT
     20,         -- tongSoCau - int
     1,         -- maMon - int
     'K10'         -- maKhoi - varchar(5)
@@ -258,7 +262,7 @@ INSERT INTO dbo.cTBoDe
     maCauHoi
 )
 VALUES
-(   1, -- maBoDe - int
+(   2, -- maBoDe - int
     1  -- maCauHoi - int
     )
 GO

@@ -23,6 +23,8 @@ namespace quiz_management.Views.Student
         public string Password { get => txtPassword.Text.Trim(); set => txtPassword.Text = value; }
         public string FullName { get => txtFullName.Text.Trim(); set => txtFullName.Text = value; }
         public string Birthday { get => txtBirthday.Text.Trim(); set => txtBirthday.Text = value; }
+        public object ComboboxDataSource { set => cbClass.DataSource = value; }
+        public object SelectedClass { get => cbClass.SelectedItem; }
 
         public event EventHandler Submit;
         public event EventHandler SwitchToLoginView;
@@ -45,6 +47,7 @@ namespace quiz_management.Views.Student
             InitializeComponent();
             presenter = new RegisterPresenter(this);
             AutoValidate = AutoValidate.Disable;
+            cbClass.DisplayMember = "tenLopHoc";
 
             btnSubmit.Click += (_, e) =>
             {
