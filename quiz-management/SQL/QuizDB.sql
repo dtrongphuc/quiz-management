@@ -179,14 +179,18 @@ CREATE TABLE dongGop
 	maMonHoc INT,
 	trangthai INT,
 	ngay DATE,
-	cauHoi NVARCHAR(100)
+	cauHoi NVARCHAR(100),
+	maKhoiLop varchar(5)
 
 	CONSTRAINT PK_dongGop
 	PRIMARY KEY (maDongGop)
 )
 
+
+ALTER TABLE dongGop ADD CONSTRAINT FK_dongGop_khoiLop FOREIGN KEY(maKhoiLop) REFERENCES khoiLop(maKhoiLop)
 ALTER TABLE dbo.dongGop ADD CONSTRAINT FK_dongGop_nguoiDung FOREIGN KEY(maNguoiDung) REFERENCES dbo.nguoiDung(maNguoiDung)
 ALTER TABLE  dbo.dongGop ADD CONSTRAINT FK_dongGop_monHoc FOREIGN KEY(maMonHoc) REFERENCES dbo.monHoc (maMonHoc)
+select * from dongGop
 
 CREATE TABLE cTDongGop
 (

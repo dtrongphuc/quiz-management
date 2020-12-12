@@ -73,6 +73,7 @@
     <Compile Include="Presenters\Register\RegisterPresenter.cs" />
     <Compile Include="Presenters\Student\Exam\OfficialExamPresenter.cs" />
     <Compile Include="Presenters\Student\ContribuQuestions\ContribuQuestionPresenter.cs" />
+    <Compile Include="Presenters\Student\InfoPersonal\ProfilePersonalPresenter.cs" />
     <Compile Include="Presenters\Student\Main\MainStudentPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -113,10 +114,10 @@
     <Compile Include="Views\Student\Exam\OfficialExamView.Designer.cs">
       <DependentUpon>OfficialExamView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Student\InfoPersonal\InfoPersonal\InfoPersonalView.cs">
+    <Compile Include="Views\Student\InfoPersonal\profilePersonal\InfoPersonalView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Student\InfoPersonal\InfoPersonal\InfoPersonalView.Designer.cs">
+    <Compile Include="Views\Student\InfoPersonal\profilePersonal\InfoPersonalView.Designer.cs">
       <DependentUpon>InfoPersonalView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Student\InfoPersonal\ResultExamView.cs">
@@ -137,7 +138,7 @@
     <Compile Include="Views\Student\InfoPersonal\UpdateInfoStudentView.Designer.cs">
       <DependentUpon>UpdateInfoStudentView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Student\InfoPersonal\InfoPersonal\IInfoPersonalView.cs" />
+    <Compile Include="Views\Student\InfoPersonal\profilePersonal\IInfoPersonalView.cs" />
     <Compile Include="Views\Student\Main\IMainStudentView.cs" />
     <Compile Include="Views\Student\Main\MainStudentView.cs">
       <SubType>Form</SubType>
@@ -179,7 +180,7 @@
     <EmbeddedResource Include="Views\Student\Exam\OfficialExamView.resx">
       <DependentUpon>OfficialExamView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Student\InfoPersonal\InfoPersonal\InfoPersonalView.resx">
+    <EmbeddedResource Include="Views\Student\InfoPersonal\profilePersonal\InfoPersonalView.resx">
       <DependentUpon>InfoPersonalView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Student\InfoPersonal\ResultExamView.resx">
