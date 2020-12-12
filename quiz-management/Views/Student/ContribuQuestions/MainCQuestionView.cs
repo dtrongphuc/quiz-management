@@ -50,6 +50,10 @@ namespace quiz_management.Views.Student.ContribuQuestions
         public List<Lop> classes { set => cbbLevel.DataSource = value; }
         public List<monHoc> Subjects { set => cbbSubject.DataSource = value; }
 
+        public string ClassSelect => cbbLevel.SelectedValue.ToString();
+
+        public string SubjectSelect => cbbSubject.SelectedValue.ToString();
+
         bool IMainCQuestionView.cbResultA => cbResultA.Checked;
         bool IMainCQuestionView.cbResultB => cbResultB.Checked;
         bool IMainCQuestionView.cbResultC => cbResultC.Checked;

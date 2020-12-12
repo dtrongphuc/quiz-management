@@ -97,9 +97,6 @@
     <Compile Include="Views\Register\RegisterView.Designer.cs">
       <DependentUpon>RegisterView.cs</DependentUpon>
     </Compile>
-    <None Include="Models\Quiz.dbml.layout">
-      <DependentUpon>Quiz.dbml</DependentUpon>
-    </None>
     <Compile Include="Views\Student\ContribuQuestions\IMainCQuestionView.cs" />
     <Compile Include="Views\Student\ContribuQuestions\MainCQuestionView.cs">
       <SubType>Form</SubType>

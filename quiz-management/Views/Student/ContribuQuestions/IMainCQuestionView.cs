@@ -14,6 +14,8 @@ namespace quiz_management.Views.Student.ContribuQuestions
         string StudentID { set; }
         List<Lop> classes { set; }
         List<monHoc> Subjects { set; }
+        string ClassSelect { get; }
+        string SubjectSelect { get; }
         string Question { get; set; }
         string AnswerA { get; }
         string AnswerB { get; }
