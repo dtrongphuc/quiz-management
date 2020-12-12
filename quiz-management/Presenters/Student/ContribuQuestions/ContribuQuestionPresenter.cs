@@ -43,16 +43,22 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
             bool checkD = view.cbResultD;
             bool checkE = view.cbResultE;
             bool checkF = view.cbResultF;
+
+            string classSelected = view.ClassSelect;
+            string subjectSelected = view.SubjectSelect;
+
             using (var db = new QuizDataContext())
             {
                 var idContribution_next = db.dongGops.ToList();
                 db.dongGops.InsertOnSubmit(new dongGop
                 {
-                    maNguoiDung = 1,
+                    maNguoiDung = currentUserCode,
                     maMonHoc = 1,
                     trangthai = 0,
                     ngay = DateTime.Now,
-                    cauHoi = Questionsstring
+                    cauHoi = Questionsstring,
+                    
+                    
                 });
                 db.SubmitChanges();
 
