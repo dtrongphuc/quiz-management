@@ -19,13 +19,13 @@ namespace quiz_management.Views.Student.InfoPersonal
         {
             InitializeComponent();
             presenter = new ProfilePersonalPresenter(this, code);
-            btnSend.Click += (_, e) =>
+            btnsubmit.Click += (_, e) =>
             {
-                Send?.Invoke(btnSend, e);
+                btnclose?.Invoke(Updatebtn, e);
             };
-            linkGobackMain.Click += (_, e) =>
+            btnclose.Click += (_, e) =>
             {
-                GoBackMain?.Invoke(linkGobackMain, e);
+                btnclose?.Invoke(Closebtn, e);
             };
         }
 

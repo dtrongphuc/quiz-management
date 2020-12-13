@@ -36,9 +36,9 @@
             this.txtDOBStudent = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnsubmit = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnclose = new System.Windows.Forms.Button();
             this.cbLop = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
@@ -125,15 +125,15 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Mã lớp";
             // 
-            // button1
+            // btnsubmit
             // 
-            this.button1.Location = new System.Drawing.Point(176, 329);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 38);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Chỉnh sửa thông tin";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnsubmit.Location = new System.Drawing.Point(176, 329);
+            this.btnsubmit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnsubmit.Name = "btnsubmit";
+            this.btnsubmit.Size = new System.Drawing.Size(118, 38);
+            this.btnsubmit.TabIndex = 10;
+            this.btnsubmit.Text = "Chỉnh sửa thông tin";
+            this.btnsubmit.UseVisualStyleBackColor = true;
             // 
             // linkLabel1
             // 
@@ -146,15 +146,15 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Trở lại";
             // 
-            // button2
+            // btnclose
             // 
-            this.button2.Location = new System.Drawing.Point(307, 329);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(106, 38);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Đóng";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnclose.Location = new System.Drawing.Point(307, 329);
+            this.btnclose.Margin = new System.Windows.Forms.Padding(2);
+            this.btnclose.Name = "btnclose";
+            this.btnclose.Size = new System.Drawing.Size(106, 38);
+            this.btnclose.TabIndex = 12;
+            this.btnclose.Text = "Đóng";
+            this.btnclose.UseVisualStyleBackColor = true;
             // 
             // cbLop
             // 
@@ -170,9 +170,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(479, 391);
             this.Controls.Add(this.cbLop);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnclose);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnsubmit);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtDOBStudent);
             this.Controls.Add(this.label3);
@@ -199,9 +199,9 @@
         private System.Windows.Forms.TextBox txtDOBStudent;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnsubmit;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnclose;
         private System.Windows.Forms.ComboBox cbLop;
     }
 }
