@@ -121,18 +121,18 @@
             this.cbbSubject.Name = "cbbSubject";
             this.cbbSubject.Size = new System.Drawing.Size(121, 28);
             this.cbbSubject.TabIndex = 5;
-            this.cbbSubject.ValueMember = "tenMonHoc";
+            this.cbbSubject.ValueMember = "maMonHoc";
             // 
             // cbbLevel
             // 
-            this.cbbLevel.DisplayMember = "tenLopHoc";
+            this.cbbLevel.DisplayMember = "tenKhoiLop";
             this.cbbLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbLevel.FormattingEnabled = true;
             this.cbbLevel.Location = new System.Drawing.Point(278, 118);
             this.cbbLevel.Name = "cbbLevel";
             this.cbbLevel.Size = new System.Drawing.Size(121, 28);
             this.cbbLevel.TabIndex = 6;
-            this.cbbLevel.ValueMember = "tenLopHoc";
+            this.cbbLevel.ValueMember = "maKhoiLop";
             // 
             // label5
             // 

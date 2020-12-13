@@ -45,9 +45,7 @@ namespace quiz_management.Views.Student.ContribuQuestions
         public string AnswerE => tbAnswerE.Text;
 
         public string AnswerF => tbAnswerF.Text;
-
-        public List<Lop> combobox { set => cbbLevel.DataSource = value; }
-        public List<Lop> classes { set => cbbLevel.DataSource = value; }
+        public List<khoiLop> classes { set => cbbLevel.DataSource = value; }
         public List<monHoc> Subjects { set => cbbSubject.DataSource = value; }
 
         public string ClassSelect => cbbLevel.SelectedValue.ToString();
@@ -61,12 +59,8 @@ namespace quiz_management.Views.Student.ContribuQuestions
         bool IMainCQuestionView.cbResultE => cbResultE.Checked;
         bool IMainCQuestionView.cbResultF => cbResultF.Checked;
 
-
         public event EventHandler Send;
         public event EventHandler GoBackMain;
-
-
-
         public void ShowMainStudentView(int code)
         {
             this.Hide();

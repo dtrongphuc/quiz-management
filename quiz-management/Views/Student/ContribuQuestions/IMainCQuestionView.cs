@@ -12,7 +12,7 @@ namespace quiz_management.Views.Student.ContribuQuestions
     interface IMainCQuestionView
     {
         string StudentID { set; }
-        List<Lop> classes { set; }
+        List<khoiLop> classes { set; }
         List<monHoc> Subjects { set; }
         string ClassSelect { get; }
         string SubjectSelect { get; }
