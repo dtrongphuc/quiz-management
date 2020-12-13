@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace quiz_management.Presenters.Student.InfoPersonal
 {
-    public class ProfilePersonalPresenter
+    class ProfilePersonalPresenter
     {
         IInfoPersonalView view;
         int currentUserCode;
 
-        ProfilePersonalPresenter(IInfoPersonalView v, int code)
+        public ProfilePersonalPresenter(IInfoPersonalView v, int code)
         {
             view = v;
             currentUserCode = code;
