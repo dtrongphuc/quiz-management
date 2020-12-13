@@ -13,6 +13,16 @@
       <Association Name="monHoc_boDe" Member="monHoc" ThisKey="maMon" OtherKey="maMonHoc" Type="monHoc" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.thongTin" Member="thongTins">
+    <Type Name="thongTin">
+      <Column Name="maNguoidung" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tenNguoiDung" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ngaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="maLopHoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Lop_thongTin" Member="Lop" ThisKey="maLopHoc" OtherKey="maLopHoc" Type="Lop" IsForeignKey="true" />
+      <Association Name="nguoiDung_thongTin" Member="nguoiDung" ThisKey="maNguoidung" OtherKey="maNguoiDung" Type="nguoiDung" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.cauHoi" Member="cauHois">
     <Type Name="cauHoi">
       <Column Name="maCauHoi" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -69,7 +79,9 @@
       <Column Name="trangthai" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="cauHoi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="maKhoiLop" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
       <Association Name="dongGop_cTDongGop" Member="cTDongGops" ThisKey="maDongGop" OtherKey="maDongGop" Type="cTDongGop" />
+      <Association Name="khoiLop_dongGop" Member="khoiLop" ThisKey="maKhoiLop" OtherKey="maKhoiLop" Type="khoiLop" IsForeignKey="true" />
       <Association Name="monHoc_dongGop" Member="monHoc" ThisKey="maMonHoc" OtherKey="maMonHoc" Type="monHoc" IsForeignKey="true" />
       <Association Name="nguoiDung_dongGop" Member="nguoiDung" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="nguoiDung" IsForeignKey="true" />
     </Type>
@@ -96,6 +108,7 @@
       <Column Name="maKhoiLop" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="tenKhoiLop" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Association Name="khoiLop_boDe" Member="boDes" ThisKey="maKhoiLop" OtherKey="maKhoi" Type="boDe" />
+      <Association Name="khoiLop_dongGop" Member="dongGops" ThisKey="maKhoiLop" OtherKey="maKhoiLop" Type="dongGop" />
       <Association Name="khoiLop_Lop" Member="Lops" ThisKey="maKhoiLop" OtherKey="maKhoiLop" Type="Lop" />
     </Type>
   </Table>
@@ -139,20 +152,10 @@
       <Column Name="matKhau" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="phanQuyen" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="TrangThai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="nguoiDung_thongTin" Member="thongTin" ThisKey="maNguoiDung" OtherKey="maNguoidung" Type="thongTin" Cardinality="One" />
       <Association Name="nguoiDung_dongGop" Member="dongGops" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="dongGop" />
       <Association Name="nguoiDung_ketQua" Member="ketQuas" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="ketQua" />
       <Association Name="nguoiDung_luyenTap" Member="luyenTaps" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="luyenTap" />
-      <Association Name="nguoiDung_thongTin" Member="thongTin" ThisKey="maNguoiDung" OtherKey="maNguoidung" Type="thongTin" Cardinality="One" />
-    </Type>
-  </Table>
-  <Table Name="dbo.thongTin" Member="thongTins">
-    <Type Name="thongTin">
-      <Column Name="maNguoidung" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="tenNguoiDung" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ngaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="maLopHoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Lop_thongTin" Member="Lop" ThisKey="maLopHoc" OtherKey="maLopHoc" Type="Lop" IsForeignKey="true" />
-      <Association Name="nguoiDung_thongTin" Member="nguoiDung" ThisKey="maNguoidung" OtherKey="maNguoiDung" Type="nguoiDung" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

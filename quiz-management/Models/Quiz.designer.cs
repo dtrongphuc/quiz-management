@@ -33,6 +33,9 @@ namespace quiz_management.Models
     partial void InsertboDe(boDe instance);
     partial void UpdateboDe(boDe instance);
     partial void DeleteboDe(boDe instance);
+    partial void InsertthongTin(thongTin instance);
+    partial void UpdatethongTin(thongTin instance);
+    partial void DeletethongTin(thongTin instance);
     partial void InsertcauHoi(cauHoi instance);
     partial void UpdatecauHoi(cauHoi instance);
     partial void DeletecauHoi(cauHoi instance);
@@ -66,9 +69,6 @@ namespace quiz_management.Models
     partial void InsertnguoiDung(nguoiDung instance);
     partial void UpdatenguoiDung(nguoiDung instance);
     partial void DeletenguoiDung(nguoiDung instance);
-    partial void InsertthongTin(thongTin instance);
-    partial void UpdatethongTin(thongTin instance);
-    partial void DeletethongTin(thongTin instance);
     #endregion
 		
 		public QuizDataContext() : 
@@ -106,6 +106,14 @@ namespace quiz_management.Models
 			get
 			{
 				return this.GetTable<boDe>();
+			}
+		}
+		
+		public System.Data.Linq.Table<thongTin> thongTins
+		{
+			get
+			{
+				return this.GetTable<thongTin>();
 			}
 		}
 		
@@ -210,14 +218,6 @@ namespace quiz_management.Models
 			get
 			{
 				return this.GetTable<nguoiDung>();
-			}
-		}
-		
-		public System.Data.Linq.Table<thongTin> thongTins
-		{
-			get
-			{
-				return this.GetTable<thongTin>();
 			}
 		}
 	}
@@ -515,6 +515,222 @@ namespace quiz_management.Models
 		{
 			this.SendPropertyChanging();
 			entity.boDe = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.thongTin")]
+	public partial class thongTin : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _maNguoidung;
+		
+		private string _tenNguoiDung;
+		
+		private System.Nullable<System.DateTime> _ngaySinh;
+		
+		private System.Nullable<int> _maLopHoc;
+		
+		private EntityRef<Lop> _Lop;
+		
+		private EntityRef<nguoiDung> _nguoiDung;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnmaNguoidungChanging(int value);
+    partial void OnmaNguoidungChanged();
+    partial void OntenNguoiDungChanging(string value);
+    partial void OntenNguoiDungChanged();
+    partial void OnngaySinhChanging(System.Nullable<System.DateTime> value);
+    partial void OnngaySinhChanged();
+    partial void OnmaLopHocChanging(System.Nullable<int> value);
+    partial void OnmaLopHocChanged();
+    #endregion
+		
+		public thongTin()
+		{
+			this._Lop = default(EntityRef<Lop>);
+			this._nguoiDung = default(EntityRef<nguoiDung>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maNguoidung", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int maNguoidung
+		{
+			get
+			{
+				return this._maNguoidung;
+			}
+			set
+			{
+				if ((this._maNguoidung != value))
+				{
+					if (this._nguoiDung.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnmaNguoidungChanging(value);
+					this.SendPropertyChanging();
+					this._maNguoidung = value;
+					this.SendPropertyChanged("maNguoidung");
+					this.OnmaNguoidungChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tenNguoiDung", DbType="NVarChar(50)")]
+		public string tenNguoiDung
+		{
+			get
+			{
+				return this._tenNguoiDung;
+			}
+			set
+			{
+				if ((this._tenNguoiDung != value))
+				{
+					this.OntenNguoiDungChanging(value);
+					this.SendPropertyChanging();
+					this._tenNguoiDung = value;
+					this.SendPropertyChanged("tenNguoiDung");
+					this.OntenNguoiDungChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ngaySinh", DbType="Date")]
+		public System.Nullable<System.DateTime> ngaySinh
+		{
+			get
+			{
+				return this._ngaySinh;
+			}
+			set
+			{
+				if ((this._ngaySinh != value))
+				{
+					this.OnngaySinhChanging(value);
+					this.SendPropertyChanging();
+					this._ngaySinh = value;
+					this.SendPropertyChanged("ngaySinh");
+					this.OnngaySinhChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maLopHoc", DbType="Int")]
+		public System.Nullable<int> maLopHoc
+		{
+			get
+			{
+				return this._maLopHoc;
+			}
+			set
+			{
+				if ((this._maLopHoc != value))
+				{
+					if (this._Lop.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnmaLopHocChanging(value);
+					this.SendPropertyChanging();
+					this._maLopHoc = value;
+					this.SendPropertyChanged("maLopHoc");
+					this.OnmaLopHocChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Lop_thongTin", Storage="_Lop", ThisKey="maLopHoc", OtherKey="maLopHoc", IsForeignKey=true)]
+		public Lop Lop
+		{
+			get
+			{
+				return this._Lop.Entity;
+			}
+			set
+			{
+				Lop previousValue = this._Lop.Entity;
+				if (((previousValue != value) 
+							|| (this._Lop.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Lop.Entity = null;
+						previousValue.thongTins.Remove(this);
+					}
+					this._Lop.Entity = value;
+					if ((value != null))
+					{
+						value.thongTins.Add(this);
+						this._maLopHoc = value.maLopHoc;
+					}
+					else
+					{
+						this._maLopHoc = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Lop");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="nguoiDung_thongTin", Storage="_nguoiDung", ThisKey="maNguoidung", OtherKey="maNguoiDung", IsForeignKey=true)]
+		public nguoiDung nguoiDung
+		{
+			get
+			{
+				return this._nguoiDung.Entity;
+			}
+			set
+			{
+				nguoiDung previousValue = this._nguoiDung.Entity;
+				if (((previousValue != value) 
+							|| (this._nguoiDung.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._nguoiDung.Entity = null;
+						previousValue.thongTin = null;
+					}
+					this._nguoiDung.Entity = value;
+					if ((value != null))
+					{
+						value.thongTin = this;
+						this._maNguoidung = value.maNguoiDung;
+					}
+					else
+					{
+						this._maNguoidung = default(int);
+					}
+					this.SendPropertyChanged("nguoiDung");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
@@ -1447,6 +1663,10 @@ namespace quiz_management.Models
 		
 		private string _cauHoi;
 		
+		private string _maKhoiLop;
+		
+		private EntityRef<khoiLop> _khoiLop;
+		
 		private EntityRef<monHoc> _monHoc;
 		
 		private EntityRef<nguoiDung> _nguoiDung;
@@ -1467,10 +1687,13 @@ namespace quiz_management.Models
     partial void OnngayChanged();
     partial void OncauHoiChanging(string value);
     partial void OncauHoiChanged();
+    partial void OnmaKhoiLopChanging(string value);
+    partial void OnmaKhoiLopChanged();
     #endregion
 		
 		public dongGop()
 		{
+			this._khoiLop = default(EntityRef<khoiLop>);
 			this._monHoc = default(EntityRef<monHoc>);
 			this._nguoiDung = default(EntityRef<nguoiDung>);
 			OnCreated();
@@ -1600,6 +1823,64 @@ namespace quiz_management.Models
 					this._cauHoi = value;
 					this.SendPropertyChanged("cauHoi");
 					this.OncauHoiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maKhoiLop", DbType="VarChar(5)")]
+		public string maKhoiLop
+		{
+			get
+			{
+				return this._maKhoiLop;
+			}
+			set
+			{
+				if ((this._maKhoiLop != value))
+				{
+					if (this._khoiLop.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnmaKhoiLopChanging(value);
+					this.SendPropertyChanging();
+					this._maKhoiLop = value;
+					this.SendPropertyChanged("maKhoiLop");
+					this.OnmaKhoiLopChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="khoiLop_dongGop", Storage="_khoiLop", ThisKey="maKhoiLop", OtherKey="maKhoiLop", IsForeignKey=true)]
+		public khoiLop khoiLop
+		{
+			get
+			{
+				return this._khoiLop.Entity;
+			}
+			set
+			{
+				khoiLop previousValue = this._khoiLop.Entity;
+				if (((previousValue != value) 
+							|| (this._khoiLop.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._khoiLop.Entity = null;
+						previousValue.dongGops.Remove(this);
+					}
+					this._khoiLop.Entity = value;
+					if ((value != null))
+					{
+						value.dongGops.Add(this);
+						this._maKhoiLop = value.maKhoiLop;
+					}
+					else
+					{
+						this._maKhoiLop = default(string);
+					}
+					this.SendPropertyChanged("khoiLop");
 				}
 			}
 		}
@@ -2093,6 +2374,8 @@ namespace quiz_management.Models
 		
 		private EntitySet<boDe> _boDes;
 		
+		private EntitySet<dongGop> _dongGops;
+		
 		private EntitySet<Lop> _Lops;
 		
     #region Extensibility Method Definitions
@@ -2108,6 +2391,7 @@ namespace quiz_management.Models
 		public khoiLop()
 		{
 			this._boDes = new EntitySet<boDe>(new Action<boDe>(this.attach_boDes), new Action<boDe>(this.detach_boDes));
+			this._dongGops = new EntitySet<dongGop>(new Action<dongGop>(this.attach_dongGops), new Action<dongGop>(this.detach_dongGops));
 			this._Lops = new EntitySet<Lop>(new Action<Lop>(this.attach_Lops), new Action<Lop>(this.detach_Lops));
 			OnCreated();
 		}
@@ -2165,6 +2449,19 @@ namespace quiz_management.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="khoiLop_dongGop", Storage="_dongGops", ThisKey="maKhoiLop", OtherKey="maKhoiLop")]
+		public EntitySet<dongGop> dongGops
+		{
+			get
+			{
+				return this._dongGops;
+			}
+			set
+			{
+				this._dongGops.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="khoiLop_Lop", Storage="_Lops", ThisKey="maKhoiLop", OtherKey="maKhoiLop")]
 		public EntitySet<Lop> Lops
 		{
@@ -2205,6 +2502,18 @@ namespace quiz_management.Models
 		}
 		
 		private void detach_boDes(boDe entity)
+		{
+			this.SendPropertyChanging();
+			entity.khoiLop = null;
+		}
+		
+		private void attach_dongGops(dongGop entity)
+		{
+			this.SendPropertyChanging();
+			entity.khoiLop = this;
+		}
+		
+		private void detach_dongGops(dongGop entity)
 		{
 			this.SendPropertyChanging();
 			entity.khoiLop = null;
@@ -2751,11 +3060,11 @@ namespace quiz_management.Models
 		
 		private System.Nullable<int> _TrangThai;
 		
+		private EntityRef<thongTin> _thongTin;
+		
 		private EntitySet<dongGop> _dongGops;
 		
 		private EntitySet<ketQua> _ketQuas;
-		
-		private EntityRef<thongTin> _thongTin;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2775,9 +3084,9 @@ namespace quiz_management.Models
 		
 		public nguoiDung()
 		{
+			this._thongTin = default(EntityRef<thongTin>);
 			this._dongGops = new EntitySet<dongGop>(new Action<dongGop>(this.attach_dongGops), new Action<dongGop>(this.detach_dongGops));
 			this._ketQuas = new EntitySet<ketQua>(new Action<ketQua>(this.attach_ketQuas), new Action<ketQua>(this.detach_ketQuas));
-			this._thongTin = default(EntityRef<thongTin>);
 			OnCreated();
 		}
 		
@@ -2881,32 +3190,6 @@ namespace quiz_management.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="nguoiDung_dongGop", Storage="_dongGops", ThisKey="maNguoiDung", OtherKey="maNguoiDung")]
-		public EntitySet<dongGop> dongGops
-		{
-			get
-			{
-				return this._dongGops;
-			}
-			set
-			{
-				this._dongGops.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="nguoiDung_ketQua", Storage="_ketQuas", ThisKey="maNguoiDung", OtherKey="maNguoiDung")]
-		public EntitySet<ketQua> ketQuas
-		{
-			get
-			{
-				return this._ketQuas;
-			}
-			set
-			{
-				this._ketQuas.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="nguoiDung_thongTin", Storage="_thongTin", ThisKey="maNguoiDung", OtherKey="maNguoidung", IsUnique=true, IsForeignKey=false)]
 		public thongTin thongTin
 		{
@@ -2933,6 +3216,32 @@ namespace quiz_management.Models
 					}
 					this.SendPropertyChanged("thongTin");
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="nguoiDung_dongGop", Storage="_dongGops", ThisKey="maNguoiDung", OtherKey="maNguoiDung")]
+		public EntitySet<dongGop> dongGops
+		{
+			get
+			{
+				return this._dongGops;
+			}
+			set
+			{
+				this._dongGops.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="nguoiDung_ketQua", Storage="_ketQuas", ThisKey="maNguoiDung", OtherKey="maNguoiDung")]
+		public EntitySet<ketQua> ketQuas
+		{
+			get
+			{
+				return this._ketQuas;
+			}
+			set
+			{
+				this._ketQuas.Assign(value);
 			}
 		}
 		
@@ -2978,222 +3287,6 @@ namespace quiz_management.Models
 		{
 			this.SendPropertyChanging();
 			entity.nguoiDung = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.thongTin")]
-	public partial class thongTin : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _maNguoidung;
-		
-		private string _tenNguoiDung;
-		
-		private System.Nullable<System.DateTime> _ngaySinh;
-		
-		private System.Nullable<int> _maLopHoc;
-		
-		private EntityRef<Lop> _Lop;
-		
-		private EntityRef<nguoiDung> _nguoiDung;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnmaNguoidungChanging(int value);
-    partial void OnmaNguoidungChanged();
-    partial void OntenNguoiDungChanging(string value);
-    partial void OntenNguoiDungChanged();
-    partial void OnngaySinhChanging(System.Nullable<System.DateTime> value);
-    partial void OnngaySinhChanged();
-    partial void OnmaLopHocChanging(System.Nullable<int> value);
-    partial void OnmaLopHocChanged();
-    #endregion
-		
-		public thongTin()
-		{
-			this._Lop = default(EntityRef<Lop>);
-			this._nguoiDung = default(EntityRef<nguoiDung>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maNguoidung", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int maNguoidung
-		{
-			get
-			{
-				return this._maNguoidung;
-			}
-			set
-			{
-				if ((this._maNguoidung != value))
-				{
-					if (this._nguoiDung.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnmaNguoidungChanging(value);
-					this.SendPropertyChanging();
-					this._maNguoidung = value;
-					this.SendPropertyChanged("maNguoidung");
-					this.OnmaNguoidungChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tenNguoiDung", DbType="NVarChar(50)")]
-		public string tenNguoiDung
-		{
-			get
-			{
-				return this._tenNguoiDung;
-			}
-			set
-			{
-				if ((this._tenNguoiDung != value))
-				{
-					this.OntenNguoiDungChanging(value);
-					this.SendPropertyChanging();
-					this._tenNguoiDung = value;
-					this.SendPropertyChanged("tenNguoiDung");
-					this.OntenNguoiDungChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ngaySinh", DbType="Date")]
-		public System.Nullable<System.DateTime> ngaySinh
-		{
-			get
-			{
-				return this._ngaySinh;
-			}
-			set
-			{
-				if ((this._ngaySinh != value))
-				{
-					this.OnngaySinhChanging(value);
-					this.SendPropertyChanging();
-					this._ngaySinh = value;
-					this.SendPropertyChanged("ngaySinh");
-					this.OnngaySinhChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maLopHoc", DbType="Int")]
-		public System.Nullable<int> maLopHoc
-		{
-			get
-			{
-				return this._maLopHoc;
-			}
-			set
-			{
-				if ((this._maLopHoc != value))
-				{
-					if (this._Lop.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnmaLopHocChanging(value);
-					this.SendPropertyChanging();
-					this._maLopHoc = value;
-					this.SendPropertyChanged("maLopHoc");
-					this.OnmaLopHocChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Lop_thongTin", Storage="_Lop", ThisKey="maLopHoc", OtherKey="maLopHoc", IsForeignKey=true)]
-		public Lop Lop
-		{
-			get
-			{
-				return this._Lop.Entity;
-			}
-			set
-			{
-				Lop previousValue = this._Lop.Entity;
-				if (((previousValue != value) 
-							|| (this._Lop.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Lop.Entity = null;
-						previousValue.thongTins.Remove(this);
-					}
-					this._Lop.Entity = value;
-					if ((value != null))
-					{
-						value.thongTins.Add(this);
-						this._maLopHoc = value.maLopHoc;
-					}
-					else
-					{
-						this._maLopHoc = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Lop");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="nguoiDung_thongTin", Storage="_nguoiDung", ThisKey="maNguoidung", OtherKey="maNguoiDung", IsForeignKey=true)]
-		public nguoiDung nguoiDung
-		{
-			get
-			{
-				return this._nguoiDung.Entity;
-			}
-			set
-			{
-				nguoiDung previousValue = this._nguoiDung.Entity;
-				if (((previousValue != value) 
-							|| (this._nguoiDung.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._nguoiDung.Entity = null;
-						previousValue.thongTin = null;
-					}
-					this._nguoiDung.Entity = value;
-					if ((value != null))
-					{
-						value.thongTin = this;
-						this._maNguoidung = value.maNguoiDung;
-					}
-					else
-					{
-						this._maNguoidung = default(int);
-					}
-					this.SendPropertyChanged("nguoiDung");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 }
