@@ -13,7 +13,7 @@ namespace quiz_management.Presenters.Student.InfoPersonal
         IInfoPersonalView view;
         int currentUserCode;
 
-        ProfilePersonalPresenter(InfoPersonalView v, int code)
+        public ProfilePersonalPresenter(IInfoPersonalView v, int code)
         {
             view = v;
             currentUserCode = code;
