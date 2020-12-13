@@ -37,15 +37,15 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
             string answerE = view.AnswerE;
             string answerF = view.AnswerF;
 
-            bool checkA = view.cbResultA;
-            bool checkB = view.cbResultB;
-            bool checkC = view.cbResultC;
-            bool checkD = view.cbResultD;
-            bool checkE = view.cbResultE;
-            bool checkF = view.cbResultF;
+            int checkA = view.cbResultA ? 1 : 0;
+            int checkB = view.cbResultB ? 1 : 0;
+            int checkC = view.cbResultC ? 1 : 0;
+            int checkD = view.cbResultD ? 1 : 0;
+            int checkE = view.cbResultE ? 1 : 0;
+            int checkF = view.cbResultF ? 1 : 0;
 
-            string classSelected = view.ClassSelect;
-            string subjectSelected = view.SubjectSelect;
+            string classIDSelected = view.ClassSelect;
+            string subjectIDSelected = view.SubjectSelect;
 
             using (var db = new QuizDataContext())
             {
@@ -53,12 +53,11 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
                 db.dongGops.InsertOnSubmit(new dongGop
                 {
                     maNguoiDung = currentUserCode,
-                    maMonHoc = 1,
+                    maMonHoc = int.Parse(subjectIDSelected),
                     trangthai = 0,
-                    ngay = DateTime.Now,
+                    ngay = DateTime.Now,//ToString("yyyy-MM-dd"),
                     cauHoi = Questionsstring,
-                    
-                    
+                    maKhoiLop = classIDSelected
                 });
                 db.SubmitChanges();
 
@@ -68,7 +67,7 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
                     {
                         maDongGop = idContribution_next.Count() + 1,
                         cauTraLoi = answerA,
-
+                        dapAn = checkA
                     });
                     db.SubmitChanges();
                 }
@@ -79,7 +78,7 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
                         {
                             maDongGop = idContribution_next.Count() + 1,
                             cauTraLoi = answerB,
-
+                            dapAn = checkB
                         });
                     db.SubmitChanges();
                 }
@@ -90,7 +89,7 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
                         {
                             maDongGop = idContribution_next.Count() + 1,
                             cauTraLoi = answerC,
-
+                            dapAn = checkC
                         });
                     db.SubmitChanges();
                 }
@@ -101,7 +100,7 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
                         {
                             maDongGop = idContribution_next.Count() + 1,
                             cauTraLoi = answerD,
-
+                            dapAn = checkD
                         });
                     db.SubmitChanges();
                 }
@@ -112,10 +111,10 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
                         {
                             maDongGop = idContribution_next.Count() + 1,
                             cauTraLoi = answerE,
-
+                            dapAn = checkE
                         });
                     db.SubmitChanges();
-                } 
+                }
                 if (answerF != "")
                 {
                     db.cTDongGops.InsertOnSubmit(
@@ -123,7 +122,7 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
                         {
                             maDongGop = idContribution_next.Count() + 1,
                             cauTraLoi = answerF,
-
+                            dapAn = checkF
                         });
                     db.SubmitChanges();
                 }
@@ -136,14 +135,24 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
 
         public void LoadClass(int code)
         {
+            khoiLop mh1 = new khoiLop();
+            khoiLop mh2 = new khoiLop();
+            mh1.maKhoiLop = "K10";
+            mh1.tenKhoiLop = "10";
+            mh2.maKhoiLop = "K11";
+            mh2.tenKhoiLop = "11";
+            List<khoiLop> list = new List<khoiLop>();
+            list.Add(mh1);
+            list.Add(mh2);
+
             view.StudentID = code.ToString();
             using (var db = new QuizDataContext())
             {
-                var classlist = db.Lops.ToList();
+                var classlist = db.khoiLops.ToList();
                 var subjects = db.monHocs.ToList();
                 if (classlist != null)
                 {
-                    view.classes = classlist;
+                    view.classes = list;
                 }
                 if (subjects != null)
                 {
