@@ -1,5 +1,4 @@
 ﻿using quiz_management.Presenters.Student.InfoPersonal;
-using quiz_management.Views.Student.Interface;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,20 +11,22 @@ using System.Windows.Forms;
 
 namespace quiz_management.Views.Student.InfoPersonal
 {
-    public partial class InfoPersonalView : Form,IInfoPersonalView
+    public partial class ProfileView : Form, IProfileView
     {
-        ProfilePersonalPresenter presenter;
-        public InfoPersonalView(int code)
+        ProfilePresenter presenter;
+        public ProfileView(int code)
         {
             InitializeComponent();
-            presenter = new ProfilePersonalPresenter(this, code);
-            btnSend.Click += (_, e) =>
+            presenter = new ProfilePresenter(this, code);
+            
+            btnSubmit.Click += (_, e) =>
             {
-                Send?.Invoke(btnSend, e);
+                Updatebtn?.Invoke(btnSubmit, e);
             };
-            linkGobackMain.Click += (_, e) =>
+
+            btnClose.Click += (_, e) =>
             {
-                GoBackMain?.Invoke(linkGobackMain, e);
+                Closebtn?.Invoke(btnSubmit, e);
             };
         }
 

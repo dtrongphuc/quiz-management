@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace quiz_management.Views.Student.Interface
+namespace quiz_management.Views.Student.InfoPersonal
 {
-    interface IInfoPersonalView
+    interface IProfileView
     {
         string _maSo { set; }
         string _hoTen { get; set; }

@@ -1,5 +1,4 @@
 ﻿using quiz_management.Views.Student.InfoPersonal;
-using quiz_management.Views.Student.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,21 +7,15 @@ using System.Threading.Tasks;
 
 namespace quiz_management.Presenters.Student.InfoPersonal
 {
-    class ProfilePersonalPresenter
+    class ProfilePresenter
     {
-        IInfoPersonalView view;
+        IProfileView view;
         int currentUserCode;
 
-        public ProfilePersonalPresenter(IInfoPersonalView v, int code)
+        public ProfilePresenter(IProfileView v, int code)
         {
             view = v;
             currentUserCode = code;
-            Initialize();
-        }
-
-        private void Initialize()
-        {
-           
         }
     }
 }
