@@ -30,15 +30,20 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtClass = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtStudentClass = new System.Windows.Forms.Label();
             this.txtTimeSeconds = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtExamCode = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.lbClass = new System.Windows.Forms.Label();
+            this.txtStudentName = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtTimeMinutes = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.gbQuestionButtons = new System.Windows.Forms.GroupBox();
             this.txtRemain = new System.Windows.Forms.Label();
             this.txtCompleted = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -70,11 +75,6 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtStudentName = new System.Windows.Forms.Label();
-            this.lbClass = new System.Windows.Forms.Label();
-            this.txtStudentClass = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtClass = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -84,7 +84,7 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.gbQuestionButtons.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,6 +132,37 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
             // 
+            // txtClass
+            // 
+            this.txtClass.AutoSize = true;
+            this.txtClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClass.Location = new System.Drawing.Point(56, 79);
+            this.txtClass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.txtClass.Name = "txtClass";
+            this.txtClass.Size = new System.Drawing.Size(0, 18);
+            this.txtClass.TabIndex = 17;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(20, 53);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(42, 13);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Họ tên:";
+            // 
+            // txtStudentClass
+            // 
+            this.txtStudentClass.AutoSize = true;
+            this.txtStudentClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStudentClass.Location = new System.Drawing.Point(52, 75);
+            this.txtStudentClass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.txtStudentClass.Name = "txtStudentClass";
+            this.txtStudentClass.Size = new System.Drawing.Size(0, 18);
+            this.txtStudentClass.TabIndex = 14;
+            // 
             // txtTimeSeconds
             // 
             this.txtTimeSeconds.AutoSize = true;
@@ -171,6 +202,26 @@
             this.label7.Size = new System.Drawing.Size(44, 13);
             this.label7.TabIndex = 11;
             this.label7.Text = "Mã đề: ";
+            // 
+            // lbClass
+            // 
+            this.lbClass.AutoSize = true;
+            this.lbClass.Location = new System.Drawing.Point(24, 82);
+            this.lbClass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbClass.Name = "lbClass";
+            this.lbClass.Size = new System.Drawing.Size(28, 13);
+            this.lbClass.TabIndex = 10;
+            this.lbClass.Text = "Lớp:";
+            // 
+            // txtStudentName
+            // 
+            this.txtStudentName.AutoSize = true;
+            this.txtStudentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStudentName.Location = new System.Drawing.Point(66, 48);
+            this.txtStudentName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.txtStudentName.Name = "txtStudentName";
+            this.txtStudentName.Size = new System.Drawing.Size(0, 18);
+            this.txtStudentName.TabIndex = 9;
             // 
             // label5
             // 
@@ -212,7 +263,7 @@
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.groupBox3);
+            this.splitContainer2.Panel1.Controls.Add(this.gbQuestionButtons);
             // 
             // splitContainer2.Panel2
             // 
@@ -222,42 +273,42 @@
             this.splitContainer2.SplitterWidth = 3;
             this.splitContainer2.TabIndex = 0;
             // 
-            // groupBox3
+            // gbQuestionButtons
             // 
-            this.groupBox3.Controls.Add(this.txtRemain);
-            this.groupBox3.Controls.Add(this.txtCompleted);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.btnSubmit);
-            this.groupBox3.Controls.Add(this.radioButton19);
-            this.groupBox3.Controls.Add(this.radioButton20);
-            this.groupBox3.Controls.Add(this.radioButton17);
-            this.groupBox3.Controls.Add(this.radioButton18);
-            this.groupBox3.Controls.Add(this.radioButton9);
-            this.groupBox3.Controls.Add(this.radioButton10);
-            this.groupBox3.Controls.Add(this.radioButton11);
-            this.groupBox3.Controls.Add(this.radioButton12);
-            this.groupBox3.Controls.Add(this.radioButton13);
-            this.groupBox3.Controls.Add(this.radioButton14);
-            this.groupBox3.Controls.Add(this.radioButton15);
-            this.groupBox3.Controls.Add(this.radioButton16);
-            this.groupBox3.Controls.Add(this.radioButton5);
-            this.groupBox3.Controls.Add(this.radioButton6);
-            this.groupBox3.Controls.Add(this.radioButton7);
-            this.groupBox3.Controls.Add(this.radioButton8);
-            this.groupBox3.Controls.Add(this.radioButton3);
-            this.groupBox3.Controls.Add(this.radioButton4);
-            this.groupBox3.Controls.Add(this.radioButton2);
-            this.groupBox3.Controls.Add(this.radioButton1);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox3.Location = new System.Drawing.Point(0, 0);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(223, 360);
-            this.groupBox3.TabIndex = 0;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Chọn câu";
+            this.gbQuestionButtons.Controls.Add(this.txtRemain);
+            this.gbQuestionButtons.Controls.Add(this.txtCompleted);
+            this.gbQuestionButtons.Controls.Add(this.label9);
+            this.gbQuestionButtons.Controls.Add(this.label8);
+            this.gbQuestionButtons.Controls.Add(this.btnSubmit);
+            this.gbQuestionButtons.Controls.Add(this.radioButton19);
+            this.gbQuestionButtons.Controls.Add(this.radioButton20);
+            this.gbQuestionButtons.Controls.Add(this.radioButton17);
+            this.gbQuestionButtons.Controls.Add(this.radioButton18);
+            this.gbQuestionButtons.Controls.Add(this.radioButton9);
+            this.gbQuestionButtons.Controls.Add(this.radioButton10);
+            this.gbQuestionButtons.Controls.Add(this.radioButton11);
+            this.gbQuestionButtons.Controls.Add(this.radioButton12);
+            this.gbQuestionButtons.Controls.Add(this.radioButton13);
+            this.gbQuestionButtons.Controls.Add(this.radioButton14);
+            this.gbQuestionButtons.Controls.Add(this.radioButton15);
+            this.gbQuestionButtons.Controls.Add(this.radioButton16);
+            this.gbQuestionButtons.Controls.Add(this.radioButton5);
+            this.gbQuestionButtons.Controls.Add(this.radioButton6);
+            this.gbQuestionButtons.Controls.Add(this.radioButton7);
+            this.gbQuestionButtons.Controls.Add(this.radioButton8);
+            this.gbQuestionButtons.Controls.Add(this.radioButton3);
+            this.gbQuestionButtons.Controls.Add(this.radioButton4);
+            this.gbQuestionButtons.Controls.Add(this.radioButton2);
+            this.gbQuestionButtons.Controls.Add(this.radioButton1);
+            this.gbQuestionButtons.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbQuestionButtons.Location = new System.Drawing.Point(0, 0);
+            this.gbQuestionButtons.Margin = new System.Windows.Forms.Padding(2);
+            this.gbQuestionButtons.Name = "gbQuestionButtons";
+            this.gbQuestionButtons.Padding = new System.Windows.Forms.Padding(2);
+            this.gbQuestionButtons.Size = new System.Drawing.Size(223, 360);
+            this.gbQuestionButtons.TabIndex = 0;
+            this.gbQuestionButtons.TabStop = false;
+            this.gbQuestionButtons.Text = "Chọn câu";
             // 
             // txtRemain
             // 
@@ -626,57 +677,6 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Câu 1";
             // 
-            // txtStudentName
-            // 
-            this.txtStudentName.AutoSize = true;
-            this.txtStudentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStudentName.Location = new System.Drawing.Point(66, 48);
-            this.txtStudentName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.txtStudentName.Name = "txtStudentName";
-            this.txtStudentName.Size = new System.Drawing.Size(0, 18);
-            this.txtStudentName.TabIndex = 9;
-            // 
-            // lbClass
-            // 
-            this.lbClass.AutoSize = true;
-            this.lbClass.Location = new System.Drawing.Point(24, 82);
-            this.lbClass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbClass.Name = "lbClass";
-            this.lbClass.Size = new System.Drawing.Size(28, 13);
-            this.lbClass.TabIndex = 10;
-            this.lbClass.Text = "Lớp:";
-            // 
-            // txtStudentClass
-            // 
-            this.txtStudentClass.AutoSize = true;
-            this.txtStudentClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStudentClass.Location = new System.Drawing.Point(52, 75);
-            this.txtStudentClass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.txtStudentClass.Name = "txtStudentClass";
-            this.txtStudentClass.Size = new System.Drawing.Size(0, 18);
-            this.txtStudentClass.TabIndex = 14;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(20, 53);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(42, 13);
-            this.label10.TabIndex = 15;
-            this.label10.Text = "Họ tên:";
-            // 
-            // txtClass
-            // 
-            this.txtClass.AutoSize = true;
-            this.txtClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClass.Location = new System.Drawing.Point(56, 79);
-            this.txtClass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.txtClass.Name = "txtClass";
-            this.txtClass.Size = new System.Drawing.Size(0, 18);
-            this.txtClass.TabIndex = 17;
-            // 
             // OfficialExamView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -696,8 +696,8 @@
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.gbQuestionButtons.ResumeLayout(false);
+            this.gbQuestionButtons.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -709,7 +709,7 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox gbQuestionButtons;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
