@@ -18,6 +18,7 @@ namespace quiz_management.Views.Student.Exam
         private static System.Timers.Timer aTimer;
         public int TimeCount;
         public int QuestionQuantity;
+        public int QuestionSelected = 0;
 
         public string StudentName { set => txtStudentName.Text = value; }
         public string StudentClass { set => txtClass.Text = value; }
@@ -29,6 +30,8 @@ namespace quiz_management.Views.Student.Exam
         //public object QuestionsDataSource { set => lvQuestionCollection = value; }
 
         //public List<string> ExamQuestions { set => }
+        public event EventHandler QuestionChange;
+
         public event EventHandler Submit;
 
         public event EventHandler Next;
@@ -42,6 +45,11 @@ namespace quiz_management.Views.Student.Exam
             SetTimer();
             RenderQuestionButton(QuestionQuantity);
             //lbQuestionCollection.DisplayMember = "CauHoi";
+
+            cbQuestions.SelectedIndexChanged += (_, e) =>
+            {
+                QuestionChange.Invoke(cbQuestions, e);
+            };
 
             btnSubmit.Click += (_, e) =>
             {
@@ -83,7 +91,7 @@ namespace quiz_management.Views.Student.Exam
 
         private void RenderQuestionButton(int quantity)
         {
-            for (int i = 0; i < 40; i++)
+            for (int i = 0; i < quantity; i++)
             {
                 cbQuestions.Items.Add("Câu " + (i + 1));
             }

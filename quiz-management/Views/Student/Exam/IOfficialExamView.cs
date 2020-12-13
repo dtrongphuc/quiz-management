@@ -13,8 +13,8 @@ namespace quiz_management.Views.Student.Exam
         int Completed { set; }
         int Remain { get; set; }
         //object QuestionsDataSource { set; }
-        //List<string> ExamQuestions { set; }
-        //List<string> ExamAnswers { set; }
+
+        event EventHandler QuestionChange;
 
         event EventHandler Submit;
 

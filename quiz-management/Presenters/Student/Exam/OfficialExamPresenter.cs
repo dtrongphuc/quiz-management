@@ -3,6 +3,7 @@ using quiz_management.Views.Student.Exam;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace quiz_management.Presenters.Student.Exam
 {
@@ -10,13 +11,20 @@ namespace quiz_management.Presenters.Student.Exam
     {
         private IOfficialExamView view;
         private int currentUserCode;
+        public List<Question> Questions = new List<Question>();
+        public int QuestionSelectedndex;
 
         public OfficialExamPresenter(IOfficialExamView v, int userCode)
         {
             view = v;
             currentUserCode = userCode;
-
             GetData();
+            view.QuestionChange += View_QuestionChange;
+        }
+
+        private void View_QuestionChange(object sender, System.EventArgs e)
+        {
+            QuestionSelectedndex = (sender as CheckedListBox).SelectedIndex;
         }
 
         private void GetData()
@@ -67,12 +75,12 @@ namespace quiz_management.Presenters.Student.Exam
                                         {
                                             MaCauTraLoi = s.DapAn.MaCauTraLoi,
                                             CauTraLoi = s.DapAn.CauTraLoi,
+                                            Checked = false,
                                         }
                                     }
                                 )
                             ).ToList();
 
-                List<Question> Questions = new List<Question>();
                 for (int i = 0; i < questions.Count; i++)
                 {
                     Question Q = new Question();
@@ -86,16 +94,16 @@ namespace quiz_management.Presenters.Student.Exam
                         A.Add(new Answer
                         {
                             MaCauTraLoi = questions[i].ElementAt(j).CauTraLoi.MaCauTraLoi,
-                            CauTraLoi = questions[i].ElementAt(j).CauTraLoi.CauTraLoi
+                            CauTraLoi = questions[i].ElementAt(j).CauTraLoi.CauTraLoi,
+                            Checked = questions[i].ElementAt(j).CauTraLoi.Checked
                         });
                     }
                     Q.CauTraLoi = A;
                     Questions.Add(Q);
                 }
 
-                view.QuestionCount = Questions.Count;
                 //view.QuestionsDataSource = Questions;
-                SetExamDataView(exam);
+                SetExamDataView(exam, Questions.Count);
             };
         }
 
@@ -106,11 +114,12 @@ namespace quiz_management.Presenters.Student.Exam
             view.StudentClass = className;
         }
 
-        private void SetExamDataView(boDe exam)
+        private void SetExamDataView(boDe exam, int quantity)
         {
             if (exam == null) return;
             view.ExamTime = (int)exam.thoiGian;
             view.ExamCode = exam.maBoDe.ToString();
+            view.QuestionCount = quantity;
         }
     }
 }
