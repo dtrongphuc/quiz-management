@@ -1,4 +1,5 @@
-﻿using System;
+﻿using quiz_management.Models;
+using System;
 using System.Collections.Generic;
 
 namespace quiz_management.Views.Student.Exam
@@ -8,11 +9,13 @@ namespace quiz_management.Views.Student.Exam
         string StudentName { set; }
         string StudentClass { set; }
         string ExamCode { set; }
-        int QuestionCount { set; }
+        int QuestionOrder { set; }
+        int QuestionQuantity { set; }
         int ExamTime { set; }
         int Completed { set; }
         int Remain { get; set; }
-        //object QuestionsDataSource { set; }
+        string QuestionString { set; }
+        List<Answer> Answers { set; }
 
         event EventHandler QuestionChange;
 

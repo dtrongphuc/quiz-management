@@ -44,19 +44,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.gbQuestionButtons = new System.Windows.Forms.GroupBox();
+            this.cbQuestions = new System.Windows.Forms.CheckedListBox();
             this.txtRemain = new System.Windows.Forms.Label();
             this.txtCompleted = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lbQuestionCountSelected = new System.Windows.Forms.Label();
             this.cbAnswers = new System.Windows.Forms.CheckedListBox();
             this.btnPrev = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.tbQuestion = new System.Windows.Forms.TextBox();
             this.label05 = new System.Windows.Forms.Label();
-            this.cbQuestions = new System.Windows.Forms.CheckedListBox();
-            this.lbQuestionCountSelected = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -273,6 +273,16 @@
             this.gbQuestionButtons.TabStop = false;
             this.gbQuestionButtons.Text = "Chọn câu";
             // 
+            // cbQuestions
+            // 
+            this.cbQuestions.BackColor = System.Drawing.SystemColors.Control;
+            this.cbQuestions.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cbQuestions.FormattingEnabled = true;
+            this.cbQuestions.Location = new System.Drawing.Point(5, 18);
+            this.cbQuestions.Name = "cbQuestions";
+            this.cbQuestions.Size = new System.Drawing.Size(213, 225);
+            this.cbQuestions.TabIndex = 45;
+            // 
             // txtRemain
             // 
             this.txtRemain.AutoSize = true;
@@ -341,6 +351,16 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             // 
+            // lbQuestionCountSelected
+            // 
+            this.lbQuestionCountSelected.AutoSize = true;
+            this.lbQuestionCountSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQuestionCountSelected.Location = new System.Drawing.Point(48, 11);
+            this.lbQuestionCountSelected.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbQuestionCountSelected.Name = "lbQuestionCountSelected";
+            this.lbQuestionCountSelected.Size = new System.Drawing.Size(0, 17);
+            this.lbQuestionCountSelected.TabIndex = 11;
+            // 
             // cbAnswers
             // 
             this.cbAnswers.BackColor = System.Drawing.SystemColors.Control;
@@ -378,6 +398,7 @@
             // tbQuestion
             // 
             this.tbQuestion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbQuestion.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tbQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbQuestion.Location = new System.Drawing.Point(41, 39);
             this.tbQuestion.Margin = new System.Windows.Forms.Padding(2);
@@ -397,27 +418,6 @@
             this.label05.Size = new System.Drawing.Size(36, 17);
             this.label05.TabIndex = 6;
             this.label05.Text = "Câu";
-            // 
-            // cbQuestions
-            // 
-            this.cbQuestions.BackColor = System.Drawing.SystemColors.Control;
-            this.cbQuestions.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cbQuestions.FormattingEnabled = true;
-            this.cbQuestions.Location = new System.Drawing.Point(5, 18);
-            this.cbQuestions.Name = "cbQuestions";
-            this.cbQuestions.Size = new System.Drawing.Size(213, 225);
-            this.cbQuestions.TabIndex = 45;
-            // 
-            // lbQuestionCountSelected
-            // 
-            this.lbQuestionCountSelected.AutoSize = true;
-            this.lbQuestionCountSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbQuestionCountSelected.Location = new System.Drawing.Point(48, 11);
-            this.lbQuestionCountSelected.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbQuestionCountSelected.Name = "lbQuestionCountSelected";
-            this.lbQuestionCountSelected.Size = new System.Drawing.Size(22, 17);
-            this.lbQuestionCountSelected.TabIndex = 11;
-            this.lbQuestionCountSelected.Text = "1:";
             // 
             // OfficialExamView
             // 

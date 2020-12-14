@@ -25,6 +25,9 @@ namespace quiz_management.Presenters.Student.Exam
         private void View_QuestionChange(object sender, System.EventArgs e)
         {
             QuestionSelectedndex = (sender as CheckedListBox).SelectedIndex;
+            view.QuestionOrder = QuestionSelectedndex + 1;
+            view.QuestionString = Questions.ElementAt(QuestionSelectedndex).CauHoi;
+            view.Answers = Questions.ElementAt(QuestionSelectedndex).CauTraLoi;
         }
 
         private void GetData()
@@ -119,7 +122,7 @@ namespace quiz_management.Presenters.Student.Exam
             if (exam == null) return;
             view.ExamTime = (int)exam.thoiGian;
             view.ExamCode = exam.maBoDe.ToString();
-            view.QuestionCount = quantity;
+            view.QuestionQuantity = quantity;
         }
     }
 }
