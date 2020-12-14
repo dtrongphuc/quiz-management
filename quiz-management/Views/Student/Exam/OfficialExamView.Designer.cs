@@ -323,9 +323,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSubmit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSubmit.Location = new System.Drawing.Point(39, 314);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubmit.Name = "btnSubmit";
@@ -365,14 +363,15 @@
             // 
             this.cbAnswers.BackColor = System.Drawing.SystemColors.Control;
             this.cbAnswers.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cbAnswers.CheckOnClick = true;
             this.cbAnswers.ColumnWidth = 250;
-            this.cbAnswers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbAnswers.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.cbAnswers.FormattingEnabled = true;
             this.cbAnswers.Location = new System.Drawing.Point(41, 163);
-            this.cbAnswers.Margin = new System.Windows.Forms.Padding(4);
+            this.cbAnswers.Margin = new System.Windows.Forms.Padding(30);
             this.cbAnswers.MultiColumn = true;
             this.cbAnswers.Name = "cbAnswers";
-            this.cbAnswers.Size = new System.Drawing.Size(449, 72);
+            this.cbAnswers.Size = new System.Drawing.Size(449, 108);
             this.cbAnswers.TabIndex = 10;
             // 
             // btnPrev

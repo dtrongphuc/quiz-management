@@ -11,6 +11,8 @@ namespace quiz_management.Views.Student.Exam
         string ExamCode { set; }
         int QuestionOrder { set; }
         int QuestionQuantity { set; }
+        int QuestionSelected { set; }
+        bool QuestionChecked { set; }
         int ExamTime { set; }
         int Completed { set; }
         int Remain { get; set; }
@@ -18,6 +20,8 @@ namespace quiz_management.Views.Student.Exam
         List<Answer> Answers { set; }
 
         event EventHandler QuestionChange;
+
+        event EventHandler AnswerCheck;
 
         event EventHandler Submit;
 
