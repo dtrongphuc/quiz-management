@@ -20,11 +20,48 @@ namespace quiz_management.Presenters.Student.Exam
             currentUserCode = userCode;
             GetData();
             view.QuestionChange += View_QuestionChange;
+            view.AnswerCheck += View_AnswerCheck;
+        }
+
+        private void View_AnswerCheck(object sender, System.EventArgs e)
+        {
+            view.QuestionSelected = QuestionSelectedndex;
+            int index = (e as ItemCheckEventArgs).Index;
+            bool state = (e as ItemCheckEventArgs).NewValue == CheckState.Checked;
+            Questions.ElementAt(QuestionSelectedndex).Checked = state;
+            view.Remain = Questions.Count - view.Completed;
+            List<Answer> ans = Questions.ElementAt(QuestionSelectedndex).CauTraLoi;
+            ans.ElementAt(index).Checked = state;
+            foreach (Answer item in ans)
+            {
+                if (item.Checked)
+                {
+                    Questions.ElementAt(QuestionSelectedndex).Checked = item.Checked;
+                    view.QuestionChecked = item.Checked;
+                    UpdateCompleted_RemainCount();
+                    return;
+                }
+            }
+            Questions.ElementAt(QuestionSelectedndex).Checked = state;
+            view.QuestionChecked = state;
+            UpdateCompleted_RemainCount();
+        }
+
+        private void UpdateCompleted_RemainCount()
+        {
+            int CompletedCount = 0;
+            foreach (Question q in Questions)
+            {
+                if (q.Checked == true) CompletedCount++;
+            }
+            view.Completed = CompletedCount;
+            view.Remain = Questions.Count - CompletedCount;
         }
 
         private void View_QuestionChange(object sender, System.EventArgs e)
         {
             QuestionSelectedndex = (sender as CheckedListBox).SelectedIndex;
+            if (QuestionSelectedndex < 0) return;
             view.QuestionOrder = QuestionSelectedndex + 1;
             view.QuestionString = Questions.ElementAt(QuestionSelectedndex).CauHoi;
             view.Answers = Questions.ElementAt(QuestionSelectedndex).CauTraLoi;
@@ -74,6 +111,7 @@ namespace quiz_management.Presenters.Student.Exam
                                     {
                                         MaCauHoi = s.CauHoi.MaCauHoi,
                                         CauHoi = s.CauHoi.CauHoi,
+                                        Checked = false,
                                         CauTraLoi = new Answer
                                         {
                                             MaCauTraLoi = s.DapAn.MaCauTraLoi,
@@ -105,7 +143,6 @@ namespace quiz_management.Presenters.Student.Exam
                     Questions.Add(Q);
                 }
 
-                //view.QuestionsDataSource = Questions;
                 SetExamDataView(exam, Questions.Count);
             };
         }

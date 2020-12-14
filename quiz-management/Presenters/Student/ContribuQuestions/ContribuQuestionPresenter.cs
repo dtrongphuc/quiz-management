@@ -145,15 +145,15 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
 
         public void LoadClass(int code)
         {
-            khoiLop mh1 = new khoiLop();
-            khoiLop mh2 = new khoiLop();
-            mh1.maKhoiLop = "K10";
-            mh1.tenKhoiLop = "10";
-            mh2.maKhoiLop = "K11";
-            mh2.tenKhoiLop = "11";
-            List<khoiLop> list = new List<khoiLop>();
-            list.Add(mh1);
-            list.Add(mh2);
+            //khoiLop mh1 = new khoiLop();
+            //khoiLop mh2 = new khoiLop();
+            //mh1.maKhoiLop = "K10";
+            //mh1.tenKhoiLop = "10";
+            //mh2.maKhoiLop = "K11";
+            //mh2.tenKhoiLop = "11";
+            //List<khoiLop> list = new List<khoiLop>();
+            //list.Add(mh1);
+            //list.Add(mh2);
 
             view.StudentID = code.ToString();
             using (var db = new QuizDataContext())
@@ -162,7 +162,7 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
                 var subjects = db.monHocs.ToList();
                 if (classlist != null)
                 {
-                    view.classes = list;
+                    view.classes = classlist;
                 }
                 if (subjects != null)
                 {
