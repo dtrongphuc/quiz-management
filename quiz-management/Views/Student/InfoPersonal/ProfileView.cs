@@ -1,5 +1,6 @@
 ﻿using quiz_management.Models;
 using quiz_management.Presenters.Student.InfoPersonal;
+using quiz_management.Views.Student.Main;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,7 +32,7 @@ namespace quiz_management.Views.Student.InfoPersonal
             };
         }
 
-        public string _maSo { set => txtIdStudent.Text = value; }
+        public string _maSo { set => txtIdStudent.Text = value; get => txtIdStudent.Text; }
         public string _hoTen { get => txtNameStudent.Text; set => txtNameStudent.Text = value; }
         public string _ngaysinh { get => txtDOBStudent.Text; set => txtDOBStudent.Text = value; }
         public List<Lop> _lop { set => cbLop.DataSource = value; }
@@ -46,8 +47,16 @@ namespace quiz_management.Views.Student.InfoPersonal
             set => cbLop.SelectedItem = value;
         }
 
-
+       
         public event EventHandler Updatebtn;
         public event EventHandler Closebtn;
+
+        public void swichMainStudent(int code)
+        {
+            this.Hide();
+            MainStudentView screen = new MainStudentView(code);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
+        }
     }
 }
