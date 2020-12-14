@@ -73,6 +73,7 @@
     </Compile>
     <Compile Include="Presenters\Login\LoginPresenter.cs" />
     <Compile Include="Presenters\Register\RegisterPresenter.cs" />
+    <Compile Include="Presenters\Student\ContribuQuestions\CQuestionListPresenter.cs" />
     <Compile Include="Presenters\Student\Exam\OfficialExamPresenter.cs" />
     <Compile Include="Presenters\Student\ContribuQuestions\ContribuQuestionPresenter.cs" />
     <Compile Include="Presenters\Student\InfoPersonal\ProfilePresenter.cs" />
@@ -99,6 +100,13 @@
     <Compile Include="Views\Register\RegisterView.Designer.cs">
       <DependentUpon>RegisterView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Student\ContribuQuestions\CQuestionListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Student\ContribuQuestions\CQuestionListView.Designer.cs">
+      <DependentUpon>CQuestionListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Student\ContribuQuestions\ICQuestionListView.cs" />
     <Compile Include="Views\Student\ContribuQuestions\IMainCQuestionView.cs" />
     <Compile Include="Views\Student\ContribuQuestions\MainCQuestionView.cs">
       <SubType>Form</SubType>
@@ -172,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Register\RegisterView.resx">
       <DependentUpon>RegisterView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Student\ContribuQuestions\CQuestionListView.resx">
+      <DependentUpon>CQuestionListView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Student\ContribuQuestions\MainCQuestionView.resx">
       <DependentUpon>MainCQuestionView.cs</DependentUpon>
