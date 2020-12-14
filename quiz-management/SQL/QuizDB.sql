@@ -135,6 +135,11 @@ CREATE TABLE ketQua
 	CONSTRAINT PK_ketQua
 	PRIMARY KEY (maKetQua)
 )
+alter table ketQua add constraint df_cauchualam default 0 for chuaLam;
+alter table ketQua add constraint df_cau default 0 for cauDung;
+alter table ketQua add constraint df_causai default 0 for cauSai;
+alter table ketQua add constraint df_ngaylam default getdate() for ngayLam;
+select * from cTKetQua
 
 ALTER TABLE dbo.ketQua ADD CONSTRAINT FK_ketQua_nguoiDung FOREIGN KEY(maNguoiDung) REFERENCES dbo.nguoiDung(maNguoiDung)
 ALTER TABLE  dbo.ketQua ADD CONSTRAINT FK_ketQua_boDe FOREIGN KEY(maBoDe) REFERENCES dbo.boDe(maBoDe)
@@ -150,6 +155,7 @@ CREATE TABLE cTKetQua
 	PRIMARY KEY (maKetQua,maCauHoi,maCauTraLoi)
 )
 
+
 ALTER TABLE dbo.cTKetQua ADD CONSTRAINT FK_cTKetQua_ketQua FOREIGN KEY (maKetQua) REFERENCES dbo.ketQua(maKetQua)
 ALTER TABLE  dbo.cTKetQua ADD CONSTRAINT FK_cTKetQua_cauHoi FOREIGN KEY (maCauHoi) REFERENCES dbo.cauHoi(maCauHoi)
 ALTER TABLE  dbo.cTKetQua ADD CONSTRAINT FK_cTKetQua_dapAn FOREIGN KEY (maCauHoi,maCauTraLoi) REFERENCES dbo.dapAn(maCauHoi,maCauTraloi)
@@ -163,6 +169,7 @@ CREATE TABLE lichThi
 	CONSTRAINT PK_lichThi
 	PRIMARY KEY(maNguoiDung,maMonHoc,ngayThi)
 )
+select * from lichthi
 
 CREATE TABLE luyenTap
 (
@@ -311,7 +318,12 @@ VALUES
     1    -- dapAn - int
     )
 GO
-
+insert into ketQua(maNguoiDung,MaBoDe,CauDung,TrangThai,ThoiGian,diem)
+values (1,1,1,1,60,10)
+go
+insert into cTKetQua(maKetQua,maCauHoi,maCauTraLoi,thoiGian)
+values(1,1,4,60)
+go
 select * from nguoiDung
 select * from thongtin
 select * from lop
