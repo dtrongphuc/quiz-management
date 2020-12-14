@@ -1,4 +1,5 @@
-﻿using quiz_management.Presenters.Student.InfoPersonal;
+﻿using quiz_management.Models;
+using quiz_management.Presenters.Student.InfoPersonal;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,7 @@ namespace quiz_management.Views.Student.InfoPersonal
         {
             InitializeComponent();
             presenter = new ProfilePresenter(this, code);
-            
+
             btnSubmit.Click += (_, e) =>
             {
                 Updatebtn?.Invoke(btnSubmit, e);
@@ -33,9 +34,18 @@ namespace quiz_management.Views.Student.InfoPersonal
         public string _maSo { set => txtIdStudent.Text = value; }
         public string _hoTen { get => txtNameStudent.Text; set => txtNameStudent.Text = value; }
         public string _ngaysinh { get => txtDOBStudent.Text; set => txtDOBStudent.Text = value; }
-        public List<string> _lop { set => cbLop.DataSource = value; }
+        public List<Lop> _lop { set => cbLop.DataSource = value; }
 
-        public string _lopchon => (string)cbLop.SelectedValue;
+       
+        public Lop _lopChon
+        {
+            get
+            {
+                return (Lop)cbLop.SelectedItem;
+            }
+            set => cbLop.SelectedItem = value;
+        }
+
 
         public event EventHandler Updatebtn;
         public event EventHandler Closebtn;

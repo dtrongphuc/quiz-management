@@ -44,18 +44,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.gbQuestionButtons = new System.Windows.Forms.GroupBox();
+            this.cbQuestions = new System.Windows.Forms.CheckedListBox();
             this.txtRemain = new System.Windows.Forms.Label();
             this.txtCompleted = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.lbQuestionCountSelected = new System.Windows.Forms.Label();
+            this.cbAnswers = new System.Windows.Forms.CheckedListBox();
             this.btnPrev = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbQuestions = new System.Windows.Forms.CheckedListBox();
+            this.tbQuestion = new System.Windows.Forms.TextBox();
+            this.label05 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -272,6 +273,16 @@
             this.gbQuestionButtons.TabStop = false;
             this.gbQuestionButtons.Text = "Chọn câu";
             // 
+            // cbQuestions
+            // 
+            this.cbQuestions.BackColor = System.Drawing.SystemColors.Control;
+            this.cbQuestions.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cbQuestions.FormattingEnabled = true;
+            this.cbQuestions.Location = new System.Drawing.Point(5, 18);
+            this.cbQuestions.Name = "cbQuestions";
+            this.cbQuestions.Size = new System.Drawing.Size(213, 225);
+            this.cbQuestions.TabIndex = 45;
+            // 
             // txtRemain
             // 
             this.txtRemain.AutoSize = true;
@@ -325,11 +336,12 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.checkedListBox1);
+            this.groupBox2.Controls.Add(this.lbQuestionCountSelected);
+            this.groupBox2.Controls.Add(this.cbAnswers);
             this.groupBox2.Controls.Add(this.btnPrev);
             this.groupBox2.Controls.Add(this.btnNext);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.tbQuestion);
+            this.groupBox2.Controls.Add(this.label05);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
@@ -339,23 +351,29 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             // 
-            // checkedListBox1
+            // lbQuestionCountSelected
             // 
-            this.checkedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.checkedListBox1.ColumnWidth = 250;
-            this.checkedListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "A: 123",
-            "B: 123",
-            "C: 345",
-            "D: 556"});
-            this.checkedListBox1.Location = new System.Drawing.Point(41, 163);
-            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.checkedListBox1.MultiColumn = true;
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(449, 72);
-            this.checkedListBox1.TabIndex = 10;
+            this.lbQuestionCountSelected.AutoSize = true;
+            this.lbQuestionCountSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQuestionCountSelected.Location = new System.Drawing.Point(48, 11);
+            this.lbQuestionCountSelected.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbQuestionCountSelected.Name = "lbQuestionCountSelected";
+            this.lbQuestionCountSelected.Size = new System.Drawing.Size(0, 17);
+            this.lbQuestionCountSelected.TabIndex = 11;
+            // 
+            // cbAnswers
+            // 
+            this.cbAnswers.BackColor = System.Drawing.SystemColors.Control;
+            this.cbAnswers.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cbAnswers.ColumnWidth = 250;
+            this.cbAnswers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbAnswers.FormattingEnabled = true;
+            this.cbAnswers.Location = new System.Drawing.Point(41, 163);
+            this.cbAnswers.Margin = new System.Windows.Forms.Padding(4);
+            this.cbAnswers.MultiColumn = true;
+            this.cbAnswers.Name = "cbAnswers";
+            this.cbAnswers.Size = new System.Drawing.Size(449, 72);
+            this.cbAnswers.TabIndex = 10;
             // 
             // btnPrev
             // 
@@ -377,38 +395,29 @@
             this.btnNext.Text = "Kế tiếp";
             this.btnNext.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // tbQuestion
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(41, 39);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(449, 110);
-            this.textBox1.TabIndex = 7;
-            this.textBox1.Text = "Gió hình thành từ đâu?? Gió hình thành từ đâu?? Gió hình thành từ đâu?? Gió hình " +
-    "thành từ đâu??";
+            this.tbQuestion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbQuestion.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.tbQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbQuestion.Location = new System.Drawing.Point(41, 39);
+            this.tbQuestion.Margin = new System.Windows.Forms.Padding(2);
+            this.tbQuestion.Multiline = true;
+            this.tbQuestion.Name = "tbQuestion";
+            this.tbQuestion.ReadOnly = true;
+            this.tbQuestion.Size = new System.Drawing.Size(449, 110);
+            this.tbQuestion.TabIndex = 7;
             // 
-            // label2
+            // label05
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(14, 11);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 17);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Câu 1";
-            // 
-            // cbQuestions
-            // 
-            this.cbQuestions.FormattingEnabled = true;
-            this.cbQuestions.Location = new System.Drawing.Point(5, 18);
-            this.cbQuestions.Name = "cbQuestions";
-            this.cbQuestions.Size = new System.Drawing.Size(213, 229);
-            this.cbQuestions.TabIndex = 45;
+            this.label05.AutoSize = true;
+            this.label05.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label05.Location = new System.Drawing.Point(14, 11);
+            this.label05.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label05.Name = "label05";
+            this.label05.Size = new System.Drawing.Size(36, 17);
+            this.label05.TabIndex = 6;
+            this.label05.Text = "Câu";
             // 
             // OfficialExamView
             // 
@@ -448,11 +457,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label txtTimeMinutes;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox cbAnswers;
         private System.Windows.Forms.Button btnPrev;
         private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tbQuestion;
+        private System.Windows.Forms.Label label05;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -467,5 +476,6 @@
         private System.Windows.Forms.Label lbClass;
         private System.Windows.Forms.Label txtStudentName;
         private System.Windows.Forms.CheckedListBox cbQuestions;
+        private System.Windows.Forms.Label lbQuestionCountSelected;
     }
 }

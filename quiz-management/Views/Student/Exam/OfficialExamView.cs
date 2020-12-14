@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Timers;
+using quiz_management.Models;
 
 namespace quiz_management.Views.Student.Exam
 {
@@ -17,18 +18,22 @@ namespace quiz_management.Views.Student.Exam
         private OfficialExamPresenter presenter;
         private static System.Timers.Timer aTimer;
         public int TimeCount;
-        public int QuestionQuantity;
+        public int QQuantity;
+        public ListBox checkBoxList;
 
         public string StudentName { set => txtStudentName.Text = value; }
         public string StudentClass { set => txtClass.Text = value; }
         public string ExamCode { set => txtExamCode.Text = value; }
-        public int QuestionCount { set => QuestionQuantity = value; }
+        public int QuestionOrder { set => lbQuestionCountSelected.Text = value.ToString(); }
+        public int QuestionQuantity { set => QQuantity = value; }
         public int ExamTime { set => TimeCount = value; }
         public int Completed { set => txtCompleted.Text = value.ToString(); }
         public int Remain { get => int.Parse(txtRemain.Text); set => txtRemain.Text = value.ToString(); }
-        //public object QuestionsDataSource { set => lvQuestionCollection = value; }
+        public string QuestionString { set => tbQuestion.Text = value; }
+        public List<Answer> Answers { set => checkBoxList.DataSource = value; }
 
-        //public List<string> ExamQuestions { set => }
+        public event EventHandler QuestionChange;
+
         public event EventHandler Submit;
 
         public event EventHandler Next;
@@ -38,10 +43,18 @@ namespace quiz_management.Views.Student.Exam
         public OfficialExamView(int userCode)
         {
             InitializeComponent();
+            checkBoxList = ((ListBox)cbAnswers);
+
             presenter = new OfficialExamPresenter(this, userCode);
             SetTimer();
-            RenderQuestionButton(QuestionQuantity);
-            //lbQuestionCollection.DisplayMember = "CauHoi";
+            RenderQuestionButton(QQuantity);
+
+            cbQuestions.SelectedIndexChanged += (_, e) =>
+            {
+                QuestionChange.Invoke(cbQuestions, e);
+                checkBoxList.DisplayMember = "CauTraLoi";
+                checkBoxList.ValueMember = "MaCauTraLoi";
+            };
 
             btnSubmit.Click += (_, e) =>
             {
@@ -83,7 +96,7 @@ namespace quiz_management.Views.Student.Exam
 
         private void RenderQuestionButton(int quantity)
         {
-            for (int i = 0; i < 40; i++)
+            for (int i = 0; i < quantity; i++)
             {
                 cbQuestions.Items.Add("Câu " + (i + 1));
             }

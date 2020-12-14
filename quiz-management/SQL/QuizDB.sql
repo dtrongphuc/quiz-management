@@ -168,8 +168,15 @@ CREATE TABLE luyenTap
 	maNguoiDung INT,
 	soCauDung INT,
 	soCauSai INT,
-	ngay date
+	ngay date,
+
+	constraint PK_luyenTap
+	primary key(maNguoiDung,soCauDung,soCauSai,ngay)
 )
+
+
+
+
 ALTER TABLE  dbo.luyenTap ADD CONSTRAINT FK_luyenTap_nguoiDung FOREIGN KEY(maNguoiDung) REFERENCES dbo.nguoiDung(maNguoiDung)
 
 CREATE TABLE dongGop
@@ -196,7 +203,10 @@ CREATE TABLE cTDongGop
 (
     maDongGop INT,
 	cauTraLoi NVARCHAR(100),
-	dapAn INT
+	dapAn INT,
+
+	CONSTRAINT PK_cTDongGop
+	PRIMARY KEY(maDongGop,cauTraLoi)
 )
 
 ALTER TABLE dbo.cTDongGop ADD CONSTRAINT FK_cTDongGop_dongGop FOREIGN KEY(maDongGop) REFERENCES dbo.dongGop(maDongGop)

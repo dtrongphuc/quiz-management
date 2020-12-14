@@ -1,4 +1,5 @@
-﻿using System;
+﻿using quiz_management.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,8 +12,8 @@ namespace quiz_management.Views.Student.InfoPersonal
         string _maSo { set; }
         string _hoTen { get; set; }
         string _ngaysinh { get; set; }
-        List<string> _lop { set; }
-        string _lopchon { get; }
+        List<Lop> _lop { set; }
+        Lop _lopChon { get; set; }
         event EventHandler Updatebtn;
         event EventHandler Closebtn;
     }
