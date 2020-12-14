@@ -33,5 +33,6 @@ namespace quiz_management.Views.Student.ContribuQuestions
         event EventHandler Send;
         event EventHandler GoBackMain;
         void ShowMainStudentView(int code);
+        void ShowMessage(string text);
     }
 }
