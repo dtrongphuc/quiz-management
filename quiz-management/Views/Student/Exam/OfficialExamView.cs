@@ -37,7 +37,7 @@ namespace quiz_management.Views.Student.Exam
         }
 
         public int ExamTime { set => TimeCount = value; }
-        public int Completed { set => txtCompleted.Text = value.ToString(); }
+        public int Completed { get => int.Parse(txtCompleted.Text); set => txtCompleted.Text = value.ToString(); }
         public int Remain { get => int.Parse(txtRemain.Text); set => txtRemain.Text = value.ToString(); }
         public string QuestionString { set => tbQuestion.Text = value; }
         public List<Answer> Answers { set => checkBoxList.DataSource = value; }
@@ -60,6 +60,7 @@ namespace quiz_management.Views.Student.Exam
             presenter = new OfficialExamPresenter(this, userCode);
             SetTimer();
             RenderQuestionButton(QQuantity);
+            txtRemain.Text = QQuantity.ToString();
 
             cbQuestions.SelectedIndexChanged += (_, e) =>
             {
@@ -93,7 +94,11 @@ namespace quiz_management.Views.Student.Exam
         public void TimeToString()
         {
             txtTimeMinutes.Invoke(new Action(() => { txtTimeMinutes.Text = (Math.Ceiling(TimeCount / 60 * 1.0)).ToString(); }));
-            txtTimeSeconds.Invoke(new Action(() => { txtTimeSeconds.Text = (TimeCount % 60).ToString(); }));
+            txtTimeSeconds.Invoke(new Action(() =>
+            {
+                int secconds = (TimeCount % 60);
+                txtTimeSeconds.Text = secconds < 10 ? "0" + secconds : secconds.ToString();
+            }));
         }
 
         private void SetTimer()

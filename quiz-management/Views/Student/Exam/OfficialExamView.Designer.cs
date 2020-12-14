@@ -298,8 +298,9 @@
             this.txtCompleted.Location = new System.Drawing.Point(110, 266);
             this.txtCompleted.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtCompleted.Name = "txtCompleted";
-            this.txtCompleted.Size = new System.Drawing.Size(0, 13);
+            this.txtCompleted.Size = new System.Drawing.Size(13, 13);
             this.txtCompleted.TabIndex = 43;
+            this.txtCompleted.Text = "0";
             // 
             // label9
             // 
@@ -371,7 +372,7 @@
             this.cbAnswers.Margin = new System.Windows.Forms.Padding(30);
             this.cbAnswers.MultiColumn = true;
             this.cbAnswers.Name = "cbAnswers";
-            this.cbAnswers.Size = new System.Drawing.Size(449, 108);
+            this.cbAnswers.Size = new System.Drawing.Size(449, 96);
             this.cbAnswers.TabIndex = 10;
             // 
             // btnPrev
