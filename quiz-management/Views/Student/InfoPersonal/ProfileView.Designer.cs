@@ -45,6 +45,7 @@ namespace quiz_management.Views.Student.InfoPersonal
             // 
             // cbLop
             // 
+            this.cbLop.DisplayMember = "tenLopHoc";
             this.cbLop.FormattingEnabled = true;
             this.cbLop.Location = new System.Drawing.Point(170, 289);
             this.cbLop.Name = "cbLop";
