@@ -45,6 +45,7 @@ CREATE TABLE thongTin
 	CONSTRAINT PK_thongtin
 	PRIMARY KEY (maNguoidung)
 )
+select * from thongTin
 
 ALTER TABLE thongTin
 ADD CONSTRAINT df_maLopHoc

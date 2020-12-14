@@ -62,7 +62,7 @@ namespace quiz_management.Views.Student.Main
         public void ShowEditProfileStudentView(int userCode)
         {
             this.Hide();
-            UpdateInfoStudentView screen = new UpdateInfoStudentView(userCode);
+            ProfileView screen = new ProfileView(userCode);
             screen.FormClosed += (_, e) => this.Close();
             screen.Show();
         }

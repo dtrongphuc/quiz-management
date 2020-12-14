@@ -58,7 +58,10 @@ namespace quiz_management.Views.Student.ContribuQuestions
         bool IMainCQuestionView.cbResultD => cbResultD.Checked;
         bool IMainCQuestionView.cbResultE => cbResultE.Checked;
         bool IMainCQuestionView.cbResultF => cbResultF.Checked;
-
+        public void ShowMessage(string text)
+        {
+            MessageBox.Show(text, "Thông báo", MessageBoxButtons.YesNo);
+        }
         public event EventHandler Send;
         public event EventHandler GoBackMain;
         public void ShowMainStudentView(int code)

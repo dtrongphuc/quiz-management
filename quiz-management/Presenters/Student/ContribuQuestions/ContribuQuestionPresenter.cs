@@ -49,7 +49,9 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
 
             using (var db = new QuizDataContext())
             {
-                var idContribution_next = db.dongGops.ToList();
+                //try
+                //{
+
                 db.dongGops.InsertOnSubmit(new dongGop
                 {
                     maNguoiDung = currentUserCode,
@@ -60,12 +62,12 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
                     maKhoiLop = classIDSelected
                 });
                 db.SubmitChanges();
-
+                var idContribution_next = db.dongGops.Count();
                 if (answerA != "")
                 {
                     db.cTDongGops.InsertOnSubmit(new cTDongGop
                     {
-                        maDongGop = idContribution_next.Count() + 1,
+                        maDongGop = idContribution_next + 1,
                         cauTraLoi = answerA,
                         dapAn = checkA
                     });
@@ -76,7 +78,7 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
                     db.cTDongGops.InsertOnSubmit(
                         new cTDongGop
                         {
-                            maDongGop = idContribution_next.Count() + 1,
+                            maDongGop = idContribution_next + 1,
                             cauTraLoi = answerB,
                             dapAn = checkB
                         });
@@ -87,7 +89,7 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
                     db.cTDongGops.InsertOnSubmit(
                         new cTDongGop
                         {
-                            maDongGop = idContribution_next.Count() + 1,
+                            maDongGop = idContribution_next + 1,
                             cauTraLoi = answerC,
                             dapAn = checkC
                         });
@@ -98,7 +100,7 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
                     db.cTDongGops.InsertOnSubmit(
                         new cTDongGop
                         {
-                            maDongGop = idContribution_next.Count() + 1,
+                            maDongGop = idContribution_next + 1,
                             cauTraLoi = answerD,
                             dapAn = checkD
                         });
@@ -109,7 +111,7 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
                     db.cTDongGops.InsertOnSubmit(
                         new cTDongGop
                         {
-                            maDongGop = idContribution_next.Count() + 1,
+                            maDongGop = idContribution_next + 1,
                             cauTraLoi = answerE,
                             dapAn = checkE
                         });
@@ -120,12 +122,20 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
                     db.cTDongGops.InsertOnSubmit(
                         new cTDongGop
                         {
-                            maDongGop = idContribution_next.Count() + 1,
+                            maDongGop = idContribution_next + 1,
                             cauTraLoi = answerF,
                             dapAn = checkF
                         });
                     db.SubmitChanges();
                 }
+
+                view.ShowMessage("Đóng góp câu hỏi thành công");
+                //}
+                //catch(Exception )
+                //{
+                //    view.ShowMessage("Đã xảy ra lỗi");
+                //}
+
             }
         }
 

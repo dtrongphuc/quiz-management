@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace quiz_management.Presenters.Student.InfoPersonal
 {
@@ -64,12 +65,28 @@ namespace quiz_management.Presenters.Student.InfoPersonal
 
         private void View_Closebtn(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            view.swichMainStudent(int.Parse(view._maSo));
         }
 
         private void View_Updatebtn(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            DateTime dt = DateTime.Parse(view._ngaysinh);
+            try
+            {
+                using (var db = new QuizDataContext())
+                {
+                    var temp = db.thongTins.SingleOrDefault(d => d.maNguoidung == int.Parse(view._maSo));
+                    temp.tenNguoiDung = view._hoTen;
+                    temp.ngaySinh = dt;
+                    temp.maLopHoc = view._lopChon.maLopHoc;
+
+                    db.SubmitChanges();
+                }
+                view.swichMainStudent(int.Parse(view._maSo));
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);  
+            }
         }
     }
 }
