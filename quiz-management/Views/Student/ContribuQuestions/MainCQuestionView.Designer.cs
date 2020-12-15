@@ -60,6 +60,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.lbStudentID = new System.Windows.Forms.Label();
+            this.btnWatchContributeQuestion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -239,7 +240,7 @@
             this.tbAnswerB.Name = "tbAnswerB";
             this.tbAnswerB.Size = new System.Drawing.Size(515, 27);
             this.tbAnswerB.TabIndex = 17;
-            this.tbAnswerB.Text = "1";
+            this.tbAnswerB.Text = "2";
             // 
             // tbAnswerD
             // 
@@ -248,7 +249,7 @@
             this.tbAnswerD.Name = "tbAnswerD";
             this.tbAnswerD.Size = new System.Drawing.Size(515, 27);
             this.tbAnswerD.TabIndex = 19;
-            this.tbAnswerD.Text = "1";
+            this.tbAnswerD.Text = "4";
             // 
             // tbAnswerC
             // 
@@ -257,7 +258,7 @@
             this.tbAnswerC.Name = "tbAnswerC";
             this.tbAnswerC.Size = new System.Drawing.Size(515, 27);
             this.tbAnswerC.TabIndex = 18;
-            this.tbAnswerC.Text = "1";
+            this.tbAnswerC.Text = "3 ";
             // 
             // tbAnswerF
             // 
@@ -266,7 +267,6 @@
             this.tbAnswerF.Name = "tbAnswerF";
             this.tbAnswerF.Size = new System.Drawing.Size(515, 27);
             this.tbAnswerF.TabIndex = 21;
-            this.tbAnswerF.Text = "1";
             // 
             // tbAnswerE
             // 
@@ -275,7 +275,6 @@
             this.tbAnswerE.Name = "tbAnswerE";
             this.tbAnswerE.Size = new System.Drawing.Size(515, 27);
             this.tbAnswerE.TabIndex = 20;
-            this.tbAnswerE.Text = "1";
             // 
             // label12
             // 
@@ -377,11 +376,21 @@
             this.lbStudentID.TabIndex = 31;
             this.lbStudentID.Text = "362";
             // 
+            // btnWatchContributeQuestion
+            // 
+            this.btnWatchContributeQuestion.Location = new System.Drawing.Point(658, 42);
+            this.btnWatchContributeQuestion.Name = "btnWatchContributeQuestion";
+            this.btnWatchContributeQuestion.Size = new System.Drawing.Size(119, 32);
+            this.btnWatchContributeQuestion.TabIndex = 32;
+            this.btnWatchContributeQuestion.Text = "Xem đóng góp";
+            this.btnWatchContributeQuestion.UseVisualStyleBackColor = true;
+            // 
             // MainCQuestionView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(801, 667);
+            this.Controls.Add(this.btnWatchContributeQuestion);
             this.Controls.Add(this.lbStudentID);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
@@ -456,5 +465,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label lbStudentID;
+        private System.Windows.Forms.Button btnWatchContributeQuestion;
     }
 }

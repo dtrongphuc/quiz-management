@@ -32,7 +32,10 @@ namespace quiz_management.Views.Student.ContribuQuestions
         bool cbResultF { get; }
         event EventHandler Send;
         event EventHandler GoBackMain;
+        event EventHandler WatchContributeQuestions;
+
         void ShowMainStudentView(int code);
+        void ShowWatchContributeQuestions(int code);
         void ShowMessage(string text);
     }
 }

@@ -39,25 +39,27 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
             //    cauHoi = Questionsstring,
             //    maKhoiLop = classIDSelected
             //});
-            List<dongGop> list = new List<dongGop>();
-            dongGop dg1 = new dongGop
-            {
-                maDongGop = 1,
-                maNguoiDung = 1,
-                maMonHoc = 1,
-                trangthai = 1,
-                ngay = DateTime.Now,//ToString("yyyy-MM-dd"),
-                cauHoi = "Cái gì v??",
-                maKhoiLop = "K10"
-            };
-            list.Add(dg1);
-            view.contributed = list;
-            //using (var db = new QuizDataContext())
+
+            //List<dongGop> list = new List<dongGop>();
+            //dongGop dg1 = new dongGop
             //{
-            //    var questions = db.dongGops.Where(i => i.maNguoiDung == currenUserCode).ToList();
-            //    if (questions.Count > 0 && questions != null)
-            //        view.contributed = questions;
-            //}
+            //    maDongGop = 1,
+            //    maNguoiDung = 1,
+            //    maMonHoc = 1,
+            //    trangthai = 1,
+            //    ngay = DateTime.Now,//ToString("yyyy-MM-dd"),
+            //    cauHoi = "Cái gì v??",
+            //    maKhoiLop = "K10"
+            //};
+            //list.Add(dg1);
+            //view.contributed = list;
+
+            using (var db = new QuizDataContext())
+            {
+                var questions = db.dongGops.Where(i => i.maNguoiDung == currenUserCode).ToList();
+                if (questions.Count > 0 && questions != null)
+                    view.contributed = questions;
+            }
         }
 
         private void Closepage_View(object sender, EventArgs e)

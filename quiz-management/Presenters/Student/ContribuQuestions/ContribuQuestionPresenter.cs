@@ -20,6 +20,12 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
             LoadClass(code);
             view.Send += Send_CLick;
             view.GoBackMain += View_GoBackMain;
+            view.WatchContributeQuestions += View_WatchContributeQuestions;
+        }
+
+        private void View_WatchContributeQuestions(object sender, EventArgs e)
+        {
+            view.ShowWatchContributeQuestions(currentUserCode);
         }
 
         private void View_GoBackMain(object sender, EventArgs e)
@@ -62,12 +68,12 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
                     maKhoiLop = classIDSelected
                 });
                 db.SubmitChanges();
-                var idContribution_next = db.dongGops.Count();
+                var idContribution_next = db.dongGops.Max(i => i.maDongGop);
                 if (answerA != "")
                 {
                     db.cTDongGops.InsertOnSubmit(new cTDongGop
                     {
-                        maDongGop = idContribution_next + 1,
+                        maDongGop = idContribution_next,
                         cauTraLoi = answerA,
                         dapAn = checkA
                     });
@@ -78,7 +84,7 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
                     db.cTDongGops.InsertOnSubmit(
                         new cTDongGop
                         {
-                            maDongGop = idContribution_next + 1,
+                            maDongGop = idContribution_next,
                             cauTraLoi = answerB,
                             dapAn = checkB
                         });
@@ -89,7 +95,7 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
                     db.cTDongGops.InsertOnSubmit(
                         new cTDongGop
                         {
-                            maDongGop = idContribution_next + 1,
+                            maDongGop = idContribution_next,
                             cauTraLoi = answerC,
                             dapAn = checkC
                         });
@@ -100,7 +106,7 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
                     db.cTDongGops.InsertOnSubmit(
                         new cTDongGop
                         {
-                            maDongGop = idContribution_next + 1,
+                            maDongGop = idContribution_next,
                             cauTraLoi = answerD,
                             dapAn = checkD
                         });
@@ -111,7 +117,7 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
                     db.cTDongGops.InsertOnSubmit(
                         new cTDongGop
                         {
-                            maDongGop = idContribution_next + 1,
+                            maDongGop = idContribution_next,
                             cauTraLoi = answerE,
                             dapAn = checkE
                         });
@@ -122,7 +128,7 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
                     db.cTDongGops.InsertOnSubmit(
                         new cTDongGop
                         {
-                            maDongGop = idContribution_next + 1,
+                            maDongGop = idContribution_next,
                             cauTraLoi = answerF,
                             dapAn = checkF
                         });
