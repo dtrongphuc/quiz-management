@@ -170,8 +170,8 @@ CREATE TABLE lichThi
 	PRIMARY KEY(maNguoiDung,maMonHoc,ngayThi)
 )
 select * from lichThi
-
-
+alter table lichThi add constraint FK_lichThi_nguoiDung foreign key (maNguoiDung) references nguoiDung(maNguoiDung)
+alter table lichThi add constraint FK_lichThi_monHoc foreign key (maMonHoc) references monHoc(maMonHoc)
 
 CREATE TABLE luyenTap
 (

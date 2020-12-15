@@ -72,6 +72,7 @@
       <DependentUpon>Quiz.dbml</DependentUpon>
     </Compile>
     <Compile Include="Models\ResultExam.cs" />
+    <Compile Include="Models\TestSchedule.cs" />
     <Compile Include="Presenters\Login\LoginPresenter.cs" />
     <Compile Include="Presenters\Register\RegisterPresenter.cs" />
     <Compile Include="Presenters\Student\ContribuQuestions\CQuestionListPresenter.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Presenters\Student\ContribuQuestions\ContribuQuestionPresenter.cs" />
     <Compile Include="Presenters\Student\InfoPersonal\ProfilePresenter.cs" />
     <Compile Include="Presenters\Student\InfoPersonal\ResultExamPresenter.cs" />
+    <Compile Include="Presenters\Student\InfoPersonal\TestSchedulePresenter.cs" />
     <Compile Include="Presenters\Student\Main\MainStudentPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -125,6 +127,7 @@
     </Compile>
     <Compile Include="Views\Student\InfoPersonal\IProfileView.cs" />
     <Compile Include="Views\Student\InfoPersonal\IResultExamView.cs" />
+    <Compile Include="Views\Student\InfoPersonal\ITestScheduleView.cs" />
     <Compile Include="Views\Student\InfoPersonal\ProfileView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,7 +225,6 @@
     <None Include="Models\Quiz.dbml.layout">
       <DependentUpon>Quiz.dbml</DependentUpon>
     </None>
-    <None Include="Properties\DataSources\quiz_management.Presenters.Student.InfoPersonal.ProfilePresenter.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

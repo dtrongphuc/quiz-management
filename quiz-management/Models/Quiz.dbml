@@ -117,6 +117,8 @@
       <Column Name="maNguoiDung" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="maMonHoc" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ngayThi" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="monHoc_lichThi" Member="monHoc" ThisKey="maMonHoc" OtherKey="maMonHoc" Type="monHoc" IsForeignKey="true" />
+      <Association Name="nguoiDung_lichThi" Member="nguoiDung" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="nguoiDung" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Lop" Member="Lops">
@@ -143,6 +145,7 @@
       <Column Name="tenMonHoc" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Association Name="monHoc_boDe" Member="boDes" ThisKey="maMonHoc" OtherKey="maMon" Type="boDe" />
       <Association Name="monHoc_dongGop" Member="dongGops" ThisKey="maMonHoc" OtherKey="maMonHoc" Type="dongGop" />
+      <Association Name="monHoc_lichThi" Member="lichThis" ThisKey="maMonHoc" OtherKey="maMonHoc" Type="lichThi" />
     </Type>
   </Table>
   <Table Name="dbo.nguoiDung" Member="nguoiDungs">
@@ -155,6 +158,7 @@
       <Association Name="nguoiDung_thongTin" Member="thongTin" ThisKey="maNguoiDung" OtherKey="maNguoidung" Type="thongTin" Cardinality="One" />
       <Association Name="nguoiDung_dongGop" Member="dongGops" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="dongGop" />
       <Association Name="nguoiDung_ketQua" Member="ketQuas" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="ketQua" />
+      <Association Name="nguoiDung_lichThi" Member="lichThis" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="lichThi" />
       <Association Name="nguoiDung_luyenTap" Member="luyenTaps" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="luyenTap" />
     </Type>
   </Table>

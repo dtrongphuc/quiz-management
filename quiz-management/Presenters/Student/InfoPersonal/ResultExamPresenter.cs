@@ -25,12 +25,13 @@ namespace quiz_management.Presenters.Student.InfoPersonal
         {
             view.BackMain += View_BackMain;
             lstkq = new List<ResultExam>();
+            DateTime dt;
             using (var db = new QuizDataContext())
             {
                 lstKQ = db.ketQuas.Where(p => p.maNguoiDung == currentcode).ToList();
                 foreach (ketQua kq in lstKQ)
                 {
-                    DateTime dt =  kq.ngayLam.Value;
+                    dt = kq.ngayLam.Value;
                     ResultExam rs = new ResultExam();
                     rs.MonHoc = kq.boDe.monHoc.tenMonHoc;
                     rs.TenNguoiDung = kq.nguoiDung.thongTin.tenNguoiDung;
