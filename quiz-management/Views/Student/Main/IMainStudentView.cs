@@ -9,7 +9,7 @@ namespace quiz_management.Views.Student.Main
 {
     interface IMainStudentView
     {
-       
+
         string DOBHS { set; }
         string IdHS { set; }
         string NameHS { set; }
@@ -19,10 +19,12 @@ namespace quiz_management.Views.Student.Main
         event EventHandler ContribuQuestion;
         event EventHandler OfficialExamClick;
         event EventHandler ResultExamClick;
+        event EventHandler TestScheduleClick;
 
         void ShowEditProfileStudentView(int userCode);
         void ShowContribuQuestionsView(int userCode);
         void ShowOfficialExamView(int userCode);
         void ShowResultExamView(int userCode);
+        void ShowTestScheduleView(int userCode);
     }
 }

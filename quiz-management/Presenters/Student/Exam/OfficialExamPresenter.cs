@@ -12,7 +12,7 @@ namespace quiz_management.Presenters.Student.Exam
         private IOfficialExamView view;
         private int currentUserCode;
         public List<Question> Questions = new List<Question>();
-        public int QuestionSelectedndex;
+        public int QuestionSelectedIndex;
 
         public OfficialExamPresenter(IOfficialExamView v, int userCode)
         {
@@ -21,28 +21,61 @@ namespace quiz_management.Presenters.Student.Exam
             GetData();
             view.QuestionChange += View_QuestionChange;
             view.AnswerCheck += View_AnswerCheck;
+            view.Prev += View_Prev;
+            view.Next += View_Next;
+            view.Submit += View_Submit;
+        }
+
+        private void View_Submit(object sender, System.EventArgs e)
+        {
+            bool confirm = false;
+            if (view.Remain > 0)
+            {
+                confirm = view.ShowMessage("Nộp bài", "Còn " + view.Remain + " câu chưa hoàn thành.Bạn có chắc không ?");
+            }
+            else
+            {
+                confirm = view.ShowMessage("Nộp bài", "Bạn có chắc không ?");
+            }
+
+            if (confirm == false) return;
+            int timeLeft = view.TimeLeft;
+        }
+
+        private void View_Next(object sender, System.EventArgs e)
+        {
+            if (QuestionSelectedIndex >= Questions.Count - 1) return;
+            QuestionSelectedIndex++;
+            BindingQuestion();
+        }
+
+        private void View_Prev(object sender, System.EventArgs e)
+        {
+            if (QuestionSelectedIndex <= 0) return;
+            QuestionSelectedIndex--;
+            BindingQuestion();
         }
 
         private void View_AnswerCheck(object sender, System.EventArgs e)
         {
-            view.QuestionSelected = QuestionSelectedndex;
+            view.QuestionSelected = QuestionSelectedIndex;
             int index = (e as ItemCheckEventArgs).Index;
             bool state = (e as ItemCheckEventArgs).NewValue == CheckState.Checked;
-            Questions.ElementAt(QuestionSelectedndex).Checked = state;
+            Questions.ElementAt(QuestionSelectedIndex).Checked = state;
             view.Remain = Questions.Count - view.Completed;
-            List<Answer> ans = Questions.ElementAt(QuestionSelectedndex).CauTraLoi;
+            List<Answer> ans = Questions.ElementAt(QuestionSelectedIndex).CauTraLoi;
             ans.ElementAt(index).Checked = state;
             foreach (Answer item in ans)
             {
                 if (item.Checked)
                 {
-                    Questions.ElementAt(QuestionSelectedndex).Checked = item.Checked;
+                    Questions.ElementAt(QuestionSelectedIndex).Checked = item.Checked;
                     view.QuestionChecked = item.Checked;
                     UpdateCompleted_RemainCount();
                     return;
                 }
             }
-            Questions.ElementAt(QuestionSelectedndex).Checked = state;
+            Questions.ElementAt(QuestionSelectedIndex).Checked = state;
             view.QuestionChecked = state;
             UpdateCompleted_RemainCount();
         }
@@ -60,11 +93,9 @@ namespace quiz_management.Presenters.Student.Exam
 
         private void View_QuestionChange(object sender, System.EventArgs e)
         {
-            QuestionSelectedndex = (sender as CheckedListBox).SelectedIndex;
-            if (QuestionSelectedndex < 0) return;
-            view.QuestionOrder = QuestionSelectedndex + 1;
-            view.QuestionString = Questions.ElementAt(QuestionSelectedndex).CauHoi;
-            view.Answers = Questions.ElementAt(QuestionSelectedndex).CauTraLoi;
+            QuestionSelectedIndex = (sender as CheckedListBox).SelectedIndex;
+            if (QuestionSelectedIndex < 0) return;
+            BindingQuestion();
         }
 
         private void GetData()
@@ -144,6 +175,7 @@ namespace quiz_management.Presenters.Student.Exam
                 }
 
                 SetExamDataView(exam, Questions.Count);
+                BindingQuestion();
             };
         }
 
@@ -160,6 +192,20 @@ namespace quiz_management.Presenters.Student.Exam
             view.ExamTime = (int)exam.thoiGian;
             view.ExamCode = exam.maBoDe.ToString();
             view.QuestionQuantity = quantity;
+        }
+
+        private void BindingQuestion()
+        {
+            view.QuestionSelected = QuestionSelectedIndex; ;
+            view.QuestionOrder = QuestionSelectedIndex + 1;
+            view.QuestionString = Questions.ElementAt(QuestionSelectedIndex).CauHoi;
+            view.Answers = Questions.ElementAt(QuestionSelectedIndex).CauTraLoi;
+        }
+
+        private void GetDataSubmit()
+        {
+            int timeLeft = view.TimeLeft;
+            //Questions = Questions
         }
     }
 }

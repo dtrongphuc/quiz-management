@@ -28,19 +28,31 @@ namespace quiz_management.Views.Student.Exam
         public int QuestionOrder { set => lbQuestionCountSelected.Text = value.ToString(); }
         public int QuestionQuantity { set => QQuantity = value; }
         public int QuestionSelected { set => QuestionSelectedIndex = value; }
+        public int TimeLeft { get => TimeCount; }
 
         public bool QuestionChecked
         {
             set =>
-                cbQuestions.SetItemCheckState(QuestionSelectedIndex,
-                value == true ? CheckState.Checked : CheckState.Unchecked);
+                cbQuestions.SetItemChecked(QuestionSelectedIndex, value);
         }
 
         public int ExamTime { set => TimeCount = value; }
         public int Completed { get => int.Parse(txtCompleted.Text); set => txtCompleted.Text = value.ToString(); }
         public int Remain { get => int.Parse(txtRemain.Text); set => txtRemain.Text = value.ToString(); }
         public string QuestionString { set => tbQuestion.Text = value; }
-        public List<Answer> Answers { set => checkBoxList.DataSource = value; }
+
+        public List<Answer> Answers
+        {
+            set
+            {
+                checkBoxList.DataSource = value;
+                for (int i = 0; i < value.Count; i++)
+                {
+                    bool state = value[i].Checked;
+                    cbAnswers.SetItemChecked(i, state);
+                };
+            }
+        }
 
         public event EventHandler QuestionChange;
 
@@ -52,22 +64,23 @@ namespace quiz_management.Views.Student.Exam
 
         public event EventHandler Prev;
 
+        public bool ShowMessage(string caption, string text)
+        {
+            DialogResult result = MessageBox.Show(this, text, caption, MessageBoxButtons.OKCancel);
+            return result == DialogResult.OK;
+        }
+
         public OfficialExamView(int userCode)
         {
             InitializeComponent();
             checkBoxList = ((ListBox)cbAnswers);
 
             presenter = new OfficialExamPresenter(this, userCode);
-            SetTimer();
-            RenderQuestionButton(QQuantity);
-            txtRemain.Text = QQuantity.ToString();
+            Init();
 
             cbQuestions.SelectedIndexChanged += (_, e) =>
             {
                 QuestionChange.Invoke(cbQuestions, e);
-                checkBoxList.ItemHeight = 32;
-                checkBoxList.DisplayMember = "CauTraLoi";
-                checkBoxList.ValueMember = "MaCauTraLoi";
             };
 
             cbAnswers.ItemCheck += (_, e) =>
@@ -83,12 +96,25 @@ namespace quiz_management.Views.Student.Exam
             btnPrev.Click += (_, e) =>
             {
                 Prev.Invoke(btnPrev, e);
+                cbQuestions.SelectedIndex = QuestionSelectedIndex;
             };
 
             btnNext.Click += (_, e) =>
             {
                 Next.Invoke(btnNext, e);
+                cbQuestions.SelectedIndex = QuestionSelectedIndex;
             };
+        }
+
+        public void Init()
+        {
+            SetTimer();
+            RenderQuestionButton(QQuantity);
+            cbQuestions.SelectedIndex = QuestionSelectedIndex;
+            checkBoxList.ItemHeight = 32;
+            checkBoxList.DisplayMember = "CauTraLoi";
+            checkBoxList.ValueMember = "MaCauTraLoi";
+            txtRemain.Text = QQuantity.ToString();
         }
 
         public void TimeToString()

@@ -31,13 +31,7 @@ namespace quiz_management.Views.Student.InfoPersonal
 
         public List<ResultExam> ResultExam { set => dgvKetQua.DataSource = value; }
         
-
         public event EventHandler BackMain;
-
-        
-        
-
-
 
         public void swichMainStudent(int code)
         {

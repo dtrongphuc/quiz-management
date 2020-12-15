@@ -28,6 +28,7 @@ namespace quiz_management.Views.Student.Main
         public event EventHandler ContribuQuestion;
         public event EventHandler OfficialExamClick;
         public event EventHandler ResultExamClick;
+        public event EventHandler TestScheduleClick;
 
         public MainStudentView(int u)
         {
@@ -48,6 +49,14 @@ namespace quiz_management.Views.Student.Main
             btnOfficialExam.Click += (_, e) =>
             {
                 OfficialExamClick?.Invoke(btnOfficialExam, e);
+            };
+            btnExamResultView.Click += (_, e) =>
+            {
+                ResultExamClick?.Invoke(btnExamResultView, e);
+            };
+            btnTestScheduleView.Click += (_, e) =>
+            {
+                TestScheduleClick?.Invoke(btnTestScheduleView, e);
             };
         }
 
@@ -80,6 +89,14 @@ namespace quiz_management.Views.Student.Main
         {
             this.Hide();
             ResultExamView screen = new ResultExamView(userCode);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
+        }
+
+        public void ShowTestScheduleView(int userCode)
+        {
+            this.Hide();
+            TestScheduleView screen = new TestScheduleView(userCode);
             screen.FormClosed += (_, e) => this.Close();
             screen.Show();
         }

@@ -28,6 +28,7 @@ namespace quiz_management.Presenters.Student.Main
             view.ContribuQuestion += View_ContribuQuestion;
             view.OfficialExamClick += View_OfficialExamClick;
             view.ResultExamClick += View_ResultExamClick;
+            view.TestScheduleClick += View_TestScheduleClick;
 
             using (var user = new QuizDataContext())
             {
@@ -50,6 +51,11 @@ namespace quiz_management.Presenters.Student.Main
                 }
             }
             FillLH();
+        }
+
+        private void View_TestScheduleClick(object sender, EventArgs e)
+        {
+            view.ShowTestScheduleView(currentUserCode);
         }
 
         private void View_ResultExamClick(object sender, EventArgs e)
