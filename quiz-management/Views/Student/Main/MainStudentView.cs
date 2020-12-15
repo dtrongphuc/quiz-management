@@ -27,6 +27,7 @@ namespace quiz_management.Views.Student.Main
         public event EventHandler EditProfile;
         public event EventHandler ContribuQuestion;
         public event EventHandler OfficialExamClick;
+        public event EventHandler ResultExamClick;
 
         public MainStudentView(int u)
         {
@@ -71,6 +72,14 @@ namespace quiz_management.Views.Student.Main
         {
             this.Hide();
             OfficialExamView screen = new OfficialExamView(userCode);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
+        }
+
+        public void ShowResultExamView(int userCode)
+        {
+            this.Hide();
+            ResultExamView screen = new ResultExamView(userCode);
             screen.FormClosed += (_, e) => this.Close();
             screen.Show();
         }

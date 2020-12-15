@@ -18,9 +18,11 @@ namespace quiz_management.Views.Student.Main
         event EventHandler EditProfile;
         event EventHandler ContribuQuestion;
         event EventHandler OfficialExamClick;
+        event EventHandler ResultExamClick;
 
         void ShowEditProfileStudentView(int userCode);
         void ShowContribuQuestionsView(int userCode);
         void ShowOfficialExamView(int userCode);
+        void ShowResultExamView(int userCode);
     }
 }

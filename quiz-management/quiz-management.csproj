@@ -71,12 +71,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Quiz.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Models\ResultExam.cs" />
     <Compile Include="Presenters\Login\LoginPresenter.cs" />
     <Compile Include="Presenters\Register\RegisterPresenter.cs" />
     <Compile Include="Presenters\Student\ContribuQuestions\CQuestionListPresenter.cs" />
     <Compile Include="Presenters\Student\Exam\OfficialExamPresenter.cs" />
     <Compile Include="Presenters\Student\ContribuQuestions\ContribuQuestionPresenter.cs" />
     <Compile Include="Presenters\Student\InfoPersonal\ProfilePresenter.cs" />
+    <Compile Include="Presenters\Student\InfoPersonal\ResultExamPresenter.cs" />
     <Compile Include="Presenters\Student\Main\MainStudentPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -122,6 +124,7 @@
       <DependentUpon>OfficialExamView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Student\InfoPersonal\IProfileView.cs" />
+    <Compile Include="Views\Student\InfoPersonal\IResultExamView.cs" />
     <Compile Include="Views\Student\InfoPersonal\ProfileView.cs">
       <SubType>Form</SubType>
     </Compile>
