@@ -42,7 +42,7 @@
             this.diem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maKetQua = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.trangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKetQua)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,12 +75,13 @@
             this.diem,
             this.maKetQua,
             this.trangThai,
-            this.MaMonHoc});
+            this.MonHoc});
             this.dgvKetQua.Enabled = false;
             this.dgvKetQua.Location = new System.Drawing.Point(11, 91);
-            this.dgvKetQua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvKetQua.Margin = new System.Windows.Forms.Padding(2);
             this.dgvKetQua.Name = "dgvKetQua";
             this.dgvKetQua.ReadOnly = true;
+            this.dgvKetQua.RowHeadersVisible = false;
             this.dgvKetQua.RowHeadersWidth = 51;
             this.dgvKetQua.RowTemplate.Height = 24;
             this.dgvKetQua.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -101,7 +102,8 @@
             // TenNguoiDung
             // 
             this.TenNguoiDung.DataPropertyName = "TenNguoiDung";
-            this.TenNguoiDung.FillWeight = 89.65736F;
+            this.TenNguoiDung.DividerWidth = 1;
+            this.TenNguoiDung.FillWeight = 58.04037F;
             this.TenNguoiDung.HeaderText = "Họ Và Tên";
             this.TenNguoiDung.Name = "TenNguoiDung";
             this.TenNguoiDung.ReadOnly = true;
@@ -109,30 +111,29 @@
             // MaBoDe
             // 
             this.MaBoDe.DataPropertyName = "MaBoDe";
-            this.MaBoDe.FillWeight = 89.65736F;
+            this.MaBoDe.FillWeight = 40.49627F;
             this.MaBoDe.HeaderText = "Mã Bộ Đề";
             this.MaBoDe.Name = "MaBoDe";
             this.MaBoDe.ReadOnly = true;
             // 
             // cauSai
             // 
-            this.cauSai.DataPropertyName = "cauSai";
-            this.cauSai.FillWeight = 89.65736F;
+            this.cauSai.DataPropertyName = "CauSai";
+            this.cauSai.FillWeight = 45.49627F;
             this.cauSai.HeaderText = "Số Câu Sai";
             this.cauSai.Name = "cauSai";
             this.cauSai.ReadOnly = true;
             // 
             // cauDung
             // 
-            this.cauDung.DataPropertyName = "cauDung";
-            this.cauDung.FillWeight = 89.65736F;
+            this.cauDung.DataPropertyName = "CauDung";
+            this.cauDung.FillWeight = 45.49627F;
             this.cauDung.HeaderText = "Số Câu Đúng";
             this.cauDung.Name = "cauDung";
             this.cauDung.ReadOnly = true;
             // 
             // maNguoiDung
             // 
-            this.maNguoiDung.DataPropertyName = "maNguoiDung";
             this.maNguoiDung.HeaderText = "maNguoiDung";
             this.maNguoiDung.Name = "maNguoiDung";
             this.maNguoiDung.ReadOnly = true;
@@ -140,39 +141,38 @@
             // 
             // chuaLam
             // 
-            this.chuaLam.DataPropertyName = "chuaLam";
-            this.chuaLam.FillWeight = 89.65736F;
+            this.chuaLam.DataPropertyName = "ChuaLam";
+            this.chuaLam.FillWeight = 45.49627F;
             this.chuaLam.HeaderText = "Số Chưa Làm";
             this.chuaLam.Name = "chuaLam";
             this.chuaLam.ReadOnly = true;
             // 
             // ngayLam
             // 
-            this.ngayLam.DataPropertyName = "ngayLam";
-            this.ngayLam.FillWeight = 89.65736F;
+            this.ngayLam.DataPropertyName = "NgayLam";
+            this.ngayLam.FillWeight = 45.49627F;
             this.ngayLam.HeaderText = "Ngày Làm";
             this.ngayLam.Name = "ngayLam";
             this.ngayLam.ReadOnly = true;
             // 
             // thoiGian
             // 
-            this.thoiGian.DataPropertyName = "thoiGian";
-            this.thoiGian.FillWeight = 89.65736F;
+            this.thoiGian.DataPropertyName = "ThoiGian";
+            this.thoiGian.FillWeight = 45.49627F;
             this.thoiGian.HeaderText = "Thời Gian";
             this.thoiGian.Name = "thoiGian";
             this.thoiGian.ReadOnly = true;
             // 
             // diem
             // 
-            this.diem.DataPropertyName = "diem";
-            this.diem.FillWeight = 89.65736F;
+            this.diem.DataPropertyName = "Diem";
+            this.diem.FillWeight = 30.49627F;
             this.diem.HeaderText = "Điểm";
             this.diem.Name = "diem";
             this.diem.ReadOnly = true;
             // 
             // maKetQua
             // 
-            this.maKetQua.DataPropertyName = "maKetQua";
             this.maKetQua.HeaderText = "maKetQua";
             this.maKetQua.Name = "maKetQua";
             this.maKetQua.ReadOnly = true;
@@ -180,19 +180,19 @@
             // 
             // trangThai
             // 
-            this.trangThai.DataPropertyName = "trangThai";
             this.trangThai.HeaderText = "trangThai";
             this.trangThai.Name = "trangThai";
             this.trangThai.ReadOnly = true;
             this.trangThai.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.trangThai.Visible = false;
             // 
-            // MaMonHoc
+            // MonHoc
             // 
-            this.MaMonHoc.DataPropertyName = "MaMonHoc";
-            this.MaMonHoc.HeaderText = "Môn Học";
-            this.MaMonHoc.Name = "MaMonHoc";
-            this.MaMonHoc.ReadOnly = true;
+            this.MonHoc.DataPropertyName = "MonHoc";
+            this.MonHoc.FillWeight = 40.7446F;
+            this.MonHoc.HeaderText = "Môn Học";
+            this.MonHoc.Name = "MonHoc";
+            this.MonHoc.ReadOnly = true;
             // 
             // ResultExamView
             // 
@@ -202,7 +202,7 @@
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.dgvKetQua);
             this.Controls.Add(this.lbLogin);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ResultExamView";
             this.Text = "ResultExamView";
             ((System.ComponentModel.ISupportInitialize)(this.dgvKetQua)).EndInit();
@@ -227,6 +227,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn diem;
         private System.Windows.Forms.DataGridViewTextBoxColumn maKetQua;
         private System.Windows.Forms.DataGridViewTextBoxColumn trangThai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaMonHoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MonHoc;
     }
 }

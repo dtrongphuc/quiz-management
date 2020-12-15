@@ -71,6 +71,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Quiz.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Models\ResultExam.cs" />
     <Compile Include="Presenters\Login\LoginPresenter.cs" />
     <Compile Include="Presenters\Register\RegisterPresenter.cs" />
     <Compile Include="Presenters\Student\ContribuQuestions\CQuestionListPresenter.cs" />

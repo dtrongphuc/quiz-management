@@ -27,6 +27,7 @@ namespace quiz_management.Presenters.Student.Main
             view.EditProfile += View_EditProfile;
             view.ContribuQuestion += View_ContribuQuestion;
             view.OfficialExamClick += View_OfficialExamClick;
+            view.ResultExamClick += View_ResultExamClick;
 
             using (var user = new QuizDataContext())
             {
@@ -49,6 +50,11 @@ namespace quiz_management.Presenters.Student.Main
                 }
             }
             FillLH();
+        }
+
+        private void View_ResultExamClick(object sender, EventArgs e)
+        {
+            view.ShowResultExamView(currentUserCode);
         }
 
         private void View_OfficialExamClick(object sender, EventArgs e)

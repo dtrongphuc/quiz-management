@@ -31,7 +31,6 @@ namespace quiz_management.Views.Student.InfoPersonal
         {
             this.cbLop = new System.Windows.Forms.ComboBox();
             this.btnClose = new System.Windows.Forms.Button();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDOBStudent = new System.Windows.Forms.TextBox();
@@ -62,17 +61,6 @@ namespace quiz_management.Views.Student.InfoPersonal
             this.btnClose.Text = "Đóng";
             this.btnClose.UseVisualStyleBackColor = true;
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(22, 36);
-            this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(36, 13);
-            this.linkLabel1.TabIndex = 23;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Trở lại";
-            // 
             // btnSubmit
             // 
             this.btnSubmit.Location = new System.Drawing.Point(170, 344);
@@ -80,7 +68,7 @@ namespace quiz_management.Views.Student.InfoPersonal
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(118, 38);
             this.btnSubmit.TabIndex = 22;
-            this.btnSubmit.Text = "Chỉnh sửa thông tin";
+            this.btnSubmit.Text = "Lưu Thông Tin";
             this.btnSubmit.UseVisualStyleBackColor = true;
             // 
             // label4
@@ -173,7 +161,6 @@ namespace quiz_management.Views.Student.InfoPersonal
             this.ClientSize = new System.Drawing.Size(483, 424);
             this.Controls.Add(this.cbLop);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtDOBStudent);
@@ -194,7 +181,6 @@ namespace quiz_management.Views.Student.InfoPersonal
 
         private System.Windows.Forms.ComboBox cbLop;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDOBStudent;

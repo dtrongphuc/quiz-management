@@ -169,7 +169,9 @@ CREATE TABLE lichThi
 	CONSTRAINT PK_lichThi
 	PRIMARY KEY(maNguoiDung,maMonHoc,ngayThi)
 )
-select * from lichthi
+select * from lichThi
+
+
 
 CREATE TABLE luyenTap
 (
@@ -324,7 +326,12 @@ go
 insert into cTKetQua(maKetQua,maCauHoi,maCauTraLoi,thoiGian)
 values(1,1,4,60)
 go
+
+insert into lichThi (maNguoiDung,maMonHoc,ngayThi)
+values (1,1,getdate())
+go
 select * from nguoiDung
 select * from thongtin
 select * from lop
 update thongtin set maLopHoc = 1
+

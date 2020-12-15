@@ -42,6 +42,9 @@ namespace quiz_management.Models
     partial void InsertcTBoDe(cTBoDe instance);
     partial void UpdatecTBoDe(cTBoDe instance);
     partial void DeletecTBoDe(cTBoDe instance);
+    partial void InsertcTDongGop(cTDongGop instance);
+    partial void UpdatecTDongGop(cTDongGop instance);
+    partial void DeletecTDongGop(cTDongGop instance);
     partial void InsertcTKetQua(cTKetQua instance);
     partial void UpdatecTKetQua(cTKetQua instance);
     partial void DeletecTKetQua(cTKetQua instance);
@@ -63,6 +66,9 @@ namespace quiz_management.Models
     partial void InsertLop(Lop instance);
     partial void UpdateLop(Lop instance);
     partial void DeleteLop(Lop instance);
+    partial void InsertluyenTap(luyenTap instance);
+    partial void UpdateluyenTap(luyenTap instance);
+    partial void DeleteluyenTap(luyenTap instance);
     partial void InsertmonHoc(monHoc instance);
     partial void UpdatemonHoc(monHoc instance);
     partial void DeletemonHoc(monHoc instance);
@@ -1121,21 +1127,39 @@ namespace quiz_management.Models
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.cTDongGop")]
-	public partial class cTDongGop
+	public partial class cTDongGop : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
-		private System.Nullable<int> _maDongGop;
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _maDongGop;
 		
 		private string _cauTraLoi;
 		
 		private System.Nullable<int> _dapAn;
 		
+		private EntityRef<dongGop> _dongGop;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnmaDongGopChanging(int value);
+    partial void OnmaDongGopChanged();
+    partial void OncauTraLoiChanging(string value);
+    partial void OncauTraLoiChanged();
+    partial void OndapAnChanging(System.Nullable<int> value);
+    partial void OndapAnChanged();
+    #endregion
+		
 		public cTDongGop()
 		{
+			this._dongGop = default(EntityRef<dongGop>);
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maDongGop", DbType="Int")]
-		public System.Nullable<int> maDongGop
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maDongGop", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int maDongGop
 		{
 			get
 			{
@@ -1145,12 +1169,20 @@ namespace quiz_management.Models
 			{
 				if ((this._maDongGop != value))
 				{
+					if (this._dongGop.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnmaDongGopChanging(value);
+					this.SendPropertyChanging();
 					this._maDongGop = value;
+					this.SendPropertyChanged("maDongGop");
+					this.OnmaDongGopChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cauTraLoi", DbType="NVarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cauTraLoi", DbType="NVarChar(100) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string cauTraLoi
 		{
 			get
@@ -1161,7 +1193,11 @@ namespace quiz_management.Models
 			{
 				if ((this._cauTraLoi != value))
 				{
+					this.OncauTraLoiChanging(value);
+					this.SendPropertyChanging();
 					this._cauTraLoi = value;
+					this.SendPropertyChanged("cauTraLoi");
+					this.OncauTraLoiChanged();
 				}
 			}
 		}
@@ -1177,8 +1213,66 @@ namespace quiz_management.Models
 			{
 				if ((this._dapAn != value))
 				{
+					this.OndapAnChanging(value);
+					this.SendPropertyChanging();
 					this._dapAn = value;
+					this.SendPropertyChanged("dapAn");
+					this.OndapAnChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="dongGop_cTDongGop", Storage="_dongGop", ThisKey="maDongGop", OtherKey="maDongGop", IsForeignKey=true)]
+		public dongGop dongGop
+		{
+			get
+			{
+				return this._dongGop.Entity;
+			}
+			set
+			{
+				dongGop previousValue = this._dongGop.Entity;
+				if (((previousValue != value) 
+							|| (this._dongGop.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._dongGop.Entity = null;
+						previousValue.cTDongGops.Remove(this);
+					}
+					this._dongGop.Entity = value;
+					if ((value != null))
+					{
+						value.cTDongGops.Add(this);
+						this._maDongGop = value.maDongGop;
+					}
+					else
+					{
+						this._maDongGop = default(int);
+					}
+					this.SendPropertyChanged("dongGop");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -1665,6 +1759,8 @@ namespace quiz_management.Models
 		
 		private string _maKhoiLop;
 		
+		private EntitySet<cTDongGop> _cTDongGops;
+		
 		private EntityRef<khoiLop> _khoiLop;
 		
 		private EntityRef<monHoc> _monHoc;
@@ -1693,6 +1789,7 @@ namespace quiz_management.Models
 		
 		public dongGop()
 		{
+			this._cTDongGops = new EntitySet<cTDongGop>(new Action<cTDongGop>(this.attach_cTDongGops), new Action<cTDongGop>(this.detach_cTDongGops));
 			this._khoiLop = default(EntityRef<khoiLop>);
 			this._monHoc = default(EntityRef<monHoc>);
 			this._nguoiDung = default(EntityRef<nguoiDung>);
@@ -1851,6 +1948,19 @@ namespace quiz_management.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="dongGop_cTDongGop", Storage="_cTDongGops", ThisKey="maDongGop", OtherKey="maDongGop")]
+		public EntitySet<cTDongGop> cTDongGops
+		{
+			get
+			{
+				return this._cTDongGops;
+			}
+			set
+			{
+				this._cTDongGops.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="khoiLop_dongGop", Storage="_khoiLop", ThisKey="maKhoiLop", OtherKey="maKhoiLop", IsForeignKey=true)]
 		public khoiLop khoiLop
 		{
@@ -1971,6 +2081,18 @@ namespace quiz_management.Models
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_cTDongGops(cTDongGop entity)
+		{
+			this.SendPropertyChanging();
+			entity.dongGop = this;
+		}
+		
+		private void detach_cTDongGops(cTDongGop entity)
+		{
+			this.SendPropertyChanging();
+			entity.dongGop = null;
 		}
 	}
 	
@@ -2822,23 +2944,43 @@ namespace quiz_management.Models
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.luyenTap")]
-	public partial class luyenTap
+	public partial class luyenTap : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
-		private System.Nullable<int> _maNguoiDung;
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private System.Nullable<int> _soCauDung;
+		private int _maNguoiDung;
 		
-		private System.Nullable<int> _soCauSai;
+		private int _soCauDung;
 		
-		private System.Nullable<System.DateTime> _ngay;
+		private int _soCauSai;
+		
+		private System.DateTime _ngay;
+		
+		private EntityRef<nguoiDung> _nguoiDung;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnmaNguoiDungChanging(int value);
+    partial void OnmaNguoiDungChanged();
+    partial void OnsoCauDungChanging(int value);
+    partial void OnsoCauDungChanged();
+    partial void OnsoCauSaiChanging(int value);
+    partial void OnsoCauSaiChanged();
+    partial void OnngayChanging(System.DateTime value);
+    partial void OnngayChanged();
+    #endregion
 		
 		public luyenTap()
 		{
+			this._nguoiDung = default(EntityRef<nguoiDung>);
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maNguoiDung", DbType="Int")]
-		public System.Nullable<int> maNguoiDung
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maNguoiDung", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int maNguoiDung
 		{
 			get
 			{
@@ -2848,13 +2990,21 @@ namespace quiz_management.Models
 			{
 				if ((this._maNguoiDung != value))
 				{
+					if (this._nguoiDung.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnmaNguoiDungChanging(value);
+					this.SendPropertyChanging();
 					this._maNguoiDung = value;
+					this.SendPropertyChanged("maNguoiDung");
+					this.OnmaNguoiDungChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_soCauDung", DbType="Int")]
-		public System.Nullable<int> soCauDung
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_soCauDung", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int soCauDung
 		{
 			get
 			{
@@ -2864,13 +3014,17 @@ namespace quiz_management.Models
 			{
 				if ((this._soCauDung != value))
 				{
+					this.OnsoCauDungChanging(value);
+					this.SendPropertyChanging();
 					this._soCauDung = value;
+					this.SendPropertyChanged("soCauDung");
+					this.OnsoCauDungChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_soCauSai", DbType="Int")]
-		public System.Nullable<int> soCauSai
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_soCauSai", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int soCauSai
 		{
 			get
 			{
@@ -2880,13 +3034,17 @@ namespace quiz_management.Models
 			{
 				if ((this._soCauSai != value))
 				{
+					this.OnsoCauSaiChanging(value);
+					this.SendPropertyChanging();
 					this._soCauSai = value;
+					this.SendPropertyChanged("soCauSai");
+					this.OnsoCauSaiChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ngay", DbType="Date")]
-		public System.Nullable<System.DateTime> ngay
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ngay", DbType="Date NOT NULL", IsPrimaryKey=true)]
+		public System.DateTime ngay
 		{
 			get
 			{
@@ -2896,8 +3054,66 @@ namespace quiz_management.Models
 			{
 				if ((this._ngay != value))
 				{
+					this.OnngayChanging(value);
+					this.SendPropertyChanging();
 					this._ngay = value;
+					this.SendPropertyChanged("ngay");
+					this.OnngayChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="nguoiDung_luyenTap", Storage="_nguoiDung", ThisKey="maNguoiDung", OtherKey="maNguoiDung", IsForeignKey=true)]
+		public nguoiDung nguoiDung
+		{
+			get
+			{
+				return this._nguoiDung.Entity;
+			}
+			set
+			{
+				nguoiDung previousValue = this._nguoiDung.Entity;
+				if (((previousValue != value) 
+							|| (this._nguoiDung.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._nguoiDung.Entity = null;
+						previousValue.luyenTaps.Remove(this);
+					}
+					this._nguoiDung.Entity = value;
+					if ((value != null))
+					{
+						value.luyenTaps.Add(this);
+						this._maNguoiDung = value.maNguoiDung;
+					}
+					else
+					{
+						this._maNguoiDung = default(int);
+					}
+					this.SendPropertyChanged("nguoiDung");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -3066,6 +3282,8 @@ namespace quiz_management.Models
 		
 		private EntitySet<ketQua> _ketQuas;
 		
+		private EntitySet<luyenTap> _luyenTaps;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -3087,6 +3305,7 @@ namespace quiz_management.Models
 			this._thongTin = default(EntityRef<thongTin>);
 			this._dongGops = new EntitySet<dongGop>(new Action<dongGop>(this.attach_dongGops), new Action<dongGop>(this.detach_dongGops));
 			this._ketQuas = new EntitySet<ketQua>(new Action<ketQua>(this.attach_ketQuas), new Action<ketQua>(this.detach_ketQuas));
+			this._luyenTaps = new EntitySet<luyenTap>(new Action<luyenTap>(this.attach_luyenTaps), new Action<luyenTap>(this.detach_luyenTaps));
 			OnCreated();
 		}
 		
@@ -3245,6 +3464,19 @@ namespace quiz_management.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="nguoiDung_luyenTap", Storage="_luyenTaps", ThisKey="maNguoiDung", OtherKey="maNguoiDung")]
+		public EntitySet<luyenTap> luyenTaps
+		{
+			get
+			{
+				return this._luyenTaps;
+			}
+			set
+			{
+				this._luyenTaps.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -3284,6 +3516,18 @@ namespace quiz_management.Models
 		}
 		
 		private void detach_ketQuas(ketQua entity)
+		{
+			this.SendPropertyChanging();
+			entity.nguoiDung = null;
+		}
+		
+		private void attach_luyenTaps(luyenTap entity)
+		{
+			this.SendPropertyChanging();
+			entity.nguoiDung = this;
+		}
+		
+		private void detach_luyenTaps(luyenTap entity)
 		{
 			this.SendPropertyChanging();
 			entity.nguoiDung = null;

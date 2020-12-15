@@ -1,4 +1,8 @@
-﻿using System;
+﻿using quiz_management.Models;
+using quiz_management.Presenters.Student.InfoPersonal;
+using quiz_management.Views.Student.ContribuQuestions;
+using quiz_management.Views.Student.Main;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,26 +16,35 @@ namespace quiz_management.Views.Student.InfoPersonal
 {
     public partial class ResultExamView : Form,IResultExamView
     {
-        public ResultExamView()
+        ResultExamPresenter presenter;
+        public ResultExamView(int code)
         {
             InitializeComponent();
+            presenter = new ResultExamPresenter(this, code);
+
+            linkLabel1.Click += (_, e) =>
+            {
+                BackMain?.Invoke(linkLabel1, e);
+            };
+
         }
 
-        public string _hoTen { get => throw new NotImplementedException(); set => TenNguoiDung.DataPropertyName=value; }
-        public int _maBoDe { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int _soCauSai { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int _soCauDung { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int _soChuaLam { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string _ngayLam { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string _thoiGian { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public float _diem { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string _monHoc { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public List<ResultExam> ResultExam { set => dgvKetQua.DataSource = value; }
+        
 
         public event EventHandler BackMain;
 
+        
+        
+
+
+
         public void swichMainStudent(int code)
         {
-            throw new NotImplementedException();
+            this.Hide();
+            MainStudentView screen = new MainStudentView(code);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
         }
     }
 }

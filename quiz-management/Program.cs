@@ -2,6 +2,7 @@
 using quiz_management.Views.Student;
 using quiz_management.Views.Student.ContribuQuestions;
 using quiz_management.Views.Student.Exam;
+using quiz_management.Views.Student.InfoPersonal;
 using quiz_management.Views.Student.Main;
 using quiz_management.Views.Teacher.Main;
 using System;
@@ -22,7 +23,7 @@ namespace quiz_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CQuestionListView(1));
+            Application.Run(new ResultExamView(1));
         }
     }
 }
