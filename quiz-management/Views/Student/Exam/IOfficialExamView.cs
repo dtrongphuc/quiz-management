@@ -14,6 +14,7 @@ namespace quiz_management.Views.Student.Exam
         int QuestionSelected { set; }
         bool QuestionChecked { set; }
         int ExamTime { set; }
+        int TimeLeft { get; }
         int Completed { get; set; }
         int Remain { get; set; }
         string QuestionString { set; }
@@ -28,5 +29,7 @@ namespace quiz_management.Views.Student.Exam
         event EventHandler Next;
 
         event EventHandler Prev;
+
+        bool ShowMessage(string caption, string text);
     }
 }
