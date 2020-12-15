@@ -33,8 +33,7 @@ namespace quiz_management.Views.Student.Exam
         public bool QuestionChecked
         {
             set =>
-                cbQuestions.SetItemCheckState(QuestionSelectedIndex,
-                value == true ? CheckState.Checked : CheckState.Unchecked);
+                cbQuestions.SetItemChecked(QuestionSelectedIndex, value);
         }
 
         public int ExamTime { set => TimeCount = value; }
