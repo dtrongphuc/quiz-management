@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Answer.cs" />
+    <Compile Include="Models\ContributeQuestion.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\Quiz.designer.cs">
       <AutoGen>True</AutoGen>

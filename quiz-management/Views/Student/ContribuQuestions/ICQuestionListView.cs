@@ -9,7 +9,7 @@ namespace quiz_management.Views.Student.ContribuQuestions
 {
     interface ICQuestionListView
     {
-        List<dongGop> contributed { set; }
+        List<ContributeQuestion> contributed { set; }
         event EventHandler Closepage;
         event EventHandler GoBackBefore;
         void ShowMessage(string text);
