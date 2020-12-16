@@ -18,6 +18,7 @@ namespace quiz_management.Views.Student.ContribuQuestions
         public CQuestionListView(int code)
         {
             InitializeComponent();
+            dtgCQuestionList.AutoGenerateColumns = false;
             presenter = new CQuestionListPresenter(this, code);
             btnClose.Click += (_, e) =>
             {
@@ -29,7 +30,7 @@ namespace quiz_management.Views.Student.ContribuQuestions
             };
         }
 
-        public List<dongGop> contributed { set => dtgCQuestionList.DataSource = value; }
+        public List<ContributeQuestion> contributed { set => dtgCQuestionList.DataSource = value; }
 
         public event EventHandler Closepage;
         public event EventHandler GoBackBefore;
