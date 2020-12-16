@@ -51,12 +51,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label05 = new System.Windows.Forms.Label();
-            this.tbQuestion = new System.Windows.Forms.TextBox();
-            this.btnNext = new System.Windows.Forms.Button();
-            this.btnPrev = new System.Windows.Forms.Button();
-            this.cbAnswers = new System.Windows.Forms.CheckedListBox();
             this.lbQuestionCountSelected = new System.Windows.Forms.Label();
+            this.cbAnswers = new System.Windows.Forms.CheckedListBox();
+            this.btnPrev = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.tbQuestion = new System.Windows.Forms.TextBox();
+            this.label05 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -149,7 +149,7 @@
             // 
             this.txtTimeSeconds.AutoSize = true;
             this.txtTimeSeconds.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimeSeconds.Location = new System.Drawing.Point(676, 69);
+            this.txtTimeSeconds.Location = new System.Drawing.Point(855, 67);
             this.txtTimeSeconds.Margin = new System.Windows.Forms.Padding(0);
             this.txtTimeSeconds.Name = "txtTimeSeconds";
             this.txtTimeSeconds.Size = new System.Drawing.Size(0, 26);
@@ -159,7 +159,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(664, 69);
+            this.label4.Location = new System.Drawing.Point(843, 67);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(18, 26);
@@ -169,7 +169,7 @@
             // txtExamCode
             // 
             this.txtExamCode.AutoSize = true;
-            this.txtExamCode.Location = new System.Drawing.Point(360, 82);
+            this.txtExamCode.Location = new System.Drawing.Point(494, 77);
             this.txtExamCode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtExamCode.Name = "txtExamCode";
             this.txtExamCode.Size = new System.Drawing.Size(0, 13);
@@ -178,7 +178,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(327, 82);
+            this.label7.Location = new System.Drawing.Point(461, 77);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 13);
@@ -208,7 +208,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(587, 79);
+            this.label5.Location = new System.Drawing.Point(766, 77);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 13);
@@ -219,7 +219,7 @@
             // 
             this.txtTimeMinutes.AutoSize = true;
             this.txtTimeMinutes.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimeMinutes.Location = new System.Drawing.Point(636, 69);
+            this.txtTimeMinutes.Location = new System.Drawing.Point(815, 67);
             this.txtTimeMinutes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtTimeMinutes.Name = "txtTimeMinutes";
             this.txtTimeMinutes.Size = new System.Drawing.Size(0, 26);
@@ -229,7 +229,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(283, 42);
+            this.label1.Location = new System.Drawing.Point(409, 35);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(195, 31);
@@ -350,49 +350,15 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             // 
-            // label05
+            // lbQuestionCountSelected
             // 
-            this.label05.AutoSize = true;
-            this.label05.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label05.Location = new System.Drawing.Point(14, 11);
-            this.label05.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label05.Name = "label05";
-            this.label05.Size = new System.Drawing.Size(36, 17);
-            this.label05.TabIndex = 6;
-            this.label05.Text = "Câu";
-            // 
-            // tbQuestion
-            // 
-            this.tbQuestion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbQuestion.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.tbQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbQuestion.Location = new System.Drawing.Point(41, 39);
-            this.tbQuestion.Margin = new System.Windows.Forms.Padding(2);
-            this.tbQuestion.Multiline = true;
-            this.tbQuestion.Name = "tbQuestion";
-            this.tbQuestion.ReadOnly = true;
-            this.tbQuestion.Size = new System.Drawing.Size(449, 110);
-            this.tbQuestion.TabIndex = 7;
-            // 
-            // btnNext
-            // 
-            this.btnNext.Location = new System.Drawing.Point(590, 333);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(2);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(61, 25);
-            this.btnNext.TabIndex = 8;
-            this.btnNext.Text = "Kế tiếp";
-            this.btnNext.UseVisualStyleBackColor = true;
-            // 
-            // btnPrev
-            // 
-            this.btnPrev.Location = new System.Drawing.Point(28, 333);
-            this.btnPrev.Margin = new System.Windows.Forms.Padding(2);
-            this.btnPrev.Name = "btnPrev";
-            this.btnPrev.Size = new System.Drawing.Size(61, 25);
-            this.btnPrev.TabIndex = 9;
-            this.btnPrev.Text = "Trước đó";
-            this.btnPrev.UseVisualStyleBackColor = true;
+            this.lbQuestionCountSelected.AutoSize = true;
+            this.lbQuestionCountSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQuestionCountSelected.Location = new System.Drawing.Point(48, 11);
+            this.lbQuestionCountSelected.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbQuestionCountSelected.Name = "lbQuestionCountSelected";
+            this.lbQuestionCountSelected.Size = new System.Drawing.Size(0, 17);
+            this.lbQuestionCountSelected.TabIndex = 11;
             // 
             // cbAnswers
             // 
@@ -412,15 +378,49 @@
             this.cbAnswers.Size = new System.Drawing.Size(645, 120);
             this.cbAnswers.TabIndex = 10;
             // 
-            // lbQuestionCountSelected
+            // btnPrev
             // 
-            this.lbQuestionCountSelected.AutoSize = true;
-            this.lbQuestionCountSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbQuestionCountSelected.Location = new System.Drawing.Point(48, 11);
-            this.lbQuestionCountSelected.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbQuestionCountSelected.Name = "lbQuestionCountSelected";
-            this.lbQuestionCountSelected.Size = new System.Drawing.Size(0, 17);
-            this.lbQuestionCountSelected.TabIndex = 11;
+            this.btnPrev.Location = new System.Drawing.Point(28, 333);
+            this.btnPrev.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPrev.Name = "btnPrev";
+            this.btnPrev.Size = new System.Drawing.Size(61, 25);
+            this.btnPrev.TabIndex = 9;
+            this.btnPrev.Text = "Trước đó";
+            this.btnPrev.UseVisualStyleBackColor = true;
+            // 
+            // btnNext
+            // 
+            this.btnNext.Location = new System.Drawing.Point(590, 333);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(61, 25);
+            this.btnNext.TabIndex = 8;
+            this.btnNext.Text = "Kế tiếp";
+            this.btnNext.UseVisualStyleBackColor = true;
+            // 
+            // tbQuestion
+            // 
+            this.tbQuestion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbQuestion.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.tbQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbQuestion.Location = new System.Drawing.Point(41, 39);
+            this.tbQuestion.Margin = new System.Windows.Forms.Padding(2);
+            this.tbQuestion.Multiline = true;
+            this.tbQuestion.Name = "tbQuestion";
+            this.tbQuestion.ReadOnly = true;
+            this.tbQuestion.Size = new System.Drawing.Size(449, 110);
+            this.tbQuestion.TabIndex = 7;
+            // 
+            // label05
+            // 
+            this.label05.AutoSize = true;
+            this.label05.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label05.Location = new System.Drawing.Point(14, 11);
+            this.label05.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label05.Name = "label05";
+            this.label05.Size = new System.Drawing.Size(36, 17);
+            this.label05.TabIndex = 6;
+            this.label05.Text = "Câu";
             // 
             // OfficialExamView
             // 

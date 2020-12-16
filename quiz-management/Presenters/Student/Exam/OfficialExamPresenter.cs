@@ -11,6 +11,9 @@ namespace quiz_management.Presenters.Student.Exam
     {
         private IOfficialExamView view;
         private int currentUserCode;
+        private int _maBoDe = 1;
+        private int _resultCode = -1;
+
         public List<Question> Questions = new List<Question>();
         public int QuestionSelectedIndex;
 
@@ -65,6 +68,8 @@ namespace quiz_management.Presenters.Student.Exam
             view.Remain = Questions.Count - view.Completed;
             List<Answer> ans = Questions.ElementAt(QuestionSelectedIndex).CauTraLoi;
             ans.ElementAt(index).Checked = state;
+            StoreCheckAnswer(Questions.ElementAt(QuestionSelectedIndex).MaCauHoi,
+                ans.ElementAt(index).MaCauTraLoi, view.TimeLeft);
             foreach (Answer item in ans)
             {
                 if (item.Checked)
@@ -110,8 +115,8 @@ namespace quiz_management.Presenters.Student.Exam
                 SetUserDataView(name, className);
 
                 // Fetch exam data
-                var exam = db.boDes.SingleOrDefault(d => d.maBoDe == 1);
-                var questions = db.cTBoDes.Where(b => b.maBoDe == 1).Join(
+                var exam = db.boDes.SingleOrDefault(d => d.maBoDe == _maBoDe);
+                var questions = db.cTBoDes.Where(b => b.maBoDe == _maBoDe).Join(
                                 db.cauHois,
                                 b => b.maCauHoi,
                                 c => c.maCauHoi,
@@ -206,6 +211,53 @@ namespace quiz_management.Presenters.Student.Exam
         {
             int timeLeft = view.TimeLeft;
             //Questions = Questions
+        }
+
+        private void StoreCheckAnswer(int questionCode, int answerCode, int time)
+        {
+            using (var db = new QuizDataContext())
+            {
+                if (_resultCode < 0)
+                {
+                    var result = db.ketQuas.Where(k => k.maNguoiDung == currentUserCode)
+                                        .Where(k => k.maBoDe == _maBoDe)
+                                        .Where(k => k.trangThai == 0)
+                                        .Select(s => s.maKetQua);
+                    if (result == null) _resultCode = result.FirstOrDefault();
+                    else
+                    {
+                        //Tao ket qua moi neu chua ton tai
+                        //Trang thai = 0 -> chua hoan thanh bai thi
+                        var newResult = new ketQua
+                        {
+                            maNguoiDung = currentUserCode,
+                            maBoDe = _maBoDe,
+                            cauDung = null,
+                            cauSai = null,
+                            chuaLam = null,
+                            ngayLam = null,
+                            trangThai = 0,
+                            thoiGian = null,
+                            diem = null
+                        };
+
+                        db.ketQuas.InsertOnSubmit(newResult);
+                        db.SubmitChanges();
+
+                        _resultCode = newResult.maKetQua;
+                    }
+                }
+
+                //Them dap an vao chi tiet ket qua
+                db.cTKetQuas.InsertOnSubmit(new cTKetQua
+                {
+                    maKetQua = _resultCode,
+                    maCauHoi = questionCode,
+                    maCauTraLoi = answerCode,
+                    thoiGian = time
+                });
+                db.SubmitChanges();
+            };
         }
     }
 }
