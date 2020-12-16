@@ -286,6 +286,35 @@ VALUES
     )
 GO
 
+INSERT INTO dbo.cauHoi
+(
+    maMonHoc,
+    cauHoi,
+    doKho
+)
+VALUES
+(   1,   -- maMonHoc - int
+    N'Xương hóa thạch của loài vượn cổ được tìm thấy ở đâu?', -- cauHoi - nvarchar(100)
+    1    -- doKho - int
+    ),
+	(
+		 1,   -- maMonHoc - int
+		N'Di cốt của người tối cổ được tìm thấy ở đâu?', -- cauHoi - nvarchar(100)
+		1    -- doKho - int
+	),
+	(
+		 1,   -- maMonHoc - int
+		N'Người tối cổ có bước tiến hóa hơn về cấu tạo cơ thể so với loài vượn cổ ở điểm nào?', -- cauHoi - nvarchar(100)
+		1    -- doKho - int
+	),
+	(
+		 1,   -- maMonHoc - int
+		N'Trong quá trình tiến hóa từ vượn thành người. Người tối cổ được đánh giá', -- cauHoi - nvarchar(100)
+		1    -- doKho - int
+	)
+GO
+
+
 INSERT INTO dbo.cTBoDe
 (
     maBoDe,
@@ -326,6 +355,118 @@ VALUES
     1    -- dapAn - int
     )
 GO
+
+INSERT INTO dbo.dapAn
+(
+    maCauHoi,
+    maCauTraloi,
+    cauTraLoi,
+    dapAn
+)
+VALUES
+(   2,   -- maCauHoi - int
+    1,   -- maCauTraloi - int
+    N'Đông Phi, Tây Á, Bắc Á.', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+(   2,   -- maCauHoi - int
+    2,   -- maCauTraloi - int
+    N'Đông Phi, Tây Á, Đông Nan Á.', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   2,   -- maCauHoi - int
+    3,   -- maCauTraloi - int
+    N'Đông Phi, Việt Nam, Trung Quốc.', -- cauTraLoi - nvarchar(100)
+    1    -- dapAn - int
+    ),
+	(   2,   -- maCauHoi - int
+    4,   -- maCauTraloi - int
+    N'Tây Á, Trung Á, Bắc Mĩ.', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   3,   -- maCauHoi - int
+    1,   -- maCauTraloi - int
+    N'Đông Phi, Trung Quốc, Bắc Âu.', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   3,   -- maCauHoi - int
+    2,   -- maCauTraloi - int
+    N'Đông Phi, Tây Á, Bắc Âu.', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   3,   -- maCauHoi - int
+    3,   -- maCauTraloi - int
+    N'Đông Phi, Inội dungonexia, Đông Nam Á.', -- cauTraLoi - nvarchar(100)
+    1    -- dapAn - int
+    ),
+	(   3,   -- maCauHoi - int
+    4,   -- maCauTraloi - int
+    N'Tây Á, Trung Quốc, Bắc Âu.', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   4,   -- maCauHoi - int
+    1,   -- maCauTraloi - int
+    N'Hộp sọ lớn hơn, đã hình thành trung tâm phát tiếng nói trong não.', -- cauTraLoi - nvarchar(100)
+    1    -- dapAn - int
+    ),
+	(   4,   -- maCauHoi - int
+    2,   -- maCauTraloi - int
+    N'Đã đi, đứng bằng hai chân, đôi bàn tay được giải phóng.', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   4,   -- maCauHoi - int
+    3,   -- maCauTraloi - int
+    N'Trán thấp và bợt ra sau, u mày nổi cao.', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   4,   -- maCauHoi - int
+    4,   -- maCauTraloi - int
+    N'Đã loại bỏ hết dấu tích vượn trên cơ thể.', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   5,   -- maCauHoi - int
+    1,   -- maCauTraloi - int
+    N'Vẫn chưa thoát thai khỏi loài vượn.', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   5,   -- maCauHoi - int
+    2,   -- maCauTraloi - int
+    N'Là những chủ nhân đầu tiên trong lịch sử loài người.', -- cauTraLoi - nvarchar(100)
+    1    -- dapAn - int
+    ),
+	(   5,   -- maCauHoi - int
+    3,   -- maCauTraloi - int
+    N'Là bước chuyển tiếp từ vượn thành người.', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   5,   -- maCauHoi - int
+    4,   -- maCauTraloi - int
+    N'Là những con người thông minh.', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    )
+GO
+
+INSERT INTO dbo.cTBoDe
+(
+    maBoDe,
+    maCauHoi
+)
+VALUES
+(   1, -- maBoDe - int
+    2  -- maCauHoi - int
+    ),
+    (   1, -- maBoDe - int
+    3  -- maCauHoi - int
+    ),
+    (   1, -- maBoDe - int
+    4  -- maCauHoi - int
+    ),
+    (   1, -- maBoDe - int
+    5  -- maCauHoi - int
+    )
+GO
+
+
 insert into ketQua(maNguoiDung,MaBoDe,CauDung,TrangThai,ThoiGian,diem)
 values (1,1,1,1,60,10)
 go

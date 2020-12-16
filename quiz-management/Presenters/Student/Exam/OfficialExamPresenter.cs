@@ -11,8 +11,11 @@ namespace quiz_management.Presenters.Student.Exam
     {
         private IOfficialExamView view;
         private int currentUserCode;
+        private int _maBoDe = 1;
+        private int _resultCode = -1;
+
         public List<Question> Questions = new List<Question>();
-        public int QuestionSelectedndex;
+        public int QuestionSelectedIndex;
 
         public OfficialExamPresenter(IOfficialExamView v, int userCode)
         {
@@ -21,28 +24,63 @@ namespace quiz_management.Presenters.Student.Exam
             GetData();
             view.QuestionChange += View_QuestionChange;
             view.AnswerCheck += View_AnswerCheck;
+            view.Prev += View_Prev;
+            view.Next += View_Next;
+            view.Submit += View_Submit;
+        }
+
+        private void View_Submit(object sender, System.EventArgs e)
+        {
+            bool confirm = false;
+            if (view.Remain > 0)
+            {
+                confirm = view.ShowMessage("Nộp bài", "Còn " + view.Remain + " câu chưa hoàn thành.Bạn có chắc không ?");
+            }
+            else
+            {
+                confirm = view.ShowMessage("Nộp bài", "Bạn có chắc không ?");
+            }
+
+            if (confirm == false) return;
+            int timeLeft = view.TimeLeft;
+        }
+
+        private void View_Next(object sender, System.EventArgs e)
+        {
+            if (QuestionSelectedIndex >= Questions.Count - 1) return;
+            QuestionSelectedIndex++;
+            BindingQuestion();
+        }
+
+        private void View_Prev(object sender, System.EventArgs e)
+        {
+            if (QuestionSelectedIndex <= 0) return;
+            QuestionSelectedIndex--;
+            BindingQuestion();
         }
 
         private void View_AnswerCheck(object sender, System.EventArgs e)
         {
-            view.QuestionSelected = QuestionSelectedndex;
+            view.QuestionSelected = QuestionSelectedIndex;
             int index = (e as ItemCheckEventArgs).Index;
             bool state = (e as ItemCheckEventArgs).NewValue == CheckState.Checked;
-            Questions.ElementAt(QuestionSelectedndex).Checked = state;
+            Questions.ElementAt(QuestionSelectedIndex).Checked = state;
             view.Remain = Questions.Count - view.Completed;
-            List<Answer> ans = Questions.ElementAt(QuestionSelectedndex).CauTraLoi;
+            List<Answer> ans = Questions.ElementAt(QuestionSelectedIndex).CauTraLoi;
             ans.ElementAt(index).Checked = state;
+            StoreCheckAnswer(Questions.ElementAt(QuestionSelectedIndex).MaCauHoi,
+                ans.ElementAt(index).MaCauTraLoi, view.TimeLeft);
             foreach (Answer item in ans)
             {
                 if (item.Checked)
                 {
-                    Questions.ElementAt(QuestionSelectedndex).Checked = item.Checked;
+                    Questions.ElementAt(QuestionSelectedIndex).Checked = item.Checked;
                     view.QuestionChecked = item.Checked;
                     UpdateCompleted_RemainCount();
                     return;
                 }
             }
-            Questions.ElementAt(QuestionSelectedndex).Checked = state;
+            Questions.ElementAt(QuestionSelectedIndex).Checked = state;
             view.QuestionChecked = state;
             UpdateCompleted_RemainCount();
         }
@@ -60,11 +98,9 @@ namespace quiz_management.Presenters.Student.Exam
 
         private void View_QuestionChange(object sender, System.EventArgs e)
         {
-            QuestionSelectedndex = (sender as CheckedListBox).SelectedIndex;
-            if (QuestionSelectedndex < 0) return;
-            view.QuestionOrder = QuestionSelectedndex + 1;
-            view.QuestionString = Questions.ElementAt(QuestionSelectedndex).CauHoi;
-            view.Answers = Questions.ElementAt(QuestionSelectedndex).CauTraLoi;
+            QuestionSelectedIndex = (sender as CheckedListBox).SelectedIndex;
+            if (QuestionSelectedIndex < 0) return;
+            BindingQuestion();
         }
 
         private void GetData()
@@ -79,8 +115,8 @@ namespace quiz_management.Presenters.Student.Exam
                 SetUserDataView(name, className);
 
                 // Fetch exam data
-                var exam = db.boDes.SingleOrDefault(d => d.maBoDe == 1);
-                var questions = db.cTBoDes.Where(b => b.maBoDe == 1).Join(
+                var exam = db.boDes.SingleOrDefault(d => d.maBoDe == _maBoDe);
+                var questions = db.cTBoDes.Where(b => b.maBoDe == _maBoDe).Join(
                                 db.cauHois,
                                 b => b.maCauHoi,
                                 c => c.maCauHoi,
@@ -144,6 +180,7 @@ namespace quiz_management.Presenters.Student.Exam
                 }
 
                 SetExamDataView(exam, Questions.Count);
+                BindingQuestion();
             };
         }
 
@@ -160,6 +197,67 @@ namespace quiz_management.Presenters.Student.Exam
             view.ExamTime = (int)exam.thoiGian;
             view.ExamCode = exam.maBoDe.ToString();
             view.QuestionQuantity = quantity;
+        }
+
+        private void BindingQuestion()
+        {
+            view.QuestionSelected = QuestionSelectedIndex; ;
+            view.QuestionOrder = QuestionSelectedIndex + 1;
+            view.QuestionString = Questions.ElementAt(QuestionSelectedIndex).CauHoi;
+            view.Answers = Questions.ElementAt(QuestionSelectedIndex).CauTraLoi;
+        }
+
+        private void GetDataSubmit()
+        {
+            int timeLeft = view.TimeLeft;
+            //Questions = Questions
+        }
+
+        private void StoreCheckAnswer(int questionCode, int answerCode, int time)
+        {
+            using (var db = new QuizDataContext())
+            {
+                if (_resultCode < 0)
+                {
+                    var result = db.ketQuas.Where(k => k.maNguoiDung == currentUserCode)
+                                        .Where(k => k.maBoDe == _maBoDe)
+                                        .Where(k => k.trangThai == 0)
+                                        .Select(s => s.maKetQua);
+                    if (result == null) _resultCode = result.FirstOrDefault();
+                    else
+                    {
+                        //Tao ket qua moi neu chua ton tai
+                        //Trang thai = 0 -> chua hoan thanh bai thi
+                        var newResult = new ketQua
+                        {
+                            maNguoiDung = currentUserCode,
+                            maBoDe = _maBoDe,
+                            cauDung = null,
+                            cauSai = null,
+                            chuaLam = null,
+                            ngayLam = null,
+                            trangThai = 0,
+                            thoiGian = null,
+                            diem = null
+                        };
+
+                        db.ketQuas.InsertOnSubmit(newResult);
+                        db.SubmitChanges();
+
+                        _resultCode = newResult.maKetQua;
+                    }
+                }
+
+                //Them dap an vao chi tiet ket qua
+                db.cTKetQuas.InsertOnSubmit(new cTKetQua
+                {
+                    maKetQua = _resultCode,
+                    maCauHoi = questionCode,
+                    maCauTraLoi = answerCode,
+                    thoiGian = time
+                });
+                db.SubmitChanges();
+            };
         }
     }
 }

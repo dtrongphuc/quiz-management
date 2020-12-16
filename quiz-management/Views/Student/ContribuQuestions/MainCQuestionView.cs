@@ -29,6 +29,10 @@ namespace quiz_management.Views.Student.ContribuQuestions
             {
                 GoBackMain?.Invoke(linkGobackMain, e);
             };
+            btnWatchContributeQuestion.Click += (_, e) =>
+            {
+                WatchContributeQuestions?.Invoke(btnWatchContributeQuestion, e);
+            };
         }
         public string StudentID { set => lbStudentID.Text = value; }
 
@@ -60,10 +64,12 @@ namespace quiz_management.Views.Student.ContribuQuestions
         bool IMainCQuestionView.cbResultF => cbResultF.Checked;
         public void ShowMessage(string text)
         {
-            MessageBox.Show(text, "Thông báo", MessageBoxButtons.YesNo);
+            MessageBox.Show(text, "Thông báo");//, MessageBoxButtons.YesNo);
         }
         public event EventHandler Send;
         public event EventHandler GoBackMain;
+        public event EventHandler WatchContributeQuestions;
+
         public void ShowMainStudentView(int code)
         {
             this.Hide();
@@ -71,5 +77,14 @@ namespace quiz_management.Views.Student.ContribuQuestions
             screen.FormClosed += (_, e) => this.Close();
             screen.Show();
         }
+
+        public void ShowWatchContributeQuestions(int code)
+        {
+            this.Hide();
+            CQuestionListView screen = new CQuestionListView(code);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
+        }
+
     }
 }
