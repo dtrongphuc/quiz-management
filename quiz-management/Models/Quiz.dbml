@@ -29,9 +29,13 @@
       <Column Name="maMonHoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="cauHoi" Member="cauHoi1" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="doKho" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="trangThai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="maKhoiLop" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
       <Association Name="cauHoi_cTBoDe" Member="cTBoDes" ThisKey="maCauHoi" OtherKey="maCauHoi" Type="cTBoDe" />
       <Association Name="cauHoi_cTKetQua" Member="cTKetQuas" ThisKey="maCauHoi" OtherKey="maCauHoi" Type="cTKetQua" />
       <Association Name="cauHoi_dapAn" Member="dapAns" ThisKey="maCauHoi" OtherKey="maCauHoi" Type="dapAn" />
+      <Association Name="khoiLop_cauHoi" Member="khoiLop" ThisKey="maKhoiLop" OtherKey="maKhoiLop" Type="khoiLop" IsForeignKey="true" />
+      <Association Name="monHoc_cauHoi" Member="monHoc" ThisKey="maMonHoc" OtherKey="maMonHoc" Type="monHoc" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.cTBoDe" Member="cTBoDes">
@@ -108,6 +112,7 @@
       <Column Name="maKhoiLop" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="tenKhoiLop" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Association Name="khoiLop_boDe" Member="boDes" ThisKey="maKhoiLop" OtherKey="maKhoi" Type="boDe" />
+      <Association Name="khoiLop_cauHoi" Member="cauHois" ThisKey="maKhoiLop" OtherKey="maKhoiLop" Type="cauHoi" />
       <Association Name="khoiLop_dongGop" Member="dongGops" ThisKey="maKhoiLop" OtherKey="maKhoiLop" Type="dongGop" />
       <Association Name="khoiLop_Lop" Member="Lops" ThisKey="maKhoiLop" OtherKey="maKhoiLop" Type="Lop" />
     </Type>
@@ -144,6 +149,7 @@
       <Column Name="maMonHoc" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="tenMonHoc" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Association Name="monHoc_boDe" Member="boDes" ThisKey="maMonHoc" OtherKey="maMon" Type="boDe" />
+      <Association Name="monHoc_cauHoi" Member="cauHois" ThisKey="maMonHoc" OtherKey="maMonHoc" Type="cauHoi" />
       <Association Name="monHoc_dongGop" Member="dongGops" ThisKey="maMonHoc" OtherKey="maMonHoc" Type="dongGop" />
       <Association Name="monHoc_lichThi" Member="lichThis" ThisKey="maMonHoc" OtherKey="maMonHoc" Type="lichThi" />
     </Type>

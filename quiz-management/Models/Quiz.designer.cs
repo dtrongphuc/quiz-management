@@ -754,11 +754,19 @@ namespace quiz_management.Models
 		
 		private System.Nullable<int> _doKho;
 		
+		private System.Nullable<int> _trangThai;
+		
+		private string _maKhoiLop;
+		
 		private EntitySet<cTBoDe> _cTBoDes;
 		
 		private EntitySet<cTKetQua> _cTKetQuas;
 		
 		private EntitySet<dapAn> _dapAns;
+		
+		private EntityRef<khoiLop> _khoiLop;
+		
+		private EntityRef<monHoc> _monHoc;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -772,6 +780,10 @@ namespace quiz_management.Models
     partial void OncauHoi1Changed();
     partial void OndoKhoChanging(System.Nullable<int> value);
     partial void OndoKhoChanged();
+    partial void OntrangThaiChanging(System.Nullable<int> value);
+    partial void OntrangThaiChanged();
+    partial void OnmaKhoiLopChanging(string value);
+    partial void OnmaKhoiLopChanged();
     #endregion
 		
 		public cauHoi()
@@ -779,6 +791,8 @@ namespace quiz_management.Models
 			this._cTBoDes = new EntitySet<cTBoDe>(new Action<cTBoDe>(this.attach_cTBoDes), new Action<cTBoDe>(this.detach_cTBoDes));
 			this._cTKetQuas = new EntitySet<cTKetQua>(new Action<cTKetQua>(this.attach_cTKetQuas), new Action<cTKetQua>(this.detach_cTKetQuas));
 			this._dapAns = new EntitySet<dapAn>(new Action<dapAn>(this.attach_dapAns), new Action<dapAn>(this.detach_dapAns));
+			this._khoiLop = default(EntityRef<khoiLop>);
+			this._monHoc = default(EntityRef<monHoc>);
 			OnCreated();
 		}
 		
@@ -813,6 +827,10 @@ namespace quiz_management.Models
 			{
 				if ((this._maMonHoc != value))
 				{
+					if (this._monHoc.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnmaMonHocChanging(value);
 					this.SendPropertyChanging();
 					this._maMonHoc = value;
@@ -862,6 +880,50 @@ namespace quiz_management.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_trangThai", DbType="Int")]
+		public System.Nullable<int> trangThai
+		{
+			get
+			{
+				return this._trangThai;
+			}
+			set
+			{
+				if ((this._trangThai != value))
+				{
+					this.OntrangThaiChanging(value);
+					this.SendPropertyChanging();
+					this._trangThai = value;
+					this.SendPropertyChanged("trangThai");
+					this.OntrangThaiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maKhoiLop", DbType="VarChar(5)")]
+		public string maKhoiLop
+		{
+			get
+			{
+				return this._maKhoiLop;
+			}
+			set
+			{
+				if ((this._maKhoiLop != value))
+				{
+					if (this._khoiLop.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnmaKhoiLopChanging(value);
+					this.SendPropertyChanging();
+					this._maKhoiLop = value;
+					this.SendPropertyChanged("maKhoiLop");
+					this.OnmaKhoiLopChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="cauHoi_cTBoDe", Storage="_cTBoDes", ThisKey="maCauHoi", OtherKey="maCauHoi")]
 		public EntitySet<cTBoDe> cTBoDes
 		{
@@ -898,6 +960,74 @@ namespace quiz_management.Models
 			set
 			{
 				this._dapAns.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="khoiLop_cauHoi", Storage="_khoiLop", ThisKey="maKhoiLop", OtherKey="maKhoiLop", IsForeignKey=true)]
+		public khoiLop khoiLop
+		{
+			get
+			{
+				return this._khoiLop.Entity;
+			}
+			set
+			{
+				khoiLop previousValue = this._khoiLop.Entity;
+				if (((previousValue != value) 
+							|| (this._khoiLop.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._khoiLop.Entity = null;
+						previousValue.cauHois.Remove(this);
+					}
+					this._khoiLop.Entity = value;
+					if ((value != null))
+					{
+						value.cauHois.Add(this);
+						this._maKhoiLop = value.maKhoiLop;
+					}
+					else
+					{
+						this._maKhoiLop = default(string);
+					}
+					this.SendPropertyChanged("khoiLop");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="monHoc_cauHoi", Storage="_monHoc", ThisKey="maMonHoc", OtherKey="maMonHoc", IsForeignKey=true)]
+		public monHoc monHoc
+		{
+			get
+			{
+				return this._monHoc.Entity;
+			}
+			set
+			{
+				monHoc previousValue = this._monHoc.Entity;
+				if (((previousValue != value) 
+							|| (this._monHoc.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._monHoc.Entity = null;
+						previousValue.cauHois.Remove(this);
+					}
+					this._monHoc.Entity = value;
+					if ((value != null))
+					{
+						value.cauHois.Add(this);
+						this._maMonHoc = value.maMonHoc;
+					}
+					else
+					{
+						this._maMonHoc = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("monHoc");
+				}
 			}
 		}
 		
@@ -2496,6 +2626,8 @@ namespace quiz_management.Models
 		
 		private EntitySet<boDe> _boDes;
 		
+		private EntitySet<cauHoi> _cauHois;
+		
 		private EntitySet<dongGop> _dongGops;
 		
 		private EntitySet<Lop> _Lops;
@@ -2513,6 +2645,7 @@ namespace quiz_management.Models
 		public khoiLop()
 		{
 			this._boDes = new EntitySet<boDe>(new Action<boDe>(this.attach_boDes), new Action<boDe>(this.detach_boDes));
+			this._cauHois = new EntitySet<cauHoi>(new Action<cauHoi>(this.attach_cauHois), new Action<cauHoi>(this.detach_cauHois));
 			this._dongGops = new EntitySet<dongGop>(new Action<dongGop>(this.attach_dongGops), new Action<dongGop>(this.detach_dongGops));
 			this._Lops = new EntitySet<Lop>(new Action<Lop>(this.attach_Lops), new Action<Lop>(this.detach_Lops));
 			OnCreated();
@@ -2571,6 +2704,19 @@ namespace quiz_management.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="khoiLop_cauHoi", Storage="_cauHois", ThisKey="maKhoiLop", OtherKey="maKhoiLop")]
+		public EntitySet<cauHoi> cauHois
+		{
+			get
+			{
+				return this._cauHois;
+			}
+			set
+			{
+				this._cauHois.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="khoiLop_dongGop", Storage="_dongGops", ThisKey="maKhoiLop", OtherKey="maKhoiLop")]
 		public EntitySet<dongGop> dongGops
 		{
@@ -2624,6 +2770,18 @@ namespace quiz_management.Models
 		}
 		
 		private void detach_boDes(boDe entity)
+		{
+			this.SendPropertyChanging();
+			entity.khoiLop = null;
+		}
+		
+		private void attach_cauHois(cauHoi entity)
+		{
+			this.SendPropertyChanging();
+			entity.khoiLop = this;
+		}
+		
+		private void detach_cauHois(cauHoi entity)
 		{
 			this.SendPropertyChanging();
 			entity.khoiLop = null;
@@ -3212,6 +3370,8 @@ namespace quiz_management.Models
 		
 		private EntitySet<boDe> _boDes;
 		
+		private EntitySet<cauHoi> _cauHois;
+		
 		private EntitySet<dongGop> _dongGops;
 		
 		private EntitySet<lichThi> _lichThis;
@@ -3229,6 +3389,7 @@ namespace quiz_management.Models
 		public monHoc()
 		{
 			this._boDes = new EntitySet<boDe>(new Action<boDe>(this.attach_boDes), new Action<boDe>(this.detach_boDes));
+			this._cauHois = new EntitySet<cauHoi>(new Action<cauHoi>(this.attach_cauHois), new Action<cauHoi>(this.detach_cauHois));
 			this._dongGops = new EntitySet<dongGop>(new Action<dongGop>(this.attach_dongGops), new Action<dongGop>(this.detach_dongGops));
 			this._lichThis = new EntitySet<lichThi>(new Action<lichThi>(this.attach_lichThis), new Action<lichThi>(this.detach_lichThis));
 			OnCreated();
@@ -3287,6 +3448,19 @@ namespace quiz_management.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="monHoc_cauHoi", Storage="_cauHois", ThisKey="maMonHoc", OtherKey="maMonHoc")]
+		public EntitySet<cauHoi> cauHois
+		{
+			get
+			{
+				return this._cauHois;
+			}
+			set
+			{
+				this._cauHois.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="monHoc_dongGop", Storage="_dongGops", ThisKey="maMonHoc", OtherKey="maMonHoc")]
 		public EntitySet<dongGop> dongGops
 		{
@@ -3340,6 +3514,18 @@ namespace quiz_management.Models
 		}
 		
 		private void detach_boDes(boDe entity)
+		{
+			this.SendPropertyChanging();
+			entity.monHoc = null;
+		}
+		
+		private void attach_cauHois(cauHoi entity)
+		{
+			this.SendPropertyChanging();
+			entity.monHoc = this;
+		}
+		
+		private void detach_cauHois(cauHoi entity)
 		{
 			this.SendPropertyChanging();
 			entity.monHoc = null;

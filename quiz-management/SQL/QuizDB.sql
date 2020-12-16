@@ -93,6 +93,12 @@ CREATE TABLE cauHoi
 	PRIMARY KEY (maCauHoi)
 )
 
+alter table cauHoi add trangThai int
+alter table cauHoi add maKhoiLop  varchar(5)
+alter table cauHoi add constraint FK_cauHoi_monHoc foreign key(maMonHoc) references monHoc(maMonHoc)
+alter table cauHoi add constraint FK_cauHoi_khoiLop foreign key(maKhoiLop) references khoiLop(maKhoiLop)
+select * from cauHoi
+
 CREATE TABLE cTBoDe
 (
 	maBoDe INT,
