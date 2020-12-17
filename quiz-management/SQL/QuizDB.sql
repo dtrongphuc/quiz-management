@@ -95,6 +95,7 @@ CREATE TABLE cauHoi
 
 alter table cauHoi add trangThai int
 alter table cauHoi add maKhoiLop  varchar(5)
+alter table cauHoi add constraint df_trangthai default 1 for trangThai
 alter table cauHoi add constraint FK_cauHoi_monHoc foreign key(maMonHoc) references monHoc(maMonHoc)
 alter table cauHoi add constraint FK_cauHoi_khoiLop foreign key(maKhoiLop) references khoiLop(maKhoiLop)
 select * from cauHoi
