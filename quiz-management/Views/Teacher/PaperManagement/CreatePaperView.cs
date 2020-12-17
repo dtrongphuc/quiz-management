@@ -52,9 +52,16 @@ namespace quiz_management.Views.Teacher.PaperManagement
         public string PaperID => tbPaperID.Text;
 
         public List<khoiLop> GradeList { set => cbbGrade.DataSource = value; }
-        public List<cauHoi> cauHois { set => dgvQuestionList.DataSource = value; }
 
-        public DataGridView macauhoi => dgvQuestionList;
+        public DataGridView AllQuestion => dgvQuestionList;
+
+        public string QuestionID { get => dgvQuestionList.SelectedRows[0].Cells["MaCauHoi"].Value.ToString(); }
+        public string Question { get => dgvQuestionList.SelectedRows[0].Cells["CauHoi1"].Value.ToString(); }
+
+        public DataGridView AllQuestionSelect => dgvQuestionSelectedList;
+
+        public List<CreatePaperWithQuestion> listQuestionselected { set => dgvQuestionSelectedList.DataSource = value; }
+        public List<CreatePaperWithQuestion> listQuestion { set => dgvQuestionList.DataSource = value; }
 
         public event EventHandler MoveToRight;
         public event EventHandler MoveAllToRight;
