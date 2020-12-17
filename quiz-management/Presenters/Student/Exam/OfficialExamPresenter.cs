@@ -1,5 +1,6 @@
 ﻿using quiz_management.Models;
 using quiz_management.Views.Student.Exam;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -22,6 +23,7 @@ namespace quiz_management.Presenters.Student.Exam
             view = v;
             currentUserCode = userCode;
             GetData();
+            DataCrashed();
             view.QuestionChange += View_QuestionChange;
             view.AnswerCheck += View_AnswerCheck;
             view.Prev += View_Prev;
@@ -43,6 +45,9 @@ namespace quiz_management.Presenters.Student.Exam
 
             if (confirm == false) return;
             int timeLeft = view.TimeLeft;
+            bool excute = UpdateResult(timeLeft, view.Remain);
+            if (!excute) view.ShowMessage("Lỗi", "Đã có lỗi xảy ra");
+            else view.ShowStudentView(currentUserCode);
         }
 
         private void View_Next(object sender, System.EventArgs e)
@@ -184,6 +189,31 @@ namespace quiz_management.Presenters.Student.Exam
             };
         }
 
+        private void DataCrashed()
+        {
+            using (var db = new QuizDataContext())
+            {
+                var result = db.ketQuas.Where(k => k.maNguoiDung == currentUserCode)
+                                    .Where(k => k.maBoDe == _maBoDe)
+                                    .Where(k => k.trangThai == 0)
+                                    .Select(s => s.maKetQua);
+                if (result.Any())
+                {
+                    _resultCode = result.FirstOrDefault();
+                    var detailResult = db.cTKetQuas.Where(k => k.maKetQua == _resultCode).ToList();
+                    foreach (var row in detailResult)
+                    {
+                        int index = Questions.FindIndex(x => x.MaCauHoi == row.maCauHoi);
+                        for (int j = 0; j < Questions.ElementAt(index).CauTraLoi.Count; j++)
+                        {
+                            if (Questions.ElementAt(index).CauTraLoi.ElementAt(j).MaCauTraLoi == row.maCauHoi)
+                                Questions.ElementAt(index).CauTraLoi.ElementAt(j).Checked = true;
+                        }
+                    }
+                }
+            };
+        }
+
         private void SetUserDataView(string name, string className)
         {
             if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(className)) return;
@@ -207,23 +237,17 @@ namespace quiz_management.Presenters.Student.Exam
             view.Answers = Questions.ElementAt(QuestionSelectedIndex).CauTraLoi;
         }
 
-        private void GetDataSubmit()
-        {
-            int timeLeft = view.TimeLeft;
-            //Questions = Questions
-        }
-
         private void StoreCheckAnswer(int questionCode, int answerCode, int time)
         {
             using (var db = new QuizDataContext())
             {
-                if (_resultCode < 0)
+                if (_resultCode <= 0)
                 {
                     var result = db.ketQuas.Where(k => k.maNguoiDung == currentUserCode)
                                         .Where(k => k.maBoDe == _maBoDe)
                                         .Where(k => k.trangThai == 0)
                                         .Select(s => s.maKetQua);
-                    if (result == null) _resultCode = result.FirstOrDefault();
+                    if (result.Any()) _resultCode = result.FirstOrDefault();
                     else
                     {
                         //Tao ket qua moi neu chua ton tai
@@ -235,7 +259,7 @@ namespace quiz_management.Presenters.Student.Exam
                             cauDung = null,
                             cauSai = null,
                             chuaLam = null,
-                            ngayLam = null,
+                            ngayLam = DateTime.Today,
                             trangThai = 0,
                             thoiGian = null,
                             diem = null
@@ -258,6 +282,20 @@ namespace quiz_management.Presenters.Student.Exam
                 });
                 db.SubmitChanges();
             };
+        }
+
+        private bool UpdateResult(int time, int remainCount)
+        {
+            if (_resultCode <= 0) return false;
+            using (var db = new QuizDataContext())
+            {
+                var result = db.ketQuas.FirstOrDefault(k => k.maKetQua == _resultCode);
+                result.chuaLam = remainCount;
+                result.thoiGian = time;
+                result.trangThai = 1;
+                db.SubmitChanges();
+            };
+            return true;
         }
     }
 }
