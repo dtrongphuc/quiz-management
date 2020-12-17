@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace quiz_management.Views.Teacher.PaperManagement
 {
@@ -11,9 +12,11 @@ namespace quiz_management.Views.Teacher.PaperManagement
     {
         string TeacherName { set; }
         string PaperID { get; }
-        List<khoiLop> levelList { get; set; }
+        List<khoiLop> GradeList {set; }
+        List<cauHoi> cauHois { set; }
+        DataGridView macauhoi { get; }
 
-        event EventHandler linkGoBackBefore;
+        event EventHandler GoBackBefore;
         event EventHandler MoveToRight;
         event EventHandler MoveAllToRight;
         event EventHandler MoveToLeft;
@@ -21,6 +24,6 @@ namespace quiz_management.Views.Teacher.PaperManagement
         event EventHandler CreatePaper;
 
         void ShowMessage(string text);
-        void MainTeacherView();
+        void MainTeacherView(int code);
     }
 }

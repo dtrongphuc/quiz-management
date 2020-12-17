@@ -83,6 +83,7 @@
     <Compile Include="Presenters\Student\InfoPersonal\ResultExamPresenter.cs" />
     <Compile Include="Presenters\Student\InfoPersonal\TestSchedulePresenter.cs" />
     <Compile Include="Presenters\Student\Main\MainStudentPresenter.cs" />
+    <Compile Include="Presenters\Teacher\PaperManagement\CreatePaperPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validate\RequiredFieldValidator.cs">
@@ -258,9 +259,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Presenters\Teacher\PaperManagement\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
       <Visible>False</Visible>
