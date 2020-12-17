@@ -35,7 +35,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tbPaperID = new System.Windows.Forms.TextBox();
             this.dgvQuestionList = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Question = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvQuestionSelectedList = new System.Windows.Forms.DataGridView();
+            this.STTselected = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuestionSelected = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -43,10 +47,6 @@
             this.btnMoveAllToSeleted = new System.Windows.Forms.Button();
             this.btnMoveAllToQuestionList = new System.Windows.Forms.Button();
             this.btnMoveToQuestionList = new System.Windows.Forms.Button();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Question = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.STTselected = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QuestionSelected = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionList)).BeginInit();
@@ -129,6 +129,22 @@
             this.dgvQuestionList.Size = new System.Drawing.Size(416, 271);
             this.dgvQuestionList.TabIndex = 10;
             // 
+            // STT
+            // 
+            this.STT.DataPropertyName = "STT";
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            // 
+            // Question
+            // 
+            this.Question.DataPropertyName = "Question";
+            this.Question.HeaderText = "Câu hỏi";
+            this.Question.MinimumWidth = 6;
+            this.Question.Name = "Question";
+            this.Question.ReadOnly = true;
+            // 
             // dgvQuestionSelectedList
             // 
             this.dgvQuestionSelectedList.AllowUserToAddRows = false;
@@ -147,11 +163,27 @@
             this.dgvQuestionSelectedList.Size = new System.Drawing.Size(416, 271);
             this.dgvQuestionSelectedList.TabIndex = 11;
             // 
+            // STTselected
+            // 
+            this.STTselected.DataPropertyName = "STTselected";
+            this.STTselected.HeaderText = "STT";
+            this.STTselected.MinimumWidth = 6;
+            this.STTselected.Name = "STTselected";
+            this.STTselected.ReadOnly = true;
+            // 
+            // QuestionSelected
+            // 
+            this.QuestionSelected.DataPropertyName = "QuestionSelected";
+            this.QuestionSelected.HeaderText = "Câu hỏi";
+            this.QuestionSelected.MinimumWidth = 6;
+            this.QuestionSelected.Name = "QuestionSelected";
+            this.QuestionSelected.ReadOnly = true;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(183, 254);
+            this.label5.Location = new System.Drawing.Point(173, 254);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(149, 20);
             this.label5.TabIndex = 12;
@@ -161,7 +193,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(708, 254);
+            this.label6.Location = new System.Drawing.Point(699, 254);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(213, 20);
             this.label6.TabIndex = 13;
@@ -211,38 +243,6 @@
             this.btnMoveToQuestionList.TabIndex = 17;
             this.btnMoveToQuestionList.Text = "<";
             this.btnMoveToQuestionList.UseVisualStyleBackColor = true;
-            // 
-            // STT
-            // 
-            this.STT.DataPropertyName = "STT";
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            // 
-            // Question
-            // 
-            this.Question.DataPropertyName = "Question";
-            this.Question.HeaderText = "Câu hỏi";
-            this.Question.MinimumWidth = 6;
-            this.Question.Name = "Question";
-            this.Question.ReadOnly = true;
-            // 
-            // STTselected
-            // 
-            this.STTselected.DataPropertyName = "STTselected";
-            this.STTselected.HeaderText = "STT";
-            this.STTselected.MinimumWidth = 6;
-            this.STTselected.Name = "STTselected";
-            this.STTselected.ReadOnly = true;
-            // 
-            // QuestionSelected
-            // 
-            this.QuestionSelected.DataPropertyName = "QuestionSelected";
-            this.QuestionSelected.HeaderText = "Câu hỏi";
-            this.QuestionSelected.MinimumWidth = 6;
-            this.QuestionSelected.Name = "QuestionSelected";
-            this.QuestionSelected.ReadOnly = true;
             // 
             // comboBox1
             // 

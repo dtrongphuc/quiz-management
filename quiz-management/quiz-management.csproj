@@ -184,6 +184,7 @@
     <Compile Include="Views\Teacher\PaperManagement\CreatePaperView.Designer.cs">
       <DependentUpon>CreatePaperView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Teacher\PaperManagement\ICreatePaperView.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -257,7 +258,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Presenters\Teacher\PaperManagement\" />
+  </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
       <Visible>False</Visible>
