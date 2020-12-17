@@ -35,9 +35,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tbPaperID = new System.Windows.Forms.TextBox();
             this.dgvQuestionList = new System.Windows.Forms.DataGridView();
-            this.dgvQuestionSelectedList = new System.Windows.Forms.DataGridView();
-            this.STTselected = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QuestionSelected = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnCreatePaper = new System.Windows.Forms.Button();
@@ -47,8 +44,11 @@
             this.btnMoveToQuestionList = new System.Windows.Forms.Button();
             this.cbbGrade = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.dgvQuestionSelectedList = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaCauHoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenCauHoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CauHoi1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionSelectedList)).BeginInit();
             this.SuspendLayout();
@@ -119,7 +119,7 @@
             this.dgvQuestionList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvQuestionList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaCauHoi,
-            this.TenCauHoi});
+            this.CauHoi1});
             this.dgvQuestionList.Location = new System.Drawing.Point(60, 288);
             this.dgvQuestionList.Name = "dgvQuestionList";
             this.dgvQuestionList.ReadOnly = true;
@@ -129,40 +129,6 @@
             this.dgvQuestionList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvQuestionList.Size = new System.Drawing.Size(416, 271);
             this.dgvQuestionList.TabIndex = 10;
-            // 
-            // dgvQuestionSelectedList
-            // 
-            this.dgvQuestionSelectedList.AllowUserToAddRows = false;
-            this.dgvQuestionSelectedList.AllowUserToDeleteRows = false;
-            this.dgvQuestionSelectedList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvQuestionSelectedList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvQuestionSelectedList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STTselected,
-            this.QuestionSelected});
-            this.dgvQuestionSelectedList.Location = new System.Drawing.Point(593, 288);
-            this.dgvQuestionSelectedList.Name = "dgvQuestionSelectedList";
-            this.dgvQuestionSelectedList.ReadOnly = true;
-            this.dgvQuestionSelectedList.RowHeadersWidth = 51;
-            this.dgvQuestionSelectedList.RowTemplate.Height = 24;
-            this.dgvQuestionSelectedList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvQuestionSelectedList.Size = new System.Drawing.Size(416, 271);
-            this.dgvQuestionSelectedList.TabIndex = 11;
-            // 
-            // STTselected
-            // 
-            this.STTselected.DataPropertyName = "STTselected";
-            this.STTselected.HeaderText = "STT";
-            this.STTselected.MinimumWidth = 6;
-            this.STTselected.Name = "STTselected";
-            this.STTselected.ReadOnly = true;
-            // 
-            // QuestionSelected
-            // 
-            this.QuestionSelected.DataPropertyName = "QuestionSelected";
-            this.QuestionSelected.HeaderText = "Câu hỏi";
-            this.QuestionSelected.MinimumWidth = 6;
-            this.QuestionSelected.Name = "QuestionSelected";
-            this.QuestionSelected.ReadOnly = true;
             // 
             // label5
             // 
@@ -250,27 +216,65 @@
             this.label2.TabIndex = 20;
             this.label2.Text = "Khối lớp:";
             // 
+            // dgvQuestionSelectedList
+            // 
+            this.dgvQuestionSelectedList.AllowUserToAddRows = false;
+            this.dgvQuestionSelectedList.AllowUserToDeleteRows = false;
+            this.dgvQuestionSelectedList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvQuestionSelectedList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvQuestionSelectedList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2});
+            this.dgvQuestionSelectedList.Location = new System.Drawing.Point(593, 288);
+            this.dgvQuestionSelectedList.Name = "dgvQuestionSelectedList";
+            this.dgvQuestionSelectedList.ReadOnly = true;
+            this.dgvQuestionSelectedList.RowHeadersVisible = false;
+            this.dgvQuestionSelectedList.RowHeadersWidth = 51;
+            this.dgvQuestionSelectedList.RowTemplate.Height = 24;
+            this.dgvQuestionSelectedList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvQuestionSelectedList.Size = new System.Drawing.Size(416, 271);
+            this.dgvQuestionSelectedList.TabIndex = 21;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "QuestionID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Mã câu hỏi";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Question";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Câu hỏi";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
             // MaCauHoi
             // 
-            this.MaCauHoi.DataPropertyName = "MaCauHoi";
+            this.MaCauHoi.DataPropertyName = "QuestionID";
             this.MaCauHoi.HeaderText = "Mã câu hỏi";
             this.MaCauHoi.MinimumWidth = 6;
             this.MaCauHoi.Name = "MaCauHoi";
             this.MaCauHoi.ReadOnly = true;
+            this.MaCauHoi.Visible = false;
             // 
-            // TenCauHoi
+            // CauHoi1
             // 
-            this.TenCauHoi.DataPropertyName = "CauHoi1";
-            this.TenCauHoi.HeaderText = "Câu hỏi";
-            this.TenCauHoi.MinimumWidth = 6;
-            this.TenCauHoi.Name = "TenCauHoi";
-            this.TenCauHoi.ReadOnly = true;
+            this.CauHoi1.DataPropertyName = "Question";
+            this.CauHoi1.HeaderText = "Câu hỏi";
+            this.CauHoi1.MinimumWidth = 6;
+            this.CauHoi1.Name = "CauHoi1";
+            this.CauHoi1.ReadOnly = true;
             // 
             // CreatePaperView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1092, 682);
+            this.ClientSize = new System.Drawing.Size(1077, 682);
+            this.Controls.Add(this.dgvQuestionSelectedList);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbbGrade);
             this.Controls.Add(this.btnMoveAllToQuestionList);
@@ -280,7 +284,6 @@
             this.Controls.Add(this.btnCreatePaper);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dgvQuestionSelectedList);
             this.Controls.Add(this.dgvQuestionList);
             this.Controls.Add(this.tbPaperID);
             this.Controls.Add(this.label4);
@@ -306,7 +309,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbPaperID;
         private System.Windows.Forms.DataGridView dgvQuestionList;
-        private System.Windows.Forms.DataGridView dgvQuestionSelectedList;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnCreatePaper;
@@ -314,11 +316,12 @@
         private System.Windows.Forms.Button btnMoveAllToSeleted;
         private System.Windows.Forms.Button btnMoveAllToQuestionList;
         private System.Windows.Forms.Button btnMoveToQuestionList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STTselected;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QuestionSelected;
         private System.Windows.Forms.ComboBox cbbGrade;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dgvQuestionSelectedList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaCauHoi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenCauHoi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CauHoi1;
     }
 }
