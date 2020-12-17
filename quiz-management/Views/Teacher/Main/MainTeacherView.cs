@@ -19,7 +19,7 @@ namespace quiz_management.Views.Teacher.Main
         private bool isCollapsed3;
         private bool isCollapsed4;
         private bool isCollapsed5;
-        public MainTeacherView()
+        public MainTeacherView(int code)
         {
             InitializeComponent();
         }

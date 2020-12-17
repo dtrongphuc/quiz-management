@@ -31,5 +31,7 @@ namespace quiz_management.Views.Student.Exam
         event EventHandler Prev;
 
         bool ShowMessage(string caption, string text);
+
+        void ShowStudentView(int userCode);
     }
 }

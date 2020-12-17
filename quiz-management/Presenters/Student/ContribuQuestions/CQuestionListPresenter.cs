@@ -31,29 +31,6 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
 
         private void LoadContributeQuestionList(int code)
         {
-            //db.dongGops.InsertOnSubmit(new dongGop
-            //{
-            //    maNguoiDung = currentUserCode,
-            //    maMonHoc = int.Parse(subjectIDSelected),
-            //    trangthai = 0,
-            //    ngay = DateTime.Now,//ToString("yyyy-MM-dd"),
-            //    cauHoi = Questionsstring,
-            //    maKhoiLop = classIDSelected
-            //});
-
-            //List<dongGop> list = new List<dongGop>();
-            //dongGop dg1 = new dongGop
-            //{
-            //    maDongGop = 1,
-            //    maNguoiDung = 1,
-            //    maMonHoc = 1,
-            //    trangthai = 1,
-            //    ngay = DateTime.Now,//ToString("yyyy-MM-dd"),
-            //    cauHoi = "Cái gì v??",
-            //    maKhoiLop = "K10"
-            //};
-            //list.Add(dg1);
-            //view.contributed = list;
             listQuestion = new List<ContributeQuestion>();
             List<dongGop> listContribute = null;
             using (var db = new QuizDataContext())

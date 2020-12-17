@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Timers;
 using quiz_management.Models;
+using quiz_management.Views.Student.Main;
 
 namespace quiz_management.Views.Student.Exam
 {
@@ -68,6 +69,14 @@ namespace quiz_management.Views.Student.Exam
         {
             DialogResult result = MessageBox.Show(this, text, caption, MessageBoxButtons.OKCancel);
             return result == DialogResult.OK;
+        }
+
+        public void ShowStudentView(int userCode)
+        {
+            this.Hide();
+            MainStudentView screen = new MainStudentView(userCode);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
         }
 
         public OfficialExamView(int userCode)
