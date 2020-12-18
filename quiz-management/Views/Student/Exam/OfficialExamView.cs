@@ -51,6 +51,7 @@ namespace quiz_management.Views.Student.Exam
                 {
                     bool state = value[i].Checked;
                     cbAnswers.SetItemChecked(i, state);
+                    cbAnswers.SelectedItem = null;
                 };
             }
         }
@@ -120,10 +121,10 @@ namespace quiz_management.Views.Student.Exam
             SetTimer();
             RenderQuestionButton(QQuantity);
             cbQuestions.SelectedIndex = QuestionSelectedIndex;
+            txtRemain.Text = QQuantity.ToString();
             checkBoxList.ItemHeight = 32;
             checkBoxList.DisplayMember = "CauTraLoi";
             checkBoxList.ValueMember = "MaCauTraLoi";
-            txtRemain.Text = QQuantity.ToString();
         }
 
         public void TimeToString()

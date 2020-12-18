@@ -16,7 +16,7 @@ namespace quiz_management.Presenters.Student.Exam
         private int _resultCode = -1;
 
         public List<Question> Questions = new List<Question>();
-        public int QuestionSelectedIndex;
+        public int QuestionSelectedIndex = 0;
 
         public OfficialExamPresenter(IOfficialExamView v, int userCode)
         {
@@ -24,6 +24,7 @@ namespace quiz_management.Presenters.Student.Exam
             currentUserCode = userCode;
             GetData();
             DataCrashed();
+            BindingQuestion();
             view.QuestionChange += View_QuestionChange;
             view.AnswerCheck += View_AnswerCheck;
             view.Prev += View_Prev;
@@ -66,28 +67,47 @@ namespace quiz_management.Presenters.Student.Exam
 
         private void View_AnswerCheck(object sender, System.EventArgs e)
         {
+            if ((e as ItemCheckEventArgs).CurrentValue == (e as ItemCheckEventArgs).NewValue) return;
             view.QuestionSelected = QuestionSelectedIndex;
+            List<Answer> ans = Questions.ElementAt(QuestionSelectedIndex).CauTraLoi;
             int index = (e as ItemCheckEventArgs).Index;
             bool state = (e as ItemCheckEventArgs).NewValue == CheckState.Checked;
-            Questions.ElementAt(QuestionSelectedIndex).Checked = state;
-            view.Remain = Questions.Count - view.Completed;
-            List<Answer> ans = Questions.ElementAt(QuestionSelectedIndex).CauTraLoi;
-            ans.ElementAt(index).Checked = state;
-            StoreCheckAnswer(Questions.ElementAt(QuestionSelectedIndex).MaCauHoi,
-                ans.ElementAt(index).MaCauTraLoi, view.TimeLeft);
-            foreach (Answer item in ans)
+            if (ans.ElementAt(index).Checked == state)
             {
-                if (item.Checked)
-                {
-                    Questions.ElementAt(QuestionSelectedIndex).Checked = item.Checked;
-                    view.QuestionChecked = item.Checked;
-                    UpdateCompleted_RemainCount();
-                    return;
-                }
+                ans.ElementAt(index).Checked = state;
             }
-            Questions.ElementAt(QuestionSelectedIndex).Checked = state;
-            view.QuestionChecked = state;
-            UpdateCompleted_RemainCount();
+            else
+            {
+                Questions.ElementAt(QuestionSelectedIndex).Checked = state;
+                view.Remain = Questions.Count - view.Completed;
+                ans.ElementAt(index).Checked = state;
+
+                if (!state)
+                {
+                    DeleteAnswerDB(Questions.ElementAt(QuestionSelectedIndex).MaCauHoi,
+                    ans.ElementAt(index).MaCauTraLoi);
+                }
+                else
+                {
+                    StoreCheckAnswer(Questions.ElementAt(QuestionSelectedIndex).MaCauHoi,
+                    ans.ElementAt(index).MaCauTraLoi, view.TimeLeft);
+                }
+
+                foreach (Answer item in ans)
+                {
+                    if (item.Checked)
+                    {
+                        Questions.ElementAt(QuestionSelectedIndex).Checked = item.Checked;
+                        view.QuestionChecked = item.Checked;
+                        UpdateCompleted_RemainCount();
+                        return;
+                    }
+                }
+
+                Questions.ElementAt(QuestionSelectedIndex).Checked = state;
+                view.QuestionChecked = state;
+                UpdateCompleted_RemainCount();
+            }
         }
 
         private void UpdateCompleted_RemainCount()
@@ -185,7 +205,6 @@ namespace quiz_management.Presenters.Student.Exam
                 }
 
                 SetExamDataView(exam, Questions.Count);
-                BindingQuestion();
             };
         }
 
@@ -231,7 +250,7 @@ namespace quiz_management.Presenters.Student.Exam
 
         private void BindingQuestion()
         {
-            view.QuestionSelected = QuestionSelectedIndex; ;
+            view.QuestionSelected = QuestionSelectedIndex;
             view.QuestionOrder = QuestionSelectedIndex + 1;
             view.QuestionString = Questions.ElementAt(QuestionSelectedIndex).CauHoi;
             view.Answers = Questions.ElementAt(QuestionSelectedIndex).CauTraLoi;
@@ -280,6 +299,18 @@ namespace quiz_management.Presenters.Student.Exam
                     maCauTraLoi = answerCode,
                     thoiGian = time
                 });
+                db.SubmitChanges();
+            };
+        }
+
+        private void DeleteAnswerDB(int questionCode, int answerCode)
+        {
+            using (var db = new QuizDataContext())
+            {
+                var row = db.cTKetQuas.FirstOrDefault(r =>
+                (r.maCauHoi == questionCode) && (r.maCauTraLoi == answerCode));
+                if (row.maKetQua != _resultCode) return;
+                db.cTKetQuas.DeleteOnSubmit(row);
                 db.SubmitChanges();
             };
         }

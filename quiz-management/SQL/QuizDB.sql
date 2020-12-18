@@ -485,3 +485,320 @@ select * from thongtin
 select * from lop
 update thongtin set maLopHoc = 1
 
+---bắt đầu từ đây
+--select * from khoiLop
+INSERT INTO dbo.monHoc
+(
+    tenMonHoc
+)
+VALUES (N'Hóa Học'), (N'Tiếng Anh')
+GO
+insert into dbo.khoiLop values ('K11', 11), ('K12', 12)
+INSERT INTO dbo.Lop
+(
+    maKhoiLop,
+    tenLopHoc
+)
+VALUES
+(   'K11', -- maKhoiLop - varchar(5)
+    N'11A1' -- tenLopHoc - nvarchar(10)
+    )
+GO
+
+--select * from db.cauHoi
+INSERT INTO dbo.cauHoi
+(
+    maMonHoc,
+    cauHoi,
+    doKho,
+	maKhoiLop
+)
+VALUES(   2,   -- maMonHoc - int
+    N'Công thức phân tử của Strien là?', -- cauHoi - nvarchar(100)
+    1,
+	'K11'
+    ),
+	(   2,   -- maMonHoc - int
+    N'Công thức phân tử của toluen là?', -- cauHoi - nvarchar(100)
+    1 ,
+	'K11'   -- doKho - int
+    ),
+	(
+		 2,   -- maMonHoc - int
+		N'Số đồng phân Hiđrocacbon thơm ưng với công thức C8H10 là?', -- cauHoi - nvarchar(100)
+		1 ,
+	'K11'   -- doKho - int
+	),
+	(
+		 2,   -- maMonHoc - int
+		N'Benzen tác dụng với Br2 theo tỷ lệ mol 1 : 1 (có mặt bột Fe), thu được sẩn phẩm hữu cơ là?', -- cauHoi - nvarchar(100)
+		1 ,
+	'K11'   -- doKho - int
+	),
+	(
+		 2,   -- maMonHoc - int
+		N'Nhóm A bao gồm các nguyên tố?', -- cauHoi - nvarchar(100)
+		1 ,
+	'K12'   -- doKho - int
+	),
+	(
+		 2,   -- maMonHoc - int
+		N'Cho nguyên tố có kí hiệu là 12X. Vị trí của X trong bảng tuần hoàn?', -- cauHoi - nvarchar(100)
+		1 ,
+	'K12'   -- doKho - int
+	),
+	(
+		 2,   -- maMonHoc - int
+		N'Bán kính nguyên tử các nguyên tố: Na, Li, Be, B. Xếp theo chiều tăng dần là?', -- cauHoi - nvarchar(100)
+		1 ,
+	'K12'   -- doKho - int
+	),
+	(
+		 3,   -- maMonHoc - int
+		N'Scientists hope that this new drug will be a major breakthrough in the fight against AIDS.?', -- cauHoi - nvarchar(100)
+		1 ,
+	'K11'   -- doKho - int
+	),
+	(
+		 3,   -- maMonHoc - int
+		N'If we have solar panels on our roofs, we will be able to generate our own electricity.', -- cauHoi - nvarchar(100)
+		1 ,
+	'K11'   -- doKho - int
+	),
+	(
+		 3,   -- maMonHoc - int
+		N' There is a real mix of people in Brighton. It has a verycosmopolitan feel to it.', -- cauHoi - nvarchar(100)
+		1 ,
+	'K11'   -- doKho - int
+	)
+GO
+
+INSERT INTO dbo.dapAn
+(
+    maCauHoi,
+    maCauTraloi,
+    cauTraLoi,
+    dapAn
+)
+VALUES
+(   6,   -- maCauHoi - int
+    1,   -- maCauTraloi - int
+    N'C6H6', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+(   6,   -- maCauHoi - int
+    2,   -- maCauTraloi - int
+    N'C7H8', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   6,   -- maCauHoi - int
+    3,   -- maCauTraloi - int
+    N'C8H8', -- cauTraLoi - nvarchar(100)
+    1    -- dapAn - int
+    ),
+	(   6,   -- maCauHoi - int
+    4,   -- maCauTraloi - int
+    N'C8H10', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    )
+GO
+
+INSERT INTO dbo.dapAn
+(
+    maCauHoi,
+    maCauTraloi,
+    cauTraLoi,
+    dapAn
+)
+VALUES
+(   7,   -- maCauHoi - int
+    1,   -- maCauTraloi - int
+    N'C6H6', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+(   7,   -- maCauHoi - int
+    2,   -- maCauTraloi - int
+    N'C7H8', -- cauTraLoi - nvarchar(100)
+    1    -- dapAn - int
+    ),
+	(   7,   -- maCauHoi - int
+    3,   -- maCauTraloi - int
+    N'C8H8', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   7,   -- maCauHoi - int
+    4,   -- maCauTraloi - int
+    N'C8H10', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   8,   -- maCauHoi - int
+    1,   -- maCauTraloi - int
+    N'4', -- cauTraLoi - nvarchar(100)
+    1    -- dapAn - int
+    ),
+	(   8,   -- maCauHoi - int
+    2,   -- maCauTraloi - int
+    N'2', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   8,   -- maCauHoi - int
+    3,   -- maCauTraloi - int
+    N'3', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   8,   -- maCauHoi - int
+    4,   -- maCauTraloi - int
+    N'5', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   9,   -- maCauHoi - int
+    1,   -- maCauTraloi - int
+    N'C6H6Br2', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   9,   -- maCauHoi - int
+    2,   -- maCauTraloi - int
+    N'C6H6Br6', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   9,   -- maCauHoi - int
+    3,   -- maCauTraloi - int
+    N'C6H5Br', -- cauTraLoi - nvarchar(100)
+    1    -- dapAn - int
+    ),
+	(   9,   -- maCauHoi - int
+    4,   -- maCauTraloi - int
+    N'C6H6Br44', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   10,   -- maCauHoi - int
+    1,   -- maCauTraloi - int
+    N'Nguyên tố s', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   10,   -- maCauHoi - int
+    2,   -- maCauTraloi - int
+    N'Nguyên tố p', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   10,   -- maCauHoi - int
+    3,   -- maCauTraloi - int
+    N'Nguyên tố d và nguyên tố f.', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   10,   -- maCauHoi - int
+    4,   -- maCauTraloi - int
+    N'Nguyên tố s và nguyên tố p', -- cauTraLoi - nvarchar(100)
+    1    -- dapAn - int
+    ),
+
+	--11
+	(   11,   -- maCauHoi - int
+    1,   -- maCauTraloi - int
+    N'Nhóm IIA, chu kì 3', -- cauTraLoi - nvarchar(100)
+    1    -- dapAn - int
+    ),
+	(   11,   -- maCauHoi - int
+    2,   -- maCauTraloi - int
+    N'Nhóm IA, chu kì 3', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   11,   -- maCauHoi - int
+    3,   -- maCauTraloi - int
+    N'Nhóm IIIA, chu kì 2', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   11,   -- maCauHoi - int
+    4,   -- maCauTraloi - int
+    N'Nhóm IA, chu kì 2', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+
+	--12
+	(   12,   -- maCauHoi - int
+    1,   -- maCauTraloi - int
+    N'B < Be < Li < Na', -- cauTraLoi - nvarchar(100)
+    1    -- dapAn - int
+    ),
+	(   12,   -- maCauHoi - int
+    2,   -- maCauTraloi - int
+    N'Na < Li < Be < B', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   12,   -- maCauHoi - int
+    3,   -- maCauTraloi - int
+    N'Li < Be < B < Na', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   12,   -- maCauHoi - int
+    4,   -- maCauTraloi - int
+    N'Be < Li < Na < B', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+
+	--13
+	(   13,   -- maCauHoi - int
+    1,   -- maCauTraloi - int
+    N'new cure', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   13,   -- maCauHoi - int
+    2,   -- maCauTraloi - int
+    N'important therapy', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   13,   -- maCauHoi - int
+    3,   -- maCauTraloi - int
+    N'sudden remedy', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   13,   -- maCauHoi - int
+    4,   -- maCauTraloi - int
+    N'dramatic development', -- cauTraLoi - nvarchar(100)
+    1    -- dapAn - int
+    ),
+
+	--14
+	(   14,   -- maCauHoi - int
+    1,   -- maCauTraloi - int
+    N'afford', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   14,   -- maCauHoi - int
+    2,   -- maCauTraloi - int
+    N'produce', -- cauTraLoi - nvarchar(100)
+    1    -- dapAn - int
+    ),
+	(   14,   -- maCauHoi - int
+    3,   -- maCauTraloi - int
+    N'manufacture', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   14,   -- maCauHoi - int
+    4,   -- maCauTraloi - int
+    N'light', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	
+	--15
+	(   15,   -- maCauHoi - int
+    1,   -- maCauTraloi - int
+    N'busy', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   15,   -- maCauHoi - int
+    2,   -- maCauTraloi - int
+    N'hectic', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    ),
+	(   15,   -- maCauHoi - int
+    3,   -- maCauTraloi - int
+    N'multi-cultural', -- cauTraLoi - nvarchar(100)
+    1    -- dapAn - int
+    ),
+	(   15,   -- maCauHoi - int
+    4,   -- maCauTraloi - int
+    N'diversified', -- cauTraLoi - nvarchar(100)
+    0    -- dapAn - int
+    )
+GO
