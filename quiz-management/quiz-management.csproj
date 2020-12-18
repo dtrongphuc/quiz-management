@@ -68,6 +68,7 @@
     <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\ContributeQuestion.cs" />
     <Compile Include="Models\CreatePaperWithQuestion.cs" />
+    <Compile Include="Models\Papers.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\Quiz.designer.cs">
       <AutoGen>True</AutoGen>
@@ -88,6 +89,7 @@
     <Compile Include="Presenters\Student\Main\MainStudentPresenter.cs" />
     <Compile Include="Presenters\Teacher\ExamManagement\CreateExamPresenter.cs" />
     <Compile Include="Presenters\Teacher\PaperManagement\CreatePaperPresenter.cs" />
+    <Compile Include="Presenters\Teacher\PaperManagement\PaperListPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validate\RequiredFieldValidator.cs">
@@ -186,6 +188,7 @@
       <DependentUpon>CreatePaperView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Teacher\PaperManagement\ICreatePaperView.cs" />
+    <Compile Include="Views\Teacher\PaperManagement\IPaperListView.cs" />
     <Compile Include="Views\Teacher\PaperManagement\PaperListView.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -36,6 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionList)).BeginInit();
@@ -43,7 +44,7 @@
             // 
             // btnCreatePaper
             // 
-            this.btnCreatePaper.Location = new System.Drawing.Point(249, 545);
+            this.btnCreatePaper.Location = new System.Drawing.Point(263, 552);
             this.btnCreatePaper.Name = "btnCreatePaper";
             this.btnCreatePaper.Size = new System.Drawing.Size(165, 48);
             this.btnCreatePaper.TabIndex = 32;
@@ -58,16 +59,17 @@
             this.dgvQuestionList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvQuestionList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
+            this.Column4,
             this.Column3,
             this.Column2});
-            this.dgvQuestionList.Location = new System.Drawing.Point(115, 163);
+            this.dgvQuestionList.Location = new System.Drawing.Point(71, 163);
             this.dgvQuestionList.Name = "dgvQuestionList";
             this.dgvQuestionList.ReadOnly = true;
             this.dgvQuestionList.RowHeadersVisible = false;
             this.dgvQuestionList.RowHeadersWidth = 51;
             this.dgvQuestionList.RowTemplate.Height = 24;
             this.dgvQuestionList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvQuestionList.Size = new System.Drawing.Size(660, 336);
+            this.dgvQuestionList.Size = new System.Drawing.Size(751, 336);
             this.dgvQuestionList.TabIndex = 29;
             // 
             // linkGoBackBefore
@@ -84,7 +86,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(316, 83);
+            this.label3.Location = new System.Drawing.Point(322, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(261, 32);
             this.label3.TabIndex = 25;
@@ -112,7 +114,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(449, 545);
+            this.button1.Location = new System.Drawing.Point(463, 552);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(165, 48);
             this.button1.TabIndex = 33;
@@ -125,6 +127,13 @@
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Môn học";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // Column3
             // 
@@ -170,6 +179,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
