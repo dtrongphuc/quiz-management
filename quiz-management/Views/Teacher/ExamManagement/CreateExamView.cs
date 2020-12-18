@@ -78,11 +78,17 @@ namespace quiz_management.Views.Teacher.ExamManagement
         {
             get
             {
-               
+                return dgvThiSinh;
             }
         }
 
-        public DataGridView lstHocSinhChon => throw new NotImplementedException();
+        public DataGridView lstHocSinhChon
+        {
+            get
+            {
+                return dtgHocSinh;
+            }
+        }
 
         public event EventHandler GoBackBefore;
         public event EventHandler Submit;

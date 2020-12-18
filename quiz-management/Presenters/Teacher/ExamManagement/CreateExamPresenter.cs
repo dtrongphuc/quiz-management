@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace quiz_management.Presenters.Teacher.ExamManagement
 {
@@ -15,6 +16,7 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
         List<thongTin> lstThongTin;
         List<monHoc> lstMonHoc;
         List<boDe> lstbode;
+        List<thongTin> lstHocSinhDuocChon;
         public CreateExamPresenter(ICreateExamView v, int code)
         {
             view = v;
@@ -25,9 +27,11 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
         private void Initialize()
         {
             lstbode = new List<boDe>();
+            lstHocSinhDuocChon = new List<thongTin>();
             view.GoBackBefore += View_Back;
             view.Submit += View_Submit;
             view.subjectChange += View_SubjectChange;
+            view.MoveRight += View_MoveRight;
             
             using(var db = new QuizDataContext())
             {
@@ -36,6 +40,20 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             }
             lstbode = FindBymonHocId(lstMonHoc[0].maMonHoc);
             Fill();
+        }
+
+        private void View_MoveRight(object sender, EventArgs e)
+        {
+           
+            foreach (DataGridViewRow i in view.lstHocSinhChon.SelectedRows)
+            {
+                
+                var id = i.Cells["MSV"].Value.ToString();
+                var temp =  lstThongTin.Where(x => x.maNguoidung == int.Parse(id));
+                thongTin tt = new thongTin();
+                
+               
+            }
         }
 
         private void Fill()

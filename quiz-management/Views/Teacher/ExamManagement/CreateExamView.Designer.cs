@@ -188,7 +188,6 @@
             this.dtgHocSinh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maNguoidung,
             this.tenNguoidung});
-            this.dtgHocSinh.DataMember = "maNguoiDung";
             this.dtgHocSinh.Location = new System.Drawing.Point(24, 196);
             this.dtgHocSinh.Name = "dtgHocSinh";
             this.dtgHocSinh.ReadOnly = true;
