@@ -80,6 +80,7 @@
     <Compile Include="Presenters\Student\ContribuQuestions\CQuestionListPresenter.cs" />
     <Compile Include="Presenters\Student\Exam\OfficialExamPresenter.cs" />
     <Compile Include="Presenters\Student\ContribuQuestions\ContribuQuestionPresenter.cs" />
+    <Compile Include="Presenters\Student\Exam\PracticExamPresenter.cs" />
     <Compile Include="Presenters\Student\InfoPersonal\ProfilePresenter.cs" />
     <Compile Include="Presenters\Student\InfoPersonal\ResultExamPresenter.cs" />
     <Compile Include="Presenters\Student\InfoPersonal\TestSchedulePresenter.cs" />
@@ -122,6 +123,7 @@
       <DependentUpon>MainCQuestionView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Student\Exam\IOfficialExamView.cs" />
+    <Compile Include="Views\Student\Exam\IPracticExamView.cs" />
     <Compile Include="Views\Student\Exam\OfficialExamView.cs">
       <SubType>Form</SubType>
     </Compile>
