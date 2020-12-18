@@ -10,7 +10,7 @@ namespace quiz_management.Views.Teacher.ExamManagement
 {
     public interface ICreateExamView
     {
-        string NgayThi { get; }
+        DateTime NgayThi { get; }
         List<monHoc> lstMonHoc { set; }
         string monHocChon { get; }
         List<boDe> lstDeThi { set; }
@@ -25,8 +25,6 @@ namespace quiz_management.Views.Teacher.ExamManagement
         event EventHandler subjectChange;
         event EventHandler MoveLeft;
         event EventHandler MoveRight;
-        event EventHandler DLeft;
-        event EventHandler DRight;
 
 
         void MainTeacherView(int code);

@@ -33,19 +33,17 @@
             this.cbBoDe = new System.Windows.Forms.ComboBox();
             this.dtpNgayThi = new System.Windows.Forms.DateTimePicker();
             this.dgvThiSinh = new System.Windows.Forms.DataGridView();
-            this.MSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnMoveRight = new System.Windows.Forms.Button();
-            this.btnMoveDRight = new System.Windows.Forms.Button();
             this.btnMoveLeft = new System.Windows.Forms.Button();
-            this.btnMoveDLeft = new System.Windows.Forms.Button();
             this.btnExam = new System.Windows.Forms.Button();
             this.cbMonHoc = new System.Windows.Forms.ComboBox();
             this.dtgHocSinh = new System.Windows.Forms.DataGridView();
-            this.maNguoidung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenNguoidung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.ThiSinhDuocChon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenNguoiDungDuocChon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HocSinhDuocChon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenNguoidung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThiSinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgHocSinh)).BeginInit();
             this.SuspendLayout();
@@ -96,48 +94,25 @@
             this.dgvThiSinh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvThiSinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvThiSinh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MSV,
-            this.TenHS});
+            this.ThiSinhDuocChon,
+            this.tenNguoiDungDuocChon});
             this.dgvThiSinh.Location = new System.Drawing.Point(448, 196);
             this.dgvThiSinh.Name = "dgvThiSinh";
             this.dgvThiSinh.ReadOnly = true;
             this.dgvThiSinh.RowHeadersVisible = false;
+            this.dgvThiSinh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvThiSinh.Size = new System.Drawing.Size(326, 282);
             this.dgvThiSinh.TabIndex = 6;
             // 
-            // MSV
-            // 
-            this.MSV.FillWeight = 30.52284F;
-            this.MSV.HeaderText = "MSV";
-            this.MSV.Name = "MSV";
-            this.MSV.ReadOnly = true;
-            // 
-            // TenHS
-            // 
-            this.TenHS.FillWeight = 98.47716F;
-            this.TenHS.HeaderText = "Tên Hoc Sinh";
-            this.TenHS.Name = "TenHS";
-            this.TenHS.ReadOnly = true;
-            // 
             // btnMoveRight
             // 
-            this.btnMoveRight.Location = new System.Drawing.Point(381, 221);
+            this.btnMoveRight.Location = new System.Drawing.Point(381, 267);
             this.btnMoveRight.Margin = new System.Windows.Forms.Padding(2);
             this.btnMoveRight.Name = "btnMoveRight";
             this.btnMoveRight.Size = new System.Drawing.Size(34, 55);
             this.btnMoveRight.TabIndex = 16;
             this.btnMoveRight.Text = ">";
             this.btnMoveRight.UseVisualStyleBackColor = true;
-            // 
-            // btnMoveDRight
-            // 
-            this.btnMoveDRight.Location = new System.Drawing.Point(381, 280);
-            this.btnMoveDRight.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMoveDRight.Name = "btnMoveDRight";
-            this.btnMoveDRight.Size = new System.Drawing.Size(34, 55);
-            this.btnMoveDRight.TabIndex = 17;
-            this.btnMoveDRight.Text = ">>";
-            this.btnMoveDRight.UseVisualStyleBackColor = true;
             // 
             // btnMoveLeft
             // 
@@ -148,16 +123,6 @@
             this.btnMoveLeft.TabIndex = 18;
             this.btnMoveLeft.Text = "<";
             this.btnMoveLeft.UseVisualStyleBackColor = true;
-            // 
-            // btnMoveDLeft
-            // 
-            this.btnMoveDLeft.Location = new System.Drawing.Point(381, 398);
-            this.btnMoveDLeft.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMoveDLeft.Name = "btnMoveDLeft";
-            this.btnMoveDLeft.Size = new System.Drawing.Size(34, 55);
-            this.btnMoveDLeft.TabIndex = 19;
-            this.btnMoveDLeft.Text = "<<";
-            this.btnMoveDLeft.UseVisualStyleBackColor = true;
             // 
             // btnExam
             // 
@@ -186,32 +151,15 @@
             this.dtgHocSinh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgHocSinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgHocSinh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.maNguoidung,
+            this.HocSinhDuocChon,
             this.tenNguoidung});
             this.dtgHocSinh.Location = new System.Drawing.Point(24, 196);
             this.dtgHocSinh.Name = "dtgHocSinh";
             this.dtgHocSinh.ReadOnly = true;
             this.dtgHocSinh.RowHeadersVisible = false;
+            this.dtgHocSinh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgHocSinh.Size = new System.Drawing.Size(326, 282);
             this.dtgHocSinh.TabIndex = 22;
-            // 
-            // maNguoidung
-            // 
-            this.maNguoidung.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.maNguoidung.DataPropertyName = "maNguoidung";
-            this.maNguoidung.FillWeight = 30.52284F;
-            this.maNguoidung.HeaderText = "MSV";
-            this.maNguoidung.Name = "maNguoidung";
-            this.maNguoidung.ReadOnly = true;
-            // 
-            // tenNguoidung
-            // 
-            this.tenNguoidung.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tenNguoidung.DataPropertyName = "tenNguoidung";
-            this.tenNguoidung.FillWeight = 98.47716F;
-            this.tenNguoidung.HeaderText = "Tên Hoc Sinh";
-            this.tenNguoidung.Name = "tenNguoidung";
-            this.tenNguoidung.ReadOnly = true;
             // 
             // label5
             // 
@@ -235,6 +183,40 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "Danh sách Thí Sinh";
             // 
+            // ThiSinhDuocChon
+            // 
+            this.ThiSinhDuocChon.DataPropertyName = "maNguoiDung";
+            this.ThiSinhDuocChon.FillWeight = 30.52284F;
+            this.ThiSinhDuocChon.HeaderText = "MSV";
+            this.ThiSinhDuocChon.Name = "ThiSinhDuocChon";
+            this.ThiSinhDuocChon.ReadOnly = true;
+            // 
+            // tenNguoiDungDuocChon
+            // 
+            this.tenNguoiDungDuocChon.DataPropertyName = "tenNguoiDung";
+            this.tenNguoiDungDuocChon.FillWeight = 98.47716F;
+            this.tenNguoiDungDuocChon.HeaderText = "Tên Hoc Sinh";
+            this.tenNguoiDungDuocChon.Name = "tenNguoiDungDuocChon";
+            this.tenNguoiDungDuocChon.ReadOnly = true;
+            // 
+            // HocSinhDuocChon
+            // 
+            this.HocSinhDuocChon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.HocSinhDuocChon.DataPropertyName = "maNguoidung";
+            this.HocSinhDuocChon.FillWeight = 30.52284F;
+            this.HocSinhDuocChon.HeaderText = "MSV";
+            this.HocSinhDuocChon.Name = "HocSinhDuocChon";
+            this.HocSinhDuocChon.ReadOnly = true;
+            // 
+            // tenNguoidung
+            // 
+            this.tenNguoidung.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tenNguoidung.DataPropertyName = "tenNguoidung";
+            this.tenNguoidung.FillWeight = 98.47716F;
+            this.tenNguoidung.HeaderText = "Tên Hoc Sinh";
+            this.tenNguoidung.Name = "tenNguoidung";
+            this.tenNguoidung.ReadOnly = true;
+            // 
             // CreateExamView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,9 +227,7 @@
             this.Controls.Add(this.dtgHocSinh);
             this.Controls.Add(this.cbMonHoc);
             this.Controls.Add(this.btnExam);
-            this.Controls.Add(this.btnMoveDLeft);
             this.Controls.Add(this.btnMoveLeft);
-            this.Controls.Add(this.btnMoveDRight);
             this.Controls.Add(this.btnMoveRight);
             this.Controls.Add(this.dgvThiSinh);
             this.Controls.Add(this.dtpNgayThi);
@@ -271,17 +251,15 @@
         private System.Windows.Forms.DateTimePicker dtpNgayThi;
         private System.Windows.Forms.DataGridView dgvThiSinh;
         private System.Windows.Forms.Button btnMoveRight;
-        private System.Windows.Forms.Button btnMoveDRight;
         private System.Windows.Forms.Button btnMoveLeft;
-        private System.Windows.Forms.Button btnMoveDLeft;
         private System.Windows.Forms.Button btnExam;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MSV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenHS;
         private System.Windows.Forms.ComboBox cbMonHoc;
         private System.Windows.Forms.DataGridView dtgHocSinh;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maNguoidung;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ThiSinhDuocChon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenNguoiDungDuocChon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HocSinhDuocChon;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenNguoidung;
     }
 }

@@ -77,24 +77,21 @@ CREATE TABLE boDe
 
 ALTER TABLE dbo.boDe ADD CONSTRAINT FK_boDe_monHoc FOREIGN KEY(maMon) REFERENCES dbo.monHoc(maMonHoc)
 ALTER TABLE boDe ADD CONSTRAINT FK_boDe_khoiLop FOREIGN KEY(maKhoi) REFERENCES khoiLop(maKhoiLop)
-update boDe set thoiGian=1800 where maBoDe=1
-alter table boDe drop column thoiGian
-alter table boDe add thoiGian int
-select * from boDe
+
 
 CREATE TABLE cauHoi
 (
 	maCauHoi INT IDENTITY,
 	maMonHoc INT,
 	cauHoi NVARCHAR(100),
-	doKho INT
+	doKho INT,
+    trangThai int,
+    maKhoiLop  varchar(5)
 
 	CONSTRAINT PK_cauHoi
 	PRIMARY KEY (maCauHoi)
 )
 
-alter table cauHoi add trangThai int
-alter table cauHoi add maKhoiLop  varchar(5)
 alter table cauHoi add constraint df_trangthai default 1 for trangThai
 alter table cauHoi add constraint FK_cauHoi_monHoc foreign key(maMonHoc) references monHoc(maMonHoc)
 alter table cauHoi add constraint FK_cauHoi_khoiLop foreign key(maKhoiLop) references khoiLop(maKhoiLop)
@@ -175,7 +172,7 @@ CREATE TABLE lichThi
     maBoDe INT,
 
 	CONSTRAINT PK_lichThi
-	PRIMARY KEY(maNguoiDung,maMonHoc,ngayThi)
+	PRIMARY KEY(maNguoiDung,maBoDe,ngayThi)
 )
 select * from lichThi
 alter table lichThi add constraint FK_lichThi_boDe foreign key (maBoDe) references boDe(maBoDe)

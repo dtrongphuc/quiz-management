@@ -30,34 +30,22 @@ namespace quiz_management.Views.Teacher.ExamManagement
             {
                 Submit?.Invoke(btnExam, e);
             };
-            btnExam.Click += (_, e) =>
-            {
-                Submit?.Invoke(btnExam, e);
-            };
             cbMonHoc.SelectedValueChanged += (_, e) =>
             {
                 subjectChange?.Invoke(cbMonHoc, e);
             };
             btnMoveRight.Click += (_, e) =>
             {
-                MoveLeft?.Invoke(btnMoveRight, e);
+                MoveRight?.Invoke(btnMoveRight, e);
             };
             btnMoveLeft.Click += (_, e) =>
             {
-                MoveRight?.Invoke(btnMoveLeft, e);
-            };
-            btnMoveDRight.Click += (_, e) =>
-            {
-                DRight?.Invoke(btnMoveDRight, e);
-            };
-            btnMoveDLeft.Click += (_, e) =>
-            {
-                DLeft?.Invoke(btnMoveDLeft, e);
+                MoveLeft?.Invoke(btnMoveLeft, e);
             };
 
         }
 
-        public string NgayThi => dtpNgayThi.Text;
+        public DateTime NgayThi => dtpNgayThi.Value;
 
         public List<monHoc> lstMonHoc { set => cbMonHoc.DataSource = value; }
         public List<thongTin> lstHocSinh { set => dtgHocSinh.DataSource = value; }
