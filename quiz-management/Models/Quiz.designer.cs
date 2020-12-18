@@ -248,6 +248,8 @@ namespace quiz_management.Models
 		
 		private EntitySet<ketQua> _ketQuas;
 		
+		private EntitySet<lichThi> _lichThis;
+		
 		private EntityRef<khoiLop> _khoiLop;
 		
 		private EntityRef<monHoc> _monHoc;
@@ -272,6 +274,7 @@ namespace quiz_management.Models
 		{
 			this._cTBoDes = new EntitySet<cTBoDe>(new Action<cTBoDe>(this.attach_cTBoDes), new Action<cTBoDe>(this.detach_cTBoDes));
 			this._ketQuas = new EntitySet<ketQua>(new Action<ketQua>(this.attach_ketQuas), new Action<ketQua>(this.detach_ketQuas));
+			this._lichThis = new EntitySet<lichThi>(new Action<lichThi>(this.attach_lichThis), new Action<lichThi>(this.detach_lichThis));
 			this._khoiLop = default(EntityRef<khoiLop>);
 			this._monHoc = default(EntityRef<monHoc>);
 			OnCreated();
@@ -411,6 +414,19 @@ namespace quiz_management.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="boDe_lichThi", Storage="_lichThis", ThisKey="maBoDe", OtherKey="maBoDe")]
+		public EntitySet<lichThi> lichThis
+		{
+			get
+			{
+				return this._lichThis;
+			}
+			set
+			{
+				this._lichThis.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="khoiLop_boDe", Storage="_khoiLop", ThisKey="maKhoi", OtherKey="maKhoiLop", IsForeignKey=true)]
 		public khoiLop khoiLop
 		{
@@ -518,6 +534,18 @@ namespace quiz_management.Models
 		}
 		
 		private void detach_ketQuas(ketQua entity)
+		{
+			this.SendPropertyChanging();
+			entity.boDe = null;
+		}
+		
+		private void attach_lichThis(lichThi entity)
+		{
+			this.SendPropertyChanging();
+			entity.boDe = this;
+		}
+		
+		private void detach_lichThis(lichThi entity)
 		{
 			this.SendPropertyChanging();
 			entity.boDe = null;
@@ -2824,6 +2852,10 @@ namespace quiz_management.Models
 		
 		private System.DateTime _ngayThi;
 		
+		private System.Nullable<int> _maBoDe;
+		
+		private EntityRef<boDe> _boDe;
+		
 		private EntityRef<monHoc> _monHoc;
 		
 		private EntityRef<nguoiDung> _nguoiDung;
@@ -2838,10 +2870,13 @@ namespace quiz_management.Models
     partial void OnmaMonHocChanged();
     partial void OnngayThiChanging(System.DateTime value);
     partial void OnngayThiChanged();
+    partial void OnmaBoDeChanging(System.Nullable<int> value);
+    partial void OnmaBoDeChanged();
     #endregion
 		
 		public lichThi()
 		{
+			this._boDe = default(EntityRef<boDe>);
 			this._monHoc = default(EntityRef<monHoc>);
 			this._nguoiDung = default(EntityRef<nguoiDung>);
 			OnCreated();
@@ -2911,6 +2946,64 @@ namespace quiz_management.Models
 					this._ngayThi = value;
 					this.SendPropertyChanged("ngayThi");
 					this.OnngayThiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maBoDe", DbType="Int")]
+		public System.Nullable<int> maBoDe
+		{
+			get
+			{
+				return this._maBoDe;
+			}
+			set
+			{
+				if ((this._maBoDe != value))
+				{
+					if (this._boDe.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnmaBoDeChanging(value);
+					this.SendPropertyChanging();
+					this._maBoDe = value;
+					this.SendPropertyChanged("maBoDe");
+					this.OnmaBoDeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="boDe_lichThi", Storage="_boDe", ThisKey="maBoDe", OtherKey="maBoDe", IsForeignKey=true)]
+		public boDe boDe
+		{
+			get
+			{
+				return this._boDe.Entity;
+			}
+			set
+			{
+				boDe previousValue = this._boDe.Entity;
+				if (((previousValue != value) 
+							|| (this._boDe.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._boDe.Entity = null;
+						previousValue.lichThis.Remove(this);
+					}
+					this._boDe.Entity = value;
+					if ((value != null))
+					{
+						value.lichThis.Add(this);
+						this._maBoDe = value.maBoDe;
+					}
+					else
+					{
+						this._maBoDe = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("boDe");
 				}
 			}
 		}

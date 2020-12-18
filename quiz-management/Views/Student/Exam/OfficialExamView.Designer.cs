@@ -213,7 +213,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 13);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Thời gian ";
+            this.label5.Text = "Thời gian:";
             // 
             // txtTimeMinutes
             // 
@@ -330,7 +330,7 @@
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(129, 44);
             this.btnSubmit.TabIndex = 24;
-            this.btnSubmit.Text = "Hoàn Thành";
+            this.btnSubmit.Text = "Hoàn thành";
             this.btnSubmit.UseVisualStyleBackColor = true;
             // 
             // groupBox2
@@ -433,6 +433,7 @@
             this.Name = "OfficialExamView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OfficialExamView";
+            this.Load += new System.EventHandler(this.Form_Loaded);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
