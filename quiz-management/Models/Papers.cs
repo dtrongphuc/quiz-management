@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace quiz_management.Models
 {
-    class Papers
+    public class Papers
     {
+        string _paperID;
+        string _subject;
+        string _grade;
+        int _questionNum;
+
+        public string PaperID { get => _paperID; set => _paperID = value; }
+        public string Subject { get => _subject; set => _subject = value; }
+        public string Grade { get => _grade; set => _grade = value; }
+        public int QuestionNum { get => _questionNum; set => _questionNum = value; }
     }
 }
