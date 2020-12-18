@@ -46,16 +46,13 @@ namespace quiz_management.Views.Student.Exam
         {
             set
             {
-                checkBoxList.DataSource = null;
                 checkBoxList.DataSource = value;
                 for (int i = 0; i < value.Count; i++)
                 {
                     bool state = value[i].Checked;
                     cbAnswers.SetItemChecked(i, state);
+                    cbAnswers.SelectedItem = null;
                 };
-                checkBoxList.ItemHeight = 32;
-                checkBoxList.DisplayMember = "CauTraLoi";
-                checkBoxList.ValueMember = "MaCauTraLoi";
             }
         }
 
@@ -94,7 +91,6 @@ namespace quiz_management.Views.Student.Exam
             cbQuestions.SelectedIndexChanged += (_, e) =>
             {
                 QuestionChange.Invoke(cbQuestions, e);
-                cbAnswers.SelectedIndex = -1;
             };
 
             cbAnswers.ItemCheck += (_, e) =>
@@ -126,6 +122,9 @@ namespace quiz_management.Views.Student.Exam
             RenderQuestionButton(QQuantity);
             cbQuestions.SelectedIndex = QuestionSelectedIndex;
             txtRemain.Text = QQuantity.ToString();
+            checkBoxList.ItemHeight = 32;
+            checkBoxList.DisplayMember = "CauTraLoi";
+            checkBoxList.ValueMember = "MaCauTraLoi";
         }
 
         public void TimeToString()
