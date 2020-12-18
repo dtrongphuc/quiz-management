@@ -12,7 +12,7 @@ namespace quiz_management.Views.Teacher.PaperManagement
 {
     public partial class PaperListView : Form
     {
-        public PaperListView()
+        public PaperListView(int code)
         {
             InitializeComponent();
         }

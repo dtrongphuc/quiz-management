@@ -13,6 +13,9 @@ namespace quiz_management.Views.Teacher.PaperManagement
         string TeacherName { set; }
         string PaperID { get; }
         List<khoiLop> GradeList {set; }
+        string Grade { get; }
+        List<monHoc> SubjectList { set; }
+        string Subject { get; }
         List<CreatePaperWithQuestion> listQuestion { set; }
         List<CreatePaperWithQuestion> listQuestionselected { set; }
         string QuestionID { get; }
@@ -22,12 +25,14 @@ namespace quiz_management.Views.Teacher.PaperManagement
 
         event EventHandler GoBackBefore;
         event EventHandler MoveToRight;
-        event EventHandler MoveAllToRight;
+        //event EventHandler MoveAllToRight;
         event EventHandler MoveToLeft;
-        event EventHandler MoveAllToLeft;
+        //event EventHandler MoveAllToLeft;
         event EventHandler CreatePaper;
+        event EventHandler WatchPaperList;
 
         void ShowMessage(string text);
-        void MainTeacherView(int code);
+        void ShowMainTeacherView(int code);
+        void ShowPaperListView(int code);
     }
 }

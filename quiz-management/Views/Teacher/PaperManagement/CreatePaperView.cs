@@ -29,21 +29,25 @@ namespace quiz_management.Views.Teacher.PaperManagement
             {
                 MoveToRight?.Invoke(btnMoveToSeleted, e);
             };
-            btnMoveAllToSeleted.Click += (_, e) =>
-            {
-                MoveAllToRight?.Invoke(btnMoveAllToSeleted, e);
-            };
+            //btnMoveAllToSeleted.Click += (_, e) =>
+            //{
+            //    MoveAllToRight?.Invoke(btnMoveAllToSeleted, e);
+            //};
             btnMoveToQuestionList.Click += (_, e) =>
             {
                 MoveToLeft?.Invoke(btnMoveToQuestionList, e);
             };
-            btnMoveAllToQuestionList.Click += (_, e) =>
-            {
-                MoveAllToLeft?.Invoke(btnMoveAllToQuestionList, e);
-            };
+            //btnMoveAllToQuestionList.Click += (_, e) =>
+            //{
+            //    MoveAllToLeft?.Invoke(btnMoveAllToQuestionList, e);
+            //};
             btnCreatePaper.Click += (_, e) =>
             {
                 CreatePaper?.Invoke(btnCreatePaper, e);
+            };
+            btnWatchPaperList.Click += (_, e) =>
+            {
+                WatchPaperList?.Invoke(btnWatchPaperList, e);
             };
         }
 
@@ -63,14 +67,21 @@ namespace quiz_management.Views.Teacher.PaperManagement
         public List<CreatePaperWithQuestion> listQuestionselected { set => dgvQuestionSelectedList.DataSource = value; }
         public List<CreatePaperWithQuestion> listQuestion { set => dgvQuestionList.DataSource = value; }
 
+        public string Grade => cbbGrade.SelectedValue.ToString();
+
+        public List<monHoc> SubjectList { set => cbbSubject.DataSource = value; }
+
+        public string Subject => cbbSubject.SelectedValue.ToString();
+
         public event EventHandler MoveToRight;
-        public event EventHandler MoveAllToRight;
+        //public event EventHandler MoveAllToRight;
         public event EventHandler MoveToLeft;
-        public event EventHandler MoveAllToLeft;
+        //public event EventHandler MoveAllToLeft;
         public event EventHandler CreatePaper;
         public event EventHandler GoBackBefore;
+        public event EventHandler WatchPaperList;
 
-        public void MainTeacherView(int code)
+        public void ShowMainTeacherView(int code)
         {
             this.Hide();
             MainTeacherView screen = new MainTeacherView(code);
@@ -81,6 +92,14 @@ namespace quiz_management.Views.Teacher.PaperManagement
         public void ShowMessage(string text)
         {
             MessageBox.Show(text, "Thông báo");
+        }
+
+        public void ShowPaperListView(int code)
+        {
+            this.Hide();
+            PaperListView screen = new PaperListView(code);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
         }
     }
 }

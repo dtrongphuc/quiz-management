@@ -9,7 +9,6 @@ using System.Windows.Forms;
 
 namespace quiz_management.Presenters.Teacher.PaperManagement
 {
-
     class CreatePaperPresenter
     {
         ICreatePaperView view;
@@ -21,25 +20,43 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
             Loadpage(code);
             view.GoBackBefore += GoBackBefore_View;
             view.MoveToRight += MoveToRight_View;
-            view.MoveAllToRight += MoveAllToRight_View;
+            //view.MoveAllToRight += MoveAllToRight_View;
             view.MoveToLeft += MoveToLeft_View;
-            view.MoveAllToLeft += MoveAllToLeft_View;
+            //view.MoveAllToLeft += MoveAllToLeft_View;
             view.CreatePaper += CreatePaper_View;
+            view.GoBackBefore += GoBackBFore_View;
+            view.WatchPaperList += WatchPaperList_View;
         }
+
+        private void WatchPaperList_View(object sender, EventArgs e)
+        {
+            view.ShowPaperListView(currenUserCode);
+        }
+
+        private void GoBackBFore_View(object sender, EventArgs e)
+        {
+            view.ShowMainTeacherView(currenUserCode);
+        }
+
         private void Loadpage(int code)
         {
             List<CreatePaperWithQuestion> listQT = new List<CreatePaperWithQuestion>();
             using (var db = new QuizDataContext())
             {
                 //string teachername = db.nguoiDungs.Select(i => i.maNguoiDung == code).ToString();
-
+                //binding tên giáo viên
                 var teachername = db.thongTins.Where(i => i.maNguoidung == 1).Select(i => i.tenNguoiDung).ToList();
                 view.TeacherName = teachername[0].ToString();
 
+                //binding khối lớp
                 var listclass = db.khoiLops.ToList();
                 view.GradeList = listclass;
+                //binding môn học
+                var listsubject = db.monHocs.ToList();
+                view.SubjectList = listsubject;
 
-                var listQuestions = db.cauHois.ToList();
+                //binding câu hỏi
+                var listQuestions = db.cauHois.Where(i => i.maKhoiLop == view.Grade && i.maMonHoc == int.Parse(view.Subject)).ToList();
                 foreach (var i in listQuestions)
                 {
                     CreatePaperWithQuestion pp = new CreatePaperWithQuestion();
@@ -52,7 +69,40 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
         }
         private void CreatePaper_View(object sender, EventArgs e)
         {
-            
+            string paperID = view.PaperID;
+            int questionnum = view.AllQuestionSelect.Rows.Count;
+            if (view.PaperID == "")
+            {
+                if (questionnum >= 20)
+                {
+                    using (var db = new QuizDataContext())
+                    {
+                        foreach (DataGridViewRow i in view.AllQuestionSelect.Rows)
+                        {
+                            db.cTBoDes.InsertOnSubmit(new cTBoDe
+                            {
+                                maBoDe = int.Parse(paperID),
+                                maCauHoi = int.Parse(i.Cells["MaCauHoiDaChon"].Value.ToString())
+                            });
+                            db.SubmitChanges();
+                        }
+
+                        db.boDes.InsertOnSubmit(new boDe
+                        {
+                            maBoDe = int.Parse(paperID),
+                            tongSoCau = questionnum,
+                            maKhoi = view.Grade,
+                            maMon = null,
+                            thoiGian = 20
+                        });
+                        db.SubmitChanges();
+                    }
+                }
+                else
+                    view.ShowMessage("Một đề ít nhất 20 câu hỏi!!");
+            }
+            else
+                view.ShowMessage("Nhập mã đề!!");
         }
 
         private void MoveAllToLeft_View(object sender, EventArgs e)
@@ -149,7 +199,5 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
         {
            
         }
-
-        
     }
 }

@@ -41,15 +41,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnCreatePaper = new System.Windows.Forms.Button();
             this.btnMoveToSeleted = new System.Windows.Forms.Button();
-            this.btnMoveAllToSeleted = new System.Windows.Forms.Button();
-            this.btnMoveAllToQuestionList = new System.Windows.Forms.Button();
             this.btnMoveToQuestionList = new System.Windows.Forms.Button();
             this.cbbGrade = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvQuestionSelectedList = new System.Windows.Forms.DataGridView();
-            this.btnWatchPaperList = new System.Windows.Forms.Button();
             this.MaCauHoiDaChon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CauHoiDaChon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnWatchPaperList = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cbbSubject = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionSelectedList)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +69,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(460, 56);
+            this.label3.Location = new System.Drawing.Point(453, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(164, 32);
             this.label3.TabIndex = 6;
@@ -98,7 +99,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(313, 142);
+            this.label4.Location = new System.Drawing.Point(55, 132);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 20);
             this.label4.TabIndex = 8;
@@ -107,9 +108,9 @@
             // tbPaperID
             // 
             this.tbPaperID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPaperID.Location = new System.Drawing.Point(400, 135);
+            this.tbPaperID.Location = new System.Drawing.Point(142, 125);
             this.tbPaperID.Name = "tbPaperID";
-            this.tbPaperID.Size = new System.Drawing.Size(270, 27);
+            this.tbPaperID.Size = new System.Drawing.Size(168, 27);
             this.tbPaperID.TabIndex = 9;
             // 
             // dgvQuestionList
@@ -121,7 +122,7 @@
             this.dgvQuestionList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaCauHoi,
             this.CauHoi1});
-            this.dgvQuestionList.Location = new System.Drawing.Point(60, 288);
+            this.dgvQuestionList.Location = new System.Drawing.Point(48, 267);
             this.dgvQuestionList.Name = "dgvQuestionList";
             this.dgvQuestionList.ReadOnly = true;
             this.dgvQuestionList.RowHeadersVisible = false;
@@ -152,7 +153,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(173, 254);
+            this.label5.Location = new System.Drawing.Point(161, 233);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(149, 20);
             this.label5.TabIndex = 12;
@@ -162,7 +163,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(699, 254);
+            this.label6.Location = new System.Drawing.Point(687, 233);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(213, 20);
             this.label6.TabIndex = 13;
@@ -170,7 +171,7 @@
             // 
             // btnCreatePaper
             // 
-            this.btnCreatePaper.Location = new System.Drawing.Point(459, 590);
+            this.btnCreatePaper.Location = new System.Drawing.Point(447, 588);
             this.btnCreatePaper.Name = "btnCreatePaper";
             this.btnCreatePaper.Size = new System.Drawing.Size(165, 48);
             this.btnCreatePaper.TabIndex = 14;
@@ -179,34 +180,16 @@
             // 
             // btnMoveToSeleted
             // 
-            this.btnMoveToSeleted.Location = new System.Drawing.Point(515, 315);
+            this.btnMoveToSeleted.Location = new System.Drawing.Point(503, 348);
             this.btnMoveToSeleted.Name = "btnMoveToSeleted";
             this.btnMoveToSeleted.Size = new System.Drawing.Size(46, 46);
             this.btnMoveToSeleted.TabIndex = 15;
             this.btnMoveToSeleted.Text = ">";
             this.btnMoveToSeleted.UseVisualStyleBackColor = true;
             // 
-            // btnMoveAllToSeleted
-            // 
-            this.btnMoveAllToSeleted.Location = new System.Drawing.Point(515, 367);
-            this.btnMoveAllToSeleted.Name = "btnMoveAllToSeleted";
-            this.btnMoveAllToSeleted.Size = new System.Drawing.Size(46, 46);
-            this.btnMoveAllToSeleted.TabIndex = 16;
-            this.btnMoveAllToSeleted.Text = ">>";
-            this.btnMoveAllToSeleted.UseVisualStyleBackColor = true;
-            // 
-            // btnMoveAllToQuestionList
-            // 
-            this.btnMoveAllToQuestionList.Location = new System.Drawing.Point(515, 491);
-            this.btnMoveAllToQuestionList.Name = "btnMoveAllToQuestionList";
-            this.btnMoveAllToQuestionList.Size = new System.Drawing.Size(46, 46);
-            this.btnMoveAllToQuestionList.TabIndex = 18;
-            this.btnMoveAllToQuestionList.Text = "<<";
-            this.btnMoveAllToQuestionList.UseVisualStyleBackColor = true;
-            // 
             // btnMoveToQuestionList
             // 
-            this.btnMoveToQuestionList.Location = new System.Drawing.Point(515, 439);
+            this.btnMoveToQuestionList.Location = new System.Drawing.Point(503, 418);
             this.btnMoveToQuestionList.Name = "btnMoveToQuestionList";
             this.btnMoveToQuestionList.Size = new System.Drawing.Size(46, 46);
             this.btnMoveToQuestionList.TabIndex = 17;
@@ -218,9 +201,9 @@
             this.cbbGrade.DisplayMember = "tenKhoiLop";
             this.cbbGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbGrade.FormattingEnabled = true;
-            this.cbbGrade.Location = new System.Drawing.Point(400, 184);
+            this.cbbGrade.Location = new System.Drawing.Point(442, 124);
             this.cbbGrade.Name = "cbbGrade";
-            this.cbbGrade.Size = new System.Drawing.Size(270, 28);
+            this.cbbGrade.Size = new System.Drawing.Size(186, 28);
             this.cbbGrade.TabIndex = 19;
             this.cbbGrade.ValueMember = "maKhoiLop";
             // 
@@ -228,7 +211,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(313, 192);
+            this.label2.Location = new System.Drawing.Point(355, 132);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 20);
             this.label2.TabIndex = 20;
@@ -243,7 +226,7 @@
             this.dgvQuestionSelectedList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaCauHoiDaChon,
             this.CauHoiDaChon});
-            this.dgvQuestionSelectedList.Location = new System.Drawing.Point(593, 288);
+            this.dgvQuestionSelectedList.Location = new System.Drawing.Point(581, 267);
             this.dgvQuestionSelectedList.Name = "dgvQuestionSelectedList";
             this.dgvQuestionSelectedList.ReadOnly = true;
             this.dgvQuestionSelectedList.RowHeadersVisible = false;
@@ -252,15 +235,6 @@
             this.dgvQuestionSelectedList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvQuestionSelectedList.Size = new System.Drawing.Size(416, 271);
             this.dgvQuestionSelectedList.TabIndex = 21;
-            // 
-            // btnWatchPaperList
-            // 
-            this.btnWatchPaperList.Location = new System.Drawing.Point(821, 53);
-            this.btnWatchPaperList.Name = "btnWatchPaperList";
-            this.btnWatchPaperList.Size = new System.Drawing.Size(188, 35);
-            this.btnWatchPaperList.TabIndex = 22;
-            this.btnWatchPaperList.Text = "Xem danh sách đề thi";
-            this.btnWatchPaperList.UseVisualStyleBackColor = true;
             // 
             // MaCauHoiDaChon
             // 
@@ -279,18 +253,58 @@
             this.CauHoiDaChon.Name = "CauHoiDaChon";
             this.CauHoiDaChon.ReadOnly = true;
             // 
+            // btnWatchPaperList
+            // 
+            this.btnWatchPaperList.Location = new System.Drawing.Point(821, 53);
+            this.btnWatchPaperList.Name = "btnWatchPaperList";
+            this.btnWatchPaperList.Size = new System.Drawing.Size(188, 35);
+            this.btnWatchPaperList.TabIndex = 22;
+            this.btnWatchPaperList.Text = "Xem danh sách đề thi";
+            this.btnWatchPaperList.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(578, 541);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(183, 17);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "(*) Một đề ít nhất 20 câu hỏi";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(727, 132);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(78, 20);
+            this.label8.TabIndex = 25;
+            this.label8.Text = "Môn học:";
+            // 
+            // cbbSubject
+            // 
+            this.cbbSubject.DisplayMember = "tenMonHoc";
+            this.cbbSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbSubject.FormattingEnabled = true;
+            this.cbbSubject.Location = new System.Drawing.Point(818, 124);
+            this.cbbSubject.Name = "cbbSubject";
+            this.cbbSubject.Size = new System.Drawing.Size(179, 28);
+            this.cbbSubject.TabIndex = 24;
+            this.cbbSubject.ValueMember = "maMonHoc";
+            // 
             // CreatePaperView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1077, 682);
+            this.ClientSize = new System.Drawing.Size(1077, 745);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.cbbSubject);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnWatchPaperList);
             this.Controls.Add(this.dgvQuestionSelectedList);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbbGrade);
-            this.Controls.Add(this.btnMoveAllToQuestionList);
             this.Controls.Add(this.btnMoveToQuestionList);
-            this.Controls.Add(this.btnMoveAllToSeleted);
             this.Controls.Add(this.btnMoveToSeleted);
             this.Controls.Add(this.btnCreatePaper);
             this.Controls.Add(this.label6);
@@ -303,6 +317,7 @@
             this.Controls.Add(this.lbTeacher);
             this.Controls.Add(this.label1);
             this.Name = "CreatePaperView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreatePaperView";
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionSelectedList)).EndInit();
@@ -324,8 +339,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnCreatePaper;
         private System.Windows.Forms.Button btnMoveToSeleted;
-        private System.Windows.Forms.Button btnMoveAllToSeleted;
-        private System.Windows.Forms.Button btnMoveAllToQuestionList;
         private System.Windows.Forms.Button btnMoveToQuestionList;
         private System.Windows.Forms.ComboBox cbbGrade;
         private System.Windows.Forms.Label label2;
@@ -335,5 +348,8 @@
         private System.Windows.Forms.Button btnWatchPaperList;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaCauHoiDaChon;
         private System.Windows.Forms.DataGridViewTextBoxColumn CauHoiDaChon;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cbbSubject;
     }
 }
