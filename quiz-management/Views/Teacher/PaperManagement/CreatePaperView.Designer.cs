@@ -47,9 +47,9 @@
             this.cbbGrade = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvQuestionSelectedList = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnWatchPaperList = new System.Windows.Forms.Button();
+            this.MaCauHoiDaChon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CauHoiDaChon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionSelectedList)).BeginInit();
             this.SuspendLayout();
@@ -241,8 +241,8 @@
             this.dgvQuestionSelectedList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvQuestionSelectedList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvQuestionSelectedList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2});
+            this.MaCauHoiDaChon,
+            this.CauHoiDaChon});
             this.dgvQuestionSelectedList.Location = new System.Drawing.Point(593, 288);
             this.dgvQuestionSelectedList.Name = "dgvQuestionSelectedList";
             this.dgvQuestionSelectedList.ReadOnly = true;
@@ -253,23 +253,6 @@
             this.dgvQuestionSelectedList.Size = new System.Drawing.Size(416, 271);
             this.dgvQuestionSelectedList.TabIndex = 21;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "QuestionID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã câu hỏi";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Question";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Câu hỏi";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
             // btnWatchPaperList
             // 
             this.btnWatchPaperList.Location = new System.Drawing.Point(821, 53);
@@ -278,6 +261,23 @@
             this.btnWatchPaperList.TabIndex = 22;
             this.btnWatchPaperList.Text = "Xem danh sách đề thi";
             this.btnWatchPaperList.UseVisualStyleBackColor = true;
+            // 
+            // MaCauHoiDaChon
+            // 
+            this.MaCauHoiDaChon.DataPropertyName = "QuestionID";
+            this.MaCauHoiDaChon.HeaderText = "Mã câu hỏi";
+            this.MaCauHoiDaChon.MinimumWidth = 6;
+            this.MaCauHoiDaChon.Name = "MaCauHoiDaChon";
+            this.MaCauHoiDaChon.ReadOnly = true;
+            this.MaCauHoiDaChon.Visible = false;
+            // 
+            // CauHoiDaChon
+            // 
+            this.CauHoiDaChon.DataPropertyName = "Question";
+            this.CauHoiDaChon.HeaderText = "Câu hỏi";
+            this.CauHoiDaChon.MinimumWidth = 6;
+            this.CauHoiDaChon.Name = "CauHoiDaChon";
+            this.CauHoiDaChon.ReadOnly = true;
             // 
             // CreatePaperView
             // 
@@ -330,10 +330,10 @@
         private System.Windows.Forms.ComboBox cbbGrade;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvQuestionSelectedList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaCauHoi;
         private System.Windows.Forms.DataGridViewTextBoxColumn CauHoi1;
         private System.Windows.Forms.Button btnWatchPaperList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaCauHoiDaChon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CauHoiDaChon;
     }
 }
