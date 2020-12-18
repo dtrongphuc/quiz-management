@@ -30,6 +30,8 @@ namespace quiz_management.Views.Teacher.PaperManagement
         //event EventHandler MoveAllToLeft;
         event EventHandler CreatePaper;
         event EventHandler WatchPaperList;
+        event EventHandler GradeChange;
+        event EventHandler SubjectChange;
 
         void ShowMessage(string text);
         void ShowMainTeacherView(int code);

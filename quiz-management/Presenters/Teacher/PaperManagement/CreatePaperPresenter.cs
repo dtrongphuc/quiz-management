@@ -26,6 +26,18 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
             view.CreatePaper += CreatePaper_View;
             view.GoBackBefore += GoBackBFore_View;
             view.WatchPaperList += WatchPaperList_View;
+            view.GradeChange += GradeChange_View;
+            view.SubjectChange+= SubjectChange_View;
+        }
+
+        private void SubjectChange_View(object sender, EventArgs e)
+        {
+            FillAll();
+        }
+
+        private void GradeChange_View(object sender, EventArgs e)
+        {
+            FillAll();
         }
 
         private void WatchPaperList_View(object sender, EventArgs e)
@@ -40,7 +52,7 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
 
         private void Loadpage(int code)
         {
-            List<CreatePaperWithQuestion> listQT = new List<CreatePaperWithQuestion>();
+            
             using (var db = new QuizDataContext())
             {
                 //string teachername = db.nguoiDungs.Select(i => i.maNguoiDung == code).ToString();
@@ -54,7 +66,15 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
                 //binding môn học
                 var listsubject = db.monHocs.ToList();
                 view.SubjectList = listsubject;
+            }
+            FillAll();
+        }
 
+        private void FillAll()
+        {
+            List<CreatePaperWithQuestion> listQT = new List<CreatePaperWithQuestion>();
+            using (var db = new QuizDataContext())
+            {
                 //binding câu hỏi
                 var listQuestions = db.cauHois.Where(i => i.maKhoiLop == view.Grade && i.maMonHoc == int.Parse(view.Subject)).ToList();
                 foreach (var i in listQuestions)
@@ -64,9 +84,10 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
                     pp.Question = i.cauHoi1.ToString();
                     listQT.Add(pp);
                 }
-                view.listQuestion = listQT;
             }
+            view.listQuestion = listQT;
         }
+
         private void CreatePaper_View(object sender, EventArgs e)
         {
             string paperID = view.PaperID;

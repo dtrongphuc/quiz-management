@@ -49,6 +49,14 @@ namespace quiz_management.Views.Teacher.PaperManagement
             {
                 WatchPaperList?.Invoke(btnWatchPaperList, e);
             };
+            cbbGrade.SelectedIndexChanged += (_, e) =>
+            {
+                 GradeChange?.Invoke(cbbGrade, e);
+            };
+            cbbSubject.SelectedIndexChanged += (_, e) =>
+            {
+                SubjectChange?.Invoke(cbbSubject, e);
+            };
         }
 
         public string TeacherName { set => lbTeacher.Text = value; }
@@ -80,6 +88,8 @@ namespace quiz_management.Views.Teacher.PaperManagement
         public event EventHandler CreatePaper;
         public event EventHandler GoBackBefore;
         public event EventHandler WatchPaperList;
+        public event EventHandler GradeChange;
+        public event EventHandler SubjectChange;
 
         public void ShowMainTeacherView(int code)
         {

@@ -485,6 +485,8 @@ update thongtin set maLopHoc = 1
 
 ---bắt đầu từ đây
 --select * from khoiLop
+--select * from monHoc
+--select * from CauHoi
 INSERT INTO dbo.monHoc
 (
     tenMonHoc
@@ -570,7 +572,7 @@ VALUES(   2,   -- maMonHoc - int
 	'K11'   -- doKho - int
 	)
 GO
-
+--select * from DapAn
 INSERT INTO dbo.dapAn
 (
     maCauHoi,
