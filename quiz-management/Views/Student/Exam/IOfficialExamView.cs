@@ -19,10 +19,13 @@ namespace quiz_management.Views.Student.Exam
         int Remain { get; set; }
         string QuestionString { set; }
         List<Answer> Answers { set; }
+        List<int> QuestionsChecked { set; }
 
         event EventHandler QuestionChange;
 
         event EventHandler AnswerCheck;
+
+        event EventHandler Timeout;
 
         event EventHandler Submit;
 

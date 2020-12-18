@@ -433,6 +433,7 @@
             this.Name = "OfficialExamView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OfficialExamView";
+            this.Load += new System.EventHandler(this.Form_Loaded);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
