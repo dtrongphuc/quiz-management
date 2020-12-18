@@ -27,7 +27,16 @@ namespace quiz_management.Views.Student.Exam
         public string StudentClass { set => txtClass.Text = value; }
         public string ExamCode { set => txtExamCode.Text = value; }
         public int QuestionOrder { set => lbQuestionCountSelected.Text = value.ToString(); }
-        public int QuestionQuantity { set => QQuantity = value; }
+
+        public int QuestionQuantity
+        {
+            set
+            {
+                RenderQuestionButton(value);
+                txtRemain.Text = value.ToString();
+            }
+        }
+
         public int QuestionSelected { set => QuestionSelectedIndex = value; }
         public int TimeLeft { get => TimeCount; }
 
@@ -51,14 +60,27 @@ namespace quiz_management.Views.Student.Exam
                 {
                     bool state = value[i].Checked;
                     cbAnswers.SetItemChecked(i, state);
-                    cbAnswers.SelectedItem = null;
                 };
+                cbAnswers.SelectedItem = null;
+            }
+        }
+
+        public List<int> QuestionsChecked
+        {
+            set
+            {
+                foreach (int index in value)
+                {
+                    cbQuestions.SetItemChecked(index, true);
+                }
             }
         }
 
         public event EventHandler QuestionChange;
 
         public event EventHandler AnswerCheck;
+
+        public event EventHandler Timeout;
 
         public event EventHandler Submit;
 
@@ -116,12 +138,16 @@ namespace quiz_management.Views.Student.Exam
             };
         }
 
+        private void Form_Loaded(object sender, EventArgs e)
+        {
+            cbQuestions.SelectedIndex = -1;
+            cbQuestions.SelectedIndex = QuestionSelectedIndex;
+        }
+
         public void Init()
         {
             SetTimer();
-            RenderQuestionButton(QQuantity);
             cbQuestions.SelectedIndex = QuestionSelectedIndex;
-            txtRemain.Text = QQuantity.ToString();
             checkBoxList.ItemHeight = 32;
             checkBoxList.DisplayMember = "CauTraLoi";
             checkBoxList.ValueMember = "MaCauTraLoi";
@@ -129,10 +155,22 @@ namespace quiz_management.Views.Student.Exam
 
         public void TimeToString()
         {
-            txtTimeMinutes.Invoke(new Action(() => { txtTimeMinutes.Text = (Math.Ceiling(TimeCount / 60 * 1.0)).ToString(); }));
+            double minutes = Math.Ceiling(TimeCount / 60 * 1.0);
+            int secconds = (TimeCount % 60);
+
+            if (minutes == 0 && secconds == 0)
+            {
+                Timeout.Invoke(null, null);
+                return;
+            }
+
+            txtTimeMinutes.Invoke(new Action(() =>
+            {
+                txtTimeMinutes.Text = minutes < 10 ? "0" + minutes : minutes.ToString();
+            }));
+
             txtTimeSeconds.Invoke(new Action(() =>
             {
-                int secconds = (TimeCount % 60);
                 txtTimeSeconds.Text = secconds < 10 ? "0" + secconds : secconds.ToString();
             }));
         }

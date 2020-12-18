@@ -2,15 +2,16 @@
 using quiz_management.Views.Student.Exam;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace quiz_management.Presenters.Student.Exam
 {
-    internal class OfficialExamPresenter
+    internal class PracticExamPresenter
     {
-        private IOfficialExamView view;
+        private IPracticExamView view;
         private int currentUserCode;
         private int _maBoDe = 1;
         private int _resultCode = -1;
@@ -18,7 +19,7 @@ namespace quiz_management.Presenters.Student.Exam
         public List<Question> Questions = new List<Question>();
         public int QuestionSelectedIndex = 0;
 
-        public OfficialExamPresenter(IOfficialExamView v, int userCode)
+        public PracticExamPresenter(IPracticExamView v, int userCode)
         {
             view = v;
             currentUserCode = userCode;
