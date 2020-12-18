@@ -171,12 +171,14 @@ CREATE TABLE lichThi
 (
 	maNguoiDung INT,
 	maMonHoc INT,
-	ngayThi DATE
+	ngayThi DATE,
+    maBoDe INT,
 
 	CONSTRAINT PK_lichThi
 	PRIMARY KEY(maNguoiDung,maMonHoc,ngayThi)
 )
 select * from lichThi
+alter table lichThi add constraint FK_lichThi_boDe foreign key (maBoDe) references boDe(maBoDe)
 alter table lichThi add constraint FK_lichThi_nguoiDung foreign key (maNguoiDung) references nguoiDung(maNguoiDung)
 alter table lichThi add constraint FK_lichThi_monHoc foreign key (maMonHoc) references monHoc(maMonHoc)
 

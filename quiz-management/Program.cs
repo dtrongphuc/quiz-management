@@ -4,6 +4,7 @@ using quiz_management.Views.Student.ContribuQuestions;
 using quiz_management.Views.Student.Exam;
 using quiz_management.Views.Student.InfoPersonal;
 using quiz_management.Views.Student.Main;
+using quiz_management.Views.Teacher.ExamManagement;
 using quiz_management.Views.Teacher.Main;
 using quiz_management.Views.Teacher.PaperManagement;
 using System;
@@ -24,7 +25,7 @@ namespace quiz_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginView());
+            Application.Run(new CreateExamView(1));
         }
     }
 }
