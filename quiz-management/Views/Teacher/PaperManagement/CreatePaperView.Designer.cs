@@ -35,6 +35,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tbPaperID = new System.Windows.Forms.TextBox();
             this.dgvQuestionList = new System.Windows.Forms.DataGridView();
+            this.MaCauHoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CauHoi1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnCreatePaper = new System.Windows.Forms.Button();
@@ -47,8 +49,7 @@
             this.dgvQuestionSelectedList = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaCauHoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CauHoi1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnWatchPaperList = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionSelectedList)).BeginInit();
             this.SuspendLayout();
@@ -67,7 +68,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(453, 57);
+            this.label3.Location = new System.Drawing.Point(460, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(164, 32);
             this.label3.TabIndex = 6;
@@ -97,7 +98,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(337, 140);
+            this.label4.Location = new System.Drawing.Point(313, 142);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 20);
             this.label4.TabIndex = 8;
@@ -106,7 +107,7 @@
             // tbPaperID
             // 
             this.tbPaperID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPaperID.Location = new System.Drawing.Point(424, 133);
+            this.tbPaperID.Location = new System.Drawing.Point(400, 135);
             this.tbPaperID.Name = "tbPaperID";
             this.tbPaperID.Size = new System.Drawing.Size(270, 27);
             this.tbPaperID.TabIndex = 9;
@@ -129,6 +130,23 @@
             this.dgvQuestionList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvQuestionList.Size = new System.Drawing.Size(416, 271);
             this.dgvQuestionList.TabIndex = 10;
+            // 
+            // MaCauHoi
+            // 
+            this.MaCauHoi.DataPropertyName = "QuestionID";
+            this.MaCauHoi.HeaderText = "Mã câu hỏi";
+            this.MaCauHoi.MinimumWidth = 6;
+            this.MaCauHoi.Name = "MaCauHoi";
+            this.MaCauHoi.ReadOnly = true;
+            this.MaCauHoi.Visible = false;
+            // 
+            // CauHoi1
+            // 
+            this.CauHoi1.DataPropertyName = "Question";
+            this.CauHoi1.HeaderText = "Câu hỏi";
+            this.CauHoi1.MinimumWidth = 6;
+            this.CauHoi1.Name = "CauHoi1";
+            this.CauHoi1.ReadOnly = true;
             // 
             // label5
             // 
@@ -200,7 +218,7 @@
             this.cbbGrade.DisplayMember = "tenKhoiLop";
             this.cbbGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbGrade.FormattingEnabled = true;
-            this.cbbGrade.Location = new System.Drawing.Point(424, 182);
+            this.cbbGrade.Location = new System.Drawing.Point(400, 184);
             this.cbbGrade.Name = "cbbGrade";
             this.cbbGrade.Size = new System.Drawing.Size(270, 28);
             this.cbbGrade.TabIndex = 19;
@@ -210,7 +228,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(337, 190);
+            this.label2.Location = new System.Drawing.Point(313, 192);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 20);
             this.label2.TabIndex = 20;
@@ -252,28 +270,21 @@
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // MaCauHoi
+            // btnWatchPaperList
             // 
-            this.MaCauHoi.DataPropertyName = "QuestionID";
-            this.MaCauHoi.HeaderText = "Mã câu hỏi";
-            this.MaCauHoi.MinimumWidth = 6;
-            this.MaCauHoi.Name = "MaCauHoi";
-            this.MaCauHoi.ReadOnly = true;
-            this.MaCauHoi.Visible = false;
-            // 
-            // CauHoi1
-            // 
-            this.CauHoi1.DataPropertyName = "Question";
-            this.CauHoi1.HeaderText = "Câu hỏi";
-            this.CauHoi1.MinimumWidth = 6;
-            this.CauHoi1.Name = "CauHoi1";
-            this.CauHoi1.ReadOnly = true;
+            this.btnWatchPaperList.Location = new System.Drawing.Point(821, 53);
+            this.btnWatchPaperList.Name = "btnWatchPaperList";
+            this.btnWatchPaperList.Size = new System.Drawing.Size(188, 35);
+            this.btnWatchPaperList.TabIndex = 22;
+            this.btnWatchPaperList.Text = "Xem danh sách đề thi";
+            this.btnWatchPaperList.UseVisualStyleBackColor = true;
             // 
             // CreatePaperView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1077, 682);
+            this.Controls.Add(this.btnWatchPaperList);
             this.Controls.Add(this.dgvQuestionSelectedList);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbbGrade);
@@ -323,5 +334,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaCauHoi;
         private System.Windows.Forms.DataGridViewTextBoxColumn CauHoi1;
+        private System.Windows.Forms.Button btnWatchPaperList;
     }
 }
