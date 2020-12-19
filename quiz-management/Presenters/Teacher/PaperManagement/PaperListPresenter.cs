@@ -33,13 +33,17 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
         {
             using (var db = new QuizDataContext())
             {
-                //đối tưỡng cần xóa
-                boDe itemdelete = db.boDes.SingleOrDefault(i => i.maBoDe == int.Parse(view.PaperID));
-                //xóa nó
-                db.boDes.DeleteOnSubmit(itemdelete);
+                //item trong chi tiết bộ đề
+                cTBoDe itemsDetailpaper = db.cTBoDes.SingleOrDefault(i => i.maBoDe == int.Parse(view.PaperID));
+                db.cTBoDes.DeleteOnSubmit(itemsDetailpaper);
                 db.SubmitChanges();
 
+                //item trong bộ đề
+                boDe itemspaper = db.boDes.SingleOrDefault(i => i.maBoDe == int.Parse(view.PaperID));
+                db.boDes.DeleteOnSubmit(itemspaper);
+                db.SubmitChanges();
             }
+            view.ShowMessage("Xóa thành công.");
             LoadPage(currenuser);
         }
 
@@ -58,16 +62,17 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
             List<Papers> paperList = new List<Papers>();
             using (var db = new QuizDataContext())
             {
+                //var it = db.ketQuas.Where(x => x.maBoDe == 1).Count();
                 //binding datagriview
                 var list = db.boDes.ToList();
                 foreach (var i in list)
                 {
                     Papers p = new Papers();
-                    p.PaperID = i.maBoDe.ToString();
-                    p.Subject = i.monHoc.maMonHoc.ToString();
-                    p.Grade = i.khoiLop.maKhoiLop.ToString();
+                    p.PaperCode = i.maBoDe.ToString();
+                    p.Subject = i.monHoc.tenMonHoc.ToString();
+                    p.Grade = i.khoiLop.tenKhoiLop.ToString();
                     p.QuestionNum = i.cTBoDes.Where(x => x.maBoDe == int.Parse(i.maBoDe.ToString())).Count();
-
+                    p.Status = (i.ketQuas.Where(x => x.maBoDe == i.maBoDe).Count()) > 0 ? "Đã có trong kì thi" : "Chưa có trong kì thi"; 
                     paperList.Add(p);
                 }
                 view.papers = paperList;
