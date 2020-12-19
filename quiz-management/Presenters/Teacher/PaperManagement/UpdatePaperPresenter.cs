@@ -29,6 +29,7 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
             view.SubjectChange += SubjectChange_View;
             view.UpdatePaper += UpdatePaper_View;
             LoaddgvFromPaper();
+            //--lỡ
         }
 
         private void UpdatePaper_View(object sender, EventArgs e)
