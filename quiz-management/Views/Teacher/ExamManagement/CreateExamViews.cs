@@ -42,10 +42,7 @@ namespace quiz_management.Views.Teacher.ExamManagement
             {
                 MoveLeft?.Invoke(btnMoveLeft, e);
             };
-            cbBoDe.SelectedValueChanged += (_, e) =>
-            {
-                examChange?.Invoke(cbBoDe, e);
-            };
+            //còn lỗi ko 
         }
 
         public DateTime NgayThi => dtpNgayThi.Value;
