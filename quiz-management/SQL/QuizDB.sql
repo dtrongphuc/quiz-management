@@ -106,8 +106,8 @@ CREATE TABLE cTBoDe
 	PRIMARY KEY (maBoDe,maCauHoi)
 )
 
-ALTER TABLE dbo.cTBoDe ADD CONSTRAINT FK_cTBoDe_boDe FOREIGN KEY(maBoDe) REFERENCES dbo.boDe (maBoDe)
-ALTER TABLE  dbo.cTBoDe ADD CONSTRAINT FK_ctBoDe_cauHoi FOREIGN KEY (maCauHoi) REFERENCES dbo.cauHoi(maCauHoi)
+ALTER TABLE dbo.cTBoDe ADD CONSTRAINT FK_cTBoDe_boDe FOREIGN KEY(maBoDe) REFERENCES dbo.boDe (maBoDe) on Delete Cascade
+ALTER TABLE  dbo.cTBoDe ADD CONSTRAINT FK_ctBoDe_cauHoi FOREIGN KEY (maCauHoi) REFERENCES dbo.cauHoi(maCauHoi) on Delete Cascade
 
 CREATE TABLE dapAn
 (
@@ -176,7 +176,7 @@ CREATE TABLE lichThi
 )
 select * from lichThi
 alter table lichThi add constraint FK_lichThi_boDe foreign key (maBoDe) references boDe(maBoDe)
-alter table lichThi add constraint FK_lichThi_nguoiDung foreign key (maNguoiDung) references nguoiDung(maNguoiDung)
+alter table lichThi add constraint FK_lichThi_nguoiDung foreign key (maNguoiDung) references nguoiDung(maNguoiDung) on Delete Cascade
 alter table lichThi add constraint FK_lichThi_monHoc foreign key (maMonHoc) references monHoc(maMonHoc)
 
 CREATE TABLE luyenTap
@@ -190,10 +190,7 @@ CREATE TABLE luyenTap
 	primary key(maNguoiDung,soCauDung,soCauSai,ngay)
 )
 
-
-
-
-ALTER TABLE  dbo.luyenTap ADD CONSTRAINT FK_luyenTap_nguoiDung FOREIGN KEY(maNguoiDung) REFERENCES dbo.nguoiDung(maNguoiDung)
+ALTER TABLE  dbo.luyenTap ADD CONSTRAINT FK_luyenTap_nguoiDung FOREIGN KEY(maNguoiDung) REFERENCES dbo.nguoiDung(maNguoiDung) on Delete Cascade
 
 CREATE TABLE dongGop
 (
@@ -211,7 +208,7 @@ CREATE TABLE dongGop
 
 
 ALTER TABLE dongGop ADD CONSTRAINT FK_dongGop_khoiLop FOREIGN KEY(maKhoiLop) REFERENCES khoiLop(maKhoiLop)
-ALTER TABLE dbo.dongGop ADD CONSTRAINT FK_dongGop_nguoiDung FOREIGN KEY(maNguoiDung) REFERENCES dbo.nguoiDung(maNguoiDung)
+ALTER TABLE dbo.dongGop ADD CONSTRAINT FK_dongGop_nguoiDung FOREIGN KEY(maNguoiDung) REFERENCES dbo.nguoiDung(maNguoiDung) on Delete Cascade
 ALTER TABLE  dbo.dongGop ADD CONSTRAINT FK_dongGop_monHoc FOREIGN KEY(maMonHoc) REFERENCES dbo.monHoc (maMonHoc)
 select * from dongGop
 
@@ -225,7 +222,7 @@ CREATE TABLE cTDongGop
 	PRIMARY KEY(maDongGop,cauTraLoi)
 )
 
-ALTER TABLE dbo.cTDongGop ADD CONSTRAINT FK_cTDongGop_dongGop FOREIGN KEY(maDongGop) REFERENCES dbo.dongGop(maDongGop)
+ALTER TABLE dbo.cTDongGop ADD CONSTRAINT FK_cTDongGop_dongGop FOREIGN KEY(maDongGop) REFERENCES dbo.dongGop(maDongGop) on Delete Cascade
 
 INSERT INTO dbo.monHoc
 (

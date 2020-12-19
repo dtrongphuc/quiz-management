@@ -11,7 +11,6 @@ namespace quiz_management.Views.Student.Exam
     {
         string StudentName { set; }
         string StudentClass { set; }
-        string ExamCode { set; }
         int QuestionOrder { set; }
         int QuestionQuantity { set; }
         int QuestionSelected { set; }
@@ -23,10 +22,19 @@ namespace quiz_management.Views.Student.Exam
         string QuestionString { set; }
         List<Answer> Answers { set; }
         List<int> QuestionsChecked { set; }
+        List<monHoc> Courses { set; }
+        List<int> ExamCodes { set; }
+        List<int> CorrectAnswers { set; }
 
         event EventHandler QuestionChange;
 
         event EventHandler AnswerCheck;
+
+        event EventHandler CoursesChange;
+
+        event EventHandler ExamCodeChange;
+
+        event EventHandler ViewCurrentAnswers;
 
         event EventHandler Timeout;
 
