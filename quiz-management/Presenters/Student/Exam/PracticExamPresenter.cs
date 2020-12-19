@@ -35,6 +35,32 @@ namespace quiz_management.Presenters.Student.Exam
             view.Timeout += View_Timeout;
             view.CoursesChange += View_CoursesChange;
             view.ExamCodeChange += View_ExamCodeChange;
+            view.ViewCurrentAnswers += View_ViewCurrentAnswers;
+        }
+
+        private void View_ViewCurrentAnswers(object sender, EventArgs e)
+        {
+            var cb = (sender as CheckBox);
+
+            if (!cb.Checked)
+            {
+                view.CorrectAnswers = null;
+                return;
+            }
+
+            using (var db = new QuizDataContext())
+            {
+                int questionCode = Questions.ElementAt(QuestionSelectedIndex).MaCauHoi;
+                var correctAnswers = db.dapAns.Where(c => (c.maCauHoi == questionCode) && (c.dapAn1 == 1))
+                                                .Select(s => s.maCauTraloi);
+                List<int> indexes = new List<int>();
+                foreach (int ansCode in correctAnswers)
+                {
+                    int index = Questions[QuestionSelectedIndex].CauTraLoi.FindIndex(a => a.MaCauTraLoi == ansCode);
+                    indexes.Add(index);
+                }
+                view.CorrectAnswers = indexes;
+            }
         }
 
         private void View_ExamCodeChange(object sender, EventArgs e)
@@ -251,7 +277,7 @@ namespace quiz_management.Presenters.Student.Exam
                         A.Add(new Answer
                         {
                             MaCauTraLoi = questions[i].ElementAt(j).CauTraLoi.MaCauTraLoi,
-                            CauTraLoi = questions[i].ElementAt(j).CauTraLoi.CauTraLoi,
+                            CauTraLoi = (j + 1) + ". " + questions[i].ElementAt(j).CauTraLoi.CauTraLoi,
                             Checked = questions[i].ElementAt(j).CauTraLoi.Checked
                         });
                     }

@@ -26,7 +26,7 @@ namespace quiz_management.Views.Student
 
         public string StudentName { set => txtStudentName.Text = value; }
         public string StudentClass { set => txtClass.Text = value; }
-        public int QuestionOrder { set => lbQuestionCountSelected.Text = value.ToString(); }
+        public int QuestionOrder { set => lbQuestionCountSelected.Text = "Câu " + value + ":"; }
 
         public int QuestionQuantity
         {
@@ -62,6 +62,8 @@ namespace quiz_management.Views.Student
                     cbAnswers.SetItemChecked(i, state);
                 };
                 cbAnswers.SelectedItem = null;
+                checkBoxList.DisplayMember = "CauTraLoi";
+                checkBoxList.ValueMember = "MaCauTraLoi";
             }
         }
 
@@ -87,6 +89,12 @@ namespace quiz_management.Views.Student
             }
         }
 
+        public List<int> CorrectAnswers
+        {
+            set => lbCorrectAnswers.Text = value != null ?
+                 String.Join(", ", value.ToArray()) : string.Empty;
+        }
+
         public event EventHandler QuestionChange;
 
         public event EventHandler AnswerCheck;
@@ -94,6 +102,8 @@ namespace quiz_management.Views.Student
         public event EventHandler CoursesChange;
 
         public event EventHandler ExamCodeChange;
+
+        public event EventHandler ViewCurrentAnswers;
 
         public event EventHandler Timeout;
 
@@ -143,6 +153,11 @@ namespace quiz_management.Views.Student
             cbExamCode.SelectedIndexChanged += (_, e) =>
             {
                 ExamCodeChange.Invoke(cbExamCode, e);
+            };
+
+            cbCurrentAnswers.CheckedChanged += (_, e) =>
+            {
+                ViewCurrentAnswers.Invoke(cbCurrentAnswers, e);
             };
 
             btnSubmit.Click += (_, e) =>

@@ -201,7 +201,7 @@ namespace quiz_management.Presenters.Student.Exam
                         A.Add(new Answer
                         {
                             MaCauTraLoi = questions[i].ElementAt(j).CauTraLoi.MaCauTraLoi,
-                            CauTraLoi = questions[i].ElementAt(j).CauTraLoi.CauTraLoi,
+                            CauTraLoi = (j + 1) + ". " + questions[i].ElementAt(j).CauTraLoi.CauTraLoi,
                             Checked = questions[i].ElementAt(j).CauTraLoi.Checked
                         });
                     }

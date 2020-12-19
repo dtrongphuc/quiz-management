@@ -24,6 +24,7 @@ namespace quiz_management.Views.Student.Exam
         List<int> QuestionsChecked { set; }
         List<monHoc> Courses { set; }
         List<int> ExamCodes { set; }
+        List<int> CorrectAnswers { set; }
 
         event EventHandler QuestionChange;
 
@@ -32,6 +33,8 @@ namespace quiz_management.Views.Student.Exam
         event EventHandler CoursesChange;
 
         event EventHandler ExamCodeChange;
+
+        event EventHandler ViewCurrentAnswers;
 
         event EventHandler Timeout;
 
