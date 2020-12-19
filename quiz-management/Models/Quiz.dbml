@@ -43,8 +43,8 @@
     <Type Name="cTBoDe">
       <Column Name="maBoDe" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="maCauHoi" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="boDe_cTBoDe" Member="boDe" ThisKey="maBoDe" OtherKey="maBoDe" Type="boDe" IsForeignKey="true" />
-      <Association Name="cauHoi_cTBoDe" Member="cauHoi" ThisKey="maCauHoi" OtherKey="maCauHoi" Type="cauHoi" IsForeignKey="true" />
+      <Association Name="boDe_cTBoDe" Member="boDe" ThisKey="maBoDe" OtherKey="maBoDe" Type="boDe" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="cauHoi_cTBoDe" Member="cauHoi" ThisKey="maCauHoi" OtherKey="maCauHoi" Type="cauHoi" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.cTDongGop" Member="cTDongGops">
@@ -52,7 +52,7 @@
       <Column Name="maDongGop" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="cauTraLoi" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="dapAn" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="dongGop_cTDongGop" Member="dongGop" ThisKey="maDongGop" OtherKey="maDongGop" Type="dongGop" IsForeignKey="true" />
+      <Association Name="dongGop_cTDongGop" Member="dongGop" ThisKey="maDongGop" OtherKey="maDongGop" Type="dongGop" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.cTKetQua" Member="cTKetQuas">
@@ -88,7 +88,7 @@
       <Association Name="dongGop_cTDongGop" Member="cTDongGops" ThisKey="maDongGop" OtherKey="maDongGop" Type="cTDongGop" />
       <Association Name="khoiLop_dongGop" Member="khoiLop" ThisKey="maKhoiLop" OtherKey="maKhoiLop" Type="khoiLop" IsForeignKey="true" />
       <Association Name="monHoc_dongGop" Member="monHoc" ThisKey="maMonHoc" OtherKey="maMonHoc" Type="monHoc" IsForeignKey="true" />
-      <Association Name="nguoiDung_dongGop" Member="nguoiDung" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="nguoiDung" IsForeignKey="true" />
+      <Association Name="nguoiDung_dongGop" Member="nguoiDung" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="nguoiDung" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
   <Table Name="dbo.ketQua" Member="ketQuas">
@@ -121,12 +121,13 @@
   <Table Name="dbo.lichThi" Member="lichThis">
     <Type Name="lichThi">
       <Column Name="maNguoiDung" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="maMonHoc" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="maMonHoc" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="ngayThi" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="maBoDe" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="maBoDe" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="maLichThi" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Association Name="boDe_lichThi" Member="boDe" ThisKey="maBoDe" OtherKey="maBoDe" Type="boDe" IsForeignKey="true" />
       <Association Name="monHoc_lichThi" Member="monHoc" ThisKey="maMonHoc" OtherKey="maMonHoc" Type="monHoc" IsForeignKey="true" />
-      <Association Name="nguoiDung_lichThi" Member="nguoiDung" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="nguoiDung" IsForeignKey="true" />
+      <Association Name="nguoiDung_lichThi" Member="nguoiDung" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="nguoiDung" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.Lop" Member="Lops">
@@ -144,7 +145,7 @@
       <Column Name="soCauDung" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="soCauSai" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ngay" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="nguoiDung_luyenTap" Member="nguoiDung" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="nguoiDung" IsForeignKey="true" />
+      <Association Name="nguoiDung_luyenTap" Member="nguoiDung" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="nguoiDung" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.monHoc" Member="monHocs">

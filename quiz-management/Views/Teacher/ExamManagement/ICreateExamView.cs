@@ -25,7 +25,7 @@ namespace quiz_management.Views.Teacher.ExamManagement
         event EventHandler subjectChange;
         event EventHandler MoveLeft;
         event EventHandler MoveRight;
-
+        event EventHandler examChange;
 
         void MainTeacherView(int code);
         void ShowMessage(string text);

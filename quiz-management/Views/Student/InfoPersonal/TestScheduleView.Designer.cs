@@ -57,7 +57,7 @@
             this.tenMonHoc,
             this.ngayThi});
             this.dgvSchedule.Location = new System.Drawing.Point(67, 93);
-            this.dgvSchedule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvSchedule.Margin = new System.Windows.Forms.Padding(2);
             this.dgvSchedule.MultiSelect = false;
             this.dgvSchedule.Name = "dgvSchedule";
             this.dgvSchedule.ReadOnly = true;
@@ -100,7 +100,7 @@
             this.Controls.Add(this.linkBack);
             this.Controls.Add(this.dgvSchedule);
             this.Controls.Add(this.lbLogin);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TestScheduleView";
             this.Text = "TestScheduleView";
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).EndInit();

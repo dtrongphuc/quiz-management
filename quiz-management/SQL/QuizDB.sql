@@ -166,13 +166,14 @@ ALTER TABLE  dbo.cTKetQua ADD CONSTRAINT FK_cTKetQua_dapAn FOREIGN KEY (maCauHoi
 
 CREATE TABLE lichThi
 (
+    maLichThi INT IDENTITY,
 	maNguoiDung INT,
 	maMonHoc INT,
 	ngayThi DATE,
     maBoDe INT,
 
 	CONSTRAINT PK_lichThi
-	PRIMARY KEY(maNguoiDung,maBoDe,ngayThi)
+	PRIMARY KEY(maNguoiDung,maBoDe,ngayThi,maLichThi)
 )
 select * from lichThi
 alter table lichThi add constraint FK_lichThi_boDe foreign key (maBoDe) references boDe(maBoDe)

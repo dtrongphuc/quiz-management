@@ -1195,7 +1195,7 @@ namespace quiz_management.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="boDe_cTBoDe", Storage="_boDe", ThisKey="maBoDe", OtherKey="maBoDe", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="boDe_cTBoDe", Storage="_boDe", ThisKey="maBoDe", OtherKey="maBoDe", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public boDe boDe
 		{
 			get
@@ -1229,7 +1229,7 @@ namespace quiz_management.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="cauHoi_cTBoDe", Storage="_cauHoi", ThisKey="maCauHoi", OtherKey="maCauHoi", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="cauHoi_cTBoDe", Storage="_cauHoi", ThisKey="maCauHoi", OtherKey="maCauHoi", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public cauHoi cauHoi
 		{
 			get
@@ -1380,7 +1380,7 @@ namespace quiz_management.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="dongGop_cTDongGop", Storage="_dongGop", ThisKey="maDongGop", OtherKey="maDongGop", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="dongGop_cTDongGop", Storage="_dongGop", ThisKey="maDongGop", OtherKey="maDongGop", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public dongGop dongGop
 		{
 			get
@@ -2187,7 +2187,7 @@ namespace quiz_management.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="nguoiDung_dongGop", Storage="_nguoiDung", ThisKey="maNguoiDung", OtherKey="maNguoiDung", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="nguoiDung_dongGop", Storage="_nguoiDung", ThisKey="maNguoiDung", OtherKey="maNguoiDung", IsForeignKey=true, DeleteRule="CASCADE")]
 		public nguoiDung nguoiDung
 		{
 			get
@@ -2852,7 +2852,9 @@ namespace quiz_management.Models
 		
 		private System.DateTime _ngayThi;
 		
-		private System.Nullable<int> _maBoDe;
+		private int _maBoDe;
+		
+		private int _maLichThi;
 		
 		private EntityRef<boDe> _boDe;
 		
@@ -2870,8 +2872,10 @@ namespace quiz_management.Models
     partial void OnmaMonHocChanged();
     partial void OnngayThiChanging(System.DateTime value);
     partial void OnngayThiChanged();
-    partial void OnmaBoDeChanging(System.Nullable<int> value);
+    partial void OnmaBoDeChanging(int value);
     partial void OnmaBoDeChanged();
+    partial void OnmaLichThiChanging(int value);
+    partial void OnmaLichThiChanged();
     #endregion
 		
 		public lichThi()
@@ -2906,7 +2910,7 @@ namespace quiz_management.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maMonHoc", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maMonHoc", DbType="Int NOT NULL")]
 		public int maMonHoc
 		{
 			get
@@ -2950,8 +2954,8 @@ namespace quiz_management.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maBoDe", DbType="Int")]
-		public System.Nullable<int> maBoDe
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maBoDe", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int maBoDe
 		{
 			get
 			{
@@ -2970,6 +2974,26 @@ namespace quiz_management.Models
 					this._maBoDe = value;
 					this.SendPropertyChanged("maBoDe");
 					this.OnmaBoDeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maLichThi", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int maLichThi
+		{
+			get
+			{
+				return this._maLichThi;
+			}
+			set
+			{
+				if ((this._maLichThi != value))
+				{
+					this.OnmaLichThiChanging(value);
+					this.SendPropertyChanging();
+					this._maLichThi = value;
+					this.SendPropertyChanged("maLichThi");
+					this.OnmaLichThiChanged();
 				}
 			}
 		}
@@ -3001,7 +3025,7 @@ namespace quiz_management.Models
 					}
 					else
 					{
-						this._maBoDe = default(Nullable<int>);
+						this._maBoDe = default(int);
 					}
 					this.SendPropertyChanged("boDe");
 				}
@@ -3042,7 +3066,7 @@ namespace quiz_management.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="nguoiDung_lichThi", Storage="_nguoiDung", ThisKey="maNguoiDung", OtherKey="maNguoiDung", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="nguoiDung_lichThi", Storage="_nguoiDung", ThisKey="maNguoiDung", OtherKey="maNguoiDung", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public nguoiDung nguoiDung
 		{
 			get
@@ -3396,7 +3420,7 @@ namespace quiz_management.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="nguoiDung_luyenTap", Storage="_nguoiDung", ThisKey="maNguoiDung", OtherKey="maNguoiDung", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="nguoiDung_luyenTap", Storage="_nguoiDung", ThisKey="maNguoiDung", OtherKey="maNguoiDung", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public nguoiDung nguoiDung
 		{
 			get

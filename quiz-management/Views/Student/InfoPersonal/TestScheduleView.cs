@@ -19,6 +19,7 @@ namespace quiz_management.Views.Student.InfoPersonal
         public TestScheduleView(int code)
         {
             InitializeComponent();
+            dgvSchedule.AutoGenerateColumns = false;
             presenter = new TestSchedulePresenter(this, code);
             linkBack.Click += (_, e) =>
             {

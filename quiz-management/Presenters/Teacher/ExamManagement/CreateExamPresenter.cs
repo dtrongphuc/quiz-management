@@ -32,14 +32,24 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             view.subjectChange += View_SubjectChange;
             view.MoveRight += View_MoveRight;
             view.MoveLeft += View_MoveLeft;
+            view.examChange += View_ExamChange;
 
             using (var db = new QuizDataContext())
             {
-                lstHocSinh = db.thongTins.ToList();
                 lstMonHoc = db.monHocs.ToList();
             }
-            lstbode = FindBymonHocId(lstMonHoc[0].maMonHoc);
+            if (lstMonHoc.Count != 0) lstbode = FindBymonHocId(lstMonHoc[0].maMonHoc);
+            if (lstbode.Count != 0) lstHocSinh = FindByBoDeId(lstbode[0].maKhoi);
             Fill();
+        }
+
+        private void View_ExamChange(object sender, EventArgs e)
+        {
+            string id = view.DeThiChon;
+            lstHocSinh = FindByBoDeId(lstbode[0].maKhoi);
+            lstThiSinh = null;
+            view.lstThiSinh = lstThiSinh;
+            view.lstHocSinh = lstHocSinh;
         }
 
         private void View_MoveLeft(object sender, EventArgs e)
@@ -96,7 +106,11 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
 
         private void View_Submit(object sender, EventArgs e)
         {
-            
+            if(lstThiSinh.Count == 0)
+            {
+                view.ShowMessage("Cần có thi Sinh Thi.");
+                return;
+            }    
             using (var db = new QuizDataContext())
             {
                 foreach (thongTin i in lstThiSinh)
@@ -127,6 +141,26 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
                 lstbd = db.boDes.Where(p => p.maMon == maMH).ToList();
             }
             return lstbd;
+        }
+
+        private List<thongTin> FindByBoDeId(string mak)
+        {
+            List<thongTin> lsttt = new List<thongTin>();
+            using (var db = new QuizDataContext())
+            {
+                var temp = db.Lops.Where(l => l.maKhoiLop == mak).Join(db.thongTins,
+                                            lh => lh.maLopHoc,
+                                            tt => tt.maLopHoc,
+                                            (lh, tt) => new { tt = tt }).ToList();
+                
+                 foreach(var i in temp)
+                {
+                    thongTin t = new thongTin();
+                    t = i.tt;
+                    lsttt.Add(t);
+                }
+            }
+            return lsttt;
         }
     }
 }

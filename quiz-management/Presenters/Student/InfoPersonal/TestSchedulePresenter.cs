@@ -24,17 +24,17 @@ namespace quiz_management.Presenters.Student.InfoPersonal
         {
             view.BackMain += View_BackMain;
             lst = new List<TestSchedule>();
-            DateTime dt;
+            
             using (var db = new QuizDataContext())
             {
                 var linq = db.lichThis.Where(p => p.maNguoiDung == currentcode).ToList();
                 
                 foreach(lichThi lt in linq)
                 {
-                    dt = lt.ngayThi;
+                    
                     TestSchedule ts = new TestSchedule();
                     ts.TenMonHoc = lt.monHoc.tenMonHoc;
-                    ts.NgayThi = dt.Day + "/" + dt.Month + "/" + dt.Year;
+                    ts.NgayThi = lt.ngayThi;
                     lst.Add(ts);
                 }
             }
