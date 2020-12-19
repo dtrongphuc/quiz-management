@@ -16,9 +16,10 @@ namespace quiz_management.Views.Teacher.PaperManagement
         event EventHandler GobackBefore;
         event EventHandler Delete;
         event EventHandler UpdatePaper;
+        //event EventHandler dgvSelectChange;
 
         void ShowCreatePaperView(int code);
         void ShowMessage(string text);
-        void ShowUpdatePaperView(int code);
+        void ShowUpdatePaperView(int code, int paperid);
     }
 }
