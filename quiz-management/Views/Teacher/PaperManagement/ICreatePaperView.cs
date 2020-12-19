@@ -11,7 +11,7 @@ namespace quiz_management.Views.Teacher.PaperManagement
     interface ICreatePaperView
     {
         string TeacherName { set; }
-        string PaperID { get; }
+        string PaperID { get; set; }
         List<khoiLop> GradeList {set; }
         string Grade { get; }
         List<monHoc> SubjectList { set; }
@@ -30,6 +30,8 @@ namespace quiz_management.Views.Teacher.PaperManagement
         //event EventHandler MoveAllToLeft;
         event EventHandler CreatePaper;
         event EventHandler WatchPaperList;
+        event EventHandler GradeChange;
+        event EventHandler SubjectChange;
 
         void ShowMessage(string text);
         void ShowMainTeacherView(int code);

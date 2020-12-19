@@ -28,47 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCreatePaper = new System.Windows.Forms.Button();
-            this.dgvQuestionList = new System.Windows.Forms.DataGridView();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.dgvPaper = new System.Windows.Forms.DataGridView();
             this.linkGoBackBefore = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.lbTeacher = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionList)).BeginInit();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.PaperCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Grade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuestionNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPaper)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnCreatePaper
+            // btnUpdate
             // 
-            this.btnCreatePaper.Location = new System.Drawing.Point(249, 545);
-            this.btnCreatePaper.Name = "btnCreatePaper";
-            this.btnCreatePaper.Size = new System.Drawing.Size(165, 48);
-            this.btnCreatePaper.TabIndex = 32;
-            this.btnCreatePaper.Text = "Cập nhật";
-            this.btnCreatePaper.UseVisualStyleBackColor = true;
+            this.btnUpdate.Location = new System.Drawing.Point(263, 552);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(165, 48);
+            this.btnUpdate.TabIndex = 32;
+            this.btnUpdate.Text = "Cập nhật";
+            this.btnUpdate.UseVisualStyleBackColor = true;
             // 
-            // dgvQuestionList
+            // dgvPaper
             // 
-            this.dgvQuestionList.AllowUserToAddRows = false;
-            this.dgvQuestionList.AllowUserToDeleteRows = false;
-            this.dgvQuestionList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvQuestionList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvQuestionList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column3,
-            this.Column2});
-            this.dgvQuestionList.Location = new System.Drawing.Point(115, 163);
-            this.dgvQuestionList.Name = "dgvQuestionList";
-            this.dgvQuestionList.ReadOnly = true;
-            this.dgvQuestionList.RowHeadersVisible = false;
-            this.dgvQuestionList.RowHeadersWidth = 51;
-            this.dgvQuestionList.RowTemplate.Height = 24;
-            this.dgvQuestionList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvQuestionList.Size = new System.Drawing.Size(660, 336);
-            this.dgvQuestionList.TabIndex = 29;
+            this.dgvPaper.AllowUserToAddRows = false;
+            this.dgvPaper.AllowUserToDeleteRows = false;
+            this.dgvPaper.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPaper.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPaper.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.PaperCode,
+            this.Subject,
+            this.Grade,
+            this.QuestionNum,
+            this.Status});
+            this.dgvPaper.Location = new System.Drawing.Point(71, 163);
+            this.dgvPaper.Name = "dgvPaper";
+            this.dgvPaper.ReadOnly = true;
+            this.dgvPaper.RowHeadersVisible = false;
+            this.dgvPaper.RowHeadersWidth = 51;
+            this.dgvPaper.RowTemplate.Height = 24;
+            this.dgvPaper.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPaper.Size = new System.Drawing.Size(751, 336);
+            this.dgvPaper.TabIndex = 29;
             // 
             // linkGoBackBefore
             // 
@@ -84,7 +88,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(316, 83);
+            this.label3.Location = new System.Drawing.Point(322, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(261, 32);
             this.label3.TabIndex = 25;
@@ -110,51 +114,71 @@
             this.label1.TabIndex = 23;
             this.label1.Text = "Giáo viên: ";
             // 
-            // button1
+            // btnDelete
             // 
-            this.button1.Location = new System.Drawing.Point(449, 545);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 48);
-            this.button1.TabIndex = 33;
-            this.button1.Text = "Xóa";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(463, 552);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(165, 48);
+            this.btnDelete.TabIndex = 33;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
-            // Column1
+            // PaperCode
             // 
-            this.Column1.HeaderText = "Mã đề";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.PaperCode.DataPropertyName = "PaperCode";
+            this.PaperCode.HeaderText = "Mã đề";
+            this.PaperCode.MinimumWidth = 6;
+            this.PaperCode.Name = "PaperCode";
+            this.PaperCode.ReadOnly = true;
             // 
-            // Column3
+            // Subject
             // 
-            this.Column3.HeaderText = "Khối lớp";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
+            this.Subject.DataPropertyName = "Subject";
+            this.Subject.HeaderText = "Môn học";
+            this.Subject.MinimumWidth = 6;
+            this.Subject.Name = "Subject";
+            this.Subject.ReadOnly = true;
             // 
-            // Column2
+            // Grade
             // 
-            this.Column2.HeaderText = "Số câu hỏi";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
+            this.Grade.DataPropertyName = "Grade";
+            this.Grade.HeaderText = "Khối lớp";
+            this.Grade.MinimumWidth = 6;
+            this.Grade.Name = "Grade";
+            this.Grade.ReadOnly = true;
+            // 
+            // QuestionNum
+            // 
+            this.QuestionNum.DataPropertyName = "QuestionNum";
+            this.QuestionNum.HeaderText = "Số câu hỏi";
+            this.QuestionNum.MinimumWidth = 6;
+            this.QuestionNum.Name = "QuestionNum";
+            this.QuestionNum.ReadOnly = true;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Trạng thái";
+            this.Status.MinimumWidth = 6;
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
             // 
             // PaperListView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(883, 642);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnCreatePaper);
-            this.Controls.Add(this.dgvQuestionList);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.dgvPaper);
             this.Controls.Add(this.linkGoBackBefore);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbTeacher);
             this.Controls.Add(this.label1);
             this.Name = "PaperListView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PaperListView";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPaper)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,15 +186,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnCreatePaper;
-        private System.Windows.Forms.DataGridView dgvQuestionList;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.DataGridView dgvPaper;
         private System.Windows.Forms.LinkLabel linkGoBackBefore;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbTeacher;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PaperCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Subject;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Grade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QuestionNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
     }
 }
