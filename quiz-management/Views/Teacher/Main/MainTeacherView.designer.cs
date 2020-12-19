@@ -104,7 +104,7 @@
             this.panelThongKe.MaximumSize = new System.Drawing.Size(214, 178);
             this.panelThongKe.MinimumSize = new System.Drawing.Size(214, 57);
             this.panelThongKe.Name = "panelThongKe";
-            this.panelThongKe.Size = new System.Drawing.Size(214, 57);
+            this.panelThongKe.Size = new System.Drawing.Size(214, 178);
             this.panelThongKe.TabIndex = 2;
             // 
             // btnTKCauHoi
@@ -177,11 +177,11 @@
             this.panelLamBaiThi.Controls.Add(this.btnThi);
             this.panelLamBaiThi.Controls.Add(this.btnLamBaiThi);
             this.panelLamBaiThi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLamBaiThi.Location = new System.Drawing.Point(3, 66);
+            this.panelLamBaiThi.Location = new System.Drawing.Point(3, 187);
             this.panelLamBaiThi.MaximumSize = new System.Drawing.Size(214, 137);
             this.panelLamBaiThi.MinimumSize = new System.Drawing.Size(214, 57);
             this.panelLamBaiThi.Name = "panelLamBaiThi";
-            this.panelLamBaiThi.Size = new System.Drawing.Size(214, 57);
+            this.panelLamBaiThi.Size = new System.Drawing.Size(214, 137);
             this.panelLamBaiThi.TabIndex = 2;
             // 
             // btnOnTap
@@ -241,7 +241,7 @@
             this.btnQLDeThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLDeThi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnQLDeThi.ForeColor = System.Drawing.Color.Black;
-            this.btnQLDeThi.Location = new System.Drawing.Point(3, 129);
+            this.btnQLDeThi.Location = new System.Drawing.Point(3, 330);
             this.btnQLDeThi.Name = "btnQLDeThi";
             this.btnQLDeThi.Size = new System.Drawing.Size(214, 41);
             this.btnQLDeThi.TabIndex = 6;
@@ -258,7 +258,7 @@
             this.panelQLCauHoi.MaximumSize = new System.Drawing.Size(214, 135);
             this.panelQLCauHoi.MinimumSize = new System.Drawing.Size(214, 57);
             this.panelQLCauHoi.Name = "panelQLCauHoi";
-            this.panelQLCauHoi.Size = new System.Drawing.Size(214, 57);
+            this.panelQLCauHoi.Size = new System.Drawing.Size(214, 135);
             this.panelQLCauHoi.TabIndex = 1;
             // 
             // btnDongGop
@@ -465,11 +465,11 @@
             this.panelQLKyThi.Controls.Add(this.btnLichKyThi);
             this.panelQLKyThi.Controls.Add(this.btnQLKyThi);
             this.panelQLKyThi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelQLKyThi.Location = new System.Drawing.Point(3, 66);
-            this.panelQLKyThi.MaximumSize = new System.Drawing.Size(214, 183);
+            this.panelQLKyThi.Location = new System.Drawing.Point(3, 144);
+            this.panelQLKyThi.MaximumSize = new System.Drawing.Size(214, 180);
             this.panelQLKyThi.MinimumSize = new System.Drawing.Size(214, 57);
             this.panelQLKyThi.Name = "panelQLKyThi";
-            this.panelQLKyThi.Size = new System.Drawing.Size(214, 57);
+            this.panelQLKyThi.Size = new System.Drawing.Size(214, 180);
             this.panelQLKyThi.TabIndex = 1;
             // 
             // btnTongKetKT
@@ -544,7 +544,7 @@
             this.btnQLKyThiThu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLKyThiThu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnQLKyThiThu.ForeColor = System.Drawing.Color.Black;
-            this.btnQLKyThiThu.Location = new System.Drawing.Point(3, 129);
+            this.btnQLKyThiThu.Location = new System.Drawing.Point(3, 330);
             this.btnQLKyThiThu.Name = "btnQLKyThiThu";
             this.btnQLKyThiThu.Size = new System.Drawing.Size(214, 41);
             this.btnQLKyThiThu.TabIndex = 4;
