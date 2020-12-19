@@ -11,7 +11,7 @@ namespace quiz_management.Views.Teacher.PaperManagement
     interface ICreatePaperView
     {
         string TeacherName { set; }
-        string PaperID { get; }
+        string PaperID { get; set; }
         List<khoiLop> GradeList {set; }
         string Grade { get; }
         List<monHoc> SubjectList { set; }

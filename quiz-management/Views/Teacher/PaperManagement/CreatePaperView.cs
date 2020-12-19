@@ -61,7 +61,7 @@ namespace quiz_management.Views.Teacher.PaperManagement
 
         public string TeacherName { set => lbTeacher.Text = value; }
 
-        public string PaperID => tbPaperID.Text;
+        public string PaperID { get => tbPaperID.Text; set => tbPaperID.Text = value; }
 
         public List<khoiLop> GradeList { set => cbbGrade.DataSource = value; }
 

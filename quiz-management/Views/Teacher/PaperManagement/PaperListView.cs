@@ -35,7 +35,7 @@ namespace quiz_management.Views.Teacher.PaperManagement
 
         public string Teachername { set => lbTeacher.Text = value; }
 
-        public string PaperID => throw new NotImplementedException();
+        public string PaperID => dgvPaper.SelectedRows[0].Cells["PaperCode"].Value.ToString();
 
         public List<Papers> papers { set => dgvPaper.DataSource = value; }
 
@@ -58,7 +58,10 @@ namespace quiz_management.Views.Teacher.PaperManagement
 
         public void ShowUpdatePaperView(int code)
         {
-            throw new NotImplementedException();
+            this.Hide();
+            UpdatePaperView screen = new UpdatePaperView(code);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
         }
     }
 }
