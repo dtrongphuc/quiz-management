@@ -798,3 +798,15 @@ VALUES
     0    -- dapAn - int
     )
 GO
+
+INSERT INTO boDe 
+values 
+(
+    2,
+    2, 
+    'K11',
+    10
+)
+insert into cTBoDe values (2, 5), (2, 6)
+
+select * from cTBoDe
