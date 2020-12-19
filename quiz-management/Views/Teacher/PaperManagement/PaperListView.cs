@@ -58,7 +58,10 @@ namespace quiz_management.Views.Teacher.PaperManagement
 
         public void ShowUpdatePaperView(int code)
         {
-            throw new NotImplementedException();
+            this.Hide();
+            UpdatePaperView screen = new UpdatePaperView(code);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
         }
     }
 }

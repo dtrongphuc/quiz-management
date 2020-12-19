@@ -110,6 +110,7 @@
             this.tbPaperID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPaperID.Location = new System.Drawing.Point(142, 125);
             this.tbPaperID.Name = "tbPaperID";
+            this.tbPaperID.ReadOnly = true;
             this.tbPaperID.Size = new System.Drawing.Size(168, 27);
             this.tbPaperID.TabIndex = 9;
             // 

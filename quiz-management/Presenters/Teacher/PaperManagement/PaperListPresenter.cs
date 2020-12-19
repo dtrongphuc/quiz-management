@@ -34,9 +34,12 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
             using (var db = new QuizDataContext())
             {
                 //item trong chi tiết bộ đề
-                cTBoDe itemsDetailpaper = db.cTBoDes.SingleOrDefault(i => i.maBoDe == int.Parse(view.PaperID));
-                db.cTBoDes.DeleteOnSubmit(itemsDetailpaper);
-                db.SubmitChanges();
+                var itemsDetailpaper = db.cTBoDes.Where(i => i.maBoDe == int.Parse(view.PaperID)).ToList();
+                foreach (var i in itemsDetailpaper)
+                {
+                    db.cTBoDes.DeleteOnSubmit(i);
+                    db.SubmitChanges();
+                }
 
                 //item trong bộ đề
                 boDe itemspaper = db.boDes.SingleOrDefault(i => i.maBoDe == int.Parse(view.PaperID));
@@ -49,7 +52,7 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
 
         private void UpdatePaper_View(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            view.ShowUpdatePaperView(currenuser);
         }
 
         private void GobackBefore_View(object sender, EventArgs e)
@@ -72,7 +75,7 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
                     p.Subject = i.monHoc.tenMonHoc.ToString();
                     p.Grade = i.khoiLop.tenKhoiLop.ToString();
                     p.QuestionNum = i.cTBoDes.Where(x => x.maBoDe == int.Parse(i.maBoDe.ToString())).Count();
-                    p.Status = (i.ketQuas.Where(x => x.maBoDe == i.maBoDe).Count()) > 0 ? "Đã có trong kì thi" : "Chưa có trong kì thi"; 
+                    p.Status = (i.ketQuas.Where(x => x.maBoDe == i.maBoDe).Count()) > 0 ? "Đã có trong kì thi" : "Chưa có trong kì thi";
                     paperList.Add(p);
                 }
                 view.papers = paperList;
