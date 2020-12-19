@@ -15,6 +15,7 @@ namespace quiz_management.Presenters.Student.Exam
         private int currentUserCode;
         private int _maBoDe = 1;
         private int _resultCode = -1;
+        private int _selectedCourses;
 
         public List<Question> Questions = new List<Question>();
         public int QuestionSelectedIndex = 0;
@@ -23,16 +24,70 @@ namespace quiz_management.Presenters.Student.Exam
         {
             view = v;
             currentUserCode = userCode;
-            GetData();
-            DataCrashed();
-            BindingQuestion();
-            BindingCrashedData();
+            SetUserDataView();
+            BindingCourses();
+            //DataCrashed();
             view.QuestionChange += View_QuestionChange;
             view.AnswerCheck += View_AnswerCheck;
             view.Prev += View_Prev;
             view.Next += View_Next;
             view.Submit += View_Submit;
             view.Timeout += View_Timeout;
+            view.CoursesChange += View_CoursesChange;
+            view.ExamCodeChange += View_ExamCodeChange;
+        }
+
+        private void View_ExamCodeChange(object sender, EventArgs e)
+        {
+            var examCode = (sender as ComboBox).SelectedValue;
+            if (examCode == null || string.IsNullOrEmpty(examCode.ToString()))
+            {
+                BindingEmptyExam();
+                return;
+            }
+
+            _maBoDe = int.Parse(examCode.ToString());
+            GetData();
+            BindingQuestion();
+            BindingCrashedData();
+        }
+
+        private void View_CoursesChange(object sender, EventArgs e)
+        {
+            var coursesCode = (sender as ComboBox).SelectedValue;
+            if (coursesCode == null || string.IsNullOrEmpty(coursesCode.ToString())) return;
+
+            _selectedCourses = int.Parse(coursesCode.ToString());
+            using (var db = new QuizDataContext())
+            {
+                var exam = db.boDes.Where(d => d.maMon == _selectedCourses).Select(s => s.maBoDe).ToList();
+
+                view.ExamCodes = exam;
+            };
+        }
+
+        private void BindingCourses()
+        {
+            using (var db = new QuizDataContext())
+            {
+                var courses = db.monHocs.Select(s => s).ToList();
+                if (courses.Count > 0)
+                {
+                    _selectedCourses = courses.ElementAt(0).maMonHoc;
+                }
+                view.Courses = courses;
+            };
+        }
+
+        private void BindingEmptyExam()
+        {
+            Questions.Clear();
+            view.Answers = null;
+            view.Completed = 0;
+            view.Remain = 0;
+            view.QuestionString = null;
+            view.QuestionQuantity = 0;
+            view.QuestionOrder = 0;
         }
 
         private void View_Timeout(object sender, EventArgs e)
@@ -138,15 +193,8 @@ namespace quiz_management.Presenters.Student.Exam
         {
             using (var db = new QuizDataContext())
             {
-                // Fetch user data
-                var user = db.nguoiDungs.SingleOrDefault(u => u.maNguoiDung == currentUserCode);
-                string name = user.thongTin.tenNguoiDung as string;
-                string className = db.Lops.SingleOrDefault(l => l.maLopHoc == user.thongTin.maLopHoc).tenLopHoc as string;
-                // Set user data
-                SetUserDataView(name, className);
-
                 // Fetch exam data
-                var exam = db.boDes.SingleOrDefault(d => d.maBoDe == _maBoDe);
+                var exam = db.boDes.Where(d => d.maMon == _selectedCourses).ToList();
                 var questions = db.cTBoDes.Where(b => b.maBoDe == _maBoDe).Join(
                                 db.cauHois,
                                 b => b.maCauHoi,
@@ -189,6 +237,7 @@ namespace quiz_management.Presenters.Student.Exam
                                 )
                             ).ToList();
 
+                Questions.Clear();
                 for (int i = 0; i < questions.Count; i++)
                 {
                     Question Q = new Question();
@@ -244,18 +293,26 @@ namespace quiz_management.Presenters.Student.Exam
             };
         }
 
-        private void SetUserDataView(string name, string className)
+        private void SetUserDataView()
         {
-            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(className)) return;
-            view.StudentName = name;
-            view.StudentClass = className;
+            using (var db = new QuizDataContext())
+            {
+                // Fetch user data
+                var user = db.nguoiDungs.SingleOrDefault(u => u.maNguoiDung == currentUserCode);
+                string name = user.thongTin.tenNguoiDung as string;
+                string className = db.Lops.SingleOrDefault(l => l.maLopHoc == user.thongTin.maLopHoc).tenLopHoc as string;
+                // Set user data
+                if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(className)) return;
+                view.StudentName = name;
+                view.StudentClass = className;
+            }
         }
 
-        private void SetExamDataView(boDe exam, int quantity)
+        private void SetExamDataView(List<boDe> exam, int quantity)
         {
             if (exam == null) return;
-            view.ExamTime = (int)exam.thoiGian;
-            view.ExamCode = exam.maBoDe.ToString();
+            //view.ExamTime = (int)exam.thoiGian;
+            view.ExamCodes = exam.Select(s => s.maBoDe).ToList();
             view.QuestionQuantity = quantity;
         }
 

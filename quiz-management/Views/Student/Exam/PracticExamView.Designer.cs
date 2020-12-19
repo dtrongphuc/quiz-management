@@ -50,19 +50,19 @@
             this.cbQuestions = new System.Windows.Forms.CheckedListBox();
             this.txtRemain = new System.Windows.Forms.Label();
             this.gbQuestionButtons = new System.Windows.Forms.GroupBox();
+            this.btnStatistic = new System.Windows.Forms.Button();
             this.txtCompleted = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbAllCorrectAnswers = new System.Windows.Forms.CheckBox();
+            this.btnCorrectAnswer = new System.Windows.Forms.Button();
             this.tbQuestion = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.label2 = new System.Windows.Forms.Label();
+            this.cbExamCode = new System.Windows.Forms.ComboBox();
+            this.cbCourses = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.btnCorrectAnswer = new System.Windows.Forms.Button();
-            this.cbAllCorrectAnswers = new System.Windows.Forms.CheckBox();
-            this.btnStatistic = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.gbQuestionButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
@@ -316,6 +316,17 @@
             this.gbQuestionButtons.TabStop = false;
             this.gbQuestionButtons.Text = "Chọn câu";
             // 
+            // btnStatistic
+            // 
+            this.btnStatistic.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnStatistic.Location = new System.Drawing.Point(12, 314);
+            this.btnStatistic.Margin = new System.Windows.Forms.Padding(2);
+            this.btnStatistic.Name = "btnStatistic";
+            this.btnStatistic.Size = new System.Drawing.Size(111, 44);
+            this.btnStatistic.TabIndex = 46;
+            this.btnStatistic.Text = "Xem thống kê";
+            this.btnStatistic.UseVisualStyleBackColor = true;
+            // 
             // txtCompleted
             // 
             this.txtCompleted.AutoSize = true;
@@ -364,6 +375,26 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             // 
+            // cbAllCorrectAnswers
+            // 
+            this.cbAllCorrectAnswers.AutoSize = true;
+            this.cbAllCorrectAnswers.Location = new System.Drawing.Point(167, 338);
+            this.cbAllCorrectAnswers.Name = "cbAllCorrectAnswers";
+            this.cbAllCorrectAnswers.Size = new System.Drawing.Size(114, 17);
+            this.cbAllCorrectAnswers.TabIndex = 14;
+            this.cbAllCorrectAnswers.Text = "Xem tất cả đáp án";
+            this.cbAllCorrectAnswers.UseVisualStyleBackColor = true;
+            // 
+            // btnCorrectAnswer
+            // 
+            this.btnCorrectAnswer.Location = new System.Drawing.Point(361, 333);
+            this.btnCorrectAnswer.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCorrectAnswer.Name = "btnCorrectAnswer";
+            this.btnCorrectAnswer.Size = new System.Drawing.Size(129, 25);
+            this.btnCorrectAnswer.TabIndex = 13;
+            this.btnCorrectAnswer.Text = "Xem đáp án câu này";
+            this.btnCorrectAnswer.UseVisualStyleBackColor = true;
+            // 
             // tbQuestion
             // 
             this.tbQuestion.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -379,8 +410,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cbExamCode);
+            this.groupBox1.Controls.Add(this.cbCourses);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtClass);
@@ -404,6 +435,42 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
             // 
+            // cbExamCode
+            // 
+            this.cbExamCode.FormattingEnabled = true;
+            this.cbExamCode.Location = new System.Drawing.Point(422, 98);
+            this.cbExamCode.Name = "cbExamCode";
+            this.cbExamCode.Size = new System.Drawing.Size(121, 21);
+            this.cbExamCode.TabIndex = 21;
+            // 
+            // cbCourses
+            // 
+            this.cbCourses.FormattingEnabled = true;
+            this.cbCourses.Location = new System.Drawing.Point(422, 69);
+            this.cbCourses.Name = "cbCourses";
+            this.cbCourses.Size = new System.Drawing.Size(121, 21);
+            this.cbCourses.TabIndex = 20;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(344, 101);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 13);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Mã đề:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(344, 72);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Môn thi:";
+            // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -424,83 +491,17 @@
             this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 1;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(344, 72);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 13);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Môn thi:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(344, 101);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 13);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Mã đề:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(422, 69);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 20;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(422, 98);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 21;
-            // 
-            // btnCorrectAnswer
-            // 
-            this.btnCorrectAnswer.Location = new System.Drawing.Point(361, 333);
-            this.btnCorrectAnswer.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCorrectAnswer.Name = "btnCorrectAnswer";
-            this.btnCorrectAnswer.Size = new System.Drawing.Size(129, 25);
-            this.btnCorrectAnswer.TabIndex = 13;
-            this.btnCorrectAnswer.Text = "Xem đáp án câu này";
-            this.btnCorrectAnswer.UseVisualStyleBackColor = true;
-            // 
-            // cbAllCorrectAnswers
-            // 
-            this.cbAllCorrectAnswers.AutoSize = true;
-            this.cbAllCorrectAnswers.Location = new System.Drawing.Point(167, 338);
-            this.cbAllCorrectAnswers.Name = "cbAllCorrectAnswers";
-            this.cbAllCorrectAnswers.Size = new System.Drawing.Size(114, 17);
-            this.cbAllCorrectAnswers.TabIndex = 14;
-            this.cbAllCorrectAnswers.Text = "Xem tất cả đáp án";
-            this.cbAllCorrectAnswers.UseVisualStyleBackColor = true;
-            // 
-            // btnStatistic
-            // 
-            this.btnStatistic.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnStatistic.Location = new System.Drawing.Point(12, 314);
-            this.btnStatistic.Margin = new System.Windows.Forms.Padding(2);
-            this.btnStatistic.Name = "btnStatistic";
-            this.btnStatistic.Size = new System.Drawing.Size(111, 44);
-            this.btnStatistic.TabIndex = 46;
-            this.btnStatistic.Text = "Xem thống kê";
-            this.btnStatistic.UseVisualStyleBackColor = true;
-            // 
             // PracticExamView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(955, 525);
             this.Controls.Add(this.splitContainer1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PracticExamView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PracticExamView";
+            this.Load += new System.EventHandler(this.Form_Loaded);
             this.gbQuestionButtons.ResumeLayout(false);
             this.gbQuestionButtons.PerformLayout();
             this.splitContainer2.Panel1.ResumeLayout(false);
@@ -551,8 +552,8 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbExamCode;
+        private System.Windows.Forms.ComboBox cbCourses;
         private System.Windows.Forms.Button btnCorrectAnswer;
         private System.Windows.Forms.CheckBox cbAllCorrectAnswers;
         private System.Windows.Forms.Button btnStatistic;

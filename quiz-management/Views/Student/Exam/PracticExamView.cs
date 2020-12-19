@@ -26,7 +26,6 @@ namespace quiz_management.Views.Student
 
         public string StudentName { set => txtStudentName.Text = value; }
         public string StudentClass { set => txtClass.Text = value; }
-        public string ExamCode { set => txtExamCode.Text = value; }
         public int QuestionOrder { set => lbQuestionCountSelected.Text = value.ToString(); }
 
         public int QuestionQuantity
@@ -57,7 +56,7 @@ namespace quiz_management.Views.Student
             set
             {
                 checkBoxList.DataSource = value;
-                for (int i = 0; i < value.Count; i++)
+                for (int i = 0; i < (value != null ? value.Count : 0); i++)
                 {
                     bool state = value[i].Checked;
                     cbAnswers.SetItemChecked(i, state);
@@ -77,9 +76,24 @@ namespace quiz_management.Views.Student
             }
         }
 
+        public List<monHoc> Courses { set => cbCourses.DataSource = value; }
+
+        public List<int> ExamCodes
+        {
+            set
+            {
+                cbExamCode.DataSource = null;
+                cbExamCode.DataSource = value;
+            }
+        }
+
         public event EventHandler QuestionChange;
 
         public event EventHandler AnswerCheck;
+
+        public event EventHandler CoursesChange;
+
+        public event EventHandler ExamCodeChange;
 
         public event EventHandler Timeout;
 
@@ -121,6 +135,16 @@ namespace quiz_management.Views.Student
                 AnswerCheck.Invoke(cbQuestions, e);
             };
 
+            cbCourses.SelectedIndexChanged += (_, e) =>
+            {
+                CoursesChange.Invoke(cbCourses, e);
+            };
+
+            cbExamCode.SelectedIndexChanged += (_, e) =>
+            {
+                ExamCodeChange.Invoke(cbExamCode, e);
+            };
+
             btnSubmit.Click += (_, e) =>
             {
                 Submit.Invoke(btnSubmit, e);
@@ -141,14 +165,17 @@ namespace quiz_management.Views.Student
 
         private void Form_Loaded(object sender, EventArgs e)
         {
-            cbQuestions.SelectedIndex = -1;
+            cbCourses.SelectedIndex = 0;
             cbQuestions.SelectedIndex = QuestionSelectedIndex;
         }
 
         public void Init()
         {
-            SetTimer();
-            cbQuestions.SelectedIndex = QuestionSelectedIndex;
+            //SetTimer();
+            cbCourses.DisplayMember = "tenMonHoc";
+            cbCourses.ValueMember = "maMonHoc";
+            cbCourses.SelectedIndex = -1;
+            cbQuestions.SelectedIndex = -1;
             checkBoxList.ItemHeight = 32;
             checkBoxList.DisplayMember = "CauTraLoi";
             checkBoxList.ValueMember = "MaCauTraLoi";
@@ -194,6 +221,7 @@ namespace quiz_management.Views.Student
 
         private void RenderQuestionButton(int quantity)
         {
+            cbQuestions.Items.Clear();
             for (int i = 0; i < quantity; i++)
             {
                 cbQuestions.Items.Add("Câu " + (i + 1));
