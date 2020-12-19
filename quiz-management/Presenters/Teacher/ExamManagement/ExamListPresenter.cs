@@ -26,6 +26,7 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             lst = new List<TestSchedule>();
             view.GobackBefore += View_GoBackBefore;
             view.Delete += View_Delete;
+            view.AddExam += view_CreateExam;
             using (var db = new QuizDataContext())
             {
                 var temp = db.lichThis.ToList();
@@ -43,6 +44,11 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
 
                 Fill();
             }
+        }
+
+        private void view_CreateExam(object sender, EventArgs e)
+        {
+            view.ShowCreateExamView(currentcode);
         }
 
         private void View_Delete(object sender, EventArgs e)

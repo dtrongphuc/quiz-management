@@ -13,10 +13,10 @@ using System.Windows.Forms;
 
 namespace quiz_management.Views.Teacher.ExamManagement
 {
-    public partial class ShowMainTeachView : Form, ICreateExamView
+    public partial class CreateExamView : Form, ICreateExamView
     {
         CreateExamPresenter presenter;
-        public ShowMainTeachView(int code)
+        public CreateExamView(int code)
         {
             InitializeComponent();
             dtgHocSinh.AutoGenerateColumns = false;
@@ -42,7 +42,10 @@ namespace quiz_management.Views.Teacher.ExamManagement
             {
                 MoveLeft?.Invoke(btnMoveLeft, e);
             };
-            //còn lỗi ko 
+            cbBoDe.Click += (_, e) =>
+            {
+                examChange?.Invoke(cbBoDe, e);
+            };
         }
 
         public DateTime NgayThi => dtpNgayThi.Value;
@@ -77,17 +80,19 @@ namespace quiz_management.Views.Teacher.ExamManagement
                 return dtgHocSinh;
             }
         }
+
         public event EventHandler GoBackBefore;
         public event EventHandler Submit;
         public event EventHandler subjectChange;
         public event EventHandler MoveLeft;
         public event EventHandler MoveRight;
+        
         public event EventHandler examChange;
 
-        public void MainTeacherView(int code)
+        public void ShowExamListView(int code)
         {
             this.Hide();
-            MainTeacherView screen = new MainTeacherView(code);
+            ExamListView screen = new ExamListView(code);
             screen.FormClosed += (_, e) => this.Close();
             screen.Show();
         }

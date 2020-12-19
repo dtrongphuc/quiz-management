@@ -130,7 +130,7 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
 
         private void View_Back(object sender, EventArgs e)
         {
-            view.MainTeacherView(currentcode);
+            view.ShowExamListView(currentcode);
         }
 
         private List<boDe> FindBymonHocId(int maMH)

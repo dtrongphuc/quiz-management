@@ -1,6 +1,6 @@
 ﻿namespace quiz_management.Views.Teacher.ExamManagement
 {
-    partial class ShowMainTeachView
+    partial class CreateExamView
     {
         /// <summary>
         /// Required designer variable.

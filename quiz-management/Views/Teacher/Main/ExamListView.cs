@@ -1,6 +1,5 @@
 ﻿using quiz_management.Models;
 using quiz_management.Presenters.Teacher.ExamManagement;
-using quiz_management.Views.Teacher.Main;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -59,7 +58,7 @@ namespace quiz_management.Views.Teacher.ExamManagement
         public void ShowMainTeachView(int code)
         {
             this.Hide();
-            MainTeacherView screen = new MainTeacherView(code);
+            ShowMainTeachView screen = new ShowMainTeachView(code);
             screen.FormClosed += (_, e) => this.Close();
             screen.Show();
         }
