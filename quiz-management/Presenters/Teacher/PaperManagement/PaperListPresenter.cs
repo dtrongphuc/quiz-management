@@ -13,6 +13,7 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
     {
         IPaperListView view;
         int currenuser = 0;
+        int paperid = 0;
         public PaperListPresenter(IPaperListView v, int code)
         {
             view = v;
@@ -52,7 +53,7 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
 
         private void UpdatePaper_View(object sender, EventArgs e)
         {
-            view.ShowUpdatePaperView(currenuser);
+            //view.ShowUpdatePaperView(currenuser);
         }
 
         private void GobackBefore_View(object sender, EventArgs e)
@@ -65,6 +66,7 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
             List<Papers> paperList = new List<Papers>();
             using (var db = new QuizDataContext())
             {
+                //paperid = db.boDes.
                 //var it = db.ketQuas.Where(x => x.maBoDe == 1).Count();
                 //binding datagriview
                 var list = db.boDes.ToList();

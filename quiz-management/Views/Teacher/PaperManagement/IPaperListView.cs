@@ -19,6 +19,6 @@ namespace quiz_management.Views.Teacher.PaperManagement
 
         void ShowCreatePaperView(int code);
         void ShowMessage(string text);
-        void ShowUpdatePaperView(int code);
+        void ShowUpdatePaperView(int code, int paperid);
     }
 }

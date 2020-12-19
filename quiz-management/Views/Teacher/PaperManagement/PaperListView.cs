@@ -56,10 +56,10 @@ namespace quiz_management.Views.Teacher.PaperManagement
             MessageBox.Show(text, "Thông báo");
         }
 
-        public void ShowUpdatePaperView(int code)
+        public void ShowUpdatePaperView(int code, int paperid)
         {
             this.Hide();
-            UpdatePaperView screen = new UpdatePaperView(code);
+            UpdatePaperView screen = new UpdatePaperView(code, paperid);
             screen.FormClosed += (_, e) => this.Close();
             screen.Show();
         }
