@@ -31,6 +31,10 @@ namespace quiz_management.Views.Teacher.PaperManagement
             {
                 Delete?.Invoke(btnDelete, e);
             };
+            //dgvPaper.SelectionChanged += (_, e) =>
+            //{
+            //     dgvSelectChange?.Invoke(dgvPaper, e);
+            //};
         }
 
         public string Teachername { set => lbTeacher.Text = value; }
@@ -42,6 +46,7 @@ namespace quiz_management.Views.Teacher.PaperManagement
         public event EventHandler GobackBefore;
         public event EventHandler Delete;
         public event EventHandler UpdatePaper;
+        //public event EventHandler dgvSelectChange;
 
         public void ShowCreatePaperView(int code)
         {

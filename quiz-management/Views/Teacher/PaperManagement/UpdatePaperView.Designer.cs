@@ -307,6 +307,7 @@
             this.Controls.Add(this.lbTeacher);
             this.Controls.Add(this.label1);
             this.Name = "UpdatePaperView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UpdatePaperView";
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionSelectedList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionList)).EndInit();

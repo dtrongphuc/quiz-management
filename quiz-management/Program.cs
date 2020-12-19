@@ -24,8 +24,8 @@ namespace quiz_management
         private static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PaperListView(1));
+             Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new UpdatePaperView(1, 2));
         }
     }
 }

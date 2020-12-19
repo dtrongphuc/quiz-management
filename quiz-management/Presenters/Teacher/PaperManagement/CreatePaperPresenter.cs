@@ -32,11 +32,15 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
 
         private void SubjectChange_View(object sender, EventArgs e)
         {
+            view.listQuestion = null;
+            view.listQuestionselected = null;
             FillAll();
         }
 
         private void GradeChange_View(object sender, EventArgs e)
         {
+            view.listQuestion = null;
+            view.listQuestionselected = null;
             FillAll();
         }
 
@@ -194,7 +198,10 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
                 pp.QuestionID = i.Cells["MaCauHoi"].Value.ToString();
                 pp.Question = i.Cells["CauHoi1"].Value.ToString();
 
-                ListQuestion.RemoveAt(i.Index);
+               ListQuestion.Remove(new CreatePaperWithQuestion { 
+                    Question = pp.Question,
+                    QuestionID = pp.QuestionID
+                });
                 ListQuestionselcted.Add(pp);
             }
             view.listQuestion = ListQuestion;

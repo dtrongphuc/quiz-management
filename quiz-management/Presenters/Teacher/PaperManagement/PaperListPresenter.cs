@@ -13,7 +13,7 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
     {
         IPaperListView view;
         int currenuser = 0;
-        int paperid = 0;
+        int paperidpresent = 0;//ma bộ đề hiện tại
         public PaperListPresenter(IPaperListView v, int code)
         {
             view = v;
@@ -21,6 +21,7 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
             view.GobackBefore += GobackBefore_View;
             view.UpdatePaper += UpdatePaper_View;
             view.Delete += Delete_View;
+            //view.dgvSelectChange += dgvSelectChange_View;
             using (var db = new QuizDataContext())
             {
                 //binding tên giáo viên
@@ -29,6 +30,11 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
             }
             LoadPage(code);
         }
+
+        //private void dgvSelectChange_View(object sender, EventArgs e)
+        //{
+        //    paperidpresent = int.Parse(view.PaperID);
+        //}
 
         private void Delete_View(object sender, EventArgs e)
         {
@@ -53,7 +59,7 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
 
         private void UpdatePaper_View(object sender, EventArgs e)
         {
-            //view.ShowUpdatePaperView(currenuser);
+            view.ShowUpdatePaperView(currenuser, int.Parse(view.PaperID));
         }
 
         private void GobackBefore_View(object sender, EventArgs e)
