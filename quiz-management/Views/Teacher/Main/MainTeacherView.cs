@@ -29,10 +29,7 @@ namespace quiz_management.Views.Teacher.Main
             timerQLCauHoi.Start();
         }
 
-        private void btnQLDeThi_Click(object sender, EventArgs e)
-        {
-            timerQLDeThi.Start();
-        }
+        
 
        
 
