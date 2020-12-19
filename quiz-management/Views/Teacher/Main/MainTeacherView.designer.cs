@@ -33,24 +33,17 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.panelQLCauHoi = new System.Windows.Forms.Panel();
             this.btnDongGop = new System.Windows.Forms.Button();
-            this.btnDetailQuiz = new System.Windows.Forms.Button();
-            this.btnEditQuiz = new System.Windows.Forms.Button();
-            this.btnAddQuiz = new System.Windows.Forms.Button();
+            this.btnListQuiz = new System.Windows.Forms.Button();
             this.btnQuizManager = new System.Windows.Forms.Button();
-            this.panelDeThi = new System.Windows.Forms.Panel();
-            this.btnXoaDeThi = new System.Windows.Forms.Button();
-            this.btnSuaDeThi = new System.Windows.Forms.Button();
-            this.btnTaoDeThi = new System.Windows.Forms.Button();
-            this.btnQLDeThi = new System.Windows.Forms.Button();
             this.panelLamBaiThi = new System.Windows.Forms.Panel();
             this.btnOnTap = new System.Windows.Forms.Button();
             this.btnThi = new System.Windows.Forms.Button();
             this.btnLamBaiThi = new System.Windows.Forms.Button();
+            this.btnQLDeThi = new System.Windows.Forms.Button();
             this.timerQLCauHoi = new System.Windows.Forms.Timer(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnPrintTranScript = new System.Windows.Forms.Button();
             this.btnUpdateInfoStudent = new System.Windows.Forms.Button();
-            this.btnTestScheduleView = new System.Windows.Forms.Button();
             this.btnExamResultView = new System.Windows.Forms.Button();
             this.txbNgaySinh = new System.Windows.Forms.TextBox();
             this.txbMaSo = new System.Windows.Forms.TextBox();
@@ -64,33 +57,24 @@
             this.panelQLKyThi = new System.Windows.Forms.Panel();
             this.btnTongKetKT = new System.Windows.Forms.Button();
             this.btnXemDSThi = new System.Windows.Forms.Button();
-            this.btnXoaKyThi = new System.Windows.Forms.Button();
-            this.btnSuaKyThi = new System.Windows.Forms.Button();
-            this.btnTaoKyThi = new System.Windows.Forms.Button();
+            this.btnLichKyThi = new System.Windows.Forms.Button();
             this.btnQLKyThi = new System.Windows.Forms.Button();
-            this.panelQLOnTap = new System.Windows.Forms.Panel();
-            this.btnXoaKTThu = new System.Windows.Forms.Button();
-            this.btnSuaKTThu = new System.Windows.Forms.Button();
-            this.btnTaoKTThu = new System.Windows.Forms.Button();
-            this.btnQLOnTap = new System.Windows.Forms.Button();
             this.panelThongKe = new System.Windows.Forms.Panel();
             this.btnTKCauHoi = new System.Windows.Forms.Button();
             this.btnTKKyThi = new System.Windows.Forms.Button();
             this.btnTKHS = new System.Windows.Forms.Button();
             this.btnThongKe = new System.Windows.Forms.Button();
+            this.btnQLKyThiThu = new System.Windows.Forms.Button();
             this.timerQLDeThi = new System.Windows.Forms.Timer(this.components);
             this.timeQLKyThi = new System.Windows.Forms.Timer(this.components);
-            this.timerQLThiThu = new System.Windows.Forms.Timer(this.components);
             this.timerThongKe = new System.Windows.Forms.Timer(this.components);
             this.flowLayoutPanel2.SuspendLayout();
             this.panelQLCauHoi.SuspendLayout();
-            this.panelDeThi.SuspendLayout();
             this.panelLamBaiThi.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panelQLKyThi.SuspendLayout();
-            this.panelQLOnTap.SuspendLayout();
             this.panelThongKe.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,24 +85,23 @@
             // 
             // flowLayoutPanel2
             // 
-            this.flowLayoutPanel2.Controls.Add(this.panelQLCauHoi);
-            this.flowLayoutPanel2.Controls.Add(this.panelDeThi);
+            this.flowLayoutPanel2.Controls.Add(this.panelThongKe);
             this.flowLayoutPanel2.Controls.Add(this.panelLamBaiThi);
+            this.flowLayoutPanel2.Controls.Add(this.btnQLDeThi);
             this.flowLayoutPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flowLayoutPanel2.Location = new System.Drawing.Point(31, 179);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(219, 339);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(219, 384);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
             // panelQLCauHoi
             // 
             this.panelQLCauHoi.Controls.Add(this.btnDongGop);
-            this.panelQLCauHoi.Controls.Add(this.btnDetailQuiz);
-            this.panelQLCauHoi.Controls.Add(this.btnEditQuiz);
-            this.panelQLCauHoi.Controls.Add(this.btnAddQuiz);
+            this.panelQLCauHoi.Controls.Add(this.btnListQuiz);
             this.panelQLCauHoi.Controls.Add(this.btnQuizManager);
+            this.panelQLCauHoi.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelQLCauHoi.Location = new System.Drawing.Point(3, 3);
-            this.panelQLCauHoi.MaximumSize = new System.Drawing.Size(214, 222);
+            this.panelQLCauHoi.MaximumSize = new System.Drawing.Size(214, 135);
             this.panelQLCauHoi.MinimumSize = new System.Drawing.Size(214, 57);
             this.panelQLCauHoi.Name = "panelQLCauHoi";
             this.panelQLCauHoi.Size = new System.Drawing.Size(214, 57);
@@ -132,57 +115,27 @@
             this.btnDongGop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDongGop.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDongGop.ForeColor = System.Drawing.Color.Black;
-            this.btnDongGop.Location = new System.Drawing.Point(0, 178);
+            this.btnDongGop.Location = new System.Drawing.Point(0, 96);
             this.btnDongGop.Name = "btnDongGop";
             this.btnDongGop.Size = new System.Drawing.Size(214, 41);
             this.btnDongGop.TabIndex = 6;
             this.btnDongGop.Text = "Duyệt Đóng Góp";
             this.btnDongGop.UseVisualStyleBackColor = false;
             // 
-            // btnDetailQuiz
+            // btnListQuiz
             // 
-            this.btnDetailQuiz.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnDetailQuiz.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDetailQuiz.FlatAppearance.BorderSize = 0;
-            this.btnDetailQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetailQuiz.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetailQuiz.ForeColor = System.Drawing.Color.Black;
-            this.btnDetailQuiz.Location = new System.Drawing.Point(0, 137);
-            this.btnDetailQuiz.Name = "btnDetailQuiz";
-            this.btnDetailQuiz.Size = new System.Drawing.Size(214, 41);
-            this.btnDetailQuiz.TabIndex = 5;
-            this.btnDetailQuiz.Text = "Xem Chi Tiết";
-            this.btnDetailQuiz.UseVisualStyleBackColor = false;
-            // 
-            // btnEditQuiz
-            // 
-            this.btnEditQuiz.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnEditQuiz.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEditQuiz.FlatAppearance.BorderSize = 0;
-            this.btnEditQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditQuiz.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditQuiz.ForeColor = System.Drawing.Color.Black;
-            this.btnEditQuiz.Location = new System.Drawing.Point(0, 96);
-            this.btnEditQuiz.Name = "btnEditQuiz";
-            this.btnEditQuiz.Size = new System.Drawing.Size(214, 41);
-            this.btnEditQuiz.TabIndex = 4;
-            this.btnEditQuiz.Text = "Sửa Câu Hỏi";
-            this.btnEditQuiz.UseVisualStyleBackColor = false;
-            // 
-            // btnAddQuiz
-            // 
-            this.btnAddQuiz.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnAddQuiz.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAddQuiz.FlatAppearance.BorderSize = 0;
-            this.btnAddQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddQuiz.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddQuiz.ForeColor = System.Drawing.Color.Black;
-            this.btnAddQuiz.Location = new System.Drawing.Point(0, 55);
-            this.btnAddQuiz.Name = "btnAddQuiz";
-            this.btnAddQuiz.Size = new System.Drawing.Size(214, 41);
-            this.btnAddQuiz.TabIndex = 3;
-            this.btnAddQuiz.Text = "Thêm Câu Hỏi";
-            this.btnAddQuiz.UseVisualStyleBackColor = false;
+            this.btnListQuiz.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnListQuiz.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnListQuiz.FlatAppearance.BorderSize = 0;
+            this.btnListQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListQuiz.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListQuiz.ForeColor = System.Drawing.Color.Black;
+            this.btnListQuiz.Location = new System.Drawing.Point(0, 55);
+            this.btnListQuiz.Name = "btnListQuiz";
+            this.btnListQuiz.Size = new System.Drawing.Size(214, 41);
+            this.btnListQuiz.TabIndex = 3;
+            this.btnListQuiz.Text = "Xem Danh Sách Câu Hỏi";
+            this.btnListQuiz.UseVisualStyleBackColor = false;
             // 
             // btnQuizManager
             // 
@@ -203,91 +156,13 @@
             this.btnQuizManager.UseVisualStyleBackColor = false;
             this.btnQuizManager.Click += new System.EventHandler(this.QuizManager_Click);
             // 
-            // panelDeThi
-            // 
-            this.panelDeThi.Controls.Add(this.btnXoaDeThi);
-            this.panelDeThi.Controls.Add(this.btnSuaDeThi);
-            this.panelDeThi.Controls.Add(this.btnTaoDeThi);
-            this.panelDeThi.Controls.Add(this.btnQLDeThi);
-            this.panelDeThi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelDeThi.Location = new System.Drawing.Point(3, 66);
-            this.panelDeThi.MaximumSize = new System.Drawing.Size(214, 178);
-            this.panelDeThi.MinimumSize = new System.Drawing.Size(214, 57);
-            this.panelDeThi.Name = "panelDeThi";
-            this.panelDeThi.Size = new System.Drawing.Size(214, 57);
-            this.panelDeThi.TabIndex = 1;
-            // 
-            // btnXoaDeThi
-            // 
-            this.btnXoaDeThi.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnXoaDeThi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnXoaDeThi.FlatAppearance.BorderSize = 0;
-            this.btnXoaDeThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoaDeThi.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaDeThi.ForeColor = System.Drawing.Color.Black;
-            this.btnXoaDeThi.Location = new System.Drawing.Point(0, 137);
-            this.btnXoaDeThi.Name = "btnXoaDeThi";
-            this.btnXoaDeThi.Size = new System.Drawing.Size(214, 41);
-            this.btnXoaDeThi.TabIndex = 5;
-            this.btnXoaDeThi.Text = "Xóa Đề Thi";
-            this.btnXoaDeThi.UseVisualStyleBackColor = false;
-            // 
-            // btnSuaDeThi
-            // 
-            this.btnSuaDeThi.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnSuaDeThi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSuaDeThi.FlatAppearance.BorderSize = 0;
-            this.btnSuaDeThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuaDeThi.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaDeThi.ForeColor = System.Drawing.Color.Black;
-            this.btnSuaDeThi.Location = new System.Drawing.Point(0, 96);
-            this.btnSuaDeThi.Name = "btnSuaDeThi";
-            this.btnSuaDeThi.Size = new System.Drawing.Size(214, 41);
-            this.btnSuaDeThi.TabIndex = 4;
-            this.btnSuaDeThi.Text = "Sửa Đề Thi";
-            this.btnSuaDeThi.UseVisualStyleBackColor = false;
-            // 
-            // btnTaoDeThi
-            // 
-            this.btnTaoDeThi.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnTaoDeThi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTaoDeThi.FlatAppearance.BorderSize = 0;
-            this.btnTaoDeThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTaoDeThi.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTaoDeThi.ForeColor = System.Drawing.Color.Black;
-            this.btnTaoDeThi.Location = new System.Drawing.Point(0, 55);
-            this.btnTaoDeThi.Name = "btnTaoDeThi";
-            this.btnTaoDeThi.Size = new System.Drawing.Size(214, 41);
-            this.btnTaoDeThi.TabIndex = 3;
-            this.btnTaoDeThi.Text = "Tạo Đề Thi";
-            this.btnTaoDeThi.UseVisualStyleBackColor = false;
-            // 
-            // btnQLDeThi
-            // 
-            this.btnQLDeThi.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnQLDeThi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnQLDeThi.FlatAppearance.BorderSize = 0;
-            this.btnQLDeThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQLDeThi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQLDeThi.ForeColor = System.Drawing.Color.Black;
-            this.btnQLDeThi.Image = global::quiz_management.Properties.Resources.Expand_Arrow_20px;
-            this.btnQLDeThi.Location = new System.Drawing.Point(0, 0);
-            this.btnQLDeThi.Name = "btnQLDeThi";
-            this.btnQLDeThi.Size = new System.Drawing.Size(214, 55);
-            this.btnQLDeThi.TabIndex = 2;
-            this.btnQLDeThi.Text = "Quản Lý Đề Thi";
-            this.btnQLDeThi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnQLDeThi.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnQLDeThi.UseVisualStyleBackColor = false;
-            this.btnQLDeThi.Click += new System.EventHandler(this.btnQLDeThi_Click);
-            // 
             // panelLamBaiThi
             // 
             this.panelLamBaiThi.Controls.Add(this.btnOnTap);
             this.panelLamBaiThi.Controls.Add(this.btnThi);
             this.panelLamBaiThi.Controls.Add(this.btnLamBaiThi);
             this.panelLamBaiThi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLamBaiThi.Location = new System.Drawing.Point(3, 129);
+            this.panelLamBaiThi.Location = new System.Drawing.Point(3, 66);
             this.panelLamBaiThi.MaximumSize = new System.Drawing.Size(214, 137);
             this.panelLamBaiThi.MinimumSize = new System.Drawing.Size(214, 57);
             this.panelLamBaiThi.Name = "panelLamBaiThi";
@@ -343,6 +218,21 @@
             this.btnLamBaiThi.UseVisualStyleBackColor = false;
             this.btnLamBaiThi.Click += new System.EventHandler(this.btnLamBaiThi_Click);
             // 
+            // btnQLDeThi
+            // 
+            this.btnQLDeThi.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnQLDeThi.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnQLDeThi.FlatAppearance.BorderSize = 0;
+            this.btnQLDeThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQLDeThi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnQLDeThi.ForeColor = System.Drawing.Color.Black;
+            this.btnQLDeThi.Location = new System.Drawing.Point(3, 129);
+            this.btnQLDeThi.Name = "btnQLDeThi";
+            this.btnQLDeThi.Size = new System.Drawing.Size(214, 41);
+            this.btnQLDeThi.TabIndex = 6;
+            this.btnQLDeThi.Text = " Quản Lý Đề Thi";
+            this.btnQLDeThi.UseVisualStyleBackColor = false;
+            // 
             // timerQLCauHoi
             // 
             this.timerQLCauHoi.Interval = 15;
@@ -352,7 +242,6 @@
             // 
             this.groupBox1.Controls.Add(this.btnPrintTranScript);
             this.groupBox1.Controls.Add(this.btnUpdateInfoStudent);
-            this.groupBox1.Controls.Add(this.btnTestScheduleView);
             this.groupBox1.Controls.Add(this.btnExamResultView);
             this.groupBox1.Controls.Add(this.txbNgaySinh);
             this.groupBox1.Controls.Add(this.txbMaSo);
@@ -390,23 +279,11 @@
             this.btnUpdateInfoStudent.Text = "Sửa thông tin cá nhân";
             this.btnUpdateInfoStudent.UseVisualStyleBackColor = false;
             // 
-            // btnTestScheduleView
-            // 
-            this.btnTestScheduleView.BackColor = System.Drawing.Color.Transparent;
-            this.btnTestScheduleView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTestScheduleView.Location = new System.Drawing.Point(82, 300);
-            this.btnTestScheduleView.Margin = new System.Windows.Forms.Padding(2);
-            this.btnTestScheduleView.Name = "btnTestScheduleView";
-            this.btnTestScheduleView.Size = new System.Drawing.Size(139, 47);
-            this.btnTestScheduleView.TabIndex = 20;
-            this.btnTestScheduleView.Text = "Xem lịch thi";
-            this.btnTestScheduleView.UseVisualStyleBackColor = false;
-            // 
             // btnExamResultView
             // 
             this.btnExamResultView.BackColor = System.Drawing.Color.Gainsboro;
             this.btnExamResultView.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExamResultView.Location = new System.Drawing.Point(82, 222);
+            this.btnExamResultView.Location = new System.Drawing.Point(82, 300);
             this.btnExamResultView.Margin = new System.Windows.Forms.Padding(2);
             this.btnExamResultView.Name = "btnExamResultView";
             this.btnExamResultView.Size = new System.Drawing.Size(139, 49);
@@ -416,14 +293,14 @@
             // 
             // txbNgaySinh
             // 
-            this.txbNgaySinh.Location = new System.Drawing.Point(111, 168);
+            this.txbNgaySinh.Location = new System.Drawing.Point(111, 196);
             this.txbNgaySinh.Name = "txbNgaySinh";
             this.txbNgaySinh.Size = new System.Drawing.Size(169, 27);
             this.txbNgaySinh.TabIndex = 17;
             // 
             // txbMaSo
             // 
-            this.txbMaSo.Location = new System.Drawing.Point(111, 107);
+            this.txbMaSo.Location = new System.Drawing.Point(111, 135);
             this.txbMaSo.Name = "txbMaSo";
             this.txbMaSo.Size = new System.Drawing.Size(169, 27);
             this.txbMaSo.TabIndex = 16;
@@ -431,7 +308,7 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 173);
+            this.label3.Location = new System.Drawing.Point(12, 201);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 22);
             this.label3.TabIndex = 14;
@@ -440,7 +317,7 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 112);
+            this.label2.Location = new System.Drawing.Point(12, 140);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 22);
             this.label2.TabIndex = 13;
@@ -450,7 +327,7 @@
             // 
             this.tbTenGV.AutoSize = true;
             this.tbTenGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTenGV.Location = new System.Drawing.Point(46, 48);
+            this.tbTenGV.Location = new System.Drawing.Point(46, 55);
             this.tbTenGV.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tbTenGV.Name = "tbTenGV";
             this.tbTenGV.Size = new System.Drawing.Size(175, 24);
@@ -495,9 +372,9 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Controls.Add(this.panelQLCauHoi);
             this.flowLayoutPanel1.Controls.Add(this.panelQLKyThi);
-            this.flowLayoutPanel1.Controls.Add(this.panelQLOnTap);
-            this.flowLayoutPanel1.Controls.Add(this.panelThongKe);
+            this.flowLayoutPanel1.Controls.Add(this.btnQLKyThiThu);
             this.flowLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flowLayoutPanel1.Location = new System.Drawing.Point(275, 179);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -508,12 +385,11 @@
             // 
             this.panelQLKyThi.Controls.Add(this.btnTongKetKT);
             this.panelQLKyThi.Controls.Add(this.btnXemDSThi);
-            this.panelQLKyThi.Controls.Add(this.btnXoaKyThi);
-            this.panelQLKyThi.Controls.Add(this.btnSuaKyThi);
-            this.panelQLKyThi.Controls.Add(this.btnTaoKyThi);
+            this.panelQLKyThi.Controls.Add(this.btnLichKyThi);
             this.panelQLKyThi.Controls.Add(this.btnQLKyThi);
-            this.panelQLKyThi.Location = new System.Drawing.Point(3, 3);
-            this.panelQLKyThi.MaximumSize = new System.Drawing.Size(214, 260);
+            this.panelQLKyThi.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelQLKyThi.Location = new System.Drawing.Point(3, 66);
+            this.panelQLKyThi.MaximumSize = new System.Drawing.Size(214, 183);
             this.panelQLKyThi.MinimumSize = new System.Drawing.Size(214, 57);
             this.panelQLKyThi.Name = "panelQLKyThi";
             this.panelQLKyThi.Size = new System.Drawing.Size(214, 57);
@@ -527,7 +403,7 @@
             this.btnTongKetKT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTongKetKT.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTongKetKT.ForeColor = System.Drawing.Color.Black;
-            this.btnTongKetKT.Location = new System.Drawing.Point(0, 219);
+            this.btnTongKetKT.Location = new System.Drawing.Point(0, 137);
             this.btnTongKetKT.Name = "btnTongKetKT";
             this.btnTongKetKT.Size = new System.Drawing.Size(214, 41);
             this.btnTongKetKT.TabIndex = 7;
@@ -542,57 +418,27 @@
             this.btnXemDSThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXemDSThi.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXemDSThi.ForeColor = System.Drawing.Color.Black;
-            this.btnXemDSThi.Location = new System.Drawing.Point(0, 178);
+            this.btnXemDSThi.Location = new System.Drawing.Point(0, 96);
             this.btnXemDSThi.Name = "btnXemDSThi";
             this.btnXemDSThi.Size = new System.Drawing.Size(214, 41);
             this.btnXemDSThi.TabIndex = 6;
             this.btnXemDSThi.Text = "Xem / In DS Thi Sinh";
             this.btnXemDSThi.UseVisualStyleBackColor = false;
             // 
-            // btnXoaKyThi
+            // btnLichKyThi
             // 
-            this.btnXoaKyThi.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnXoaKyThi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnXoaKyThi.FlatAppearance.BorderSize = 0;
-            this.btnXoaKyThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoaKyThi.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaKyThi.ForeColor = System.Drawing.Color.Black;
-            this.btnXoaKyThi.Location = new System.Drawing.Point(0, 137);
-            this.btnXoaKyThi.Name = "btnXoaKyThi";
-            this.btnXoaKyThi.Size = new System.Drawing.Size(214, 41);
-            this.btnXoaKyThi.TabIndex = 5;
-            this.btnXoaKyThi.Text = "Xóa Kỳ Thi";
-            this.btnXoaKyThi.UseVisualStyleBackColor = false;
-            // 
-            // btnSuaKyThi
-            // 
-            this.btnSuaKyThi.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnSuaKyThi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSuaKyThi.FlatAppearance.BorderSize = 0;
-            this.btnSuaKyThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuaKyThi.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaKyThi.ForeColor = System.Drawing.Color.Black;
-            this.btnSuaKyThi.Location = new System.Drawing.Point(0, 96);
-            this.btnSuaKyThi.Name = "btnSuaKyThi";
-            this.btnSuaKyThi.Size = new System.Drawing.Size(214, 41);
-            this.btnSuaKyThi.TabIndex = 4;
-            this.btnSuaKyThi.Text = "Sửa Kỳ Thi";
-            this.btnSuaKyThi.UseVisualStyleBackColor = false;
-            // 
-            // btnTaoKyThi
-            // 
-            this.btnTaoKyThi.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnTaoKyThi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTaoKyThi.FlatAppearance.BorderSize = 0;
-            this.btnTaoKyThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTaoKyThi.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTaoKyThi.ForeColor = System.Drawing.Color.Black;
-            this.btnTaoKyThi.Location = new System.Drawing.Point(0, 55);
-            this.btnTaoKyThi.Name = "btnTaoKyThi";
-            this.btnTaoKyThi.Size = new System.Drawing.Size(214, 41);
-            this.btnTaoKyThi.TabIndex = 3;
-            this.btnTaoKyThi.Text = "Tạo Kỳ Thi";
-            this.btnTaoKyThi.UseVisualStyleBackColor = false;
+            this.btnLichKyThi.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnLichKyThi.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLichKyThi.FlatAppearance.BorderSize = 0;
+            this.btnLichKyThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLichKyThi.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLichKyThi.ForeColor = System.Drawing.Color.Black;
+            this.btnLichKyThi.Location = new System.Drawing.Point(0, 55);
+            this.btnLichKyThi.Name = "btnLichKyThi";
+            this.btnLichKyThi.Size = new System.Drawing.Size(214, 41);
+            this.btnLichKyThi.TabIndex = 5;
+            this.btnLichKyThi.Text = "Xem Lịch Kỳ Thi";
+            this.btnLichKyThi.UseVisualStyleBackColor = false;
             // 
             // btnQLKyThi
             // 
@@ -613,84 +459,6 @@
             this.btnQLKyThi.UseVisualStyleBackColor = false;
             this.btnQLKyThi.Click += new System.EventHandler(this.btnQLKyThi_Click);
             // 
-            // panelQLOnTap
-            // 
-            this.panelQLOnTap.Controls.Add(this.btnXoaKTThu);
-            this.panelQLOnTap.Controls.Add(this.btnSuaKTThu);
-            this.panelQLOnTap.Controls.Add(this.btnTaoKTThu);
-            this.panelQLOnTap.Controls.Add(this.btnQLOnTap);
-            this.panelQLOnTap.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelQLOnTap.Location = new System.Drawing.Point(3, 66);
-            this.panelQLOnTap.MaximumSize = new System.Drawing.Size(214, 178);
-            this.panelQLOnTap.MinimumSize = new System.Drawing.Size(214, 57);
-            this.panelQLOnTap.Name = "panelQLOnTap";
-            this.panelQLOnTap.Size = new System.Drawing.Size(214, 57);
-            this.panelQLOnTap.TabIndex = 1;
-            // 
-            // btnXoaKTThu
-            // 
-            this.btnXoaKTThu.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnXoaKTThu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnXoaKTThu.FlatAppearance.BorderSize = 0;
-            this.btnXoaKTThu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoaKTThu.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaKTThu.ForeColor = System.Drawing.Color.Black;
-            this.btnXoaKTThu.Location = new System.Drawing.Point(0, 137);
-            this.btnXoaKTThu.Name = "btnXoaKTThu";
-            this.btnXoaKTThu.Size = new System.Drawing.Size(214, 41);
-            this.btnXoaKTThu.TabIndex = 5;
-            this.btnXoaKTThu.Text = "Xóa Kỳ Thi Thử";
-            this.btnXoaKTThu.UseVisualStyleBackColor = false;
-            // 
-            // btnSuaKTThu
-            // 
-            this.btnSuaKTThu.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnSuaKTThu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSuaKTThu.FlatAppearance.BorderSize = 0;
-            this.btnSuaKTThu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuaKTThu.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaKTThu.ForeColor = System.Drawing.Color.Black;
-            this.btnSuaKTThu.Location = new System.Drawing.Point(0, 96);
-            this.btnSuaKTThu.Name = "btnSuaKTThu";
-            this.btnSuaKTThu.Size = new System.Drawing.Size(214, 41);
-            this.btnSuaKTThu.TabIndex = 4;
-            this.btnSuaKTThu.Text = "Sửa Kỳ Thi Thử";
-            this.btnSuaKTThu.UseVisualStyleBackColor = false;
-            // 
-            // btnTaoKTThu
-            // 
-            this.btnTaoKTThu.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnTaoKTThu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTaoKTThu.FlatAppearance.BorderSize = 0;
-            this.btnTaoKTThu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTaoKTThu.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTaoKTThu.ForeColor = System.Drawing.Color.Black;
-            this.btnTaoKTThu.Location = new System.Drawing.Point(0, 55);
-            this.btnTaoKTThu.Name = "btnTaoKTThu";
-            this.btnTaoKTThu.Size = new System.Drawing.Size(214, 41);
-            this.btnTaoKTThu.TabIndex = 3;
-            this.btnTaoKTThu.Text = "Tạo Kỳ Thi Thử";
-            this.btnTaoKTThu.UseVisualStyleBackColor = false;
-            // 
-            // btnQLOnTap
-            // 
-            this.btnQLOnTap.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnQLOnTap.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnQLOnTap.FlatAppearance.BorderSize = 0;
-            this.btnQLOnTap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQLOnTap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQLOnTap.ForeColor = System.Drawing.Color.Black;
-            this.btnQLOnTap.Image = global::quiz_management.Properties.Resources.Expand_Arrow_20px;
-            this.btnQLOnTap.Location = new System.Drawing.Point(0, 0);
-            this.btnQLOnTap.Name = "btnQLOnTap";
-            this.btnQLOnTap.Size = new System.Drawing.Size(214, 55);
-            this.btnQLOnTap.TabIndex = 2;
-            this.btnQLOnTap.Text = "Quản Lý Thi Thử";
-            this.btnQLOnTap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnQLOnTap.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnQLOnTap.UseVisualStyleBackColor = false;
-            this.btnQLOnTap.Click += new System.EventHandler(this.btnQLOnTap_Click);
-            // 
             // panelThongKe
             // 
             this.panelThongKe.Controls.Add(this.btnTKCauHoi);
@@ -698,7 +466,7 @@
             this.panelThongKe.Controls.Add(this.btnTKHS);
             this.panelThongKe.Controls.Add(this.btnThongKe);
             this.panelThongKe.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelThongKe.Location = new System.Drawing.Point(3, 129);
+            this.panelThongKe.Location = new System.Drawing.Point(3, 3);
             this.panelThongKe.MaximumSize = new System.Drawing.Size(214, 178);
             this.panelThongKe.MinimumSize = new System.Drawing.Size(214, 57);
             this.panelThongKe.Name = "panelThongKe";
@@ -769,20 +537,25 @@
             this.btnThongKe.UseVisualStyleBackColor = false;
             this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
-            // timerQLDeThi
+            // btnQLKyThiThu
             // 
-            this.timerQLDeThi.Interval = 15;
-            this.timerQLDeThi.Tick += new System.EventHandler(this.timerQLDeThi_Tick);
+            this.btnQLKyThiThu.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnQLKyThiThu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnQLKyThiThu.FlatAppearance.BorderSize = 0;
+            this.btnQLKyThiThu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQLKyThiThu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnQLKyThiThu.ForeColor = System.Drawing.Color.Black;
+            this.btnQLKyThiThu.Location = new System.Drawing.Point(3, 129);
+            this.btnQLKyThiThu.Name = "btnQLKyThiThu";
+            this.btnQLKyThiThu.Size = new System.Drawing.Size(214, 41);
+            this.btnQLKyThiThu.TabIndex = 4;
+            this.btnQLKyThiThu.Text = "Quản Lý Kỳ Thi Thử";
+            this.btnQLKyThiThu.UseVisualStyleBackColor = false;
             // 
             // timeQLKyThi
             // 
             this.timeQLKyThi.Interval = 15;
             this.timeQLKyThi.Tick += new System.EventHandler(this.timeQLKyThi_Tick);
-            // 
-            // timerQLThiThu
-            // 
-            this.timerQLThiThu.Interval = 15;
-            this.timerQLThiThu.Tick += new System.EventHandler(this.QLThiThu_Tick);
             // 
             // timerThongKe
             // 
@@ -800,7 +573,6 @@
             this.Text = "Form1";
             this.flowLayoutPanel2.ResumeLayout(false);
             this.panelQLCauHoi.ResumeLayout(false);
-            this.panelDeThi.ResumeLayout(false);
             this.panelLamBaiThi.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -808,7 +580,6 @@
             this.groupBox2.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panelQLKyThi.ResumeLayout(false);
-            this.panelQLOnTap.ResumeLayout(false);
             this.panelThongKe.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -818,9 +589,9 @@
         private System.Windows.Forms.Timer timerLamBaiThi;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Panel panelQLCauHoi;
-        private System.Windows.Forms.Button btnDetailQuiz;
-        private System.Windows.Forms.Button btnEditQuiz;
-        private System.Windows.Forms.Button btnAddQuiz;
+        
+       
+        private System.Windows.Forms.Button btnListQuiz;
         private System.Windows.Forms.Button btnQuizManager;
         private System.Windows.Forms.Timer timerQLCauHoi;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -829,18 +600,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txbMaSo;
         private System.Windows.Forms.TextBox txbNgaySinh;
-        private System.Windows.Forms.Button btnTestScheduleView;
         private System.Windows.Forms.Button btnUpdateInfoStudent;
         private System.Windows.Forms.Button btnPrintTranScript;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label txtTitle1;
         private System.Windows.Forms.Label txtTitle2;
         private System.Windows.Forms.Timer timerQLDeThi;
-        private System.Windows.Forms.Panel panelDeThi;
-        private System.Windows.Forms.Button btnXoaDeThi;
-        private System.Windows.Forms.Button btnSuaDeThi;
-        private System.Windows.Forms.Button btnTaoDeThi;
-        private System.Windows.Forms.Button btnQLDeThi;
         private System.Windows.Forms.Button btnDongGop;
         private System.Windows.Forms.Button btnExamResultView;
         
@@ -852,15 +617,8 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panelQLKyThi;
         private System.Windows.Forms.Button btnXemDSThi;
-        private System.Windows.Forms.Button btnXoaKyThi;
-        private System.Windows.Forms.Button btnSuaKyThi;
-        private System.Windows.Forms.Button btnTaoKyThi;
+        private System.Windows.Forms.Button btnLichKyThi;
         private System.Windows.Forms.Button btnQLKyThi;
-        private System.Windows.Forms.Panel panelQLOnTap;
-        private System.Windows.Forms.Button btnXoaKTThu;
-        private System.Windows.Forms.Button btnSuaKTThu;
-        private System.Windows.Forms.Button btnTaoKTThu;
-        private System.Windows.Forms.Button btnQLOnTap;
         private System.Windows.Forms.Panel panelThongKe;
         private System.Windows.Forms.Button btnTKCauHoi;
         private System.Windows.Forms.Button btnTKKyThi;
@@ -868,8 +626,9 @@
         private System.Windows.Forms.Button btnThongKe;
         private System.Windows.Forms.Button btnTongKetKT;
         private System.Windows.Forms.Timer timeQLKyThi;
-        private System.Windows.Forms.Timer timerQLThiThu;
         private System.Windows.Forms.Timer timerThongKe;
+        private System.Windows.Forms.Button btnQLDeThi;
+        private System.Windows.Forms.Button btnQLKyThiThu;
     }
 }
 
