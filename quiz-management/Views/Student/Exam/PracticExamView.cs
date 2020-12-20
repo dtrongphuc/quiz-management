@@ -105,6 +105,8 @@ namespace quiz_management.Views.Student
 
         public event EventHandler ViewCurrentAnswers;
 
+        public event EventHandler ViewAllAnswers;
+
         public event EventHandler Timeout;
 
         public event EventHandler Submit;
@@ -138,6 +140,10 @@ namespace quiz_management.Views.Student
             cbQuestions.SelectedIndexChanged += (_, e) =>
             {
                 QuestionChange.Invoke(cbQuestions, e);
+                cbCurrentAnswers.Checked = false;
+                bool currentSate = cbAllCorrectAnswers.Checked;
+                cbAllCorrectAnswers.Checked = !currentSate;
+                cbAllCorrectAnswers.Checked = currentSate;
             };
 
             cbAnswers.ItemCheck += (_, e) =>
@@ -158,6 +164,11 @@ namespace quiz_management.Views.Student
             cbCurrentAnswers.CheckedChanged += (_, e) =>
             {
                 ViewCurrentAnswers.Invoke(cbCurrentAnswers, e);
+            };
+
+            cbAllCorrectAnswers.CheckedChanged += (_, e) =>
+            {
+                ViewAllAnswers.Invoke(cbAllCorrectAnswers, e);
             };
 
             btnSubmit.Click += (_, e) =>

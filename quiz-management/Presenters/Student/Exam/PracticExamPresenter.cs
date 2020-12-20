@@ -36,9 +36,20 @@ namespace quiz_management.Presenters.Student.Exam
             view.CoursesChange += View_CoursesChange;
             view.ExamCodeChange += View_ExamCodeChange;
             view.ViewCurrentAnswers += View_ViewCurrentAnswers;
+            view.ViewAllAnswers += View_ViewAllAnswers;
+        }
+
+        private void View_ViewAllAnswers(object sender, EventArgs e)
+        {
+            ShowCorrectAnswers(sender);
         }
 
         private void View_ViewCurrentAnswers(object sender, EventArgs e)
+        {
+            ShowCorrectAnswers(sender);
+        }
+
+        private void ShowCorrectAnswers(object sender)
         {
             var cb = (sender as CheckBox);
 
@@ -57,7 +68,7 @@ namespace quiz_management.Presenters.Student.Exam
                 foreach (int ansCode in correctAnswers)
                 {
                     int index = Questions[QuestionSelectedIndex].CauTraLoi.FindIndex(a => a.MaCauTraLoi == ansCode);
-                    indexes.Add(index);
+                    indexes.Add(index + 1);
                 }
                 view.CorrectAnswers = indexes;
             }
