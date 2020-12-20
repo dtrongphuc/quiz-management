@@ -86,6 +86,7 @@ namespace quiz_management.Views.Student
             {
                 cbExamCode.DataSource = null;
                 cbExamCode.DataSource = value;
+                if (value == null) aTimer.Stop();
             }
         }
 
@@ -197,7 +198,7 @@ namespace quiz_management.Views.Student
 
         public void Init()
         {
-            //SetTimer();
+            SetTimer();
             cbCourses.DisplayMember = "tenMonHoc";
             cbCourses.ValueMember = "maMonHoc";
             cbCourses.SelectedIndex = -1;

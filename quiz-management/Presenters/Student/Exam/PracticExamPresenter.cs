@@ -86,7 +86,7 @@ namespace quiz_management.Presenters.Student.Exam
             _maBoDe = int.Parse(examCode.ToString());
             GetData();
             BindingQuestion();
-            BindingCrashedData();
+            //BindingCrashedData();
         }
 
         private void View_CoursesChange(object sender, EventArgs e)
@@ -231,7 +231,7 @@ namespace quiz_management.Presenters.Student.Exam
             using (var db = new QuizDataContext())
             {
                 // Fetch exam data
-                var exam = db.boDes.Where(d => d.maMon == _selectedCourses).ToList();
+                var exam = db.boDes.FirstOrDefault(d => d.maBoDe == _maBoDe);
                 var questions = db.cTBoDes.Where(b => b.maBoDe == _maBoDe).Join(
                                 db.cauHois,
                                 b => b.maCauHoi,
@@ -345,11 +345,10 @@ namespace quiz_management.Presenters.Student.Exam
             }
         }
 
-        private void SetExamDataView(List<boDe> exam, int quantity)
+        private void SetExamDataView(boDe exam, int quantity)
         {
             if (exam == null) return;
-            //view.ExamTime = (int)exam.thoiGian;
-            view.ExamCodes = exam.Select(s => s.maBoDe).ToList();
+            view.ExamTime = (int)exam.thoiGian;
             view.QuestionQuantity = quantity;
         }
 
