@@ -56,8 +56,8 @@ namespace quiz_management.Views.Teacher.PaperManagement
         public DataGridView AllQuestion => dgvQuestionList;
         public DataGridView AllQuestionSelect => dgvQuestionSelectedList;
 
-        public List<CreatePaperWithQuestion> listQuestionselected { set => dgvQuestionSelectedList.DataSource = value; }
-        public List<CreatePaperWithQuestion> listQuestion { set => dgvQuestionList.DataSource = value; }
+        public BindingList<CreatePaperWithQuestion> listQuestionselected { set => dgvQuestionSelectedList.DataSource = value; }
+        public BindingList<CreatePaperWithQuestion> listQuestion { set => dgvQuestionList.DataSource = value; }
 
         public string Grade => cbbGrade.SelectedValue.ToString();
 

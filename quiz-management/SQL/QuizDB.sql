@@ -811,6 +811,5 @@ values
     'K11',
     10
 )
-insert into cTBoDe values (2, 5), (2, 6)
-
+insert into cTBoDe values (2, 7), (2, 6)
 select * from cTBoDe

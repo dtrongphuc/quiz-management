@@ -2,6 +2,7 @@
 using quiz_management.Views.Teacher.PaperManagement;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,8 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
         IUpdatePaperView view;
         int currenUserCode;
         int PaperId;
+        BindingList<CreatePaperWithQuestion> ListQuestionselcted = null;
+        BindingList<CreatePaperWithQuestion> ListQuestion = null;
         public UpdatePaperPresenter(IUpdatePaperView v, int code, int paperid)
         {
             view = v;
@@ -54,7 +57,7 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
 
         private void Loadpage(int code, int papercode)
         {
-
+            ListQuestion = new BindingList<CreatePaperWithQuestion>();
             using (var db = new QuizDataContext())
             {
                 //string teachername = db.nguoiDungs.Select(i => i.maNguoiDung == code).ToString();
@@ -83,12 +86,12 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
                     view.Subjectseleted = listsubject.FindIndex(a => a.maMonHoc == i.maMon);
                 }
             }
-            FillAll();
+            //FillAll();
         }
         private void LoaddgvFromPaper()
         {
-            List<CreatePaperWithQuestion> ListQuestionselcted = new List<CreatePaperWithQuestion>();
-            List<CreatePaperWithQuestion> ListQuestion = new List<CreatePaperWithQuestion>();
+            if (ListQuestionselcted == null)
+                ListQuestionselcted = new BindingList<CreatePaperWithQuestion>();
             using (var db = new QuizDataContext())
             {
                 var questionselected = db.cTBoDes.Where(i => i.maBoDe == PaperId).ToList();
@@ -109,7 +112,7 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
                     pp.QuestionID = i.maCauHoi.ToString();
                     pp.Question = i.cauHoi1.ToString();
 
-                    if (ListQuestionselcted.Find(x => x.QuestionID == pp.QuestionID) == null)
+                    if (ListQuestionselcted.Where(x => x.QuestionID == i.maCauHoi.ToString()).Count() == 0)
                         ListQuestion.Add(pp);
                 }
                 view.listQuestion = ListQuestion;
@@ -117,7 +120,6 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
         }
         private void FillAll()
         {
-            List<CreatePaperWithQuestion> listQT = new List<CreatePaperWithQuestion>();
             using (var db = new QuizDataContext())
             {
                 //binding câu hỏi
@@ -127,10 +129,10 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
                     CreatePaperWithQuestion pp = new CreatePaperWithQuestion();
                     pp.QuestionID = i.maCauHoi.ToString();
                     pp.Question = i.cauHoi1.ToString();
-                    listQT.Add(pp);
+                    ListQuestion.Add(pp);
                 }
             }
-            view.listQuestion = listQT;
+            view.listQuestion = ListQuestion;
         }
 
         //private void CreatePaper_View(object sender, EventArgs e)
@@ -172,40 +174,23 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
         //}
         private void MoveToLeft_View(object sender, EventArgs e)
         {
-            List<CreatePaperWithQuestion> ListQuestionselcted = new List<CreatePaperWithQuestion>();
-            List<CreatePaperWithQuestion> ListQuestion = new List<CreatePaperWithQuestion>();
-            List<int> indexs = new List<int>();
-            //lấy tất cả các items bên danh sách câu ra list
-            foreach (DataGridViewRow i in view.AllQuestionSelect.Rows)
-            {
-                CreatePaperWithQuestion pp = new CreatePaperWithQuestion();
-                pp.QuestionID = i.Cells["MaCauHoiDaChon"].Value.ToString();
-                pp.Question = i.Cells["CauHoiDaChon"].Value.ToString();
 
-                ListQuestionselcted.Add(pp);
-            }
             //lấy câu hỏi được chọn 
             //xóa những item dc chọn trong  danh sách question 
             //them item vao danh sách cau hỏi đã chọn
+            if (ListQuestionselcted == null)
+                ListQuestionselcted = new BindingList<CreatePaperWithQuestion>();
             foreach (DataGridViewRow i in view.AllQuestionSelect.SelectedRows)
             {
                 CreatePaperWithQuestion pp = new CreatePaperWithQuestion();
                 pp.QuestionID = i.Cells["MaCauHoiDaChon"].Value.ToString();
                 pp.Question = i.Cells["CauHoiDaChon"].Value.ToString();
 
-                ListQuestionselcted.RemoveAt(i.Index);
+                var temp = ListQuestionselcted.Where(x => x.QuestionID == i.Cells["MaCauHoiDaChon"].Value.ToString()).ToList();
+                ListQuestionselcted.Remove(temp[0]);
                 ListQuestion.Add(pp);
             }
             view.listQuestionselected = ListQuestionselcted;
-
-            foreach (DataGridViewRow i in view.AllQuestion.Rows)
-            {
-                CreatePaperWithQuestion pp = new CreatePaperWithQuestion();
-                pp.QuestionID = i.Cells["MaCauHoi"].Value.ToString();
-                pp.Question = i.Cells["CauHoi1"].Value.ToString();
-
-                ListQuestion.Add(pp);
-            }
             view.listQuestion = ListQuestion;
 
             using (var db = new QuizDataContext())
@@ -223,42 +208,24 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
 
         private void MoveToRight_View(object sender, EventArgs e)
         {
-            List<CreatePaperWithQuestion> ListQuestionselcted = new List<CreatePaperWithQuestion>();
-            List<CreatePaperWithQuestion> ListQuestion = new List<CreatePaperWithQuestion>();
-            List<int> indexs = new List<int>();
-            //lấy tất cả các items bên danh sách câu ra list
-            foreach (DataGridViewRow i in view.AllQuestion.Rows)
-            {
-                CreatePaperWithQuestion pp = new CreatePaperWithQuestion();
-                pp.QuestionID = i.Cells["MaCauHoi"].Value.ToString();
-                pp.Question = i.Cells["CauHoi1"].Value.ToString();
-
-                ListQuestion.Add(pp);
-            }
             //lấy câu hỏi được chọn 
             //xóa những item dc chọn trong  danh sách question 
             //them item vao danh sách cau hỏi đã chọn
+            if (ListQuestionselcted == null)
+                ListQuestionselcted = new BindingList<CreatePaperWithQuestion>();
             foreach (DataGridViewRow i in view.AllQuestion.SelectedRows)
             {
                 CreatePaperWithQuestion pp = new CreatePaperWithQuestion();
                 pp.QuestionID = i.Cells["MaCauHoi"].Value.ToString();
                 pp.Question = i.Cells["CauHoi1"].Value.ToString();
 
-                ListQuestion.RemoveAt(i.Index);
+                var temp = ListQuestionselcted.Where(x => x.QuestionID == i.Cells["MaCauHoi"].Value.ToString()).ToList();
+                ListQuestion.Remove(temp[0]);
                 ListQuestionselcted.Add(pp);
             }
             view.listQuestion = ListQuestion;
-
-            foreach (DataGridViewRow i in view.AllQuestionSelect.Rows)
-            {
-                CreatePaperWithQuestion pp = new CreatePaperWithQuestion();
-                pp.QuestionID = i.Cells["MaCauHoiDaChon"].Value.ToString();
-                pp.Question = i.Cells["CauHoiDaChon"].Value.ToString();
-
-                ListQuestionselcted.Add(pp);
-            }
             view.listQuestionselected = ListQuestionselcted;
-            
+
             //update thay đổi dô db
             using (var db = new QuizDataContext())
             {
