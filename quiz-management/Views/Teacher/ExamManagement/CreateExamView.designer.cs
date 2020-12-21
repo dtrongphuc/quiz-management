@@ -33,17 +33,17 @@
             this.cbBoDe = new System.Windows.Forms.ComboBox();
             this.dtpNgayThi = new System.Windows.Forms.DateTimePicker();
             this.dgvThiSinh = new System.Windows.Forms.DataGridView();
+            this.ThiSinhDuocChon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenNguoiDungDuocChon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnMoveRight = new System.Windows.Forms.Button();
             this.btnMoveLeft = new System.Windows.Forms.Button();
             this.btnExam = new System.Windows.Forms.Button();
             this.cbMonHoc = new System.Windows.Forms.ComboBox();
             this.dtgHocSinh = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ThiSinhDuocChon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenNguoiDungDuocChon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HocSinhDuocChon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenNguoidung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThiSinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgHocSinh)).BeginInit();
             this.SuspendLayout();
@@ -104,6 +104,22 @@
             this.dgvThiSinh.Size = new System.Drawing.Size(326, 282);
             this.dgvThiSinh.TabIndex = 6;
             // 
+            // ThiSinhDuocChon
+            // 
+            this.ThiSinhDuocChon.DataPropertyName = "maNguoiDung";
+            this.ThiSinhDuocChon.FillWeight = 30.52284F;
+            this.ThiSinhDuocChon.HeaderText = "MSV";
+            this.ThiSinhDuocChon.Name = "ThiSinhDuocChon";
+            this.ThiSinhDuocChon.ReadOnly = true;
+            // 
+            // tenNguoiDungDuocChon
+            // 
+            this.tenNguoiDungDuocChon.DataPropertyName = "tenNguoiDung";
+            this.tenNguoiDungDuocChon.FillWeight = 98.47716F;
+            this.tenNguoiDungDuocChon.HeaderText = "Tên Hoc Sinh";
+            this.tenNguoiDungDuocChon.Name = "tenNguoiDungDuocChon";
+            this.tenNguoiDungDuocChon.ReadOnly = true;
+            // 
             // btnMoveRight
             // 
             this.btnMoveRight.Location = new System.Drawing.Point(381, 267);
@@ -148,6 +164,8 @@
             // 
             this.dtgHocSinh.AllowUserToAddRows = false;
             this.dtgHocSinh.AllowUserToDeleteRows = false;
+            this.dtgHocSinh.AllowUserToResizeColumns = false;
+            this.dtgHocSinh.AllowUserToResizeRows = false;
             this.dtgHocSinh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgHocSinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgHocSinh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -160,6 +178,24 @@
             this.dtgHocSinh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgHocSinh.Size = new System.Drawing.Size(326, 282);
             this.dtgHocSinh.TabIndex = 22;
+            // 
+            // HocSinhDuocChon
+            // 
+            this.HocSinhDuocChon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.HocSinhDuocChon.DataPropertyName = "maNguoidung";
+            this.HocSinhDuocChon.FillWeight = 30.52284F;
+            this.HocSinhDuocChon.HeaderText = "MSV";
+            this.HocSinhDuocChon.Name = "HocSinhDuocChon";
+            this.HocSinhDuocChon.ReadOnly = true;
+            // 
+            // tenNguoidung
+            // 
+            this.tenNguoidung.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tenNguoidung.DataPropertyName = "tenNguoidung";
+            this.tenNguoidung.FillWeight = 98.47716F;
+            this.tenNguoidung.HeaderText = "Tên Hoc Sinh";
+            this.tenNguoidung.Name = "tenNguoidung";
+            this.tenNguoidung.ReadOnly = true;
             // 
             // label5
             // 
@@ -182,40 +218,6 @@
             this.label1.Size = new System.Drawing.Size(132, 17);
             this.label1.TabIndex = 24;
             this.label1.Text = "Danh sách Thí Sinh";
-            // 
-            // ThiSinhDuocChon
-            // 
-            this.ThiSinhDuocChon.DataPropertyName = "maNguoiDung";
-            this.ThiSinhDuocChon.FillWeight = 30.52284F;
-            this.ThiSinhDuocChon.HeaderText = "MSV";
-            this.ThiSinhDuocChon.Name = "ThiSinhDuocChon";
-            this.ThiSinhDuocChon.ReadOnly = true;
-            // 
-            // tenNguoiDungDuocChon
-            // 
-            this.tenNguoiDungDuocChon.DataPropertyName = "tenNguoiDung";
-            this.tenNguoiDungDuocChon.FillWeight = 98.47716F;
-            this.tenNguoiDungDuocChon.HeaderText = "Tên Hoc Sinh";
-            this.tenNguoiDungDuocChon.Name = "tenNguoiDungDuocChon";
-            this.tenNguoiDungDuocChon.ReadOnly = true;
-            // 
-            // HocSinhDuocChon
-            // 
-            this.HocSinhDuocChon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.HocSinhDuocChon.DataPropertyName = "maNguoidung";
-            this.HocSinhDuocChon.FillWeight = 30.52284F;
-            this.HocSinhDuocChon.HeaderText = "MSV";
-            this.HocSinhDuocChon.Name = "HocSinhDuocChon";
-            this.HocSinhDuocChon.ReadOnly = true;
-            // 
-            // tenNguoidung
-            // 
-            this.tenNguoidung.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tenNguoidung.DataPropertyName = "tenNguoidung";
-            this.tenNguoidung.FillWeight = 98.47716F;
-            this.tenNguoidung.HeaderText = "Tên Hoc Sinh";
-            this.tenNguoidung.Name = "tenNguoidung";
-            this.tenNguoidung.ReadOnly = true;
             // 
             // CreateExamView
             // 

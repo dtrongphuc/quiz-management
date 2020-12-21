@@ -51,8 +51,8 @@ namespace quiz_management.Views.Teacher.ExamManagement
         public DateTime NgayThi => dtpNgayThi.Value;
 
         public List<monHoc> lstMonHoc { set => cbMonHoc.DataSource = value; }
-        public List<thongTin> lstHocSinh { set => dtgHocSinh.DataSource = value; }
-        public List<thongTin> lstThiSinh { set => dgvThiSinh.DataSource = value; }
+        public BindingList<thongTin> lstHocSinh { set => dtgHocSinh.DataSource = value; }
+        public BindingList<thongTin> lstThiSinh { set => dgvThiSinh.DataSource = value; }
         public List<boDe> lstDeThi { set =>cbBoDe.DataSource = value; }
 
 

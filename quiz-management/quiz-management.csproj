@@ -184,6 +184,12 @@
     </Compile>
     <Compile Include="Views\Teacher\ExamManagement\ICreateExamView.cs" />
     <Compile Include="Views\Teacher\ExamManagement\IExamListView.cs" />
+    <Compile Include="Views\Teacher\ExamManagement\UpdateExamView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Teacher\ExamManagement\UpdateExamView.Designer.cs">
+      <DependentUpon>UpdateExamView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Teacher\Main\MainTeacherView.cs">
       <SubType>Form</SubType>
     </Compile>

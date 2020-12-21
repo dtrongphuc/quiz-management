@@ -10,6 +10,7 @@
 	PRIMARY KEY (maNguoiDung)
 )
 
+select * from nguoiDung
 CREATE TABLE Lop
 (
 	maKhoiLop varchar(5),
@@ -46,6 +47,8 @@ CREATE TABLE thongTin
 	PRIMARY KEY (maNguoidung)
 )
 select * from thongTin
+insert into thongTin(maNguoidung,tenNguoiDung,ngaySinh,maLopHoc)values('3','Nguyễn Hiếu Nghĩa','2000-01-10',1)
+
 
 ALTER TABLE thongTin
 ADD CONSTRAINT df_maLopHoc
@@ -166,7 +169,7 @@ ALTER TABLE  dbo.cTKetQua ADD CONSTRAINT FK_cTKetQua_dapAn FOREIGN KEY (maCauHoi
 
 CREATE TABLE lichThi
 (
-    maLichThi INT IDENTITY,
+    maLichThi INT,
 	maNguoiDung INT,
 	maMonHoc INT,
 	ngayThi DATE,

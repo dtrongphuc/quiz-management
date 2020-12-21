@@ -2,6 +2,7 @@
 using quiz_management.Views.Teacher.ExamManagement;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
     class ExamListPresenter
     {
         IExamListView view;
-        List<TestSchedule> lst;
+        BindingList<TestSchedule> lst;
         int currentcode;
         public ExamListPresenter(IExamListView v, int code)
         {
@@ -23,22 +24,22 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
 
         private void Initialize()
         {
-            lst = new List<TestSchedule>();
+            lst = new BindingList<TestSchedule>();
             view.GobackBefore += View_GoBackBefore;
             view.Delete += View_Delete;
             view.AddExam += view_CreateExam;
             using (var db = new QuizDataContext())
             {
-                var temp = db.lichThis.ToList();
-
-                foreach (lichThi i in temp)
+                var temp = db.lichThis.GroupBy(x => x.maLichThi).Select(xs => new { lt = xs.Select(d => d)}).ToList();
+                foreach (var i in temp)
                 {
+                    var lstlichthi = i.lt.ToList();
                     TestSchedule ts = new TestSchedule();
-                    ts.MaLichThi = i.maLichThi;
-                    ts.MaDe = i.maBoDe;
-                    ts.TenMonHoc = i.monHoc.tenMonHoc;
-                    ts.SLThiSinh = db.lichThis.Where(p => p.maLichThi == i.maLichThi).Count();
-                    ts.NgayThi = i.ngayThi;
+                    ts.MaLichThi = lstlichthi[0].maLichThi;
+                    ts.MaDe = lstlichthi[0].maBoDe;
+                    ts.TenMonHoc = lstlichthi[0].monHoc.tenMonHoc;
+                    ts.SLThiSinh = db.lichThis.Where(p => p.maLichThi == lstlichthi[0].maLichThi).Count();
+                    ts.NgayThi = lstlichthi[0].ngayThi;
                     lst.Add(ts);
                 }
 

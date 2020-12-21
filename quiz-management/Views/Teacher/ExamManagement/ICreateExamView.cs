@@ -1,6 +1,7 @@
 ﻿using quiz_management.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,8 +16,8 @@ namespace quiz_management.Views.Teacher.ExamManagement
         string monHocChon { get; }
         List<boDe> lstDeThi { set; }
         string DeThiChon { get; }
-        List<thongTin> lstHocSinh { set; }
-        List<thongTin> lstThiSinh { set; }
+        BindingList<thongTin> lstHocSinh { set; }
+        BindingList<thongTin> lstThiSinh { set; }
         DataGridView lstThiSinhChon { get; }
         DataGridView lstHocSinhChon { get; }
 

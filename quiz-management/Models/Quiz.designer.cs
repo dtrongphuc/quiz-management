@@ -2978,7 +2978,7 @@ namespace quiz_management.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maLichThi", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maLichThi", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int maLichThi
 		{
 			get

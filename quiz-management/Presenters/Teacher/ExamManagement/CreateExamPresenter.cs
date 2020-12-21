@@ -2,6 +2,7 @@
 using quiz_management.Views.Teacher.ExamManagement;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
     {
         ICreateExamView view;
         int currentcode;
-        List<thongTin> lstHocSinh;
+        BindingList<thongTin> lstHocSinh;
         List<monHoc> lstMonHoc;
         List<boDe> lstbode;
-        List<thongTin> lstThiSinh;
+        BindingList<thongTin> lstThiSinh;
         public CreateExamPresenter(ICreateExamView v, int code)
         {
             view = v;
@@ -55,7 +56,7 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
         private void View_MoveLeft(object sender, EventArgs e)
         {
             if (lstHocSinh == null)
-                lstHocSinh = new List<thongTin>();
+                lstHocSinh = new BindingList<thongTin>();
             foreach (DataGridViewRow i in view.lstThiSinhChon.SelectedRows)
             {
                 var id = i.Cells["ThiSinhDuocChon"].Value.ToString();
@@ -74,10 +75,11 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
         private void View_MoveRight(object sender, EventArgs e)
         {
             if (lstThiSinh == null)
-                lstThiSinh = new List<thongTin>();
+                lstThiSinh = new BindingList<thongTin>();
             foreach (DataGridViewRow i in view.lstHocSinhChon.SelectedRows)
             {
                 var id = i.Cells["HocSinhDuocChon"].Value.ToString();
+               
                 var temp = lstHocSinh.Where(x => x.maNguoidung == int.Parse(id)).ToList();
                 thongTin tt = new thongTin();
                 tt = temp[0];
@@ -113,10 +115,12 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             }    
             using (var db = new QuizDataContext())
             {
+                int malt = db.lichThis.Max(p => p.maLichThi);
                 foreach (thongTin i in lstThiSinh)
                 {
                     db.lichThis.InsertOnSubmit(new lichThi
                     {
+                        maLichThi = (malt + 1),
                         maNguoiDung = i.maNguoidung,
                         maMonHoc = int.Parse(view.monHocChon),
                         ngayThi = view.NgayThi,
@@ -143,9 +147,9 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             return lstbd;
         }
 
-        private List<thongTin> FindByBoDeId(string mak)
+        private BindingList<thongTin> FindByBoDeId(string mak)
         {
-            List<thongTin> lsttt = new List<thongTin>();
+            BindingList<thongTin> lsttt = new BindingList<thongTin>();
             using (var db = new QuizDataContext())
             {
                 var temp = db.Lops.Where(l => l.maKhoiLop == mak).Join(db.thongTins,
