@@ -1,6 +1,7 @@
 ﻿using quiz_management.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,8 +19,8 @@ namespace quiz_management.Views.Teacher.PaperManagement
         List<monHoc> SubjectList { set; }
         string Subject { get; }
         int Subjectseleted { set; }
-        List<CreatePaperWithQuestion> listQuestion { set; }
-        List<CreatePaperWithQuestion> listQuestionselected { set; }
+        BindingList<CreatePaperWithQuestion> listQuestion { set; }
+        BindingList<CreatePaperWithQuestion> listQuestionselected { set; }
         DataGridView AllQuestion { get; }
         DataGridView AllQuestionSelect { get; }
 
