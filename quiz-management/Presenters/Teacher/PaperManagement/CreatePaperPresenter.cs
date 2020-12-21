@@ -131,6 +131,7 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
                         db.SubmitChanges();
                     }
                     view.ShowMessage("Thêm thành công");
+                    view.ShowPaperListView(currenUserCode);
                 }
                 //}
                 //else
