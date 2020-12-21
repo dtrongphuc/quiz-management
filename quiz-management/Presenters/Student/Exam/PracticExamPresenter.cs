@@ -14,7 +14,6 @@ namespace quiz_management.Presenters.Student.Exam
         private IPracticExamView view;
         private int currentUserCode;
         private int _maBoDe = 1;
-        private int _resultCode = -1;
         private int _selectedCourses;
 
         public List<Question> Questions = new List<Question>();
@@ -36,6 +35,12 @@ namespace quiz_management.Presenters.Student.Exam
             view.ExamCodeChange += View_ExamCodeChange;
             view.ViewCurrentAnswers += View_ViewCurrentAnswers;
             view.ViewAllAnswers += View_ViewAllAnswers;
+            view.StatisticClicked += View_StatisticClicked;
+        }
+
+        private void View_StatisticClicked(object sender, EventArgs e)
+        {
+            view.ShowStatisticView(currentUserCode);
         }
 
         private void View_ViewAllAnswers(object sender, EventArgs e)
@@ -129,7 +134,7 @@ namespace quiz_management.Presenters.Student.Exam
         {
             view.ShowMessage("Hết giờ", "Đã hết thời gian làm bài. Hệ thống sẽ tự động nộp bài của bạn");
             int timeLeft = view.TimeLeft;
-            bool excute = UpdateResult(timeLeft, view.Remain);
+            bool excute = UpdateResult();
             if (!excute) view.ShowMessage("Lỗi", "Đã có lỗi xảy ra");
             else view.ShowStudentView(currentUserCode);
         }
@@ -147,8 +152,7 @@ namespace quiz_management.Presenters.Student.Exam
             }
 
             if (confirm == false) return;
-            int timeLeft = view.TimeLeft;
-            bool excute = UpdateResult(timeLeft, view.Remain);
+            bool excute = UpdateResult();
             if (!excute) view.ShowMessage("Lỗi", "Đã có lỗi xảy ra");
             else view.ShowStudentView(currentUserCode);
         }
@@ -178,17 +182,6 @@ namespace quiz_management.Presenters.Student.Exam
             Questions.ElementAt(QuestionSelectedIndex).Checked = state;
             view.Remain = Questions.Count - view.Completed;
             ans.ElementAt(index).Checked = state;
-
-            if (!state)
-            {
-                DeleteAnswerDB(Questions.ElementAt(QuestionSelectedIndex).MaCauHoi,
-                ans.ElementAt(index).MaCauTraLoi);
-            }
-            else
-            {
-                StoreCheckAnswer(Questions.ElementAt(QuestionSelectedIndex).MaCauHoi,
-                ans.ElementAt(index).MaCauTraLoi, view.TimeLeft);
-            }
 
             foreach (Answer item in ans)
             {
@@ -328,77 +321,64 @@ namespace quiz_management.Presenters.Student.Exam
             view.Answers = Questions.ElementAt(QuestionSelectedIndex).CauTraLoi;
         }
 
-        private void StoreCheckAnswer(int questionCode, int answerCode, int time)
+        private bool UpdateResult()
         {
-            using (var db = new QuizDataContext())
+            try
             {
-                if (_resultCode <= 0)
+                using (var db = new QuizDataContext())
                 {
-                    var result = db.ketQuas.Where(k => k.maNguoiDung == currentUserCode)
-                                        .Where(k => k.maBoDe == _maBoDe)
-                                        .Where(k => k.trangThai == 0)
-                                        .Select(s => s.maKetQua);
-                    if (result.Any()) _resultCode = result.FirstOrDefault();
-                    else
+                    int corrected = 0;
+                    int wrong = 0;
+                    foreach (Question q in Questions)
                     {
-                        //Tao ket qua moi neu chua ton tai
-                        //Trang thai = 0 -> chua hoan thanh bai thi
-                        var newResult = new ketQua
+                        if (q.Checked)
                         {
-                            maNguoiDung = currentUserCode,
-                            maBoDe = _maBoDe,
-                            cauDung = null,
-                            cauSai = null,
-                            chuaLam = null,
-                            ngayLam = DateTime.Today,
-                            trangThai = 0,
-                            thoiGian = null,
-                            diem = null
+                            var correctAnswers = db.dapAns.Where(d => d.maCauHoi == q.MaCauHoi);
+                            bool check = true;
+                            foreach (Answer ans in q.CauTraLoi)
+                            {
+                                var a = correctAnswers.FirstOrDefault(d => d.maCauTraloi == ans.MaCauTraLoi);
+                                bool isCorrectAnswer = a.dapAn1 == 1;
+                                if (ans.Checked != isCorrectAnswer)
+                                {
+                                    check = false;
+                                    break;
+                                }
+                            }
+                            if (check) corrected++;
+                        }
+                    }
+
+                    wrong = Questions.Count - corrected;
+
+                    var result = db.luyenTaps.Where(t => t.nguoiDung.maNguoiDung == currentUserCode);
+                    if (!result.Any())
+                    {
+                        var user = db.nguoiDungs.FirstOrDefault(n => n.maNguoiDung == currentUserCode);
+                        var lt = new luyenTap
+                        {
+                            nguoiDung = user,
+                            ngay = DateTime.Now,
+                            soCauDung = corrected,
+                            soCauSai = wrong
                         };
 
-                        db.ketQuas.InsertOnSubmit(newResult);
-                        db.SubmitChanges();
-
-                        _resultCode = newResult.maKetQua;
+                        db.luyenTaps.InsertOnSubmit(lt);
                     }
-                }
+                    else
+                    {
+                        result.FirstOrDefault().soCauDung += corrected;
+                        result.FirstOrDefault().soCauSai += wrong;
+                    }
 
-                //Them dap an vao chi tiet ket qua
-                db.cTKetQuas.InsertOnSubmit(new cTKetQua
-                {
-                    maKetQua = _resultCode,
-                    maCauHoi = questionCode,
-                    maCauTraLoi = answerCode,
-                    thoiGian = time
-                });
-                db.SubmitChanges();
-            };
-        }
-
-        private void DeleteAnswerDB(int questionCode, int answerCode)
-        {
-            using (var db = new QuizDataContext())
+                    db.SubmitChanges();
+                };
+                return true;
+            }
+            catch (Exception e)
             {
-                var row = db.cTKetQuas.FirstOrDefault(r =>
-                (r.maCauHoi == questionCode) && (r.maCauTraLoi == answerCode));
-                if (row.maKetQua != _resultCode) return;
-                db.cTKetQuas.DeleteOnSubmit(row);
-                db.SubmitChanges();
-            };
-        }
-
-        private bool UpdateResult(int time, int remainCount)
-        {
-            if (_resultCode <= 0) return false;
-            using (var db = new QuizDataContext())
-            {
-                var result = db.ketQuas.FirstOrDefault(k => k.maKetQua == _resultCode);
-                result.chuaLam = remainCount;
-                result.thoiGian = time;
-                result.trangThai = 1;
-                db.SubmitChanges();
-            };
-            return true;
+                return false;
+            }
         }
     }
 }

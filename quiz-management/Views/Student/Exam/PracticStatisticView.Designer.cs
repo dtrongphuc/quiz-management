@@ -38,12 +38,12 @@ namespace quiz_management.Views.Student.Exam
             this.txtStudentName = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.lbCount = new System.Windows.Forms.Label();
+            this.lbTotal = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbCorrectedCount = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lbWrongCount = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -165,7 +165,7 @@ namespace quiz_management.Views.Student.Exam
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.lbCount);
+            this.splitContainer2.Panel1.Controls.Add(this.lbTotal);
             this.splitContainer2.Panel1.Controls.Add(this.label1);
             // 
             // splitContainer2.Panel2
@@ -175,15 +175,15 @@ namespace quiz_management.Views.Student.Exam
             this.splitContainer2.SplitterDistance = 91;
             this.splitContainer2.TabIndex = 0;
             // 
-            // lbCount
+            // lbTotal
             // 
-            this.lbCount.AutoSize = true;
-            this.lbCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCount.Location = new System.Drawing.Point(456, 25);
-            this.lbCount.Name = "lbCount";
-            this.lbCount.Size = new System.Drawing.Size(59, 31);
-            this.lbCount.TabIndex = 1;
-            this.lbCount.Text = "100";
+            this.lbTotal.AutoSize = true;
+            this.lbTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotal.Location = new System.Drawing.Point(456, 25);
+            this.lbTotal.Name = "lbTotal";
+            this.lbTotal.Size = new System.Drawing.Size(29, 31);
+            this.lbTotal.TabIndex = 1;
+            this.lbTotal.Text = "0";
             // 
             // label1
             // 
@@ -203,27 +203,31 @@ namespace quiz_management.Views.Student.Exam
             // 
             // splitContainer3.Panel1
             // 
-            this.splitContainer3.Panel1.Controls.Add(this.label2);
+            this.splitContainer3.Panel1.Controls.Add(this.lbCorrectedCount);
             this.splitContainer3.Panel1.Controls.Add(this.label3);
             // 
             // splitContainer3.Panel2
             // 
-            this.splitContainer3.Panel2.Controls.Add(this.label4);
+            this.splitContainer3.Panel2.Controls.Add(this.lbWrongCount);
             this.splitContainer3.Panel2.Controls.Add(this.label5);
             this.splitContainer3.Size = new System.Drawing.Size(794, 228);
             this.splitContainer3.SplitterDistance = 378;
             this.splitContainer3.TabIndex = 0;
             // 
-            // label2
+            // lbCorrectedCount
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Green;
-            this.label2.Location = new System.Drawing.Point(139, 113);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 46);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "100";
+            this.lbCorrectedCount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbCorrectedCount.AutoSize = true;
+            this.lbCorrectedCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCorrectedCount.ForeColor = System.Drawing.Color.Green;
+            this.lbCorrectedCount.Location = new System.Drawing.Point(161, 113);
+            this.lbCorrectedCount.Name = "lbCorrectedCount";
+            this.lbCorrectedCount.Size = new System.Drawing.Size(42, 46);
+            this.lbCorrectedCount.TabIndex = 3;
+            this.lbCorrectedCount.Text = "0";
+            this.lbCorrectedCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
@@ -235,16 +239,17 @@ namespace quiz_management.Views.Student.Exam
             this.label3.TabIndex = 2;
             this.label3.Text = "ĐÚNG";
             // 
-            // label4
+            // lbWrongCount
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(163, 113);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 46);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "100";
+            this.lbWrongCount.AutoSize = true;
+            this.lbWrongCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWrongCount.ForeColor = System.Drawing.Color.Red;
+            this.lbWrongCount.Location = new System.Drawing.Point(183, 98);
+            this.lbWrongCount.Name = "lbWrongCount";
+            this.lbWrongCount.Size = new System.Drawing.Size(42, 46);
+            this.lbWrongCount.TabIndex = 5;
+            this.lbWrongCount.Text = "0";
+            this.lbWrongCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
@@ -298,11 +303,11 @@ namespace quiz_management.Views.Student.Exam
         private System.Windows.Forms.Label txtStudentName;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lbCount;
+        private System.Windows.Forms.Label lbTotal;
         private System.Windows.Forms.SplitContainer splitContainer3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbCorrectedCount;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbWrongCount;
         private System.Windows.Forms.Label label5;
     }
 }
