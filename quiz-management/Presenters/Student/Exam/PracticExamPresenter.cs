@@ -26,7 +26,6 @@ namespace quiz_management.Presenters.Student.Exam
             currentUserCode = userCode;
             SetUserDataView();
             BindingCourses();
-            //DataCrashed();
             view.QuestionChange += View_QuestionChange;
             view.AnswerCheck += View_AnswerCheck;
             view.Prev += View_Prev;
@@ -86,7 +85,6 @@ namespace quiz_management.Presenters.Student.Exam
             _maBoDe = int.Parse(examCode.ToString());
             GetData();
             BindingQuestion();
-            //BindingCrashedData();
         }
 
         private void View_CoursesChange(object sender, EventArgs e)
@@ -300,36 +298,6 @@ namespace quiz_management.Presenters.Student.Exam
             };
         }
 
-        private void DataCrashed()
-        {
-            using (var db = new QuizDataContext())
-            {
-                var result = db.ketQuas.Where(k => k.maNguoiDung == currentUserCode)
-                                    .Where(k => k.maBoDe == _maBoDe)
-                                    .Where(k => k.trangThai == 0)
-                                    .Select(s => s.maKetQua);
-                if (result.Any())
-                {
-                    _resultCode = result.FirstOrDefault();
-                    var detailResult = db.cTKetQuas.Where(k => k.maKetQua == _resultCode).ToList();
-                    int time = detailResult.Min(k => k.thoiGian).GetValueOrDefault();
-                    if (time > 0) view.ExamTime = time;
-                    foreach (var row in detailResult)
-                    {
-                        int index = Questions.FindIndex(x => x.MaCauHoi == row.maCauHoi);
-                        for (int j = 0; j < Questions.ElementAt(index).CauTraLoi.Count; j++)
-                        {
-                            if (Questions.ElementAt(index).CauTraLoi.ElementAt(j).MaCauTraLoi == row.maCauHoi)
-                            {
-                                Questions.ElementAt(index).Checked = true;
-                                Questions.ElementAt(index).CauTraLoi.ElementAt(j).Checked = true;
-                            }
-                        }
-                    }
-                }
-            };
-        }
-
         private void SetUserDataView()
         {
             using (var db = new QuizDataContext())
@@ -358,16 +326,6 @@ namespace quiz_management.Presenters.Student.Exam
             view.QuestionOrder = QuestionSelectedIndex + 1;
             view.QuestionString = Questions.ElementAt(QuestionSelectedIndex).CauHoi;
             view.Answers = Questions.ElementAt(QuestionSelectedIndex).CauTraLoi;
-        }
-
-        private void BindingCrashedData()
-        {
-            List<int> CheckedIndexes = Enumerable.Range(0, Questions.Count)
-                                                .Where(i => Questions[i].Checked == true)
-                                                .ToList();
-            view.QuestionsChecked = CheckedIndexes;
-            view.Remain = Questions.Count - CheckedIndexes.Count;
-            view.Completed = Questions.Count - view.Remain;
         }
 
         private void StoreCheckAnswer(int questionCode, int answerCode, int time)
