@@ -86,6 +86,7 @@ namespace quiz_management.Views.Student
             {
                 cbExamCode.DataSource = null;
                 cbExamCode.DataSource = value;
+                if (value == null) aTimer.Stop();
             }
         }
 
@@ -104,6 +105,8 @@ namespace quiz_management.Views.Student
         public event EventHandler ExamCodeChange;
 
         public event EventHandler ViewCurrentAnswers;
+
+        public event EventHandler ViewAllAnswers;
 
         public event EventHandler Timeout;
 
@@ -138,6 +141,10 @@ namespace quiz_management.Views.Student
             cbQuestions.SelectedIndexChanged += (_, e) =>
             {
                 QuestionChange.Invoke(cbQuestions, e);
+                cbCurrentAnswers.Checked = false;
+                bool currentSate = cbAllCorrectAnswers.Checked;
+                cbAllCorrectAnswers.Checked = !currentSate;
+                cbAllCorrectAnswers.Checked = currentSate;
             };
 
             cbAnswers.ItemCheck += (_, e) =>
@@ -158,6 +165,11 @@ namespace quiz_management.Views.Student
             cbCurrentAnswers.CheckedChanged += (_, e) =>
             {
                 ViewCurrentAnswers.Invoke(cbCurrentAnswers, e);
+            };
+
+            cbAllCorrectAnswers.CheckedChanged += (_, e) =>
+            {
+                ViewAllAnswers.Invoke(cbAllCorrectAnswers, e);
             };
 
             btnSubmit.Click += (_, e) =>
@@ -186,7 +198,7 @@ namespace quiz_management.Views.Student
 
         public void Init()
         {
-            //SetTimer();
+            SetTimer();
             cbCourses.DisplayMember = "tenMonHoc";
             cbCourses.ValueMember = "maMonHoc";
             cbCourses.SelectedIndex = -1;

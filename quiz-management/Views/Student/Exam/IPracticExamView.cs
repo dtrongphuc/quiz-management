@@ -36,6 +36,8 @@ namespace quiz_management.Views.Student.Exam
 
         event EventHandler ViewCurrentAnswers;
 
+        event EventHandler ViewAllAnswers;
+
         event EventHandler Timeout;
 
         event EventHandler Submit;

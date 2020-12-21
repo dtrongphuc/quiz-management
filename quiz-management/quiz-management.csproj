@@ -136,6 +136,12 @@
     <Compile Include="Views\Student\Exam\OfficialExamView.Designer.cs">
       <DependentUpon>OfficialExamView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Student\Exam\PracticStatisticView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Student\Exam\PracticStatisticView.Designer.cs">
+      <DependentUpon>PracticStatisticView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Student\InfoPersonal\IProfileView.cs" />
     <Compile Include="Views\Student\InfoPersonal\IResultExamView.cs" />
     <Compile Include="Views\Student\InfoPersonal\ITestScheduleView.cs" />
@@ -235,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Student\Exam\OfficialExamView.resx">
       <DependentUpon>OfficialExamView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Student\Exam\PracticStatisticView.resx">
+      <DependentUpon>PracticStatisticView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Student\InfoPersonal\ProfileView.resx">
       <DependentUpon>ProfileView.cs</DependentUpon>
