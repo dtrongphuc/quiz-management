@@ -30,12 +30,6 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
             }
             LoadPage(code);
         }
-
-        //private void dgvSelectChange_View(object sender, EventArgs e)
-        //{
-        //    paperidpresent = int.Parse(view.PaperID);
-        //}
-
         private void Delete_View(object sender, EventArgs e)
         {
             using (var db = new QuizDataContext())

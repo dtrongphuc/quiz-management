@@ -132,10 +132,7 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
                     }
                     view.ShowMessage("Thêm thành công");
                     view.ShowPaperListView(currenUserCode);
-                }
-                //}
-                //else
-                //    view.ShowMessage("Một đề ít nhất 20 câu hỏi!!");
+                }  view.ShowMessage("Một đề ít nhất 20 câu hỏi!!");
             }
             else
                 view.ShowMessage("Nhập mã đề!!");
