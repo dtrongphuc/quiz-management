@@ -108,6 +108,8 @@ namespace quiz_management.Views.Student
 
         public event EventHandler ViewAllAnswers;
 
+        public event EventHandler StatisticClicked;
+
         public event EventHandler Timeout;
 
         public event EventHandler Submit;
@@ -127,6 +129,14 @@ namespace quiz_management.Views.Student
             this.Hide();
             MainStudentView screen = new MainStudentView(userCode);
             screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
+        }
+
+        public void ShowStatisticView(int userCode)
+        {
+            this.Hide();
+            PracticStatisticView screen = new PracticStatisticView(userCode);
+            screen.FormClosed += (_, e) => this.Show();
             screen.Show();
         }
 
@@ -170,6 +180,11 @@ namespace quiz_management.Views.Student
             cbAllCorrectAnswers.CheckedChanged += (_, e) =>
             {
                 ViewAllAnswers.Invoke(cbAllCorrectAnswers, e);
+            };
+
+            btnStatistic.Click += (_, e) =>
+            {
+                StatisticClicked.Invoke(btnStatistic, e);
             };
 
             btnSubmit.Click += (_, e) =>
