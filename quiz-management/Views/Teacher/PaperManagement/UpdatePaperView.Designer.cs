@@ -45,11 +45,11 @@
             this.lbTeacher = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.cbbSubject = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cbbGrade = new System.Windows.Forms.ComboBox();
             this.tbPaperID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.tbSubject = new System.Windows.Forms.TextBox();
+            this.tbGrade = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionSelectedList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionList)).BeginInit();
             this.SuspendLayout();
@@ -226,22 +226,11 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(736, 165);
+            this.label8.Location = new System.Drawing.Point(725, 165);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(78, 20);
             this.label8.TabIndex = 48;
             this.label8.Text = "Môn học:";
-            // 
-            // cbbSubject
-            // 
-            this.cbbSubject.DisplayMember = "tenMonHoc";
-            this.cbbSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbSubject.FormattingEnabled = true;
-            this.cbbSubject.Location = new System.Drawing.Point(827, 157);
-            this.cbbSubject.Name = "cbbSubject";
-            this.cbbSubject.Size = new System.Drawing.Size(179, 28);
-            this.cbbSubject.TabIndex = 47;
-            this.cbbSubject.ValueMember = "maMonHoc";
             // 
             // label2
             // 
@@ -252,17 +241,6 @@
             this.label2.Size = new System.Drawing.Size(74, 20);
             this.label2.TabIndex = 46;
             this.label2.Text = "Khối lớp:";
-            // 
-            // cbbGrade
-            // 
-            this.cbbGrade.DisplayMember = "tenKhoiLop";
-            this.cbbGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbGrade.FormattingEnabled = true;
-            this.cbbGrade.Location = new System.Drawing.Point(451, 157);
-            this.cbbGrade.Name = "cbbGrade";
-            this.cbbGrade.Size = new System.Drawing.Size(186, 28);
-            this.cbbGrade.TabIndex = 45;
-            this.cbbGrade.ValueMember = "maKhoiLop";
             // 
             // tbPaperID
             // 
@@ -283,15 +261,33 @@
             this.label4.TabIndex = 43;
             this.label4.Text = "Mã đề:";
             // 
+            // tbSubject
+            // 
+            this.tbSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSubject.Location = new System.Drawing.Point(820, 158);
+            this.tbSubject.Name = "tbSubject";
+            this.tbSubject.ReadOnly = true;
+            this.tbSubject.Size = new System.Drawing.Size(179, 27);
+            this.tbSubject.TabIndex = 49;
+            // 
+            // tbGrade
+            // 
+            this.tbGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbGrade.Location = new System.Drawing.Point(451, 158);
+            this.tbGrade.Name = "tbGrade";
+            this.tbGrade.ReadOnly = true;
+            this.tbGrade.Size = new System.Drawing.Size(186, 27);
+            this.tbGrade.TabIndex = 50;
+            // 
             // UpdatePaperView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1042, 667);
+            this.Controls.Add(this.tbGrade);
+            this.Controls.Add(this.tbSubject);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.cbbSubject);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.cbbGrade);
             this.Controls.Add(this.tbPaperID);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label7);
@@ -334,10 +330,10 @@
         private System.Windows.Forms.Label lbTeacher;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox cbbSubject;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbbGrade;
         private System.Windows.Forms.TextBox tbPaperID;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox tbSubject;
+        private System.Windows.Forms.TextBox tbGrade;
     }
 }

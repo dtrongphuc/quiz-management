@@ -17,6 +17,8 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
         int PaperId;
         BindingList<CreatePaperWithQuestion> ListQuestionselcted = null;
         BindingList<CreatePaperWithQuestion> ListQuestion = null;
+        string gradeID;
+        int subjectID;
         public UpdatePaperPresenter(IUpdatePaperView v, int code, int paperid)
         {
             view = v;
@@ -96,23 +98,12 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
                 //mã đề
                 view.PaperID = papercode.ToString();
 
-                //binding khối lớp
-                var listclass = db.khoiLops.ToList();
-                view.GradeList = listclass;
-                //binding khối lớp trong đề thi 
-                foreach (var i in db.boDes.Where(i => i.maBoDe == papercode))
-                {
-                    view.Gradeselected = listclass.FindIndex(a => a.maKhoiLop == i.maKhoi);
-                }
-
-                //binding môn học
-                var listsubject = db.monHocs.ToList();
-                view.SubjectList = listsubject;
-                //binding môn học trong đề thi 
-                foreach (var i in db.boDes.Where(i => i.maBoDe == papercode))
-                {
-                    view.Subjectseleted = listsubject.FindIndex(a => a.maMonHoc == i.maMon);
-                }
+                //khối lớp
+                view.GradeList = db.boDes.Where(i => i.maBoDe == papercode).Select(i => i.khoiLop.tenKhoiLop).ToList()[0];
+                gradeID = db.boDes.Where(i => i.maBoDe == papercode).Select(i => i.khoiLop.maKhoiLop).ToList()[0];
+                //môn học
+                view.SubjectList = db.boDes.Where(i => i.maBoDe == papercode).Select(i => i.monHoc.tenMonHoc).ToList()[0];
+                subjectID = db.boDes.Where(i => i.maBoDe == papercode).Select(i => i.monHoc.maMonHoc).ToList()[0];
             }
             //FillAll();
         }
@@ -133,7 +124,7 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
                 }
                 view.listQuestionselected = ListQuestionselcted;
 
-                var listQuestions = db.cauHois.Where(i => i.maKhoiLop == view.Grade && i.maMonHoc == int.Parse(view.Subject)).ToList();
+                var listQuestions = db.cauHois.Where(i => i.maKhoiLop == gradeID && i.maMonHoc == subjectID).ToList();
                 foreach (var i in listQuestions)
                 {
                     CreatePaperWithQuestion pp = new CreatePaperWithQuestion();
@@ -151,7 +142,7 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
             using (var db = new QuizDataContext())
             {
                 //binding câu hỏi
-                var listQuestions = db.cauHois.Where(i => i.maKhoiLop == view.Grade && i.maMonHoc == int.Parse(view.Subject)).ToList();
+                var listQuestions = db.cauHois.Where(i => i.maKhoiLop == gradeID && i.maMonHoc == subjectID).ToList();
                 foreach (var i in listQuestions)
                 {
                     CreatePaperWithQuestion pp = new CreatePaperWithQuestion();

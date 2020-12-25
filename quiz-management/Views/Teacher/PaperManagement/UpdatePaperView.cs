@@ -36,22 +36,14 @@ namespace quiz_management.Views.Teacher.PaperManagement
             {
                 MoveToLeft?.Invoke(btnMoveToQuestionList, e);
             };
-            cbbGrade.SelectedIndexChanged += (_, e) =>
-             {
-                 GradeChange?.Invoke(cbbGrade, e);
-             };
-            cbbSubject.SelectedIndexChanged += (_, e) =>
-            {
-                SubjectChange?.Invoke(cbbSubject, e);
-            };
         }
 
         public string TeacherName { set => lbTeacher.Text = value; }
 
         public string PaperID { get => tbPaperID.Text; set => tbPaperID.Text = value; }
 
-        public List<khoiLop> GradeList { set => cbbGrade.DataSource = value; }
-        public int Gradeselected { set => cbbGrade.SelectedIndex = value; }
+        public string GradeList { set => tbGrade.Text = value; }
+        public string SubjectList { set => tbSubject.Text = value; }
 
         public DataGridView AllQuestion => dgvQuestionList;
         public DataGridView AllQuestionSelect => dgvQuestionSelectedList;
@@ -59,12 +51,11 @@ namespace quiz_management.Views.Teacher.PaperManagement
         public BindingList<CreatePaperWithQuestion> listQuestionselected { set => dgvQuestionSelectedList.DataSource = value; }
         public BindingList<CreatePaperWithQuestion> listQuestion { set => dgvQuestionList.DataSource = value; }
 
-        public string Grade => cbbGrade.SelectedValue.ToString();
+        //public string Grade => cbbGrade.SelectedValue.ToString();
 
-        public List<monHoc> SubjectList { set => cbbSubject.DataSource = value; }
-        public int Subjectseleted { set => cbbSubject.SelectedIndex = value; }
+        //public int Subjectseleted { set => cbbSubject.SelectedIndex = value; }
 
-        public string Subject => cbbSubject.SelectedValue.ToString();
+        //public string Subject => cbbSubject.SelectedValue.ToString();
 
         public event EventHandler MoveToRight;
         //public event EventHandler MoveAllToRight;

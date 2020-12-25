@@ -32,8 +32,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lbTeacher = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tbPaperID = new System.Windows.Forms.TextBox();
             this.dgvQuestionList = new System.Windows.Forms.DataGridView();
             this.MaCauHoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CauHoi1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,25 +92,6 @@
             this.label1.Size = new System.Drawing.Size(76, 17);
             this.label1.TabIndex = 4;
             this.label1.Text = "Giáo viên: ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(55, 150);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 20);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Mã đề:";
-            // 
-            // tbPaperID
-            // 
-            this.tbPaperID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPaperID.Location = new System.Drawing.Point(142, 143);
-            this.tbPaperID.Name = "tbPaperID";
-            this.tbPaperID.ReadOnly = true;
-            this.tbPaperID.Size = new System.Drawing.Size(168, 27);
-            this.tbPaperID.TabIndex = 9;
             // 
             // dgvQuestionList
             // 
@@ -202,7 +181,7 @@
             this.cbbGrade.DisplayMember = "tenKhoiLop";
             this.cbbGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbGrade.FormattingEnabled = true;
-            this.cbbGrade.Location = new System.Drawing.Point(442, 142);
+            this.cbbGrade.Location = new System.Drawing.Point(221, 151);
             this.cbbGrade.Name = "cbbGrade";
             this.cbbGrade.Size = new System.Drawing.Size(186, 28);
             this.cbbGrade.TabIndex = 19;
@@ -212,7 +191,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(355, 150);
+            this.label2.Location = new System.Drawing.Point(134, 159);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 20);
             this.label2.TabIndex = 20;
@@ -276,7 +255,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(727, 150);
+            this.label8.Location = new System.Drawing.Point(630, 159);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(78, 20);
             this.label8.TabIndex = 25;
@@ -287,7 +266,7 @@
             this.cbbSubject.DisplayMember = "tenMonHoc";
             this.cbbSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbSubject.FormattingEnabled = true;
-            this.cbbSubject.Location = new System.Drawing.Point(818, 142);
+            this.cbbSubject.Location = new System.Drawing.Point(721, 151);
             this.cbbSubject.Name = "cbbSubject";
             this.cbbSubject.Size = new System.Drawing.Size(179, 28);
             this.cbbSubject.TabIndex = 24;
@@ -311,8 +290,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dgvQuestionList);
-            this.Controls.Add(this.tbPaperID);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.linkGoBackBefore);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbTeacher);
@@ -333,8 +310,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbTeacher;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbPaperID;
         private System.Windows.Forms.DataGridView dgvQuestionList;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;

@@ -13,12 +13,8 @@ namespace quiz_management.Views.Teacher.PaperManagement
     {
         string TeacherName { set; }
         string PaperID { get; set; }
-        List<khoiLop> GradeList { set; }
-        int Gradeselected { set; }
-        string Grade { get; }
-        List<monHoc> SubjectList { set; }
-        string Subject { get; }
-        int Subjectseleted { set; }
+        string GradeList { set; }
+        string SubjectList { set; }
         BindingList<CreatePaperWithQuestion> listQuestion { set; }
         BindingList<CreatePaperWithQuestion> listQuestionselected { set; }
         DataGridView AllQuestion { get; }
