@@ -17,6 +17,8 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
         int PaperId;
         BindingList<CreatePaperWithQuestion> ListQuestionselcted = null;
         BindingList<CreatePaperWithQuestion> ListQuestion = null;
+        string gradeID;
+        int subjectID;
         public UpdatePaperPresenter(IUpdatePaperView v, int code, int paperid)
         {
             view = v;
@@ -37,8 +39,36 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
 
         private void UpdatePaper_View(object sender, EventArgs e)
         {
-            view.ShowMessage("Cập nhật thành cộng");
-            view.ShowPaperListView(currenUserCode);
+            try
+            {
+                using (var db = new QuizDataContext())
+                {
+                    //item trong chi tiết bộ đề
+                    var itemsDetailpaper = db.cTBoDes.Where(i => i.maBoDe == int.Parse(view.PaperID)).ToList();
+                    foreach (var i in itemsDetailpaper)
+                    {
+                        db.cTBoDes.DeleteOnSubmit(i);
+                        db.SubmitChanges();
+                    }
+                    //tạo lại cho chi tiết bộ đề
+                    foreach (DataGridViewRow i in view.AllQuestionSelect.Rows)
+                    {
+                        db.cTBoDes.InsertOnSubmit(new cTBoDe
+                        {
+                            maBoDe = int.Parse(view.PaperID),
+                            maCauHoi = int.Parse(i.Cells["MaCauHoiDaChon"].Value.ToString())
+                        });
+                        db.SubmitChanges();
+                    }
+                }
+                //hiển thị thông báo thành công và quay lại trang danh sách đề thi 
+                view.ShowMessage("Cập nhật thành cộng");
+                view.ShowPaperListView(currenUserCode);
+            }
+            catch(Exception)
+            {
+                view.ShowMessage("có lỗi xảy ra, xin cập nhật lại!");
+            }
         }
 
         private void SubjectChange_View(object sender, EventArgs e)
@@ -68,23 +98,12 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
                 //mã đề
                 view.PaperID = papercode.ToString();
 
-                //binding khối lớp
-                var listclass = db.khoiLops.ToList();
-                view.GradeList = listclass;
-                //binding khối lớp trong đề thi 
-                foreach (var i in db.boDes.Where(i => i.maBoDe == papercode))
-                {
-                    view.Gradeselected = listclass.FindIndex(a => a.maKhoiLop == i.maKhoi);
-                }
-
-                //binding môn học
-                var listsubject = db.monHocs.ToList();
-                view.SubjectList = listsubject;
-                //binding môn học trong đề thi 
-                foreach (var i in db.boDes.Where(i => i.maBoDe == papercode))
-                {
-                    view.Subjectseleted = listsubject.FindIndex(a => a.maMonHoc == i.maMon);
-                }
+                //khối lớp
+                view.GradeList = db.boDes.Where(i => i.maBoDe == papercode).Select(i => i.khoiLop.tenKhoiLop).ToList()[0];
+                gradeID = db.boDes.Where(i => i.maBoDe == papercode).Select(i => i.khoiLop.maKhoiLop).ToList()[0];
+                //môn học
+                view.SubjectList = db.boDes.Where(i => i.maBoDe == papercode).Select(i => i.monHoc.tenMonHoc).ToList()[0];
+                subjectID = db.boDes.Where(i => i.maBoDe == papercode).Select(i => i.monHoc.maMonHoc).ToList()[0];
             }
             //FillAll();
         }
@@ -105,7 +124,7 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
                 }
                 view.listQuestionselected = ListQuestionselcted;
 
-                var listQuestions = db.cauHois.Where(i => i.maKhoiLop == view.Grade && i.maMonHoc == int.Parse(view.Subject)).ToList();
+                var listQuestions = db.cauHois.Where(i => i.maKhoiLop == gradeID && i.maMonHoc == subjectID).ToList();
                 foreach (var i in listQuestions)
                 {
                     CreatePaperWithQuestion pp = new CreatePaperWithQuestion();
@@ -123,7 +142,7 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
             using (var db = new QuizDataContext())
             {
                 //binding câu hỏi
-                var listQuestions = db.cauHois.Where(i => i.maKhoiLop == view.Grade && i.maMonHoc == int.Parse(view.Subject)).ToList();
+                var listQuestions = db.cauHois.Where(i => i.maKhoiLop == gradeID && i.maMonHoc == subjectID).ToList();
                 foreach (var i in listQuestions)
                 {
                     CreatePaperWithQuestion pp = new CreatePaperWithQuestion();
@@ -135,43 +154,7 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
             view.listQuestion = ListQuestion;
         }
 
-        //private void CreatePaper_View(object sender, EventArgs e)
-        //{
-        //    string paperID = view.PaperID;
-        //    int questionnum = view.AllQuestionSelect.Rows.Count;
-        //    if (view.PaperID != "")
-        //    {
-        //        //if (questionnum >= 20)
-        //        //{
-        //        using (var db = new QuizDataContext())
-        //        {
-        //            db.boDes.InsertOnSubmit(new boDe
-        //            {
-        //                maBoDe = int.Parse(paperID), //-- tự tan
-        //                tongSoCau = questionnum,
-        //                maKhoi = view.Grade,
-        //                maMon = int.Parse(view.Subject),
-        //                thoiGian = 20
-        //            });
-        //            db.SubmitChanges();
-
-        //            foreach (DataGridViewRow i in view.AllQuestionSelect.Rows)
-        //            {
-        //                db.cTBoDes.InsertOnSubmit(new cTBoDe
-        //                {
-        //                    maBoDe = int.Parse(paperID),
-        //                    maCauHoi = int.Parse(i.Cells["MaCauHoiDaChon"].Value.ToString())
-        //                });
-        //                db.SubmitChanges();
-        //            }
-        //        }
-        //        //}
-        //        //else
-        //        //    view.ShowMessage("Một đề ít nhất 20 câu hỏi!!");
-        //    }
-        //    else
-        //        view.ShowMessage("Nhập mã đề!!");
-        //}
+       
         private void MoveToLeft_View(object sender, EventArgs e)
         {
 
@@ -192,18 +175,6 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
             }
             view.listQuestionselected = ListQuestionselcted;
             view.listQuestion = ListQuestion;
-
-            using (var db = new QuizDataContext())
-            {
-                List<cTBoDe> listdeail = new List<cTBoDe>();
-                foreach (DataGridViewRow i in view.AllQuestionSelect.SelectedRows)
-                {
-                    var list = db.cTBoDes.Where(x => x.maBoDe == int.Parse(view.PaperID) && x.maCauHoi == int.Parse(i.Cells["MaCauHoiDaChon"].Value.ToString())).ToList();
-                    listdeail.Add(list[0]);
-                }
-                db.cTBoDes.DeleteAllOnSubmit(listdeail);
-                db.SubmitChanges();
-            }
         }
 
         private void MoveToRight_View(object sender, EventArgs e)
@@ -219,27 +190,13 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
                 pp.QuestionID = i.Cells["MaCauHoi"].Value.ToString();
                 pp.Question = i.Cells["CauHoi1"].Value.ToString();
 
-                var temp = ListQuestionselcted.Where(x => x.QuestionID == i.Cells["MaCauHoi"].Value.ToString()).ToList();
+                var temp = ListQuestion.Where(x => x.QuestionID == i.Cells["MaCauHoi"].Value.ToString()).ToList();
                 ListQuestion.Remove(temp[0]);
                 ListQuestionselcted.Add(pp);
             }
+           
             view.listQuestion = ListQuestion;
             view.listQuestionselected = ListQuestionselcted;
-
-            //update thay đổi dô db
-            using (var db = new QuizDataContext())
-            {
-                List<cTBoDe> listdeail = new List<cTBoDe>();
-                foreach (DataGridViewRow i in view.AllQuestionSelect.SelectedRows)
-                {
-                    cTBoDe bd = new cTBoDe();
-                    bd.maBoDe = int.Parse(view.PaperID);
-                    bd.maCauHoi = int.Parse(i.Cells["MaCauHoiDaChon"].Value.ToString());
-                    listdeail.Add(bd);
-                }
-                db.cTBoDes.InsertAllOnSubmit(listdeail);
-                db.SubmitChanges();
-            }
         }
 
         private void GoBackBefore_View(object sender, EventArgs e)

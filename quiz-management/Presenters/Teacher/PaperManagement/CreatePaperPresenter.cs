@@ -67,10 +67,6 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
                 var teachername = db.thongTins.Where(i => i.maNguoidung == 1).Select(i => i.tenNguoiDung).ToList();
                 view.TeacherName = teachername[0].ToString();
 
-                //mã đề
-                var paperid = db.boDes.Max(i => i.maBoDe);
-                view.PaperID = (paperid + 1).ToString();
-
                 //binding khối lớp
                 var listclass = db.khoiLops.ToList();
                 view.GradeList = listclass;
@@ -103,42 +99,35 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
 
         private void CreatePaper_View(object sender, EventArgs e)
         {
-            string paperID = view.PaperID;
+            //string paperID = view.PaperID;
             int questionnum = view.AllQuestionSelect.Rows.Count;
-            if (view.PaperID != "")
+
+            using (var db = new QuizDataContext())
             {
-                //if (questionnum >= 20)
-                //{
-                using (var db = new QuizDataContext())
+                db.boDes.InsertOnSubmit(new boDe
                 {
-                    db.boDes.InsertOnSubmit(new boDe
+                    //maBoDe = int.Parse(paperID), //-- tự tan
+                    tongSoCau = questionnum,
+                    maKhoi = view.Grade,
+                    maMon = int.Parse(view.Subject),
+                    thoiGian = 20
+                });
+                db.SubmitChanges();
+
+                var paperidMax = db.boDes.Max(i => i.maBoDe);
+
+                foreach (DataGridViewRow i in view.AllQuestionSelect.Rows)
+                {
+                    db.cTBoDes.InsertOnSubmit(new cTBoDe
                     {
-                        maBoDe = int.Parse(paperID), //-- tự tan
-                        tongSoCau = questionnum,
-                        maKhoi = view.Grade,
-                        maMon = int.Parse(view.Subject),
-                        thoiGian = 20
+                        maBoDe = paperidMax,
+                        maCauHoi = int.Parse(i.Cells["MaCauHoiDaChon"].Value.ToString())
                     });
                     db.SubmitChanges();
-
-                    foreach (DataGridViewRow i in view.AllQuestionSelect.Rows)
-                    {
-                        db.cTBoDes.InsertOnSubmit(new cTBoDe
-                        {
-                            maBoDe = int.Parse(paperID),
-                            maCauHoi = int.Parse(i.Cells["MaCauHoiDaChon"].Value.ToString())
-                        });
-                        db.SubmitChanges();
-                    }
-                    view.ShowMessage("Thêm thành công");
-                    view.ShowPaperListView(currenUserCode);
                 }
-                //}
-                //else
-                //    view.ShowMessage("Một đề ít nhất 20 câu hỏi!!");
+                view.ShowMessage($"Thêm thành công bộ đề với mã là: {paperidMax}");
+                view.ShowPaperListView(currenUserCode);
             }
-            else
-                view.ShowMessage("Nhập mã đề!!");
         }
         private void MoveToLeft_View(object sender, EventArgs e)
         {
