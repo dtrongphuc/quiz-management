@@ -93,6 +93,7 @@
     <Compile Include="Presenters\Teacher\PaperManagement\CreatePaperPresenter.cs" />
     <Compile Include="Presenters\Teacher\PaperManagement\PaperListPresenter.cs" />
     <Compile Include="Presenters\Teacher\PaperManagement\UpdatePaperPresenter.cs" />
+    <Compile Include="Presenters\Teacher\QuestionManagement\CreateQuestionPresneter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validate\RequiredFieldValidator.cs">
@@ -219,6 +220,13 @@
     <Compile Include="Views\Teacher\PaperManagement\UpdatePaperView.Designer.cs">
       <DependentUpon>UpdatePaperView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Teacher\QuestionManagement\CreateQuestionView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Teacher\QuestionManagement\CreateQuestionView.Designer.cs">
+      <DependentUpon>CreateQuestionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Teacher\QuestionManagement\ICreateQuestionView.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -279,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Teacher\PaperManagement\UpdatePaperView.resx">
       <DependentUpon>UpdatePaperView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Teacher\QuestionManagement\CreateQuestionView.resx">
+      <DependentUpon>CreateQuestionView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Models\Quiz.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
