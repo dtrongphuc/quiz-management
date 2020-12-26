@@ -25,7 +25,7 @@ namespace quiz_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ExamListView(2));
+            Application.Run(new ExamListView(1));
         }
     }
 }

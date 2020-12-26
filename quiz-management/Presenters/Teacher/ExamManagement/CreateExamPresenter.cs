@@ -15,8 +15,9 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
         ICreateExamView view;
         int currentcode;
         BindingList<thongTin> lstHocSinh;
-        List<monHoc> lstMonHoc;
-        List<boDe> lstbode;
+        BindingList<monHoc> lstMonHoc;
+        BindingList<khoiLop> lstLop;
+        BindingList<boDe> lstbode;
         BindingList<thongTin> lstThiSinh;
         public CreateExamPresenter(ICreateExamView v, int code)
         {
@@ -27,30 +28,49 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
 
         private void Initialize()
         {
-            lstbode = new List<boDe>();
+            lstbode = new BindingList<boDe>();
             view.GoBackBefore += View_Back;
             view.Submit += View_Submit;
             view.subjectChange += View_SubjectChange;
             view.MoveRight += View_MoveRight;
             view.MoveLeft += View_MoveLeft;
-            view.examChange += View_ExamChange;
+            view.ClassChange += View_ClassChange;
 
             using (var db = new QuizDataContext())
             {
-                lstMonHoc = db.monHocs.ToList();
+                lstMonHoc = new BindingList<monHoc>(db.monHocs.ToList());
+                lstLop = new BindingList<khoiLop>(db.khoiLops.ToList());
             }
-            if (lstMonHoc.Count != 0) lstbode = FindBymonHocId(lstMonHoc[0].maMonHoc);
-            if (lstbode.Count != 0) lstHocSinh = FindByBoDeId(lstbode[0].maKhoi);
+            if (lstMonHoc.Count != 0) lstbode = FindBymonHocIdVaLopId(lstMonHoc[0].maMonHoc, lstLop[0].maKhoiLop);
+            lstHocSinh = FindByBoDeId(lstLop[0].maKhoiLop);
             Fill();
         }
 
-        private void View_ExamChange(object sender, EventArgs e)
+        private void View_ClassChange(object sender, EventArgs e)
         {
-            string id = view.DeThiChon;
-            lstHocSinh = FindByBoDeId(lstbode[0].maKhoi);
-            lstThiSinh = null;
-            view.lstThiSinh = lstThiSinh;
+            string idkhoilop = view.KhoiLopChon;
+            int idmonhoc = int.Parse(view.monHocChon);
+            lstbode = FindBymonHocIdVaLopId(idmonhoc, idkhoilop);
+            view.lstDeThi = lstbode;
+
+            lstHocSinh = FindByBoDeId(idkhoilop);
             view.lstHocSinh = lstHocSinh;
+            view.lstThiSinh = null;
+        }
+        private void Fill()
+        {
+            view.lstMonHoc = lstMonHoc;
+            view.lstDeThi = lstbode;
+            view.lstHocSinh = lstHocSinh;
+            view.lstKhoiLop = lstLop;
+        }
+
+        private void View_SubjectChange(object sender, EventArgs e)
+        {
+            string idkhoilop = view.KhoiLopChon;
+            int idmonhoc = int.Parse(view.monHocChon);
+            lstbode = FindBymonHocIdVaLopId(idmonhoc, idkhoilop);
+            view.lstDeThi = lstbode;
         }
 
         private void View_MoveLeft(object sender, EventArgs e)
@@ -79,7 +99,7 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             foreach (DataGridViewRow i in view.lstHocSinhChon.SelectedRows)
             {
                 var id = i.Cells["HocSinhDuocChon"].Value.ToString();
-               
+
                 var temp = lstHocSinh.Where(x => x.maNguoidung == int.Parse(id)).ToList();
                 thongTin tt = new thongTin();
                 tt = temp[0];
@@ -92,27 +112,17 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             view.lstThiSinh = lstThiSinh;
         }
 
-        private void Fill()
-        {
-            view.lstMonHoc = lstMonHoc;
-            view.lstDeThi = lstbode;
-            view.lstHocSinh = lstHocSinh;
-        }
 
-        private void View_SubjectChange(object sender, EventArgs e)
-        {
-            string id = view.monHocChon;
-            lstbode = FindBymonHocId(lstMonHoc[0].maMonHoc);
-            view.lstDeThi = lstbode;
-        }
+
+
 
         private void View_Submit(object sender, EventArgs e)
         {
-            if(lstThiSinh.Count == 0)
+            if (lstThiSinh.Count == 0)
             {
                 view.ShowMessage("Cần có thi Sinh Thi.");
                 return;
-            }    
+            }
             using (var db = new QuizDataContext())
             {
                 int malt = db.lichThis.Max(p => p.maLichThi);
@@ -129,7 +139,7 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
                     db.SubmitChanges();
                 }
             }
-                view.ShowMessage("Thành Công.");
+            view.ShowMessage("Thành Công.");
         }
 
         private void View_Back(object sender, EventArgs e)
@@ -137,12 +147,12 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             view.ShowExamListView(currentcode);
         }
 
-        private List<boDe> FindBymonHocId(int maMH)
+        private BindingList<boDe> FindBymonHocIdVaLopId(int maMH, string makhoi)
         {
-            List<boDe> lstbd;
+            BindingList<boDe> lstbd;
             using (var db = new QuizDataContext())
             {
-                lstbd = db.boDes.Where(p => p.maMon == maMH).ToList();
+                lstbd = new BindingList<boDe>(db.boDes.Where(p => p.maMon == maMH).Where(k => k.maKhoi == makhoi).ToList());
             }
             return lstbd;
         }
@@ -156,8 +166,8 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
                                             lh => lh.maLopHoc,
                                             tt => tt.maLopHoc,
                                             (lh, tt) => new { tt = tt }).ToList();
-                
-                 foreach(var i in temp)
+
+                foreach (var i in temp)
                 {
                     thongTin t = new thongTin();
                     t = i.tt;

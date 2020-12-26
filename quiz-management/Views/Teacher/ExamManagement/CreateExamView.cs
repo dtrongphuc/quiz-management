@@ -42,19 +42,19 @@ namespace quiz_management.Views.Teacher.ExamManagement
             {
                 MoveLeft?.Invoke(btnMoveLeft, e);
             };
-            cbBoDe.Click += (_, e) =>
+            cbbKhoiLop.SelectedValueChanged += (_, e) =>
             {
-                examChange?.Invoke(cbBoDe, e);
+                ClassChange?.Invoke(cbbKhoiLop, e);
             };
         }
 
         public DateTime NgayThi => dtpNgayThi.Value;
 
-        public List<monHoc> lstMonHoc { set => cbMonHoc.DataSource = value; }
+        public BindingList<monHoc> lstMonHoc { set => cbMonHoc.DataSource = value; }
         public BindingList<thongTin> lstHocSinh { set => dtgHocSinh.DataSource = value; }
         public BindingList<thongTin> lstThiSinh { set => dgvThiSinh.DataSource = value; }
-        public List<boDe> lstDeThi { set =>cbBoDe.DataSource = value; }
-
+        public BindingList<boDe> lstDeThi { set =>cbBoDe.DataSource = value; }
+        public BindingList<khoiLop> lstKhoiLop { set => cbbKhoiLop.DataSource = value; }
 
         public string monHocChon {
             get
@@ -81,13 +81,16 @@ namespace quiz_management.Views.Teacher.ExamManagement
             }
         }
 
+        public string KhoiLopChon => cbbKhoiLop.SelectedValue.ToString();
+
+        
+
         public event EventHandler GoBackBefore;
         public event EventHandler Submit;
         public event EventHandler subjectChange;
         public event EventHandler MoveLeft;
         public event EventHandler MoveRight;
-        
-        public event EventHandler examChange;
+        public event EventHandler ClassChange;
 
         public void ShowExamListView(int code)
         {

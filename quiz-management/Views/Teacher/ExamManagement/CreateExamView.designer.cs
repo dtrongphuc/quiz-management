@@ -44,6 +44,7 @@
             this.tenNguoidung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.cbbKhoiLop = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThiSinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgHocSinh)).BeginInit();
             this.SuspendLayout();
@@ -55,9 +56,9 @@
             this.label3.Location = new System.Drawing.Point(331, 52);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(126, 26);
+            this.label3.Size = new System.Drawing.Size(132, 26);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Tạo Kì Thi ";
+            this.label3.Text = "Tạo Kỳ Thi ";
             // 
             // linkGoForBack
             // 
@@ -73,10 +74,11 @@
             // cbBoDe
             // 
             this.cbBoDe.DisplayMember = "maBoDe";
+            this.cbBoDe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBoDe.FormattingEnabled = true;
-            this.cbBoDe.Location = new System.Drawing.Point(610, 100);
+            this.cbBoDe.Location = new System.Drawing.Point(626, 100);
             this.cbBoDe.Name = "cbBoDe";
-            this.cbBoDe.Size = new System.Drawing.Size(164, 21);
+            this.cbBoDe.Size = new System.Drawing.Size(148, 21);
             this.cbBoDe.TabIndex = 4;
             this.cbBoDe.ValueMember = "maBoDe";
             // 
@@ -153,8 +155,9 @@
             // cbMonHoc
             // 
             this.cbMonHoc.DisplayMember = "tenMonHoc";
+            this.cbMonHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMonHoc.FormattingEnabled = true;
-            this.cbMonHoc.Location = new System.Drawing.Point(425, 100);
+            this.cbMonHoc.Location = new System.Drawing.Point(252, 100);
             this.cbMonHoc.Name = "cbMonHoc";
             this.cbMonHoc.Size = new System.Drawing.Size(150, 21);
             this.cbMonHoc.TabIndex = 21;
@@ -219,11 +222,23 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "Danh sách Thí Sinh";
             // 
+            // cbbKhoiLop
+            // 
+            this.cbbKhoiLop.DisplayMember = "tenKhoiLop";
+            this.cbbKhoiLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbKhoiLop.FormattingEnabled = true;
+            this.cbbKhoiLop.Location = new System.Drawing.Point(431, 104);
+            this.cbbKhoiLop.Name = "cbbKhoiLop";
+            this.cbbKhoiLop.Size = new System.Drawing.Size(150, 21);
+            this.cbbKhoiLop.TabIndex = 25;
+            this.cbbKhoiLop.ValueMember = "maKhoiLop";
+            // 
             // CreateExamView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(808, 554);
+            this.Controls.Add(this.cbbKhoiLop);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dtgHocSinh);
@@ -263,5 +278,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tenNguoiDungDuocChon;
         private System.Windows.Forms.DataGridViewTextBoxColumn HocSinhDuocChon;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenNguoidung;
+        private System.Windows.Forms.ComboBox cbbKhoiLop;
     }
 }

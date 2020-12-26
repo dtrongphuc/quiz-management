@@ -77,10 +77,10 @@ namespace quiz_management.Views.Teacher.ExamManagement
 
         public void ShowUpdateExamView(int code)
         {
-            /*this.Hide();
-            UpdatePaperView screen = new UpdatePaperView(code);
+            this.Hide();
+            UpdateExamView screen = new UpdateExamView(code);
             screen.FormClosed += (_, e) => this.Close();
-            screen.Show();*/
+            screen.Show();
         }
     }
 }

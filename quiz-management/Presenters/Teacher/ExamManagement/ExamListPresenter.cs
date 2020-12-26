@@ -28,6 +28,7 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             view.GobackBefore += View_GoBackBefore;
             view.Delete += View_Delete;
             view.AddExam += view_CreateExam;
+            view.UpdateExam += View_UpdateExam;
             using (var db = new QuizDataContext())
             {
                 var temp = db.lichThis.GroupBy(x => x.maLichThi).Select(xs => new { lt = xs.Select(d => d)}).ToList();
@@ -45,6 +46,14 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
 
                 Fill();
             }
+        }
+
+        private void View_UpdateExam(object sender, EventArgs e)
+        {
+            var x = view.lichthichon.SelectedRows[0];
+            var id = x.Cells["maLichThi"].Value.ToString();
+            view.ShowUpdateExamView(int.Parse(id));
+
         }
 
         private void view_CreateExam(object sender, EventArgs e)

@@ -90,6 +90,7 @@
     <Compile Include="Presenters\Student\Main\MainStudentPresenter.cs" />
     <Compile Include="Presenters\Teacher\ExamManagement\CreateExamPresenter.cs" />
     <Compile Include="Presenters\Teacher\ExamManagement\ExamListPresenter.cs" />
+    <Compile Include="Presenters\Teacher\ExamManagement\UpdateExamPresenter.cs" />
     <Compile Include="Presenters\Teacher\PaperManagement\CreatePaperPresenter.cs" />
     <Compile Include="Presenters\Teacher\PaperManagement\PaperListPresenter.cs" />
     <Compile Include="Presenters\Teacher\PaperManagement\UpdatePaperPresenter.cs" />
@@ -192,6 +193,7 @@
     </Compile>
     <Compile Include="Views\Teacher\ExamManagement\ICreateExamView.cs" />
     <Compile Include="Views\Teacher\ExamManagement\IExamListView.cs" />
+    <Compile Include="Views\Teacher\ExamManagement\IUpdateExamView.cs" />
     <Compile Include="Views\Teacher\ExamManagement\UpdateExamView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -273,6 +275,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Teacher\ExamManagement\ExamListView.resx">
       <DependentUpon>ExamListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Teacher\ExamManagement\UpdateExamView.resx">
+      <DependentUpon>UpdateExamView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Teacher\Main\MainTeacherView.resx">
       <DependentUpon>MainTeacherView.cs</DependentUpon>

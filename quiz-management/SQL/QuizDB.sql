@@ -21,7 +21,7 @@ CREATE TABLE Lop
 	PRIMARY KEY (maLopHoc)
 )
 alter table Lop add constraint FK_lop_khoiLop FOREIGN KEY(maKhoiLop) references khoiLop(maKhoiLop)
-
+select * from Lop
 
 
 CREATE TABLE khoiLop
@@ -32,7 +32,7 @@ CREATE TABLE khoiLop
 	CONSTRAINT PK_khoiLop
 	PRIMARY KEY (maKhoiLop)
 )
-
+select * from khoiLop
 
 
 
@@ -65,7 +65,7 @@ CREATE TABLE monHoc
 	CONSTRAINT PK_monHoc
 	PRIMARY KEY(maMonHoc)
 )
-
+select * from monHoc
 CREATE TABLE boDe
 (
 	maBoDe INT IDENTITY,
@@ -77,7 +77,7 @@ CREATE TABLE boDe
 	CONSTRAINT PK_boDe
 	PRIMARY KEY (maBoDe)
 )
-
+select * from boDe
 ALTER TABLE dbo.boDe ADD CONSTRAINT FK_boDe_monHoc FOREIGN KEY(maMon) REFERENCES dbo.monHoc(maMonHoc)
 ALTER TABLE boDe ADD CONSTRAINT FK_boDe_khoiLop FOREIGN KEY(maKhoi) REFERENCES khoiLop(maKhoiLop)
 
