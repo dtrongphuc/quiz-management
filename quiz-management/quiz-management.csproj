@@ -224,6 +224,33 @@
     <Compile Include="Views\Teacher\PaperManagement\UpdatePaperView.Designer.cs">
       <DependentUpon>UpdatePaperView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Teacher\QuestionManagement\CreateQuestionView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Teacher\QuestionManagement\CreateQuestionView.Designer.cs">
+      <DependentUpon>CreateQuestionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Teacher\QuestionManagement\ICreateQuestionView.cs" />
+    <Compile Include="Views\Teacher\QuestionManagement\IQuestionListView.cs" />
+    <Compile Include="Views\Teacher\QuestionManagement\QuestionListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Teacher\QuestionManagement\QuestionListView.Designer.cs">
+      <DependentUpon>QuestionListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Teacher\StudentManagement\ExamStatisticView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Teacher\StudentManagement\ExamStatisticView.Designer.cs">
+      <DependentUpon>ExamStatisticView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Teacher\StudentManagement\IStudentStatisticView.cs" />
+    <Compile Include="Views\Teacher\StudentManagement\StudentStatisticView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Teacher\StudentManagement\StudentStatisticView.Designer.cs">
+      <DependentUpon>StudentStatisticView.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -284,6 +311,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Teacher\PaperManagement\UpdatePaperView.resx">
       <DependentUpon>UpdatePaperView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Teacher\QuestionManagement\CreateQuestionView.resx">
+      <DependentUpon>CreateQuestionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Teacher\QuestionManagement\QuestionListView.resx">
+      <DependentUpon>QuestionListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Teacher\StudentManagement\StudentStatisticView.resx">
+      <DependentUpon>StudentStatisticView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Models\Quiz.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
