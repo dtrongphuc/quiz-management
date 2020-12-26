@@ -91,10 +91,10 @@ namespace quiz_management.Views.Teacher.QuestionManagement
 
         public void ShowQuestionList(int code)
         {
-            //this.Hide();
-            //PaperListView screen = new PaperListView(code);
-            //screen.FormClosed += (_, e) => this.Close();
-            //screen.Show();
+            this.Hide();
+            QuestionListView screen = new QuestionListView(code);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
         }
     }
 }
