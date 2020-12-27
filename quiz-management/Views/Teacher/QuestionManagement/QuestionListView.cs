@@ -15,10 +15,10 @@ namespace quiz_management.Views.Teacher.QuestionManagement
     public partial class QuestionListView : Form, IQuestionListView
     {
         QuestionListPresenter presenter;
-        public QuestionListView(int code)
+        public QuestionListView(int code, string gradeID, int subjectID)
         {
             InitializeComponent();
-            presenter = new QuestionListPresenter(this, code);
+            presenter = new QuestionListPresenter(this, code, gradeID, subjectID);
             linkGoBackBefore.Click += (_, e) =>
             {
                 GoBackBefore?.Invoke(linkGoBackBefore, e);
@@ -47,6 +47,8 @@ namespace quiz_management.Views.Teacher.QuestionManagement
         public List<monHoc> SubjectList { set => cbbSubject.DataSource = value; }
         public BindingList<QuestionCreated> QuestionList { set => dgvQuestions.DataSource = value; }
         public string QuestionId { get => dgvQuestions.SelectedRows[0].Cells["QuestionID"].Value.ToString(); }
+        public string GradeSelected { set => cbbGrade.Text = value; }
+        public string SubjectSelected { set => cbbSubject.Text = value; }
 
         public event EventHandler ShowUpdate;
         public event EventHandler GoBackBefore;

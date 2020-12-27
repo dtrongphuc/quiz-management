@@ -25,12 +25,148 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
 
         private void GoBackBefore_View(object sender, EventArgs e)
         {
-            view.ShowListQuestion(currentUser);
+            view.ShowListQuestion(currentUser, view.GradeId, int.Parse(view.SubjectId));
         }
 
         private void UpdateQuestion_View(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            string Questionsstring = view.Question;
+            string answerA = view.AnswerA;
+            string answerB = view.AnswerB;
+            string answerC = view.AnswerC;
+            string answerD = view.AnswerD;
+            string answerE = view.AnswerE;
+            string answerF = view.AnswerF;
+
+            int checkA = view.cbResultA ? 1 : 0;
+            int checkB = view.cbResultB ? 1 : 0;
+            int checkC = view.cbResultC ? 1 : 0;
+            int checkD = view.cbResultD ? 1 : 0;
+            int checkE = view.cbResultE ? 1 : 0;
+            int checkF = view.cbResultF ? 1 : 0;
+
+            string classIDSelected = view.GradeId;
+            string subjectIDSelected = view.SubjectId;
+            if (checkA == 0 && checkB == 0 && checkC == 0 && checkD == 0 && checkE == 0 && checkF == 0)
+            {
+                view.ShowMessage("Phải có ít nhất 1 câu trả lời là đúng!!");
+            }
+            else
+            {
+                var doKhorr = int.Parse(view.lvDifficute);
+                using (var db = new QuizDataContext())
+                {
+                    //kiểm tra cau hỏi có chưa
+                    var checkquestion = db.cauHois.Where(i => i.cauHoi1 == Questionsstring && i.maKhoiLop == classIDSelected && i.maMonHoc == int.Parse(subjectIDSelected)).ToList();
+                    if (checkquestion.Count == 0)
+                    {
+                        //cập nhật câu hỏi
+                        //var db.cauHois.InsertOnSubmit(new cauHoi
+                        //{
+                        //    maMonHoc = int.Parse(subjectIDSelected),
+                        //    cauHoi1 = Questionsstring,
+                        //    doKho = int.Parse(view.lvDifficute),
+                        //    trangThai = 1,
+                        //    maKhoiLop = classIDSelected
+                        //});
+                        //db.SubmitChanges();
+                        var questionupdate = db.cauHois.Single(i => i.maCauHoi == questionid);
+                        questionupdate.cauHoi1 = Questionsstring;
+                        questionupdate.doKho = int.Parse(view.lvDifficute);
+                        questionupdate.maKhoiLop = classIDSelected;
+                        questionupdate.maMonHoc = int.Parse(subjectIDSelected);
+                        db.SubmitChanges();
+
+                        //xóa trong đáp án
+                        var answers = db.dapAns.Where(i => i.maCauHoi == questionid).ToList();
+                        foreach (var i in answers)
+                        {
+                            db.dapAns.DeleteOnSubmit(i);
+                            db.SubmitChanges();
+                        }
+
+                        //thêm lại vào bảng đáp án
+                        int AnswerID = 1;
+                        if (answerA != "")
+                        {
+                            db.dapAns.InsertOnSubmit(new dapAn
+                            {
+                                maCauHoi = questionid,
+                                maCauTraloi = AnswerID,
+                                cauTraLoi = answerA,
+                                dapAn1 = checkA
+                            });
+                            db.SubmitChanges();
+                            AnswerID++;
+                        }
+                        if (answerB != "")
+                        {
+                            db.dapAns.InsertOnSubmit(new dapAn
+                            {
+                                maCauHoi = questionid,
+                                maCauTraloi = AnswerID,
+                                cauTraLoi = answerB,
+                                dapAn1 = checkB
+                            });
+                            db.SubmitChanges();
+                            AnswerID++;
+                        }
+                        if (answerC != "")
+                        {
+                            db.dapAns.InsertOnSubmit(new dapAn
+                            {
+                                maCauHoi = questionid,
+                                maCauTraloi = AnswerID,
+                                cauTraLoi = answerC,
+                                dapAn1 = checkC
+                            });
+                            db.SubmitChanges();
+                            AnswerID++;
+                        }
+                        if (answerD != "")
+                        {
+                            db.dapAns.InsertOnSubmit(new dapAn
+                            {
+                                maCauHoi = questionid,
+                                maCauTraloi = AnswerID,
+                                cauTraLoi = answerD,
+                                dapAn1 = checkD
+                            });
+                            db.SubmitChanges();
+                            AnswerID++;
+                        }
+                        if (answerE != "")
+                        {
+                            db.dapAns.InsertOnSubmit(new dapAn
+                            {
+                                maCauHoi = questionid,
+                                maCauTraloi = AnswerID,
+                                cauTraLoi = answerE,
+                                dapAn1 = checkE
+                            });
+                            db.SubmitChanges();
+                            AnswerID++;
+                        }
+                        if (answerF != "")
+                        {
+                            db.dapAns.InsertOnSubmit(new dapAn
+                            {
+                                maCauHoi = questionid,
+                                maCauTraloi = AnswerID,
+                                cauTraLoi = answerF,
+                                dapAn1 = checkF
+                            });
+                            db.SubmitChanges();
+                            AnswerID++;
+                        }
+                        view.ShowMessage("Cập nhật câu hỏi thành công");
+                        //cập nhật xong quay lại danh sách
+                        view.ShowListQuestion(currentUser, view.GradeId, int.Parse(view.SubjectId));
+                    }
+                    else
+                        view.ShowMessage("Câu hỏi đã tồn tại");
+                }
+            }
         }
 
         private void LoadPage()
@@ -88,7 +224,6 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
                 //môn hôc và khối lớp đã chọn
                 view.GradeSelected = question[0].khoiLop.tenKhoiLop;
                 view.SubjectSelected = question[0].monHoc.tenMonHoc;
-
             }
         }
     }

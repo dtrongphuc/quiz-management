@@ -13,11 +13,15 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
     {
         IQuestionListView view;
         int currenUser;
+        string gradeId;
+        int subjectId;
         BindingList<QuestionCreated> questionbinding = null;
-        public QuestionListPresenter(IQuestionListView v, int code)
+        public QuestionListPresenter(IQuestionListView v, int code, string gradeID, int subjectID)
         {
             view = v;
             currenUser = code;
+            gradeId = gradeID;
+            subjectId = subjectID;
             LoadPage(code);
             view.ShowUpdate += ShowUpdate_View;
             view.GoBackBefore += GoBackBefore_View;
@@ -71,6 +75,10 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
                 //monhoc
                 view.SubjectList = db.monHocs.ToList();
 
+                if (gradeId != "")
+                    view.GradeSelected = db.khoiLops.Where(i => i.maKhoiLop == gradeId.ToString()).Select(i => i.tenKhoiLop).ToList()[0].ToString();
+                if (subjectId > 0)
+                    view.SubjectSelected = db.monHocs.Where(i => i.maMonHoc == subjectId).Select(i => i.tenMonHoc).ToList()[0].ToString();
                 LoadDGV();
             }
         }
