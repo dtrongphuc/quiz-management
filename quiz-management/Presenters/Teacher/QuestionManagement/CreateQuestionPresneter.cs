@@ -37,7 +37,7 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
 
         private void ShowListQuestion_View(object sender, EventArgs e)
         {
-            view.ShowQuestionList(currentUser);
+            view.ShowQuestionList(currentUser, "", 0);
         }
 
         private void Create_View(object sender, EventArgs e)
@@ -160,6 +160,7 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
                             AnswerID++;
                         }
                         view.ShowMessage("Tạo câu hỏi thành công");
+                        view.ShowQuestionList(currentUser, view.GradeId, int.Parse(view.SubjectId));
                     }
                     else
                         view.ShowMessage("Câu hỏi đã tồn tại");

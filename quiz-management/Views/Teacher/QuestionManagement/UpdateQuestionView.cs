@@ -72,10 +72,10 @@ namespace quiz_management.Views.Teacher.QuestionManagement
         public event EventHandler UpdateQuestion;
         public event EventHandler GoBackBefore;
 
-        public void ShowListQuestion(int code)
+        public void ShowListQuestion(int code, string gradeID, int subjectID)
         {
             this.Hide();
-            QuestionListView screen = new QuestionListView(code);
+            QuestionListView screen = new QuestionListView(code, gradeID, subjectID);
             screen.FormClosed += (_, e) => this.Close();
             screen.Show();
         }

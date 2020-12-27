@@ -36,7 +36,7 @@ namespace quiz_management.Views.Teacher.QuestionManagement
         event EventHandler ShowListQuestion;
 
         void ShowMainTeacher(int code);
-        void ShowQuestionList(int code);
+        void ShowQuestionList(int code, string gradeID, int subjectID);
         void ShowMessage(string text);
     }
 }

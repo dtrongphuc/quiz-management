@@ -36,7 +36,7 @@ namespace quiz_management.Views.Teacher.QuestionManagement
         event EventHandler UpdateQuestion;
         event EventHandler GoBackBefore;
 
-        void ShowListQuestion(int code);
+        void ShowListQuestion(int code, string gradeID, int subjectID);
         void ShowMessage(string text);
     }
 }
