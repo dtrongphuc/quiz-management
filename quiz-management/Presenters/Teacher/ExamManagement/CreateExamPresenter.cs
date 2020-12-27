@@ -54,8 +54,9 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             view.lstDeThi = lstbode;
 
             lstHocSinh = FindByBoDeId(idkhoilop);
+            lstThiSinh = null;
             view.lstHocSinh = lstHocSinh;
-            view.lstThiSinh = null;
+            view.lstThiSinh = lstThiSinh;
         }
         private void Fill()
         {
@@ -118,9 +119,9 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
 
         private void View_Submit(object sender, EventArgs e)
         {
-            if (lstThiSinh.Count == 0)
+            if (lstThiSinh.Count == 0 || view.DeThiChon == null)
             {
-                view.ShowMessage("Cần có thi Sinh Thi.");
+                view.ShowMessage("Thiết thông tin để tạo lịch thi");
                 return;
             }
             using (var db = new QuizDataContext())
