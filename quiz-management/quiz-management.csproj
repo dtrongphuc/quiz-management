@@ -337,6 +337,9 @@
     <EmbeddedResource Include="Views\Teacher\QuestionManagement\QuestionListView.resx">
       <DependentUpon>QuestionListView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Teacher\StudentManagement\StudentStatisticView.resx">
+      <DependentUpon>StudentStatisticView.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Models\Quiz.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>Quiz.designer.cs</LastGenOutput>
