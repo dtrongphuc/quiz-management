@@ -44,7 +44,7 @@ namespace quiz_management.Presenters.Teacher.Main
                 var user = db.thongTins.Where(i => i.maNguoidung == currentUser).ToList()[0];
                 view.TeacherName = user.tenNguoiDung;
                 view.TeacherID = currentUser.ToString();
-                view.DOB = user.ngaySinh.ToString();
+                view.DOB = user.ngaySinh.Value.Date.ToString("d");
             }
         }
     }

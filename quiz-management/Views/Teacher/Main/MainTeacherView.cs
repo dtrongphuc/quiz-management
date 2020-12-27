@@ -166,7 +166,10 @@ namespace quiz_management.Views.Teacher.Main
 
         public void ShowUpdateInfo(int code)
         {
-            throw new NotImplementedException();
+            this.Hide();
+            TeacherInfoView screen = new TeacherInfoView(code);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
         }
 
         public void ShowCreateQuestion(int code)
