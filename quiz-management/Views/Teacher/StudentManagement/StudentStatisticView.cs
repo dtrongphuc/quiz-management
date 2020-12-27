@@ -1,4 +1,5 @@
-﻿using quiz_management.Presenters.Teacher.StudentManagement;
+﻿using quiz_management.Models;
+using quiz_management.Presenters.Teacher.StudentManagement;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +18,39 @@ namespace quiz_management.Views.Teacher.StudentManagement
 
         public List<DateTime> ExamDateTimes { set => cbDateTime.DataSource = value; }
 
+        //public List<monHoc> Courses
+        //{
+        //    set
+        //    {
+        //        for (int i = 4; i < dgvHS.Columns.Count; i++)
+        //        {
+        //            dgvHS.Columns.RemoveAt(i);
+        //        }
+
+        //        foreach (var mh in value)
+        //        {
+        //            DataGridViewColumn col = new DataGridViewColumn
+        //            {
+        //                HeaderText = mh.tenMonHoc,
+        //                DataPropertyName = mh.maMonHoc.ToString(),
+        //            };
+        //            //dgvHS.Columns.Add(col);
+        //        }
+        //    }
+        //}
+
+        public List<StudentStatistic> StatisticData
+        {
+            set
+            {
+                dgvHS.DataSource = null;
+                dgvHS.DataSource = value;
+            }
+        }
+
         public event EventHandler DateTimeChanged;
+
+        public event EventHandler SearchTextChanged;
 
         public StudentStatisticView()
         {
@@ -28,10 +61,23 @@ namespace quiz_management.Views.Teacher.StudentManagement
 
         public void InitialControl()
         {
+            dgvHS.AutoGenerateColumns = false;
+            cbDateTime.SelectedIndex = -1;
+
             cbDateTime.SelectedIndexChanged += (_, e) =>
             {
                 DateTimeChanged.Invoke(cbDateTime, e);
             };
+
+            tbSearch.TextChanged += (_, e) =>
+            {
+                SearchTextChanged.Invoke(tbSearch, e);
+            };
+        }
+
+        private void Form_Loaded(object sender, EventArgs e)
+        {
+            cbDateTime.SelectedIndex = -1;
         }
 
         private void cbDateTime_Format(object sender, ListControlConvertEventArgs e)

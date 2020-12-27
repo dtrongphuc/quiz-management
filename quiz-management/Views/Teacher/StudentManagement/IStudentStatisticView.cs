@@ -1,4 +1,5 @@
-﻿using System;
+﻿using quiz_management.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,11 @@ namespace quiz_management.Views.Teacher.StudentManagement
     {
         List<DateTime> ExamDateTimes { set; }
 
+        //List<monHoc> Courses { set; }
+        List<StudentStatistic> StatisticData { set; }
+
         event EventHandler DateTimeChanged;
+
+        event EventHandler SearchTextChanged;
     }
 }

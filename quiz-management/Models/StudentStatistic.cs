@@ -6,16 +6,20 @@ using System.Threading.Tasks;
 
 namespace quiz_management.Models
 {
-    internal class StudentStatistic
+    public class StudentStatistic
     {
-        private thongTin _hocSinh;
-        private monHoc _monHoc;
+        private string _maHocSinh;
+        private string _tenHocSinh;
+        private string _ngaySinh;
+        private string _monHoc;
         private double _diem;
         private string _lop;
 
-        public thongTin HocSinh { get => _hocSinh; set => _hocSinh = value; }
-        public monHoc MonHoc { get => _monHoc; set => _monHoc = value; }
-        public double Diem { get => _diem; set => _diem = value; }
+        public string MaHocSinh { get => _maHocSinh; set => _maHocSinh = value; }
+        public string TenHocSinh { get => _tenHocSinh; set => _tenHocSinh = value; }
+        public string NgaySinh { get => _ngaySinh; set => _ngaySinh = value; }
         public string Lop { get => _lop; set => _lop = value; }
+        public string MonHoc { get => _monHoc; set => _monHoc = value; }
+        public double Diem { get => _diem; set => _diem = value; }
     }
 }
