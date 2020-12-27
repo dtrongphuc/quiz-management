@@ -67,10 +67,10 @@ namespace quiz_management.Views.Teacher.QuestionManagement
 
         public void ShowUpdateQuestion(int code, int questionID)
         {
-            //this.Hide();
-            //MainTeacherView screen = new MainTeacherView(code);
-            //screen.FormClosed += (_, e) => this.Close();
-            //screen.Show();
+            this.Hide();
+            UpdateQuestionView screen = new UpdateQuestionView(code, questionID);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
         }
     }
 }

@@ -48,9 +48,12 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
                 questions = db.cauHois.Where(i => i.maKhoiLop == view.GradeId && i.maMonHoc == int.Parse(view.SubjectId)).ToList();
                 foreach (var question in questions)
                 {
+                    var paperid = question.cTBoDes.Where(i => i.maCauHoi == question.maCauHoi).Select(i => i.maBoDe).ToList();
                     QuestionCreated q = new QuestionCreated();
                     q.Question = question.cauHoi1;
-                    q.PaperName = "12";
+                    q.PaperName = paperid.Count() > 0 ? paperid[0].ToString() : "Chưa có trong đề thi";
+                    q.QuestionID = question.maCauHoi.ToString();
+
                     questionbinding.Add(q);
                 }
                 view.QuestionList = questionbinding;
