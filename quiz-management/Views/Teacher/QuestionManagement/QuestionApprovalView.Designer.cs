@@ -42,7 +42,6 @@
             this.lbTeacher = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnShowQuestionList = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCQuestionList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -186,21 +185,11 @@
             this.label1.TabIndex = 73;
             this.label1.Text = "(*) Có thể chọn nhiều câu hỏi để phê duyệt";
             // 
-            // btnShowQuestionList
-            // 
-            this.btnShowQuestionList.Location = new System.Drawing.Point(816, 57);
-            this.btnShowQuestionList.Name = "btnShowQuestionList";
-            this.btnShowQuestionList.Size = new System.Drawing.Size(210, 35);
-            this.btnShowQuestionList.TabIndex = 74;
-            this.btnShowQuestionList.Text = "Xem danh sách câu hỏi";
-            this.btnShowQuestionList.UseVisualStyleBackColor = true;
-            // 
             // QuestionApprovalView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1056, 677);
-            this.Controls.Add(this.btnShowQuestionList);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbTeacher);
             this.Controls.Add(this.label14);
@@ -233,6 +222,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ngay;
         private System.Windows.Forms.DataGridViewTextBoxColumn cauHoi;
         private System.Windows.Forms.DataGridViewTextBoxColumn KhoiLop;
-        private System.Windows.Forms.Button btnShowQuestionList;
     }
 }

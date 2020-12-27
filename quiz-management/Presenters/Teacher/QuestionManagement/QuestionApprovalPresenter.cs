@@ -23,12 +23,6 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
             LoadContributeQuestionList(code);
             view.Approval += Approval_View;
             view.GoBackBefore += GoBackBefore_View;
-            view.QuestionList += QuestionList_view;
-        }
-
-        private void QuestionList_view(object sender, EventArgs e)
-        {
-            view.ShowQuestionList(currenUserCode, "", 0);
         }
 
         private void GoBackBefore_View(object sender, EventArgs e)

@@ -16,9 +16,7 @@ namespace quiz_management.Views.Teacher.QuestionManagement
         DataGridView CQuestionSelected { get; }
         event EventHandler Approval;
         event EventHandler GoBackBefore;
-        event EventHandler QuestionList;
         void ShowMessage(string text);
         void ShowMainTeacher(int code);
-        void ShowQuestionList(int code, string gradeId, int subjectId);
     }
 }

@@ -28,10 +28,6 @@ namespace quiz_management.Views.Teacher.QuestionManagement
             {
                 Approval?.Invoke(btnApproval, e);
             };
-            btnShowQuestionList.Click += (_, e) =>
-            {
-                QuestionList?.Invoke(btnShowQuestionList, e);
-            };
         }
 
         public BindingList<ContributeQuestion> contributed { set => dgvCQuestionList.DataSource = value; }
@@ -41,7 +37,6 @@ namespace quiz_management.Views.Teacher.QuestionManagement
 
         public event EventHandler GoBackBefore;
         public event EventHandler Approval;
-        public event EventHandler QuestionList;
 
         public void ShowMainTeacher(int code)
         {
@@ -54,14 +49,6 @@ namespace quiz_management.Views.Teacher.QuestionManagement
         public void ShowMessage(string text)
         {
             MessageBox.Show(text, "Thông báo");
-        }
-
-        public void ShowQuestionList(int code, string gradeId, int subjectId)
-        {
-            this.Hide();
-            QuestionListView screen = new QuestionListView(code, gradeId, subjectId);
-            screen.FormClosed += (_, e) => this.Close();
-            screen.Show();
         }
     }
 }
