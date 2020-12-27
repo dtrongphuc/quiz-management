@@ -1,4 +1,6 @@
-﻿using quiz_management.Properties;
+﻿using quiz_management.Presenters.Teacher.Main;
+using quiz_management.Properties;
+using quiz_management.Views.Teacher.QuestionManagement;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +13,7 @@ using System.Windows.Forms;
 
 namespace quiz_management.Views.Teacher.Main
 {
-    public partial class MainTeacherView : Form
+    public partial class MainTeacherView : Form, IMainTeacherView
     {
         private bool isCollapsed;
         private bool isCollapsed1;
@@ -19,19 +21,36 @@ namespace quiz_management.Views.Teacher.Main
         private bool isCollapsed3;
         
         private bool isCollapsed5;
+        MainTeacherPresenter presenter;
         public MainTeacherView(int code)
         {
             InitializeComponent();
+            presenter = new MainTeacherPresenter(this, code);
+            btnUpdateInfo.Click += (_, e) =>
+            {
+                UpdateInfo?.Invoke(btnUpdateInfo, e);
+            };
+            btnCreateQuestion.Click += (_, e) =>
+            {
+                CreateQuestion?.Invoke(btnCreateQuestion, e);
+            };
+            btnApproval.Click += (_, e) =>
+            {
+                QuestionApproval?.Invoke(btnApproval, e);
+            };
         }
+        public event EventHandler UpdateInfo;
+        public event EventHandler CreateQuestion;
+        public event EventHandler QuestionApproval;
+
+        public string TeacherName { set => tbTeacherName.Text = value; }
+        public string TeacherID { set => tbTeacherID.Text = value; }
+        public string DOB { set => tbDOB.Text = value; }
 
         private void QuizManager_Click(object sender, EventArgs e)
         {
             timerQLCauHoi.Start();
         }
-
-        
-
-       
 
         private void btnLamBaiThi_Click(object sender, EventArgs e)
         {
@@ -61,8 +80,6 @@ namespace quiz_management.Views.Teacher.Main
                 }
             }
         }
-
-        
 
         private void QLCauHoi_Tick(object sender, EventArgs e)
         {
@@ -118,10 +135,6 @@ namespace quiz_management.Views.Teacher.Main
             timeQLKyThi.Start();
         }
 
-        
-
-        
-
         private void ThongKe_Tick(object sender, EventArgs e)
         {
             if (isCollapsed5)
@@ -151,6 +164,30 @@ namespace quiz_management.Views.Teacher.Main
             timerThongKe.Start();
         }
 
-        
+        public void ShowUpdateInfo(int code)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ShowCreateQuestion(int code)
+        {
+            this.Hide();
+            CreateQuestionView screen = new CreateQuestionView(code);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
+        }
+
+        public void ShowQuestionApproval(int code)
+        {
+            this.Hide();
+            QuestionApprovalView screen = new QuestionApprovalView(code);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
+        }
+
+        public void ShowMessage(string text)
+        {
+            MessageBox.Show(text, "Thông báo");
+        }
     }
 }
