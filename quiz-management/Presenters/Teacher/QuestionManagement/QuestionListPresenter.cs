@@ -53,9 +53,19 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
                 foreach (var question in questions)
                 {
                     var paperid = question.cTBoDes.Where(i => i.maCauHoi == question.maCauHoi).Select(i => i.maBoDe).ToList();
+                    //liệt kê các đề có câu hỏi đang xét
+                    string paperids = "";
+                    for (var i = 0; i < paperid.Count(); i++)
+                    {
+                        if (i == 0)
+                            paperids += paperid[i].ToString();
+                        else
+                            paperids += ", " + paperid[i].ToString();
+                    }
+
                     QuestionCreated q = new QuestionCreated();
                     q.Question = question.cauHoi1;
-                    q.PaperName = paperid.Count() > 0 ? paperid[0].ToString() : "Chưa có trong đề thi";
+                    q.PaperName = paperid.Count() > 0 ? paperids : "Chưa có trong đề thi";
                     q.QuestionID = question.maCauHoi.ToString();
 
                     questionbinding.Add(q);

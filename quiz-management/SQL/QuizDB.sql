@@ -819,3 +819,19 @@ values
 )
 insert into cTBoDe values (2, 7), (2, 6)
 select * from cTBoDe
+select * from boDe
+INSERT INTO dbo.boDe
+(
+    thoiGian,
+    tongSoCau,
+    maMon,
+    maKhoi
+)
+VALUES
+(   30, -- thoiGian - INT
+    3,         -- tongSoCau - int
+    2,         -- maMon - int
+    'K11'         -- maKhoi - varchar(5)
+    )
+GO
+insert into cTBoDe values (3, 7), (3, 6), (3, 8)
