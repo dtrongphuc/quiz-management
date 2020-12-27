@@ -96,6 +96,7 @@
     <Compile Include="Presenters\Teacher\PaperManagement\CreatePaperPresenter.cs" />
     <Compile Include="Presenters\Teacher\PaperManagement\PaperListPresenter.cs" />
     <Compile Include="Presenters\Teacher\PaperManagement\UpdatePaperPresenter.cs" />
+    <Compile Include="Presenters\Teacher\QuestionManagement\QuestionApprovalPresenter.cs" />
     <Compile Include="Presenters\Teacher\StudentManagement\StudentStatisticPresenter.cs" />
     <Compile Include="Presenters\Teacher\QuestionManagement\CreateQuestionPresneter.cs" />
     <Compile Include="Presenters\Teacher\QuestionManagement\QuestionListPresenter.cs" />
@@ -240,8 +241,15 @@
       <DependentUpon>CreateQuestionView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Teacher\QuestionManagement\ICreateQuestionView.cs" />
+    <Compile Include="Views\Teacher\QuestionManagement\IQuestionApprovalView.cs" />
     <Compile Include="Views\Teacher\QuestionManagement\IQuestionListView.cs" />
     <Compile Include="Views\Teacher\QuestionManagement\IUpdateQuestionView.cs" />
+    <Compile Include="Views\Teacher\QuestionManagement\QuestionApprovalView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Teacher\QuestionManagement\QuestionApprovalView.Designer.cs">
+      <DependentUpon>QuestionApprovalView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Teacher\QuestionManagement\QuestionListView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,6 +341,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Teacher\QuestionManagement\CreateQuestionView.resx">
       <DependentUpon>CreateQuestionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Teacher\QuestionManagement\QuestionApprovalView.resx">
+      <DependentUpon>QuestionApprovalView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Teacher\QuestionManagement\QuestionListView.resx">
       <DependentUpon>QuestionListView.cs</DependentUpon>

@@ -60,16 +60,6 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
                     var checkquestion = db.cauHois.Where(i => i.cauHoi1 == Questionsstring && i.maKhoiLop == classIDSelected && i.maMonHoc == int.Parse(subjectIDSelected)).ToList();
                     if (checkquestion.Count == 0)
                     {
-                        //cập nhật câu hỏi
-                        //var db.cauHois.InsertOnSubmit(new cauHoi
-                        //{
-                        //    maMonHoc = int.Parse(subjectIDSelected),
-                        //    cauHoi1 = Questionsstring,
-                        //    doKho = int.Parse(view.lvDifficute),
-                        //    trangThai = 1,
-                        //    maKhoiLop = classIDSelected
-                        //});
-                        //db.SubmitChanges();
                         var questionupdate = db.cauHois.Single(i => i.maCauHoi == questionid);
                         questionupdate.cauHoi1 = Questionsstring;
                         questionupdate.doKho = int.Parse(view.lvDifficute);
