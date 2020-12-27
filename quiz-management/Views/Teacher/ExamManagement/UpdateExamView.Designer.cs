@@ -34,18 +34,22 @@ namespace quiz_management.Views.Teacher.ExamManagement
             this.dtgHocSinh = new System.Windows.Forms.DataGridView();
             this.HocSinhDuocChon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenNguoidung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cbMonHoc = new System.Windows.Forms.ComboBox();
             this.btnExam = new System.Windows.Forms.Button();
             this.btnMoveLeft = new System.Windows.Forms.Button();
             this.btnMoveRight = new System.Windows.Forms.Button();
             this.dgvThiSinh = new System.Windows.Forms.DataGridView();
             this.ThiSinhDuocChon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenNguoiDungDuocChon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtpNgayThi = new System.Windows.Forms.DateTimePicker();
-            this.cbBoDe = new System.Windows.Forms.ComboBox();
             this.linkGoForBack = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbbKhoiLop = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tbNgayThiChon = new System.Windows.Forms.TextBox();
+            this.tbMonHocChon = new System.Windows.Forms.TextBox();
+            this.tbKhoiLopChon = new System.Windows.Forms.TextBox();
+            this.tbBoDeChon = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgHocSinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThiSinh)).BeginInit();
             this.SuspendLayout();
@@ -109,16 +113,6 @@ namespace quiz_management.Views.Teacher.ExamManagement
             this.tenNguoidung.Name = "tenNguoidung";
             this.tenNguoidung.ReadOnly = true;
             // 
-            // cbMonHoc
-            // 
-            this.cbMonHoc.DisplayMember = "tenMonHoc";
-            this.cbMonHoc.FormattingEnabled = true;
-            this.cbMonHoc.Location = new System.Drawing.Point(249, 98);
-            this.cbMonHoc.Name = "cbMonHoc";
-            this.cbMonHoc.Size = new System.Drawing.Size(150, 21);
-            this.cbMonHoc.TabIndex = 33;
-            this.cbMonHoc.ValueMember = "maMonHoc";
-            // 
             // btnExam
             // 
             this.btnExam.Location = new System.Drawing.Point(341, 501);
@@ -126,7 +120,7 @@ namespace quiz_management.Views.Teacher.ExamManagement
             this.btnExam.Name = "btnExam";
             this.btnExam.Size = new System.Drawing.Size(124, 39);
             this.btnExam.TabIndex = 32;
-            this.btnExam.Text = "Tạo Kỳ Thi";
+            this.btnExam.Text = "Cập Nhật Kỳ Thi";
             this.btnExam.UseVisualStyleBackColor = true;
             // 
             // btnMoveLeft
@@ -182,23 +176,6 @@ namespace quiz_management.Views.Teacher.ExamManagement
             this.tenNguoiDungDuocChon.Name = "tenNguoiDungDuocChon";
             this.tenNguoiDungDuocChon.ReadOnly = true;
             // 
-            // dtpNgayThi
-            // 
-            this.dtpNgayThi.Location = new System.Drawing.Point(29, 98);
-            this.dtpNgayThi.Name = "dtpNgayThi";
-            this.dtpNgayThi.Size = new System.Drawing.Size(200, 20);
-            this.dtpNgayThi.TabIndex = 28;
-            // 
-            // cbBoDe
-            // 
-            this.cbBoDe.DisplayMember = "maBoDe";
-            this.cbBoDe.FormattingEnabled = true;
-            this.cbBoDe.Location = new System.Drawing.Point(602, 101);
-            this.cbBoDe.Name = "cbBoDe";
-            this.cbBoDe.Size = new System.Drawing.Size(164, 21);
-            this.cbBoDe.TabIndex = 27;
-            this.cbBoDe.ValueMember = "maBoDe";
-            // 
             // linkGoForBack
             // 
             this.linkGoForBack.AutoSize = true;
@@ -221,32 +198,94 @@ namespace quiz_management.Views.Teacher.ExamManagement
             this.label3.TabIndex = 25;
             this.label3.Text = "Chỉnh Sửa Kỳ Thi ";
             // 
-            // cbbKhoiLop
+            // label2
             // 
-            this.cbbKhoiLop.DisplayMember = "tenKhoiLop";
-            this.cbbKhoiLop.FormattingEnabled = true;
-            this.cbbKhoiLop.Location = new System.Drawing.Point(423, 98);
-            this.cbbKhoiLop.Name = "cbbKhoiLop";
-            this.cbbKhoiLop.Size = new System.Drawing.Size(150, 21);
-            this.cbbKhoiLop.TabIndex = 37;
-            this.cbbKhoiLop.ValueMember = "maKhoiLop";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(228, 98);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 13);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "Môn Học";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(420, 98);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.TabIndex = 39;
+            this.label4.Text = "Khối Lớp";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(603, 94);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(37, 13);
+            this.label6.TabIndex = 40;
+            this.label6.Text = "Bộ Đề";
+            // 
+            // tbNgayThiChon
+            // 
+            this.tbNgayThiChon.Enabled = false;
+            this.tbNgayThiChon.Location = new System.Drawing.Point(29, 114);
+            this.tbNgayThiChon.Name = "tbNgayThiChon";
+            this.tbNgayThiChon.Size = new System.Drawing.Size(158, 20);
+            this.tbNgayThiChon.TabIndex = 41;
+            // 
+            // tbMonHocChon
+            // 
+            this.tbMonHocChon.Enabled = false;
+            this.tbMonHocChon.Location = new System.Drawing.Point(231, 114);
+            this.tbMonHocChon.Name = "tbMonHocChon";
+            this.tbMonHocChon.Size = new System.Drawing.Size(149, 20);
+            this.tbMonHocChon.TabIndex = 44;
+            // 
+            // tbKhoiLopChon
+            // 
+            this.tbKhoiLopChon.Enabled = false;
+            this.tbKhoiLopChon.Location = new System.Drawing.Point(423, 114);
+            this.tbKhoiLopChon.Name = "tbKhoiLopChon";
+            this.tbKhoiLopChon.Size = new System.Drawing.Size(149, 20);
+            this.tbKhoiLopChon.TabIndex = 45;
+            // 
+            // tbBoDeChon
+            // 
+            this.tbBoDeChon.Enabled = false;
+            this.tbBoDeChon.Location = new System.Drawing.Point(606, 114);
+            this.tbBoDeChon.Name = "tbBoDeChon";
+            this.tbBoDeChon.Size = new System.Drawing.Size(149, 20);
+            this.tbBoDeChon.TabIndex = 46;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(26, 94);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(50, 13);
+            this.label7.TabIndex = 47;
+            this.label7.Text = "Ngày Thi";
             // 
             // UpdateExamView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(808, 554);
-            this.Controls.Add(this.cbbKhoiLop);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.tbBoDeChon);
+            this.Controls.Add(this.tbKhoiLopChon);
+            this.Controls.Add(this.tbMonHocChon);
+            this.Controls.Add(this.tbNgayThiChon);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dtgHocSinh);
-            this.Controls.Add(this.cbMonHoc);
             this.Controls.Add(this.btnExam);
             this.Controls.Add(this.btnMoveLeft);
             this.Controls.Add(this.btnMoveRight);
             this.Controls.Add(this.dgvThiSinh);
-            this.Controls.Add(this.dtpNgayThi);
-            this.Controls.Add(this.cbBoDe);
             this.Controls.Add(this.linkGoForBack);
             this.Controls.Add(this.label3);
             this.Name = "UpdateExamView";
@@ -265,17 +304,21 @@ namespace quiz_management.Views.Teacher.ExamManagement
         private System.Windows.Forms.DataGridView dtgHocSinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn HocSinhDuocChon;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenNguoidung;
-        private System.Windows.Forms.ComboBox cbMonHoc;
         private System.Windows.Forms.Button btnExam;
         private System.Windows.Forms.Button btnMoveLeft;
         private System.Windows.Forms.Button btnMoveRight;
         private System.Windows.Forms.DataGridView dgvThiSinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThiSinhDuocChon;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenNguoiDungDuocChon;
-        private System.Windows.Forms.DateTimePicker dtpNgayThi;
-        private System.Windows.Forms.ComboBox cbBoDe;
         private System.Windows.Forms.LinkLabel linkGoForBack;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cbbKhoiLop;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox tbNgayThiChon;
+        private System.Windows.Forms.TextBox tbMonHocChon;
+        private System.Windows.Forms.TextBox tbKhoiLopChon;
+        private System.Windows.Forms.TextBox tbBoDeChon;
+        private System.Windows.Forms.Label label7;
     }
 }

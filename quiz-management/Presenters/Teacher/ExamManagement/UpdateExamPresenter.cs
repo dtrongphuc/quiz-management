@@ -15,12 +15,11 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
         IUpdateExamView view;
         int currentcode;
         BindingList<thongTin> lstHocSinh;
-        List<monHoc> lstMonHoc;
-        List<boDe> lstbode;
         BindingList<thongTin> lstThiSinh;
         DateTime ngaythi;
         boDe DeThiChon;
         monHoc MonHocChon;
+        khoiLop KhoiLopChon;
 
         public UpdateExamPresenter(IUpdateExamView v, int code)
         {
@@ -42,15 +41,14 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             {
                 var temp = db.lichThis.Where(l => l.maLichThi == currentcode)
                     .GroupBy(x => x.maLichThi).Select(xs => new { lt = xs.Select(d => d) }).ToList();
-                lstMonHoc = db.monHocs.ToList();
+
                 var lstlichthi = temp[0].lt.ToList();
-                var makhoi = lstlichthi[0].boDe.maKhoi;
+                KhoiLopChon = lstlichthi[0].boDe.khoiLop;
                 DeThiChon = lstlichthi[0].boDe;
                 MonHocChon = lstlichthi[0].monHoc;
                 ngaythi = lstlichthi[0].ngayThi;
-                
-                if (lstMonHoc.Count != 0) lstbode = FindBymonHocId(int.Parse(MonHocChon.maMonHoc.ToString()));
-                if (lstbode.Count != 0) lstHocSinh = FindByBoDeId(makhoi);
+
+                lstHocSinh = FindByBoDeId(KhoiLopChon.maKhoiLop);
 
                 foreach (var i in temp)
                 {
@@ -70,20 +68,33 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
 
         private void Fill()
         {
-            view.lstDeThi = lstbode;
-            view.NgayThi = ngaythi;
-            view.lstMonHoc = lstMonHoc;
+            view.NgayThi = ngaythi.Day + "/" + ngaythi.Month + "/" + ngaythi.Year;
             view.lstHocSinh = lstHocSinh;
             view.lstThiSinh = lstThiSinh;
-            view.monHocChon = MonHocChon;
-            view.DeThiChon = DeThiChon;
+            view.monHocChon = MonHocChon.tenMonHoc;
+            view.DeThiChon = DeThiChon.maBoDe.ToString();
+            view.KhoiLopChon = KhoiLopChon.tenKhoiLop;
         }
 
-        
+
 
         private void View_MoveLeft(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            if (lstHocSinh == null)
+                lstHocSinh = new BindingList<thongTin>();
+            foreach (DataGridViewRow i in view.lstThiSinhChon.SelectedRows)
+            {
+                var id = i.Cells["ThiSinhDuocChon"].Value.ToString();
+                var temp = lstThiSinh.Where(x => x.maNguoidung == int.Parse(id)).ToList();
+                thongTin tt = new thongTin();
+                tt = temp[0];
+                lstHocSinh.Add(tt);
+                lstThiSinh.Remove(tt);
+                if (lstThiSinh.Count == 0)
+                    lstThiSinh = null;
+            }
+            view.lstHocSinh = lstHocSinh;
+            view.lstThiSinh = lstThiSinh;
         }
 
         private void View_MoveRight(object sender, EventArgs e)
@@ -104,17 +115,6 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             }
             view.lstHocSinh = lstHocSinh;
             view.lstThiSinh = lstThiSinh;
-        }
-
-       
-        private List<boDe> FindBymonHocId(int maMonHoc)
-        {
-            List<boDe> lstbd;
-            using (var db = new QuizDataContext())
-            {
-                lstbd = db.boDes.Where(p => p.maMon == maMonHoc).ToList();
-            }
-            return lstbd;
         }
 
         private BindingList<thongTin> FindByBoDeId(string mak)
@@ -139,33 +139,37 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
 
         private void View_Submit(object sender, EventArgs e)
         {
-           /* if (lstThiSinh.Count == 0)
+            if (lstThiSinh.Count == 0)
             {
                 view.ShowMessage("Cần có thi Sinh Thi.");
                 return;
             }
             using (var db = new QuizDataContext())
             {
-                int malt = db.lichThis.Max(p => p.maLichThi);
+                var ltdelete = db.lichThis.Where(p => p.maLichThi == currentcode).ToList();
+                for (int d = 0; d < ltdelete.Count; d++)
+                    db.lichThis.DeleteOnSubmit(ltdelete[d]);
+                db.SubmitChanges();
+
                 foreach (thongTin i in lstThiSinh)
                 {
                     db.lichThis.InsertOnSubmit(new lichThi
                     {
-                        maLichThi = (malt + 1),
+                        maLichThi = currentcode,
                         maNguoiDung = i.maNguoidung,
-                        maMonHoc = int.Parse(view.monHocChon),
-                        ngayThi = view.NgayThi,
-                        maBoDe = int.Parse(view.DeThiChon)
+                        maMonHoc = MonHocChon.maMonHoc,
+                        ngayThi = ngaythi,
+                        maBoDe = DeThiChon.maBoDe
                     });
                     db.SubmitChanges();
                 }
             }
-            view.ShowMessage("Thành Công.");*/
+            view.ShowMessage("Thành Công.");
         }
 
         private void View_Back(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            view.ShowExamListView(currentcode);
         }
     }
 }
