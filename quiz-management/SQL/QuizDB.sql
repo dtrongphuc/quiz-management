@@ -150,6 +150,10 @@ select * from cTKetQua
 ALTER TABLE dbo.ketQua ADD CONSTRAINT FK_ketQua_nguoiDung FOREIGN KEY(maNguoiDung) REFERENCES dbo.nguoiDung(maNguoiDung)
 ALTER TABLE  dbo.ketQua ADD CONSTRAINT FK_ketQua_boDe FOREIGN KEY(maBoDe) REFERENCES dbo.boDe(maBoDe)
 
+insert into ketQua
+values(1, 1, null, null, null, null, null, null, null)
+go
+
 CREATE TABLE cTKetQua
 (
     maKetQua INT,
