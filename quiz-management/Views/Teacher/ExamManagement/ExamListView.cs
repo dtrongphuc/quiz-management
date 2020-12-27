@@ -33,9 +33,13 @@ namespace quiz_management.Views.Teacher.ExamManagement
             {
                 Delete?.Invoke(btnDelete, e);
             };
+            btnThem.Click += (_, e) =>
+            {
+                AddExam?.Invoke(btnThem, e);
+            };
         }
 
-        public List<TestSchedule> dtgv { set => dgvLichThi.DataSource = value; }
+        public BindingList<TestSchedule> dtgv { set => dgvLichThi.DataSource = value; }
 
         public DataGridView lichthichon {
             get
@@ -73,10 +77,10 @@ namespace quiz_management.Views.Teacher.ExamManagement
 
         public void ShowUpdateExamView(int code)
         {
-            /*this.Hide();
-            UpdatePaperView screen = new UpdatePaperView(code);
+            this.Hide();
+            UpdateExamView screen = new UpdateExamView(code);
             screen.FormClosed += (_, e) => this.Close();
-            screen.Show();*/
+            screen.Show();
         }
     }
 }

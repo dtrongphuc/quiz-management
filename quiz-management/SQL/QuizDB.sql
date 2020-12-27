@@ -10,6 +10,7 @@
 	PRIMARY KEY (maNguoiDung)
 )
 
+select * from nguoiDung
 CREATE TABLE Lop
 (
 	maKhoiLop varchar(5),
@@ -20,7 +21,7 @@ CREATE TABLE Lop
 	PRIMARY KEY (maLopHoc)
 )
 alter table Lop add constraint FK_lop_khoiLop FOREIGN KEY(maKhoiLop) references khoiLop(maKhoiLop)
-
+select * from Lop
 
 
 CREATE TABLE khoiLop
@@ -31,7 +32,7 @@ CREATE TABLE khoiLop
 	CONSTRAINT PK_khoiLop
 	PRIMARY KEY (maKhoiLop)
 )
-
+select * from khoiLop
 
 
 
@@ -46,6 +47,8 @@ CREATE TABLE thongTin
 	PRIMARY KEY (maNguoidung)
 )
 select * from thongTin
+insert into thongTin(maNguoidung,tenNguoiDung,ngaySinh,maLopHoc)values('3','Nguyễn Hiếu Nghĩa','2000-01-10',1)
+
 
 ALTER TABLE thongTin
 ADD CONSTRAINT df_maLopHoc
@@ -62,7 +65,7 @@ CREATE TABLE monHoc
 	CONSTRAINT PK_monHoc
 	PRIMARY KEY(maMonHoc)
 )
-
+select * from monHoc
 CREATE TABLE boDe
 (
 	maBoDe INT IDENTITY,
@@ -74,7 +77,7 @@ CREATE TABLE boDe
 	CONSTRAINT PK_boDe
 	PRIMARY KEY (maBoDe)
 )
-
+select * from boDe
 ALTER TABLE dbo.boDe ADD CONSTRAINT FK_boDe_monHoc FOREIGN KEY(maMon) REFERENCES dbo.monHoc(maMonHoc)
 ALTER TABLE boDe ADD CONSTRAINT FK_boDe_khoiLop FOREIGN KEY(maKhoi) REFERENCES khoiLop(maKhoiLop)
 
@@ -143,10 +146,16 @@ alter table ketQua add constraint df_cauchualam default 0 for chuaLam;
 alter table ketQua add constraint df_cau default 0 for cauDung;
 alter table ketQua add constraint df_causai default 0 for cauSai;
 alter table ketQua add constraint df_ngaylam default getdate() for ngayLam;
+alter table ketQua add kyThi int;
+alter table ketQua add kyThi int;
 select * from cTKetQua
 
 ALTER TABLE dbo.ketQua ADD CONSTRAINT FK_ketQua_nguoiDung FOREIGN KEY(maNguoiDung) REFERENCES dbo.nguoiDung(maNguoiDung)
 ALTER TABLE  dbo.ketQua ADD CONSTRAINT FK_ketQua_boDe FOREIGN KEY(maBoDe) REFERENCES dbo.boDe(maBoDe)
+
+insert into ketQua
+values(1, 1, null, null, null, null, null, null, null)
+go
 
 CREATE TABLE cTKetQua
 (
@@ -166,7 +175,7 @@ ALTER TABLE  dbo.cTKetQua ADD CONSTRAINT FK_cTKetQua_dapAn FOREIGN KEY (maCauHoi
 
 CREATE TABLE lichThi
 (
-    maLichThi INT IDENTITY,
+    maLichThi INT,
 	maNguoiDung INT,
 	maMonHoc INT,
 	ngayThi DATE,

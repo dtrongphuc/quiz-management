@@ -1,6 +1,7 @@
 ﻿using quiz_management.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,12 +12,14 @@ namespace quiz_management.Views.Teacher.ExamManagement
     public interface ICreateExamView
     {
         DateTime NgayThi { get; }
-        List<monHoc> lstMonHoc { set; }
+        BindingList<monHoc> lstMonHoc { set; }
         string monHocChon { get; }
-        List<boDe> lstDeThi { set; }
+        BindingList<boDe> lstDeThi { set; }
         string DeThiChon { get; }
-        List<thongTin> lstHocSinh { set; }
-        List<thongTin> lstThiSinh { set; }
+        string KhoiLopChon { get; }
+        BindingList<thongTin> lstHocSinh { set; }
+        BindingList<thongTin> lstThiSinh { set; }
+        BindingList<khoiLop> lstKhoiLop { set; }
         DataGridView lstThiSinhChon { get; }
         DataGridView lstHocSinhChon { get; }
 
@@ -25,7 +28,7 @@ namespace quiz_management.Views.Teacher.ExamManagement
         event EventHandler subjectChange;
         event EventHandler MoveLeft;
         event EventHandler MoveRight;
-        event EventHandler examChange;
+        event EventHandler ClassChange;
 
         void ShowExamListView(int code);
         void ShowMessage(string text);

@@ -1,6 +1,7 @@
 ﻿using quiz_management.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace quiz_management.Views.Teacher.ExamManagement
 {
     interface IExamListView
     {
-        List<TestSchedule> dtgv {set; }
+        BindingList<TestSchedule> dtgv {set; }
         DataGridView lichthichon { get; }
 
         event EventHandler GobackBefore;
