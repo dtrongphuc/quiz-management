@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Answer.cs" />
+    <Compile Include="Models\Authorization.cs" />
     <Compile Include="Models\ContributeQuestion.cs" />
     <Compile Include="Models\CreatePaperWithQuestion.cs" />
     <Compile Include="Models\Papers.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Models\StudentStatistic.cs" />
     <Compile Include="Models\TestSchedule.cs" />
     <Compile Include="Presenters\Administrator\MainAdmin\MainAdminPresenter.cs" />
+    <Compile Include="Presenters\Administrator\SystemManagement\DecentralizationPresenter.cs" />
     <Compile Include="Presenters\Administrator\UserManagement\CreateUserPresenter.cs" />
     <Compile Include="Presenters\Login\LoginPresenter.cs" />
     <Compile Include="Presenters\Register\RegisterPresenter.cs" />
@@ -122,6 +124,13 @@
     <Compile Include="Views\Administrator\MainAdmin\MainAdminView.Designer.cs">
       <DependentUpon>MainAdminView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Administrator\SystemManagement\DecentralizationView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Administrator\SystemManagement\DecentralizationView.Designer.cs">
+      <DependentUpon>DecentralizationView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrator\SystemManagement\IDecentralization.cs" />
     <Compile Include="Views\Administrator\UserManagement\CreateUserView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -324,6 +333,9 @@
     <EmbeddedResource Include="Views\Administrator\MainAdmin\MainAdminView.resx">
       <DependentUpon>MainAdminView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Administrator\SystemManagement\DecentralizationView.resx">
+      <DependentUpon>DecentralizationView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Administrator\UserManagement\CreateUserView.resx">
       <DependentUpon>CreateUserView.cs</DependentUpon>
     </EmbeddedResource>
@@ -418,8 +430,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Presenters\Administrator\SystemManagement\" />
-    <Folder Include="Views\Administrator\SystemManagement\" />
     <Folder Include="Views\Student\StudentManagement\" />
   </ItemGroup>
   <ItemGroup>
