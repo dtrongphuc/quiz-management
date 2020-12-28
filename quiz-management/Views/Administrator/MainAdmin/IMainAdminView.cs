@@ -15,7 +15,7 @@ namespace quiz_management.Views.Administrator.MainAdmin
         event EventHandler Desentralization;
 
         void ShowAddUser(int userCode);
-        void ShowUpdateUser(int userCode);
+        void ShowWatchUserList(int userCode);
         void ShowDesentralization(int userCode);
         void ShowMessages(string text);
     }

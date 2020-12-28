@@ -17,24 +17,24 @@ namespace quiz_management.Presenters.Administrator.MainAdmin
             view = v;
             currentCode = code;
             LoadPage();
-            view.AddUser += UpdateUser_View;
+            view.AddUser += AddUser_View;
             view.WatchUserList += WatchUserList_View;
             view.Desentralization += Desentralization_View;
         }
 
         private void Desentralization_View(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            view.ShowDesentralization(currentCode);
         }
 
         private void WatchUserList_View(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            view.ShowWatchUserList(currentCode);
         }
 
-        private void UpdateUser_View(object sender, EventArgs e)
+        private void AddUser_View(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            view.ShowAddUser(currentCode);
         }
 
         private void LoadPage()

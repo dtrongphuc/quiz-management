@@ -1,4 +1,5 @@
 ﻿using quiz_management.Presenters.Administrator.MainAdmin;
+using quiz_management.Views.Administrator.UserManagement;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,10 +42,10 @@ namespace quiz_management.Views.Administrator.MainAdmin
 
         public void ShowAddUser(int userCode)
         {
-            //this.Hide();
-            //MainCQuestionView screen = new MainCQuestionView(userCode);
-            //screen.FormClosed += (_, e) => this.Close();
-            //screen.Show();
+            this.Hide();
+            CreateUserView screen = new CreateUserView(userCode);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
         }
 
         public void ShowDesentralization(int userCode)
@@ -60,7 +61,7 @@ namespace quiz_management.Views.Administrator.MainAdmin
             MessageBox.Show(text, "Thông báo");
         }
 
-        public void ShowUpdateUser(int userCode)
+        public void ShowWatchUserList(int userCode)
         {
             //this.Hide();
             //MainCQuestionView screen = new MainCQuestionView(userCode);
