@@ -71,6 +71,7 @@
     <Compile Include="Models\Papers.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\QuestionCreated.cs" />
+    <Compile Include="Models\QuestionStatistic.cs" />
     <Compile Include="Models\Quiz.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -370,6 +371,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Teacher\QuestionManagement\QuestionListView.resx">
       <DependentUpon>QuestionListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Teacher\StudentManagement\QuestionStatisticView.resx">
+      <DependentUpon>QuestionStatisticView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Teacher\StudentManagement\StudentStatisticView.resx">
       <DependentUpon>StudentStatisticView.cs</DependentUpon>

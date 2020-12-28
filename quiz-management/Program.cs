@@ -8,6 +8,7 @@ using quiz_management.Views.Teacher.ExamManagement;
 using quiz_management.Views.Teacher.Main;
 using quiz_management.Views.Teacher.PaperManagement;
 using quiz_management.Views.Teacher.QuestionManagement;
+using quiz_management.Views.Teacher.StudentManagement;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,7 @@ namespace quiz_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ExamStatisticView());
+            Application.Run(new QuestionStatisticView());
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using quiz_management.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,6 @@ namespace quiz_management.Views.Teacher.StudentManagement
 {
     internal interface IQuestionStatisticView
     {
+        List<QuestionStatistic> StatisticData { set; }
     }
 }
