@@ -79,6 +79,7 @@
     <Compile Include="Models\ResultExam.cs" />
     <Compile Include="Models\StudentStatistic.cs" />
     <Compile Include="Models\TestSchedule.cs" />
+    <Compile Include="Presenters\Administrator\MainAdmin\MainAdminPresenter.cs" />
     <Compile Include="Presenters\Login\LoginPresenter.cs" />
     <Compile Include="Presenters\Register\RegisterPresenter.cs" />
     <Compile Include="Presenters\Student\ContribuQuestions\CQuestionListPresenter.cs" />
@@ -110,6 +111,13 @@
     </Compile>
     <Compile Include="Validate\RequiredFieldValidator.Designer.cs">
       <DependentUpon>RequiredFieldValidator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrator\MainAdmin\IMainAdminView.cs" />
+    <Compile Include="Views\Administrator\MainAdmin\MainAdminView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Administrator\MainAdmin\MainAdminView.Designer.cs">
+      <DependentUpon>MainAdminView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Login\ILoginView.cs" />
     <Compile Include="Views\Login\LoginView.cs">
@@ -295,6 +303,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\Administrator\MainAdmin\MainAdminView.resx">
+      <DependentUpon>MainAdminView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Login\LoginView.resx">
       <DependentUpon>LoginView.cs</DependentUpon>
     </EmbeddedResource>
@@ -389,6 +400,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Presenters\Administrator\SystemManagement\" />
+    <Folder Include="Presenters\Administrator\UserManagement\" />
+    <Folder Include="Views\Administrator\SystemManagement\" />
+    <Folder Include="Views\Administrator\UserManagement\" />
     <Folder Include="Views\Student\StudentManagement\" />
   </ItemGroup>
   <ItemGroup>
