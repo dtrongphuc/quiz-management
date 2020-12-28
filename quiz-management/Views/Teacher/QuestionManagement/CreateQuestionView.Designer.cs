@@ -213,7 +213,7 @@
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(137, 41);
             this.btnSend.TabIndex = 47;
-            this.btnSend.Text = "Tạo đề thi";
+            this.btnSend.Text = "Tạo Câu Hỏi";
             this.btnSend.UseVisualStyleBackColor = true;
             // 
             // label10
@@ -363,9 +363,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(371, 79);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(164, 32);
+            this.label2.Size = new System.Drawing.Size(184, 32);
             this.label2.TabIndex = 65;
-            this.label2.Text = "Tạo Đề Thi";
+            this.label2.Text = "Tạo Câu Hỏi";
             // 
             // lbTeacher
             // 
