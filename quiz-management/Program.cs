@@ -1,4 +1,5 @@
 ﻿using quiz_management.Views;
+using quiz_management.Views.Administrator.MainAdmin;
 using quiz_management.Views.Student;
 using quiz_management.Views.Student.ContribuQuestions;
 using quiz_management.Views.Student.Exam;
@@ -7,6 +8,7 @@ using quiz_management.Views.Student.Main;
 using quiz_management.Views.Teacher.ExamManagement;
 using quiz_management.Views.Teacher.Main;
 using quiz_management.Views.Teacher.PaperManagement;
+using quiz_management.Views.Teacher.QuestionManagement;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +27,7 @@ namespace quiz_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ExamListView(1));
+            Application.Run(new MainAdminView(1));
         }
     }
 }

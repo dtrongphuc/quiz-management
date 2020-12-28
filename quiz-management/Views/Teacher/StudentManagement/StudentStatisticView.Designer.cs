@@ -30,13 +30,15 @@ namespace quiz_management.Views.Teacher.StudentManagement
         private void InitializeComponent()
         {
             this.dgvHS = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaHocSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenHocSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Diem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbSearch = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbDateTime = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,10 +57,12 @@ namespace quiz_management.Views.Teacher.StudentManagement
             this.dgvHS.BackgroundColor = System.Drawing.Color.White;
             this.dgvHS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4});
+            this.MaHocSinh,
+            this.TenHocSinh,
+            this.NgaySinh,
+            this.Lop,
+            this.MonHoc,
+            this.Diem});
             this.dgvHS.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHS.Location = new System.Drawing.Point(0, 0);
             this.dgvHS.MultiSelect = false;
@@ -69,29 +73,47 @@ namespace quiz_management.Views.Teacher.StudentManagement
             this.dgvHS.Size = new System.Drawing.Size(800, 340);
             this.dgvHS.TabIndex = 0;
             // 
-            // Column1
+            // MaHocSinh
             // 
-            this.Column1.HeaderText = "Mã học sinh";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.MaHocSinh.DataPropertyName = "MaHocSinh";
+            this.MaHocSinh.HeaderText = "Mã học sinh";
+            this.MaHocSinh.Name = "MaHocSinh";
+            this.MaHocSinh.ReadOnly = true;
             // 
-            // Column2
+            // TenHocSinh
             // 
-            this.Column2.HeaderText = "Tên học sinh";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
+            this.TenHocSinh.DataPropertyName = "TenHocSinh";
+            this.TenHocSinh.HeaderText = "Tên học sinh";
+            this.TenHocSinh.Name = "TenHocSinh";
+            this.TenHocSinh.ReadOnly = true;
             // 
-            // Column3
+            // NgaySinh
             // 
-            this.Column3.HeaderText = "Ngày sinh";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
+            this.NgaySinh.DataPropertyName = "NgaySinh";
+            this.NgaySinh.HeaderText = "Ngày sinh";
+            this.NgaySinh.Name = "NgaySinh";
+            this.NgaySinh.ReadOnly = true;
             // 
-            // Column4
+            // Lop
             // 
-            this.Column4.HeaderText = "Lớp";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
+            this.Lop.DataPropertyName = "Lop";
+            this.Lop.HeaderText = "Lớp";
+            this.Lop.Name = "Lop";
+            this.Lop.ReadOnly = true;
+            // 
+            // MonHoc
+            // 
+            this.MonHoc.DataPropertyName = "MonHoc";
+            this.MonHoc.HeaderText = "Môn học";
+            this.MonHoc.Name = "MonHoc";
+            this.MonHoc.ReadOnly = true;
+            // 
+            // Diem
+            // 
+            this.Diem.DataPropertyName = "Diem";
+            this.Diem.HeaderText = "Điểm";
+            this.Diem.Name = "Diem";
+            this.Diem.ReadOnly = true;
             // 
             // splitContainer1
             // 
@@ -103,7 +125,7 @@ namespace quiz_management.Views.Teacher.StudentManagement
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.label4);
-            this.splitContainer1.Panel1.Controls.Add(this.textBox1);
+            this.splitContainer1.Panel1.Controls.Add(this.tbSearch);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.cbDateTime);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
@@ -127,12 +149,12 @@ namespace quiz_management.Views.Teacher.StudentManagement
             this.label4.TabIndex = 7;
             this.label4.Text = "Tìm kiếm:";
             // 
-            // textBox1
+            // tbSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(70, 82);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(293, 20);
-            this.textBox1.TabIndex = 6;
+            this.tbSearch.Location = new System.Drawing.Point(70, 82);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(293, 20);
+            this.tbSearch.TabIndex = 6;
             // 
             // label2
             // 
@@ -176,6 +198,7 @@ namespace quiz_management.Views.Teacher.StudentManagement
             this.Controls.Add(this.splitContainer1);
             this.Name = "StudentStatisticView";
             this.Text = "StudentStatisticView";
+            this.Load += new System.EventHandler(this.Form_Loaded);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHS)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -189,15 +212,17 @@ namespace quiz_management.Views.Teacher.StudentManagement
         #endregion
 
         private System.Windows.Forms.DataGridView dgvHS;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbDateTime;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbSearch;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaHocSinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenHocSinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Lop;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MonHoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Diem;
     }
 }

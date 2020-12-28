@@ -819,3 +819,41 @@ values
 )
 insert into cTBoDe values (2, 7), (2, 6)
 select * from cTBoDe
+select * from boDe
+INSERT INTO dbo.boDe
+(
+    thoiGian,
+    tongSoCau,
+    maMon,
+    maKhoi
+)
+VALUES
+(   30, -- thoiGian - INT
+    3,         -- tongSoCau - int
+    2,         -- maMon - int
+    'K11'         -- maKhoi - varchar(5)
+    )
+GO
+insert into cTBoDe values (3, 7), (3, 6), (3, 8)
+
+--insert đóng góp
+insert into dongGop values 
+(
+    1, --ma ng dung
+    2, -- ma mon hoc
+    0, -- trang thai 0 chua duyêt, 1 la đã duyệt
+    getdate(),
+    N'Câu hỏi là gì???',
+    'K11'
+), 
+(
+    1, --ma ng dung
+    2, -- ma mon hoc
+    0, -- trang thai 0 chua duyêt, 1 la đã duyệt
+    getdate(),
+    N'Gió bắt đầu từ đâu??',
+    'K11'
+)
+select * from cTDongGop
+insert into cTDongGop values ( 1, N'trả lời 1', 0), ( 1, N'trả lời 2', 1), ( 1, N'trả lời 3', 0), ( 1, N'trả lời 4', 0),
+                             ( 2, N'trả lời 1', 1), ( 2, N'trả lời 2', 0), ( 2, N'trả lời 3', 0), ( 2, N'trả lời 4', 0)  

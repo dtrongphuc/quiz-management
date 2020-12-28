@@ -42,19 +42,19 @@
             this.btnLamBaiThi = new System.Windows.Forms.Button();
             this.btnQLDeThi = new System.Windows.Forms.Button();
             this.panelQLCauHoi = new System.Windows.Forms.Panel();
-            this.btnDongGop = new System.Windows.Forms.Button();
-            this.btnListQuiz = new System.Windows.Forms.Button();
+            this.btnApproval = new System.Windows.Forms.Button();
+            this.btnCreateQuestion = new System.Windows.Forms.Button();
             this.btnQuizManager = new System.Windows.Forms.Button();
             this.timerQLCauHoi = new System.Windows.Forms.Timer(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbDOB = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnPrintTranScript = new System.Windows.Forms.Button();
-            this.btnUpdateInfoStudent = new System.Windows.Forms.Button();
+            this.btnUpdateInfo = new System.Windows.Forms.Button();
             this.btnExamResultView = new System.Windows.Forms.Button();
-            this.txbNgaySinh = new System.Windows.Forms.TextBox();
-            this.txbMaSo = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.tbTeacherID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.tbTenGV = new System.Windows.Forms.Label();
+            this.tbTeacherName = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtTitle2 = new System.Windows.Forms.Label();
             this.txtTitle1 = new System.Windows.Forms.Label();
@@ -88,7 +88,7 @@
             this.flowLayoutPanel2.Controls.Add(this.panelLamBaiThi);
             this.flowLayoutPanel2.Controls.Add(this.btnQLDeThi);
             this.flowLayoutPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(31, 179);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(46, 182);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(219, 384);
             this.flowLayoutPanel2.TabIndex = 1;
@@ -250,8 +250,8 @@
             // 
             // panelQLCauHoi
             // 
-            this.panelQLCauHoi.Controls.Add(this.btnDongGop);
-            this.panelQLCauHoi.Controls.Add(this.btnListQuiz);
+            this.panelQLCauHoi.Controls.Add(this.btnApproval);
+            this.panelQLCauHoi.Controls.Add(this.btnCreateQuestion);
             this.panelQLCauHoi.Controls.Add(this.btnQuizManager);
             this.panelQLCauHoi.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelQLCauHoi.Location = new System.Drawing.Point(3, 3);
@@ -261,35 +261,35 @@
             this.panelQLCauHoi.Size = new System.Drawing.Size(214, 135);
             this.panelQLCauHoi.TabIndex = 1;
             // 
-            // btnDongGop
+            // btnApproval
             // 
-            this.btnDongGop.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnDongGop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDongGop.FlatAppearance.BorderSize = 0;
-            this.btnDongGop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDongGop.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDongGop.ForeColor = System.Drawing.Color.Black;
-            this.btnDongGop.Location = new System.Drawing.Point(0, 96);
-            this.btnDongGop.Name = "btnDongGop";
-            this.btnDongGop.Size = new System.Drawing.Size(214, 41);
-            this.btnDongGop.TabIndex = 6;
-            this.btnDongGop.Text = "Duyệt Đóng Góp";
-            this.btnDongGop.UseVisualStyleBackColor = false;
+            this.btnApproval.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnApproval.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnApproval.FlatAppearance.BorderSize = 0;
+            this.btnApproval.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnApproval.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApproval.ForeColor = System.Drawing.Color.Black;
+            this.btnApproval.Location = new System.Drawing.Point(0, 96);
+            this.btnApproval.Name = "btnApproval";
+            this.btnApproval.Size = new System.Drawing.Size(214, 41);
+            this.btnApproval.TabIndex = 6;
+            this.btnApproval.Text = "Duyệt Đóng Góp";
+            this.btnApproval.UseVisualStyleBackColor = false;
             // 
-            // btnListQuiz
+            // btnCreateQuestion
             // 
-            this.btnListQuiz.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnListQuiz.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnListQuiz.FlatAppearance.BorderSize = 0;
-            this.btnListQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnListQuiz.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListQuiz.ForeColor = System.Drawing.Color.Black;
-            this.btnListQuiz.Location = new System.Drawing.Point(0, 55);
-            this.btnListQuiz.Name = "btnListQuiz";
-            this.btnListQuiz.Size = new System.Drawing.Size(214, 41);
-            this.btnListQuiz.TabIndex = 3;
-            this.btnListQuiz.Text = "Xem Danh Sách Câu Hỏi";
-            this.btnListQuiz.UseVisualStyleBackColor = false;
+            this.btnCreateQuestion.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnCreateQuestion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCreateQuestion.FlatAppearance.BorderSize = 0;
+            this.btnCreateQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateQuestion.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateQuestion.ForeColor = System.Drawing.Color.Black;
+            this.btnCreateQuestion.Location = new System.Drawing.Point(0, 55);
+            this.btnCreateQuestion.Name = "btnCreateQuestion";
+            this.btnCreateQuestion.Size = new System.Drawing.Size(214, 41);
+            this.btnCreateQuestion.TabIndex = 3;
+            this.btnCreateQuestion.Text = "Tạo Câu Hỏi";
+            this.btnCreateQuestion.UseVisualStyleBackColor = false;
             // 
             // btnQuizManager
             // 
@@ -317,21 +317,37 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.tbDOB);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnPrintTranScript);
-            this.groupBox1.Controls.Add(this.btnUpdateInfoStudent);
+            this.groupBox1.Controls.Add(this.btnUpdateInfo);
             this.groupBox1.Controls.Add(this.btnExamResultView);
-            this.groupBox1.Controls.Add(this.txbNgaySinh);
-            this.groupBox1.Controls.Add(this.txbMaSo);
-            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.tbTeacherID);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.tbTenGV);
+            this.groupBox1.Controls.Add(this.tbTeacherName);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(302, 575);
+            this.groupBox1.Size = new System.Drawing.Size(302, 624);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin";
+            // 
+            // tbDOB
+            // 
+            this.tbDOB.Location = new System.Drawing.Point(111, 182);
+            this.tbDOB.Name = "tbDOB";
+            this.tbDOB.Size = new System.Drawing.Size(169, 32);
+            this.tbDOB.TabIndex = 24;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 192);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 22);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Ngảy Sinh:";
             // 
             // btnPrintTranScript
             // 
@@ -344,17 +360,17 @@
             this.btnPrintTranScript.Text = "In bảng điểm";
             this.btnPrintTranScript.UseVisualStyleBackColor = true;
             // 
-            // btnUpdateInfoStudent
+            // btnUpdateInfo
             // 
-            this.btnUpdateInfoStudent.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnUpdateInfoStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateInfoStudent.Location = new System.Drawing.Point(82, 382);
-            this.btnUpdateInfoStudent.Margin = new System.Windows.Forms.Padding(2);
-            this.btnUpdateInfoStudent.Name = "btnUpdateInfoStudent";
-            this.btnUpdateInfoStudent.Size = new System.Drawing.Size(139, 49);
-            this.btnUpdateInfoStudent.TabIndex = 21;
-            this.btnUpdateInfoStudent.Text = "Sửa thông tin cá nhân";
-            this.btnUpdateInfoStudent.UseVisualStyleBackColor = false;
+            this.btnUpdateInfo.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnUpdateInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateInfo.Location = new System.Drawing.Point(82, 382);
+            this.btnUpdateInfo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdateInfo.Name = "btnUpdateInfo";
+            this.btnUpdateInfo.Size = new System.Drawing.Size(139, 49);
+            this.btnUpdateInfo.TabIndex = 21;
+            this.btnUpdateInfo.Text = "Sửa thông tin cá nhân";
+            this.btnUpdateInfo.UseVisualStyleBackColor = false;
             // 
             // btnExamResultView
             // 
@@ -368,28 +384,12 @@
             this.btnExamResultView.Text = "Xem kết quả thi";
             this.btnExamResultView.UseVisualStyleBackColor = false;
             // 
-            // txbNgaySinh
+            // tbTeacherID
             // 
-            this.txbNgaySinh.Location = new System.Drawing.Point(111, 196);
-            this.txbNgaySinh.Name = "txbNgaySinh";
-            this.txbNgaySinh.Size = new System.Drawing.Size(169, 27);
-            this.txbNgaySinh.TabIndex = 17;
-            // 
-            // txbMaSo
-            // 
-            this.txbMaSo.Location = new System.Drawing.Point(111, 135);
-            this.txbMaSo.Name = "txbMaSo";
-            this.txbMaSo.Size = new System.Drawing.Size(169, 27);
-            this.txbMaSo.TabIndex = 16;
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 201);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 22);
-            this.label3.TabIndex = 14;
-            this.label3.Text = " Ngày Sinh:";
+            this.tbTeacherID.Location = new System.Drawing.Point(111, 130);
+            this.tbTeacherID.Name = "tbTeacherID";
+            this.tbTeacherID.Size = new System.Drawing.Size(169, 32);
+            this.tbTeacherID.TabIndex = 16;
             // 
             // label2
             // 
@@ -400,16 +400,16 @@
             this.label2.TabIndex = 13;
             this.label2.Text = " Mã Số:";
             // 
-            // tbTenGV
+            // tbTeacherName
             // 
-            this.tbTenGV.AutoSize = true;
-            this.tbTenGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTenGV.Location = new System.Drawing.Point(46, 55);
-            this.tbTenGV.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.tbTenGV.Name = "tbTenGV";
-            this.tbTenGV.Size = new System.Drawing.Size(175, 24);
-            this.tbTenGV.TabIndex = 12;
-            this.tbTenGV.Text = "Giáo Viên Siêu Cấp";
+            this.tbTeacherName.AutoSize = true;
+            this.tbTeacherName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTeacherName.Location = new System.Drawing.Point(46, 64);
+            this.tbTeacherName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.tbTeacherName.Name = "tbTeacherName";
+            this.tbTeacherName.Size = new System.Drawing.Size(223, 29);
+            this.tbTeacherName.TabIndex = 12;
+            this.tbTeacherName.Text = "Giáo Viên Siêu Cấp";
             // 
             // groupBox2
             // 
@@ -421,7 +421,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(302, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(553, 575);
+            this.groupBox2.Size = new System.Drawing.Size(553, 624);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             // 
@@ -429,10 +429,10 @@
             // 
             this.txtTitle2.AutoSize = true;
             this.txtTitle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitle2.Location = new System.Drawing.Point(87, 112);
+            this.txtTitle2.Location = new System.Drawing.Point(57, 104);
             this.txtTitle2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtTitle2.Name = "txtTitle2";
-            this.txtTitle2.Size = new System.Drawing.Size(356, 26);
+            this.txtTitle2.Size = new System.Drawing.Size(464, 32);
             this.txtTitle2.TabIndex = 3;
             this.txtTitle2.Text = "Trường đại học Khoa Học Tự Nhiên ";
             // 
@@ -440,10 +440,10 @@
             // 
             this.txtTitle1.AutoSize = true;
             this.txtTitle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitle1.Location = new System.Drawing.Point(197, 55);
+            this.txtTitle1.Location = new System.Drawing.Point(212, 64);
             this.txtTitle1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtTitle1.Name = "txtTitle1";
-            this.txtTitle1.Size = new System.Drawing.Size(121, 17);
+            this.txtTitle1.Size = new System.Drawing.Size(140, 20);
             this.txtTitle1.TabIndex = 2;
             this.txtTitle1.Text = "Thi trắc nghiệm";
             // 
@@ -453,7 +453,7 @@
             this.flowLayoutPanel1.Controls.Add(this.panelQLKyThi);
             this.flowLayoutPanel1.Controls.Add(this.btnQLKyThiThu);
             this.flowLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(275, 179);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(290, 182);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(219, 384);
             this.flowLayoutPanel1.TabIndex = 3;
@@ -564,11 +564,12 @@
             // MainTeacherView
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(855, 575);
+            this.ClientSize = new System.Drawing.Size(855, 624);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "MainTeacherView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.flowLayoutPanel2.ResumeLayout(false);
             this.panelThongKe.ResumeLayout(false);
@@ -590,21 +591,19 @@
         private System.Windows.Forms.Panel panelQLCauHoi;
         
        
-        private System.Windows.Forms.Button btnListQuiz;
+        private System.Windows.Forms.Button btnCreateQuestion;
         private System.Windows.Forms.Button btnQuizManager;
         private System.Windows.Forms.Timer timerQLCauHoi;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label tbTenGV;
+        private System.Windows.Forms.Label tbTeacherName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txbMaSo;
-        private System.Windows.Forms.TextBox txbNgaySinh;
-        private System.Windows.Forms.Button btnUpdateInfoStudent;
+        private System.Windows.Forms.TextBox tbTeacherID;
+        private System.Windows.Forms.Button btnUpdateInfo;
         private System.Windows.Forms.Button btnPrintTranScript;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label txtTitle1;
         private System.Windows.Forms.Label txtTitle2;
-        private System.Windows.Forms.Button btnDongGop;
+        private System.Windows.Forms.Button btnApproval;
         private System.Windows.Forms.Button btnExamResultView;
         
         
@@ -627,6 +626,8 @@
         private System.Windows.Forms.Button btnQLDeThi;
         private System.Windows.Forms.Button btnQLKyThiThu;
         private System.Windows.Forms.Timer timeQLKyThi;
+        private System.Windows.Forms.TextBox tbDOB;
+        private System.Windows.Forms.Label label1;
     }
 }
 

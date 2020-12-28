@@ -8,39 +8,27 @@ using System.Threading.Tasks;
 
 namespace quiz_management.Presenters.Teacher.QuestionManagement
 {
-    class CreateQuestionPresneter
+    class UpdateQuestionPresenter
     {
-        ICreateQuestionView view;
-        int currentUser;
-        public CreateQuestionPresneter(ICreateQuestionView v, int code)
+        IUpdateQuestionView view;
+        int currentUser = 0;
+        int questionid = 0;
+        public UpdateQuestionPresenter(IUpdateQuestionView v, int code, int question)
         {
             view = v;
             currentUser = code;
-            view.ShowListQuestion += ShowListQuestion_View;
-            view.Create += Create_View;
-            view.GoBackMain += GoBackMain_View;
-            LoadPage(code);
+            questionid = question;
+            LoadPage();
+            view.GoBackBefore += GoBackBefore_View;
+            view.UpdateQuestion += UpdateQuestion_View;
         }
 
-        private void LoadPage(int code)
+        private void GoBackBefore_View(object sender, EventArgs e)
         {
-            using (var db = new QuizDataContext())
-            {
-                //ten gv
-                view.TeacherName = db.thongTins.Where(i => i.maNguoidung == 1).Select(i => i.tenNguoiDung).ToList()[0].ToString();
-                //monhoc
-                view.GradeList = db.khoiLops.ToList();
-                //monhoc
-                view.SubjectList = db.monHocs.ToList();
-            }
+            view.ShowListQuestion(currentUser, view.GradeId, int.Parse(view.SubjectId));
         }
 
-        private void ShowListQuestion_View(object sender, EventArgs e)
-        {
-            view.ShowQuestionList(currentUser, "", 0);
-        }
-
-        private void Create_View(object sender, EventArgs e)
+        private void UpdateQuestion_View(object sender, EventArgs e)
         {
             string Questionsstring = view.Question;
             string answerA = view.AnswerA;
@@ -72,26 +60,28 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
                     var checkquestion = db.cauHois.Where(i => i.cauHoi1 == Questionsstring && i.maKhoiLop == classIDSelected && i.maMonHoc == int.Parse(subjectIDSelected)).ToList();
                     if (checkquestion.Count == 0)
                     {
-                        //thêm vào bảng câu hỏi
-                        db.cauHois.InsertOnSubmit(new cauHoi
-                        {
-                            maMonHoc = int.Parse(subjectIDSelected),
-                            cauHoi1 = Questionsstring,
-                            doKho = int.Parse(view.lvDifficute),
-                            trangThai = 1,
-                            maKhoiLop = classIDSelected
-                        });
+                        var questionupdate = db.cauHois.Single(i => i.maCauHoi == questionid);
+                        questionupdate.cauHoi1 = Questionsstring;
+                        questionupdate.doKho = int.Parse(view.lvDifficute);
+                        questionupdate.maKhoiLop = classIDSelected;
+                        questionupdate.maMonHoc = int.Parse(subjectIDSelected);
                         db.SubmitChanges();
 
-                        //thêm vào bảng đáp án
-                        //var idContribution_next = db.dongGops.Max(i => i.maDongGop);
-                        var QuestionID = db.cauHois.Max(i => i.maCauHoi);
+                        //xóa trong đáp án
+                        var answers = db.dapAns.Where(i => i.maCauHoi == questionid).ToList();
+                        foreach (var i in answers)
+                        {
+                            db.dapAns.DeleteOnSubmit(i);
+                            db.SubmitChanges();
+                        }
+
+                        //thêm lại vào bảng đáp án
                         int AnswerID = 1;
                         if (answerA != "")
                         {
                             db.dapAns.InsertOnSubmit(new dapAn
                             {
-                                maCauHoi = QuestionID,
+                                maCauHoi = questionid,
                                 maCauTraloi = AnswerID,
                                 cauTraLoi = answerA,
                                 dapAn1 = checkA
@@ -103,7 +93,7 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
                         {
                             db.dapAns.InsertOnSubmit(new dapAn
                             {
-                                maCauHoi = QuestionID,
+                                maCauHoi = questionid,
                                 maCauTraloi = AnswerID,
                                 cauTraLoi = answerB,
                                 dapAn1 = checkB
@@ -115,7 +105,7 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
                         {
                             db.dapAns.InsertOnSubmit(new dapAn
                             {
-                                maCauHoi = QuestionID,
+                                maCauHoi = questionid,
                                 maCauTraloi = AnswerID,
                                 cauTraLoi = answerC,
                                 dapAn1 = checkC
@@ -127,7 +117,7 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
                         {
                             db.dapAns.InsertOnSubmit(new dapAn
                             {
-                                maCauHoi = QuestionID,
+                                maCauHoi = questionid,
                                 maCauTraloi = AnswerID,
                                 cauTraLoi = answerD,
                                 dapAn1 = checkD
@@ -139,7 +129,7 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
                         {
                             db.dapAns.InsertOnSubmit(new dapAn
                             {
-                                maCauHoi = QuestionID,
+                                maCauHoi = questionid,
                                 maCauTraloi = AnswerID,
                                 cauTraLoi = answerE,
                                 dapAn1 = checkE
@@ -151,7 +141,7 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
                         {
                             db.dapAns.InsertOnSubmit(new dapAn
                             {
-                                maCauHoi = QuestionID,
+                                maCauHoi = questionid,
                                 maCauTraloi = AnswerID,
                                 cauTraLoi = answerF,
                                 dapAn1 = checkF
@@ -159,8 +149,9 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
                             db.SubmitChanges();
                             AnswerID++;
                         }
-                        view.ShowMessage("Tạo câu hỏi thành công");
-                        view.ShowQuestionList(currentUser, view.GradeId, int.Parse(view.SubjectId));
+                        view.ShowMessage("Cập nhật câu hỏi thành công");
+                        //cập nhật xong quay lại danh sách
+                        view.ShowListQuestion(currentUser, view.GradeId, int.Parse(view.SubjectId));
                     }
                     else
                         view.ShowMessage("Câu hỏi đã tồn tại");
@@ -168,9 +159,62 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
             }
         }
 
-        private void GoBackMain_View(object sender, EventArgs e)
+        private void LoadPage()
         {
-            view.ShowMainTeacher(currentUser);
+            using (var db = new QuizDataContext())
+            {
+                //ten gv
+                view.TeacherName = db.thongTins.Where(i => i.maNguoidung == 1).Select(i => i.tenNguoiDung).ToList()[0].ToString();
+                //monhoc
+                view.GradeList = db.khoiLops.ToList();
+                //monhoc
+                view.SubjectList = db.monHocs.ToList();
+
+                //cau hoi
+                var question = db.cauHois.Where(i => i.maCauHoi == questionid).ToList();
+                view.Question = question[0].cauHoi1;
+                //cau trả lời
+                //view.AnswerA = question[0].dapAns.Where(i => i.maCauHoi == questionid && i.maCauTraloi == 1).Select(i => i.dapAn1).ToList()[0].ToString();
+                foreach(var answer in question[0].dapAns)
+                {
+                    if(answer.maCauTraloi == 1)
+                    {
+                        view.AnswerA = answer.cauTraLoi;
+                        view.cbResultA = answer.dapAn1 == 1 ? true : false;
+                    }
+                    else if (answer.maCauTraloi == 2)
+                    {
+                        view.AnswerB = answer.cauTraLoi;
+                        view.cbResultB = answer.dapAn1 == 1 ? true : false;
+                    }
+                    else if(answer.maCauTraloi == 3)
+                    {
+                        view.AnswerC = answer.cauTraLoi;
+                        view.cbResultC = answer.dapAn1 == 1 ? true : false;
+                    }
+                    else if(answer.maCauTraloi == 4)
+                    {
+                        view.AnswerD = answer.cauTraLoi;
+                        view.cbResultD = answer.dapAn1 == 1 ? true : false;
+                    }
+                    else if(answer.maCauTraloi == 5)
+                    {
+                        view.AnswerE = answer.cauTraLoi;
+                        view.cbResultE = answer.dapAn1 == 1 ? true : false;
+                    }
+                    else
+                    {
+                        view.AnswerF = answer.cauTraLoi;
+                        view.cbResultF = answer.dapAn1 == 1 ? true : false;
+                    }
+                }
+                //do khó
+                view.lvDifficute = question[0].doKho.ToString();
+
+                //môn hôc và khối lớp đã chọn
+                view.GradeSelected = question[0].khoiLop.tenKhoiLop;
+                view.SubjectSelected = question[0].monHoc.tenMonHoc;
+            }
         }
     }
 }

@@ -14,6 +14,8 @@ namespace quiz_management.Views.Teacher.QuestionManagement
         string GradeId { get; }
         string SubjectId { get; }
         string QuestionId { get; }
+        string SubjectSelected { set; }
+        string GradeSelected { set; }
         List<khoiLop> GradeList { set; }
         List<monHoc> SubjectList { set; }
         BindingList<QuestionCreated> QuestionList { set; }

@@ -13,11 +13,15 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
     {
         IQuestionListView view;
         int currenUser;
+        string gradeId;
+        int subjectId;
         BindingList<QuestionCreated> questionbinding = null;
-        public QuestionListPresenter(IQuestionListView v, int code)
+        public QuestionListPresenter(IQuestionListView v, int code, string gradeID, int subjectID)
         {
             view = v;
             currenUser = code;
+            gradeId = gradeID;
+            subjectId = subjectID;
             LoadPage(code);
             view.ShowUpdate += ShowUpdate_View;
             view.GoBackBefore += GoBackBefore_View;
@@ -48,9 +52,22 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
                 questions = db.cauHois.Where(i => i.maKhoiLop == view.GradeId && i.maMonHoc == int.Parse(view.SubjectId)).ToList();
                 foreach (var question in questions)
                 {
+                    var paperid = question.cTBoDes.Where(i => i.maCauHoi == question.maCauHoi).Select(i => i.maBoDe).ToList();
+                    //liệt kê các đề có câu hỏi đang xét
+                    string paperids = "";
+                    for (var i = 0; i < paperid.Count(); i++)
+                    {
+                        if (i == 0)
+                            paperids += paperid[i].ToString();
+                        else
+                            paperids += ", " + paperid[i].ToString();
+                    }
+
                     QuestionCreated q = new QuestionCreated();
                     q.Question = question.cauHoi1;
-                    q.PaperName = "12";
+                    q.PaperName = paperid.Count() > 0 ? paperids : "Chưa có trong đề thi";
+                    q.QuestionID = question.maCauHoi.ToString();
+
                     questionbinding.Add(q);
                 }
                 view.QuestionList = questionbinding;
@@ -68,6 +85,10 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
                 //monhoc
                 view.SubjectList = db.monHocs.ToList();
 
+                if (gradeId != "")
+                    view.GradeSelected = db.khoiLops.Where(i => i.maKhoiLop == gradeId.ToString()).Select(i => i.tenKhoiLop).ToList()[0].ToString();
+                if (subjectId > 0)
+                    view.SubjectSelected = db.monHocs.Where(i => i.maMonHoc == subjectId).Select(i => i.tenMonHoc).ToList()[0].ToString();
                 LoadDGV();
             }
         }
