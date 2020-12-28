@@ -96,6 +96,8 @@
     <Compile Include="Presenters\Teacher\PaperManagement\CreatePaperPresenter.cs" />
     <Compile Include="Presenters\Teacher\PaperManagement\PaperListPresenter.cs" />
     <Compile Include="Presenters\Teacher\PaperManagement\UpdatePaperPresenter.cs" />
+    <Compile Include="Presenters\Teacher\StudentManagement\ExamStatisticPresenter.cs" />
+    <Compile Include="Presenters\Teacher\StudentManagement\QuestionStatisticPresenter.cs" />
     <Compile Include="Presenters\Teacher\StudentManagement\StudentStatisticPresenter.cs" />
     <Compile Include="Presenters\Teacher\QuestionManagement\CreateQuestionPresneter.cs" />
     <Compile Include="Presenters\Teacher\QuestionManagement\QuestionListPresenter.cs" />
@@ -254,7 +256,15 @@
     <Compile Include="Views\Teacher\StudentManagement\ExamStatisticView.Designer.cs">
       <DependentUpon>ExamStatisticView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Teacher\StudentManagement\IExamStatisticView.cs" />
+    <Compile Include="Views\Teacher\StudentManagement\IQuestionStatisticView.cs" />
     <Compile Include="Views\Teacher\StudentManagement\IStudentStatisticView.cs" />
+    <Compile Include="Views\Teacher\StudentManagement\QuestionStatisticView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Teacher\StudentManagement\QuestionStatisticView.Designer.cs">
+      <DependentUpon>QuestionStatisticView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Teacher\StudentManagement\StudentStatisticView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -336,6 +346,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Teacher\QuestionManagement\QuestionListView.resx">
       <DependentUpon>QuestionListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Teacher\StudentManagement\ExamStatisticView.resx">
+      <DependentUpon>ExamStatisticView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Teacher\StudentManagement\QuestionStatisticView.resx">
+      <DependentUpon>QuestionStatisticView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Teacher\StudentManagement\StudentStatisticView.resx">
       <DependentUpon>StudentStatisticView.cs</DependentUpon>

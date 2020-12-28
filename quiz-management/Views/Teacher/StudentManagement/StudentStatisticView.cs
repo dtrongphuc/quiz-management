@@ -18,27 +18,6 @@ namespace quiz_management.Views.Teacher.StudentManagement
 
         public List<DateTime> ExamDateTimes { set => cbDateTime.DataSource = value; }
 
-        //public List<monHoc> Courses
-        //{
-        //    set
-        //    {
-        //        for (int i = 4; i < dgvHS.Columns.Count; i++)
-        //        {
-        //            dgvHS.Columns.RemoveAt(i);
-        //        }
-
-        //        foreach (var mh in value)
-        //        {
-        //            DataGridViewColumn col = new DataGridViewColumn
-        //            {
-        //                HeaderText = mh.tenMonHoc,
-        //                DataPropertyName = mh.maMonHoc.ToString(),
-        //            };
-        //            //dgvHS.Columns.Add(col);
-        //        }
-        //    }
-        //}
-
         public List<StudentStatistic> StatisticData
         {
             set
