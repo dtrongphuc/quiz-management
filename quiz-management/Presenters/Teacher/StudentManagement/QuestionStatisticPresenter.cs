@@ -30,7 +30,7 @@ namespace quiz_management.Presenters.Teacher.StudentManagement
                 foreach (cauHoi ch in db.cauHois)
                 {
                     double Total = db.cTKetQuas.Where(ct =>
-                                    (ct.maCauHoi == ch.maCauHoi)).Count();
+                                    (ct.maCauHoi == ch.maCauHoi) && (ch.trangThai == 1)).Count();
 
                     QuestionStatistic q = new QuestionStatistic
                     {
