@@ -1,4 +1,5 @@
 ﻿using quiz_management.Views;
+using quiz_management.Views.Administrator.MainAdmin;
 using quiz_management.Views.Student;
 using quiz_management.Views.Student.ContribuQuestions;
 using quiz_management.Views.Student.Exam;
