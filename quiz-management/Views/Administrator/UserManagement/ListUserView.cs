@@ -34,6 +34,8 @@ namespace quiz_management.Views.Administrator.UserManagement
         public string Datenow { set => lbDOB.Text = value; }
         public BindingList<InfoUser> UserList { set => dgvUser.DataSource = value; }
 
+        string IListUserView.UserID => dgvUser.SelectedRows[0].Cells["UserID"].Value.ToString();
+
         public event EventHandler UpdateUser;
         public event EventHandler GoBackBefore;
 
@@ -50,12 +52,12 @@ namespace quiz_management.Views.Administrator.UserManagement
             MessageBox.Show(text, "Thông báo");
         }
 
-        public void ShowUpdate(int userCode)
+        public void ShowUpdate(int userCode, int userid)
         {
-            //this.Hide();
-            //MainAdminView screen = new MainAdminView(userCode);
-            //screen.FormClosed += (_, e) => this.Close();
-            //screen.Show();
+            this.Hide();
+            UpdateUserView screen = new UpdateUserView(userCode, userid);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
         }
     }
 }

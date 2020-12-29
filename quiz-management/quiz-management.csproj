@@ -86,6 +86,7 @@
     <Compile Include="Presenters\Administrator\SystemManagement\DecentralizationPresenter.cs" />
     <Compile Include="Presenters\Administrator\UserManagement\CreateUserPresenter.cs" />
     <Compile Include="Presenters\Administrator\UserManagement\ListUserPresenter.cs" />
+    <Compile Include="Presenters\Administrator\UserManagement\UpdateUserPresenter.cs" />
     <Compile Include="Presenters\Login\LoginPresenter.cs" />
     <Compile Include="Presenters\Register\RegisterPresenter.cs" />
     <Compile Include="Presenters\Student\ContribuQuestions\CQuestionListPresenter.cs" />
@@ -142,11 +143,18 @@
     </Compile>
     <Compile Include="Views\Administrator\UserManagement\ICreateUserView.cs" />
     <Compile Include="Views\Administrator\UserManagement\IListUserView.cs" />
+    <Compile Include="Views\Administrator\UserManagement\IUpdateUserView.cs" />
     <Compile Include="Views\Administrator\UserManagement\ListUserView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Administrator\UserManagement\ListUserView.Designer.cs">
       <DependentUpon>ListUserView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrator\UserManagement\UpdateUserView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Administrator\UserManagement\UpdateUserView.Designer.cs">
+      <DependentUpon>UpdateUserView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Login\ILoginView.cs" />
     <Compile Include="Views\Login\LoginView.cs">
@@ -351,6 +359,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Administrator\UserManagement\ListUserView.resx">
       <DependentUpon>ListUserView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Administrator\UserManagement\UpdateUserView.resx">
+      <DependentUpon>UpdateUserView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Login\LoginView.resx">
       <DependentUpon>LoginView.cs</DependentUpon>

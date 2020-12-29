@@ -12,12 +12,13 @@ namespace quiz_management.Views.Administrator.UserManagement
     {
         string AdminName { set; }
         string Datenow { set; }
+        string UserID { get; }
         BindingList<InfoUser> UserList { set; }
         event EventHandler UpdateUser;
         event EventHandler GoBackBefore;
 
         void ShowMessages(string text);
         void ShowMainAdmin(int userCode);
-        void ShowUpdate(int userCode);
+        void ShowUpdate(int userCode, int userid);
     }
 }

@@ -37,6 +37,7 @@ namespace quiz_management.Presenters.Administrator.UserManagement
                 foreach(var user in users)
                 {
                     InfoUser info = new InfoUser();
+                    info.UserID = user.maNguoidung;
                     info.STT = stt.ToString();
                     info.UserName = user.tenNguoiDung;
                     info.DOB = user.ngaySinh.Value;
@@ -51,7 +52,7 @@ namespace quiz_management.Presenters.Administrator.UserManagement
 
         private void UpdateUser_View(object sender, EventArgs e)
         {
-            view.ShowUpdate(currentuser);
+            view.ShowUpdate(currentuser, int.Parse(view.UserID));
         }
 
         private void GoBackBefore_View(object sender, EventArgs e)

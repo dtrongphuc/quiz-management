@@ -12,10 +12,12 @@ namespace quiz_management.Models
         string _userName;
         DateTime _dOB;
         string _desentralization;
+        int _userID;
 
         public string STT { get => _sTT; set => _sTT = value; }
         public string UserName { get => _userName; set => _userName = value; }
         public DateTime DOB { get => _dOB; set => _dOB = value; }
         public string Desentralization { get => _desentralization; set => _desentralization = value; }
+        public int UserID { get => _userID; set => _userID = value; }
     }
 }
