@@ -856,4 +856,7 @@ insert into dongGop values
 )
 select * from cTDongGop
 insert into cTDongGop values ( 1, N'trả lời 1', 0), ( 1, N'trả lời 2', 1), ( 1, N'trả lời 3', 0), ( 1, N'trả lời 4', 0),
-                             ( 2, N'trả lời 1', 1), ( 2, N'trả lời 2', 0), ( 2, N'trả lời 3', 0), ( 2, N'trả lời 4', 0)  
+                             ( 2, N'trả lời 1', 1), ( 2, N'trả lời 2', 0), ( 2, N'trả lời 3', 0), ( 2, N'trả lời 4', 0) 
+                             
+insert into nguoiDung values ('b', 'NW5hmDQ+PyC/HJ1oS9ENKd+L63PHQxhyAjLf6eK1NW+NaY5r', 2, 1)
+insert into thongTin values (2, N'Nguyễn Hiếu Nghĩa', '2000-10-20', null)
