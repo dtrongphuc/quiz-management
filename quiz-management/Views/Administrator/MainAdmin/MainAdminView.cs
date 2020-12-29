@@ -63,10 +63,10 @@ namespace quiz_management.Views.Administrator.MainAdmin
 
         public void ShowWatchUserList(int userCode)
         {
-            //this.Hide();
-            //MainCQuestionView screen = new MainCQuestionView(userCode);
-            //screen.FormClosed += (_, e) => this.Close();
-            //screen.Show();
+            this.Hide();
+            ListUserView screen = new ListUserView(userCode);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
         }
     }
 }

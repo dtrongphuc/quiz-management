@@ -28,7 +28,7 @@ namespace quiz_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CreateUserView(1));
+            Application.Run(new MainAdminView(1));
         }
     }
 }
