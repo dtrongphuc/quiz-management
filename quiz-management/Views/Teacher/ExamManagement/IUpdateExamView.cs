@@ -11,15 +11,16 @@ namespace quiz_management.Views.Teacher.ExamManagement
 {
     interface IUpdateExamView
     {
-        DateTime NgayThi {set; }
-        List<monHoc> lstMonHoc { set; }
-        monHoc monHocChon {  set; }
-        List<boDe> lstDeThi { set; }
-        boDe DeThiChon { set; }
+        string NgayThi {set; }
+        string monHocChon {  set; }
+        string KhoiLopChon { set; }
+        string DeThiChon { set; }
         BindingList<thongTin> lstHocSinh { set; }
         BindingList<thongTin> lstThiSinh { set; }
+        
         DataGridView lstThiSinhChon { get; }
         DataGridView lstHocSinhChon { get; }
+
 
         event EventHandler GoBackBefore;
         event EventHandler Submit;

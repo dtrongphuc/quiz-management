@@ -1,4 +1,5 @@
-﻿using quiz_management.Presenters.Teacher.StudentManagement;
+﻿using quiz_management.Models;
+using quiz_management.Presenters.Teacher.StudentManagement;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,8 @@ namespace quiz_management.Views.Teacher.StudentManagement
     public partial class QuestionStatisticView : Form, IQuestionStatisticView
     {
         private QuestionStatisticPresenter presenter;
+
+        public List<QuestionStatistic> StatisticData { set => dgvQuestionStatistic.DataSource = value; }
 
         public QuestionStatisticView()
         {

@@ -45,6 +45,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbbKhoiLop = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThiSinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgHocSinh)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +56,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(331, 52);
+            this.label3.Location = new System.Drawing.Point(331, 36);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(132, 26);
@@ -76,7 +79,7 @@
             this.cbBoDe.DisplayMember = "maBoDe";
             this.cbBoDe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBoDe.FormattingEnabled = true;
-            this.cbBoDe.Location = new System.Drawing.Point(626, 100);
+            this.cbBoDe.Location = new System.Drawing.Point(614, 118);
             this.cbBoDe.Name = "cbBoDe";
             this.cbBoDe.Size = new System.Drawing.Size(148, 21);
             this.cbBoDe.TabIndex = 4;
@@ -84,7 +87,7 @@
             // 
             // dtpNgayThi
             // 
-            this.dtpNgayThi.Location = new System.Drawing.Point(24, 101);
+            this.dtpNgayThi.Location = new System.Drawing.Point(12, 119);
             this.dtpNgayThi.Name = "dtpNgayThi";
             this.dtpNgayThi.Size = new System.Drawing.Size(200, 20);
             this.dtpNgayThi.TabIndex = 5;
@@ -157,7 +160,7 @@
             this.cbMonHoc.DisplayMember = "tenMonHoc";
             this.cbMonHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMonHoc.FormattingEnabled = true;
-            this.cbMonHoc.Location = new System.Drawing.Point(252, 100);
+            this.cbMonHoc.Location = new System.Drawing.Point(240, 118);
             this.cbMonHoc.Name = "cbMonHoc";
             this.cbMonHoc.Size = new System.Drawing.Size(150, 21);
             this.cbMonHoc.TabIndex = 21;
@@ -227,17 +230,47 @@
             this.cbbKhoiLop.DisplayMember = "tenKhoiLop";
             this.cbbKhoiLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbKhoiLop.FormattingEnabled = true;
-            this.cbbKhoiLop.Location = new System.Drawing.Point(431, 104);
+            this.cbbKhoiLop.Location = new System.Drawing.Point(422, 118);
             this.cbbKhoiLop.Name = "cbbKhoiLop";
             this.cbbKhoiLop.Size = new System.Drawing.Size(150, 21);
             this.cbbKhoiLop.TabIndex = 25;
             this.cbbKhoiLop.ValueMember = "maKhoiLop";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(611, 102);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(37, 13);
+            this.label6.TabIndex = 43;
+            this.label6.Text = "Bộ Đề";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(419, 102);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.TabIndex = 42;
+            this.label4.Text = "Khối Lớp";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(237, 102);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 13);
+            this.label2.TabIndex = 41;
+            this.label2.Text = "Môn Học";
             // 
             // CreateExamView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(808, 554);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.cbbKhoiLop);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
@@ -279,5 +312,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn HocSinhDuocChon;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenNguoidung;
         private System.Windows.Forms.ComboBox cbbKhoiLop;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
     }
 }

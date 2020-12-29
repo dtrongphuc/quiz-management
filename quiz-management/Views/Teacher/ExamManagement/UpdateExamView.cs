@@ -42,15 +42,14 @@ namespace quiz_management.Views.Teacher.ExamManagement
         }
 
         
-        public List<monHoc> lstMonHoc { set => cbMonHoc.DataSource =value; }
-        public List<boDe> lstDeThi { set => cbBoDe.DataSource = value; }
         public BindingList<thongTin> lstHocSinh { set => dtgHocSinh.DataSource = value; }
         public BindingList<thongTin> lstThiSinh { set => dgvThiSinh.DataSource = value; }
         public DataGridView lstThiSinhChon => dgvThiSinh;
         public DataGridView lstHocSinhChon => dtgHocSinh;
-        public monHoc monHocChon { set => cbMonHoc.SelectedItem = value; }
-        public boDe DeThiChon { set => cbBoDe.SelectedItem = value; }
-        public DateTime NgayThi {set => dtpNgayThi.Value = value; }
+        public string monHocChon { set => tbMonHocChon.Text=value; }
+        public string DeThiChon { set => tbBoDeChon.Text = value; }
+        public string NgayThi {set => tbNgayThiChon.Text = value; }
+        public string KhoiLopChon { set => tbKhoiLopChon.Text = value; }
 
         public event EventHandler GoBackBefore;
         public event EventHandler Submit;

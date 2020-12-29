@@ -31,17 +31,17 @@ namespace quiz_management.Views.Teacher.StudentManagement
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvQuestionStatistic = new System.Windows.Forms.DataGridView();
+            this.MaCauHoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CauHoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TiLeRaDe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TiLeChonDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TiLeChonSai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionStatistic)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -57,7 +57,7 @@ namespace quiz_management.Views.Teacher.StudentManagement
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
+            this.splitContainer1.Panel2.Controls.Add(this.dgvQuestionStatistic);
             this.splitContainer1.Size = new System.Drawing.Size(800, 450);
             this.splitContainer1.SplitterDistance = 107;
             this.splitContainer1.TabIndex = 3;
@@ -72,55 +72,61 @@ namespace quiz_management.Views.Teacher.StudentManagement
             this.label1.TabIndex = 3;
             this.label1.Text = "THỐNG KÊ CÂU HỎI";
             // 
-            // dataGridView1
+            // dgvQuestionStatistic
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 339);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvQuestionStatistic.AllowUserToAddRows = false;
+            this.dgvQuestionStatistic.AllowUserToDeleteRows = false;
+            this.dgvQuestionStatistic.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvQuestionStatistic.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvQuestionStatistic.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvQuestionStatistic.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaCauHoi,
+            this.CauHoi,
+            this.TiLeRaDe,
+            this.TiLeChonDung,
+            this.TiLeChonSai});
+            this.dgvQuestionStatistic.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvQuestionStatistic.Location = new System.Drawing.Point(0, 0);
+            this.dgvQuestionStatistic.Name = "dgvQuestionStatistic";
+            this.dgvQuestionStatistic.ReadOnly = true;
+            this.dgvQuestionStatistic.RowHeadersVisible = false;
+            this.dgvQuestionStatistic.Size = new System.Drawing.Size(800, 339);
+            this.dgvQuestionStatistic.TabIndex = 0;
             // 
-            // Column1
+            // MaCauHoi
             // 
-            this.Column1.HeaderText = "Mã câu hỏi";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.MaCauHoi.DataPropertyName = "MaCauHoi";
+            this.MaCauHoi.HeaderText = "Mã câu hỏi";
+            this.MaCauHoi.Name = "MaCauHoi";
+            this.MaCauHoi.ReadOnly = true;
             // 
-            // Column2
+            // CauHoi
             // 
-            this.Column2.HeaderText = " Câu hỏi";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
+            this.CauHoi.DataPropertyName = "CauHoi";
+            this.CauHoi.HeaderText = " Câu hỏi";
+            this.CauHoi.Name = "CauHoi";
+            this.CauHoi.ReadOnly = true;
             // 
-            // Column3
+            // TiLeRaDe
             // 
-            this.Column3.HeaderText = "Tỉ lệ ra đề";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
+            this.TiLeRaDe.DataPropertyName = "TiLeRaDe";
+            this.TiLeRaDe.HeaderText = "Tỉ lệ ra đề";
+            this.TiLeRaDe.Name = "TiLeRaDe";
+            this.TiLeRaDe.ReadOnly = true;
             // 
-            // Column4
+            // TiLeChonDung
             // 
-            this.Column4.HeaderText = "Tỉ lệ chọn đúng";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
+            this.TiLeChonDung.DataPropertyName = "TiLeChonDung";
+            this.TiLeChonDung.HeaderText = "Tỉ lệ chọn đúng";
+            this.TiLeChonDung.Name = "TiLeChonDung";
+            this.TiLeChonDung.ReadOnly = true;
             // 
-            // Column5
+            // TiLeChonSai
             // 
-            this.Column5.HeaderText = "Tỉ lệ chọn sai";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
+            this.TiLeChonSai.DataPropertyName = "TiLeChonSai";
+            this.TiLeChonSai.HeaderText = "Tỉ lệ chọn sai";
+            this.TiLeChonSai.Name = "TiLeChonSai";
+            this.TiLeChonSai.ReadOnly = true;
             // 
             // QuestionStatisticView
             // 
@@ -135,7 +141,7 @@ namespace quiz_management.Views.Teacher.StudentManagement
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionStatistic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -144,11 +150,11 @@ namespace quiz_management.Views.Teacher.StudentManagement
 
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridView dgvQuestionStatistic;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaCauHoi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CauHoi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TiLeRaDe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TiLeChonDung;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TiLeChonSai;
     }
 }

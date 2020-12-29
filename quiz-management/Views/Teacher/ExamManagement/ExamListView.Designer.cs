@@ -32,14 +32,14 @@ namespace quiz_management.Views.Teacher.ExamManagement
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.dgvLichThi = new System.Windows.Forms.DataGridView();
+            this.linkGoBackBefore = new System.Windows.Forms.LinkLabel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnThem = new System.Windows.Forms.Button();
             this.maLichThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaDe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SLThiSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngayThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.linkGoBackBefore = new System.Windows.Forms.LinkLabel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnThem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichThi)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,47 +87,6 @@ namespace quiz_management.Views.Teacher.ExamManagement
             this.dgvLichThi.Size = new System.Drawing.Size(563, 273);
             this.dgvLichThi.TabIndex = 38;
             // 
-            // maLichThi
-            // 
-            this.maLichThi.DataPropertyName = "MaLichThi";
-            this.maLichThi.HeaderText = "";
-            this.maLichThi.MinimumWidth = 6;
-            this.maLichThi.Name = "maLichThi";
-            this.maLichThi.ReadOnly = true;
-            this.maLichThi.Visible = false;
-            // 
-            // TenMonHoc
-            // 
-            this.TenMonHoc.DataPropertyName = "TenMonHoc";
-            this.TenMonHoc.HeaderText = "Môn học";
-            this.TenMonHoc.MinimumWidth = 6;
-            this.TenMonHoc.Name = "TenMonHoc";
-            this.TenMonHoc.ReadOnly = true;
-            // 
-            // MaDe
-            // 
-            this.MaDe.DataPropertyName = "MaDe";
-            this.MaDe.HeaderText = "Đề";
-            this.MaDe.MinimumWidth = 6;
-            this.MaDe.Name = "MaDe";
-            this.MaDe.ReadOnly = true;
-            // 
-            // SLThiSinh
-            // 
-            this.SLThiSinh.DataPropertyName = "SLThiSinh";
-            this.SLThiSinh.HeaderText = "Số Thí Sinh";
-            this.SLThiSinh.MinimumWidth = 6;
-            this.SLThiSinh.Name = "SLThiSinh";
-            this.SLThiSinh.ReadOnly = true;
-            // 
-            // ngayThi
-            // 
-            this.ngayThi.DataPropertyName = "NgayThi";
-            this.ngayThi.HeaderText = "Ngày Thi";
-            this.ngayThi.MinimumWidth = 6;
-            this.ngayThi.Name = "ngayThi";
-            this.ngayThi.ReadOnly = true;
-            // 
             // linkGoBackBefore
             // 
             this.linkGoBackBefore.AutoSize = true;
@@ -160,6 +119,51 @@ namespace quiz_management.Views.Teacher.ExamManagement
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             // 
+            // maLichThi
+            // 
+            this.maLichThi.DataPropertyName = "MaLichThi";
+            this.maLichThi.FillWeight = 20.80711F;
+            this.maLichThi.HeaderText = "STT";
+            this.maLichThi.MinimumWidth = 6;
+            this.maLichThi.Name = "maLichThi";
+            this.maLichThi.ReadOnly = true;
+            // 
+            // TenMonHoc
+            // 
+            this.TenMonHoc.DataPropertyName = "TenMonHoc";
+            this.TenMonHoc.FillWeight = 61.54822F;
+            this.TenMonHoc.HeaderText = "Môn học";
+            this.TenMonHoc.MinimumWidth = 6;
+            this.TenMonHoc.Name = "TenMonHoc";
+            this.TenMonHoc.ReadOnly = true;
+            // 
+            // MaDe
+            // 
+            this.MaDe.DataPropertyName = "MaDe";
+            this.MaDe.FillWeight = 61.54822F;
+            this.MaDe.HeaderText = "Đề";
+            this.MaDe.MinimumWidth = 6;
+            this.MaDe.Name = "MaDe";
+            this.MaDe.ReadOnly = true;
+            // 
+            // SLThiSinh
+            // 
+            this.SLThiSinh.DataPropertyName = "SLThiSinh";
+            this.SLThiSinh.FillWeight = 61.54822F;
+            this.SLThiSinh.HeaderText = "Số Thí Sinh";
+            this.SLThiSinh.MinimumWidth = 6;
+            this.SLThiSinh.Name = "SLThiSinh";
+            this.SLThiSinh.ReadOnly = true;
+            // 
+            // ngayThi
+            // 
+            this.ngayThi.DataPropertyName = "NgayThi";
+            this.ngayThi.FillWeight = 61.54822F;
+            this.ngayThi.HeaderText = "Ngày Thi";
+            this.ngayThi.MinimumWidth = 6;
+            this.ngayThi.Name = "ngayThi";
+            this.ngayThi.ReadOnly = true;
+            // 
             // ExamListView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,11 +190,11 @@ namespace quiz_management.Views.Teacher.ExamManagement
         private System.Windows.Forms.DataGridView dgvLichThi;
         private System.Windows.Forms.LinkLabel linkGoBackBefore;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.DataGridViewTextBoxColumn maLichThi;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenMonHoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaDe;
         private System.Windows.Forms.DataGridViewTextBoxColumn SLThiSinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayThi;
-        private System.Windows.Forms.Button btnThem;
     }
 }
