@@ -40,6 +40,12 @@
             this.tbPass = new System.Windows.Forms.TextBox();
             this.cbbDesentrazation = new System.Windows.Forms.ComboBox();
             this.linkGoBack = new System.Windows.Forms.LinkLabel();
+            this.cbbClass = new System.Windows.Forms.ComboBox();
+            this.tbAcoutName = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dtpDOB = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbAdminName
@@ -64,7 +70,7 @@
             // 
             this.lbDOB.AutoSize = true;
             this.lbDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDOB.Location = new System.Drawing.Point(694, 462);
+            this.lbDOB.Location = new System.Drawing.Point(695, 556);
             this.lbDOB.Name = "lbDOB";
             this.lbDOB.Size = new System.Drawing.Size(80, 17);
             this.lbDOB.TabIndex = 27;
@@ -73,7 +79,7 @@
             // btnCreateUser
             // 
             this.btnCreateUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateUser.Location = new System.Drawing.Point(330, 383);
+            this.btnCreateUser.Location = new System.Drawing.Point(330, 467);
             this.btnCreateUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCreateUser.Name = "btnCreateUser";
             this.btnCreateUser.Size = new System.Drawing.Size(217, 60);
@@ -105,7 +111,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(113, 239);
+            this.label2.Location = new System.Drawing.Point(113, 288);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 20);
             this.label2.TabIndex = 31;
@@ -115,7 +121,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(113, 299);
+            this.label4.Location = new System.Drawing.Point(112, 402);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 20);
             this.label4.TabIndex = 32;
@@ -132,7 +138,7 @@
             // tbPass
             // 
             this.tbPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPass.Location = new System.Drawing.Point(283, 232);
+            this.tbPass.Location = new System.Drawing.Point(283, 281);
             this.tbPass.Name = "tbPass";
             this.tbPass.Size = new System.Drawing.Size(305, 27);
             this.tbPass.TabIndex = 34;
@@ -143,9 +149,8 @@
             this.cbbDesentrazation.FormattingEnabled = true;
             this.cbbDesentrazation.Items.AddRange(new object[] {
             "Học Sinh",
-            "Giáo Viên",
-            "Quản Trị Viên"});
-            this.cbbDesentrazation.Location = new System.Drawing.Point(283, 295);
+            "Giáo Viên"});
+            this.cbbDesentrazation.Location = new System.Drawing.Point(282, 398);
             this.cbbDesentrazation.Name = "cbbDesentrazation";
             this.cbbDesentrazation.Size = new System.Drawing.Size(305, 28);
             this.cbbDesentrazation.TabIndex = 35;
@@ -161,11 +166,72 @@
             this.linkGoBack.TabStop = true;
             this.linkGoBack.Text = "Trở về";
             // 
+            // cbbClass
+            // 
+            this.cbbClass.DisplayMember = "tenLopHoc";
+            this.cbbClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbClass.FormattingEnabled = true;
+            this.cbbClass.Location = new System.Drawing.Point(615, 398);
+            this.cbbClass.Name = "cbbClass";
+            this.cbbClass.Size = new System.Drawing.Size(91, 28);
+            this.cbbClass.TabIndex = 37;
+            this.cbbClass.ValueMember = "maLopHoc";
+            // 
+            // tbAcoutName
+            // 
+            this.tbAcoutName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAcoutName.Location = new System.Drawing.Point(283, 222);
+            this.tbAcoutName.Name = "tbAcoutName";
+            this.tbAcoutName.Size = new System.Drawing.Size(305, 27);
+            this.tbAcoutName.TabIndex = 39;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(113, 229);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(128, 20);
+            this.label5.TabIndex = 38;
+            this.label5.Text = "Tên người dùng:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(113, 347);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(88, 20);
+            this.label6.TabIndex = 40;
+            this.label6.Text = "Ngày sinh:";
+            // 
+            // dtpDOB
+            // 
+            this.dtpDOB.Location = new System.Drawing.Point(283, 345);
+            this.dtpDOB.Name = "dtpDOB";
+            this.dtpDOB.Size = new System.Drawing.Size(305, 22);
+            this.dtpDOB.TabIndex = 42;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(648, 369);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(32, 17);
+            this.label7.TabIndex = 43;
+            this.label7.Text = "Lớp";
+            // 
             // CreateUserView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(818, 507);
+            this.ClientSize = new System.Drawing.Size(818, 590);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.dtpDOB);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.tbAcoutName);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.cbbClass);
             this.Controls.Add(this.linkGoBack);
             this.Controls.Add(this.cbbDesentrazation);
             this.Controls.Add(this.tbPass);
@@ -200,5 +266,11 @@
         private System.Windows.Forms.TextBox tbPass;
         private System.Windows.Forms.ComboBox cbbDesentrazation;
         private System.Windows.Forms.LinkLabel linkGoBack;
+        private System.Windows.Forms.ComboBox cbbClass;
+        private System.Windows.Forms.TextBox tbAcoutName;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker dtpDOB;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace quiz_management.Presenters.Administrator.UserManagement
 {
@@ -13,6 +14,7 @@ namespace quiz_management.Presenters.Administrator.UserManagement
     {
         ICreateUserView view;
         int currentuser;
+        bool status = true;
         public CreateUserPresenter(ICreateUserView v, int code)
         {
             view = v;
@@ -20,6 +22,21 @@ namespace quiz_management.Presenters.Administrator.UserManagement
             LoadPage();
             view.GoBackBefore += GoBackBefore_View;
             view.CreateUser += CreateUser_View;
+            view.ChangeCbbDesentralization += ChangeCbbDesentralization_view;
+        }
+
+        private void ChangeCbbDesentralization_view(object sender, EventArgs e)
+        {
+            if (view.Desentralization == "Giáo Viên")
+            {
+                view.cbbAllClass = false;
+                status = false;
+            }
+            else
+            {
+                view.cbbAllClass = true;
+                status = true;
+            }
         }
 
         private void GoBackBefore_View(object sender, EventArgs e)
@@ -31,12 +48,6 @@ namespace quiz_management.Presenters.Administrator.UserManagement
         {
             string username = view.UserName;
             string password = view.Pass;
-            int desentralization = 0;
-            if (view.Desentralization == "Học Sinh")
-                desentralization = 1;
-            else if (view.Desentralization == "Giáo Viên")
-                desentralization = 2;
-            else desentralization = 3;
             //dynamic selected = view.SelectedClass;
 
             byte[] salt;
@@ -65,23 +76,37 @@ namespace quiz_management.Presenters.Administrator.UserManagement
                     {
                         tenTaiKhoan = username,
                         matKhau = pwHash,
-                        phanQuyen = desentralization,
+                        phanQuyen = view.Desentralization == "Học Sinh" ? 1 : 0,
                         TrangThai = 1
                     };
                     db.nguoiDungs.InsertOnSubmit(user);
                     db.SubmitChanges();
-                    //var userId = user.maNguoiDung;
 
-                    //var userInfor = new thongTin
-                    //{
-                    //    maNguoidung = userId,
-                    //    tenNguoiDung = view.FullName,
-                    //    ngaySinh = DateTime.ParseExact(view.Birthday, "dd/MM/yyyy", null),
-                    //    maLopHoc = selected?.maLopHoc
-                    //};
+                    //tạo thông tin
+                    var userId = user.maNguoiDung;
+                    thongTin userInfor = null;
+                    if (status == false)
+                    {
+                        userInfor = new thongTin
+                        {
+                            maNguoidung = userId,
+                            tenNguoiDung = view.AcountName,
+                            ngaySinh = view.DOB
+                        };
+                    }
+                    else
+                    {
+                        userInfor = new thongTin
+                        {
+                            maNguoidung = userId,
+                            tenNguoiDung = view.AcountName,
+                            ngaySinh = view.DOB,
+                            maLopHoc = int.Parse(view.classID)
+                        };
+                    }
+                    db.thongTins.InsertOnSubmit(userInfor);
+                    db.SubmitChanges();
 
-                    //db.thongTins.InsertOnSubmit(userInfor);
-                    //db.SubmitChanges();
                     view.ShowMessages("Tạo tài khoản thành công");
                 }
                 catch (Exception)
@@ -94,11 +119,12 @@ namespace quiz_management.Presenters.Administrator.UserManagement
 
         private void LoadPage()
         {
-            using (var db= new QuizDataContext())
+            using (var db = new QuizDataContext())
             {
                 view.AdminName = db.thongTins.Where(i => i.maNguoidung == currentuser).Select(i => i.tenNguoiDung).ToList()[0];
-                view.DOB = DateTime.Now.Date.ToString("d");
-
+                view.Datenow = DateTime.Now.Date.ToString("d");
+                //lop hoc
+                view.ClassList = db.Lops.ToList();
             }
         }
     }

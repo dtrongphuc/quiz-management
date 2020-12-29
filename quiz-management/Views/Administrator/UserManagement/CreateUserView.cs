@@ -1,4 +1,5 @@
-﻿using quiz_management.Presenters.Administrator.UserManagement;
+﻿using quiz_management.Models;
+using quiz_management.Presenters.Administrator.UserManagement;
 using quiz_management.Views.Administrator.MainAdmin;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,10 @@ namespace quiz_management.Views.Administrator.UserManagement
               {
                   GoBackBefore?.Invoke(linkGoBack, e);
               };
+            cbbDesentrazation.SelectedIndexChanged += (_, e) =>
+            {
+                ChangeCbbDesentralization?.Invoke(cbbDesentrazation, e);
+            };
         }
 
         public string AdminName { set => lbAdminName.Text = value; }
@@ -37,10 +42,20 @@ namespace quiz_management.Views.Administrator.UserManagement
 
         public string Desentralization => cbbDesentrazation.Text;
 
-        public string DOB { set => lbDOB.Text = value; }
+        public string Datenow { set => lbDOB.Text = value; }
+
+        public string classID => cbbClass.SelectedValue.ToString();
+
+        public List<Lop> ClassList { set => cbbClass.DataSource = value; }
+        public bool cbbAllClass { set => cbbClass.Enabled = value; }
+
+        public string AcountName => tbAcoutName.Text;
+
+        public DateTime DOB => dtpDOB.Value;
 
         public event EventHandler CreateUser;
         public event EventHandler GoBackBefore;
+        public event EventHandler ChangeCbbDesentralization;
 
         public void ShowMainAdmin(int userCode)
         {
