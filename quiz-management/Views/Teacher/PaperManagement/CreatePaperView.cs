@@ -57,6 +57,10 @@ namespace quiz_management.Views.Teacher.PaperManagement
             {
                 SubjectChange?.Invoke(cbbSubject, e);
             };
+            cbbExam.SelectedIndexChanged += (_, e) =>
+             {
+                 ExamChange?.Invoke(cbbExam, e);
+             };
         }
 
         public string TeacherName { set => lbTeacher.Text = value; }
@@ -79,6 +83,8 @@ namespace quiz_management.Views.Teacher.PaperManagement
 
         public string Subject => cbbSubject.SelectedValue.ToString();
 
+        public string ExamChoose => cbbExam.Text;
+
         public event EventHandler MoveToRight;
         //public event EventHandler MoveAllToRight;
         public event EventHandler MoveToLeft;
@@ -88,6 +94,7 @@ namespace quiz_management.Views.Teacher.PaperManagement
         public event EventHandler WatchPaperList;
         public event EventHandler GradeChange;
         public event EventHandler SubjectChange;
+        public event EventHandler ExamChange;
 
         public void ShowMainTeacherView(int code)
         {
@@ -109,5 +116,6 @@ namespace quiz_management.Views.Teacher.PaperManagement
             screen.FormClosed += (_, e) => this.Close();
             screen.Show();
         }
+
     }
 }

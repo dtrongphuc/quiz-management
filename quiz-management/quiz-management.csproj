@@ -103,6 +103,9 @@
     <Compile Include="Presenters\Teacher\ExamManagement\UpdateExamPresenter.cs" />
     <Compile Include="Presenters\Teacher\Main\MainTeacherPresenter.cs" />
     <Compile Include="Presenters\Teacher\Main\TeacherInfoPresenter.cs" />
+    <Compile Include="Presenters\Teacher\MockExamManagement\CreateMockExamPresenter.cs" />
+    <Compile Include="Presenters\Teacher\MockExamManagement\ListMockExamPresenter.cs" />
+    <Compile Include="Presenters\Teacher\MockExamManagement\UpdateMockExamPresenter.cs" />
     <Compile Include="Presenters\Teacher\PaperManagement\CreatePaperPresenter.cs" />
     <Compile Include="Presenters\Teacher\PaperManagement\PaperListPresenter.cs" />
     <Compile Include="Presenters\Teacher\PaperManagement\UpdatePaperPresenter.cs" />
@@ -268,6 +271,27 @@
     <Compile Include="Views\Teacher\Main\TeacherInfoView.Designer.cs">
       <DependentUpon>TeacherInfoView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Teacher\MockExamManagement\CreateMockExamView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Teacher\MockExamManagement\CreateMockExamView.Designer.cs">
+      <DependentUpon>CreateMockExamView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Teacher\MockExamManagement\ICreateMockExamView.cs" />
+    <Compile Include="Views\Teacher\MockExamManagement\IListMockExamView.cs" />
+    <Compile Include="Views\Teacher\MockExamManagement\IUpdateMockExamView.cs" />
+    <Compile Include="Views\Teacher\MockExamManagement\ListMockExamView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Teacher\MockExamManagement\ListMockExamView.Designer.cs">
+      <DependentUpon>ListMockExamView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Teacher\MockExamManagement\UpdateMockExamView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Teacher\MockExamManagement\UpdateMockExamView.Designer.cs">
+      <DependentUpon>UpdateMockExamView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Teacher\PaperManagement\CreatePaperView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -410,6 +434,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Teacher\Main\TeacherInfoView.resx">
       <DependentUpon>TeacherInfoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Teacher\MockExamManagement\CreateMockExamView.resx">
+      <DependentUpon>CreateMockExamView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Teacher\PaperManagement\CreatePaperView.resx">
       <DependentUpon>CreatePaperView.cs</DependentUpon>

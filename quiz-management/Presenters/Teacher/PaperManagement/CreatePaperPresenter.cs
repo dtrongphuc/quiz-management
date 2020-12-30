@@ -16,6 +16,7 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
         int currenUserCode;
         BindingList<CreatePaperWithQuestion> ListQuestionselcted = null;
         BindingList<CreatePaperWithQuestion> listQT = null;
+        int status = 1; // 0 là đóng góp/ 1 chính thức
         public CreatePaperPresenter(ICreatePaperView v, int code)
         {
             view = v;
@@ -31,6 +32,15 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
             view.WatchPaperList += WatchPaperList_View;
             view.GradeChange += GradeChange_View;
             view.SubjectChange += SubjectChange_View;
+            view.ExamChange += ExamChange_Change;
+        }
+
+        private void ExamChange_Change(object sender, EventArgs e)
+        {
+            status = view.ExamChoose == "Thi thử" ? 0 : 1;
+            view.listQuestion = null;
+            view.listQuestionselected = null;
+            FillAll();
         }
 
         private void SubjectChange_View(object sender, EventArgs e)
@@ -85,7 +95,7 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
             using (var db = new QuizDataContext())
             {
                 //binding câu hỏi
-                var listQuestions = db.cauHois.Where(i => i.maKhoiLop == view.Grade && i.maMonHoc == int.Parse(view.Subject)).ToList();
+                var listQuestions = db.cauHois.Where(i => i.maKhoiLop == view.Grade && i.maMonHoc == int.Parse(view.Subject) && i.trangThai == status).ToList();
                 foreach (var i in listQuestions)
                 {
                     CreatePaperWithQuestion pp = new CreatePaperWithQuestion();
