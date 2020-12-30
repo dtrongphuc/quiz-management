@@ -77,6 +77,7 @@
     <Compile Include="Models\ContributeQuestion.cs" />
     <Compile Include="Models\CreatePaperWithQuestion.cs" />
     <Compile Include="Models\InfoUser.cs" />
+    <Compile Include="Models\MockExam.cs" />
     <Compile Include="Models\Papers.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\QuestionCreated.cs" />
@@ -456,6 +457,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Teacher\MockExamManagement\CreateMockExamView.resx">
       <DependentUpon>CreateMockExamView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Teacher\MockExamManagement\ListMockExamView.resx">
+      <DependentUpon>ListMockExamView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Teacher\PaperManagement\CreatePaperView.resx">
       <DependentUpon>CreatePaperView.cs</DependentUpon>

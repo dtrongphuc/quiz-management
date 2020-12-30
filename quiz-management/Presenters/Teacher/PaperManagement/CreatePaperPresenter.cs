@@ -120,7 +120,8 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
                     tongSoCau = questionnum,
                     maKhoi = view.Grade,
                     maMon = int.Parse(view.Subject),
-                    thoiGian = 20
+                    thoiGian = 20,
+                    trangThai = status
                 });
                 db.SubmitChanges();
 

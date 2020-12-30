@@ -15,6 +15,7 @@ namespace quiz_management.Views.Teacher.PaperManagement
         string PaperID { get; set; }
         string GradeList { set; }
         string SubjectList { set; }
+        string Exam { set; }
         BindingList<CreatePaperWithQuestion> listQuestion { set; }
         BindingList<CreatePaperWithQuestion> listQuestionselected { set; }
         DataGridView AllQuestion { get; }
