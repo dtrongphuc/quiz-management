@@ -40,7 +40,7 @@
             this.Grade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StartDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EndDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExamID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMockExam)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,7 +74,7 @@
             this.Grade,
             this.StartDay,
             this.EndDay,
-            this.TotalStudent});
+            this.ExamID});
             this.dgvMockExam.Location = new System.Drawing.Point(38, 174);
             this.dgvMockExam.Name = "dgvMockExam";
             this.dgvMockExam.ReadOnly = true;
@@ -165,13 +165,14 @@
             this.EndDay.Name = "EndDay";
             this.EndDay.ReadOnly = true;
             // 
-            // TotalStudent
+            // ExamID
             // 
-            this.TotalStudent.DataPropertyName = "TotalStudent";
-            this.TotalStudent.HeaderText = "Tổng thí sinh";
-            this.TotalStudent.MinimumWidth = 6;
-            this.TotalStudent.Name = "TotalStudent";
-            this.TotalStudent.ReadOnly = true;
+            this.ExamID.DataPropertyName = "ExamID";
+            this.ExamID.HeaderText = "Column1";
+            this.ExamID.MinimumWidth = 6;
+            this.ExamID.Name = "ExamID";
+            this.ExamID.ReadOnly = true;
+            this.ExamID.Visible = false;
             // 
             // ListMockExamView
             // 
@@ -207,6 +208,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Grade;
         private System.Windows.Forms.DataGridViewTextBoxColumn StartDay;
         private System.Windows.Forms.DataGridViewTextBoxColumn EndDay;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalStudent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ExamID;
     }
 }
