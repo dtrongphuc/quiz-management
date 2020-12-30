@@ -207,6 +207,7 @@ create table kyThiThu
 )
 alter table kyThiThu add constraint FK_kyThiThu_boDe foreign key (maBoDe) references boDe(maBoDe)
 alter table kyThiThu add constraint FK_kyThiThu_KhoiLop foreign key (maKhoiLop) references khoiLop(maKhoiLop)
+alter table kyThiThu add constraint FK_kyThiThu_monHoc foreign key (maMonHoc) references monHoc(maMonHoc)
 
 CREATE TABLE luyenTap
 (

@@ -2955,6 +2955,8 @@ namespace quiz_management.Models
 		
 		private EntityRef<khoiLop> _khoiLop;
 		
+		private EntityRef<monHoc> _monHoc;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2979,6 +2981,7 @@ namespace quiz_management.Models
 		{
 			this._boDe = default(EntityRef<boDe>);
 			this._khoiLop = default(EntityRef<khoiLop>);
+			this._monHoc = default(EntityRef<monHoc>);
 			OnCreated();
 		}
 		
@@ -3033,6 +3036,10 @@ namespace quiz_management.Models
 			{
 				if ((this._maMonHoc != value))
 				{
+					if (this._monHoc.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnmaMonHocChanging(value);
 					this.SendPropertyChanging();
 					this._maMonHoc = value;
@@ -3194,6 +3201,40 @@ namespace quiz_management.Models
 						this._maKhoiLop = default(string);
 					}
 					this.SendPropertyChanged("khoiLop");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="monHoc_kyThiThu", Storage="_monHoc", ThisKey="maMonHoc", OtherKey="maMonHoc", IsForeignKey=true)]
+		public monHoc monHoc
+		{
+			get
+			{
+				return this._monHoc.Entity;
+			}
+			set
+			{
+				monHoc previousValue = this._monHoc.Entity;
+				if (((previousValue != value) 
+							|| (this._monHoc.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._monHoc.Entity = null;
+						previousValue.kyThiThus.Remove(this);
+					}
+					this._monHoc.Entity = value;
+					if ((value != null))
+					{
+						value.kyThiThus.Add(this);
+						this._maMonHoc = value.maMonHoc;
+					}
+					else
+					{
+						this._maMonHoc = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("monHoc");
 				}
 			}
 		}
@@ -3870,6 +3911,8 @@ namespace quiz_management.Models
 		
 		private EntitySet<dongGop> _dongGops;
 		
+		private EntitySet<kyThiThu> _kyThiThus;
+		
 		private EntitySet<lichThi> _lichThis;
 		
     #region Extensibility Method Definitions
@@ -3887,6 +3930,7 @@ namespace quiz_management.Models
 			this._boDes = new EntitySet<boDe>(new Action<boDe>(this.attach_boDes), new Action<boDe>(this.detach_boDes));
 			this._cauHois = new EntitySet<cauHoi>(new Action<cauHoi>(this.attach_cauHois), new Action<cauHoi>(this.detach_cauHois));
 			this._dongGops = new EntitySet<dongGop>(new Action<dongGop>(this.attach_dongGops), new Action<dongGop>(this.detach_dongGops));
+			this._kyThiThus = new EntitySet<kyThiThu>(new Action<kyThiThu>(this.attach_kyThiThus), new Action<kyThiThu>(this.detach_kyThiThus));
 			this._lichThis = new EntitySet<lichThi>(new Action<lichThi>(this.attach_lichThis), new Action<lichThi>(this.detach_lichThis));
 			OnCreated();
 		}
@@ -3970,6 +4014,19 @@ namespace quiz_management.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="monHoc_kyThiThu", Storage="_kyThiThus", ThisKey="maMonHoc", OtherKey="maMonHoc")]
+		public EntitySet<kyThiThu> kyThiThus
+		{
+			get
+			{
+				return this._kyThiThus;
+			}
+			set
+			{
+				this._kyThiThus.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="monHoc_lichThi", Storage="_lichThis", ThisKey="maMonHoc", OtherKey="maMonHoc")]
 		public EntitySet<lichThi> lichThis
 		{
@@ -4034,6 +4091,18 @@ namespace quiz_management.Models
 		}
 		
 		private void detach_dongGops(dongGop entity)
+		{
+			this.SendPropertyChanging();
+			entity.monHoc = null;
+		}
+		
+		private void attach_kyThiThus(kyThiThu entity)
+		{
+			this.SendPropertyChanging();
+			entity.monHoc = this;
+		}
+		
+		private void detach_kyThiThus(kyThiThu entity)
 		{
 			this.SendPropertyChanging();
 			entity.monHoc = null;
