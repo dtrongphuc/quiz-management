@@ -37,9 +37,11 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
                 {
                     var mockexam = new MockExam();
                     mockexam.STT = stt;
+                    mockexam.ExamID = exam.maKyThiThu.ToString();
                     mockexam.Grade = exam.khoiLop.tenKhoiLop;
-                    mockexam.Subject = "";
-                    mockexam.TotalStudent = 1;
+                    mockexam.Subject = exam.monHoc.tenMonHoc;
+                    mockexam.StartDay = exam.ngayThi.Value.Date.ToString("d");
+                    mockexam.EndDay = exam.ngayKT.Value.Date.ToString("d");
 
                     MockExamList.Add(mockexam);
                 }
