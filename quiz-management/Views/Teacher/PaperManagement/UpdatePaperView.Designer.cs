@@ -50,6 +50,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tbSubject = new System.Windows.Forms.TextBox();
             this.tbGrade = new System.Windows.Forms.TextBox();
+            this.lbExam = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionSelectedList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionList)).BeginInit();
             this.SuspendLayout();
@@ -57,7 +58,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(582, 546);
+            this.label7.Location = new System.Drawing.Point(582, 564);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(183, 17);
             this.label7.TabIndex = 42;
@@ -72,7 +73,7 @@
             this.dgvQuestionSelectedList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaCauHoiDaChon,
             this.CauHoiDaChon});
-            this.dgvQuestionSelectedList.Location = new System.Drawing.Point(585, 272);
+            this.dgvQuestionSelectedList.Location = new System.Drawing.Point(585, 290);
             this.dgvQuestionSelectedList.Name = "dgvQuestionSelectedList";
             this.dgvQuestionSelectedList.ReadOnly = true;
             this.dgvQuestionSelectedList.RowHeadersVisible = false;
@@ -101,7 +102,7 @@
             // 
             // btnMoveToQuestionList
             // 
-            this.btnMoveToQuestionList.Location = new System.Drawing.Point(507, 423);
+            this.btnMoveToQuestionList.Location = new System.Drawing.Point(507, 441);
             this.btnMoveToQuestionList.Name = "btnMoveToQuestionList";
             this.btnMoveToQuestionList.Size = new System.Drawing.Size(46, 46);
             this.btnMoveToQuestionList.TabIndex = 37;
@@ -110,7 +111,7 @@
             // 
             // btnMoveToSeleted
             // 
-            this.btnMoveToSeleted.Location = new System.Drawing.Point(507, 353);
+            this.btnMoveToSeleted.Location = new System.Drawing.Point(507, 371);
             this.btnMoveToSeleted.Name = "btnMoveToSeleted";
             this.btnMoveToSeleted.Size = new System.Drawing.Size(46, 46);
             this.btnMoveToSeleted.TabIndex = 36;
@@ -119,7 +120,7 @@
             // 
             // btnUpdatePaper
             // 
-            this.btnUpdatePaper.Location = new System.Drawing.Point(451, 584);
+            this.btnUpdatePaper.Location = new System.Drawing.Point(451, 602);
             this.btnUpdatePaper.Name = "btnUpdatePaper";
             this.btnUpdatePaper.Size = new System.Drawing.Size(165, 48);
             this.btnUpdatePaper.TabIndex = 35;
@@ -130,7 +131,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(691, 238);
+            this.label6.Location = new System.Drawing.Point(691, 256);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(213, 20);
             this.label6.TabIndex = 34;
@@ -140,7 +141,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(165, 238);
+            this.label5.Location = new System.Drawing.Point(165, 256);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(149, 20);
             this.label5.TabIndex = 33;
@@ -155,7 +156,7 @@
             this.dgvQuestionList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaCauHoi,
             this.CauHoi1});
-            this.dgvQuestionList.Location = new System.Drawing.Point(52, 272);
+            this.dgvQuestionList.Location = new System.Drawing.Point(52, 290);
             this.dgvQuestionList.Name = "dgvQuestionList";
             this.dgvQuestionList.ReadOnly = true;
             this.dgvQuestionList.RowHeadersVisible = false;
@@ -226,7 +227,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(725, 165);
+            this.label8.Location = new System.Drawing.Point(725, 183);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(78, 20);
             this.label8.TabIndex = 48;
@@ -236,7 +237,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(364, 165);
+            this.label2.Location = new System.Drawing.Point(364, 183);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 20);
             this.label2.TabIndex = 46;
@@ -245,7 +246,7 @@
             // tbPaperID
             // 
             this.tbPaperID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPaperID.Location = new System.Drawing.Point(151, 158);
+            this.tbPaperID.Location = new System.Drawing.Point(151, 176);
             this.tbPaperID.Name = "tbPaperID";
             this.tbPaperID.ReadOnly = true;
             this.tbPaperID.Size = new System.Drawing.Size(168, 27);
@@ -255,7 +256,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(64, 165);
+            this.label4.Location = new System.Drawing.Point(64, 183);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 20);
             this.label4.TabIndex = 43;
@@ -264,7 +265,7 @@
             // tbSubject
             // 
             this.tbSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSubject.Location = new System.Drawing.Point(820, 158);
+            this.tbSubject.Location = new System.Drawing.Point(820, 176);
             this.tbSubject.Name = "tbSubject";
             this.tbSubject.ReadOnly = true;
             this.tbSubject.Size = new System.Drawing.Size(179, 27);
@@ -273,17 +274,27 @@
             // tbGrade
             // 
             this.tbGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbGrade.Location = new System.Drawing.Point(451, 158);
+            this.tbGrade.Location = new System.Drawing.Point(451, 176);
             this.tbGrade.Name = "tbGrade";
             this.tbGrade.ReadOnly = true;
             this.tbGrade.Size = new System.Drawing.Size(186, 27);
             this.tbGrade.TabIndex = 50;
             // 
+            // lbExam
+            // 
+            this.lbExam.AutoSize = true;
+            this.lbExam.Location = new System.Drawing.Point(491, 112);
+            this.lbExam.Name = "lbExam";
+            this.lbExam.Size = new System.Drawing.Size(125, 17);
+            this.lbExam.TabIndex = 51;
+            this.lbExam.Text = "Đề thi: Chính Thức";
+            // 
             // UpdatePaperView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1042, 667);
+            this.ClientSize = new System.Drawing.Size(1042, 674);
+            this.Controls.Add(this.lbExam);
             this.Controls.Add(this.tbGrade);
             this.Controls.Add(this.tbSubject);
             this.Controls.Add(this.label8);
@@ -335,5 +346,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbSubject;
         private System.Windows.Forms.TextBox tbGrade;
+        private System.Windows.Forms.Label lbExam;
     }
 }
