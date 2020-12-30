@@ -48,12 +48,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.DataSet.3.6.0\lib\net35\ExcelDataReader.DataSet.dll</HintPath>
+    </Reference>
     <Reference Include="System">
-      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -83,9 +90,11 @@
     <Compile Include="Models\ResultExam.cs" />
     <Compile Include="Models\StudentStatistic.cs" />
     <Compile Include="Models\TestSchedule.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Presenters\Administrator\MainAdmin\MainAdminPresenter.cs" />
     <Compile Include="Presenters\Administrator\SystemManagement\DecentralizationPresenter.cs" />
     <Compile Include="Presenters\Administrator\UserManagement\CreateUserPresenter.cs" />
+    <Compile Include="Presenters\Administrator\UserManagement\ImportUsersPresenter.cs" />
     <Compile Include="Presenters\Administrator\UserManagement\ListUserPresenter.cs" />
     <Compile Include="Presenters\Administrator\UserManagement\UpdateUserPresenter.cs" />
     <Compile Include="Presenters\Login\LoginPresenter.cs" />
@@ -146,7 +155,14 @@
       <DependentUpon>CreateUserView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Administrator\UserManagement\ICreateUserView.cs" />
+    <Compile Include="Views\Administrator\UserManagement\IImportUsersView.cs" />
     <Compile Include="Views\Administrator\UserManagement\IListUserView.cs" />
+    <Compile Include="Views\Administrator\UserManagement\ImportUsersView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Administrator\UserManagement\ImportUsersView.Designer.cs">
+      <DependentUpon>ImportUsersView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Administrator\UserManagement\IUpdateUserView.cs" />
     <Compile Include="Views\Administrator\UserManagement\ListUserView.cs">
       <SubType>Form</SubType>
@@ -382,6 +398,9 @@
     <EmbeddedResource Include="Views\Administrator\UserManagement\CreateUserView.resx">
       <DependentUpon>CreateUserView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Administrator\UserManagement\ImportUsersView.resx">
+      <DependentUpon>ImportUsersView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Administrator\UserManagement\ListUserView.resx">
       <DependentUpon>ListUserView.cs</DependentUpon>
     </EmbeddedResource>
@@ -474,6 +493,7 @@
     <None Include="Models\Quiz.dbml.layout">
       <DependentUpon>Quiz.dbml</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
