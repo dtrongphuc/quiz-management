@@ -120,6 +120,7 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
         {
             if (lstThiSinh == null)
                 lstThiSinh = new BindingList<thongTin>();
+            DataGridView a = view.lstHocSinhChon;
             foreach (DataGridViewRow i in view.lstHocSinhChon.SelectedRows)
             {
                 var id = i.Cells["HocSinhDuocChon"].Value.ToString();

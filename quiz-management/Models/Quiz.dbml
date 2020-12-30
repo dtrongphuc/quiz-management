@@ -132,6 +132,7 @@
       <Column Name="maKhoiLop" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
       <Association Name="boDe_kyThiThu" Member="boDe" ThisKey="maBoDe" OtherKey="maBoDe" Type="boDe" IsForeignKey="true" />
       <Association Name="khoiLop_kyThiThu" Member="khoiLop" ThisKey="maKhoiLop" OtherKey="maKhoiLop" Type="khoiLop" IsForeignKey="true" />
+      <Association Name="monHoc_kyThiThu" Member="monHoc" ThisKey="maMonHoc" OtherKey="maMonHoc" Type="monHoc" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.lichThi" Member="lichThis">
@@ -171,6 +172,7 @@
       <Association Name="monHoc_boDe" Member="boDes" ThisKey="maMonHoc" OtherKey="maMon" Type="boDe" />
       <Association Name="monHoc_cauHoi" Member="cauHois" ThisKey="maMonHoc" OtherKey="maMonHoc" Type="cauHoi" />
       <Association Name="monHoc_dongGop" Member="dongGops" ThisKey="maMonHoc" OtherKey="maMonHoc" Type="dongGop" />
+      <Association Name="monHoc_kyThiThu" Member="kyThiThus" ThisKey="maMonHoc" OtherKey="maMonHoc" Type="kyThiThu" />
       <Association Name="monHoc_lichThi" Member="lichThis" ThisKey="maMonHoc" OtherKey="maMonHoc" Type="lichThi" />
     </Type>
   </Table>
