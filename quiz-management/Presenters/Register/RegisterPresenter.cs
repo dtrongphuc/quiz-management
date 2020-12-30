@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace quiz_management.Presenters.Register
 {
-    class RegisterPresenter
+    internal class RegisterPresenter
     {
-        IRegisterView view;
+        private IRegisterView view;
 
         public RegisterPresenter(IRegisterView v)
         {
@@ -84,16 +84,15 @@ namespace quiz_management.Presenters.Register
                 {
                     view.ShowMessage("Đã xảy ra lỗi");
                 }
-                
             }
         }
 
         private void SetClassesDataSource()
         {
-            using(var db = new QuizDataContext())
+            using (var db = new QuizDataContext())
             {
                 var classes = db.Lops.Select(c => new { c.maLopHoc, c.tenLopHoc });
-                if(classes != null)
+                if (classes != null)
                 {
                     view.ComboboxDataSource = classes;
                 }

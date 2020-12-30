@@ -15,7 +15,8 @@ namespace quiz_management.Views.Administrator.UserManagement
 {
     public partial class CreateUserView : Form, ICreateUserView
     {
-        CreateUserPresenter presenter;
+        private CreateUserPresenter presenter;
+
         public CreateUserView(int code)
         {
             InitializeComponent();
@@ -54,7 +55,9 @@ namespace quiz_management.Views.Administrator.UserManagement
         public DateTime DOB => dtpDOB.Value;
 
         public event EventHandler CreateUser;
+
         public event EventHandler GoBackBefore;
+
         public event EventHandler ChangeCbbDesentralization;
 
         public void ShowMainAdmin(int userCode)
@@ -68,6 +71,14 @@ namespace quiz_management.Views.Administrator.UserManagement
         public void ShowMessages(string text)
         {
             MessageBox.Show(text, "Thông báo");
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ImportUsersView screen = new ImportUsersView();
+            screen.FormClosed += (_, ev) => this.Show();
+            screen.Show();
         }
     }
 }
