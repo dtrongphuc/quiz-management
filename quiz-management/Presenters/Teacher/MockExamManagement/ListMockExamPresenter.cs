@@ -37,7 +37,7 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
                 {
                     var mockexam = new MockExam();
                     mockexam.STT = stt;
-                    mockexam.Subject = exam.
+                    //mockexam.Subject = exam.
                 }
             }
         }
