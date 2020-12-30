@@ -183,7 +183,7 @@
             this.cbbGrade.DisplayMember = "tenKhoiLop";
             this.cbbGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbGrade.FormattingEnabled = true;
-            this.cbbGrade.Location = new System.Drawing.Point(503, 151);
+            this.cbbGrade.Location = new System.Drawing.Point(484, 151);
             this.cbbGrade.Name = "cbbGrade";
             this.cbbGrade.Size = new System.Drawing.Size(186, 28);
             this.cbbGrade.TabIndex = 19;
@@ -193,7 +193,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(416, 159);
+            this.label2.Location = new System.Drawing.Point(397, 159);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 20);
             this.label2.TabIndex = 20;
@@ -280,9 +280,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(41, 159);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(145, 20);
+            this.label4.Size = new System.Drawing.Size(93, 20);
             this.label4.TabIndex = 27;
-            this.label4.Text = "Thi thử/Chính thức";
+            this.label4.Text = "Chọn kì thi:";
             // 
             // cbbExam
             // 
@@ -292,7 +292,7 @@
             this.cbbExam.Items.AddRange(new object[] {
             "Thi thử",
             "Chính thức"});
-            this.cbbExam.Location = new System.Drawing.Point(202, 151);
+            this.cbbExam.Location = new System.Drawing.Point(150, 151);
             this.cbbExam.Name = "cbbExam";
             this.cbbExam.Size = new System.Drawing.Size(186, 28);
             this.cbbExam.TabIndex = 26;
