@@ -29,8 +29,7 @@ namespace quiz_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainAdminView(1));
-            Application.Run(new CreateMockExamView(1));
+            Application.Run(new RegisterView());
         }
     }
 }

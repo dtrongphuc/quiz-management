@@ -68,13 +68,12 @@ namespace quiz_management.Presenters.Register
                     db.SubmitChanges();
                     var userId = user.maNguoiDung;
 
-                    var userInfor = new thongTin
-                    {
-                        maNguoidung = userId,
-                        tenNguoiDung = view.FullName,
-                        ngaySinh = DateTime.ParseExact(view.Birthday, "dd/MM/yyyy", null),
-                        maLopHoc = selected?.maLopHoc
-                    };
+                    var userInfor = new thongTin();
+                    userInfor.maNguoidung = userId;
+                    userInfor.tenNguoiDung = view.FullName;
+                    userInfor.ngaySinh = Convert.ToDateTime(view.Birthday);
+                    if (selected != null)
+                        userInfor.maLopHoc = selected?.maLopHoc;
 
                     db.thongTins.InsertOnSubmit(userInfor);
                     db.SubmitChanges();
