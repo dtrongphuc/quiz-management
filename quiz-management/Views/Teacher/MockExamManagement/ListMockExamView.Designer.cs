@@ -41,6 +41,8 @@
             this.StartDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EndDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExamID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PaperID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMockExam)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,8 +76,11 @@
             this.Grade,
             this.StartDay,
             this.EndDay,
-            this.ExamID});
+            this.ExamID,
+            this.UserID,
+            this.PaperID});
             this.dgvMockExam.Location = new System.Drawing.Point(38, 174);
+            this.dgvMockExam.MultiSelect = false;
             this.dgvMockExam.Name = "dgvMockExam";
             this.dgvMockExam.ReadOnly = true;
             this.dgvMockExam.RowHeadersVisible = false;
@@ -174,6 +179,22 @@
             this.ExamID.ReadOnly = true;
             this.ExamID.Visible = false;
             // 
+            // UserID
+            // 
+            this.UserID.DataPropertyName = "UserID";
+            this.UserID.HeaderText = "Column1";
+            this.UserID.MinimumWidth = 6;
+            this.UserID.Name = "UserID";
+            this.UserID.ReadOnly = true;
+            // 
+            // PaperID
+            // 
+            this.PaperID.DataPropertyName = "PaperID";
+            this.PaperID.HeaderText = "Column1";
+            this.PaperID.MinimumWidth = 6;
+            this.PaperID.Name = "PaperID";
+            this.PaperID.ReadOnly = true;
+            // 
             // ListMockExamView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -209,5 +230,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn StartDay;
         private System.Windows.Forms.DataGridViewTextBoxColumn EndDay;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExamID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UserID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PaperID;
     }
 }
