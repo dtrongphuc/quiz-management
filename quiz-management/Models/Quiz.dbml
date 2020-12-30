@@ -7,8 +7,10 @@
       <Column Name="maMon" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="maKhoi" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
       <Column Name="thoiGian" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="trangThai" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="boDe_cTBoDe" Member="cTBoDes" ThisKey="maBoDe" OtherKey="maBoDe" Type="cTBoDe" />
       <Association Name="boDe_ketQua" Member="ketQuas" ThisKey="maBoDe" OtherKey="maBoDe" Type="ketQua" />
+      <Association Name="boDe_kyThiThu" Member="kyThiThus" ThisKey="maBoDe" OtherKey="maBoDe" Type="kyThiThu" />
       <Association Name="boDe_lichThi" Member="lichThis" ThisKey="maBoDe" OtherKey="maBoDe" Type="lichThi" />
       <Association Name="khoiLop_boDe" Member="khoiLop" ThisKey="maKhoi" OtherKey="maKhoiLop" Type="khoiLop" IsForeignKey="true" />
       <Association Name="monHoc_boDe" Member="monHoc" ThisKey="maMon" OtherKey="maMonHoc" Type="monHoc" IsForeignKey="true" />
@@ -116,6 +118,17 @@
       <Association Name="khoiLop_cauHoi" Member="cauHois" ThisKey="maKhoiLop" OtherKey="maKhoiLop" Type="cauHoi" />
       <Association Name="khoiLop_dongGop" Member="dongGops" ThisKey="maKhoiLop" OtherKey="maKhoiLop" Type="dongGop" />
       <Association Name="khoiLop_Lop" Member="Lops" ThisKey="maKhoiLop" OtherKey="maKhoiLop" Type="Lop" />
+    </Type>
+  </Table>
+  <Table Name="dbo.kyThiThu" Member="kyThiThus">
+    <Type Name="kyThiThu">
+      <Column Name="maKyThiThu" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="maNguoiDung" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="maMonHoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ngayThi" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ngayKT" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="maBoDe" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="boDe_kyThiThu" Member="boDe" ThisKey="maBoDe" OtherKey="maBoDe" Type="boDe" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.lichThi" Member="lichThis">

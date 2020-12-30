@@ -60,6 +60,9 @@ namespace quiz_management.Models
     partial void InsertkhoiLop(khoiLop instance);
     partial void UpdatekhoiLop(khoiLop instance);
     partial void DeletekhoiLop(khoiLop instance);
+    partial void InsertkyThiThu(kyThiThu instance);
+    partial void UpdatekyThiThu(kyThiThu instance);
+    partial void DeletekyThiThu(kyThiThu instance);
     partial void InsertlichThi(lichThi instance);
     partial void UpdatelichThi(lichThi instance);
     partial void DeletelichThi(lichThi instance);
@@ -187,6 +190,14 @@ namespace quiz_management.Models
 			}
 		}
 		
+		public System.Data.Linq.Table<kyThiThu> kyThiThus
+		{
+			get
+			{
+				return this.GetTable<kyThiThu>();
+			}
+		}
+		
 		public System.Data.Linq.Table<lichThi> lichThis
 		{
 			get
@@ -244,9 +255,13 @@ namespace quiz_management.Models
 		
 		private System.Nullable<int> _thoiGian;
 		
+		private System.Nullable<int> _trangThai;
+		
 		private EntitySet<cTBoDe> _cTBoDes;
 		
 		private EntitySet<ketQua> _ketQuas;
+		
+		private EntitySet<kyThiThu> _kyThiThus;
 		
 		private EntitySet<lichThi> _lichThis;
 		
@@ -268,12 +283,15 @@ namespace quiz_management.Models
     partial void OnmaKhoiChanged();
     partial void OnthoiGianChanging(System.Nullable<int> value);
     partial void OnthoiGianChanged();
+    partial void OntrangThaiChanging(System.Nullable<int> value);
+    partial void OntrangThaiChanged();
     #endregion
 		
 		public boDe()
 		{
 			this._cTBoDes = new EntitySet<cTBoDe>(new Action<cTBoDe>(this.attach_cTBoDes), new Action<cTBoDe>(this.detach_cTBoDes));
 			this._ketQuas = new EntitySet<ketQua>(new Action<ketQua>(this.attach_ketQuas), new Action<ketQua>(this.detach_ketQuas));
+			this._kyThiThus = new EntitySet<kyThiThu>(new Action<kyThiThu>(this.attach_kyThiThus), new Action<kyThiThu>(this.detach_kyThiThus));
 			this._lichThis = new EntitySet<lichThi>(new Action<lichThi>(this.attach_lichThis), new Action<lichThi>(this.detach_lichThis));
 			this._khoiLop = default(EntityRef<khoiLop>);
 			this._monHoc = default(EntityRef<monHoc>);
@@ -388,6 +406,26 @@ namespace quiz_management.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_trangThai", DbType="Int")]
+		public System.Nullable<int> trangThai
+		{
+			get
+			{
+				return this._trangThai;
+			}
+			set
+			{
+				if ((this._trangThai != value))
+				{
+					this.OntrangThaiChanging(value);
+					this.SendPropertyChanging();
+					this._trangThai = value;
+					this.SendPropertyChanged("trangThai");
+					this.OntrangThaiChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="boDe_cTBoDe", Storage="_cTBoDes", ThisKey="maBoDe", OtherKey="maBoDe")]
 		public EntitySet<cTBoDe> cTBoDes
 		{
@@ -411,6 +449,19 @@ namespace quiz_management.Models
 			set
 			{
 				this._ketQuas.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="boDe_kyThiThu", Storage="_kyThiThus", ThisKey="maBoDe", OtherKey="maBoDe")]
+		public EntitySet<kyThiThu> kyThiThus
+		{
+			get
+			{
+				return this._kyThiThus;
+			}
+			set
+			{
+				this._kyThiThus.Assign(value);
 			}
 		}
 		
@@ -534,6 +585,18 @@ namespace quiz_management.Models
 		}
 		
 		private void detach_ketQuas(ketQua entity)
+		{
+			this.SendPropertyChanging();
+			entity.boDe = null;
+		}
+		
+		private void attach_kyThiThus(kyThiThu entity)
+		{
+			this.SendPropertyChanging();
+			entity.boDe = this;
+		}
+		
+		private void detach_kyThiThus(kyThiThu entity)
 		{
 			this.SendPropertyChanging();
 			entity.boDe = null;
@@ -2837,6 +2900,229 @@ namespace quiz_management.Models
 		{
 			this.SendPropertyChanging();
 			entity.khoiLop = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.kyThiThu")]
+	public partial class kyThiThu : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _maKyThiThu;
+		
+		private int _maNguoiDung;
+		
+		private System.Nullable<int> _maMonHoc;
+		
+		private System.Nullable<System.DateTime> _ngayThi;
+		
+		private System.Nullable<System.DateTime> _ngayKT;
+		
+		private int _maBoDe;
+		
+		private EntityRef<boDe> _boDe;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnmaKyThiThuChanging(int value);
+    partial void OnmaKyThiThuChanged();
+    partial void OnmaNguoiDungChanging(int value);
+    partial void OnmaNguoiDungChanged();
+    partial void OnmaMonHocChanging(System.Nullable<int> value);
+    partial void OnmaMonHocChanged();
+    partial void OnngayThiChanging(System.Nullable<System.DateTime> value);
+    partial void OnngayThiChanged();
+    partial void OnngayKTChanging(System.Nullable<System.DateTime> value);
+    partial void OnngayKTChanged();
+    partial void OnmaBoDeChanging(int value);
+    partial void OnmaBoDeChanged();
+    #endregion
+		
+		public kyThiThu()
+		{
+			this._boDe = default(EntityRef<boDe>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maKyThiThu", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int maKyThiThu
+		{
+			get
+			{
+				return this._maKyThiThu;
+			}
+			set
+			{
+				if ((this._maKyThiThu != value))
+				{
+					this.OnmaKyThiThuChanging(value);
+					this.SendPropertyChanging();
+					this._maKyThiThu = value;
+					this.SendPropertyChanged("maKyThiThu");
+					this.OnmaKyThiThuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maNguoiDung", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int maNguoiDung
+		{
+			get
+			{
+				return this._maNguoiDung;
+			}
+			set
+			{
+				if ((this._maNguoiDung != value))
+				{
+					this.OnmaNguoiDungChanging(value);
+					this.SendPropertyChanging();
+					this._maNguoiDung = value;
+					this.SendPropertyChanged("maNguoiDung");
+					this.OnmaNguoiDungChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maMonHoc", DbType="Int")]
+		public System.Nullable<int> maMonHoc
+		{
+			get
+			{
+				return this._maMonHoc;
+			}
+			set
+			{
+				if ((this._maMonHoc != value))
+				{
+					this.OnmaMonHocChanging(value);
+					this.SendPropertyChanging();
+					this._maMonHoc = value;
+					this.SendPropertyChanged("maMonHoc");
+					this.OnmaMonHocChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ngayThi", DbType="Date")]
+		public System.Nullable<System.DateTime> ngayThi
+		{
+			get
+			{
+				return this._ngayThi;
+			}
+			set
+			{
+				if ((this._ngayThi != value))
+				{
+					this.OnngayThiChanging(value);
+					this.SendPropertyChanging();
+					this._ngayThi = value;
+					this.SendPropertyChanged("ngayThi");
+					this.OnngayThiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ngayKT", DbType="Date")]
+		public System.Nullable<System.DateTime> ngayKT
+		{
+			get
+			{
+				return this._ngayKT;
+			}
+			set
+			{
+				if ((this._ngayKT != value))
+				{
+					this.OnngayKTChanging(value);
+					this.SendPropertyChanging();
+					this._ngayKT = value;
+					this.SendPropertyChanged("ngayKT");
+					this.OnngayKTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maBoDe", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int maBoDe
+		{
+			get
+			{
+				return this._maBoDe;
+			}
+			set
+			{
+				if ((this._maBoDe != value))
+				{
+					if (this._boDe.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnmaBoDeChanging(value);
+					this.SendPropertyChanging();
+					this._maBoDe = value;
+					this.SendPropertyChanged("maBoDe");
+					this.OnmaBoDeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="boDe_kyThiThu", Storage="_boDe", ThisKey="maBoDe", OtherKey="maBoDe", IsForeignKey=true)]
+		public boDe boDe
+		{
+			get
+			{
+				return this._boDe.Entity;
+			}
+			set
+			{
+				boDe previousValue = this._boDe.Entity;
+				if (((previousValue != value) 
+							|| (this._boDe.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._boDe.Entity = null;
+						previousValue.kyThiThus.Remove(this);
+					}
+					this._boDe.Entity = value;
+					if ((value != null))
+					{
+						value.kyThiThus.Add(this);
+						this._maBoDe = value.maBoDe;
+					}
+					else
+					{
+						this._maBoDe = default(int);
+					}
+					this.SendPropertyChanged("boDe");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
