@@ -37,8 +37,13 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
                 {
                     var mockexam = new MockExam();
                     mockexam.STT = stt;
-                    mockexam.Subject = exam.
+                    mockexam.Grade = exam.khoiLop.tenKhoiLop;
+                    mockexam.Subject = "";
+                    mockexam.TotalStudent = 1;
+
+                    MockExamList.Add(mockexam);
                 }
+                view.MockExamList = MockExamList;
             }
         }
 
