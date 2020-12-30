@@ -21,7 +21,8 @@ CREATE TABLE Lop
 	PRIMARY KEY (maLopHoc)
 )
 alter table Lop add constraint FK_lop_khoiLop FOREIGN KEY(maKhoiLop) references khoiLop(maKhoiLop)
-select * from Lop
+select * from boDe 
+update boDe set trangThai = 0 where maBoDe =1
 
 
 CREATE TABLE khoiLop
@@ -198,14 +199,14 @@ create table kyThiThu
     maMonHoc INT,
     ngayThi Date,
     ngayKT date,
-    maBoDe INT 
+    maBoDe INT,
+    maKhoiLop varchar(5)
 
     constraint PL_kyThiThu
     primary key (maKyThiThu,maNguoiDung,maBoDe)
 )
-
 alter table kyThiThu add constraint FK_kyThiThu_boDe foreign key (maBoDe) references boDe(maBoDe)
-
+alter table kyThiThu add constraint FK_kyThiThu_KhoiLop foreign key (maKhoiLop) references khoiLop(maKhoiLop)
 
 CREATE TABLE luyenTap
 (
@@ -349,6 +350,12 @@ VALUES
 (   2, -- maBoDe - int
     1  -- maCauHoi - int
     )
+GO
+
+SELECT * FROM kyThiThu
+
+--INSERT INTO kyThiThu(maKyThiThu,maNguoiDung,maMonHoc,ngayThi,ngayKT,maBoDe,maKhoiLop)
+--VALUES (1,1,1,GETDATE)
 GO
 
 INSERT INTO dbo.dapAn

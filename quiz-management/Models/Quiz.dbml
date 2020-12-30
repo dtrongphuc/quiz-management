@@ -117,6 +117,7 @@
       <Association Name="khoiLop_boDe" Member="boDes" ThisKey="maKhoiLop" OtherKey="maKhoi" Type="boDe" />
       <Association Name="khoiLop_cauHoi" Member="cauHois" ThisKey="maKhoiLop" OtherKey="maKhoiLop" Type="cauHoi" />
       <Association Name="khoiLop_dongGop" Member="dongGops" ThisKey="maKhoiLop" OtherKey="maKhoiLop" Type="dongGop" />
+      <Association Name="khoiLop_kyThiThu" Member="kyThiThus" ThisKey="maKhoiLop" OtherKey="maKhoiLop" Type="kyThiThu" />
       <Association Name="khoiLop_Lop" Member="Lops" ThisKey="maKhoiLop" OtherKey="maKhoiLop" Type="Lop" />
     </Type>
   </Table>
@@ -128,7 +129,9 @@
       <Column Name="ngayThi" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="ngayKT" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="maBoDe" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="maKhoiLop" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
       <Association Name="boDe_kyThiThu" Member="boDe" ThisKey="maBoDe" OtherKey="maBoDe" Type="boDe" IsForeignKey="true" />
+      <Association Name="khoiLop_kyThiThu" Member="khoiLop" ThisKey="maKhoiLop" OtherKey="maKhoiLop" Type="khoiLop" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.lichThi" Member="lichThis">

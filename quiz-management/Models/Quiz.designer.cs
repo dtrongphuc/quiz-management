@@ -2721,6 +2721,8 @@ namespace quiz_management.Models
 		
 		private EntitySet<dongGop> _dongGops;
 		
+		private EntitySet<kyThiThu> _kyThiThus;
+		
 		private EntitySet<Lop> _Lops;
 		
     #region Extensibility Method Definitions
@@ -2738,6 +2740,7 @@ namespace quiz_management.Models
 			this._boDes = new EntitySet<boDe>(new Action<boDe>(this.attach_boDes), new Action<boDe>(this.detach_boDes));
 			this._cauHois = new EntitySet<cauHoi>(new Action<cauHoi>(this.attach_cauHois), new Action<cauHoi>(this.detach_cauHois));
 			this._dongGops = new EntitySet<dongGop>(new Action<dongGop>(this.attach_dongGops), new Action<dongGop>(this.detach_dongGops));
+			this._kyThiThus = new EntitySet<kyThiThu>(new Action<kyThiThu>(this.attach_kyThiThus), new Action<kyThiThu>(this.detach_kyThiThus));
 			this._Lops = new EntitySet<Lop>(new Action<Lop>(this.attach_Lops), new Action<Lop>(this.detach_Lops));
 			OnCreated();
 		}
@@ -2821,6 +2824,19 @@ namespace quiz_management.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="khoiLop_kyThiThu", Storage="_kyThiThus", ThisKey="maKhoiLop", OtherKey="maKhoiLop")]
+		public EntitySet<kyThiThu> kyThiThus
+		{
+			get
+			{
+				return this._kyThiThus;
+			}
+			set
+			{
+				this._kyThiThus.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="khoiLop_Lop", Storage="_Lops", ThisKey="maKhoiLop", OtherKey="maKhoiLop")]
 		public EntitySet<Lop> Lops
 		{
@@ -2890,6 +2906,18 @@ namespace quiz_management.Models
 			entity.khoiLop = null;
 		}
 		
+		private void attach_kyThiThus(kyThiThu entity)
+		{
+			this.SendPropertyChanging();
+			entity.khoiLop = this;
+		}
+		
+		private void detach_kyThiThus(kyThiThu entity)
+		{
+			this.SendPropertyChanging();
+			entity.khoiLop = null;
+		}
+		
 		private void attach_Lops(Lop entity)
 		{
 			this.SendPropertyChanging();
@@ -2921,7 +2949,11 @@ namespace quiz_management.Models
 		
 		private int _maBoDe;
 		
+		private string _maKhoiLop;
+		
 		private EntityRef<boDe> _boDe;
+		
+		private EntityRef<khoiLop> _khoiLop;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2939,11 +2971,14 @@ namespace quiz_management.Models
     partial void OnngayKTChanged();
     partial void OnmaBoDeChanging(int value);
     partial void OnmaBoDeChanged();
+    partial void OnmaKhoiLopChanging(string value);
+    partial void OnmaKhoiLopChanged();
     #endregion
 		
 		public kyThiThu()
 		{
 			this._boDe = default(EntityRef<boDe>);
+			this._khoiLop = default(EntityRef<khoiLop>);
 			OnCreated();
 		}
 		
@@ -3071,6 +3106,30 @@ namespace quiz_management.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maKhoiLop", DbType="VarChar(5)")]
+		public string maKhoiLop
+		{
+			get
+			{
+				return this._maKhoiLop;
+			}
+			set
+			{
+				if ((this._maKhoiLop != value))
+				{
+					if (this._khoiLop.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnmaKhoiLopChanging(value);
+					this.SendPropertyChanging();
+					this._maKhoiLop = value;
+					this.SendPropertyChanged("maKhoiLop");
+					this.OnmaKhoiLopChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="boDe_kyThiThu", Storage="_boDe", ThisKey="maBoDe", OtherKey="maBoDe", IsForeignKey=true)]
 		public boDe boDe
 		{
@@ -3101,6 +3160,40 @@ namespace quiz_management.Models
 						this._maBoDe = default(int);
 					}
 					this.SendPropertyChanged("boDe");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="khoiLop_kyThiThu", Storage="_khoiLop", ThisKey="maKhoiLop", OtherKey="maKhoiLop", IsForeignKey=true)]
+		public khoiLop khoiLop
+		{
+			get
+			{
+				return this._khoiLop.Entity;
+			}
+			set
+			{
+				khoiLop previousValue = this._khoiLop.Entity;
+				if (((previousValue != value) 
+							|| (this._khoiLop.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._khoiLop.Entity = null;
+						previousValue.kyThiThus.Remove(this);
+					}
+					this._khoiLop.Entity = value;
+					if ((value != null))
+					{
+						value.kyThiThus.Add(this);
+						this._maKhoiLop = value.maKhoiLop;
+					}
+					else
+					{
+						this._maKhoiLop = default(string);
+					}
+					this.SendPropertyChanged("khoiLop");
 				}
 			}
 		}
