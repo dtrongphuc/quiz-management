@@ -27,14 +27,11 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
             Loadpage(code, paperid);
             view.GoBackBefore += GoBackBefore_View;
             view.MoveToRight += MoveToRight_View;
-            //view.MoveAllToRight += MoveAllToRight_View;
             view.MoveToLeft += MoveToLeft_View;
-            //view.MoveAllToLeft += MoveAllToLeft_View;
             view.GradeChange += GradeChange_View;
             view.SubjectChange += SubjectChange_View;
             view.UpdatePaper += UpdatePaper_View;
             LoaddgvFromPaper();
-            //--lỡ
         }
 
         private void UpdatePaper_View(object sender, EventArgs e)
@@ -99,11 +96,14 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
                 view.PaperID = papercode.ToString();
 
                 //khối lớp
-                view.GradeList = db.boDes.Where(i => i.maBoDe == papercode).Select(i => i.khoiLop.tenKhoiLop).ToList()[0];
-                gradeID = db.boDes.Where(i => i.maBoDe == papercode).Select(i => i.khoiLop.maKhoiLop).ToList()[0];
+                var grade_subject = db.boDes.Where(i => i.maBoDe == papercode);
+                view.GradeList = grade_subject.Select(i => i.khoiLop.tenKhoiLop).ToList()[0];
+                gradeID = grade_subject.Select(i => i.khoiLop.maKhoiLop).ToList()[0];
                 //môn học
-                view.SubjectList = db.boDes.Where(i => i.maBoDe == papercode).Select(i => i.monHoc.tenMonHoc).ToList()[0];
-                subjectID = db.boDes.Where(i => i.maBoDe == papercode).Select(i => i.monHoc.maMonHoc).ToList()[0];
+                view.SubjectList = grade_subject.Select(i => i.monHoc.tenMonHoc).ToList()[0];
+                subjectID = grade_subject.Select(i => i.monHoc.maMonHoc).ToList()[0];
+                //ten6 kì thi -- 1 là chính thức - 0 là thi thử
+                view.Exam = grade_subject.Select(i => i.trangThai).ToList()[0] == 1 ? "Đề thi: Chính thức" : "Đề thi: Thử";
             }
             //FillAll();
         }

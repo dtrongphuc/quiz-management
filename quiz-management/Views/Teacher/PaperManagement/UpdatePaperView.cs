@@ -50,17 +50,10 @@ namespace quiz_management.Views.Teacher.PaperManagement
 
         public BindingList<CreatePaperWithQuestion> listQuestionselected { set => dgvQuestionSelectedList.DataSource = value; }
         public BindingList<CreatePaperWithQuestion> listQuestion { set => dgvQuestionList.DataSource = value; }
-
-        //public string Grade => cbbGrade.SelectedValue.ToString();
-
-        //public int Subjectseleted { set => cbbSubject.SelectedIndex = value; }
-
-        //public string Subject => cbbSubject.SelectedValue.ToString();
+        public string Exam { set => lbExam.Text = value; }
 
         public event EventHandler MoveToRight;
-        //public event EventHandler MoveAllToRight;
         public event EventHandler MoveToLeft;
-        //public event EventHandler MoveAllToLeft;
         public event EventHandler UpdatePaper;
         public event EventHandler GoBackBefore;
         public event EventHandler GradeChange;
