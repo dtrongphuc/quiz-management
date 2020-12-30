@@ -72,12 +72,14 @@ CREATE TABLE boDe
 	thoiGian INT,
 	tongSoCau INT,
 	maMon INT,
-	maKhoi varchar(5)
+	maKhoi varchar(5),
+    trangThai int
 
 	CONSTRAINT PK_boDe
 	PRIMARY KEY (maBoDe)
 )
 select * from boDe
+
 ALTER TABLE dbo.boDe ADD CONSTRAINT FK_boDe_monHoc FOREIGN KEY(maMon) REFERENCES dbo.monHoc(maMonHoc)
 ALTER TABLE boDe ADD CONSTRAINT FK_boDe_khoiLop FOREIGN KEY(maKhoi) REFERENCES khoiLop(maKhoiLop)
 
@@ -188,6 +190,22 @@ select * from lichThi
 alter table lichThi add constraint FK_lichThi_boDe foreign key (maBoDe) references boDe(maBoDe)
 alter table lichThi add constraint FK_lichThi_nguoiDung foreign key (maNguoiDung) references nguoiDung(maNguoiDung) on Delete Cascade
 alter table lichThi add constraint FK_lichThi_monHoc foreign key (maMonHoc) references monHoc(maMonHoc)
+
+create table kyThiThu
+(
+    maKyThiThu int,
+    maNguoiDung INT,
+    maMonHoc INT,
+    ngayThi Date,
+    ngayKT date,
+    maBoDe INT 
+
+    constraint PL_kyThiThu
+    primary key (maKyThiThu,maNguoiDung,maBoDe)
+)
+
+alter table kyThiThu add constraint FK_kyThiThu_boDe foreign key (maBoDe) references boDe(maBoDe)
+
 
 CREATE TABLE luyenTap
 (
