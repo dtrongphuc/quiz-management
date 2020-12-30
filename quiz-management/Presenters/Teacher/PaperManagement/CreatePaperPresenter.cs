@@ -16,6 +16,7 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
         int currenUserCode;
         BindingList<CreatePaperWithQuestion> ListQuestionselcted = null;
         BindingList<CreatePaperWithQuestion> listQT = null;
+        int status = 1; // 0 là đóng góp/ 1 chính thức
         public CreatePaperPresenter(ICreatePaperView v, int code)
         {
             view = v;
@@ -36,28 +37,10 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
 
         private void ExamChange_Change(object sender, EventArgs e)
         {
+            status = view.ExamChoose == "Thi thử" ? 0 : 1;
             view.listQuestion = null;
             view.listQuestionselected = null;
-            FillAllMock();
-        }
-
-        private void FillAllMock()
-        {
-            //List<CreatePaperWithQuestion> listQT = new List<CreatePaperWithQuestion>();
-            listQT = new BindingList<CreatePaperWithQuestion>();
-            using (var db = new QuizDataContext())
-            {
-                //binding câu hỏi
-                var listQuestions = db.dongGops.Where(i => i.maKhoiLop == view.Grade && i.maMonHoc == int.Parse(view.Subject)).ToList();
-                foreach (var i in listQuestions)
-                {
-                    CreatePaperWithQuestion pp = new CreatePaperWithQuestion();
-                    pp.QuestionID = i.maCauHoi.ToString();
-                    pp.Question = i.cauHoi1.ToString();
-                    listQT.Add(pp);
-                }
-            }
-            view.listQuestion = listQT;
+            FillAll();
         }
 
         private void SubjectChange_View(object sender, EventArgs e)
@@ -112,7 +95,7 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
             using (var db = new QuizDataContext())
             {
                 //binding câu hỏi
-                var listQuestions = db.cauHois.Where(i => i.maKhoiLop == view.Grade && i.maMonHoc == int.Parse(view.Subject)).ToList();
+                var listQuestions = db.cauHois.Where(i => i.maKhoiLop == view.Grade && i.maMonHoc == int.Parse(view.Subject) && i.trangThai == status).ToList();
                 foreach (var i in listQuestions)
                 {
                     CreatePaperWithQuestion pp = new CreatePaperWithQuestion();

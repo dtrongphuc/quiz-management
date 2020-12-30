@@ -278,7 +278,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(37, 164);
+            this.label4.Location = new System.Drawing.Point(41, 159);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(145, 20);
             this.label4.TabIndex = 27;
@@ -292,7 +292,7 @@
             this.cbbExam.Items.AddRange(new object[] {
             "Thi thử",
             "Chính thức"});
-            this.cbbExam.Location = new System.Drawing.Point(199, 156);
+            this.cbbExam.Location = new System.Drawing.Point(202, 151);
             this.cbbExam.Name = "cbbExam";
             this.cbbExam.Size = new System.Drawing.Size(186, 28);
             this.cbbExam.TabIndex = 26;
