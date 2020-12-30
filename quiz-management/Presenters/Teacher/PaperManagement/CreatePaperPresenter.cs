@@ -31,6 +31,33 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
             view.WatchPaperList += WatchPaperList_View;
             view.GradeChange += GradeChange_View;
             view.SubjectChange += SubjectChange_View;
+            view.ExamChange += ExamChange_Change;
+        }
+
+        private void ExamChange_Change(object sender, EventArgs e)
+        {
+            view.listQuestion = null;
+            view.listQuestionselected = null;
+            FillAllMock();
+        }
+
+        private void FillAllMock()
+        {
+            //List<CreatePaperWithQuestion> listQT = new List<CreatePaperWithQuestion>();
+            listQT = new BindingList<CreatePaperWithQuestion>();
+            using (var db = new QuizDataContext())
+            {
+                //binding câu hỏi
+                var listQuestions = db.dongGops.Where(i => i.maKhoiLop == view.Grade && i.maMonHoc == int.Parse(view.Subject)).ToList();
+                foreach (var i in listQuestions)
+                {
+                    CreatePaperWithQuestion pp = new CreatePaperWithQuestion();
+                    pp.QuestionID = i.maCauHoi.ToString();
+                    pp.Question = i.cauHoi1.ToString();
+                    listQT.Add(pp);
+                }
+            }
+            view.listQuestion = listQT;
         }
 
         private void SubjectChange_View(object sender, EventArgs e)

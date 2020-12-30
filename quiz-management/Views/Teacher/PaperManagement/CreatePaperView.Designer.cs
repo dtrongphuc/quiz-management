@@ -49,6 +49,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cbbSubject = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbbExam = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionSelectedList)).BeginInit();
             this.SuspendLayout();
@@ -181,7 +183,7 @@
             this.cbbGrade.DisplayMember = "tenKhoiLop";
             this.cbbGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbGrade.FormattingEnabled = true;
-            this.cbbGrade.Location = new System.Drawing.Point(221, 151);
+            this.cbbGrade.Location = new System.Drawing.Point(503, 151);
             this.cbbGrade.Name = "cbbGrade";
             this.cbbGrade.Size = new System.Drawing.Size(186, 28);
             this.cbbGrade.TabIndex = 19;
@@ -191,7 +193,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(134, 159);
+            this.label2.Location = new System.Drawing.Point(416, 159);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 20);
             this.label2.TabIndex = 20;
@@ -255,7 +257,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(630, 159);
+            this.label8.Location = new System.Drawing.Point(727, 159);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(78, 20);
             this.label8.TabIndex = 25;
@@ -266,17 +268,44 @@
             this.cbbSubject.DisplayMember = "tenMonHoc";
             this.cbbSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbSubject.FormattingEnabled = true;
-            this.cbbSubject.Location = new System.Drawing.Point(721, 151);
+            this.cbbSubject.Location = new System.Drawing.Point(818, 151);
             this.cbbSubject.Name = "cbbSubject";
             this.cbbSubject.Size = new System.Drawing.Size(179, 28);
             this.cbbSubject.TabIndex = 24;
             this.cbbSubject.ValueMember = "maMonHoc";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(37, 164);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(145, 20);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "Thi thử/Chính thức";
+            // 
+            // cbbExam
+            // 
+            this.cbbExam.DisplayMember = "tenKhoiLop";
+            this.cbbExam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbExam.FormattingEnabled = true;
+            this.cbbExam.Items.AddRange(new object[] {
+            "Thi thử",
+            "Chính thức"});
+            this.cbbExam.Location = new System.Drawing.Point(199, 156);
+            this.cbbExam.Name = "cbbExam";
+            this.cbbExam.Size = new System.Drawing.Size(186, 28);
+            this.cbbExam.TabIndex = 26;
+            this.cbbExam.Text = "Chính thức";
+            this.cbbExam.ValueMember = "maKhoiLop";
             // 
             // CreatePaperView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1042, 667);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cbbExam);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.cbbSubject);
             this.Controls.Add(this.label7);
@@ -327,5 +356,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cbbSubject;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cbbExam;
     }
 }

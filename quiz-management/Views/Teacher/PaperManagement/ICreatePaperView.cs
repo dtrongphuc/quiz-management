@@ -15,6 +15,7 @@ namespace quiz_management.Views.Teacher.PaperManagement
         //string PaperID { get; set; }
         List<khoiLop> GradeList {set; }
         string Grade { get; }
+        string ExamChoose { get; } //chon thi thử / thi chính thức
         List<monHoc> SubjectList { set; }
         string Subject { get; }
         BindingList<CreatePaperWithQuestion> listQuestion { set; }
@@ -33,6 +34,7 @@ namespace quiz_management.Views.Teacher.PaperManagement
         event EventHandler WatchPaperList;
         event EventHandler GradeChange;
         event EventHandler SubjectChange;
+        event EventHandler ExamChange;
 
         void ShowMessage(string text);
         void ShowMainTeacherView(int code);
