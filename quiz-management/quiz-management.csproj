@@ -442,6 +442,9 @@
     <EmbeddedResource Include="Views\Teacher\MockExamManagement\ListMockExamView.resx">
       <DependentUpon>ListMockExamView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Teacher\MockExamManagement\UpdateMockExamView.resx">
+      <DependentUpon>UpdateMockExamView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Teacher\PaperManagement\CreatePaperView.resx">
       <DependentUpon>CreatePaperView.cs</DependentUpon>
     </EmbeddedResource>

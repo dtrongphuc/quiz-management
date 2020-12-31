@@ -147,7 +147,36 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
 
         private void View_Submit(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            if (lstThiSinh.Count == 0 || view.lstBoDeChon.SelectedRows.Count == 0)
+            {
+                view.ShowMessage("Thiết thông tin để tạo lịch thi");
+                return;
+            }
+            using (var db = new QuizDataContext())
+            {
+                int malt = db.kyThiThus.ToList().Count == 0 ? 0 : db.kyThiThus.Max(i => i.maKyThiThu);
+                
+                foreach (thongTin i in lstThiSinh)
+                {
+                    foreach (DataGridViewRow k in view.lstBoDeChon.SelectedRows)
+                    {
+                        var x = k.Cells["maBoDe"].Value;
+                        db.kyThiThus.InsertOnSubmit(new kyThiThu
+                        {
+                            maKyThiThu = (malt + 1),
+                            maNguoiDung = i.maNguoidung,
+                            maMonHoc = int.Parse(view.monHocChon),
+                            ngayThi = view.NgayBD,
+                            ngayKT = view.NgayKT,
+                            maKhoiLop = view.KhoiLopChon,
+                            maBoDe = int.Parse(k.Cells["maBoDe"].Value.ToString())
+                        });
+                    }
+                    db.SubmitChanges();
+                }
+
+            }
+            view.ShowMessage("Thành Công.");
         }
 
         private void View_Back(object sender, EventArgs e)

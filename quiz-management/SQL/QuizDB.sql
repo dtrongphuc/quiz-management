@@ -11,6 +11,7 @@
 )
 
 select * from nguoiDung
+insert into nguoiDung values('c','')
 CREATE TABLE Lop
 (
 	maKhoiLop varchar(5),
@@ -149,8 +150,7 @@ alter table ketQua add constraint df_cauchualam default 0 for chuaLam;
 alter table ketQua add constraint df_cau default 0 for cauDung;
 alter table ketQua add constraint df_causai default 0 for cauSai;
 alter table ketQua add constraint df_ngaylam default getdate() for ngayLam;
-alter table ketQua add kyThi int;
-alter table ketQua add kyThi int;
+
 select * from cTKetQua
 
 ALTER TABLE dbo.ketQua ADD CONSTRAINT FK_ketQua_nguoiDung FOREIGN KEY(maNguoiDung) REFERENCES dbo.nguoiDung(maNguoiDung)
@@ -208,6 +208,8 @@ create table kyThiThu
 alter table kyThiThu add constraint FK_kyThiThu_boDe foreign key (maBoDe) references boDe(maBoDe)
 alter table kyThiThu add constraint FK_kyThiThu_KhoiLop foreign key (maKhoiLop) references khoiLop(maKhoiLop)
 alter table kyThiThu add constraint FK_kyThiThu_monHoc foreign key (maMonHoc) references monHoc(maMonHoc)
+select * from kyThiThu
+
 
 CREATE TABLE luyenTap
 (
