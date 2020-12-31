@@ -12,7 +12,7 @@ namespace quiz_management.Presenters.Student.Exam
     {
         private IOfficialExamView view;
         private int currentUserCode;
-        private int _maBoDe = 1;
+        private int _maBoDe = 0;
         private int _resultCode = -1;
 
         public List<Question> Questions = new List<Question>();
@@ -59,7 +59,15 @@ namespace quiz_management.Presenters.Student.Exam
             int timeLeft = view.TimeLeft;
             bool excute = UpdateResult(timeLeft, view.Remain);
             if (!excute) view.ShowMessage("Lỗi", "Đã có lỗi xảy ra");
-            else view.ShowStudentView(currentUserCode);
+            else
+            {
+                using (var db = new QuizDataContext())
+                {
+                    var result = db.ketQuas.FirstOrDefault(k => k.maKetQua == _resultCode);
+                    view.ShowMessage("Điểm", "Bạn được " + result.diem + " điểm");
+                }
+                view.ShowStudentView(currentUserCode);
+            }
         }
 
         private void View_Next(object sender, System.EventArgs e)
@@ -137,6 +145,8 @@ namespace quiz_management.Presenters.Student.Exam
         {
             using (var db = new QuizDataContext())
             {
+                _maBoDe = db.lichThis.Where(l => (l.ngayThi == DateTime.Now) && (l.maNguoiDung == currentUserCode))
+                                    .Select(s => s.maBoDe).First();
                 // Fetch user data
                 var user = db.nguoiDungs.SingleOrDefault(u => u.maNguoiDung == currentUserCode);
                 string name = user.thongTin.tenNguoiDung as string;
@@ -340,8 +350,35 @@ namespace quiz_management.Presenters.Student.Exam
             if (_resultCode <= 0) return false;
             using (var db = new QuizDataContext())
             {
+                int corrected = 0;
+                int wrong = 0;
+                foreach (Question q in Questions)
+                {
+                    if (q.Checked)
+                    {
+                        var correctAnswers = db.dapAns.Where(d => d.maCauHoi == q.MaCauHoi);
+                        bool check = true;
+                        foreach (Answer ans in q.CauTraLoi)
+                        {
+                            var a = correctAnswers.FirstOrDefault(d => d.maCauTraloi == ans.MaCauTraLoi);
+                            bool isCorrectAnswer = a.dapAn1 == 1;
+                            if (ans.Checked != isCorrectAnswer)
+                            {
+                                check = false;
+                                break;
+                            }
+                        }
+                        if (check) corrected++;
+                    }
+                }
+
+                wrong = Questions.Count - corrected - remainCount;
+
                 var result = db.ketQuas.FirstOrDefault(k => k.maKetQua == _resultCode);
+                result.cauDung = corrected;
+                result.cauSai = wrong;
                 result.chuaLam = remainCount;
+                result.diem = (10 * 1.0 / Questions.Count) * corrected;
                 result.thoiGian = time;
                 result.trangThai = 1;
                 db.SubmitChanges();
