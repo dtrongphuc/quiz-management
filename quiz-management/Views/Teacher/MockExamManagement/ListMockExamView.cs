@@ -37,6 +37,12 @@ namespace quiz_management.Views.Teacher.MockExamManagement
         public string TeacherName { set => lbTeacher.Text = value; }
         public List<MockExam> MockExamList { set => dgvMockExam.DataSource = value; }
 
+        string IListMockExamView.ExamID => dgvMockExam.SelectedRows[0].Cells["ExamID"].Value.ToString();
+
+        string IListMockExamView.PaperID => dgvMockExam.SelectedRows[0].Cells["PaperID"].Value.ToString();
+
+        string IListMockExamView.UserID => dgvMockExam.SelectedRows[0].Cells["UserID"].Value.ToString();
+
         public event EventHandler GoBackBeFore;
         public event EventHandler UpdateExam;
         public event EventHandler DeleteExam;

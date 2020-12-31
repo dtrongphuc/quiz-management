@@ -42,6 +42,8 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
                     mockexam.Subject = exam.monHoc.tenMonHoc;
                     mockexam.StartDay = exam.ngayThi.Value.Date.ToString("d");
                     mockexam.EndDay = exam.ngayKT.Value.Date.ToString("d");
+                    mockexam.UserID = exam.maNguoiDung;
+                    mockexam.PaperID = exam.maBoDe;
 
                     MockExamList.Add(mockexam);
                 }
@@ -61,7 +63,14 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
 
         private void DeleteExam_View(object sender, EventArgs e)
         {
-            
+            using(var db = new QuizDataContext())
+            {
+                kyThiThu exammock = db.kyThiThus.SingleOrDefault(i => i.maKyThiThu == int.Parse(view.ExamID) && i.maBoDe == int.Parse(view.PaperID) && i.maNguoiDung == int.Parse(view.PaperID));
+                db.kyThiThus.DeleteOnSubmit(exammock);
+                db.SubmitChanges();
+            }
+            view.ShowMessage("Xóa thành công!");
+            LoadPage();
         }
     }
 }

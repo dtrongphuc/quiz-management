@@ -65,9 +65,9 @@ namespace quiz_management.Views.Teacher.MockExamManagement
         public BindingList<thongTin> lstThiSinh { set => dgvThiSinh.DataSource = value; }
         public BindingList<khoiLop> lstKhoiLop { set => cbbKhoiLop.DataSource = value; }
 
-        public DataGridView lstThiSinhChon => dtgHocSinh;
+        public DataGridView lstThiSinhChon => dgvThiSinh;
 
-        public DataGridView lstHocSinhChon => dgvThiSinh;
+        public DataGridView lstHocSinhChon => dtgHocSinh;
 
         public DataGridView lstBoDeChon => dgvBoDe;
 
@@ -86,7 +86,7 @@ namespace quiz_management.Views.Teacher.MockExamManagement
         public void ShowExamListView(int code)
         {
             this.Hide();
-            ListMockExamView screen = new ListMockExamView(code);
+            UpdateMockExamView screen = new UpdateMockExamView(1);
             screen.FormClosed += (_, e) => this.Close();
             screen.Show();
         }

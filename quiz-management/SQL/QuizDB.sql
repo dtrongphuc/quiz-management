@@ -11,6 +11,7 @@
 )
 
 select * from nguoiDung
+insert into nguoiDung values('c','Hqz75h972DAG+3clE0Gi9sto1yVPd8XgM1x4tSb/WvZEfKgo',1,1)
 CREATE TABLE Lop
 (
 	maKhoiLop varchar(5),
@@ -23,6 +24,7 @@ CREATE TABLE Lop
 alter table Lop add constraint FK_lop_khoiLop FOREIGN KEY(maKhoiLop) references khoiLop(maKhoiLop)
 select * from boDe 
 update boDe set trangThai = 0 where maBoDe =1
+insert into boDe values(20,1,'K10',1800,0)
 
 
 CREATE TABLE khoiLop
@@ -48,7 +50,7 @@ CREATE TABLE thongTin
 	PRIMARY KEY (maNguoidung)
 )
 select * from thongTin
-insert into thongTin(maNguoidung,tenNguoiDung,ngaySinh,maLopHoc)values('3','Nguyễn Hiếu Nghĩa','2000-01-10',1)
+insert into thongTin(maNguoidung,tenNguoiDung,ngaySinh,maLopHoc)values('3','Thành Phú','2000-05-05',1)
 
 
 ALTER TABLE thongTin
@@ -149,8 +151,7 @@ alter table ketQua add constraint df_cauchualam default 0 for chuaLam;
 alter table ketQua add constraint df_cau default 0 for cauDung;
 alter table ketQua add constraint df_causai default 0 for cauSai;
 alter table ketQua add constraint df_ngaylam default getdate() for ngayLam;
-alter table ketQua add kyThi int;
-alter table ketQua add kyThi int;
+
 select * from cTKetQua
 
 ALTER TABLE dbo.ketQua ADD CONSTRAINT FK_ketQua_nguoiDung FOREIGN KEY(maNguoiDung) REFERENCES dbo.nguoiDung(maNguoiDung)
@@ -208,6 +209,8 @@ create table kyThiThu
 alter table kyThiThu add constraint FK_kyThiThu_boDe foreign key (maBoDe) references boDe(maBoDe)
 alter table kyThiThu add constraint FK_kyThiThu_KhoiLop foreign key (maKhoiLop) references khoiLop(maKhoiLop)
 alter table kyThiThu add constraint FK_kyThiThu_monHoc foreign key (maMonHoc) references monHoc(maMonHoc)
+select * from kyThiThu
+
 
 CREATE TABLE luyenTap
 (

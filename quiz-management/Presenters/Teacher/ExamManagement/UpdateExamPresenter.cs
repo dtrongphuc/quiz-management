@@ -56,7 +56,7 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
                     for (int k = 0; k < thisinh.Count; k++)
                     {
                         thongTin tt = new thongTin();
-                        tt = lstHocSinh.Where(x => x.maNguoidung == thisinh[k].maNguoiDung).Single();
+                        tt = lstHocSinh.Where(x => x.maNguoidung == thisinh[k].maNguoiDung).SingleOrDefault();
                         lstThiSinh.Add(tt);
                         lstHocSinh.Remove(tt);
                     }
@@ -161,8 +161,8 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
                         ngayThi = ngaythi,
                         maBoDe = DeThiChon.maBoDe
                     });
-                    db.SubmitChanges();
                 }
+                db.SubmitChanges();
             }
             view.ShowMessage("Thành Công.");
         }

@@ -119,7 +119,7 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
 
         private void View_Submit(object sender, EventArgs e)
         {
-            if (lstThiSinh.Count == 0 || view.DeThiChon == null)
+            if (lstThiSinh == null || view.DeThiChon == null)
             {
                 view.ShowMessage("Thiết thông tin để tạo lịch thi");
                 return;
