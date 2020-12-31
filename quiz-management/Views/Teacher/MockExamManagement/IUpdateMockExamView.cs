@@ -28,6 +28,8 @@ namespace quiz_management.Views.Teacher.MockExamManagement
         event EventHandler Submit;
         event EventHandler MoveLeft;
         event EventHandler MoveRight;
+        event EventHandler MoveRightBoDe;
+        event EventHandler MoveLeftBoDe;
 
         void ShowExamListView(int code);
         void ShowMessage(string text);

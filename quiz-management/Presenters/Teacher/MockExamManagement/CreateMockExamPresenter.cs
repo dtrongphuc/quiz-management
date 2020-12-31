@@ -147,7 +147,7 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
 
         private void View_Submit(object sender, EventArgs e)
         {
-            if (lstThiSinh.Count == 0 || view.lstBoDeChon.SelectedRows.Count == 0)
+            if (lstThiSinh == null || view.lstBoDeChon.SelectedRows.Count == 0)
             {
                 view.ShowMessage("Thiết thông tin để tạo lịch thi");
                 return;

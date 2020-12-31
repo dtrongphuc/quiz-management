@@ -18,6 +18,10 @@ namespace quiz_management.Views.Teacher.MockExamManagement
         public UpdateMockExamView(int code)
         {
             InitializeComponent();
+            dgvBoDe.AutoGenerateColumns = false;
+            dgvDeThiChon.AutoGenerateColumns = false;
+            dtgHocSinh.AutoGenerateColumns = false;
+            dgvThiSinh.AutoGenerateColumns = false;
             presenter = new UpdateMockExamPresenter(this, code);
             btnMoveLeft.Click += (_, e) =>
             {
@@ -35,6 +39,14 @@ namespace quiz_management.Views.Teacher.MockExamManagement
             {
                 GoBackBefore?.Invoke(linkGoBackBefore, e);
             };
+            btnMoveRightBoDe.Click += (_, e) =>
+            {
+                MoveRightBoDe?.Invoke(btnMoveRightBoDe, e);
+            };
+            btnMoveLeftBoDe.Click += (_, e) =>
+            {
+                MoveLeftBoDe?.Invoke(btnMoveLeftBoDe, e);
+            };
         }
 
         public string khoiLopChon { set => lbKhoiLop.Text = value; }
@@ -44,21 +56,19 @@ namespace quiz_management.Views.Teacher.MockExamManagement
         public BindingList<thongTin> lstHocSinh { set => dtgHocSinh.DataSource = value; }
         public BindingList<thongTin> lstThiSinh { set => dgvThiSinh.DataSource = value; }
         public BindingList<boDe> lstDeThi { set => dgvDeThiChon.DataSource = value; }
+        public BindingList<boDe> lstBoDe { set => dgvBoDe.DataSource = value; }
 
         public DataGridView lstThiSinhChon => dgvThiSinh;
-
         public DataGridView lstHocSinhChon => dtgHocSinh;
-
         public DataGridView lstBoDeChon => dgvBoDe;
-
-        public BindingList<boDe> lstBoDe { set => dgvBoDe.DataSource =value; }
-
         public DataGridView lstDeThiChon => dgvDeThiChon;
 
         public event EventHandler GoBackBefore;
         public event EventHandler Submit;
         public event EventHandler MoveLeft;
         public event EventHandler MoveRight;
+        public event EventHandler MoveRightBoDe;
+        public event EventHandler MoveLeftBoDe;
 
         public void ShowExamListView(int code)
         {

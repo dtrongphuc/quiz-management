@@ -11,7 +11,7 @@
 )
 
 select * from nguoiDung
-insert into nguoiDung values('c','')
+insert into nguoiDung values('c','Hqz75h972DAG+3clE0Gi9sto1yVPd8XgM1x4tSb/WvZEfKgo',1,1)
 CREATE TABLE Lop
 (
 	maKhoiLop varchar(5),
@@ -24,6 +24,7 @@ CREATE TABLE Lop
 alter table Lop add constraint FK_lop_khoiLop FOREIGN KEY(maKhoiLop) references khoiLop(maKhoiLop)
 select * from boDe 
 update boDe set trangThai = 0 where maBoDe =1
+insert into boDe values(20,1,'K10',1800,0)
 
 
 CREATE TABLE khoiLop
@@ -49,7 +50,7 @@ CREATE TABLE thongTin
 	PRIMARY KEY (maNguoidung)
 )
 select * from thongTin
-insert into thongTin(maNguoidung,tenNguoiDung,ngaySinh,maLopHoc)values('3','Nguyễn Hiếu Nghĩa','2000-01-10',1)
+insert into thongTin(maNguoidung,tenNguoiDung,ngaySinh,maLopHoc)values('3','Thành Phú','2000-05-05',1)
 
 
 ALTER TABLE thongTin

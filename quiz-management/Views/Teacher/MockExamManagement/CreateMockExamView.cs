@@ -86,7 +86,7 @@ namespace quiz_management.Views.Teacher.MockExamManagement
         public void ShowExamListView(int code)
         {
             this.Hide();
-            ListMockExamView screen = new ListMockExamView(code);
+            UpdateMockExamView screen = new UpdateMockExamView(1);
             screen.FormClosed += (_, e) => this.Close();
             screen.Show();
         }

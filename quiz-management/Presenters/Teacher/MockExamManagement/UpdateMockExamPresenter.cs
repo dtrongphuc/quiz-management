@@ -19,7 +19,7 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
         DateTime ngayBD;
         DateTime ngayKT;
         BindingList<boDe> lstBode;
-        BindingList<boDe> lstBodeChon;
+        BindingList<boDe> lstDethi;
         monHoc MonHocChon;
         khoiLop KhoiLopChon;
         public UpdateMockExamPresenter(IUpdateMockExamView v, int code)
@@ -34,11 +34,13 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
             view.MoveRight += View_MoveRight;
             view.Submit += View_Submit;
             view.GoBackBefore += View_GoBackBefore;
+            view.MoveLeftBoDe += View_MoveLeftBoDe;
+            view.MoveRightBoDe += View_MoveRightBoDe;
 
             lstThiSinh = new BindingList<thongTin>();
             lstHocSinh = new BindingList<thongTin>();
             lstBode = new BindingList<boDe>();
-            lstBodeChon = new BindingList<boDe>();
+            lstDethi = new BindingList<boDe>();
 
             using (var db = new QuizDataContext())
             {
@@ -55,30 +57,62 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
 
                 foreach (var i in temp)
                 {
-                    var thisinh = i.lt.ToList();
-                    for (int k = 0; k < thisinh.Count; k++)
+                    var ct = i.lt.ToList();
+                    for (int k = 0; k < ct.Count; k++)
                     {
                         thongTin tt = new thongTin();
-                        tt = lstHocSinh.Where(x => x.maNguoidung == thisinh[k].maNguoiDung).Single();
-                        lstThiSinh.Add(tt);
-                        lstHocSinh.Remove(tt);
-                    }
-                }
-                foreach (var i in temp)
-                {
-                    var bode = i.lt.ToList();
-                    for (int k = 0; k < lstBode.Count; k++)
-                    {
                         boDe de = new boDe();
-                        de = lstBode.Where(x => x.maBoDe == bode[k].maBoDe).Single();
-                        lstBodeChon.Add(de);
+                        tt = lstHocSinh.Where(x => x.maNguoidung == ct[k].maNguoiDung).SingleOrDefault();
+                        de = lstBode.Where(x => x.maBoDe == ct[k].maBoDe).SingleOrDefault();
+                        if (tt != null) lstThiSinh.Add(tt);
+                        lstHocSinh.Remove(tt);
+                        if(de != null)lstDethi.Add(de);
                         lstBode.Remove(de);
                     }
                 }
-
             }
             Fill();
 
+        }
+
+        private void View_MoveRightBoDe(object sender, EventArgs e)
+        {
+            if (lstDethi == null)
+                lstDethi = new BindingList<boDe>();
+            foreach (DataGridViewRow i in view.lstBoDeChon.SelectedRows)
+            {
+                var id = i.Cells["maBoDe"].Value.ToString();
+
+                var temp = lstBode.Where(x => x.maBoDe == int.Parse(id)).ToList();
+                boDe tt = new boDe();
+                tt = temp[0];
+                lstDethi.Add(tt);
+                lstBode.Remove(tt);
+                if (lstBode.Count == 0)
+                    lstBode = null;
+            }
+            view.lstBoDe = lstBode;
+            view.lstDeThi = lstDethi;
+        }
+
+        private void View_MoveLeftBoDe(object sender, EventArgs e)
+        {
+            if (lstBode == null)
+                lstBode = new BindingList<boDe>();
+            foreach (DataGridViewRow i in view.lstDeThiChon.SelectedRows)
+            {
+                var id = i.Cells["maDeThi"].Value.ToString();
+
+                var temp = lstDethi.Where(x => x.maBoDe == int.Parse(id)).ToList();
+                boDe tt = new boDe();
+                tt = temp[0];
+                lstBode.Add(tt);
+                lstDethi.Remove(tt);
+                if (lstDethi.Count == 0)
+                    lstDethi = null;
+            }
+            view.lstBoDe = lstBode;
+            view.lstDeThi = lstDethi;
         }
 
         private void Fill()
@@ -89,7 +123,7 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
             view.monHoc = MonHocChon.tenMonHoc;
             view.lstHocSinh = lstHocSinh;
             view.lstThiSinh = lstThiSinh;
-            view.lstDeThi = lstBodeChon;
+            view.lstDeThi = lstDethi;
             view.lstBoDe = lstBode;
         }
 
@@ -130,7 +164,39 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
 
         private void View_Submit(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            if (lstDethi == null || lstThiSinh == null)
+            {
+                view.ShowMessage("Cần có thi Sinh Thi.");
+                return;
+            }
+            using (var db = new QuizDataContext())
+            {
+                var ktdelete = db.kyThiThus.Where(p => p.maKyThiThu == currentcode).ToList();
+                for (int d = 0; d < ktdelete.Count; d++)
+                    db.kyThiThus.DeleteOnSubmit(ktdelete[d]);
+                db.SubmitChanges();
+
+
+                foreach (thongTin i in lstThiSinh)
+                {
+                    foreach (var k in lstDethi)
+                    {
+                        
+                        db.kyThiThus.InsertOnSubmit(new kyThiThu
+                        {
+                            maKyThiThu = currentcode,
+                            maNguoiDung = i.maNguoidung,
+                            maMonHoc = MonHocChon.maMonHoc,
+                            ngayThi = view.ngayBD,
+                            ngayKT = view.ngayKT,
+                            maKhoiLop = KhoiLopChon.maKhoiLop,
+                            maBoDe = k.maBoDe
+                        });
+                    }
+                }
+                db.SubmitChanges();
+            }
+            view.ShowMessage("Thành Công.");
         }
 
         private void View_MoveRight(object sender, EventArgs e)

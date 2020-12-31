@@ -48,11 +48,11 @@
             this.linkGoBackBefore = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvDeThiChon = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbKhoiLop = new System.Windows.Forms.Label();
             this.lbMonHoc = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnMoveLeftBoDe = new System.Windows.Forms.Button();
+            this.btnMoveRightBoDe = new System.Windows.Forms.Button();
+            this.maDeThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBoDe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgHocSinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThiSinh)).BeginInit();
@@ -271,20 +271,13 @@
             this.dgvDeThiChon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDeThiChon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDeThiChon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1});
+            this.maDeThi});
             this.dgvDeThiChon.Location = new System.Drawing.Point(625, 268);
             this.dgvDeThiChon.Name = "dgvDeThiChon";
             this.dgvDeThiChon.RowHeadersWidth = 51;
             this.dgvDeThiChon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDeThiChon.Size = new System.Drawing.Size(229, 150);
             this.dgvDeThiChon.TabIndex = 80;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "maBoDe";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã Bộ Đề";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // lbKhoiLop
             // 
@@ -306,33 +299,40 @@
             this.lbMonHoc.TabIndex = 82;
             this.lbMonHoc.Text = "Lịch Sử";
             // 
-            // button1
+            // btnMoveLeftBoDe
             // 
-            this.button1.Location = new System.Drawing.Point(536, 340);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(45, 62);
-            this.button1.TabIndex = 84;
-            this.button1.Text = "<";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnMoveLeftBoDe.Location = new System.Drawing.Point(536, 340);
+            this.btnMoveLeftBoDe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMoveLeftBoDe.Name = "btnMoveLeftBoDe";
+            this.btnMoveLeftBoDe.Size = new System.Drawing.Size(45, 49);
+            this.btnMoveLeftBoDe.TabIndex = 84;
+            this.btnMoveLeftBoDe.Text = "<";
+            this.btnMoveLeftBoDe.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnMoveRightBoDe
             // 
-            this.button2.Location = new System.Drawing.Point(536, 268);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(45, 68);
-            this.button2.TabIndex = 83;
-            this.button2.Text = ">";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnMoveRightBoDe.Location = new System.Drawing.Point(536, 283);
+            this.btnMoveRightBoDe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMoveRightBoDe.Name = "btnMoveRightBoDe";
+            this.btnMoveRightBoDe.Size = new System.Drawing.Size(45, 53);
+            this.btnMoveRightBoDe.TabIndex = 83;
+            this.btnMoveRightBoDe.Text = ">";
+            this.btnMoveRightBoDe.UseVisualStyleBackColor = true;
+            // 
+            // maDeThi
+            // 
+            this.maDeThi.DataPropertyName = "maBoDe";
+            this.maDeThi.HeaderText = "Mã Bộ Đề";
+            this.maDeThi.MinimumWidth = 6;
+            this.maDeThi.Name = "maDeThi";
             // 
             // UpdateMockExamView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1115, 803);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnMoveLeftBoDe);
+            this.Controls.Add(this.btnMoveRightBoDe);
             this.Controls.Add(this.lbMonHoc);
             this.Controls.Add(this.lbKhoiLop);
             this.Controls.Add(this.dgvDeThiChon);
@@ -383,10 +383,10 @@
         private System.Windows.Forms.LinkLabel linkGoBackBefore;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvDeThiChon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.Label lbKhoiLop;
         private System.Windows.Forms.Label lbMonHoc;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnMoveLeftBoDe;
+        private System.Windows.Forms.Button btnMoveRightBoDe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maDeThi;
     }
 }
