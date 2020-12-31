@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace quiz_management.Presenters.Register
 {
-    class RegisterPresenter
+    internal class RegisterPresenter
     {
-        IRegisterView view;
+        private IRegisterView view;
 
         public RegisterPresenter(IRegisterView v)
         {
@@ -68,13 +68,12 @@ namespace quiz_management.Presenters.Register
                     db.SubmitChanges();
                     var userId = user.maNguoiDung;
 
-                    var userInfor = new thongTin
-                    {
-                        maNguoidung = userId,
-                        tenNguoiDung = view.FullName,
-                        ngaySinh = DateTime.ParseExact(view.Birthday, "dd/MM/yyyy", null),
-                        maLopHoc = selected?.maLopHoc
-                    };
+                    var userInfor = new thongTin();
+                    userInfor.maNguoidung = userId;
+                    userInfor.tenNguoiDung = view.FullName;
+                    userInfor.ngaySinh = Convert.ToDateTime(view.Birthday);
+                    if (selected != null)
+                        userInfor.maLopHoc = selected?.maLopHoc;
 
                     db.thongTins.InsertOnSubmit(userInfor);
                     db.SubmitChanges();
@@ -84,16 +83,15 @@ namespace quiz_management.Presenters.Register
                 {
                     view.ShowMessage("Đã xảy ra lỗi");
                 }
-                
             }
         }
 
         private void SetClassesDataSource()
         {
-            using(var db = new QuizDataContext())
+            using (var db = new QuizDataContext())
             {
                 var classes = db.Lops.Select(c => new { c.maLopHoc, c.tenLopHoc });
-                if(classes != null)
+                if (classes != null)
                 {
                     view.ComboboxDataSource = classes;
                 }

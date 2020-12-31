@@ -16,8 +16,8 @@ namespace quiz_management.Views.Student
 {
     public partial class RegisterView : Form, IRegisterView
     {
-        RegisterPresenter presenter;
-        ErrorProvider errorProvider = new ErrorProvider();
+        private RegisterPresenter presenter;
+        private ErrorProvider errorProvider = new ErrorProvider();
 
         public string Username { get => txtUsername.Text.Trim(); set => txtUsername.Text = value; }
         public string Password { get => txtPassword.Text.Trim(); set => txtPassword.Text = value; }
@@ -27,6 +27,7 @@ namespace quiz_management.Views.Student
         public object SelectedClass { get => cbClass.SelectedItem; }
 
         public event EventHandler Submit;
+
         public event EventHandler SwitchToLoginView;
 
         public void ShowMessage(string text)
@@ -51,9 +52,15 @@ namespace quiz_management.Views.Student
 
             btnSubmit.Click += (_, e) =>
             {
-                if(!ValidateChildren())
+                if (!ValidateChildren())
                 {
                     MessageBox.Show("Vui lòng điền đầy đủ dữ liệu hợp lệ");
+                    return;
+                }
+
+                if (rbHs.Checked == true && cbClass.SelectedItem == null)
+                {
+                    MessageBox.Show("Vui lòng chọn lớp");
                     return;
                 }
                 Submit?.Invoke(btnSubmit, e);
@@ -69,11 +76,32 @@ namespace quiz_management.Views.Student
         {
             string confirmPassword = txtPasswordConfirm.Text.Trim();
             string errorMessage = string.Empty;
-            if(confirmPassword != Password)
+            if (confirmPassword != Password)
             {
                 errorMessage = "Mật khẩu không khớp";
             }
             errorProvider.SetError(txtPasswordConfirm, errorMessage);
+        }
+
+        private void rbGv_CheckedChanged(object sender, EventArgs e)
+        {
+            var rb = sender as RadioButton;
+            if (rb.Checked == true)
+            {
+                cbClass.SelectedItem = null;
+                cbClass.Enabled = false;
+                return;
+            }
+        }
+
+        private void rbHs_CheckedChanged(object sender, EventArgs e)
+        {
+            var rb = sender as RadioButton;
+            if (rb.Checked == true)
+            {
+                cbClass.Enabled = true;
+                return;
+            }
         }
     }
 }

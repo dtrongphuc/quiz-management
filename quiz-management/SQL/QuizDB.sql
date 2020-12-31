@@ -888,5 +888,7 @@ insert into cTDongGop values ( 1, N'trả lời 1', 0), ( 1, N'trả lời 2', 1
                              
 insert into nguoiDung values ('b', 'NW5hmDQ+PyC/HJ1oS9ENKd+L63PHQxhyAjLf6eK1NW+NaY5r', 2, 1)
 insert into thongTin values (2, N'Nguyễn Hiếu Nghĩa', '2000-10-20', null)
-select * from cauHoi
+select * from boDe
 update cauHoi set trangThai = 0 where maCauHoi = 14 or maCauHoi = 15
+insert into kyThiThu values (1, 1, 1, '2020-10-10', '2020-12-12', 1, 'K10')
+
