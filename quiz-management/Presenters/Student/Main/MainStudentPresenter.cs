@@ -8,13 +8,14 @@ using System.Threading.Tasks;
 
 namespace quiz_management.Presenters.Student.Main
 {
-    class MainStudentPresenter
+    internal class MainStudentPresenter
     {
-        IMainStudentView view;
-        int currentUserCode;
+        private IMainStudentView view;
+        private int currentUserCode;
 
-        thongTin info = null;
-        string lop = null;
+        private thongTin info = null;
+        private string lop = null;
+
         public MainStudentPresenter(IMainStudentView v, int code)
         {
             view = v;
@@ -29,6 +30,8 @@ namespace quiz_management.Presenters.Student.Main
             view.OfficialExamClick += View_OfficialExamClick;
             view.ResultExamClick += View_ResultExamClick;
             view.TestScheduleClick += View_TestScheduleClick;
+            view.PracticExamClick += View_PracticExamClick;
+            view.PracticStatisticClick += View_PracticStatisticClick;
 
             using (var user = new QuizDataContext())
             {
@@ -53,6 +56,16 @@ namespace quiz_management.Presenters.Student.Main
             FillLH();
         }
 
+        private void View_PracticStatisticClick(object sender, EventArgs e)
+        {
+            view.ShowPracticStatisticView(currentUserCode);
+        }
+
+        private void View_PracticExamClick(object sender, EventArgs e)
+        {
+            view.ShowPracticExamView(currentUserCode);
+        }
+
         private void View_TestScheduleClick(object sender, EventArgs e)
         {
             view.ShowTestScheduleView(currentUserCode);
@@ -72,7 +85,6 @@ namespace quiz_management.Presenters.Student.Main
         {
             if (info != null)
             {
-                
                 view.IdHS = info.maNguoidung.ToString();
                 view.NameHS = info.tenNguoiDung;
                 view.DOBHS = info.ngaySinh.Value.Day + "/" + info.ngaySinh.Value.Month + "/" + info.ngaySinh.Value.Year;
