@@ -22,6 +22,11 @@ namespace quiz_management.Presenters.Student.Exam
         {
             view = v;
             currentUserCode = userCode;
+            bool check = CheckCalendar();
+            if (!check)
+            {
+                return;
+            };
             GetData();
             DataCrashed();
             BindingQuestion();
@@ -64,7 +69,7 @@ namespace quiz_management.Presenters.Student.Exam
                 using (var db = new QuizDataContext())
                 {
                     var result = db.ketQuas.FirstOrDefault(k => k.maKetQua == _resultCode);
-                    view.ShowMessage("Điểm", "Bạn được " + result.diem + " điểm");
+                    view.ShowMessage("Kết quả", "Bạn được " + result.diem + " điểm");
                 }
                 view.ShowStudentView(currentUserCode);
             }
@@ -141,12 +146,28 @@ namespace quiz_management.Presenters.Student.Exam
             BindingQuestion();
         }
 
+        private bool CheckCalendar()
+        {
+            using (var db = new QuizDataContext())
+            {
+                var lt = db.lichThis.Where(l => (l.ngayThi == DateTime.Now) && (l.maNguoiDung == currentUserCode))
+                                    .Select(s => s.maBoDe);
+                if (!lt.Any())
+                {
+                    MessageBox.Show("Hôm nay không có kỳ thi nào!");
+                    view.ShowStudentView(currentUserCode);
+                    view.CloseForm();
+                    return false;
+                }
+                _maBoDe = lt.First();
+            }
+            return true;
+        }
+
         private void GetData()
         {
             using (var db = new QuizDataContext())
             {
-                _maBoDe = db.lichThis.Where(l => (l.ngayThi == DateTime.Now) && (l.maNguoiDung == currentUserCode))
-                                    .Select(s => s.maBoDe).First();
                 // Fetch user data
                 var user = db.nguoiDungs.SingleOrDefault(u => u.maNguoiDung == currentUserCode);
                 string name = user.thongTin.tenNguoiDung as string;

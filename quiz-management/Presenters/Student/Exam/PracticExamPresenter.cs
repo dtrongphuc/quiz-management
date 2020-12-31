@@ -100,7 +100,8 @@ namespace quiz_management.Presenters.Student.Exam
             _selectedCourses = int.Parse(coursesCode.ToString());
             using (var db = new QuizDataContext())
             {
-                var exam = db.boDes.Where(d => d.maMon == _selectedCourses).Select(s => s.maBoDe).ToList();
+                var exam = db.boDes.Where(d => (d.maMon == _selectedCourses) && (d.trangThai == 0))
+                                    .Select(s => s.maBoDe).ToList();
 
                 view.ExamCodes = exam;
             };
@@ -110,7 +111,8 @@ namespace quiz_management.Presenters.Student.Exam
         {
             using (var db = new QuizDataContext())
             {
-                var courses = db.kyThiThus.Where(k => (k.ngayKT == DateTime.Now) && (k.maNguoiDung == currentUserCode))
+                var courses = db.kyThiThus.Where(k => (k.ngayThi <= DateTime.Now) &&
+                (k.ngayKT >= DateTime.Now) && (k.maNguoiDung == currentUserCode))
                                             .Select(s => s.monHoc).ToList<monHoc>();
                 if (courses.Count > 0)
                 {
@@ -376,7 +378,7 @@ namespace quiz_management.Presenters.Student.Exam
                     }
 
                     db.SubmitChanges();
-                    view.ShowMessage("Điểm", "Bạn được " + diem + " điểm");
+                    view.ShowMessage("Kết quả", "Bạn được " + diem + " điểm");
                 };
                 return true;
             }
