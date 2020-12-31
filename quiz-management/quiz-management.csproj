@@ -91,8 +91,10 @@
       <DependentUpon>Quiz.dbml</DependentUpon>
     </Compile>
     <Compile Include="Models\ResultExam.cs" />
+    <Compile Include="Models\StudentOfExam.cs" />
     <Compile Include="Models\StudentStatistic.cs" />
     <Compile Include="Models\TestSchedule.cs" />
+    <Compile Include="Models\TrainScript.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Presenters\Administrator\MainAdmin\MainAdminPresenter.cs" />
     <Compile Include="Presenters\Administrator\SystemManagement\DecentralizationPresenter.cs" />
@@ -113,7 +115,16 @@
     <Compile Include="Presenters\Student\Main\MainStudentPresenter.cs" />
     <Compile Include="Presenters\Teacher\ExamManagement\CreateExamPresenter.cs" />
     <Compile Include="Presenters\Teacher\ExamManagement\ExamListPresenter.cs" />
+    <Compile Include="Presenters\Teacher\ExamManagement\IWatchOrPrintExamCompletedView.cs" />
     <Compile Include="Presenters\Teacher\ExamManagement\UpdateExamPresenter.cs" />
+    <Compile Include="Views\Teacher\ExamManagement\WatchOrPrintExamCompletedPresenter.cs" />
+    <Compile Include="Views\Teacher\ExamManagement\WatchOrPrintExamCompletedView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Teacher\ExamManagement\WatchOrPrintExamCompletedView.Designer.cs">
+      <DependentUpon>WatchOrPrintExamCompletedView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presenters\Teacher\ExamManagement\WatchOrPrintExamPresenter.cs" />
     <Compile Include="Presenters\Teacher\Main\MainTeacherPresenter.cs" />
     <Compile Include="Presenters\Teacher\Main\TeacherInfoPresenter.cs" />
     <Compile Include="Presenters\Teacher\MockExamManagement\CreateMockExamPresenter.cs" />
@@ -271,11 +282,18 @@
     <Compile Include="Views\Teacher\ExamManagement\ICreateExamView.cs" />
     <Compile Include="Views\Teacher\ExamManagement\IExamListView.cs" />
     <Compile Include="Views\Teacher\ExamManagement\IUpdateExamView.cs" />
+    <Compile Include="Views\Teacher\ExamManagement\IWatchOrPrintExamView.cs" />
     <Compile Include="Views\Teacher\ExamManagement\UpdateExamView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Teacher\ExamManagement\UpdateExamView.Designer.cs">
       <DependentUpon>UpdateExamView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Teacher\ExamManagement\WatchOrPrintExamView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Teacher\ExamManagement\WatchOrPrintExamView.Designer.cs">
+      <DependentUpon>WatchOrPrintExamView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Teacher\Main\IMainTeacherView.cs" />
     <Compile Include="Views\Teacher\Main\ITeacherInfoView.cs" />
@@ -451,6 +469,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Teacher\ExamManagement\UpdateExamView.resx">
       <DependentUpon>UpdateExamView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Teacher\ExamManagement\WatchOrPrintExamCompletedView.resx">
+      <DependentUpon>WatchOrPrintExamCompletedView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Teacher\ExamManagement\WatchOrPrintExamView.resx">
+      <DependentUpon>WatchOrPrintExamView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Teacher\Main\MainTeacherView.resx">
       <DependentUpon>MainTeacherView.cs</DependentUpon>
