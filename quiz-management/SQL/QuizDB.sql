@@ -152,7 +152,7 @@ alter table ketQua add constraint df_cau default 0 for cauDung;
 alter table ketQua add constraint df_causai default 0 for cauSai;
 alter table ketQua add constraint df_ngaylam default getdate() for ngayLam;
 
-update ketQua set cauDung = 1, cauSai =0,chuaLam=0,ngayLam=getdate(),trangThai=1,thoiGian=60,diem=10 where maKetQua=2
+update ketQua set trangThai=0 where maKetQua=2
 select * from ketQua
 ALTER TABLE dbo.ketQua ADD CONSTRAINT FK_ketQua_nguoiDung FOREIGN KEY(maNguoiDung) REFERENCES dbo.nguoiDung(maNguoiDung)
 ALTER TABLE  dbo.ketQua ADD CONSTRAINT FK_ketQua_boDe FOREIGN KEY(maBoDe) REFERENCES dbo.boDe(maBoDe)

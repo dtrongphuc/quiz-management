@@ -28,7 +28,8 @@ namespace quiz_management.Presenters.Student.InfoPersonal
             DateTime dt;
             using (var db = new QuizDataContext())
             {
-                lstKQ = db.ketQuas.Where(p => p.maNguoiDung == currentcode).ToList();
+                lstKQ = db.ketQuas.Where(p => p.maNguoiDung == currentcode)
+                                .Where(c => c.trangThai == 1).ToList();
                 foreach (ketQua kq in lstKQ)
                 {
                     dt = kq.ngayLam.Value;
