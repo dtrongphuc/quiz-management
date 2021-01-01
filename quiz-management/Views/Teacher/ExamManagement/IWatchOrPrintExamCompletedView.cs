@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace quiz_management.Presenters.Teacher.ExamManagement
+namespace quiz_management.Views.Teacher.ExamManagement
 {
     interface IWatchOrPrintExamCompletedView
     {
@@ -15,5 +15,6 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
         event EventHandler GobackBefore;
         event EventHandler Print;
         void Message(string text);
+        void Home(int code);
     }
 }

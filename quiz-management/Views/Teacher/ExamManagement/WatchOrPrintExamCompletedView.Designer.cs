@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.linkGoBackBefore = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.lbTeacher = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvExam = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaKQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StudentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PaperID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,14 +44,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvExam)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnUpdate
+            // btnPrint
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(366, 557);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(165, 48);
-            this.btnUpdate.TabIndex = 52;
-            this.btnUpdate.Text = "In";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnPrint.Location = new System.Drawing.Point(366, 557);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(165, 48);
+            this.btnPrint.TabIndex = 52;
+            this.btnPrint.Text = "In";
+            this.btnPrint.UseVisualStyleBackColor = true;
             // 
             // linkGoBackBefore
             // 
@@ -100,6 +101,7 @@
             this.dgvExam.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvExam.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
+            this.MaKQ,
             this.StudentName,
             this.SubjectName,
             this.PaperID,
@@ -123,6 +125,15 @@
             this.STT.MinimumWidth = 6;
             this.STT.Name = "STT";
             this.STT.ReadOnly = true;
+            // 
+            // MaKQ
+            // 
+            this.MaKQ.DataPropertyName = "MaKQ";
+            this.MaKQ.HeaderText = ".";
+            this.MaKQ.MinimumWidth = 6;
+            this.MaKQ.Name = "MaKQ";
+            this.MaKQ.ReadOnly = true;
+            this.MaKQ.Visible = false;
             // 
             // StudentName
             // 
@@ -169,7 +180,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 617);
-            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.dgvExam);
             this.Controls.Add(this.linkGoBackBefore);
             this.Controls.Add(this.label3);
@@ -185,13 +196,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.LinkLabel linkGoBackBefore;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbTeacher;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvExam;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaKQ;
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentName;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubjectName;
         private System.Windows.Forms.DataGridViewTextBoxColumn PaperID;

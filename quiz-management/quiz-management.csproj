@@ -115,9 +115,9 @@
     <Compile Include="Presenters\Student\Main\MainStudentPresenter.cs" />
     <Compile Include="Presenters\Teacher\ExamManagement\CreateExamPresenter.cs" />
     <Compile Include="Presenters\Teacher\ExamManagement\ExamListPresenter.cs" />
-    <Compile Include="Presenters\Teacher\ExamManagement\IWatchOrPrintExamCompletedView.cs" />
     <Compile Include="Presenters\Teacher\ExamManagement\UpdateExamPresenter.cs" />
-    <Compile Include="Views\Teacher\ExamManagement\WatchOrPrintExamCompletedPresenter.cs" />
+    <Compile Include="Presenters\Teacher\ExamManagement\WatchOrPrintExamCompletedPresneter.cs" />
+    <Compile Include="Views\Teacher\ExamManagement\IWatchOrPrintExamCompletedView.cs" />
     <Compile Include="Views\Teacher\ExamManagement\WatchOrPrintExamCompletedView.cs">
       <SubType>Form</SubType>
     </Compile>

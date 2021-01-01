@@ -1,4 +1,5 @@
-﻿using quiz_management.Views;
+﻿using quiz_management.Presenters.Teacher.ExamManagement;
+using quiz_management.Views;
 using quiz_management.Views.Administrator.MainAdmin;
 using quiz_management.Views.Administrator.UserManagement;
 using quiz_management.Views.Student;
@@ -29,7 +30,7 @@ namespace quiz_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainStudentView(1));
+            Application.Run(new WatchOrPrintExamCompletedView(1));
         }
     }
 }

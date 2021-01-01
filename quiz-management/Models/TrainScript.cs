@@ -9,6 +9,7 @@ namespace quiz_management.Models
     public class TrainScript
     {
         int _sTT;
+        int _maKQ;
         string _studentName;
         string _subjectName;
         int _paperID; // mã bộ đề
@@ -21,5 +22,6 @@ namespace quiz_management.Models
         public int PaperID { get => _paperID; set => _paperID = value; }
         public DateTime Date { get => _date; set => _date = value; }
         public float Score { get => _score; set => _score = value; }
+        public int MaKQ { get => _maKQ; set => _maKQ = value; }
     }
 }
