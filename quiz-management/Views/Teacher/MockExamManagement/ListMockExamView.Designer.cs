@@ -43,12 +43,13 @@
             this.ExamID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PaperID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMockExam)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(469, 562);
+            this.btnDelete.Location = new System.Drawing.Point(562, 562);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(165, 48);
             this.btnDelete.TabIndex = 40;
@@ -57,7 +58,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(269, 562);
+            this.btnUpdate.Location = new System.Drawing.Point(344, 562);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(165, 48);
             this.btnUpdate.TabIndex = 39;
@@ -80,7 +81,6 @@
             this.UserID,
             this.PaperID});
             this.dgvMockExam.Location = new System.Drawing.Point(38, 174);
-            this.dgvMockExam.MultiSelect = false;
             this.dgvMockExam.Name = "dgvMockExam";
             this.dgvMockExam.ReadOnly = true;
             this.dgvMockExam.RowHeadersVisible = false;
@@ -186,6 +186,7 @@
             this.UserID.MinimumWidth = 6;
             this.UserID.Name = "UserID";
             this.UserID.ReadOnly = true;
+            this.UserID.Visible = false;
             // 
             // PaperID
             // 
@@ -194,12 +195,23 @@
             this.PaperID.MinimumWidth = 6;
             this.PaperID.Name = "PaperID";
             this.PaperID.ReadOnly = true;
+            this.PaperID.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(129, 562);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(165, 48);
+            this.button1.TabIndex = 41;
+            this.button1.Text = "Thêm";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // ListMockExamView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(896, 643);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.dgvMockExam);
@@ -232,5 +244,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ExamID;
         private System.Windows.Forms.DataGridViewTextBoxColumn UserID;
         private System.Windows.Forms.DataGridViewTextBoxColumn PaperID;
+        private System.Windows.Forms.Button button1;
     }
 }

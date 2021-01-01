@@ -49,7 +49,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbDOB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnPrintTranScript = new System.Windows.Forms.Button();
             this.btnUpdateInfo = new System.Windows.Forms.Button();
             this.btnExamResultView = new System.Windows.Forms.Button();
             this.tbTeacherID = new System.Windows.Forms.TextBox();
@@ -319,7 +318,6 @@
             // 
             this.groupBox1.Controls.Add(this.tbDOB);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.btnPrintTranScript);
             this.groupBox1.Controls.Add(this.btnUpdateInfo);
             this.groupBox1.Controls.Add(this.btnExamResultView);
             this.groupBox1.Controls.Add(this.tbTeacherID);
@@ -349,25 +347,14 @@
             this.label1.TabIndex = 23;
             this.label1.Text = "Ngảy Sinh:";
             // 
-            // btnPrintTranScript
-            // 
-            this.btnPrintTranScript.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrintTranScript.Location = new System.Drawing.Point(82, 466);
-            this.btnPrintTranScript.Margin = new System.Windows.Forms.Padding(2);
-            this.btnPrintTranScript.Name = "btnPrintTranScript";
-            this.btnPrintTranScript.Size = new System.Drawing.Size(139, 52);
-            this.btnPrintTranScript.TabIndex = 22;
-            this.btnPrintTranScript.Text = "In bảng điểm";
-            this.btnPrintTranScript.UseVisualStyleBackColor = true;
-            // 
             // btnUpdateInfo
             // 
             this.btnUpdateInfo.BackColor = System.Drawing.Color.Gainsboro;
             this.btnUpdateInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateInfo.Location = new System.Drawing.Point(82, 382);
+            this.btnUpdateInfo.Location = new System.Drawing.Point(63, 424);
             this.btnUpdateInfo.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateInfo.Name = "btnUpdateInfo";
-            this.btnUpdateInfo.Size = new System.Drawing.Size(139, 49);
+            this.btnUpdateInfo.Size = new System.Drawing.Size(174, 82);
             this.btnUpdateInfo.TabIndex = 21;
             this.btnUpdateInfo.Text = "Sửa thông tin cá nhân";
             this.btnUpdateInfo.UseVisualStyleBackColor = false;
@@ -376,10 +363,10 @@
             // 
             this.btnExamResultView.BackColor = System.Drawing.Color.Gainsboro;
             this.btnExamResultView.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExamResultView.Location = new System.Drawing.Point(82, 300);
+            this.btnExamResultView.Location = new System.Drawing.Point(63, 299);
             this.btnExamResultView.Margin = new System.Windows.Forms.Padding(2);
             this.btnExamResultView.Name = "btnExamResultView";
-            this.btnExamResultView.Size = new System.Drawing.Size(139, 49);
+            this.btnExamResultView.Size = new System.Drawing.Size(174, 82);
             this.btnExamResultView.TabIndex = 19;
             this.btnExamResultView.Text = "Xem kết quả thi";
             this.btnExamResultView.UseVisualStyleBackColor = false;
@@ -599,7 +586,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbTeacherID;
         private System.Windows.Forms.Button btnUpdateInfo;
-        private System.Windows.Forms.Button btnPrintTranScript;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label txtTitle1;
         private System.Windows.Forms.Label txtTitle2;
