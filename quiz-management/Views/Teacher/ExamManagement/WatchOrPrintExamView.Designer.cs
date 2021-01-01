@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.dgvExam = new System.Windows.Forms.DataGridView();
             this.linkGoBackBefore = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,14 +40,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvExam)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnUpdate
+            // btnPrint
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(367, 549);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(165, 48);
-            this.btnUpdate.TabIndex = 46;
-            this.btnUpdate.Text = "In";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnPrint.Location = new System.Drawing.Point(367, 549);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(165, 48);
+            this.btnPrint.TabIndex = 46;
+            this.btnPrint.Text = "In";
+            this.btnPrint.UseVisualStyleBackColor = true;
             // 
             // dgvExam
             // 
@@ -112,6 +112,7 @@
             // 
             // STT
             // 
+            this.STT.DataPropertyName = "STT";
             this.STT.HeaderText = "STT";
             this.STT.MinimumWidth = 6;
             this.STT.Name = "STT";
@@ -119,6 +120,7 @@
             // 
             // StudentName
             // 
+            this.StudentName.DataPropertyName = "StudentName";
             this.StudentName.HeaderText = "Tên Thí Sinh";
             this.StudentName.MinimumWidth = 6;
             this.StudentName.Name = "StudentName";
@@ -126,6 +128,7 @@
             // 
             // ExamName
             // 
+            this.ExamName.DataPropertyName = "ExamName";
             this.ExamName.HeaderText = "Tên Kì Thi";
             this.ExamName.MinimumWidth = 6;
             this.ExamName.Name = "ExamName";
@@ -136,7 +139,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(908, 626);
-            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.dgvExam);
             this.Controls.Add(this.linkGoBackBefore);
             this.Controls.Add(this.label3);
@@ -151,7 +154,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.DataGridView dgvExam;
         private System.Windows.Forms.LinkLabel linkGoBackBefore;
         private System.Windows.Forms.Label label3;

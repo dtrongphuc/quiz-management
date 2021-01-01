@@ -8,12 +8,11 @@ namespace quiz_management.Models
 {
     public class StudentOfExam
     {
-        int STT;
-        string StudentName;
-        string ExamName; //tên kì thi: thi thử - thi chính thức
-
-        public int STT1 { get => STT; set => STT = value; }
-        public string StudentName1 { get => StudentName; set => StudentName = value; }
-        public string ExamName1 { get => ExamName; set => ExamName = value; }
+        int _sTT;
+        string _studentName;
+        string _examName; //tên kì thi: thi thử - thi chính thức
+        public int STT { get => _sTT; set => _sTT = value; }
+        public string StudentName { get => _studentName; set => _studentName = value; }
+        public string ExamName { get => _examName; set => _examName = value; }
     }
 }

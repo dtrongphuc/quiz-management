@@ -133,6 +133,7 @@
       <Association Name="boDe_kyThiThu" Member="boDe" ThisKey="maBoDe" OtherKey="maBoDe" Type="boDe" IsForeignKey="true" />
       <Association Name="khoiLop_kyThiThu" Member="khoiLop" ThisKey="maKhoiLop" OtherKey="maKhoiLop" Type="khoiLop" IsForeignKey="true" />
       <Association Name="monHoc_kyThiThu" Member="monHoc" ThisKey="maMonHoc" OtherKey="maMonHoc" Type="monHoc" IsForeignKey="true" />
+      <Association Name="nguoiDung_kyThiThu" Member="nguoiDung" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="nguoiDung" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.lichThi" Member="lichThis">
@@ -186,6 +187,7 @@
       <Association Name="nguoiDung_thongTin" Member="thongTin" ThisKey="maNguoiDung" OtherKey="maNguoidung" Type="thongTin" Cardinality="One" />
       <Association Name="nguoiDung_dongGop" Member="dongGops" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="dongGop" />
       <Association Name="nguoiDung_ketQua" Member="ketQuas" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="ketQua" />
+      <Association Name="nguoiDung_kyThiThu" Member="kyThiThus" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="kyThiThu" />
       <Association Name="nguoiDung_lichThi" Member="lichThis" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="lichThi" />
       <Association Name="nguoiDung_luyenTap" Member="luyenTaps" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="luyenTap" />
     </Type>

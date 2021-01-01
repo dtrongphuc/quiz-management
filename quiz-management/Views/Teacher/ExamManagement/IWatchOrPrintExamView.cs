@@ -11,9 +11,10 @@ namespace quiz_management.Views.Teacher.ExamManagement
     interface IWatchOrPrintExamView
     {
         string TeacherName { set; }
-        BindingList<StudentOfExam> ExamList { set; }
+        List<StudentOfExam> ExamList { set; }
         event EventHandler GobackBefore;
         event EventHandler Print;
         void Message(string text);
+        void ShowMainTeacher(int code);
     }
 }

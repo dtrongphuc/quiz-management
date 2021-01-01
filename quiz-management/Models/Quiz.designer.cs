@@ -2957,6 +2957,8 @@ namespace quiz_management.Models
 		
 		private EntityRef<monHoc> _monHoc;
 		
+		private EntityRef<nguoiDung> _nguoiDung;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2982,6 +2984,7 @@ namespace quiz_management.Models
 			this._boDe = default(EntityRef<boDe>);
 			this._khoiLop = default(EntityRef<khoiLop>);
 			this._monHoc = default(EntityRef<monHoc>);
+			this._nguoiDung = default(EntityRef<nguoiDung>);
 			OnCreated();
 		}
 		
@@ -3016,6 +3019,10 @@ namespace quiz_management.Models
 			{
 				if ((this._maNguoiDung != value))
 				{
+					if (this._nguoiDung.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnmaNguoiDungChanging(value);
 					this.SendPropertyChanging();
 					this._maNguoiDung = value;
@@ -3235,6 +3242,40 @@ namespace quiz_management.Models
 						this._maMonHoc = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("monHoc");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="nguoiDung_kyThiThu", Storage="_nguoiDung", ThisKey="maNguoiDung", OtherKey="maNguoiDung", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public nguoiDung nguoiDung
+		{
+			get
+			{
+				return this._nguoiDung.Entity;
+			}
+			set
+			{
+				nguoiDung previousValue = this._nguoiDung.Entity;
+				if (((previousValue != value) 
+							|| (this._nguoiDung.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._nguoiDung.Entity = null;
+						previousValue.kyThiThus.Remove(this);
+					}
+					this._nguoiDung.Entity = value;
+					if ((value != null))
+					{
+						value.kyThiThus.Add(this);
+						this._maNguoiDung = value.maNguoiDung;
+					}
+					else
+					{
+						this._maNguoiDung = default(int);
+					}
+					this.SendPropertyChanged("nguoiDung");
 				}
 			}
 		}
@@ -4143,6 +4184,8 @@ namespace quiz_management.Models
 		
 		private EntitySet<ketQua> _ketQuas;
 		
+		private EntitySet<kyThiThu> _kyThiThus;
+		
 		private EntitySet<lichThi> _lichThis;
 		
 		private EntitySet<luyenTap> _luyenTaps;
@@ -4168,6 +4211,7 @@ namespace quiz_management.Models
 			this._thongTin = default(EntityRef<thongTin>);
 			this._dongGops = new EntitySet<dongGop>(new Action<dongGop>(this.attach_dongGops), new Action<dongGop>(this.detach_dongGops));
 			this._ketQuas = new EntitySet<ketQua>(new Action<ketQua>(this.attach_ketQuas), new Action<ketQua>(this.detach_ketQuas));
+			this._kyThiThus = new EntitySet<kyThiThu>(new Action<kyThiThu>(this.attach_kyThiThus), new Action<kyThiThu>(this.detach_kyThiThus));
 			this._lichThis = new EntitySet<lichThi>(new Action<lichThi>(this.attach_lichThis), new Action<lichThi>(this.detach_lichThis));
 			this._luyenTaps = new EntitySet<luyenTap>(new Action<luyenTap>(this.attach_luyenTaps), new Action<luyenTap>(this.detach_luyenTaps));
 			OnCreated();
@@ -4328,6 +4372,19 @@ namespace quiz_management.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="nguoiDung_kyThiThu", Storage="_kyThiThus", ThisKey="maNguoiDung", OtherKey="maNguoiDung")]
+		public EntitySet<kyThiThu> kyThiThus
+		{
+			get
+			{
+				return this._kyThiThus;
+			}
+			set
+			{
+				this._kyThiThus.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="nguoiDung_lichThi", Storage="_lichThis", ThisKey="maNguoiDung", OtherKey="maNguoiDung")]
 		public EntitySet<lichThi> lichThis
 		{
@@ -4393,6 +4450,18 @@ namespace quiz_management.Models
 		}
 		
 		private void detach_ketQuas(ketQua entity)
+		{
+			this.SendPropertyChanging();
+			entity.nguoiDung = null;
+		}
+		
+		private void attach_kyThiThus(kyThiThu entity)
+		{
+			this.SendPropertyChanging();
+			entity.nguoiDung = this;
+		}
+		
+		private void detach_kyThiThus(kyThiThu entity)
 		{
 			this.SendPropertyChanging();
 			entity.nguoiDung = null;
