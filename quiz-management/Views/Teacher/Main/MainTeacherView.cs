@@ -1,5 +1,7 @@
 ﻿using quiz_management.Presenters.Teacher.Main;
 using quiz_management.Properties;
+using quiz_management.Views.Student;
+using quiz_management.Views.Student.Exam;
 using quiz_management.Views.Teacher.QuestionManagement;
 using System;
 using System.Collections.Generic;
@@ -17,11 +19,12 @@ namespace quiz_management.Views.Teacher.Main
     {
         private bool isCollapsed;
         private bool isCollapsed1;
-        
+
         private bool isCollapsed3;
-        
+
         private bool isCollapsed5;
-        MainTeacherPresenter presenter;
+        private MainTeacherPresenter presenter;
+
         public MainTeacherView(int code)
         {
             InitializeComponent();
@@ -30,18 +33,37 @@ namespace quiz_management.Views.Teacher.Main
             {
                 UpdateInfo?.Invoke(btnUpdateInfo, e);
             };
+
             btnCreateQuestion.Click += (_, e) =>
             {
                 CreateQuestion?.Invoke(btnCreateQuestion, e);
             };
+
             btnApproval.Click += (_, e) =>
             {
                 QuestionApproval?.Invoke(btnApproval, e);
             };
+
+            btnOfficialExam.Click += (_, e) =>
+            {
+                OfficialExamClick?.Invoke(btnOfficialExam, e);
+            };
+
+            btnPracticExam.Click += (_, e) =>
+            {
+                PracticExamClick?.Invoke(btnPracticExam, e);
+            };
         }
+
         public event EventHandler UpdateInfo;
+
         public event EventHandler CreateQuestion;
+
         public event EventHandler QuestionApproval;
+
+        public event EventHandler OfficialExamClick;
+
+        public event EventHandler PracticExamClick;
 
         public string TeacherName { set => tbTeacherName.Text = value; }
         public string TeacherID { set => tbTeacherID.Text = value; }
@@ -119,7 +141,6 @@ namespace quiz_management.Views.Teacher.Main
             }
             else
             {
-
                 btnLamBaiThi.Image = Resources.Expand_Arrow_20px;
                 panelLamBaiThi.Height -= 10;
                 if (panelLamBaiThi.Size == panelLamBaiThi.MinimumSize)
@@ -184,6 +205,22 @@ namespace quiz_management.Views.Teacher.Main
         {
             this.Hide();
             QuestionApprovalView screen = new QuestionApprovalView(code);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
+        }
+
+        public void ShowOfficialExamView(int userCode)
+        {
+            this.Hide();
+            OfficialExamView screen = new OfficialExamView(userCode);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
+        }
+
+        public void ShowPracticExamView(int userCode)
+        {
+            this.Hide();
+            PracticExamView screen = new PracticExamView(userCode);
             screen.FormClosed += (_, e) => this.Close();
             screen.Show();
         }

@@ -140,14 +140,14 @@ namespace quiz_management.Views.Student.Exam
 
         private void Form_Loaded(object sender, EventArgs e)
         {
-            cbQuestions.SelectedIndex = -1;
+            cbQuestions.SelectedIndex = 0;
             cbQuestions.SelectedIndex = QuestionSelectedIndex;
         }
 
         public void Init()
         {
             SetTimer();
-            cbQuestions.SelectedIndex = QuestionSelectedIndex;
+            cbQuestions.SelectedIndex = -1;
             checkBoxList.ItemHeight = 32;
             checkBoxList.DisplayMember = "CauTraLoi";
             checkBoxList.ValueMember = "MaCauTraLoi";
@@ -197,6 +197,11 @@ namespace quiz_management.Views.Student.Exam
             {
                 cbQuestions.Items.Add("Câu " + (i + 1));
             }
+        }
+
+        public void CloseForm()
+        {
+            this.Close();
         }
     }
 }

@@ -17,7 +17,8 @@ namespace quiz_management.Views.Student.Main
 {
     public partial class MainStudentView : Form, IMainStudentView
     {
-        MainStudentPresenter presenter;
+        private MainStudentPresenter presenter;
+        private int _currentUserCode;
 
         public string DOBHS { set => txtStudentDOBview.Text = value; }
         public string IdHS { set => txtStudentIDview.Text = value; }
@@ -25,16 +26,24 @@ namespace quiz_management.Views.Student.Main
         public string LopHS { set => txtclassview.Text = value; }
 
         public event EventHandler EditProfile;
+
         public event EventHandler ContribuQuestion;
+
         public event EventHandler OfficialExamClick;
+
         public event EventHandler ResultExamClick;
+
         public event EventHandler TestScheduleClick;
+
+        public event EventHandler PracticExamClick;
+
+        public event EventHandler PracticStatisticClick;
 
         public MainStudentView(int u)
         {
             InitializeComponent();
-           
-            presenter = new MainStudentPresenter(this,u);
+            _currentUserCode = u;
+            presenter = new MainStudentPresenter(this, u);
 
             btnInfoStudent.Click += (_, e) =>
             {
@@ -50,16 +59,27 @@ namespace quiz_management.Views.Student.Main
             {
                 OfficialExamClick?.Invoke(btnOfficialExam, e);
             };
+
             btnExamResultView.Click += (_, e) =>
             {
                 ResultExamClick?.Invoke(btnExamResultView, e);
             };
+
             btnTestScheduleView.Click += (_, e) =>
             {
                 TestScheduleClick?.Invoke(btnTestScheduleView, e);
             };
-        }
 
+            btnPracticExam.Click += (_, e) =>
+            {
+                PracticExamClick?.Invoke(btnPracticExam, e);
+            };
+
+            btnPracticStatistic.Click += (_, e) =>
+            {
+                PracticStatisticClick?.Invoke(btnPracticStatistic, e);
+            };
+        }
 
         public void ShowContribuQuestionsView(int userCode)
         {
@@ -98,6 +118,22 @@ namespace quiz_management.Views.Student.Main
             this.Hide();
             TestScheduleView screen = new TestScheduleView(userCode);
             screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
+        }
+
+        public void ShowPracticExamView(int userCode)
+        {
+            this.Hide();
+            PracticExamView screen = new PracticExamView(userCode);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
+        }
+
+        public void ShowPracticStatisticView(int userCode)
+        {
+            this.Hide();
+            PracticStatisticView screen = new PracticStatisticView(userCode);
+            screen.FormClosed += (_, e) => this.Show();
             screen.Show();
         }
     }

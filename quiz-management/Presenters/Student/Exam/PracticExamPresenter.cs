@@ -100,7 +100,8 @@ namespace quiz_management.Presenters.Student.Exam
             _selectedCourses = int.Parse(coursesCode.ToString());
             using (var db = new QuizDataContext())
             {
-                var exam = db.boDes.Where(d => d.maMon == _selectedCourses).Select(s => s.maBoDe).ToList();
+                var exam = db.boDes.Where(d => (d.maMon == _selectedCourses) && (d.trangThai == 0))
+                                    .Select(s => s.maBoDe).ToList();
 
                 view.ExamCodes = exam;
             };
@@ -110,7 +111,9 @@ namespace quiz_management.Presenters.Student.Exam
         {
             using (var db = new QuizDataContext())
             {
-                var courses = db.monHocs.Select(s => s).ToList();
+                var courses = db.kyThiThus.Where(k => (k.ngayThi <= DateTime.Now) &&
+                (k.ngayKT >= DateTime.Now) && (k.maNguoiDung == currentUserCode))
+                                            .Select(s => s.monHoc).ToList<monHoc>();
                 if (courses.Count > 0)
                 {
                     _selectedCourses = courses.ElementAt(0).maMonHoc;
@@ -221,6 +224,8 @@ namespace quiz_management.Presenters.Student.Exam
         {
             using (var db = new QuizDataContext())
             {
+                _maBoDe = db.kyThiThus.Where(l => (l.ngayThi == DateTime.Now) && (l.maNguoiDung == currentUserCode))
+                                    .Select(s => s.maBoDe).First();
                 // Fetch exam data
                 var exam = db.boDes.FirstOrDefault(d => d.maBoDe == _maBoDe);
                 var questions = db.cTBoDes.Where(b => b.maBoDe == _maBoDe).Join(
@@ -350,6 +355,7 @@ namespace quiz_management.Presenters.Student.Exam
                     }
 
                     wrong = Questions.Count - corrected;
+                    var diem = (10 * 1.0 / Questions.Count) * corrected;
 
                     var result = db.luyenTaps.Where(t => t.nguoiDung.maNguoiDung == currentUserCode);
                     if (!result.Any())
@@ -372,6 +378,7 @@ namespace quiz_management.Presenters.Student.Exam
                     }
 
                     db.SubmitChanges();
+                    view.ShowMessage("Kết quả", "Bạn được " + diem + " điểm");
                 };
                 return true;
             }

@@ -37,8 +37,8 @@
             this.btnTKHS = new System.Windows.Forms.Button();
             this.btnThongKe = new System.Windows.Forms.Button();
             this.panelLamBaiThi = new System.Windows.Forms.Panel();
-            this.btnOnTap = new System.Windows.Forms.Button();
-            this.btnThi = new System.Windows.Forms.Button();
+            this.btnPracticExam = new System.Windows.Forms.Button();
+            this.btnOfficialExam = new System.Windows.Forms.Button();
             this.btnLamBaiThi = new System.Windows.Forms.Button();
             this.btnQLDeThi = new System.Windows.Forms.Button();
             this.panelQLCauHoi = new System.Windows.Forms.Panel();
@@ -172,8 +172,8 @@
             // 
             // panelLamBaiThi
             // 
-            this.panelLamBaiThi.Controls.Add(this.btnOnTap);
-            this.panelLamBaiThi.Controls.Add(this.btnThi);
+            this.panelLamBaiThi.Controls.Add(this.btnPracticExam);
+            this.panelLamBaiThi.Controls.Add(this.btnOfficialExam);
             this.panelLamBaiThi.Controls.Add(this.btnLamBaiThi);
             this.panelLamBaiThi.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLamBaiThi.Location = new System.Drawing.Point(3, 187);
@@ -183,35 +183,35 @@
             this.panelLamBaiThi.Size = new System.Drawing.Size(214, 137);
             this.panelLamBaiThi.TabIndex = 2;
             // 
-            // btnOnTap
+            // btnPracticExam
             // 
-            this.btnOnTap.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnOnTap.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnOnTap.FlatAppearance.BorderSize = 0;
-            this.btnOnTap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOnTap.Font = new System.Drawing.Font("Microsoft Tai Le", 12F);
-            this.btnOnTap.ForeColor = System.Drawing.Color.Black;
-            this.btnOnTap.Location = new System.Drawing.Point(0, 96);
-            this.btnOnTap.Name = "btnOnTap";
-            this.btnOnTap.Size = new System.Drawing.Size(214, 41);
-            this.btnOnTap.TabIndex = 4;
-            this.btnOnTap.Text = "Thi Thử / Ôn Tập";
-            this.btnOnTap.UseVisualStyleBackColor = false;
+            this.btnPracticExam.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnPracticExam.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPracticExam.FlatAppearance.BorderSize = 0;
+            this.btnPracticExam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPracticExam.Font = new System.Drawing.Font("Microsoft Tai Le", 12F);
+            this.btnPracticExam.ForeColor = System.Drawing.Color.Black;
+            this.btnPracticExam.Location = new System.Drawing.Point(0, 96);
+            this.btnPracticExam.Name = "btnPracticExam";
+            this.btnPracticExam.Size = new System.Drawing.Size(214, 41);
+            this.btnPracticExam.TabIndex = 4;
+            this.btnPracticExam.Text = "Thi Thử / Ôn Tập";
+            this.btnPracticExam.UseVisualStyleBackColor = false;
             // 
-            // btnThi
+            // btnOfficialExam
             // 
-            this.btnThi.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnThi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnThi.FlatAppearance.BorderSize = 0;
-            this.btnThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThi.Font = new System.Drawing.Font("Microsoft Tai Le", 12F);
-            this.btnThi.ForeColor = System.Drawing.Color.Black;
-            this.btnThi.Location = new System.Drawing.Point(0, 55);
-            this.btnThi.Name = "btnThi";
-            this.btnThi.Size = new System.Drawing.Size(214, 41);
-            this.btnThi.TabIndex = 3;
-            this.btnThi.Text = "Thi Trắc Nghiệm";
-            this.btnThi.UseVisualStyleBackColor = false;
+            this.btnOfficialExam.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnOfficialExam.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnOfficialExam.FlatAppearance.BorderSize = 0;
+            this.btnOfficialExam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOfficialExam.Font = new System.Drawing.Font("Microsoft Tai Le", 12F);
+            this.btnOfficialExam.ForeColor = System.Drawing.Color.Black;
+            this.btnOfficialExam.Location = new System.Drawing.Point(0, 55);
+            this.btnOfficialExam.Name = "btnOfficialExam";
+            this.btnOfficialExam.Size = new System.Drawing.Size(214, 41);
+            this.btnOfficialExam.TabIndex = 3;
+            this.btnOfficialExam.Text = "Thi Trắc Nghiệm";
+            this.btnOfficialExam.UseVisualStyleBackColor = false;
             // 
             // btnLamBaiThi
             // 
@@ -335,7 +335,7 @@
             // 
             this.tbDOB.Location = new System.Drawing.Point(111, 182);
             this.tbDOB.Name = "tbDOB";
-            this.tbDOB.Size = new System.Drawing.Size(169, 32);
+            this.tbDOB.Size = new System.Drawing.Size(169, 27);
             this.tbDOB.TabIndex = 24;
             // 
             // label1
@@ -375,7 +375,7 @@
             // 
             this.tbTeacherID.Location = new System.Drawing.Point(111, 130);
             this.tbTeacherID.Name = "tbTeacherID";
-            this.tbTeacherID.Size = new System.Drawing.Size(169, 32);
+            this.tbTeacherID.Size = new System.Drawing.Size(169, 27);
             this.tbTeacherID.TabIndex = 16;
             // 
             // label2
@@ -394,7 +394,7 @@
             this.tbTeacherName.Location = new System.Drawing.Point(46, 64);
             this.tbTeacherName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tbTeacherName.Name = "tbTeacherName";
-            this.tbTeacherName.Size = new System.Drawing.Size(223, 29);
+            this.tbTeacherName.Size = new System.Drawing.Size(175, 24);
             this.tbTeacherName.TabIndex = 12;
             this.tbTeacherName.Text = "Giáo Viên Siêu Cấp";
             // 
@@ -419,7 +419,7 @@
             this.txtTitle2.Location = new System.Drawing.Point(57, 104);
             this.txtTitle2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtTitle2.Name = "txtTitle2";
-            this.txtTitle2.Size = new System.Drawing.Size(464, 32);
+            this.txtTitle2.Size = new System.Drawing.Size(356, 26);
             this.txtTitle2.TabIndex = 3;
             this.txtTitle2.Text = "Trường đại học Khoa Học Tự Nhiên ";
             // 
@@ -430,7 +430,7 @@
             this.txtTitle1.Location = new System.Drawing.Point(212, 64);
             this.txtTitle1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtTitle1.Name = "txtTitle1";
-            this.txtTitle1.Size = new System.Drawing.Size(140, 20);
+            this.txtTitle1.Size = new System.Drawing.Size(121, 17);
             this.txtTitle1.TabIndex = 2;
             this.txtTitle1.Text = "Thi trắc nghiệm";
             // 
@@ -594,8 +594,8 @@
         
         
         private System.Windows.Forms.Panel panelLamBaiThi;
-        private System.Windows.Forms.Button btnOnTap;
-        private System.Windows.Forms.Button btnThi;
+        private System.Windows.Forms.Button btnPracticExam;
+        private System.Windows.Forms.Button btnOfficialExam;
         private System.Windows.Forms.Button btnLamBaiThi;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panelQLKyThi;
