@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace quiz_management.Presenters.Teacher.Main
 {
-    class MainTeacherPresenter
+    internal class MainTeacherPresenter
     {
-        IMainTeacherView view;
-        int currentUser;
+        private IMainTeacherView view;
+        private int currentUser;
+
         public MainTeacherPresenter(IMainTeacherView v, int code)
         {
             view = v;
@@ -20,6 +22,38 @@ namespace quiz_management.Presenters.Teacher.Main
             view.UpdateInfo += UpdateInfo_View;
             view.CreateQuestion += CreateQuestion_View;
             view.QuestionApproval += QuestionApproval_View;
+            view.OfficialExamClick += View_OfficialExamClick;
+            view.PracticExamClick += View_PracticExamClick;
+        }
+
+        private void View_PracticExamClick(object sender, EventArgs e)
+        {
+            using (var db = new QuizDataContext())
+            {
+                var lt = db.kyThiThus.Where(l => (l.ngayThi == DateTime.Now) && (l.maNguoiDung == currentUser))
+                                    .Select(s => s.maBoDe);
+                if (!lt.Any())
+                {
+                    MessageBox.Show("Bạn không có lịch thi thử hôm nay");
+                    return;
+                }
+            }
+            view.ShowPracticExamView(currentUser);
+        }
+
+        private void View_OfficialExamClick(object sender, EventArgs e)
+        {
+            using (var db = new QuizDataContext())
+            {
+                var lt = db.lichThis.Where(l => (l.ngayThi == DateTime.Now) && (l.maNguoiDung == currentUser))
+                                    .Select(s => s.maBoDe);
+                if (!lt.Any())
+                {
+                    MessageBox.Show("Bạn không có lịch thi hôm nay");
+                    return;
+                }
+            }
+            view.ShowOfficialExamView(currentUser);
         }
 
         private void QuestionApproval_View(object sender, EventArgs e)
@@ -39,7 +73,7 @@ namespace quiz_management.Presenters.Teacher.Main
 
         private void LoadPage()
         {
-            using(var db = new QuizDataContext())
+            using (var db = new QuizDataContext())
             {
                 var user = db.thongTins.Where(i => i.maNguoidung == currentUser).ToList()[0];
                 view.TeacherName = user.tenNguoiDung;

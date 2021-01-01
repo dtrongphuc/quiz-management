@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace quiz_management.Presenters.Student.Main
 {
@@ -63,6 +64,16 @@ namespace quiz_management.Presenters.Student.Main
 
         private void View_PracticExamClick(object sender, EventArgs e)
         {
+            using (var db = new QuizDataContext())
+            {
+                var lt = db.kyThiThus.Where(l => (l.ngayThi == DateTime.Now) && (l.maNguoiDung == currentUserCode))
+                                    .Select(s => s.maBoDe);
+                if (!lt.Any())
+                {
+                    MessageBox.Show("Bạn không có lịch thi thử hôm nay");
+                    return;
+                }
+            }
             view.ShowPracticExamView(currentUserCode);
         }
 
@@ -78,6 +89,16 @@ namespace quiz_management.Presenters.Student.Main
 
         private void View_OfficialExamClick(object sender, EventArgs e)
         {
+            using (var db = new QuizDataContext())
+            {
+                var lt = db.lichThis.Where(l => (l.ngayThi == DateTime.Now) && (l.maNguoiDung == currentUserCode))
+                                    .Select(s => s.maBoDe);
+                if (!lt.Any())
+                {
+                    MessageBox.Show("Bạn không có lịch thi hôm nay");
+                    return;
+                }
+            }
             view.ShowOfficialExamView(currentUserCode);
         }
 

@@ -154,9 +154,6 @@ namespace quiz_management.Presenters.Student.Exam
                                     .Select(s => s.maBoDe);
                 if (!lt.Any())
                 {
-                    MessageBox.Show("Hôm nay không có kỳ thi nào!");
-                    view.ShowStudentView(currentUserCode);
-                    view.CloseForm();
                     return false;
                 }
                 _maBoDe = lt.First();

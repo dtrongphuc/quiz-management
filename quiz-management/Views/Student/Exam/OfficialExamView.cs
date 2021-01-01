@@ -140,7 +140,7 @@ namespace quiz_management.Views.Student.Exam
 
         private void Form_Loaded(object sender, EventArgs e)
         {
-            cbQuestions.SelectedIndex = -1;
+            cbQuestions.SelectedIndex = 0;
             cbQuestions.SelectedIndex = QuestionSelectedIndex;
         }
 

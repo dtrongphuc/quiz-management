@@ -74,6 +74,11 @@ namespace quiz_management.Views.Student.Main
             {
                 PracticExamClick?.Invoke(btnPracticExam, e);
             };
+
+            btnPracticStatistic.Click += (_, e) =>
+            {
+                PracticStatisticClick?.Invoke(btnPracticStatistic, e);
+            };
         }
 
         public void ShowContribuQuestionsView(int userCode)
@@ -128,7 +133,7 @@ namespace quiz_management.Views.Student.Main
         {
             this.Hide();
             PracticStatisticView screen = new PracticStatisticView(userCode);
-            screen.FormClosed += (_, e) => this.Close();
+            screen.FormClosed += (_, e) => this.Show();
             screen.Show();
         }
     }
