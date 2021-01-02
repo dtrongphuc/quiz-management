@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace quiz_management.Views.Register
 {
-    interface IRegisterView
+    internal interface IRegisterView
     {
         string Username { get; set; }
         string Password { get; set; }
@@ -14,11 +14,14 @@ namespace quiz_management.Views.Register
         string Birthday { get; set; }
         object ComboboxDataSource { set; }
         object SelectedClass { get; }
+        bool isStudent { get; }
 
         event EventHandler Submit;
+
         event EventHandler SwitchToLoginView;
 
         void ShowMessage(string text);
+
         void ShowLoginView();
     }
 }

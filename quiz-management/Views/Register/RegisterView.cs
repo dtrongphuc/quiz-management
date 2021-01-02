@@ -25,6 +25,7 @@ namespace quiz_management.Views.Student
         public string Birthday { get => txtBirthday.Text.Trim(); set => txtBirthday.Text = value; }
         public object ComboboxDataSource { set => cbClass.DataSource = value; }
         public object SelectedClass { get => cbClass.SelectedItem; }
+        public bool isStudent { get => rbHs.Checked; }
 
         public event EventHandler Submit;
 

@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 
 namespace quiz_management.Presenters.Teacher.ExamManagement
 {
-    class WatchOrPrintExamCompletedPresneter
+    internal class WatchOrPrintExamCompletedPresneter
     {
-        IWatchOrPrintExamCompletedView view;
-        int currentcode;
-        thongTin TenGV;
-        BindingList<TrainScript> lstkq;
+        private IWatchOrPrintExamCompletedView view;
+        private int currentcode;
+        private thongTin TenGV;
+        private BindingList<TrainScript> lstkq;
+
         public WatchOrPrintExamCompletedPresneter(IWatchOrPrintExamCompletedView v, int code)
         {
             view = v;
@@ -40,10 +41,10 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
                             t => t.monhoc,
                             mh => mh.maMonHoc,
                             (t, mh) => new { id = t.id, tennguoidung = t.ten, tenmonhoc = mh.tenMonHoc, mabode = t.de, ngaylam = t.ngaythi, diem = t.diem }).ToList();
-                for (int i=0;i<temp.Count;i++)
+                for (int i = 0; i < temp.Count; i++)
                 {
                     TrainScript ts = new TrainScript();
-                    ts.STT = i;
+                    ts.STT = i + 1;
                     ts.StudentName = temp[i].tennguoidung;
                     ts.MaKQ = temp[i].id;
                     ts.PaperID = temp[i].mabode;

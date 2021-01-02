@@ -15,7 +15,8 @@ namespace quiz_management.Views.Teacher.ExamManagement
 {
     public partial class WatchOrPrintExamView : Form, IWatchOrPrintExamView
     {
-        WatchOrPrintExamPresenter presenter;
+        private WatchOrPrintExamPresenter presenter;
+
         public WatchOrPrintExamView(int code)
         {
             InitializeComponent();
@@ -34,6 +35,7 @@ namespace quiz_management.Views.Teacher.ExamManagement
         public List<StudentOfExam> ExamList { set => dgvExam.DataSource = value; }
 
         public event EventHandler GobackBefore;
+
         public event EventHandler Print;
 
         public void Message(string text)
@@ -47,6 +49,24 @@ namespace quiz_management.Views.Teacher.ExamManagement
             MainTeacherView screen = new MainTeacherView(code);
             screen.FormClosed += (_, e) => this.Close();
             screen.Show();
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.PrintPreviewControl.Zoom = 1;
+            printPreviewDialog1.ShowDialog();
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Bitmap bmp = new Bitmap(dgvExam.Width, dgvExam.Height);
+
+            // draw the form image to the bitmap
+            dgvExam.DrawToBitmap(bmp, new Rectangle(0, 0, dgvExam.Width, dgvExam.Height));
+
+            // draw the bitmap image of the form onto the graphics surface
+            e.Graphics.DrawImage(bmp, new Point(0, 0));
         }
     }
 }

@@ -59,7 +59,7 @@ namespace quiz_management.Presenters.Register
                     {
                         tenTaiKhoan = username,
                         matKhau = pwHash,
-                        phanQuyen = 1,
+                        phanQuyen = view.isStudent ? 1 : 2,
                         TrangThai = 1
                     };
 

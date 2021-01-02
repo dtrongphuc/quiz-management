@@ -1,7 +1,9 @@
 ﻿using quiz_management.Models;
 using quiz_management.Presenters.Login;
+using quiz_management.Views.Administrator.MainAdmin;
 using quiz_management.Views.Login;
 using quiz_management.Views.Student.Main;
+using quiz_management.Views.Teacher.Main;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,12 +18,13 @@ namespace quiz_management.Views.Student
 {
     public partial class LoginView : Form, ILoginView
     {
-        LoginPresenter presenter;
+        private LoginPresenter presenter;
 
         public string Username { get => txtUsername.Text.Trim(); set => txtUsername.Text = value; }
         public string Password { get => txtPassword.Text.Trim(); set => txtPassword.Text = value; }
-        
+
         public event EventHandler Submit;
+
         public event EventHandler SwitchToRegisterView;
 
         public void ShowMessage(string text)
@@ -48,17 +51,17 @@ namespace quiz_management.Views.Student
         public void ShowTeacherView(int userCode)
         {
             this.Hide();
-            //RegisterView screen = new RegisterView();
-            //screen.FormClosed += (_, e) => this.Close();
-            //screen.Show();
+            MainTeacherView screen = new MainTeacherView(userCode);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
         }
 
         public void ShowAdminView(int userCode)
         {
             this.Hide();
-            //RegisterView screen = new RegisterView();
-            //screen.FormClosed += (_, e) => this.Close();
-            //screen.Show();
+            MainAdminView screen = new MainAdminView(userCode);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
         }
 
         public LoginView()
