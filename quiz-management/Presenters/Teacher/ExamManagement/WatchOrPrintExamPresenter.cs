@@ -30,24 +30,13 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
                 view.TeacherName = teachername[0].ToString();
 
                 var officalexamlist = db.lichThis.ToList();
-                var mockexamlist = db.kyThiThus.ToList();
                 int stt = 1;
                 foreach (var i in officalexamlist)
                 {
                     StudentOfExam se = new StudentOfExam();
                     se.STT = stt;
                     se.StudentName = i.nguoiDung.thongTin.tenNguoiDung;
-                    se.ExamName = "Thi chính thức";
-
-                    studentOfExams.Add(se);
-                    stt++;
-                }
-                foreach (var i in mockexamlist)
-                {
-                    StudentOfExam se = new StudentOfExam();
-                    se.STT = stt;
-                    se.StudentName = i.nguoiDung.thongTin.tenNguoiDung;
-                    se.ExamName = "Thi thử";
+                    se.DOBExam = i.ngayThi.Date.Date.ToString("d");
 
                     studentOfExams.Add(se);
                     stt++;
