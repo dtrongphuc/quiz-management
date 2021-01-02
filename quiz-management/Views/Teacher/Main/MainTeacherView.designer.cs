@@ -333,9 +333,10 @@
             // 
             // tbDOB
             // 
+            this.tbDOB.Enabled = false;
             this.tbDOB.Location = new System.Drawing.Point(111, 182);
             this.tbDOB.Name = "tbDOB";
-            this.tbDOB.Size = new System.Drawing.Size(169, 27);
+            this.tbDOB.Size = new System.Drawing.Size(169, 32);
             this.tbDOB.TabIndex = 24;
             // 
             // label1
@@ -373,9 +374,10 @@
             // 
             // tbTeacherID
             // 
+            this.tbTeacherID.Enabled = false;
             this.tbTeacherID.Location = new System.Drawing.Point(111, 130);
             this.tbTeacherID.Name = "tbTeacherID";
-            this.tbTeacherID.Size = new System.Drawing.Size(169, 27);
+            this.tbTeacherID.Size = new System.Drawing.Size(169, 32);
             this.tbTeacherID.TabIndex = 16;
             // 
             // label2
@@ -394,7 +396,7 @@
             this.tbTeacherName.Location = new System.Drawing.Point(46, 64);
             this.tbTeacherName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tbTeacherName.Name = "tbTeacherName";
-            this.tbTeacherName.Size = new System.Drawing.Size(175, 24);
+            this.tbTeacherName.Size = new System.Drawing.Size(223, 29);
             this.tbTeacherName.TabIndex = 12;
             this.tbTeacherName.Text = "Giáo Viên Siêu Cấp";
             // 
@@ -419,7 +421,7 @@
             this.txtTitle2.Location = new System.Drawing.Point(57, 104);
             this.txtTitle2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtTitle2.Name = "txtTitle2";
-            this.txtTitle2.Size = new System.Drawing.Size(356, 26);
+            this.txtTitle2.Size = new System.Drawing.Size(464, 32);
             this.txtTitle2.TabIndex = 3;
             this.txtTitle2.Text = "Trường đại học Khoa Học Tự Nhiên ";
             // 
@@ -430,7 +432,7 @@
             this.txtTitle1.Location = new System.Drawing.Point(212, 64);
             this.txtTitle1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtTitle1.Name = "txtTitle1";
-            this.txtTitle1.Size = new System.Drawing.Size(121, 17);
+            this.txtTitle1.Size = new System.Drawing.Size(140, 20);
             this.txtTitle1.TabIndex = 2;
             this.txtTitle1.Text = "Thi trắc nghiệm";
             // 

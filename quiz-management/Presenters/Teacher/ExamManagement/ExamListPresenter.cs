@@ -52,7 +52,7 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
         {
             var x = view.lichthichon.SelectedRows[0];
             var id = x.Cells["maLichThi"].Value.ToString();
-            view.ShowUpdateExamView(int.Parse(id));
+            view.ShowUpdateExamView(int.Parse(id),currentcode);
 
         }
 

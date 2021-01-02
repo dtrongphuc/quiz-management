@@ -14,17 +14,20 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
     {
         IUpdateExamView view;
         int currentcode;
+        int currentuser;
         BindingList<thongTin> lstHocSinh;
         BindingList<thongTin> lstThiSinh;
         DateTime ngaythi;
         boDe DeThiChon;
         monHoc MonHocChon;
         khoiLop KhoiLopChon;
+        
 
-        public UpdateExamPresenter(IUpdateExamView v, int code)
+        public UpdateExamPresenter(IUpdateExamView v, int code, int userid)
         {
             view = v;
             currentcode = code;
+            currentuser = userid;
             Initialize();
         }
 
@@ -169,7 +172,7 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
 
         private void View_Back(object sender, EventArgs e)
         {
-            view.ShowExamListView(currentcode);
+            view.ShowExamListView(currentuser);
         }
     }
 }

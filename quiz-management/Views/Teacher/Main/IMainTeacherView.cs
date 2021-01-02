@@ -22,6 +22,15 @@ namespace quiz_management.Views.Teacher.Main
 
         event EventHandler PracticExamClick;
 
+        event EventHandler ExamListClick;
+
+        event EventHandler WatchOrPrintExamCompletedClick;
+
+        event EventHandler ListMockExamClick;
+
+        event EventHandler WatchOrPrintExamClick;
+
+
         void ShowUpdateInfo(int code);
 
         void ShowCreateQuestion(int code);
@@ -33,5 +42,13 @@ namespace quiz_management.Views.Teacher.Main
         void ShowOfficialExamView(int userCode);
 
         void ShowPracticExamView(int userCode);
+
+        void ShowExamListView(int code);
+
+        void ShowWatchOrPrintExamCompletedView(int code);
+        void ShowListMockExamView(int code);
+
+        void ShowWatchOrPrintExamView(int code);
+
     }
 }

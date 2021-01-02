@@ -21,7 +21,10 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
             view.GoBackBeFore += GoBackBeFore_View;
             view.UpdateExam += UpdateExam_View;
             view.DeleteExam += DeleteExam_View;
+            view.CreateExam += Create_View;
         }
+
+        
 
         private void LoadPage()
         {
@@ -53,12 +56,12 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
 
         private void GoBackBeFore_View(object sender, EventArgs e)
         {
-            view.ShowCreateMockExamView(currentcode);
+            view.ShowMainTeacherView(currentcode);
         }
 
         private void UpdateExam_View(object sender, EventArgs e)
         {
-            view.ShowUpdateMockExamView(currentcode);
+            view.ShowUpdateMockExamView(int.Parse(view.ExamID), currentcode);
         }
 
         private void DeleteExam_View(object sender, EventArgs e)
@@ -71,6 +74,10 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
             }
             view.ShowMessage("Xóa thành công!");
             LoadPage();
+        }
+        private void Create_View(object sender, EventArgs e)
+        {
+            view.ShowCreateMockExamView(currentcode);
         }
     }
 }

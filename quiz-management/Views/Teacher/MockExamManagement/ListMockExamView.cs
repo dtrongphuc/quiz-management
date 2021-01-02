@@ -1,5 +1,6 @@
 ﻿using quiz_management.Models;
 using quiz_management.Presenters.Teacher.MockExamManagement;
+using quiz_management.Views.Teacher.Main;
 using quiz_management.Views.Teacher.PaperManagement;
 using System;
 using System.Collections.Generic;
@@ -32,6 +33,10 @@ namespace quiz_management.Views.Teacher.MockExamManagement
             {
                 DeleteExam?.Invoke(btnDelete, e);
             };
+            btnAdd.Click += (_, e) =>
+            {
+                CreateExam?.Invoke(btnAdd, e);
+            };
         }
 
         public string TeacherName { set => lbTeacher.Text = value; }
@@ -46,13 +51,22 @@ namespace quiz_management.Views.Teacher.MockExamManagement
         public event EventHandler GoBackBeFore;
         public event EventHandler UpdateExam;
         public event EventHandler DeleteExam;
+        public event EventHandler CreateExam;
 
         public void ShowCreateMockExamView(int code)
         {
-            //this.Hide();
-            //CreateMockExamView screen = new CreateMockExamView(code);
-            //screen.FormClosed += (_, e) => this.Close();
-            //screen.Show();
+            this.Hide();
+            CreateMockExamView screen = new CreateMockExamView(code);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
+        }
+
+        public void ShowMainTeacherView(int code)
+        {
+            this.Hide();
+            MainTeacherView screen = new MainTeacherView(code);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
         }
 
         public void ShowMessage(string text)
@@ -60,12 +74,12 @@ namespace quiz_management.Views.Teacher.MockExamManagement
             MessageBox.Show(text, "Thông báo");
         }
 
-        public void ShowUpdateMockExamView(int code)
+        public void ShowUpdateMockExamView(int code, int userid)
         {
-            //this.Hide();
-            //PaperListView screen = new PaperListView(code);
-            //screen.FormClosed += (_, e) => this.Close();
-            //screen.Show();
+            this.Hide();
+            UpdateMockExamView screen = new UpdateMockExamView(code,userid);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
         }
     }
 }

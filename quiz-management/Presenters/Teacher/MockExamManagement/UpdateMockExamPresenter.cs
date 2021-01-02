@@ -14,6 +14,7 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
     {
         IUpdateMockExamView view;
         int currentcode;
+        int currentuser;
         BindingList<thongTin> lstHocSinh;
         BindingList<thongTin> lstThiSinh;
         DateTime ngayBD;
@@ -22,10 +23,11 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
         BindingList<boDe> lstDethi;
         monHoc MonHocChon;
         khoiLop KhoiLopChon;
-        public UpdateMockExamPresenter(IUpdateMockExamView v, int code)
+        public UpdateMockExamPresenter(IUpdateMockExamView v, int code, int userid)
         {
             view = v;
             currentcode = code;
+            currentuser = userid;
             Initialize();
         }
         private void Initialize()
@@ -159,7 +161,7 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
 
         private void View_GoBackBefore(object sender, EventArgs e)
         {
-            view.ShowExamListView(currentcode);
+            view.ShowExamListView(currentuser);
         }
 
         private void View_Submit(object sender, EventArgs e)
