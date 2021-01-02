@@ -118,12 +118,6 @@
     <Compile Include="Presenters\Teacher\ExamManagement\UpdateExamPresenter.cs" />
     <Compile Include="Presenters\Teacher\ExamManagement\WatchOrPrintExamCompletedPresenter.cs" />
     <Compile Include="Views\Teacher\ExamManagement\IWatchOrPrintExamCompletedView.cs" />
-    <Compile Include="Views\Teacher\ExamManagement\WatchOrPrintExamCompletedView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Teacher\ExamManagement\WatchOrPrintExamCompletedView.Designer.cs">
-      <DependentUpon>WatchOrPrintExamCompletedView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presenters\Teacher\ExamManagement\WatchOrPrintExamPresenter.cs" />
     <Compile Include="Presenters\Teacher\Main\MainTeacherPresenter.cs" />
     <Compile Include="Presenters\Teacher\Main\TeacherInfoPresenter.cs" />
@@ -288,6 +282,12 @@
     </Compile>
     <Compile Include="Views\Teacher\ExamManagement\UpdateExamView.Designer.cs">
       <DependentUpon>UpdateExamView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Teacher\ExamManagement\WatchOrPrintExamCompletedView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Teacher\ExamManagement\WatchOrPrintExamCompletedView.designer.cs">
+      <DependentUpon>WatchOrPrintExamCompletedView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Teacher\ExamManagement\WatchOrPrintExamView.cs">
       <SubType>Form</SubType>
