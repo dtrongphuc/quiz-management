@@ -16,6 +16,7 @@ namespace quiz_management.Models
         string _endDay;
         int _userID;
         int _paperID;
+        int _quantityStudent;
 
         public int STT { get => _sTT; set => _sTT = value; }
         public string Subject { get => _subject; set => _subject = value; }
@@ -25,5 +26,6 @@ namespace quiz_management.Models
         public string ExamID { get => _ExamID; set => _ExamID = value; }
         public int UserID { get => _userID; set => _userID = value; }
         public int PaperID { get => _paperID; set => _paperID = value; }
+        public int QuantityStudent { get => _quantityStudent; set => _quantityStudent = value; }
     }
 }

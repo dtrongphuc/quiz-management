@@ -44,6 +44,7 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
                     mockexam.EndDay = exam.ngayKT.Value.Date.ToString("d");
                     mockexam.UserID = exam.maNguoiDung;
                     mockexam.PaperID = exam.maBoDe;
+                    mockexam.QuantityStudent = db.kyThiThus.Where(i => i.maKyThiThu == exam.maKyThiThu).Select(i =>i.maNguoiDung).Count();
 
                     MockExamList.Add(mockexam);
                 }

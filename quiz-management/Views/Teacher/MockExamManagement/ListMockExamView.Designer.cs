@@ -35,15 +35,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lbTeacher = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Grade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StartDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EndDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuantityStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExamID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PaperID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMockExam)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,6 +78,7 @@
             this.Grade,
             this.StartDay,
             this.EndDay,
+            this.QuantityStudent,
             this.ExamID,
             this.UserID,
             this.PaperID});
@@ -130,6 +132,15 @@
             this.label1.TabIndex = 34;
             this.label1.Text = "Giáo viên: ";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(129, 562);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(165, 48);
+            this.button1.TabIndex = 41;
+            this.button1.Text = "Thêm";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // STT
             // 
             this.STT.DataPropertyName = "STT";
@@ -170,6 +181,14 @@
             this.EndDay.Name = "EndDay";
             this.EndDay.ReadOnly = true;
             // 
+            // QuantityStudent
+            // 
+            this.QuantityStudent.DataPropertyName = "QuantityStudent";
+            this.QuantityStudent.HeaderText = "Số Lượng Thí Sinh";
+            this.QuantityStudent.MinimumWidth = 6;
+            this.QuantityStudent.Name = "QuantityStudent";
+            this.QuantityStudent.ReadOnly = true;
+            // 
             // ExamID
             // 
             this.ExamID.DataPropertyName = "ExamID";
@@ -196,15 +215,6 @@
             this.PaperID.Name = "PaperID";
             this.PaperID.ReadOnly = true;
             this.PaperID.Visible = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(129, 562);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 48);
-            this.button1.TabIndex = 41;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // ListMockExamView
             // 
@@ -236,14 +246,15 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbTeacher;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subject;
         private System.Windows.Forms.DataGridViewTextBoxColumn Grade;
         private System.Windows.Forms.DataGridViewTextBoxColumn StartDay;
         private System.Windows.Forms.DataGridViewTextBoxColumn EndDay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QuantityStudent;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExamID;
         private System.Windows.Forms.DataGridViewTextBoxColumn UserID;
         private System.Windows.Forms.DataGridViewTextBoxColumn PaperID;
-        private System.Windows.Forms.Button button1;
     }
 }
