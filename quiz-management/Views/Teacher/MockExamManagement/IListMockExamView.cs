@@ -14,12 +14,15 @@ namespace quiz_management.Views.Teacher.MockExamManagement
         string PaperID { get; }
         string UserID { get; }
         List<MockExam> MockExamList { set; }
+
         event EventHandler GoBackBeFore;
         event EventHandler UpdateExam;
         event EventHandler DeleteExam;
+        event EventHandler CreateExam;
 
         void ShowCreateMockExamView(int code);
         void ShowMessage(string text);
-        void ShowUpdateMockExamView(int code);
+        void ShowUpdateMockExamView(int code,int userid);
+        void ShowMainTeacherView(int code);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using quiz_management.Models;
 using quiz_management.Presenters.Teacher.ExamManagement;
 using quiz_management.Views.Teacher.Main;
+using quiz_management.Views.Teacher.MockExamManagement;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -67,6 +68,11 @@ namespace quiz_management.Views.Teacher.ExamManagement
 
             // draw the bitmap image of the form onto the graphics surface
             e.Graphics.DrawImage(bmp, new Point(0, 0));
+        }
+
+        public static implicit operator WatchOrPrintExamView(ListMockExamView v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -15,14 +15,14 @@ namespace quiz_management.Views.Teacher.MockExamManagement
     public partial class UpdateMockExamView : Form,IUpdateMockExamView
     {
         UpdateMockExamPresenter presenter;
-        public UpdateMockExamView(int code)
+        public UpdateMockExamView(int code,int userid)
         {
             InitializeComponent();
             dgvBoDe.AutoGenerateColumns = false;
             dgvDeThiChon.AutoGenerateColumns = false;
             dtgHocSinh.AutoGenerateColumns = false;
             dgvThiSinh.AutoGenerateColumns = false;
-            presenter = new UpdateMockExamPresenter(this, code);
+            presenter = new UpdateMockExamPresenter(this, code, userid);
             btnMoveLeft.Click += (_, e) =>
             {
                 MoveLeft?.Invoke(btnMoveLeft, e);

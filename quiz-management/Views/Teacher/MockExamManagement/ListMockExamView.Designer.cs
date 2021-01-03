@@ -45,6 +45,7 @@
             this.ExamID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PaperID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMockExam)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,15 +133,6 @@
             this.label1.TabIndex = 34;
             this.label1.Text = "Giáo viên: ";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(129, 562);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 48);
-            this.button1.TabIndex = 41;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // STT
             // 
             this.STT.DataPropertyName = "STT";
@@ -216,12 +208,21 @@
             this.PaperID.ReadOnly = true;
             this.PaperID.Visible = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(129, 562);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(165, 48);
+            this.button1.TabIndex = 41;
+            this.button1.Text = "Thêm";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // ListMockExamView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(896, 643);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.dgvMockExam);
@@ -256,5 +257,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ExamID;
         private System.Windows.Forms.DataGridViewTextBoxColumn UserID;
         private System.Windows.Forms.DataGridViewTextBoxColumn PaperID;
+        private System.Windows.Forms.Button button1;
     }
 }

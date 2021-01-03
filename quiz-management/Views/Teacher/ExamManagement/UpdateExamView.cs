@@ -15,12 +15,12 @@ namespace quiz_management.Views.Teacher.ExamManagement
     public partial class UpdateExamView : Form,IUpdateExamView
     {
         UpdateExamPresenter presenter;
-        public UpdateExamView(int code)
+        public UpdateExamView(int code, int userid)
         {
             InitializeComponent();
             dtgHocSinh.AutoGenerateColumns = false;
             dgvThiSinh.AutoGenerateColumns = false;
-            presenter = new UpdateExamPresenter(this, code);
+            presenter = new UpdateExamPresenter(this, code,userid);
             linkGoForBack.Click += (_, e) =>
             {
                 GoBackBefore?.Invoke(linkGoForBack, e);

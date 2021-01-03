@@ -24,6 +24,30 @@ namespace quiz_management.Presenters.Teacher.Main
             view.QuestionApproval += QuestionApproval_View;
             view.OfficialExamClick += View_OfficialExamClick;
             view.PracticExamClick += View_PracticExamClick;
+            view.ExamListClick += View_ExmaListClick;
+            view.WatchOrPrintExamCompletedClick += View_WatchOrPrintExamCompletedClick;
+            view.ListMockExamClick += View_ListMockExamClick;
+            view.WatchOrPrintExamClick += View_WatchOrPrintClick;
+        }
+
+        private void View_WatchOrPrintClick(object sender, EventArgs e)
+        {
+            view.ShowWatchOrPrintExamView(currentUser);
+        }
+
+        private void View_ListMockExamClick(object sender, EventArgs e)
+        {
+            view.ShowListMockExamView(currentUser);
+        }
+
+        private void View_WatchOrPrintExamCompletedClick(object sender, EventArgs e)
+        {
+            view.ShowWatchOrPrintExamCompletedView(currentUser);
+        }
+
+        private void View_ExmaListClick(object sender, EventArgs e)
+        {
+            view.ShowExamListView(currentUser);
         }
 
         private void View_PracticExamClick(object sender, EventArgs e)

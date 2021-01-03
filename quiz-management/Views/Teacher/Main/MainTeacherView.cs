@@ -1,7 +1,10 @@
-﻿using quiz_management.Presenters.Teacher.Main;
+﻿using quiz_management.Presenters.Teacher.ExamManagement;
+using quiz_management.Presenters.Teacher.Main;
 using quiz_management.Properties;
 using quiz_management.Views.Student;
 using quiz_management.Views.Student.Exam;
+using quiz_management.Views.Teacher.ExamManagement;
+using quiz_management.Views.Teacher.MockExamManagement;
 using quiz_management.Views.Teacher.QuestionManagement;
 using System;
 using System.Collections.Generic;
@@ -53,6 +56,22 @@ namespace quiz_management.Views.Teacher.Main
             {
                 PracticExamClick?.Invoke(btnPracticExam, e);
             };
+            btnLichKyThi.Click += (_, e) =>
+            {
+                ExamListClick?.Invoke(btnLichKyThi, e);
+            };
+            btnTongKetKT.Click += (_, e) =>
+            {
+                WatchOrPrintExamCompletedClick?.Invoke(btnTongKetKT, e);
+            };
+            btnQLKyThiThu.Click += (_, e) =>
+            {
+                ListMockExamClick?.Invoke(btnQLKyThiThu, e);
+            };
+            btnXemDSThi.Click += (_, e) =>
+            {
+                WatchOrPrintExamClick?.Invoke(btnXemDSThi, e);
+            };
         }
 
         public event EventHandler UpdateInfo;
@@ -64,6 +83,10 @@ namespace quiz_management.Views.Teacher.Main
         public event EventHandler OfficialExamClick;
 
         public event EventHandler PracticExamClick;
+        public event EventHandler ExamListClick;
+        public event EventHandler WatchOrPrintExamCompletedClick;
+        public event EventHandler ListMockExamClick;
+        public event EventHandler WatchOrPrintExamClick;
 
         public string TeacherName { set => tbTeacherName.Text = value; }
         public string TeacherID { set => tbTeacherID.Text = value; }
@@ -228,6 +251,38 @@ namespace quiz_management.Views.Teacher.Main
         public void ShowMessage(string text)
         {
             MessageBox.Show(text, "Thông báo");
+        }
+
+        public void ShowExamListView(int code)
+        {
+            this.Hide();
+            ExamListView screen = new ExamListView(code);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
+        }
+
+        public void ShowWatchOrPrintExamCompletedView(int code)
+        {
+            this.Hide();
+            WatchOrPrintExamCompletedView screen = new WatchOrPrintExamCompletedView(code);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
+        }
+
+        public void ShowListMockExamView(int code)
+        {
+            this.Hide();
+            ListMockExamView screen = new ListMockExamView(code);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
+        }
+
+        public void ShowWatchOrPrintExamView(int code)
+        {
+            this.Hide();
+            WatchOrPrintExamView screen = new WatchOrPrintExamView(code);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
         }
     }
 }

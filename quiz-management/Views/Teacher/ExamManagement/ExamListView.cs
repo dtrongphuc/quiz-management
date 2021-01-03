@@ -75,10 +75,10 @@ namespace quiz_management.Views.Teacher.ExamManagement
             MessageBox.Show(text, "Thông báo");
         }
 
-        public void ShowUpdateExamView(int code)
+        public void ShowUpdateExamView(int code, int userid)
         {
             this.Hide();
-            UpdateExamView screen = new UpdateExamView(code);
+            UpdateExamView screen = new UpdateExamView(code,userid);
             screen.FormClosed += (_, e) => this.Close();
             screen.Show();
         }

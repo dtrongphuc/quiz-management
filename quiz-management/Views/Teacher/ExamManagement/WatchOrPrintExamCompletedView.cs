@@ -15,13 +15,13 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
 {
     public partial class WatchOrPrintExamCompletedView : Form, IWatchOrPrintExamCompletedView
     {
-        private WatchOrPrintExamCompletedPresneter presenter;
+        private WatchOrPrintExamCompletedPresenter presenter;
 
         public WatchOrPrintExamCompletedView(int code)
         {
             InitializeComponent();
             dgvExam.AutoGenerateColumns = false;
-            presenter = new WatchOrPrintExamCompletedPresneter(this, code);
+            presenter = new WatchOrPrintExamCompletedPresenter(this, code);
             linkGoBackBefore.Click += (_, e) =>
             {
                 GobackBefore?.Invoke(linkGoBackBefore, e);

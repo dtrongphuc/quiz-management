@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace quiz_management.Presenters.Teacher.ExamManagement
 {
-    internal class WatchOrPrintExamCompletedPresneter
+    internal class WatchOrPrintExamCompletedPresenter
     {
         private IWatchOrPrintExamCompletedView view;
         private int currentcode;
         private thongTin TenGV;
         private BindingList<TrainScript> lstkq;
 
-        public WatchOrPrintExamCompletedPresneter(IWatchOrPrintExamCompletedView v, int code)
+        public WatchOrPrintExamCompletedPresenter(IWatchOrPrintExamCompletedView v, int code)
         {
             view = v;
             currentcode = code;
