@@ -31,11 +31,6 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.dgvMockExam = new System.Windows.Forms.DataGridView();
-            this.linkGoBackBefore = new System.Windows.Forms.LinkLabel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbTeacher = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Grade = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,7 +40,11 @@
             this.ExamID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PaperID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.linkGoBackBefore = new System.Windows.Forms.LinkLabel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbTeacher = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMockExam)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,46 +91,6 @@
             this.dgvMockExam.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMockExam.Size = new System.Drawing.Size(824, 336);
             this.dgvMockExam.TabIndex = 38;
-            // 
-            // linkGoBackBefore
-            // 
-            this.linkGoBackBefore.AutoSize = true;
-            this.linkGoBackBefore.Location = new System.Drawing.Point(35, 31);
-            this.linkGoBackBefore.Name = "linkGoBackBefore";
-            this.linkGoBackBefore.Size = new System.Drawing.Size(49, 17);
-            this.linkGoBackBefore.TabIndex = 37;
-            this.linkGoBackBefore.TabStop = true;
-            this.linkGoBackBefore.Text = "Trở về";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(300, 99);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(311, 32);
-            this.label3.TabIndex = 36;
-            this.label3.Text = "Danh Sách Kì Thi Thử";
-            // 
-            // lbTeacher
-            // 
-            this.lbTeacher.AutoSize = true;
-            this.lbTeacher.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTeacher.Location = new System.Drawing.Point(746, 31);
-            this.lbTeacher.Name = "lbTeacher";
-            this.lbTeacher.Size = new System.Drawing.Size(96, 17);
-            this.lbTeacher.TabIndex = 35;
-            this.lbTeacher.Text = "Mai Anh Tuấn";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(651, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 17);
-            this.label1.TabIndex = 34;
-            this.label1.Text = "Giáo viên: ";
             // 
             // STT
             // 
@@ -208,14 +167,54 @@
             this.PaperID.ReadOnly = true;
             this.PaperID.Visible = false;
             // 
-            // button1
+            // linkGoBackBefore
             // 
-            this.button1.Location = new System.Drawing.Point(129, 562);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 48);
-            this.button1.TabIndex = 41;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.linkGoBackBefore.AutoSize = true;
+            this.linkGoBackBefore.Location = new System.Drawing.Point(35, 31);
+            this.linkGoBackBefore.Name = "linkGoBackBefore";
+            this.linkGoBackBefore.Size = new System.Drawing.Size(49, 17);
+            this.linkGoBackBefore.TabIndex = 37;
+            this.linkGoBackBefore.TabStop = true;
+            this.linkGoBackBefore.Text = "Trở về";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(300, 99);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(311, 32);
+            this.label3.TabIndex = 36;
+            this.label3.Text = "Danh Sách Kì Thi Thử";
+            // 
+            // lbTeacher
+            // 
+            this.lbTeacher.AutoSize = true;
+            this.lbTeacher.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTeacher.Location = new System.Drawing.Point(746, 31);
+            this.lbTeacher.Name = "lbTeacher";
+            this.lbTeacher.Size = new System.Drawing.Size(96, 17);
+            this.lbTeacher.TabIndex = 35;
+            this.lbTeacher.Text = "Mai Anh Tuấn";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(651, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(76, 17);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "Giáo viên: ";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(124, 562);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(165, 48);
+            this.btnAdd.TabIndex = 41;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // ListMockExamView
             // 
@@ -257,6 +256,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ExamID;
         private System.Windows.Forms.DataGridViewTextBoxColumn UserID;
         private System.Windows.Forms.DataGridViewTextBoxColumn PaperID;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAdd;
     }
 }
