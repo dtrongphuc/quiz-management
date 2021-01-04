@@ -1134,3 +1134,72 @@ insert into dapAn values
 (57, 3, N'yet', 0),
 (57, 4, N'or', 0)
 
+
+insert into cauHoi values 
+--khoi 10 -- mon sử
+(1, N'Những nước nào tham gia Hội nghị Ianta ?', 1, 1, 'K10'),--58
+(1, N'Kế hoạch 5 năm khôi phục kinh tế sau chiến tranh ở Liên Xô diễn ra trong khoảng thời gian nào ?', 2, 1, 'K10'),--59
+(1, N'Trong số các nước sau, nước nào không thuộc khu vực Đông Bắc Á ?', 3, 1, 'K10'),--60
+(1, N'Từ 1945 đến 1950, Mĩ là:', 4, 1, 'K10'),--61
+(1, N'Đặc điểm của quan hệ quốc tế sau Chiến tranh thế giới thứ II là:', 5, 1, 'K10'),--62
+(1, N'Yếu tố thúc đẩy sự bùng nổ cuộc cách mạng khoa học - kỹ thuật ở giữa thế kỷ XX ?', 6, 1, 'K10'),--63
+(1, N'Chương trình khai thác thuộc địa Việt Nam lần thứ hai của thực dân Pháp diễn ra trong hoàn cảnh nào ?', 7, 1, 'K10'),--64
+(1, N'Mâu thuẫn cơ bản trong xã Hội Việt Nam trong thời kì khủng hoảng kinh tế (1929 - 1933)?', 8, 1, 'K10'),--65
+(1, N'Điền thêm từ còn thiếu trong câu nói sau của Bác Hồ : "Giặc đói, giặc dốt là ... của giặc ngoại xâm" .', 8, 1, 'K10'),--66
+(1, N'Ngày 10/10/1954, sự kiện quan trọng nào đã xảy ra :', 9, 1, 'K10')--67
+
+insert into dapAn values
+--(58,1,N'Anh - Pháp - Mĩ.',0)
+--(58,2,N'Anh - Mĩ - Liên Xô.',1),
+--(58,3,N'Anh - Pháp - Mĩ.',0),
+--(58,4,N'Mĩ - Liên Xô - Trung Quốc.',0)
+--(59,1,N'1945 – 1949.',0),
+--(59,2,N'1946- 1950.',1),
+--(59,3,N'1947-1951.',0),
+--(59,4,N'1945- 1951.',0)
+--(60,1,N'Trung Quốc, Nhật Bản.',0),
+--(60,2,N'Hàn Quốc, Đài Loan.',1),
+--(60,3,N'Cộng hòa dân chủ nhân dân Triều Tiên, Nhật Bản.',0),
+--(60,4,N'Ápganixtan, Nêpan.',0)
+--(61,1,N'Trung tâm kinh tế - tài chính của thế giới.',1),
+--(61,2,N'Nước đầu tiên phóng thành công vệ tinh nhân tạo bay vào quỹ đạo trái đất.',0),
+--(61,3,N'Một trong 3 trung tâm kinh tế - tài chính lớn của thế giới.',0),
+--(61,4,N'Trung tâm kinh tế - tài chính của châu Mĩ.',0)
+--(62,1,N'Có sự phân tuyến triệt để, mâu thuẫn sâu sắc giữa các nước Tư bản chủ nghĩa.',0),
+--(62,2,N'Diễn ra sự đối đẩu quyết liệt giữa các đế quốc lớn nhằm tranh giành thị trường và phạm vi ảnh hưởng.',0),
+--(62,3,N'Các nước tư bản thắng trận đang xác lập vai trò lãnh đạo thế giới, nô dịch các nước bại trận.',0),
+--(62,4,N'Có sự đối đầu căng thẳng, mâu thuẫn sâu sắc giữa hai phe Tư bản chủ nghĩa và Xã hội chủ nghĩa.',1)
+--(63,1,N'Cải tiến công cụ lao động là một yêu cầu thường xuyên của con người để nâng cao chất lượng cuộc sống.',0),
+--(63,2,N'Nhân loại đang cần nỗ lực để giải quyết những vấn đề toàn cầu như sự cạn kiệt của nguồn tài nguyên, bùng nổ dân số, ô nhiễm môi trường.',0),
+--(63,3,N'Sự phát triển của khoa học - kỹ thuật cuối thế kỷ XIX đầu thế kỷ XX.',0),
+--(63,4,N'Tất cả các ý trên.',1)
+
+(64,1,N'Thực dân Pháp đang gặp nhiều khó khăn, trong khi cuộc chiến tranh thế giới đang bước vào giai đoạn quyết định.',0),
+(64,2,N'Kinh tế ổn định nhưng chính trị bất ổn. Phong trào phản đối chiến tranh, đòi cải thiện điều kiện sống của công nhân và nhân dân lao động Pháp lên cao.',0),
+(64,3,N'Pháp đang lâm vào cuộc khủng hoảng kinh tế nặng nề nhất trong lịch sử - "khủng hoảng thừa".',0),
+(64,4,N'Chiến tranh đã để lại hậu quả rất nặng nề, nền kinh tế Pháp đang gặp khó khăn ; Pháp trở thành con nợ lớn của Mĩ.',1),
+(65,1,N'Vô sản với tư sản.',0),
+(65,2,N'Vô sản với tư sản, nông dân với địa chủ phong kiến.',0),
+(65,3,N'Nhân dân Việt Nam với thực dân Pháp, vô sản với tư sản".',0),
+(65,4,N'Dân tộc Việt Nam với thực dân Pháp, nông dân với địa chủ phong kiến.',1),
+(66,1,N'Bạn.',0),
+(66,2,N'Tay sai.',0),
+(66,3,N'Đồng minh".',1),
+(66,4,N'Anh em.',0),
+(67,1,N'Miền Bắc hoàn toàn giải phóng.',0),
+(67,2,N'Trung ương Đảng và Chính phủ trở về Thủ đô.',0),
+(67,3,N'Quân ta tiến vào tiếp quản Thủ đô".',1),
+(67,4,N'Tên lính Pháp cuối cùng rút khỏi Việt Nam.',0)
+
+
+
+
+
+
+
+
+select * from monHoc
+select * from boDe
+select * from cTBoDe
+select * from dapAn
+select * from cauHoi
