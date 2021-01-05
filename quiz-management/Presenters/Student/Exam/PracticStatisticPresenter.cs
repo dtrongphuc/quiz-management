@@ -17,39 +17,37 @@ namespace quiz_management.Presenters.Student.Exam
         {
             view = v;
             currentUserCode = code;
-            SetUserDataView();
-            Init();
+            //SetUserDataView();
+            //Init();
         }
 
         public void Init()
         {
-            using (var db = new QuizDataContext())
-            {
-                var result = db.luyenTaps.FirstOrDefault(d => d.nguoiDung.maNguoiDung == currentUserCode);
-                view.Total = 0;
-                view.CorrectedCount = 0;
-                view.WrongCount = 0;
+            //using (var db = new QuizDataContext())
+            //{
+            //    var result = db.luyenTaps.FirstOrDefault(d => d.nguoiDung.maNguoiDung == currentUserCode);
 
-                if (result == null) return;
-                view.Total = result.soCauDung + result.soCauSai;
-                view.CorrectedCount = result.soCauDung;
-                view.WrongCount = result.soCauSai;
-            }
-        }
-
-        private void SetUserDataView()
-        {
-            using (var db = new QuizDataContext())
-            {
-                // Fetch user data
-                var user = db.nguoiDungs.SingleOrDefault(u => u.maNguoiDung == currentUserCode);
-                string name = user.thongTin.tenNguoiDung as string;
-                string className = db.Lops.SingleOrDefault(l => l.maLopHoc == user.thongTin.maLopHoc).tenLopHoc as string;
-                // Set user data
-                if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(className)) return;
-                view.StudentName = name;
-                view.StudentClass = className;
-            }
+            //    view.bs.DataSource = db.luyenTaps.Where(d => d.nguoiDung.maNguoiDung == currentUserCode)
+            //                            .Select(s => new PracticStatistic
+            //                            {
+            //                                CorrectedCount = s.soCauDung,
+            //                                WrongCount = s.soCauSai
+            //                            });
         }
     }
+
+    //private void SetUserDataView()
+    //{
+    //    using (var db = new QuizDataContext())
+    //    {
+    //        // Fetch user data
+    //        var user = db.nguoiDungs.SingleOrDefault(u => u.maNguoiDung == currentUserCode);
+    //        string name = user.thongTin.tenNguoiDung as string;
+    //        string className = db.Lops.SingleOrDefault(l => l.maLopHoc == user.thongTin.maLopHoc).tenLopHoc as string;
+    //        // Set user data
+    //        if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(className)) return;
+    //        view.StudentName = name;
+    //        view.StudentClass = className;
+    //    }
+    //}
 }
