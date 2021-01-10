@@ -1,4 +1,6 @@
-﻿using quiz_management.Presenters.Student.Exam;
+﻿using Microsoft.Reporting.WinForms;
+using quiz_management.Models;
+using quiz_management.Presenters.Student.Exam;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,21 +13,40 @@ using System.Windows.Forms;
 
 namespace quiz_management.Views.Student.Exam
 {
-    public partial class PracticStatisticView : Form, IPracticStatistic
+    public partial class PracticStatisticView : Form
     {
         private PracticStatisticPresenter presenter;
-
-        public string StudentName { set => txtStudentName.Text = value; }
-        public string StudentClass { set => txtClass.Text = value; }
-        public int Total { set => lbTotal.Text = value.ToString(); }
-        public int CorrectedCount { set => lbCorrectedCount.Text = value.ToString(); }
-        public int WrongCount { set => lbWrongCount.Text = value.ToString(); }
+        private BindingSource bsPR;
+        private ReportDataSource rdsPR;
+        private int _currentUserCode;
 
         public PracticStatisticView(int code)
         {
             InitializeComponent();
+            _currentUserCode = code;
+            bsPR = new BindingSource();
+            rdsPR = new ReportDataSource();
+        }
 
-            presenter = new PracticStatisticPresenter(this, code);
+        private void PracticStatisticView_Load(object sender, EventArgs e)
+        {
+            reportViewer1.LocalReport.DataSources.Clear();
+
+            using (var db = new QuizDataContext())
+            {
+                var result = db.luyenTaps.Where(d => d.nguoiDung.maNguoiDung == _currentUserCode)
+                                        .Select(s => new PracticStatistic
+                                        {
+                                            CorrectedCount = s.soCauDung,
+                                            WrongCount = s.soCauSai,
+                                            Total = s.soCauDung + s.soCauSai
+                                        });
+                bsPR.DataSource = result;
+            }
+            rdsPR.Value = bsPR;
+            rdsPR.Name = "PracticeDataset";
+            reportViewer1.LocalReport.DataSources.Add(rdsPR);
+            this.reportViewer1.RefreshReport();
         }
     }
 }
