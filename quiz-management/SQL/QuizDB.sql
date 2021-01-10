@@ -1135,7 +1135,7 @@ insert into dapAn values
 (57, 4, N'or', 0)
 
 
-insert into cauHoi values 
+--insert into cauHoi values 
 ----khoi 10 -- mon sử
 ----(1, N'Những nước nào tham gia Hội nghị Ianta ?', 1, 1, 'K10'),--58
 ----(1, N'Kế hoạch 5 năm khôi phục kinh tế sau chiến tranh ở Liên Xô diễn ra trong khoảng thời gian nào ?', 2, 1, 'K10'),--59
@@ -1186,7 +1186,89 @@ insert into cauHoi values
 --(1, N'Người đặt nền tảng cho việc tìm kiếm năng lượng hạt nhân ?', 5, 1, 'K12'),--100
 --(1, N'Học thuyết Tiến hóa là do nhà bác học nào nêu ra ?', 8, 1, 'K12'),--101
 --(1, N'Việc sử dụng động cơ đốt trong đã tạo ra khả năng phát triển ngành nào ?', 9, 1, 'K12')--102
+
+
+insert into cauHoi values 
+--monhoa 10
+--(2, N'Nguyên tử vàng có 79 electron ở vỏ nguyên tử. Điện tích hạt nhân của nguyên tử vàng là ?', 1, 1, 'K10'),--103
+--(2, N'Một nguyên tử có 12 proton và 12 nơtron trong hạt nhân. Điện tích của ion tạo thành khi nguyên tử này bị mất 2 electron là ?', 2, 1, 'K10'),--104
+--(2, N'Trong nguyên tử, loại hạt nào có khối lượng không đáng kể so với các hạt còn lại ?', 2, 1, 'K10'),--105
+--(2, N'Tinh thể nào sau đây là tinh thể nguyên tử ?', 2, 1, 'K10'),--106
+--(2, N'Khẳng định nào sau đây sai: ', 5, 1, 'K10'),--107
+--(2, N'Cấu trúc của tinh thể phân tử nước đá thuộc loại cấu trúc nào: ', 5, 1, 'K10'),--108
+--(2, N'Iot, băng phiến dễ hòa tan tỏng các dung môi nào dưới đây: ', 7, 1, 'K10'),--109
+--(2, N'Khi cho đá vào cốc nước ta thấy đá nổi lên là do: ', 8, 1, 'K10'),--110
+--(2, N'Trong công nghiệp, người ta điều chế oxi bằng cách: ', 5, 1, 'K10'),--111
+--(2, N'Để phản ứng vừa đủ với 100 ml dung dịch BaCl2 2M cần 500 ml dung dịch Na2SO4 a (mol/l). Giá trị của a là: ', 9, 1, 'K10'),--112
+--(2, N'Chọn cấu hình electron không đúng: ', 5, 1, 'K10'),--113
+--(2, N'Trong nguyên tử, electron hóa trị là các electron: ', 3, 1, 'K10'),--114
+--(2, N'Cấu hình electron của nguyên tử nguyên tố X có dạng [Ne]3s23p3. Phát biểu nào sau đây là sai? ', 4, 1, 'K10'),--115
+--(2, N'Hóa trị và số oxi hóa của N trong phân tử NH4Cl lần lượt là ', 7, 1, 'K10'),--116
+--(2, N'Trong hợp chất cộng hóa trị, hóa trị của một nguyên tố: ', 4, 1, 'K10')--117
+
+--khoi 11
+(2, N'Trong hợp chất cộng hóa trị, hóa trị của một nguyên tố: ', 4, 1, 'K10')--117
 insert into dapAn values
+(103,1,N'+79.',0),
+(103,2,N'-79.',0),
+(103,3,N'1,26.10-17.',0),
+(103,4,N'+1,26.10-17 C.',1),
+(104,1,N'2+.',0),
+(104,2,N'12+.',0),
+(104,3,N'24+.',0),
+(104,4,N'10+.',1),
+(105,1,N'proton',0),
+(105,2,N'nơtron',0),
+(105,3,N'electron',1),
+(105,4,N'nơtron và electron',0),
+(106,1,N'Iot',0),
+(106,2,N'Băng phiến',0),
+(106,3,N'Nước đá',1),
+(106,4,N'Kim cương',0),
+(107,1,N'Lực tương tác giữa các phân tử trong tinh thể phân tử rất yếu',0),
+(107,2,N'Cấu tạo tinh thể thường mềm',0),
+(107,3,N'Tinh thể phân tử có nhiệt độ nóng chảy thấp, dễ bay hơi',0),
+(107,4,N'Trong tinh thể phân tử, liên kết giữa các phân tử là liên kết cộng hóa trị',1),
+(108,1,N'Tứ diện',1),
+(108,2,N'Chữ V',0),
+(108,3,N'Thẳng',0),
+(108,4,N'Bát diện',0),
+(109,1,N'Benzen, ancol, hexan',0),
+(109,2,N'Nước, toluen, benzen',0),
+(109,3,N'Benzen, toluen, hexan',1),
+(109,4,N'Toluen, benzen, ancol',0),
+(110,1,N'Nước đá có cấu trúc rỗng nên nước đã có tỉ khối nhỏ hơn khi nước ở trạng thái lỏng',1),
+(110,2,N'Nước đá là chất rắn',0),
+(110,3,N'Nước đá đang trong quá trình tan',0),
+(110,4,N'Nước đá có nhiệt độ thấp hơn nhiệt độ nước thường',0),
+(111,1,N'nhiệt phân KMnO4',1),
+(111,2,N'nhiệt phân Cu(NO3)2',0),
+(111,3,N'nhiệt phân KClO3 có xúc tác MnO2',0),
+(111,4,N'chưng cất phân đoạn không khí lỏng',0),
+(112,1,N'0,1',1),
+(112,2,N'0,4',0),
+(112,3,N'0,5',0),
+(112,4,N'0,2',0),
+(113,1,N'1s2/2s2/2p5.',1),
+(113,2,N'1s2/2s2/2p6/3s2.',0),
+(113,3,N'1s2/2s2/2p6/3s2/3p5.',0),
+(113,4,N'1s2/2s2/2p6/3s2/3p3/4s2',0),
+(114,1,N'độc thân.',1),
+(114,2,N'ở phân lớp ngoài cùng.',0),
+(114,3,N'ở obitan ngoài cùng.',0),
+(114,4,N' tham gia tạo liên kết hóa học.',0),
+(115,1,N'X ở ô số 15 trong bảng tuần hoàn.',0),
+(115,2,N'X là một phi kim.',0),
+(115,3,N'Nguyên tử của nguyên tố X có 9 electron p.',0),
+(115,4,N'Nguyên tử của nguyên tố X có 3 phân lớp electron.',1),
+(116,1,N'4 và -3.',1),
+(116,2,N'3 và +5',0),
+(116,3,N'5 và +5',0),
+(116,4,N'3 và -3',0),
+(117,1,N'Bằng số liên kết của nguyên tử nguyên tố đó tạo ra được với các nguyên tử khác trong phân tử và được gọi là cộng hóa trị của nguyên tố đó',1),
+(117,2,N'Bằng số liên kết của nguyên tử nguyên tố đó trong phân tử và được gọi là điện hóa trị của nguyên tố đó',0),
+(117,3,N'Bằng số electron liên kết với nguyên tử của nguyên tố khác trong phân tử',0),
+(117,4,N'Bằng số liên kết của nguyên tử nguyên tố đó với nguyên tử gần nhất',0)
 --(95,1,N'Quý tộc, địa chủ, nông dân',0),
 --(95,2,N'Quý tộc, bình dân, nô lệ.',1),
 --(95,3,N'Quý tộc, tăng lữ, nông dân, nô tì.',0),
