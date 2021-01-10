@@ -1136,24 +1136,24 @@ insert into dapAn values
 
 
 insert into cauHoi values 
---khoi 10 -- mon sử
---(1, N'Những nước nào tham gia Hội nghị Ianta ?', 1, 1, 'K10'),--58
---(1, N'Kế hoạch 5 năm khôi phục kinh tế sau chiến tranh ở Liên Xô diễn ra trong khoảng thời gian nào ?', 2, 1, 'K10'),--59
---(1, N'Trong số các nước sau, nước nào không thuộc khu vực Đông Bắc Á ?', 3, 1, 'K10'),--60
---(1, N'Từ 1945 đến 1950, Mĩ là:', 4, 1, 'K10'),--61
---(1, N'Đặc điểm của quan hệ quốc tế sau Chiến tranh thế giới thứ II là:', 5, 1, 'K10'),--62
---(1, N'Yếu tố thúc đẩy sự bùng nổ cuộc cách mạng khoa học - kỹ thuật ở giữa thế kỷ XX ?', 6, 1, 'K10'),--63
---(1, N'Chương trình khai thác thuộc địa Việt Nam lần thứ hai của thực dân Pháp diễn ra trong hoàn cảnh nào ?', 7, 1, 'K10'),--64
---(1, N'Mâu thuẫn cơ bản trong xã Hội Việt Nam trong thời kì khủng hoảng kinh tế (1929 - 1933)?', 8, 1, 'K10'),--65
---(1, N'Điền thêm từ còn thiếu trong câu nói sau của Bác Hồ : "Giặc đói, giặc dốt là ... của giặc ngoại xâm" .', 8, 1, 'K10'),--66
---(1, N'Ngày 10/10/1954, sự kiện quan trọng nào đã xảy ra :', 9, 1, 'K10')--67
+----khoi 10 -- mon sử
+----(1, N'Những nước nào tham gia Hội nghị Ianta ?', 1, 1, 'K10'),--58
+----(1, N'Kế hoạch 5 năm khôi phục kinh tế sau chiến tranh ở Liên Xô diễn ra trong khoảng thời gian nào ?', 2, 1, 'K10'),--59
+----(1, N'Trong số các nước sau, nước nào không thuộc khu vực Đông Bắc Á ?', 3, 1, 'K10'),--60
+----(1, N'Từ 1945 đến 1950, Mĩ là:', 4, 1, 'K10'),--61
+----(1, N'Đặc điểm của quan hệ quốc tế sau Chiến tranh thế giới thứ II là:', 5, 1, 'K10'),--62
+----(1, N'Yếu tố thúc đẩy sự bùng nổ cuộc cách mạng khoa học - kỹ thuật ở giữa thế kỷ XX ?', 6, 1, 'K10'),--63
+----(1, N'Chương trình khai thác thuộc địa Việt Nam lần thứ hai của thực dân Pháp diễn ra trong hoàn cảnh nào ?', 7, 1, 'K10'),--64
+----(1, N'Mâu thuẫn cơ bản trong xã Hội Việt Nam trong thời kì khủng hoảng kinh tế (1929 - 1933)?', 8, 1, 'K10'),--65
+----(1, N'Điền thêm từ còn thiếu trong câu nói sau của Bác Hồ : "Giặc đói, giặc dốt là ... của giặc ngoại xâm" .', 8, 1, 'K10'),--66
+----(1, N'Ngày 10/10/1954, sự kiện quan trọng nào đã xảy ra :', 9, 1, 'K10')--67
 --(1, N'Một trong những nội dung quan trọng của Hội nghị Ianta là: ', 2, 1, 'K10'),--68
 --(1, N'Dấu hiệu nào chứng tỏ sau Chiến tranh thế giới thứ II, Mĩ là một trung tâm kinh tế - tài chính lớn nhất thế giới ?', 4, 1, 'K10'),--69
 --(1, N'Nước khởi đầu cuộc cách mạng khoa học - kĩ thuật lần thứ hai là:', 6, 1, 'K10'),--70
 --(1, N'Từ năm 1951 đến năm 1956, Tổng bí thư Đảng Cộng sản Việt Nam là ai?', 8, 1, 'K10'),--71
---(1, N'Tính chất của nền kinh tế Miền Nam sau khi giải phóng?', 4, 1, 'K10')--72
+--(1, N'Tính chất của nền kinh tế Miền Nam sau khi giải phóng?', 4, 1, 'K10'),--72
 
---khoi 11
+----khoi 11
 --(1, N'Từ đầu thế kỉ XIX đến trước năm 1868, đặc điểm bao trùm của nền kinh tế Nhật Bản là gì?', 1, 1, 'K11'),--73
 --(1, N'Ý nào không phản ánh đúng nét mới của nền kinh tế Nhật Bản từ đầu thế kỉ XIX đến trước năm 1868?', 2, 1, 'K11'),--74
 --(1, N'Sự kiện lịch sử thế giới nổi bật vào năm 1914 là', 4, 1, 'K11'),--75
@@ -1168,47 +1168,85 @@ insert into cauHoi values
 --(1, N'Vì sao cuối thế kỉ XVIII, thực dân Pháp không thực hiện được ý đồ xâm lược Việt Nam?', 10, 1, 'K11'),--84
 --(1, N'Thực dân Pháp đánh chiếm thành Hà Nội lần thứ hai vào năm nào, lúc đó ai là Tổng đốc thành Hà Nội?', 8, 1, 'K11'),--85
 --(1, N'Mục tiêu của phong trào cần vương thế kỉ XIX ở Việt Nam là?', 7, 1, 'K11'),--86
---(1, N'Hưởng ứng phong trào cần vương, cuộc khởi nghĩa nào dưới đây nổ ra đầu tiên?', 8, 1, 'K11')--87
+--(1, N'Hưởng ứng phong trào cần vương, cuộc khởi nghĩa nào dưới đây nổ ra đầu tiên?', 8, 1, 'K11'),--87
 
---khoi 12
-(1, N'Ý nào sau đây không phù hợp với loài vượn cổ trong quá trình tiến hóa thành người ?', 1, 1, 'K12'),--88
-(1, N'Xương hóa thạch của loài vượn cổ được tìm thấy ở đâu ?', 1, 1, 'K12'),--89
-(1, N'Di cốt của người tối cổ được tìm thấy ở đâu ?', 1, 1, 'K12'),--90
-(1, N'Đến thế kỉ VII, Ấn Độ bị chia rẽ thành ?', 2, 1, 'K12'),--91
-(1, N'Sự phân biệt chia rẽ ở Ấn Độ vào thế kỉ VII không chứng tỏ ?', 4, 1, 'K12'),--92
-(1, N'Điểm nổi bật của Ấn Độ từ thế kỉ VII đến thế kỉ XII là gì ?', 4, 1, 'K12'),--93
-(1, N'Nguyên nhân chính khiến Ấn Độ bị người Hồi giáo xâm chiếm là ?', 4, 1, 'K12'),--94
-
-
+----khoi 12
+--(1, N'Ý nào sau đây không phù hợp với loài vượn cổ trong quá trình tiến hóa thành người ?', 1, 1, 'K12'),--88
+--(1, N'Xương hóa thạch của loài vượn cổ được tìm thấy ở đâu ?', 1, 1, 'K12'),--89
+--(1, N'Di cốt của người tối cổ được tìm thấy ở đâu ?', 1, 1, 'K12'),--90
+--(1, N'Đến thế kỉ VII, Ấn Độ bị chia rẽ thành ?', 2, 1, 'K12'),--91
+--(1, N'Sự phân biệt chia rẽ ở Ấn Độ vào thế kỉ VII không chứng tỏ ?', 4, 1, 'K12'),--92
+--(1, N'Điểm nổi bật của Ấn Độ từ thế kỉ VII đến thế kỉ XII là gì ?', 4, 1, 'K12'),--93
+--(1, N'Nguyên nhân chính khiến Ấn Độ bị người Hồi giáo xâm chiếm là ?', 4, 1, 'K12')--94
+--(1, N'Hoạt động kinh tế phổ biến của cư dân Phù Nam là ?', 4, 1, 'K12'),--95
+--(1, N'Điểm giống trong đời sống kinh tế của cư dân Văn Lang - Âu Lạc và Champa, Phù Nam là ?', 4, 1, 'K12'),--96
+--(1, N'Nhà nước Âu Lạc là ?', 5, 1, 'K12'),--97
+--(1, N'So với Anh, việc xuất khẩu tư bản của Pháp có điểm khác là ?', 5, 1, 'K12'),--98
+--(1, N'Các tổ chức độc quyền ở Đức được hình thành dưới hình thức ?', 5, 1, 'K12'),--99
+--(1, N'Người đặt nền tảng cho việc tìm kiếm năng lượng hạt nhân ?', 5, 1, 'K12'),--100
+--(1, N'Học thuyết Tiến hóa là do nhà bác học nào nêu ra ?', 8, 1, 'K12'),--101
+--(1, N'Việc sử dụng động cơ đốt trong đã tạo ra khả năng phát triển ngành nào ?', 9, 1, 'K12')--102
 insert into dapAn values
-(88,1,N'Sống cách đây 6 triệu năm',0),
-(88,2,N'Có thể đứng và đi bằng 2 chân.',0),
-(88,3,N'Tay được dung để cầm nắm.',0),
-(88,4,N'Chia thành các chủng tộc lớn.',1),
-(89,1,N'Đông Phi, Tây Á, Bắc Á.',0),
-(89,2,N'Đông Phi, Tây Á, Đông Nan Á.',0),
-(89,3,N'Đông Phi, Việt Nam, Trung Quốc.',1),
-(89,4,N'Tây Á, Trung Á, Bắc Mĩ.',0),
-(90,1,N'Đông Phi, Trung Quốc, Bắc Âu.',0),
-(90,2,N'Đông Phi, Tây Á, Bắc Âu.',0),
-(90,3,N'Đông Phi, Inội dungonexia, Đông Nam Á.',1),
-(90,4,N'Tây Á, Trung Quốc, Bắc Âu.',0),
-(91,1,N'Hai nước.',0),
-(91,2,N'Ba nước.',0),
-(91,3,N'Bốn nước.',0),
-(91,4,N'Sáu nước.',1),
-(92,1,N'Tình trạng khủng hoảng, suy thoái của Ấn Độ.',1),
-(92,2,N'Sự phát triển tự cường của các vùng địa phương.',0),
-(92,3,N'Sự phát triển của các vùng xa hơn.',0),
-(92,4,N'Văn hóa truyền thống Ấn Độ được truyền bá, phát triển rộng trên toàn lãnh thổ và ảnh hưởng ra bên ngoài.',0),
-(93,1,N'Văn hóa truyền thống Ấn Độ phát triển rộng ra toàn lãnh thổ.',0),
-(93,2,N'Văn hóa truyền thống Ấn Độ được phổ biến tích cực ra bên ngoài.',0),
-(93,3,N'Là thời kì văn hóa truyền thống Ấn Độ phát triển rộng khắp đất nước và có ảnh hưởng ra bên ngoài.',1),
-(93,4,N'Đất nước bị phân tán nhưng vẫn phát triển cường thịnh.',0),
-(94,1,N'Ấn Độ bị chia rẽ và phân tán thành nhiều quốc gia.',0),
-(94,2,N'Người dân Ấn Độ phần lớn đạo Hồi.',0),
-(94,3,N'Trình độ kinh tế, quân sự của Ấn Độ kém phát triển hơn.',1),
-(94,4,N'Địa hình Ấn Độ bị chia rẽ, cô lập với bên ngoài.',0),
+--(95,1,N'Quý tộc, địa chủ, nông dân',0),
+--(95,2,N'Quý tộc, bình dân, nô lệ.',1),
+--(95,3,N'Quý tộc, tăng lữ, nông dân, nô tì.',0),
+--(95,4,N'Thủ lĩnh quân sự, quý tộc tăng lữ, bình dân, nô tì.',0),
+--(96,1,N'Làm nông nghiệp trồng lúa, kết hợp với một số nghề thủ công',1),
+--(96,2,N'Chăn nuôi rất phát triển.',0),
+--(96,3,N'Đẩy mạnh giao lưu buôn bán với bên ngoài.',0),
+--(96,4,N'Nghề khai thác lâm thổ sản khá phát triển.',0),
+--(97,1,N'Sự kế tục nhưng mở rộng hơn về lãnh thổ và hoàn chỉnh hơn về tổ chức so với nước Văn Lang',1),
+--(97,2,N'Một nhà nước riêng biệt, không có điểm gì chung so với nhà nước Văn Lang.',0),
+--(97,3,N'Sự thu hẹp của nhà nước Văn Lang.',0),
+--(97,4,N'Một nhà nước của tộc người không phải là người Việt.',0),
+--(98,1,N'Chú trọng xuất khẩu sang các thuộc địa',0),
+--(98,2,N'Chỉ chú trọng cho vay với lãi xuất nặng.',1),
+--(98,3,N'Chỉ chú trọng cho Nga vay.',0),
+--(98,4,N'Bị Đức, Mĩ cạnh tranh gay gắt.',0),
+--(99,1,N'Tơrớt',0),
+--(99,2,N'Cácten.',0),
+--(99,3,N'Xanhđica.',0),
+--(99,4,N'Cácten và Xanhđica.',1),
+--(100,1,N'Maicơn Pharađây',0),
+--(100,2,N'Pie Quyri và Mari Quyri.',1),
+--(100,3,N'Rơnghen.',0),
+--(100,4,N'Jun.',0),
+--(101,1,N'Đácuyn',1),
+--(101,2,N'Lômônôxốp.',0),
+--(101,3,N'Pápl.',0),
+--(101,4,N'Lenxơ.',0),
+--(102,1,N'Chế tạo ô tô',1),
+--(102,2,N'Chế tạo máy bay.',0),
+--(102,3,N'Khai thác mỏ.',0),
+--(102,4,N'Giao thông vận tải.',0)
+--(88,1,N'Sống cách đây 6 triệu năm',0),
+--(88,2,N'Có thể đứng và đi bằng 2 chân.',0),
+--(88,3,N'Tay được dung để cầm nắm.',0),
+--(88,4,N'Chia thành các chủng tộc lớn.',1),
+--(89,1,N'Đông Phi, Tây Á, Bắc Á.',0),
+--(89,2,N'Đông Phi, Tây Á, Đông Nan Á.',0),
+--(89,3,N'Đông Phi, Việt Nam, Trung Quốc.',1),
+--(89,4,N'Tây Á, Trung Á, Bắc Mĩ.',0),
+--(90,1,N'Đông Phi, Trung Quốc, Bắc Âu.',0),
+--(90,2,N'Đông Phi, Tây Á, Bắc Âu.',0),
+--(90,3,N'Đông Phi, Inội dungonexia, Đông Nam Á.',1),
+--(90,4,N'Tây Á, Trung Quốc, Bắc Âu.',0),
+--(91,1,N'Hai nước.',0),
+--(91,2,N'Ba nước.',0),
+--(91,3,N'Bốn nước.',0),
+--(91,4,N'Sáu nước.',1),
+--(92,1,N'Tình trạng khủng hoảng, suy thoái của Ấn Độ.',1),
+--(92,2,N'Sự phát triển tự cường của các vùng địa phương.',0),
+--(92,3,N'Sự phát triển của các vùng xa hơn.',0),
+--(92,4,N'Văn hóa truyền thống Ấn Độ được truyền bá, phát triển rộng trên toàn lãnh thổ và ảnh hưởng ra bên ngoài.',0),
+--(93,1,N'Văn hóa truyền thống Ấn Độ phát triển rộng ra toàn lãnh thổ.',0),
+--(93,2,N'Văn hóa truyền thống Ấn Độ được phổ biến tích cực ra bên ngoài.',0),
+--(93,3,N'Là thời kì văn hóa truyền thống Ấn Độ phát triển rộng khắp đất nước và có ảnh hưởng ra bên ngoài.',1),
+--(93,4,N'Đất nước bị phân tán nhưng vẫn phát triển cường thịnh.',0),
+--(94,1,N'Ấn Độ bị chia rẽ và phân tán thành nhiều quốc gia.',0),
+--(94,2,N'Người dân Ấn Độ phần lớn đạo Hồi.',0),
+--(94,3,N'Trình độ kinh tế, quân sự của Ấn Độ kém phát triển hơn.',1),
+--(94,4,N'Địa hình Ấn Độ bị chia rẽ, cô lập với bên ngoài.',0),
 --(73,1,N'Nông nghiệp lạc hậu',1),
 --(73,2,N'Công nghiệp phát triển',0),
 --(73,3,N'Thương mại hàng hóa.',0),
@@ -1268,7 +1306,7 @@ insert into dapAn values
 --(87,1,N'Khởi nghĩa Hùng Lĩnh ',0),
 --(87,2,N'Khởi nghĩa Hương Khê.',0),
 --(87,3,N'Khởi nghĩa Ba Đình.',0),
---(87,4,N'Khởi nghĩa Bãi Sậy.',1)
+--(87,4,N'Khởi nghĩa Bãi Sậy.',1),
 --(68,1,N'Đàm phán, kí kết các hiệp ước với các nước phát xít bại trận',0),
 --(68,2,N'Các nước thắng trận thoả thuận việc phân chia Đức thành hai nước Đông Đức và Tây Đức',0),
 --(68,3,N'Ba nước phe Đồng minh bàn bạc, thoả thuận khu vực đóng quân tại các nước nhằm giải giáp quân đội phát xít; phân chia phạm vi ảnh hưởng ở châu Âu và châu Á.',1),
