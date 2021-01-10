@@ -1137,18 +1137,158 @@ insert into dapAn values
 
 insert into cauHoi values 
 --khoi 10 -- mon sử
-(1, N'Những nước nào tham gia Hội nghị Ianta ?', 1, 1, 'K10'),--58
-(1, N'Kế hoạch 5 năm khôi phục kinh tế sau chiến tranh ở Liên Xô diễn ra trong khoảng thời gian nào ?', 2, 1, 'K10'),--59
-(1, N'Trong số các nước sau, nước nào không thuộc khu vực Đông Bắc Á ?', 3, 1, 'K10'),--60
-(1, N'Từ 1945 đến 1950, Mĩ là:', 4, 1, 'K10'),--61
-(1, N'Đặc điểm của quan hệ quốc tế sau Chiến tranh thế giới thứ II là:', 5, 1, 'K10'),--62
-(1, N'Yếu tố thúc đẩy sự bùng nổ cuộc cách mạng khoa học - kỹ thuật ở giữa thế kỷ XX ?', 6, 1, 'K10'),--63
-(1, N'Chương trình khai thác thuộc địa Việt Nam lần thứ hai của thực dân Pháp diễn ra trong hoàn cảnh nào ?', 7, 1, 'K10'),--64
-(1, N'Mâu thuẫn cơ bản trong xã Hội Việt Nam trong thời kì khủng hoảng kinh tế (1929 - 1933)?', 8, 1, 'K10'),--65
-(1, N'Điền thêm từ còn thiếu trong câu nói sau của Bác Hồ : "Giặc đói, giặc dốt là ... của giặc ngoại xâm" .', 8, 1, 'K10'),--66
-(1, N'Ngày 10/10/1954, sự kiện quan trọng nào đã xảy ra :', 9, 1, 'K10')--67
+--(1, N'Những nước nào tham gia Hội nghị Ianta ?', 1, 1, 'K10'),--58
+--(1, N'Kế hoạch 5 năm khôi phục kinh tế sau chiến tranh ở Liên Xô diễn ra trong khoảng thời gian nào ?', 2, 1, 'K10'),--59
+--(1, N'Trong số các nước sau, nước nào không thuộc khu vực Đông Bắc Á ?', 3, 1, 'K10'),--60
+--(1, N'Từ 1945 đến 1950, Mĩ là:', 4, 1, 'K10'),--61
+--(1, N'Đặc điểm của quan hệ quốc tế sau Chiến tranh thế giới thứ II là:', 5, 1, 'K10'),--62
+--(1, N'Yếu tố thúc đẩy sự bùng nổ cuộc cách mạng khoa học - kỹ thuật ở giữa thế kỷ XX ?', 6, 1, 'K10'),--63
+--(1, N'Chương trình khai thác thuộc địa Việt Nam lần thứ hai của thực dân Pháp diễn ra trong hoàn cảnh nào ?', 7, 1, 'K10'),--64
+--(1, N'Mâu thuẫn cơ bản trong xã Hội Việt Nam trong thời kì khủng hoảng kinh tế (1929 - 1933)?', 8, 1, 'K10'),--65
+--(1, N'Điền thêm từ còn thiếu trong câu nói sau của Bác Hồ : "Giặc đói, giặc dốt là ... của giặc ngoại xâm" .', 8, 1, 'K10'),--66
+--(1, N'Ngày 10/10/1954, sự kiện quan trọng nào đã xảy ra :', 9, 1, 'K10')--67
+--(1, N'Một trong những nội dung quan trọng của Hội nghị Ianta là: ', 2, 1, 'K10'),--68
+--(1, N'Dấu hiệu nào chứng tỏ sau Chiến tranh thế giới thứ II, Mĩ là một trung tâm kinh tế - tài chính lớn nhất thế giới ?', 4, 1, 'K10'),--69
+--(1, N'Nước khởi đầu cuộc cách mạng khoa học - kĩ thuật lần thứ hai là:', 6, 1, 'K10'),--70
+--(1, N'Từ năm 1951 đến năm 1956, Tổng bí thư Đảng Cộng sản Việt Nam là ai?', 8, 1, 'K10'),--71
+--(1, N'Tính chất của nền kinh tế Miền Nam sau khi giải phóng?', 4, 1, 'K10')--72
+
+--khoi 11
+--(1, N'Từ đầu thế kỉ XIX đến trước năm 1868, đặc điểm bao trùm của nền kinh tế Nhật Bản là gì?', 1, 1, 'K11'),--73
+--(1, N'Ý nào không phản ánh đúng nét mới của nền kinh tế Nhật Bản từ đầu thế kỉ XIX đến trước năm 1868?', 2, 1, 'K11'),--74
+--(1, N'Sự kiện lịch sử thế giới nổi bật vào năm 1914 là', 4, 1, 'K11'),--75
+--(1, N'Trong bối cảnh lịch sử từ giữa thế kỉ XVI đến cuối thế kỉ XVIII được gọi là', 8, 1, 'K11'),--76
+--(1, N'Sau Chiến tranh thế giới thứ nhất, các nước tư bản đã tổ chức Hội nghị hòa bình tại đâu, vào thời gian nào?', 7, 1, 'K11'),--77
+--(1, N'Những nước giành được nhiều quyền lợi trong trật tự thế giới mới sau Chiến tranh thế giới thứ nhất là', 5, 1, 'K11'),--78
+--(1, N'Đường lối đấu tranh của M. Ganđi trong những năm 30 của thế kỉ XX là', 3, 1, 'K11'),--79
+--(1, N'Quá trình phát xít hóa bộ máy nhà nước ở Nhật Bản diễn ra thông qua quá trình nào?', 3, 1, 'K11'),--80
+--(1, N'Chiến tranh tg thứ hai bùng nổ do mâu thuẫn giữa?', 3, 1, 'K11'),--81
+--(1, N'Việc Mĩ ném hai quả bom nguyên tử xuống lãnh thổ Nhật Bản là hành động?', 3, 1, 'K11'),--82
+--(1, N'Hệ quả quan trọng nhất của Chiến tranh tg thứ hai là?', 3, 1, 'K11'),--83
+--(1, N'Vì sao cuối thế kỉ XVIII, thực dân Pháp không thực hiện được ý đồ xâm lược Việt Nam?', 10, 1, 'K11'),--84
+--(1, N'Thực dân Pháp đánh chiếm thành Hà Nội lần thứ hai vào năm nào, lúc đó ai là Tổng đốc thành Hà Nội?', 8, 1, 'K11'),--85
+--(1, N'Mục tiêu của phong trào cần vương thế kỉ XIX ở Việt Nam là?', 7, 1, 'K11'),--86
+--(1, N'Hưởng ứng phong trào cần vương, cuộc khởi nghĩa nào dưới đây nổ ra đầu tiên?', 8, 1, 'K11')--87
+
+--khoi 12
+(1, N'Ý nào sau đây không phù hợp với loài vượn cổ trong quá trình tiến hóa thành người ?', 1, 1, 'K12'),--88
+(1, N'Xương hóa thạch của loài vượn cổ được tìm thấy ở đâu ?', 1, 1, 'K12'),--89
+(1, N'Di cốt của người tối cổ được tìm thấy ở đâu ?', 1, 1, 'K12'),--90
+(1, N'Đến thế kỉ VII, Ấn Độ bị chia rẽ thành ?', 2, 1, 'K12'),--91
+(1, N'Sự phân biệt chia rẽ ở Ấn Độ vào thế kỉ VII không chứng tỏ ?', 4, 1, 'K12'),--92
+(1, N'Điểm nổi bật của Ấn Độ từ thế kỉ VII đến thế kỉ XII là gì ?', 4, 1, 'K12'),--93
+(1, N'Nguyên nhân chính khiến Ấn Độ bị người Hồi giáo xâm chiếm là ?', 4, 1, 'K12'),--94
+
 
 insert into dapAn values
+(88,1,N'Sống cách đây 6 triệu năm',0),
+(88,2,N'Có thể đứng và đi bằng 2 chân.',0),
+(88,3,N'Tay được dung để cầm nắm.',0),
+(88,4,N'Chia thành các chủng tộc lớn.',1),
+(89,1,N'Đông Phi, Tây Á, Bắc Á.',0),
+(89,2,N'Đông Phi, Tây Á, Đông Nan Á.',0),
+(89,3,N'Đông Phi, Việt Nam, Trung Quốc.',1),
+(89,4,N'Tây Á, Trung Á, Bắc Mĩ.',0),
+(90,1,N'Đông Phi, Trung Quốc, Bắc Âu.',0),
+(90,2,N'Đông Phi, Tây Á, Bắc Âu.',0),
+(90,3,N'Đông Phi, Inội dungonexia, Đông Nam Á.',1),
+(90,4,N'Tây Á, Trung Quốc, Bắc Âu.',0),
+(91,1,N'Hai nước.',0),
+(91,2,N'Ba nước.',0),
+(91,3,N'Bốn nước.',0),
+(91,4,N'Sáu nước.',1),
+(92,1,N'Tình trạng khủng hoảng, suy thoái của Ấn Độ.',1),
+(92,2,N'Sự phát triển tự cường của các vùng địa phương.',0),
+(92,3,N'Sự phát triển của các vùng xa hơn.',0),
+(92,4,N'Văn hóa truyền thống Ấn Độ được truyền bá, phát triển rộng trên toàn lãnh thổ và ảnh hưởng ra bên ngoài.',0),
+(93,1,N'Văn hóa truyền thống Ấn Độ phát triển rộng ra toàn lãnh thổ.',0),
+(93,2,N'Văn hóa truyền thống Ấn Độ được phổ biến tích cực ra bên ngoài.',0),
+(93,3,N'Là thời kì văn hóa truyền thống Ấn Độ phát triển rộng khắp đất nước và có ảnh hưởng ra bên ngoài.',1),
+(93,4,N'Đất nước bị phân tán nhưng vẫn phát triển cường thịnh.',0),
+(94,1,N'Ấn Độ bị chia rẽ và phân tán thành nhiều quốc gia.',0),
+(94,2,N'Người dân Ấn Độ phần lớn đạo Hồi.',0),
+(94,3,N'Trình độ kinh tế, quân sự của Ấn Độ kém phát triển hơn.',1),
+(94,4,N'Địa hình Ấn Độ bị chia rẽ, cô lập với bên ngoài.',0),
+--(73,1,N'Nông nghiệp lạc hậu',1),
+--(73,2,N'Công nghiệp phát triển',0),
+--(73,3,N'Thương mại hàng hóa.',0),
+--(73,4,N'Sản xuất quy mô lớn.',0),
+--(74,1,N'Công trường thủ công xuất hiện ngày càng nhiều',0),
+--(74,2,N'Kinh tế hàng hóa phát triển mạnh',0),
+--(74,3,N'Tư bản nước ngoài đầu tư nhiều ở Nhật Bản.',1),
+--(74,4,N'Những mầm mống kinh tế tư bản chủ nghĩa phát triển.',0),
+--(75,1,N'Hội nghị Vescxai được khai mạc tại Pháp',0),
+--(75,2,N'Hội nghị Oasinhtơn được tổ chức tại Mĩ',0),
+--(75,3,N'Cách mạng tháng Mười Nga bùng nổ.',0),
+--(75,4,N'Chiến tranh thế giới thứ nhất bùng nổ.',1),
+--(76,1,N'buổi đầu thời cận đại',1),
+--(76,2,N'kết thúc thời cận đại',0),
+--(76,3,N'trung kì thời cận đại.',0),
+--(76,4,N'buổi đầu thời hiện đại.',0),
+--(77,1,N'Pari ( 1919-1920) và Luân Đôn (1920 – 1921)',0),
+--(77,2,N'Vécxai (1919 – 1920) và Oasinhtơn (1921-1922)',1),
+--(77,3,N'Luân Đôn (1919 – 1920) và Oasinhtơn (1921 – 1922).',0),
+--(77,4,N'Oasinhtơn (1919 – 1920) và Vécxai (1921 – 1922).',0),
+--(78,1,N'Liên Xô, Anh, Pháp, Mĩ ',0),
+--(78,2,N'Anh, Pháp, Mĩ, Nhật Bản',1),
+--(78,3,N'Anh, Đức, Mĩ, Nhật Bản',0),
+--(78,4,N'Italia, Pháp, Mĩ, Nhật Bản',0),
+--(79,1,N'Đấu tranh bạo lực, bất hợp tác với thực dân Anh ',0),
+--(79,2,N'Đấu tranh bạo lực, hợp tác với thực dân Anh',0),
+--(79,3,N'Đấu tranh hòa bình, bất hợp tác với thực dân Anh',1),
+--(79,4,N'Đấu tranh hòa bình, hợp tác với thực dân Anh',0),
+--(80,1,N'Chuyển từ chế độ dân chủ đại nghị sang chuyên chế độc tài ',0),
+--(80,2,N'Thay thế nền dân chủ đại nghị bằng việc quân phiệt hóa bộ máy nhà nước',0),
+--(80,3,N'Đảo chính lật đổ chế độ quân chủ lập hiến, thiết lập chế độ quân phiệt',0),
+--(80,4,N'Quân phiệt hóa bộ máy nhá nước và tiến hành chiến tranh xâm lược thuộc địa',1),
+--(81,1,N'Các nước đế quốc với nhau ',0),
+--(81,2,N'Các nước phát xít với các nước tư bản dân chủ',0),
+--(81,3,N'Các nước phát xít với Liên Xô',0),
+--(81,4,N'Các nước đế quốc với nhau và giữa các nước đế quốc với Liên Xô',1),
+--(82,1,N'Cần thiết và có ý nghĩa quyết định kết thúc chiến tranh ',0),
+--(82,2,N'Không cần thiết vì quân phiệt Nhật Bản đã liên tiếp thua trận và đứng trước sự sụp đổ',0),
+--(82,3,N'Góp phần kết thúc chiến tranh',1),
+--(82,4,N'Không cần thiết vì quân phiệt Nhật đã đầu hàng',0),
+--(83,1,N'Dẫn đến những thay đổi căn bản trong tình hình tg ',1),
+--(83,2,N'Hình thành trật tự tg hai cực',0),
+--(83,3,N'Làm sụp đổ hệ thống Vécxai – Oasinhtơn',0),
+--(83,4,N'Tiêu diệt hoàn toàn chủ nghĩa phát xít',0),
+--(84,1,N'Vì chúng chưa chuẩn bị đầy đủ các điều kiện cho cuộc chiến tranh xâm lược ',0),
+--(84,2,N'Vì triều đại phong kiến Việt Nam còn mạnh',0),
+--(84,3,N'Vì chúng chưa có thế lực nội ứng ở Việt Nam.',0),
+--(84,4,N'Vì những diễn biến chính trị năm 1789 và điều kiện khó khăn về kinh tế tài chính.',1),
+--(85,1,N'Năm 1883, Tổng đốc thành Hà Nội là Nguyễn Tri Phương ',0),
+--(85,2,N'Năm 1882, Tổng đốc thành Hà Nội là Hoàng Diệu.',1),
+--(85,3,N'Năm 1885, Tổng đốc thành Hà Nội là Tôn Thất thuyết.',0),
+--(85,4,N'Năm 1884, Tổng đốc thành Hà Nội là Lưu Vĩnh Phúc.',0),
+--(86,1,N'phò vua, cứu nước ',1),
+--(86,2,N'giải phóng dân tộc.',0),
+--(86,3,N'chống triều đình Huế.',0),
+--(86,4,N'chống các thế lực phản động ở các địa phương.',0),
+--(87,1,N'Khởi nghĩa Hùng Lĩnh ',0),
+--(87,2,N'Khởi nghĩa Hương Khê.',0),
+--(87,3,N'Khởi nghĩa Ba Đình.',0),
+--(87,4,N'Khởi nghĩa Bãi Sậy.',1)
+--(68,1,N'Đàm phán, kí kết các hiệp ước với các nước phát xít bại trận',0),
+--(68,2,N'Các nước thắng trận thoả thuận việc phân chia Đức thành hai nước Đông Đức và Tây Đức',0),
+--(68,3,N'Ba nước phe Đồng minh bàn bạc, thoả thuận khu vực đóng quân tại các nước nhằm giải giáp quân đội phát xít; phân chia phạm vi ảnh hưởng ở châu Âu và châu Á.',1),
+--(68,4,N'Các nước phát xít Đức, Italia kí văn kiện đầu hàng phe Đồng minh vô điều kiện.',0),
+--(69,1,N'Sản lượng công nghiệp Mĩ nửa sau những năm 40 chiếm gần 40% tổng sản lượng công nghiệp toàn thế giới.',0),
+--(69,2,N'Kinh tế Mĩ chiếm gần 40% tổng sản phẩm kinh tế thế giới.',1),
+--(69,3,N'Sản lượng công nghiệp Mĩ nửa sau những năm 40 chiếm hơn 60% tổng sản lượng công nghiệp toàn thế giới.',0),
+--(69,4,N'Kinh tế Mĩ chiếm hơn 50% tổng sản phẩm kinh tế thế giới.',0),
+--(70,1,N'Anh',0),
+--(70,2,N'Nhật.',1),
+--(70,3,N'Mĩ',0),
+--(70,4,N'Liên Xô',0),
+--(71,1,N'Nguyễn Văn Cừ',0),
+--(71,2,N'Hồ Chí Minh.',0),
+--(71,3,N'Trường Trinh.',0),
+--(71,4,N'Lê Duẩn.',1),
+--(72,1,N'Kinh tế xã hội chù nghĩa',0),
+--(72,2,N'Kinh tế Tư bản chủ nghĩa.',0),
+--(72,3,N'Kinh tế nông nghiệp, sản xuất nhỏ và phân tán, phát triển không cân đối.',1),
+--(72,4,N'Kinh tế công nghiệp tiên tiến.',0)
 --(58,1,N'Anh - Pháp - Mĩ.',0)
 --(58,2,N'Anh - Mĩ - Liên Xô.',1),
 --(58,3,N'Anh - Pháp - Mĩ.',0),
@@ -1174,22 +1314,23 @@ insert into dapAn values
 --(63,3,N'Sự phát triển của khoa học - kỹ thuật cuối thế kỷ XIX đầu thế kỷ XX.',0),
 --(63,4,N'Tất cả các ý trên.',1)
 
-(64,1,N'Thực dân Pháp đang gặp nhiều khó khăn, trong khi cuộc chiến tranh thế giới đang bước vào giai đoạn quyết định.',0),
-(64,2,N'Kinh tế ổn định nhưng chính trị bất ổn. Phong trào phản đối chiến tranh, đòi cải thiện điều kiện sống của công nhân và nhân dân lao động Pháp lên cao.',0),
-(64,3,N'Pháp đang lâm vào cuộc khủng hoảng kinh tế nặng nề nhất trong lịch sử - "khủng hoảng thừa".',0),
-(64,4,N'Chiến tranh đã để lại hậu quả rất nặng nề, nền kinh tế Pháp đang gặp khó khăn ; Pháp trở thành con nợ lớn của Mĩ.',1),
-(65,1,N'Vô sản với tư sản.',0),
-(65,2,N'Vô sản với tư sản, nông dân với địa chủ phong kiến.',0),
-(65,3,N'Nhân dân Việt Nam với thực dân Pháp, vô sản với tư sản".',0),
-(65,4,N'Dân tộc Việt Nam với thực dân Pháp, nông dân với địa chủ phong kiến.',1),
-(66,1,N'Bạn.',0),
-(66,2,N'Tay sai.',0),
-(66,3,N'Đồng minh".',1),
-(66,4,N'Anh em.',0),
-(67,1,N'Miền Bắc hoàn toàn giải phóng.',0),
-(67,2,N'Trung ương Đảng và Chính phủ trở về Thủ đô.',0),
-(67,3,N'Quân ta tiến vào tiếp quản Thủ đô".',1),
-(67,4,N'Tên lính Pháp cuối cùng rút khỏi Việt Nam.',0)
+--(64,1,N'Thực dân Pháp đang gặp nhiều khó khăn, trong khi cuộc chiến tranh thế giới đang bước vào giai đoạn quyết định.',0),
+--(64,2,N'Kinh tế ổn định nhưng chính trị bất ổn. Phong trào phản đối chiến tranh, đòi cải thiện điều kiện sống của công nhân và nhân dân lao động Pháp lên cao.',0),
+--(64,3,N'Pháp đang lâm vào cuộc khủng hoảng kinh tế nặng nề nhất trong lịch sử - "khủng hoảng thừa".',0),
+--(64,4,N'Chiến tranh đã để lại hậu quả rất nặng nề, nền kinh tế Pháp đang gặp khó khăn ; Pháp trở thành con nợ lớn của Mĩ.',1),
+--(65,1,N'Vô sản với tư sản.',0),
+--(65,2,N'Vô sản với tư sản, nông dân với địa chủ phong kiến.',0),
+--(65,3,N'Nhân dân Việt Nam với thực dân Pháp, vô sản với tư sản".',0),
+--(65,4,N'Dân tộc Việt Nam với thực dân Pháp, nông dân với địa chủ phong kiến.',1),
+--(66,1,N'Bạn.',0),
+--(66,2,N'Tay sai.',0),
+--(66,3,N'Đồng minh".',1),
+--(66,4,N'Anh em.',0),
+--(67,1,N'Miền Bắc hoàn toàn giải phóng.',0),
+--(67,2,N'Trung ương Đảng và Chính phủ trở về Thủ đô.',0),
+--(67,3,N'Quân ta tiến vào tiếp quản Thủ đô".',1),
+--(67,4,N'Tên lính Pháp cuối cùng rút khỏi Việt Nam.',0)
+
 
 
 
