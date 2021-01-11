@@ -535,6 +535,7 @@
     <EmbeddedResource Include="Views\Teacher\StudentManagement\ExamStatisticView.resx">
       <DependentUpon>ExamStatisticView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Teacher\StudentManagement\QuestionStatisticReport.rdlc" />
     <EmbeddedResource Include="Views\Teacher\StudentManagement\QuestionStatisticView.resx">
       <DependentUpon>QuestionStatisticView.cs</DependentUpon>
     </EmbeddedResource>
@@ -553,6 +554,8 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\quiz_management.Models.ExamStatistic.datasource" />
     <None Include="Properties\DataSources\quiz_management.Models.PracticStatistic.datasource" />
+    <None Include="Properties\DataSources\quiz_management.Models.QuestionStatistic.datasource" />
+    <None Include="Properties\DataSources\quiz_management.Models.QuestionStatistic1.datasource" />
     <None Include="Properties\DataSources\quiz_management.Models.StudentStatistic.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

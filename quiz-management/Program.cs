@@ -31,7 +31,7 @@ namespace quiz_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ExamStatisticView());
+            Application.Run(new QuestionStatisticView());
         }
     }
 }
