@@ -15,7 +15,7 @@ namespace quiz_management.Presenters.Student.InfoPersonal
         int currentUserCode;
         thongTin info = null;
         Lop lop = null;
-        List<Lop> lstLop= null;
+        List<Lop> lstLop = null;
         public ProfilePresenter(IProfileView v, int code)
         {
             view = v;
@@ -70,9 +70,9 @@ namespace quiz_management.Presenters.Student.InfoPersonal
 
         private void View_Updatebtn(object sender, EventArgs e)
         {
-            DateTime dt = DateTime.Parse(view._ngaysinh);
             try
             {
+                DateTime dt = DateTime.Parse(view._ngaysinh);
                 using (var db = new QuizDataContext())
                 {
                     var temp = db.thongTins.SingleOrDefault(d => d.maNguoidung == int.Parse(view._maSo));
@@ -83,9 +83,10 @@ namespace quiz_management.Presenters.Student.InfoPersonal
                     db.SubmitChanges();
                 }
                 view.swichMainStudent(int.Parse(view._maSo));
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);  
+                MessageBox.Show("Đã xảy ra lỗi!!");
             }
         }
     }

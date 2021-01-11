@@ -33,8 +33,8 @@ namespace quiz_management.Views.Student.InfoPersonal
         }
 
         public string _maSo { set => txtIdStudent.Text = value; get => txtIdStudent.Text; }
-        public string _hoTen { get => txtNameStudent.Text; set => txtNameStudent.Text = value; }
-        public string _ngaysinh { get => txtDOBStudent.Text; set => txtDOBStudent.Text = value; }
+        public string _hoTen { get => txtNameStudent.Text; set => txtNameStudent.DataBindings.Add("Text", value, ""); }
+        public string _ngaysinh { get => txtDOBStudent.Text; set => txtDOBStudent.DataBindings.Add("Text", value, ""); }
         public List<Lop> _lop { set => cbLop.DataSource = value; }
 
        

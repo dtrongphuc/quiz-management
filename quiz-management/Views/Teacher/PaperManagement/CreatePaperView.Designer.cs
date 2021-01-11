@@ -46,7 +46,6 @@
             this.MaCauHoiDaChon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CauHoiDaChon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnWatchPaperList = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cbbSubject = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -244,15 +243,6 @@
             this.btnWatchPaperList.Text = "Xem danh sách đề thi";
             this.btnWatchPaperList.UseVisualStyleBackColor = true;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(578, 541);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(183, 17);
-            this.label7.TabIndex = 23;
-            this.label7.Text = "(*) Một đề ít nhất 20 câu hỏi";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -308,7 +298,6 @@
             this.Controls.Add(this.cbbExam);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.cbbSubject);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnWatchPaperList);
             this.Controls.Add(this.dgvQuestionSelectedList);
             this.Controls.Add(this.label2);
@@ -353,7 +342,6 @@
         private System.Windows.Forms.Button btnWatchPaperList;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaCauHoiDaChon;
         private System.Windows.Forms.DataGridViewTextBoxColumn CauHoiDaChon;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cbbSubject;
         private System.Windows.Forms.Label label4;

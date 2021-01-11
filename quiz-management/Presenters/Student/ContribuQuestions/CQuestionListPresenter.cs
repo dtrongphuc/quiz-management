@@ -17,7 +17,7 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
         {
             view = v;
             currenUserCode = code;
-            LoadContributeQuestionList(code);
+            LoadContributeQuestionList();
             view.Closepage += Closepage_View;
             view.GoBackBefore += GoBackBefore_View;
         }
@@ -29,8 +29,9 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
             
         }
 
-        private void LoadContributeQuestionList(int code)
+        private void LoadContributeQuestionList()
         {
+            view.StudentID = currenUserCode.ToString();
             listQuestion = new List<ContributeQuestion>();
             List<dongGop> listContribute = null;
             using (var db = new QuizDataContext())
