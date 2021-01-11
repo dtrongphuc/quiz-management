@@ -38,6 +38,7 @@ namespace quiz_management.Views.Student.Main
         public event EventHandler PracticExamClick;
 
         public event EventHandler PracticStatisticClick;
+        public event EventHandler LogoutClick;
 
         public MainStudentView(int u)
         {
@@ -78,6 +79,10 @@ namespace quiz_management.Views.Student.Main
             btnPracticStatistic.Click += (_, e) =>
             {
                 PracticStatisticClick?.Invoke(btnPracticStatistic, e);
+            };
+            btnLogout.Click += (_, e) =>
+            {
+                LogoutClick?.Invoke(btnLogout, e);
             };
         }
 
@@ -133,6 +138,14 @@ namespace quiz_management.Views.Student.Main
         {
             this.Hide();
             PracticStatisticView screen = new PracticStatisticView(userCode);
+            screen.FormClosed += (_, e) => this.Show();
+            screen.Show();
+        }
+
+        public void ShowLogin()
+        {
+            this.Hide();
+            LoginView screen = new LoginView();
             screen.FormClosed += (_, e) => this.Show();
             screen.Show();
         }

@@ -27,6 +27,7 @@ namespace quiz_management.Views.Student.Main
         event EventHandler PracticExamClick;
 
         event EventHandler PracticStatisticClick;
+        event EventHandler LogoutClick;
 
         void ShowEditProfileStudentView(int userCode);
 
@@ -41,5 +42,6 @@ namespace quiz_management.Views.Student.Main
         void ShowPracticExamView(int userCode);
 
         void ShowPracticStatisticView(int userCode);
+        void ShowLogin();
     }
 }

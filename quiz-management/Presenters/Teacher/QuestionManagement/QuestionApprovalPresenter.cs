@@ -57,6 +57,8 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
         {
             using (var db = new QuizDataContext())
             {
+                //số câu hỏi đã chọn để duyệt
+                int QCCount = view.CQuestionSelected.SelectedRows.Count;
                 foreach (DataGridViewRow i in view.CQuestionSelected.SelectedRows)
                 {
                     int CQid = int.Parse(i.Cells["maDongGop"].Value.ToString());
@@ -73,7 +75,7 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
                     //thêm đóng góp dô câu hỏi
                     AddToQuestion(CQid);
                 }
-                view.ShowMessage($"Phê duyệt thành công {view.CQuestionSelected.SelectedRows.Count} câu hỏi");
+                view.ShowMessage($"Phê duyệt thành công {QCCount} câu hỏi");
                 view.contributed = listQuestion;
             }
         }

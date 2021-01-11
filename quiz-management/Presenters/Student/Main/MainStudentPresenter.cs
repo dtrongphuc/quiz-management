@@ -33,6 +33,7 @@ namespace quiz_management.Presenters.Student.Main
             view.TestScheduleClick += View_TestScheduleClick;
             view.PracticExamClick += View_PracticExamClick;
             view.PracticStatisticClick += View_PracticStatisticClick;
+            view.LogoutClick += View_LogoutClick;
 
             using (var user = new QuizDataContext())
             {
@@ -55,6 +56,11 @@ namespace quiz_management.Presenters.Student.Main
                 }
             }
             FillLH();
+        }
+
+        private void View_LogoutClick(object sender, EventArgs e)
+        {
+            view.ShowLogin();
         }
 
         private void View_PracticStatisticClick(object sender, EventArgs e)

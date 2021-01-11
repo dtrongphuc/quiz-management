@@ -34,9 +34,9 @@ namespace quiz_management.Views.Student.ContribuQuestions
                 WatchContributeQuestions?.Invoke(btnWatchContributeQuestion, e);
             };
         }
-        public string StudentID { set => lbStudentID.Text = value; }
+        public string StudentID { set => lbStudentID.DataBindings.Add("Text", value, ""); }
 
-        public string Question { get => tbQuestion.Text; set => tbQuestion.Text = value; }
+        public string Question { get => tbQuestion.Text; set => tbQuestion.DataBindings.Add("Text", value, ""); }
 
         public string AnswerA => tbAnswerA.Text;
 

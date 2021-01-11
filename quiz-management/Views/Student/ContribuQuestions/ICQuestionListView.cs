@@ -10,6 +10,7 @@ namespace quiz_management.Views.Student.ContribuQuestions
     interface ICQuestionListView
     {
         List<ContributeQuestion> contributed { set; }
+        string StudentID { set; }
         event EventHandler Closepage;
         event EventHandler GoBackBefore;
         void ShowMessage(string text);
