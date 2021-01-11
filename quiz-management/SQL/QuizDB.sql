@@ -21,6 +21,7 @@ CREATE TABLE Lop
 	CONSTRAINT PK_Lop
 	PRIMARY KEY (maLopHoc)
 )
+
 alter table Lop add constraint FK_lop_khoiLop FOREIGN KEY(maKhoiLop) references khoiLop(maKhoiLop)
 select * from boDe 
 update boDe set trangThai = 0 where maBoDe =1
@@ -1602,13 +1603,18 @@ insert into dapAn values
 --(67,4,N'Tên lính Pháp cuối cùng rút khỏi Việt Nam.',0)
 
 
+insert into donggop values(1, 1, 0, '2020-01-01', N'Cau hỏi là gì', 'K10')
+insert into cTDongGop values (1, N'1', 1),
+(1, N'2', 0),
+(1, N'3', 0),
+(1, N'4', 0)
 
 
 
 
-
-
-
+select * from dongGop
+select * from nguoiDung
+select * from cTDongGop
 select * from monHoc
 select * from boDe
 select * from cTBoDe

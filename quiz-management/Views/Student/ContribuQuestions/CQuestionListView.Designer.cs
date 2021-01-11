@@ -187,6 +187,7 @@
             this.Controls.Add(this.label2);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CQuestionListView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CQuestionListView";
             ((System.ComponentModel.ISupportInitialize)(this.dtgCQuestionList)).EndInit();
             this.ResumeLayout(false);
