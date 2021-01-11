@@ -30,7 +30,7 @@ namespace quiz_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PracticStatisticView(1));
+            Application.Run(new MainStudentView(1));
         }
     }
 }
