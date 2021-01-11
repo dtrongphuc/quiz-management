@@ -8,12 +8,13 @@ using System.Threading.Tasks;
 
 namespace quiz_management.Presenters.Student.InfoPersonal
 {
-    class ResultExamPresenter
+    internal class ResultExamPresenter
     {
-        IResultExamView view;
-        int currentcode;
-        List<ketQua> lstKQ =null;
-        List<ResultExam> lstkq =null;
+        private IResultExamView view;
+        private int currentcode;
+        private List<ketQua> lstKQ = null;
+        private List<ResultExam> lstkq = null;
+
         public ResultExamPresenter(IResultExamView v, int code)
         {
             view = v;
@@ -30,6 +31,19 @@ namespace quiz_management.Presenters.Student.InfoPersonal
             {
                 lstKQ = db.ketQuas.Where(p => p.maNguoiDung == currentcode)
                                 .Where(c => c.trangThai == 1).ToList();
+                if (lstKQ.Count > 0)
+                {
+                    ResultExamUser user = new ResultExamUser
+                    {
+                        MaHocSinh = (int)lstKQ.ElementAt(0).maNguoiDung,
+                        TenHocSinh = lstKQ.ElementAt(0).nguoiDung.thongTin.tenNguoiDung,
+                        Lop = lstKQ.ElementAt(0).nguoiDung.thongTin.Lop.tenLopHoc,
+                        NgaySinh = (DateTime)lstKQ.ElementAt(0).nguoiDung.thongTin.ngaySinh
+                    };
+
+                    view.User = user;
+                }
+
                 foreach (ketQua kq in lstKQ)
                 {
                     dt = kq.ngayLam.Value;
@@ -46,8 +60,8 @@ namespace quiz_management.Presenters.Student.InfoPersonal
                     lstkq.Add(rs);
                 }
             }
-           
-                Fill();
+
+            Fill();
         }
 
         private void View_BackMain(object sender, EventArgs e)
@@ -57,11 +71,7 @@ namespace quiz_management.Presenters.Student.InfoPersonal
 
         private void Fill()
         {
-           
             view.ResultExam = lstkq;
-           
         }
-
-
     }
 }

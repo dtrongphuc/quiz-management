@@ -1,4 +1,5 @@
-﻿using quiz_management.Models;
+﻿using Microsoft.Reporting.WinForms;
+using quiz_management.Models;
 using quiz_management.Presenters.Student.InfoPersonal;
 using quiz_management.Views.Student.ContribuQuestions;
 using quiz_management.Views.Student.Main;
@@ -14,23 +15,30 @@ using System.Windows.Forms;
 
 namespace quiz_management.Views.Student.InfoPersonal
 {
-    public partial class ResultExamView : Form,IResultExamView
+    public partial class ResultExamView : Form, IResultExamView
     {
-        ResultExamPresenter presenter;
+        private ResultExamPresenter presenter;
+        public BindingSource bsRR;
+        public ReportDataSource rdsRR;
+        public ResultExamUser rsUser;
+
+        public ResultExamUser User { set => rsUser = value; }
+
         public ResultExamView(int code)
         {
             InitializeComponent();
+            bsRR = new BindingSource();
+            rdsRR = new ReportDataSource();
             presenter = new ResultExamPresenter(this, code);
 
             linkLabel1.Click += (_, e) =>
             {
                 BackMain?.Invoke(linkLabel1, e);
             };
-
         }
 
-        public List<ResultExam> ResultExam { set => dgvKetQua.DataSource = value; }
-        
+        public List<ResultExam> ResultExam { set => bsRR.DataSource = value; }
+
         public event EventHandler BackMain;
 
         public void swichMainStudent(int code)
@@ -39,6 +47,21 @@ namespace quiz_management.Views.Student.InfoPersonal
             MainStudentView screen = new MainStudentView(code);
             screen.FormClosed += (_, e) => this.Close();
             screen.Show();
+        }
+
+        private void ResultExamView_Load(object sender, EventArgs e)
+        {
+            reportViewer1.LocalReport.DataSources.Clear();
+            ReportParameterCollection reportParameters = new ReportParameterCollection();
+            rdsRR.Value = bsRR;
+            rdsRR.Name = "RSDataset";
+            reportParameters.Add(new ReportParameter("Ms", rsUser.MaHocSinh.ToString()));
+            reportParameters.Add(new ReportParameter("Name", rsUser.TenHocSinh));
+            reportParameters.Add(new ReportParameter("Lop", rsUser.Lop));
+            reportParameters.Add(new ReportParameter("NgaySinh", rsUser.NgaySinh.ToString("dd/MM/yyyy")));
+            reportViewer1.LocalReport.SetParameters(reportParameters);
+            reportViewer1.LocalReport.DataSources.Add(rdsRR);
+            this.reportViewer1.RefreshReport();
         }
     }
 }

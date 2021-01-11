@@ -111,6 +111,7 @@
       <DependentUpon>Quiz.dbml</DependentUpon>
     </Compile>
     <Compile Include="Models\ResultExam.cs" />
+    <Compile Include="Models\ResultExamUser.cs" />
     <Compile Include="Models\StudentOfExam.cs" />
     <Compile Include="Models\StudentStatistic.cs" />
     <Compile Include="Models\TestSchedule.cs" />
@@ -471,6 +472,7 @@
     <EmbeddedResource Include="Views\Student\InfoPersonal\ProfileView.resx">
       <DependentUpon>ProfileView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Student\InfoPersonal\ResultExamReport.rdlc" />
     <EmbeddedResource Include="Views\Student\InfoPersonal\ResultExamView.resx">
       <DependentUpon>ResultExamView.cs</DependentUpon>
     </EmbeddedResource>
@@ -556,6 +558,7 @@
     <None Include="Properties\DataSources\quiz_management.Models.PracticStatistic.datasource" />
     <None Include="Properties\DataSources\quiz_management.Models.QuestionStatistic.datasource" />
     <None Include="Properties\DataSources\quiz_management.Models.QuestionStatistic1.datasource" />
+    <None Include="Properties\DataSources\quiz_management.Models.ResultExam.datasource" />
     <None Include="Properties\DataSources\quiz_management.Models.StudentStatistic.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
