@@ -12,6 +12,7 @@ using quiz_management.Views.Teacher.Main;
 using quiz_management.Views.Teacher.MockExamManagement;
 using quiz_management.Views.Teacher.PaperManagement;
 using quiz_management.Views.Teacher.QuestionManagement;
+using quiz_management.Views.Teacher.StudentManagement;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +31,7 @@ namespace quiz_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainTeacherView(1));
+            Application.Run(new ExamStatisticView());
         }
     }
 }

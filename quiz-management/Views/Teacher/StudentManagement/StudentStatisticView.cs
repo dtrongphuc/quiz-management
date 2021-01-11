@@ -15,7 +15,7 @@ namespace quiz_management.Views.Teacher.StudentManagement
 {
     public partial class StudentStatisticView : Form
     {
-        private StudentStatisticPresenter presenter;
+        //private StudentStatisticPresenter presenter;
         private BindingSource bsSR;
 
         private ReportDataSource rdsSR;
