@@ -28,6 +28,12 @@ namespace quiz_management.Presenters.Teacher.Main
             view.WatchOrPrintExamCompletedClick += View_WatchOrPrintExamCompletedClick;
             view.ListMockExamClick += View_ListMockExamClick;
             view.WatchOrPrintExamClick += View_WatchOrPrintClick;
+            view.PaperClick += PaperClick_View;
+        }
+
+        private void PaperClick_View(object sender, EventArgs e)
+        {
+            view.ShowCreatePaper(currentUser);
         }
 
         private void View_WatchOrPrintClick(object sender, EventArgs e)

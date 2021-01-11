@@ -30,6 +30,9 @@
         {
             this.btnUpdate = new System.Windows.Forms.Button();
             this.dgvQuestions = new System.Windows.Forms.DataGridView();
+            this.Question = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuestionID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PaperName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.linkGoBackBefore = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.lbTeacher = new System.Windows.Forms.Label();
@@ -38,9 +41,6 @@
             this.cbbSubject = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.Question = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QuestionID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PaperName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestions)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,6 +64,7 @@
             this.QuestionID,
             this.PaperName});
             this.dgvQuestions.Location = new System.Drawing.Point(34, 227);
+            this.dgvQuestions.MultiSelect = false;
             this.dgvQuestions.Name = "dgvQuestions";
             this.dgvQuestions.ReadOnly = true;
             this.dgvQuestions.RowHeadersVisible = false;
@@ -72,6 +73,31 @@
             this.dgvQuestions.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvQuestions.Size = new System.Drawing.Size(887, 302);
             this.dgvQuestions.TabIndex = 38;
+            // 
+            // Question
+            // 
+            this.Question.DataPropertyName = "Question";
+            this.Question.HeaderText = "Câu Hỏi";
+            this.Question.MinimumWidth = 6;
+            this.Question.Name = "Question";
+            this.Question.ReadOnly = true;
+            // 
+            // QuestionID
+            // 
+            this.QuestionID.DataPropertyName = "QuestionID";
+            this.QuestionID.HeaderText = "Column1";
+            this.QuestionID.MinimumWidth = 6;
+            this.QuestionID.Name = "QuestionID";
+            this.QuestionID.ReadOnly = true;
+            this.QuestionID.Visible = false;
+            // 
+            // PaperName
+            // 
+            this.PaperName.DataPropertyName = "PaperName";
+            this.PaperName.HeaderText = "Dùng trong đề thi";
+            this.PaperName.MinimumWidth = 6;
+            this.PaperName.Name = "PaperName";
+            this.PaperName.ReadOnly = true;
             // 
             // linkGoBackBefore
             // 
@@ -154,31 +180,6 @@
             this.label2.Size = new System.Drawing.Size(117, 20);
             this.label2.TabIndex = 40;
             this.label2.Text = "Chọn cấp học:";
-            // 
-            // Question
-            // 
-            this.Question.DataPropertyName = "Question";
-            this.Question.HeaderText = "Câu Hỏi";
-            this.Question.MinimumWidth = 6;
-            this.Question.Name = "Question";
-            this.Question.ReadOnly = true;
-            // 
-            // QuestionID
-            // 
-            this.QuestionID.DataPropertyName = "QuestionID";
-            this.QuestionID.HeaderText = "Column1";
-            this.QuestionID.MinimumWidth = 6;
-            this.QuestionID.Name = "QuestionID";
-            this.QuestionID.ReadOnly = true;
-            this.QuestionID.Visible = false;
-            // 
-            // PaperName
-            // 
-            this.PaperName.DataPropertyName = "PaperName";
-            this.PaperName.HeaderText = "Dùng trong đề thi";
-            this.PaperName.MinimumWidth = 6;
-            this.PaperName.Name = "PaperName";
-            this.PaperName.ReadOnly = true;
             // 
             // QuestionListView
             // 

@@ -92,7 +92,7 @@ CREATE TABLE cauHoi
 (
 	maCauHoi INT IDENTITY,
 	maMonHoc INT,
-	cauHoi NVARCHAR(100),
+	cauHoi NVARCHAR(500),
 	doKho INT,
     trangThai int,
     maKhoiLop  varchar(5)
@@ -152,6 +152,7 @@ alter table ketQua add constraint df_cauchualam default 0 for chuaLam;
 alter table ketQua add constraint df_cau default 0 for cauDung;
 alter table ketQua add constraint df_causai default 0 for cauSai;
 alter table ketQua add constraint df_ngaylam default getdate() for ngayLam;
+--alter table ketQua add constraint df_cauchualam default 0 for chuaLam;
 
 update ketQua set trangThai=0 where maKetQua=2
 select * from ketQua
