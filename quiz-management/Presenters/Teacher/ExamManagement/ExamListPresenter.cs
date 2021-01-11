@@ -14,6 +14,7 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
     {
         IExamListView view;
         BindingList<TestSchedule> lst;
+        BindingSource lstbinding;
         int currentcode;
         public ExamListPresenter(IExamListView v, int code)
         {
@@ -50,7 +51,7 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
 
         private void View_UpdateExam(object sender, EventArgs e)
         {
-            var x = view.lichthichon.SelectedRows[0];
+            var x = view.dtgv.SelectedRows[0];
             var id = x.Cells["maLichThi"].Value.ToString();
             view.ShowUpdateExamView(int.Parse(id),currentcode);
 
@@ -63,7 +64,7 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
 
         private void View_Delete(object sender, EventArgs e)
         {
-            var x = view.lichthichon.SelectedRows[0];
+            var x = view.dtgv.SelectedRows[0];
             var id = x.Cells["maLichThi"].Value.ToString();
             using (var db = new QuizDataContext())
             {
@@ -83,10 +84,14 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
 
         private void Fill()
         {
-            if (lst.Count != 0)
+            lstbinding = new BindingSource();
+            lstbinding.DataSource = lst;
+            view.dtgv.DataSource = lstbinding;
+
+            /*if (lst.Count != 0)
                 view.dtgv = lst;
             else
-                view.dtgv = null;
+                view.dtgv = null;*/
         }
     }
 }
