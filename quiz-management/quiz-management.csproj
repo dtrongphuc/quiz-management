@@ -97,6 +97,7 @@
     <Compile Include="Models\Authorization.cs" />
     <Compile Include="Models\ContributeQuestion.cs" />
     <Compile Include="Models\CreatePaperWithQuestion.cs" />
+    <Compile Include="Models\ExamStatistic.cs" />
     <Compile Include="Models\InfoUser.cs" />
     <Compile Include="Models\MockExam.cs" />
     <Compile Include="Models\Papers.cs" />
@@ -530,6 +531,10 @@
     <EmbeddedResource Include="Views\Teacher\QuestionManagement\QuestionListView.resx">
       <DependentUpon>QuestionListView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Teacher\StudentManagement\ExamStatisticReport.rdlc" />
+    <EmbeddedResource Include="Views\Teacher\StudentManagement\ExamStatisticView.resx">
+      <DependentUpon>ExamStatisticView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Teacher\StudentManagement\QuestionStatisticView.resx">
       <DependentUpon>QuestionStatisticView.cs</DependentUpon>
     </EmbeddedResource>
@@ -546,6 +551,7 @@
       <DependentUpon>Quiz.dbml</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\quiz_management.Models.ExamStatistic.datasource" />
     <None Include="Properties\DataSources\quiz_management.Models.PracticStatistic.datasource" />
     <None Include="Properties\DataSources\quiz_management.Models.StudentStatistic.datasource" />
     <None Include="Properties\Settings.settings">
