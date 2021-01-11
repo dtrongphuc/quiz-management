@@ -39,14 +39,10 @@ namespace quiz_management.Views.Teacher.ExamManagement
             };
         }
 
-        public BindingList<TestSchedule> dtgv { set => dgvLichThi.DataSource = value; }
+        
 
-        public DataGridView lichthichon {
-            get
-            {
-                return dgvLichThi;
-            }
-        }
+        public DataGridView dtgv { get => dgvLichThi; }
+
         public event EventHandler GobackBefore;
         public event EventHandler Delete;
         public event EventHandler UpdateExam;
