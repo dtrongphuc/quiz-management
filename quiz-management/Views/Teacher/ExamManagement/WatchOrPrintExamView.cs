@@ -1,4 +1,5 @@
-﻿using quiz_management.Models;
+﻿using Microsoft.Reporting.WinForms;
+using quiz_management.Models;
 using quiz_management.Presenters.Teacher.ExamManagement;
 using quiz_management.Views.Teacher.Main;
 using quiz_management.Views.Teacher.MockExamManagement;
@@ -17,23 +18,23 @@ namespace quiz_management.Views.Teacher.ExamManagement
     public partial class WatchOrPrintExamView : Form, IWatchOrPrintExamView
     {
         private WatchOrPrintExamPresenter presenter;
+        public BindingSource bsWOPR;
+        public ReportDataSource rdsWOPR;
 
         public WatchOrPrintExamView(int code)
         {
             InitializeComponent();
+            bsWOPR = new BindingSource();
+            rdsWOPR = new ReportDataSource();
             presenter = new WatchOrPrintExamPresenter(this, code);
             linkGoBackBefore.Click += (_, e) =>
             {
                 GobackBefore?.Invoke(linkGoBackBefore, e);
             };
-            btnPrint.Click += (_, e) =>
-            {
-                Print?.Invoke(btnPrint, e);
-            };
         }
 
         public string TeacherName { set => lbTeacher.Text = value; }
-        public List<StudentOfExam> ExamList { set => dgvExam.DataSource = value; }
+        public List<StudentOfExam> ExamList { set => bsWOPR.DataSource = value; }
 
         public event EventHandler GobackBefore;
 
@@ -52,27 +53,13 @@ namespace quiz_management.Views.Teacher.ExamManagement
             screen.Show();
         }
 
-        private void btnPrint_Click(object sender, EventArgs e)
+        private void WatchOrPrintExamView_Load(object sender, EventArgs e)
         {
-            printPreviewDialog1.Document = printDocument1;
-            printPreviewDialog1.PrintPreviewControl.Zoom = 1;
-            printPreviewDialog1.ShowDialog();
-        }
-
-        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
-            Bitmap bmp = new Bitmap(dgvExam.Width, dgvExam.Height);
-
-            // draw the form image to the bitmap
-            dgvExam.DrawToBitmap(bmp, new Rectangle(0, 0, dgvExam.Width, dgvExam.Height));
-
-            // draw the bitmap image of the form onto the graphics surface
-            e.Graphics.DrawImage(bmp, new Point(0, 0));
-        }
-
-        public static implicit operator WatchOrPrintExamView(ListMockExamView v)
-        {
-            throw new NotImplementedException();
+            reportViewer1.LocalReport.DataSources.Clear();
+            rdsWOPR.Value = bsWOPR;
+            rdsWOPR.Name = "MSEDataset";
+            reportViewer1.LocalReport.DataSources.Add(rdsWOPR);
+            this.reportViewer1.RefreshReport();
         }
     }
 }

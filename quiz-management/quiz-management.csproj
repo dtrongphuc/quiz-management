@@ -494,9 +494,11 @@
     <EmbeddedResource Include="Views\Teacher\ExamManagement\UpdateExamView.resx">
       <DependentUpon>UpdateExamView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Teacher\ExamManagement\WatchOrPrintExamCompleted.rdlc" />
     <EmbeddedResource Include="Views\Teacher\ExamManagement\WatchOrPrintExamCompletedView.resx">
       <DependentUpon>WatchOrPrintExamCompletedView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Teacher\ExamManagement\WatchOrPrintExamReport.rdlc" />
     <EmbeddedResource Include="Views\Teacher\ExamManagement\WatchOrPrintExamView.resx">
       <DependentUpon>WatchOrPrintExamView.cs</DependentUpon>
     </EmbeddedResource>
@@ -559,7 +561,9 @@
     <None Include="Properties\DataSources\quiz_management.Models.QuestionStatistic.datasource" />
     <None Include="Properties\DataSources\quiz_management.Models.QuestionStatistic1.datasource" />
     <None Include="Properties\DataSources\quiz_management.Models.ResultExam.datasource" />
+    <None Include="Properties\DataSources\quiz_management.Models.StudentOfExam.datasource" />
     <None Include="Properties\DataSources\quiz_management.Models.StudentStatistic.datasource" />
+    <None Include="Properties\DataSources\quiz_management.Models.TrainScript.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
