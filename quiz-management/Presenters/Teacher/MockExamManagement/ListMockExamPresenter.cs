@@ -34,21 +34,20 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
                 //ten giáo viên
                 view.TeacherName = db.thongTins.Where(i => i.maNguoidung == currentcode).Select(i => i.tenNguoiDung).ToList()[0];
                 //dgv
-                var exams = db.kyThiThus.ToList();
+                var exams = db.kyThiThus.GroupBy(x => x.maKyThiThu).Select(xs => new { ktt = xs.Select(d => d) }).ToList();
                 int stt = 1;
-                foreach(var exam in exams)
+                foreach (var i in exams)
                 {
                     var mockexam = new MockExam();
-                    mockexam.STT = stt;
-                    mockexam.ExamID = exam.maKyThiThu.ToString();
-                    mockexam.Grade = exam.khoiLop.tenKhoiLop;
-                    mockexam.Subject = exam.monHoc.tenMonHoc;
-                    mockexam.StartDay = exam.ngayThi.Value.Date.ToString("d");
-                    mockexam.EndDay = exam.ngayKT.Value.Date.ToString("d");
-                    mockexam.UserID = exam.maNguoiDung;
-                    mockexam.PaperID = exam.maBoDe;
-                    mockexam.QuantityStudent = db.kyThiThus.Where(i => i.maKyThiThu == exam.maKyThiThu).Select(i =>i.maNguoiDung).Count();
-
+                    mockexam.STT = stt++;
+                    var lstlichthi = i.ktt.ToList();
+                    mockexam.ExamID = lstlichthi[0].maKyThiThu.ToString();
+                    mockexam.Grade = lstlichthi[0].khoiLop.tenKhoiLop;
+                    mockexam.Subject = lstlichthi[0].monHoc.tenMonHoc;
+                    mockexam.StartDay = lstlichthi[0].ngayThi.Value.Date.ToString("d");
+                    mockexam.EndDay = lstlichthi[0].ngayKT.Value.Date.ToString("d");
+                    mockexam.QuantityStudent = db.kyThiThus.Where(p => p.maKyThiThu == lstlichthi[0].maKyThiThu).Count();
+                    mockexam.PaperID = lstlichthi[0].maBoDe;
                     MockExamList.Add(mockexam);
                 }
                 view.MockExamList = MockExamList;
@@ -67,7 +66,7 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
 
         private void DeleteExam_View(object sender, EventArgs e)
         {
-            using(var db = new QuizDataContext())
+           /* using(var db = new QuizDataContext())
             {
                 kyThiThu exammock = db.kyThiThus.SingleOrDefault(i => i.maKyThiThu == int.Parse(view.ExamID) && i.maBoDe == int.Parse(view.PaperID) && i.maNguoiDung == int.Parse(view.PaperID));
                 db.kyThiThus.DeleteOnSubmit(exammock);
@@ -75,6 +74,18 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
             }
             view.ShowMessage("Xóa thành công!");
             LoadPage();
+
+            var x = view.lichthichon.SelectedRows[0];
+            var id = x.Cells["maLichThi"].Value.ToString();
+            using (var db = new QuizDataContext())
+            {
+                var lt = db.lichThis.Where(p => p.maLichThi == int.Parse(id)).ToList();
+                db.lichThis.DeleteOnSubmit(lt[0]);
+                db.SubmitChanges();
+                var itemdelete = lst.Where(i => i.MaLichThi == int.Parse(id)).ToList();
+                lst.Remove(itemdelete[0]);
+            }
+            Fill();*/
         }
         private void Create_View(object sender, EventArgs e)
         {

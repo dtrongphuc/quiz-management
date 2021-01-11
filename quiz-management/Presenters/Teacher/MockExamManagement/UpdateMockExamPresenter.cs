@@ -183,7 +183,6 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
                 {
                     foreach (var k in lstDethi)
                     {
-                        
                         db.kyThiThus.InsertOnSubmit(new kyThiThu
                         {
                             maKyThiThu = currentcode,

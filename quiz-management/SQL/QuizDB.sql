@@ -21,6 +21,7 @@ CREATE TABLE Lop
 	CONSTRAINT PK_Lop
 	PRIMARY KEY (maLopHoc)
 )
+
 alter table Lop add constraint FK_lop_khoiLop FOREIGN KEY(maKhoiLop) references khoiLop(maKhoiLop)
 select * from boDe 
 update boDe set trangThai = 0 where maBoDe =1

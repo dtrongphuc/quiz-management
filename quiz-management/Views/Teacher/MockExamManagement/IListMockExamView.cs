@@ -11,8 +11,6 @@ namespace quiz_management.Views.Teacher.MockExamManagement
     {
         string TeacherName { set; }
         string ExamID { get; }
-        string PaperID { get; }
-        string UserID { get; }
         List<MockExam> MockExamList { set; }
 
         event EventHandler GoBackBeFore;
