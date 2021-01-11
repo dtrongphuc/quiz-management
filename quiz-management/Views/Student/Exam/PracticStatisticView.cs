@@ -15,8 +15,9 @@ namespace quiz_management.Views.Student.Exam
 {
     public partial class PracticStatisticView : Form
     {
-        private PracticStatisticPresenter presenter;
+        //private PracticStatisticPresenter presenter;
         private BindingSource bsPR;
+
         private ReportDataSource rdsPR;
         private int _currentUserCode;
 
