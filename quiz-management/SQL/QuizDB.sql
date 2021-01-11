@@ -1188,41 +1188,116 @@ insert into dapAn values
 --(1, N'Việc sử dụng động cơ đốt trong đã tạo ra khả năng phát triển ngành nào ?', 9, 1, 'K12')--102
 
 
-insert into cauHoi values 
---monhoa 10
---(2, N'Nguyên tử vàng có 79 electron ở vỏ nguyên tử. Điện tích hạt nhân của nguyên tử vàng là ?', 1, 1, 'K10'),--103
---(2, N'Một nguyên tử có 12 proton và 12 nơtron trong hạt nhân. Điện tích của ion tạo thành khi nguyên tử này bị mất 2 electron là ?', 2, 1, 'K10'),--104
---(2, N'Trong nguyên tử, loại hạt nào có khối lượng không đáng kể so với các hạt còn lại ?', 2, 1, 'K10'),--105
---(2, N'Tinh thể nào sau đây là tinh thể nguyên tử ?', 2, 1, 'K10'),--106
---(2, N'Khẳng định nào sau đây sai: ', 5, 1, 'K10'),--107
---(2, N'Cấu trúc của tinh thể phân tử nước đá thuộc loại cấu trúc nào: ', 5, 1, 'K10'),--108
---(2, N'Iot, băng phiến dễ hòa tan tỏng các dung môi nào dưới đây: ', 7, 1, 'K10'),--109
---(2, N'Khi cho đá vào cốc nước ta thấy đá nổi lên là do: ', 8, 1, 'K10'),--110
---(2, N'Trong công nghiệp, người ta điều chế oxi bằng cách: ', 5, 1, 'K10'),--111
---(2, N'Để phản ứng vừa đủ với 100 ml dung dịch BaCl2 2M cần 500 ml dung dịch Na2SO4 a (mol/l). Giá trị của a là: ', 9, 1, 'K10'),--112
---(2, N'Chọn cấu hình electron không đúng: ', 5, 1, 'K10'),--113
---(2, N'Trong nguyên tử, electron hóa trị là các electron: ', 3, 1, 'K10'),--114
---(2, N'Cấu hình electron của nguyên tử nguyên tố X có dạng [Ne]3s23p3. Phát biểu nào sau đây là sai? ', 4, 1, 'K10'),--115
---(2, N'Hóa trị và số oxi hóa của N trong phân tử NH4Cl lần lượt là ', 7, 1, 'K10'),--116
---(2, N'Trong hợp chất cộng hóa trị, hóa trị của một nguyên tố: ', 4, 1, 'K10')--117
+--insert into cauHoi values 
+----monhoa 10
+----(2, N'Nguyên tử vàng có 79 electron ở vỏ nguyên tử. Điện tích hạt nhân của nguyên tử vàng là ?', 1, 1, 'K10'),--103
+----(2, N'Một nguyên tử có 12 proton và 12 nơtron trong hạt nhân. Điện tích của ion tạo thành khi nguyên tử này bị mất 2 electron là ?', 2, 1, 'K10'),--104
+----(2, N'Trong nguyên tử, loại hạt nào có khối lượng không đáng kể so với các hạt còn lại ?', 2, 1, 'K10'),--105
+----(2, N'Tinh thể nào sau đây là tinh thể nguyên tử ?', 2, 1, 'K10'),--106
+----(2, N'Khẳng định nào sau đây sai: ', 5, 1, 'K10'),--107
+----(2, N'Cấu trúc của tinh thể phân tử nước đá thuộc loại cấu trúc nào: ', 5, 1, 'K10'),--108
+----(2, N'Iot, băng phiến dễ hòa tan tỏng các dung môi nào dưới đây: ', 7, 1, 'K10'),--109
+----(2, N'Khi cho đá vào cốc nước ta thấy đá nổi lên là do: ', 8, 1, 'K10'),--110
+----(2, N'Trong công nghiệp, người ta điều chế oxi bằng cách: ', 5, 1, 'K10'),--111
+----(2, N'Để phản ứng vừa đủ với 100 ml dung dịch BaCl2 2M cần 500 ml dung dịch Na2SO4 a (mol/l). Giá trị của a là: ', 9, 1, 'K10'),--112
+----(2, N'Chọn cấu hình electron không đúng: ', 5, 1, 'K10'),--113
+----(2, N'Trong nguyên tử, electron hóa trị là các electron: ', 3, 1, 'K10'),--114
+----(2, N'Cấu hình electron của nguyên tử nguyên tố X có dạng [Ne]3s23p3. Phát biểu nào sau đây là sai? ', 4, 1, 'K10'),--115
+----(2, N'Hóa trị và số oxi hóa của N trong phân tử NH4Cl lần lượt là ', 7, 1, 'K10'),--116
+----(2, N'Trong hợp chất cộng hóa trị, hóa trị của một nguyên tố: ', 4, 1, 'K10')--117
 
---khoi 11
---(2, N'Các chất dẫn điện là: ', 1, 1, 'K10'),--118
---(2, N'Trong dung dịch axit nitric (bỏ qua sự phân li của H2O) có những phần tử nào ? ', 2, 1, 'K10'),--119
---(2, N'Chất nào sau đây không dẫn điện được ? ', 3, 1, 'K10'),--120
---(2, N'Quặng nào sau đây chứa CaCO3  ? ', 4, 1, 'K10'),--121
---(2, N'CO không khử được các oxit trong nhóm nào sau đây  ? ', 5, 1, 'K10'),--122
---(2, N'Nhóm nào sau đây gồm các muối không bị nhiệt phân  ? ', 6, 1, 'K10'),--123
---(2, N'Công thức tổng quát của ankan là  ? ', 8, 1, 'K10'),--124
---(2, N'Số đồng phân cấu tạo ứng với công thức phân tử C5H12 là  ? ', 8, 1, 'K10'),--125
---(2, N'Ankan (CH3)2CHCH2C(CH3)3 có tên gọi là  ? ', 8, 1, 'K10'),--126
---(2, N'Ankan X có công thức phân tử C6H14. Clo hóa X, thu được 4 sản phẩm dẫn xuất monoclo. Tên gọi của X là  ? ', 8, 1, 'K10'),--127
---(2, N'Ankan X có chứa 82,76% cacbon theo khối lượng. Số nguyên tử hiđro trong một phân tử X là  ? ', 9, 1, 'K10'),--128
---(2, N'Ankan X có chứa 14 nguyên tử hiđrô trong phân tử. Số nguyên tử cacbon trong một phân tử X là  ? ', 9, 1, 'K10'),--129
---(2, N'Dãy đồng đẳng benzen có công thức chung là  ? ', 6, 1, 'K10'),--130
---(2, N'Công thức phân tử của Strien là  ', 5, 1, 'K10'),--131
---(2, N'Công thức phân tử của toluen là  ', 5, 1, 'K10')--132
-insert into dapAn values
+----khoi 11
+----(2, N'Các chất dẫn điện là: ', 1, 1, 'K11'),--118
+----(2, N'Trong dung dịch axit nitric (bỏ qua sự phân li của H2O) có những phần tử nào ? ', 2, 1, 'K11'),--119
+----(2, N'Chất nào sau đây không dẫn điện được ? ', 3, 1, 'K11'),--120
+----(2, N'Quặng nào sau đây chứa CaCO3  ? ', 4, 1, 'K11'),--121
+----(2, N'CO không khử được các oxit trong nhóm nào sau đây  ? ', 5, 1, 'K11'),--122
+----(2, N'Nhóm nào sau đây gồm các muối không bị nhiệt phân  ? ', 6, 1, 'K11'),--123
+----(2, N'Công thức tổng quát của ankan là  ? ', 8, 1, 'K11'),--124
+----(2, N'Số đồng phân cấu tạo ứng với công thức phân tử C5H12 là  ? ', 8, 1, 'K11'),--125
+----(2, N'Ankan (CH3)2CHCH2C(CH3)3 có tên gọi là  ? ', 8, 1, 'K11'),--126
+----(2, N'Ankan X có công thức phân tử C6H14. Clo hóa X, thu được 4 sản phẩm dẫn xuất monoclo. Tên gọi của X là  ? ', 8, 1, 'K11'),--127
+----(2, N'Ankan X có chứa 82,76% cacbon theo khối lượng. Số nguyên tử hiđro trong một phân tử X là  ? ', 9, 1, 'K11'),--128
+----(2, N'Ankan X có chứa 14 nguyên tử hiđrô trong phân tử. Số nguyên tử cacbon trong một phân tử X là  ? ', 9, 1, 'K11'),--129
+----(2, N'Dãy đồng đẳng benzen có công thức chung là  ? ', 6, 1, 'K11'),--130
+----(2, N'Công thức phân tử của Strien là  ', 5, 1, 'K11'),--131
+----(2, N'Công thức phân tử của toluen là  ', 5, 1, 'K11  ')--132
+--(2, N'Ứng với công thức C4H8O2 có bao nhiêu este là đồng phân của nhau ?  ', 1, 1, 'K12'),--133
+--(2, N'Este có mùi dứa là  ', 1, 1, 'K12'),--134
+--(2, N'Đun nóng este HCOOCH3 với một lượng vừa đủ dung dịch NaOH, sản phẩm thu được là  ', 2, 1, 'K12'),--135
+--(2, N'Este nào sau đây khi phản ứng với dung dịch NaOH dư, đun nóng không tạo ra hai muối ?  ', 2, 1, 'K12'),--136
+--(2, N'Xà phòng hoá chất nào sau đây thu được glixerol ?  ', 3, 1, 'K12'),--137
+--(2, N'Phát biểu nào sau đây không đúng  ?  ', 4, 1, 'K12'),--138
+--(2, N'Đốt cháy hoàn toàn 0,9 gam một loại gluxit X thu được 1,32 gam CO2 và 0,54 gam H2O. X là chất nào trong số các chất sau ? ', 5, 1, 'K12'),--139
+--(2, N'Lượng glucozơ cần dùng để tạo ra 1,82 gam sobitol vói hiệu suất 80% là ? ', 5, 1, 'K12'),--140
+--(2, N'Cho a gam glucozơ phản ứng với dung dịch AgNO3/NH3 tạo thành a gam Ag. Phần trăm của glucozơ tham gia phản ứng là ? ', 6, 1, 'K12'),--141
+--(2, N'Phát biểu nào sau đây không đúng: ', 4, 1, 'K12'),--142
+--(2, N'Để chứng minh trong phân tử của glucozơ có nhiều nhóm hiđroxyl, người ta cho dung dịch glucozơ phản ứng với: ', 4, 1, 'K12'),--143
+--(2, N'Phát biểu nào sau đây là sai ? ', 4, 1, 'K12'),--144
+--(2, N'Xét 2 nguyên tố ở vị trí 19 và 29 trong bảng tuần hoàn. Kết luận nào sau đây là sai  ? ', 2, 1, 'K12'),--145
+--(2, N'Kim loại M phản ứng với oxi để tạo thành oxit. Khối lượng oxi đã phản ứng bằng 40% khối lượng kim loại đã dùng. Kim loại M là ', 7, 1, 'K12'),--146
+--(2, N'Nhóm A bao gồm các nguyên tố: ', 1, 1, 'K12')--147
+--insert into dapAn values
+--(133,1,N'isoamyl axetat.',0),
+--(133,2,N'etyl butirat.',0),
+--(133,3,N'etyl axetat.',1),
+--(133,4,N'geranyl axctat.',0),
+--(134,1,N'2.',0),
+--(134,2,N'3.',1),
+--(134,3,N'4.',0),
+--(134,4,N'5.',0),
+--(135,1,N'CH3COONa và C2H5OH.',0),
+--(135,2,N'HCOONa và CH3OH..',1),
+--(135,3,N'HCOONa và C2H5OH.',0),
+--(135,4,N'CH3COONa và CH3OH.',0),
+--(136,1,N'C6H5COOC6H5 (phenyl benzoat).',0),
+--(136,2,N'CH3COO-[CH2]2-OOCCH2CH3.',0),
+--(136,3,N'CH3OOC-COOCH3.',1),
+--(136,4,N'CH3COOC6H5 (phenyl axetat).',0),
+--(137,1,N'tristearin .',1),
+--(137,2,N'metyl axetat.',0),
+--(137,3,N'metyl fomat.',0),
+--(137,4,N'benzyl axetat.',0),
+--(138,1,N'Triolein có khả năng tham gia phản ứng cộng hiđro khi đun. nóng có xúc tác Ni .',0),
+--(138,2,N'Các chất béo thường không tan trong nước và nhẹ hơn nước.',0),
+--(138,3,N'Chất béo bị thuỷ phân khi đun nóng trong dung dịch kiềm.',0),
+--(138,4,N'Chất béo là trieste của etylen glicol với các axit béo.',1),
+--(139,1,N'glucozơ .',1),
+--(139,2,N'saccarozơ.',0),
+--(139,3,N'tinh bột.',0),
+--(139,4,N'xenlulozơ.',0),
+--(140,1,N'2,25 gam .',1),
+--(140,2,N'1,80 gam.',0),
+--(140,3,N'1,82 gam.',0),
+--(140,4,N'1,44 gam..',0),
+--(141,1,N'83,33% .',1),
+--(141,2,N'41,66%.',0),
+--(141,3,N'75,00%',0),
+--(141,4,N'37,50%.',0),
+--(142,1,N'Glucozơ tác dụng được với nước brom .',0),
+--(142,2,N'Khi glucozơ tác dụng với CH3COOH (dư) cho este 5 chức.',0),
+--(142,3,N'Glucozơ tồn tại ở dạng mạch hở và dạng mạch vòng',0),
+--(142,4,N'Ở dạng mạch hở, glucozơ có 5 nhóm OH kề nhau.',1),
+--(143,1,N'Kim loại Na .',0),
+--(143,2,N'Cu(OH)2 ở nhiệt độ thường',1),
+--(143,3,N'AgNO3 (hoặc Ag2O) trong dung dịch NH3, đun nóng',0),
+--(143,4,N'Cu(OH)2 trong NaOH, đun nóng',0),
+--(144,1,N'Trong một chu kì, khi điện tích hạt nhân tăng thì tính kim loại tăng dần .',1),
+--(144,2,N'Trong một nhóm theo chiều tăng dần của điện tích hạt nhân, tính kim loại tăng',0),
+--(144,3,N'Kim loại có độ âm điện bé hơn phi kim trong cùng chu kì.',0),
+--(144,4,N'Đa số các kim loại đều có cấu tạo tinh thể',0),
+--(145,1,N'Hai nguyên tố này cùng là kim loại .',0),
+--(145,2,N'Hai nguyên tố này thuộc cùng một chu’kì.',0),
+--(145,3,N'Hai nguyên tố này có cùng số e lớp ngoài cùng ở trạng thái cơ bản.',0),
+--(145,4,N'Hai nguyên tố này cùng là nguyên tố s.',1),
+--(146,1,N'Na .',0),
+--(146,2,N'Ca.',1),
+--(146,3,N'Fa.',0),
+--(146,4,N'AL',0),
+--(147,1,N'Nguyên tố s .',0),
+--(147,2,N'Nguyên tố p.',0),
+--(147,3,N'Nguyên tố d và nguyên tố f.',0),
+--(147,4,N'Nguyên tố s và nguyên tố p',1)
 --(118,1,N'KCL nóng chảy, dung dịch NaOH, dung dịch HNO3.',1),
 --(118,2,N'dung dịch glucozơ , dung dịch ancol etylic , glixerol.',0),
 --(118,3,N'KCL rắn khan, NaOH rắn khan, kim cương.',0),
