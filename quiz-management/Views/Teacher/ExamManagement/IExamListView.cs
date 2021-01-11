@@ -11,7 +11,7 @@ namespace quiz_management.Views.Teacher.ExamManagement
 {
     interface IExamListView
     {
-        BindingList<TestSchedule> dtgv {set; }
+        Binding<TestSchedule> dtgv {set; }
         DataGridView lichthichon { get; }
 
         event EventHandler GobackBefore;
