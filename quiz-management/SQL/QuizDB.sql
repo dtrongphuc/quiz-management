@@ -21,6 +21,7 @@ CREATE TABLE Lop
 	CONSTRAINT PK_Lop
 	PRIMARY KEY (maLopHoc)
 )
+
 alter table Lop add constraint FK_lop_khoiLop FOREIGN KEY(maKhoiLop) references khoiLop(maKhoiLop)
 select * from boDe 
 update boDe set trangThai = 0 where maBoDe =1
@@ -99,7 +100,7 @@ CREATE TABLE cauHoi
 	CONSTRAINT PK_cauHoi
 	PRIMARY KEY (maCauHoi)
 )
-alter table cauhoi alter column cauHoi nvarchar(300)
+alter table cauhoi alter column cauHoi nvarchar(500)
 alter table cauHoi add constraint df_trangthai default 1 for trangThai
 alter table cauHoi add constraint FK_cauHoi_monHoc foreign key(maMonHoc) references monHoc(maMonHoc)
 alter table cauHoi add constraint FK_cauHoi_khoiLop foreign key(maKhoiLop) references khoiLop(maKhoiLop)
