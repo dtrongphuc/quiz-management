@@ -30,7 +30,7 @@
     <Type Name="cauHoi">
       <Column Name="maCauHoi" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="maMonHoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="cauHoi" Member="cauHoi1" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="cauHoi" Member="cauHoi1" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
       <Column Name="doKho" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="trangThai" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="maKhoiLop" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
@@ -72,7 +72,7 @@
     <Type Name="dapAn">
       <Column Name="maCauHoi" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="maCauTraloi" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="cauTraLoi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="cauTraLoi" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="dapAn" Member="dapAn1" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="dapAn_cTKetQua" Member="cTKetQuas" ThisKey="maCauHoi,maCauTraloi" OtherKey="maCauHoi,maCauTraLoi" Type="cTKetQua" />
       <Association Name="cauHoi_dapAn" Member="cauHoi" ThisKey="maCauHoi" OtherKey="maCauHoi" Type="cauHoi" IsForeignKey="true" />
@@ -133,7 +133,6 @@
       <Association Name="boDe_kyThiThu" Member="boDe" ThisKey="maBoDe" OtherKey="maBoDe" Type="boDe" IsForeignKey="true" />
       <Association Name="khoiLop_kyThiThu" Member="khoiLop" ThisKey="maKhoiLop" OtherKey="maKhoiLop" Type="khoiLop" IsForeignKey="true" />
       <Association Name="monHoc_kyThiThu" Member="monHoc" ThisKey="maMonHoc" OtherKey="maMonHoc" Type="monHoc" IsForeignKey="true" />
-      <Association Name="nguoiDung_kyThiThu" Member="nguoiDung" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="nguoiDung" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.lichThi" Member="lichThis">
@@ -187,7 +186,6 @@
       <Association Name="nguoiDung_thongTin" Member="thongTin" ThisKey="maNguoiDung" OtherKey="maNguoidung" Type="thongTin" Cardinality="One" />
       <Association Name="nguoiDung_dongGop" Member="dongGops" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="dongGop" />
       <Association Name="nguoiDung_ketQua" Member="ketQuas" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="ketQua" />
-      <Association Name="nguoiDung_kyThiThu" Member="kyThiThus" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="kyThiThu" />
       <Association Name="nguoiDung_lichThi" Member="lichThis" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="lichThi" />
       <Association Name="nguoiDung_luyenTap" Member="luyenTaps" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="luyenTap" />
     </Type>

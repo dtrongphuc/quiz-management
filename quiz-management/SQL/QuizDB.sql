@@ -91,7 +91,7 @@ CREATE TABLE cauHoi
 (
 	maCauHoi INT IDENTITY,
 	maMonHoc INT,
-	cauHoi NVARCHAR(100),
+	cauHoi NVARCHAR(500),
 	doKho INT,
     trangThai int,
     maKhoiLop  varchar(5)
@@ -99,7 +99,7 @@ CREATE TABLE cauHoi
 	CONSTRAINT PK_cauHoi
 	PRIMARY KEY (maCauHoi)
 )
-alter table cauhoi alter column cauHoi nvarchar(300)
+alter table cauhoi alter column cauHoi nvarchar(500)
 alter table cauHoi add constraint df_trangthai default 1 for trangThai
 alter table cauHoi add constraint FK_cauHoi_monHoc foreign key(maMonHoc) references monHoc(maMonHoc)
 alter table cauHoi add constraint FK_cauHoi_khoiLop foreign key(maKhoiLop) references khoiLop(maKhoiLop)
