@@ -5,6 +5,7 @@ using quiz_management.Views.Student;
 using quiz_management.Views.Student.Exam;
 using quiz_management.Views.Teacher.ExamManagement;
 using quiz_management.Views.Teacher.MockExamManagement;
+using quiz_management.Views.Teacher.PaperManagement;
 using quiz_management.Views.Teacher.QuestionManagement;
 using System;
 using System.Collections.Generic;
@@ -72,6 +73,10 @@ namespace quiz_management.Views.Teacher.Main
             {
                 WatchOrPrintExamClick?.Invoke(btnXemDSThi, e);
             };
+            btnQLDeThi.Click += (_, e) =>
+            {
+                PaperClick?.Invoke(btnQLDeThi, e);
+            };
         }
 
         public event EventHandler UpdateInfo;
@@ -87,6 +92,7 @@ namespace quiz_management.Views.Teacher.Main
         public event EventHandler WatchOrPrintExamCompletedClick;
         public event EventHandler ListMockExamClick;
         public event EventHandler WatchOrPrintExamClick;
+        public event EventHandler PaperClick;
 
         public string TeacherName { set => tbTeacherName.Text = value; }
         public string TeacherID { set => tbTeacherID.Text = value; }
@@ -281,6 +287,14 @@ namespace quiz_management.Views.Teacher.Main
         {
             this.Hide();
             WatchOrPrintExamView screen = new WatchOrPrintExamView(code);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
+        }
+
+        public void ShowCreatePaper(int code)
+        {
+            this.Hide();
+            CreatePaperView screen = new CreatePaperView(code);
             screen.FormClosed += (_, e) => this.Close();
             screen.Show();
         }

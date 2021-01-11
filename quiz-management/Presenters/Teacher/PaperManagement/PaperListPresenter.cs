@@ -34,6 +34,14 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
         {
             using (var db = new QuizDataContext())
             {
+                //ktr nếu có trong đề thi thì ko cho xóa
+                var checkDelete = db.ketQuas.Where(i => i.maBoDe == int.Parse(view.PaperID)).ToList();
+
+                if(checkDelete.Count > 0)
+                {
+                    view.ShowMessage("Câu hỏi có trong đề thi không thể xóa");
+                    return;
+                }    
                 //item trong chi tiết bộ đề
                 var itemsDetailpaper = db.cTBoDes.Where(i => i.maBoDe == int.Parse(view.PaperID)).ToList();
                 foreach (var i in itemsDetailpaper)
