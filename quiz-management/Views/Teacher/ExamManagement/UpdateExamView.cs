@@ -42,14 +42,12 @@ namespace quiz_management.Views.Teacher.ExamManagement
         }
 
         
-        public BindingList<thongTin> lstHocSinh { set => dtgHocSinh.DataSource = value; }
-        public BindingList<thongTin> lstThiSinh { set => dgvThiSinh.DataSource = value; }
-        public DataGridView lstThiSinhChon => dgvThiSinh;
-        public DataGridView lstHocSinhChon => dtgHocSinh;
-        public string monHocChon { set => tbMonHocChon.Text=value; }
-        public string DeThiChon { set => tbBoDeChon.Text = value; }
-        public string NgayThi {set => tbNgayThiChon.Text = value; }
-        public string KhoiLopChon { set => tbKhoiLopChon.Text = value; }
+        public DataGridView lstHocSinh { get => dtgHocSinh; }
+        public DataGridView lstThiSinh { get => dgvThiSinh; }
+        public string monHocChon { set => tbMonHocChon.DataBindings.Add("Text", value, "");}
+        public string DeThiChon { set => tbBoDeChon.DataBindings.Add("Text", value, ""); }
+        public string NgayThi {set => tbNgayThiChon.DataBindings.Add("Text", value, "");}
+        public string KhoiLopChon { set => tbKhoiLopChon.DataBindings.Add("Text", value, ""); }
 
         public event EventHandler GoBackBefore;
         public event EventHandler Submit;

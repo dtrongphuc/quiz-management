@@ -44,7 +44,6 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
                     ts.NgayThi = lstlichthi[0].ngayThi;
                     lst.Add(ts);
                 }
-
                 Fill();
             }
         }
@@ -52,6 +51,8 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
     
         private void View_UpdateExam(object sender, EventArgs e)
         {
+            if (view.dtgv.RowCount == 0)
+                return;
             var x = view.dtgv.SelectedRows[0];
             var id = x.Cells["maLichThi"].Value.ToString();
             view.ShowUpdateExamView(int.Parse(id),currentcode);
@@ -65,6 +66,8 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
 
         private void View_Delete(object sender, EventArgs e)
         {
+            if (view.dtgv.RowCount == 0)
+                return;
             var x = view.dtgv.SelectedRows[0];
             var id = x.Cells["maLichThi"].Value.ToString();
             using (var db = new QuizDataContext())
@@ -94,8 +97,6 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             lstbinding = new BindingSource();
             lstbinding.DataSource = lst;
             view.dtgv.DataSource = lstbinding;
-
-            
         }
     }
 }
