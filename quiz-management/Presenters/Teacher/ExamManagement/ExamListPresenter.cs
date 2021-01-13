@@ -49,6 +49,7 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             }
         }
 
+    
         private void View_UpdateExam(object sender, EventArgs e)
         {
             var x = view.dtgv.SelectedRows[0];
@@ -69,11 +70,17 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             using (var db = new QuizDataContext())
             {
                 var lt = db.lichThis.Where(p => p.maLichThi == int.Parse(id)).ToList();
-                db.lichThis.DeleteOnSubmit(lt[0]);
-                db.SubmitChanges();
                 var itemdelete = lst.Where(i => i.MaLichThi == int.Parse(id)).ToList();
+
+                for (int i=0;i<lt.Count();i++)
+                {
+                    db.lichThis.DeleteOnSubmit(lt[i]);
+                   
+                }
                 lst.Remove(itemdelete[0]);
+                db.SubmitChanges();
             }
+            
             Fill();
         }
 
@@ -88,10 +95,7 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             lstbinding.DataSource = lst;
             view.dtgv.DataSource = lstbinding;
 
-            /*if (lst.Count != 0)
-                view.dtgv = lst;
-            else
-                view.dtgv = null;*/
+            
         }
     }
 }

@@ -23,6 +23,7 @@ namespace quiz_management.Views.Teacher.ExamManagement
         void ShowMessage(string text);
         void ShowUpdateExamView(int code, int userid);
         void ShowMainTeachView(int code);
-        
+
+
     }
 }

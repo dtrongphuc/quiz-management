@@ -50,11 +50,11 @@ namespace quiz_management.Views.Teacher.ExamManagement
 
         public DateTime NgayThi => dtpNgayThi.Value;
 
-        public BindingList<monHoc> lstMonHoc { set => cbMonHoc.DataSource = value; }
-        public BindingList<thongTin> lstHocSinh { set => dtgHocSinh.DataSource = value; }
-        public BindingList<thongTin> lstThiSinh { set => dgvThiSinh.DataSource = value; }
-        public BindingList<boDe> lstDeThi { set =>cbBoDe.DataSource = value; }
-        public BindingList<khoiLop> lstKhoiLop { set => cbbKhoiLop.DataSource = value; }
+        public ComboBox lstMonHoc { get => cbMonHoc; }
+        public DataGridView lstHocSinh { get => dtgHocSinh; }
+        public DataGridView lstThiSinh { get => dgvThiSinh; }
+        public ComboBox lstDeThi { get =>cbBoDe; }
+        public ComboBox lstKhoiLop { get => cbbKhoiLop; }
 
         public string monHocChon {
             get
@@ -65,7 +65,7 @@ namespace quiz_management.Views.Teacher.ExamManagement
 
         public string DeThiChon => cbBoDe.SelectedValue.ToString();
 
-        public DataGridView lstThiSinhChon
+        /*public DataGridView lstThiSinhChon
         {
             get
             {
@@ -79,7 +79,7 @@ namespace quiz_management.Views.Teacher.ExamManagement
             {
                 return dtgHocSinh;
             }
-        }
+        }*/
 
         public string KhoiLopChon => cbbKhoiLop.SelectedValue.ToString();
 

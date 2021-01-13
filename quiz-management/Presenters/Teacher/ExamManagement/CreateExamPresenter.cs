@@ -14,11 +14,19 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
     {
         ICreateExamView view;
         int currentcode;
-        BindingList<thongTin> lstHocSinh;
-        BindingList<monHoc> lstMonHoc;
-        BindingList<khoiLop> lstLop;
-        BindingList<boDe> lstbode;
-        BindingList<thongTin> lstThiSinh;
+        IList<thongTin> lstHocSinh;
+        IList<monHoc> lstMonHoc;
+        IList<khoiLop> lstLop;
+        IList<boDe> lstbode;
+        IList<thongTin> lstThiSinh;
+        BindingSource  lstHocSinhsource;
+        BindingSource lstMonHocsource;
+        BindingSource  lstLopsource;
+        BindingSource lstbodesource;
+        BindingSource  lstThiSinhsource;
+
+
+
         public CreateExamPresenter(ICreateExamView v, int code)
         {
             view = v;
@@ -51,19 +59,38 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             string idkhoilop = view.KhoiLopChon;
             int idmonhoc = int.Parse(view.monHocChon);
             lstbode = FindBymonHocIdVaLopId(idmonhoc, idkhoilop);
-            view.lstDeThi = lstbode;
+            lstbodesource.DataSource = lstbode;
+            view.lstDeThi.DataSource = lstbodesource;
 
             lstHocSinh = FindByBoDeId(idkhoilop);
             lstThiSinh = null;
-            view.lstHocSinh = lstHocSinh;
-            view.lstThiSinh = lstThiSinh;
+            lstHocSinhsource.DataSource = lstHocSinh;
+            view.lstHocSinh.DataSource = lstHocSinhsource;
+
+            lstThiSinhsource.DataSource = lstThiSinh;
+            view.lstThiSinh.DataSource = lstThiSinhsource;
         }
         private void Fill()
         {
-            view.lstMonHoc = lstMonHoc;
-            view.lstDeThi = lstbode;
-            view.lstHocSinh = lstHocSinh;
-            view.lstKhoiLop = lstLop;
+            FillSource();
+            view.lstMonHoc.DataSource = lstMonHocsource;
+            view.lstDeThi.DataSource = lstbodesource;
+            view.lstHocSinh.DataSource = lstHocSinhsource;
+            view.lstKhoiLop.DataSource = lstLopsource;
+        }
+
+        private void FillSource()
+        {
+            lstMonHocsource = new BindingSource();
+            lstbodesource = new BindingSource();
+            lstHocSinhsource = new BindingSource();
+            lstLopsource = new BindingSource();
+            lstThiSinhsource = new BindingSource();
+
+            lstMonHocsource.DataSource = lstMonHoc;
+            lstbodesource.DataSource = lstbode;
+            lstHocSinhsource.DataSource = lstHocSinh;
+            lstLopsource.DataSource = lstLop;
         }
 
         private void View_SubjectChange(object sender, EventArgs e)
@@ -71,14 +98,16 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             string idkhoilop = view.KhoiLopChon;
             int idmonhoc = int.Parse(view.monHocChon);
             lstbode = FindBymonHocIdVaLopId(idmonhoc, idkhoilop);
-            view.lstDeThi = lstbode;
+
+            lstbodesource.DataSource = lstbode;
+            view.lstDeThi.DataSource = lstbodesource;
         }
 
         private void View_MoveLeft(object sender, EventArgs e)
         {
             if (lstHocSinh == null)
                 lstHocSinh = new BindingList<thongTin>();
-            foreach (DataGridViewRow i in view.lstThiSinhChon.SelectedRows)
+            foreach (DataGridViewRow i in view.lstThiSinh.SelectedRows)
             {
                 var id = i.Cells["ThiSinhDuocChon"].Value.ToString();
                 var temp = lstThiSinh.Where(x => x.maNguoidung == int.Parse(id)).ToList();
@@ -89,15 +118,23 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
                 if (lstThiSinh.Count == 0)
                     lstThiSinh = null;
             }
-            view.lstHocSinh = lstHocSinh;
-            view.lstThiSinh = lstThiSinh;
+            FillStudent();
+            
+        }
+
+        private void FillStudent()
+        {
+            lstThiSinhsource.DataSource = lstThiSinh;
+            lstHocSinhsource.DataSource = lstHocSinh;
+            view.lstHocSinh.DataSource = lstHocSinhsource;
+            view.lstThiSinh.DataSource = lstThiSinhsource;
         }
 
         private void View_MoveRight(object sender, EventArgs e)
         {
             if (lstThiSinh == null)
                 lstThiSinh = new BindingList<thongTin>();
-            foreach (DataGridViewRow i in view.lstHocSinhChon.SelectedRows)
+            foreach (DataGridViewRow i in view.lstHocSinh.SelectedRows)
             {
                 var id = i.Cells["HocSinhDuocChon"].Value.ToString();
 
@@ -109,8 +146,7 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
                 if (lstHocSinh.Count == 0)
                     lstHocSinh = null;
             }
-            view.lstHocSinh = lstHocSinh;
-            view.lstThiSinh = lstThiSinh;
+            FillStudent();
         }
 
 
@@ -126,7 +162,7 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             }
             using (var db = new QuizDataContext())
             {
-                int malt = db.lichThis.Max(p => p.maLichThi);
+                int malt = db.lichThis.DefaultIfEmpty().Max(p => p == null ? 0 : p.maLichThi);
                 foreach (thongTin i in lstThiSinh)
                 {
                     db.lichThis.InsertOnSubmit(new lichThi

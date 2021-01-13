@@ -37,6 +37,10 @@ namespace quiz_management.Views.Teacher.ExamManagement
             {
                 AddExam?.Invoke(btnThem, e);
             };
+            dgvLichThi.CellFormatting+= (_, e) =>
+            {
+                formatting?.Invoke(dgvLichThi, e);
+            };
         }
 
         
@@ -47,6 +51,9 @@ namespace quiz_management.Views.Teacher.ExamManagement
         public event EventHandler Delete;
         public event EventHandler UpdateExam;
         public event EventHandler AddExam;
+        public event EventHandler formatting;
+
+       
 
         public void ShowCreateExamView(int code)
         {
@@ -77,6 +84,18 @@ namespace quiz_management.Views.Teacher.ExamManagement
             UpdateExamView screen = new UpdateExamView(code,userid);
             screen.FormClosed += (_, e) => this.Close();
             screen.Show();
+        }
+
+        private void dgvLichThi_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex < 0 || e.RowIndex == this.dgvLichThi.NewRowIndex)
+            {
+                return;
+            }
+            if (e.ColumnIndex == this.dgvLichThi.Columns["STT"].Index)
+            {
+                e.Value = e.RowIndex + 1;
+            }
         }
     }
 }
