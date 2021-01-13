@@ -31,17 +31,11 @@ namespace quiz_management.Views.Teacher.StudentManagement
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvQuestionStatistic = new System.Windows.Forms.DataGridView();
-            this.MaCauHoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CauHoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TiLeRaDe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TiLeChonDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TiLeChonSai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionStatistic)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -57,8 +51,8 @@ namespace quiz_management.Views.Teacher.StudentManagement
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dgvQuestionStatistic);
-            this.splitContainer1.Size = new System.Drawing.Size(800, 450);
+            this.splitContainer1.Panel2.Controls.Add(this.reportViewer1);
+            this.splitContainer1.Size = new System.Drawing.Size(1054, 450);
             this.splitContainer1.SplitterDistance = 107;
             this.splitContainer1.TabIndex = 3;
             // 
@@ -66,82 +60,37 @@ namespace quiz_management.Views.Teacher.StudentManagement
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(280, 40);
+            this.label1.Location = new System.Drawing.Point(390, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(240, 26);
             this.label1.TabIndex = 3;
             this.label1.Text = "THỐNG KÊ CÂU HỎI";
             // 
-            // dgvQuestionStatistic
+            // reportViewer1
             // 
-            this.dgvQuestionStatistic.AllowUserToAddRows = false;
-            this.dgvQuestionStatistic.AllowUserToDeleteRows = false;
-            this.dgvQuestionStatistic.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvQuestionStatistic.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvQuestionStatistic.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvQuestionStatistic.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaCauHoi,
-            this.CauHoi,
-            this.TiLeRaDe,
-            this.TiLeChonDung,
-            this.TiLeChonSai});
-            this.dgvQuestionStatistic.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvQuestionStatistic.Location = new System.Drawing.Point(0, 0);
-            this.dgvQuestionStatistic.Name = "dgvQuestionStatistic";
-            this.dgvQuestionStatistic.ReadOnly = true;
-            this.dgvQuestionStatistic.RowHeadersVisible = false;
-            this.dgvQuestionStatistic.Size = new System.Drawing.Size(800, 339);
-            this.dgvQuestionStatistic.TabIndex = 0;
-            // 
-            // MaCauHoi
-            // 
-            this.MaCauHoi.DataPropertyName = "MaCauHoi";
-            this.MaCauHoi.HeaderText = "Mã câu hỏi";
-            this.MaCauHoi.Name = "MaCauHoi";
-            this.MaCauHoi.ReadOnly = true;
-            // 
-            // CauHoi
-            // 
-            this.CauHoi.DataPropertyName = "CauHoi";
-            this.CauHoi.HeaderText = " Câu hỏi";
-            this.CauHoi.Name = "CauHoi";
-            this.CauHoi.ReadOnly = true;
-            // 
-            // TiLeRaDe
-            // 
-            this.TiLeRaDe.DataPropertyName = "TiLeRaDe";
-            this.TiLeRaDe.HeaderText = "Tỉ lệ ra đề";
-            this.TiLeRaDe.Name = "TiLeRaDe";
-            this.TiLeRaDe.ReadOnly = true;
-            // 
-            // TiLeChonDung
-            // 
-            this.TiLeChonDung.DataPropertyName = "TiLeChonDung";
-            this.TiLeChonDung.HeaderText = "Tỉ lệ chọn đúng";
-            this.TiLeChonDung.Name = "TiLeChonDung";
-            this.TiLeChonDung.ReadOnly = true;
-            // 
-            // TiLeChonSai
-            // 
-            this.TiLeChonSai.DataPropertyName = "TiLeChonSai";
-            this.TiLeChonSai.HeaderText = "Tỉ lệ chọn sai";
-            this.TiLeChonSai.Name = "TiLeChonSai";
-            this.TiLeChonSai.ReadOnly = true;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "quiz_management.Views.Teacher.StudentManagement.QuestionStatisticReport.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(1054, 339);
+            this.reportViewer1.TabIndex = 0;
             // 
             // QuestionStatisticView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1054, 450);
             this.Controls.Add(this.splitContainer1);
             this.Name = "QuestionStatisticView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QuestionStatisticView";
+            this.Load += new System.EventHandler(this.QuestionStatisticView_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionStatistic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -150,11 +99,6 @@ namespace quiz_management.Views.Teacher.StudentManagement
 
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvQuestionStatistic;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaCauHoi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CauHoi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TiLeRaDe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TiLeChonDung;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TiLeChonSai;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

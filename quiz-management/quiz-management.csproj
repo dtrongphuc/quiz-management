@@ -111,6 +111,7 @@
       <DependentUpon>Quiz.dbml</DependentUpon>
     </Compile>
     <Compile Include="Models\ResultExam.cs" />
+    <Compile Include="Models\ResultExamUser.cs" />
     <Compile Include="Models\StudentOfExam.cs" />
     <Compile Include="Models\StudentStatistic.cs" />
     <Compile Include="Models\TestSchedule.cs" />
@@ -471,6 +472,7 @@
     <EmbeddedResource Include="Views\Student\InfoPersonal\ProfileView.resx">
       <DependentUpon>ProfileView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Student\InfoPersonal\ResultExamReport.rdlc" />
     <EmbeddedResource Include="Views\Student\InfoPersonal\ResultExamView.resx">
       <DependentUpon>ResultExamView.cs</DependentUpon>
     </EmbeddedResource>
@@ -492,9 +494,11 @@
     <EmbeddedResource Include="Views\Teacher\ExamManagement\UpdateExamView.resx">
       <DependentUpon>UpdateExamView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Teacher\ExamManagement\WatchOrPrintExamCompleted.rdlc" />
     <EmbeddedResource Include="Views\Teacher\ExamManagement\WatchOrPrintExamCompletedView.resx">
       <DependentUpon>WatchOrPrintExamCompletedView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Teacher\ExamManagement\WatchOrPrintExamReport.rdlc" />
     <EmbeddedResource Include="Views\Teacher\ExamManagement\WatchOrPrintExamView.resx">
       <DependentUpon>WatchOrPrintExamView.cs</DependentUpon>
     </EmbeddedResource>
@@ -535,6 +539,7 @@
     <EmbeddedResource Include="Views\Teacher\StudentManagement\ExamStatisticView.resx">
       <DependentUpon>ExamStatisticView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Teacher\StudentManagement\QuestionStatisticReport.rdlc" />
     <EmbeddedResource Include="Views\Teacher\StudentManagement\QuestionStatisticView.resx">
       <DependentUpon>QuestionStatisticView.cs</DependentUpon>
     </EmbeddedResource>
@@ -553,7 +558,12 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\quiz_management.Models.ExamStatistic.datasource" />
     <None Include="Properties\DataSources\quiz_management.Models.PracticStatistic.datasource" />
+    <None Include="Properties\DataSources\quiz_management.Models.QuestionStatistic.datasource" />
+    <None Include="Properties\DataSources\quiz_management.Models.QuestionStatistic1.datasource" />
+    <None Include="Properties\DataSources\quiz_management.Models.ResultExam.datasource" />
+    <None Include="Properties\DataSources\quiz_management.Models.StudentOfExam.datasource" />
     <None Include="Properties\DataSources\quiz_management.Models.StudentStatistic.datasource" />
+    <None Include="Properties\DataSources\quiz_management.Models.TrainScript.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
