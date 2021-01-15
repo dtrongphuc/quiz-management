@@ -33,6 +33,7 @@ namespace quiz_management.Presenters.Student.InfoPersonal
                                 .Where(c => c.trangThai == 1).ToList();
 
                 var dbUser = db.nguoiDungs.SingleOrDefault(n => n.maNguoiDung == currentcode);
+
                 ResultExamUser user = new ResultExamUser
                 {
                     MaHocSinh = dbUser.maNguoiDung,

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbLogin = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -36,8 +37,8 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.ToRegisterView = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
-            this.username = new _18600209.RequiredFieldValidator();
-            this.password = new _18600209.RequiredFieldValidator();
+            this.username = new quiz_management.Validate.RequiredFieldValidator(this.components);
+            this.password = new quiz_management.Validate.RequiredFieldValidator(this.components);
             this.SuspendLayout();
             // 
             // lbLogin
@@ -127,7 +128,7 @@
             // username
             // 
             this.username.ControlToValidate = this.txtUsername;
-            this.username.ErrorMessage = "Tên đăng nhập không hợp lệ";
+            this.username.ErrorMessage = null;
             this.username.InitialValue = null;
             this.username.IsValid = false;
             this.username.Regex = null;
@@ -135,10 +136,10 @@
             // password
             // 
             this.password.ControlToValidate = this.txtPassword;
-            this.password.ErrorMessage = "Mật khẩu không hợp lệ";
+            this.password.ErrorMessage = null;
             this.password.InitialValue = null;
             this.password.IsValid = false;
-            this.password.Regex = "";
+            this.password.Regex = null;
             // 
             // LoginView
             // 
@@ -172,7 +173,7 @@
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.LinkLabel ToRegisterView;
         private System.Windows.Forms.Label label3;
-        private _18600209.RequiredFieldValidator username;
-        private _18600209.RequiredFieldValidator password;
+        private Validate.RequiredFieldValidator username;
+        private Validate.RequiredFieldValidator password;
     }
 }
