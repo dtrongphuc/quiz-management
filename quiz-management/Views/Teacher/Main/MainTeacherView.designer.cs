@@ -66,6 +66,7 @@
             this.btnQLKyThiThu = new System.Windows.Forms.Button();
             this.timerThongKe = new System.Windows.Forms.Timer(this.components);
             this.timeQLKyThi = new System.Windows.Forms.Timer(this.components);
+            this.btnLogout = new System.Windows.Forms.Button();
             this.flowLayoutPanel2.SuspendLayout();
             this.panelThongKe.SuspendLayout();
             this.panelLamBaiThi.SuspendLayout();
@@ -402,6 +403,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnLogout);
             this.groupBox2.Controls.Add(this.txtTitle2);
             this.groupBox2.Controls.Add(this.txtTitle1);
             this.groupBox2.Controls.Add(this.flowLayoutPanel2);
@@ -550,6 +552,15 @@
             this.timeQLKyThi.Interval = 15;
             this.timeQLKyThi.Tick += new System.EventHandler(this.timeQLKyThi_Tick);
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(432, 22);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(109, 29);
+            this.btnLogout.TabIndex = 4;
+            this.btnLogout.Text = "Đăng xuất";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            // 
             // MainTeacherView
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -616,6 +627,7 @@
         private System.Windows.Forms.Timer timeQLKyThi;
         private System.Windows.Forms.TextBox tbDOB;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnLogout;
     }
 }
 

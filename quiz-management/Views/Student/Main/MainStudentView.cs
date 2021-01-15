@@ -20,10 +20,10 @@ namespace quiz_management.Views.Student.Main
         private MainStudentPresenter presenter;
         private int _currentUserCode;
 
-        public string DOBHS { set => txtStudentDOBview.DataBindings.Add("Text", value, ""); }
-        public string IdHS { set => txtStudentIDview.DataBindings.Add("Text", value, ""); }
-        public string NameHS { set => lbStudentNameview.DataBindings.Add("Text", value, ""); }
-        public string LopHS { set => txtclassview.DataBindings.Add("Text", value, ""); }
+        public string DOBHS { set => txtStudentDOBview.Text = value; }
+        public string IdHS { set => txtStudentIDview.Text = value; }
+        public string NameHS { set => lbStudentNameview.Text = value; }
+        public string LopHS { set => txtclassview.Text = value; }
 
         public event EventHandler EditProfile;
 
@@ -38,6 +38,7 @@ namespace quiz_management.Views.Student.Main
         public event EventHandler PracticExamClick;
 
         public event EventHandler PracticStatisticClick;
+
         public event EventHandler LogoutClick;
 
         public MainStudentView(int u)

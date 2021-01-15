@@ -77,6 +77,10 @@ namespace quiz_management.Views.Teacher.Main
             {
                 PaperClick?.Invoke(btnQLDeThi, e);
             };
+            btnLogout.Click += (_, e) =>
+            {
+                LogoutClick?.Invoke(btnLogout, e);
+            };
         }
 
         public event EventHandler UpdateInfo;
@@ -93,6 +97,7 @@ namespace quiz_management.Views.Teacher.Main
         public event EventHandler ListMockExamClick;
         public event EventHandler WatchOrPrintExamClick;
         public event EventHandler PaperClick;
+        public event EventHandler LogoutClick;
 
         public string TeacherName { set => tbTeacherName.Text = value; }
         public string TeacherID { set => tbTeacherID.Text = value; }
@@ -295,6 +300,14 @@ namespace quiz_management.Views.Teacher.Main
         {
             this.Hide();
             CreatePaperView screen = new CreatePaperView(code);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
+        }
+
+        public void ShowLogin()
+        {
+            this.Hide();
+            LoginView screen = new LoginView();
             screen.FormClosed += (_, e) => this.Close();
             screen.Show();
         }

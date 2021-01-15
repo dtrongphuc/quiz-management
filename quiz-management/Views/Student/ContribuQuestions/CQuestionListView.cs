@@ -31,7 +31,7 @@ namespace quiz_management.Views.Student.ContribuQuestions
         }
 
         public List<ContributeQuestion> contributed { set => dtgCQuestionList.DataSource = value; }
-        public string StudentID { set => lbStudentID.DataBindings.Add("Text", value, ""); }
+        public string StudentID { set => lbStudentID.Text = value; }
 
         public event EventHandler Closepage;
         public event EventHandler GoBackBefore;
