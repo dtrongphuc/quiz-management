@@ -78,7 +78,7 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
             {
                 //string teachername = db.nguoiDungs.Select(i => i.maNguoiDung == code).ToString();
                 //binding tên giáo viên
-                var teachername = db.thongTins.Where(i => i.maNguoidung == 1).Select(i => i.tenNguoiDung).ToList();
+                var teachername = db.thongTins.Where(i => i.maNguoidung == currenUserCode).Select(i => i.tenNguoiDung).ToList();
                 view.TeacherName = teachername[0].ToString();
 
                 //binding khối lớp

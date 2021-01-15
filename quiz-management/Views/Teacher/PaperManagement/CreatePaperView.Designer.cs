@@ -98,6 +98,7 @@
             // 
             this.dgvQuestionList.AllowUserToAddRows = false;
             this.dgvQuestionList.AllowUserToDeleteRows = false;
+            this.dgvQuestionList.AllowUserToResizeRows = false;
             this.dgvQuestionList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvQuestionList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvQuestionList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -203,6 +204,7 @@
             // 
             this.dgvQuestionSelectedList.AllowUserToAddRows = false;
             this.dgvQuestionSelectedList.AllowUserToDeleteRows = false;
+            this.dgvQuestionSelectedList.AllowUserToResizeRows = false;
             this.dgvQuestionSelectedList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvQuestionSelectedList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvQuestionSelectedList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -279,7 +281,6 @@
             // cbbExam
             // 
             this.cbbExam.DisplayMember = "tenKhoiLop";
-            this.cbbExam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbExam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbExam.FormattingEnabled = true;
             this.cbbExam.Items.AddRange(new object[] {
@@ -289,6 +290,7 @@
             this.cbbExam.Name = "cbbExam";
             this.cbbExam.Size = new System.Drawing.Size(186, 28);
             this.cbbExam.TabIndex = 26;
+            this.cbbExam.Text = "Chính thức";
             this.cbbExam.ValueMember = "maKhoiLop";
             // 
             // CreatePaperView

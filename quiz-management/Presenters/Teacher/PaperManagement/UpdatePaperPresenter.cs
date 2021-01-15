@@ -19,6 +19,7 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
         BindingList<CreatePaperWithQuestion> ListQuestion = null;
         string gradeID;
         int subjectID;
+        int status;
         public UpdatePaperPresenter(IUpdatePaperView v, int code, int paperid)
         {
             view = v;
@@ -124,7 +125,9 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
                 }
                 view.listQuestionselected = ListQuestionselcted;
 
+                //db.cauHois.Where(i => i.maKhoiLop == view.Grade && i.maMonHoc == int.Parse(view.Subject) && i.trangThai == status).ToList();
                 var listQuestions = db.cauHois.Where(i => i.maKhoiLop == gradeID && i.maMonHoc == subjectID).ToList();
+                //var listQuestions1 = db.cauHois.Where(i => i.maKhoiLop == gradeID && i.maMonHoc == subjectID && i.trangThai == status).ToList();
                 foreach (var i in listQuestions)
                 {
                     CreatePaperWithQuestion pp = new CreatePaperWithQuestion();

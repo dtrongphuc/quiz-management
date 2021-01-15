@@ -404,7 +404,13 @@
             "1",
             "2",
             "3",
-            "4"});
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
             this.cbbDifficute.Location = new System.Drawing.Point(170, 644);
             this.cbbDifficute.Name = "cbbDifficute";
             this.cbbDifficute.Size = new System.Drawing.Size(121, 28);
