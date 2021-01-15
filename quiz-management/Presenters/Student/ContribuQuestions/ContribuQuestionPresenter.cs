@@ -63,11 +63,11 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
 
             //kiem tra cau tra loi phai co cau hoi
             checkQuestionMustAnwser = answerA == "" && checkA == 1 ? false : true;
-            checkQuestionMustAnwser = answerB == "" && checkA == 1 ? false : true;
-            checkQuestionMustAnwser = answerC == "" && checkA == 1 ? false : true;
-            checkQuestionMustAnwser = answerD == "" && checkA == 1 ? false : true;
-            checkQuestionMustAnwser = answerE == "" && checkA == 1 ? false : true;
-            checkQuestionMustAnwser = answerF == "" && checkA == 1 ? false : true;
+            checkQuestionMustAnwser = answerB == "" && checkB == 1 ? false : true;
+            checkQuestionMustAnwser = answerC == "" && checkC == 1 ? false : true;
+            checkQuestionMustAnwser = answerD == "" && checkD == 1 ? false : true;
+            checkQuestionMustAnwser = answerE == "" && checkE == 1 ? false : true;
+            checkQuestionMustAnwser = answerF == "" && checkF == 1 ? false : true;
 
             string classIDSelected = view.ClassSelect;
             string subjectIDSelected = view.SubjectSelect;
