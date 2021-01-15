@@ -134,7 +134,7 @@ namespace quiz_management.Presenters.Student.Exam
             view.QuestionOrder = 0;
         }
 
-        private void View_Timeout(object sender, EventArgs e)
+        private void View_Timeout()
         {
             view.ShowMessage("Hết giờ", "Đã hết thời gian làm bài. Hệ thống sẽ tự động nộp bài của bạn");
             int timeLeft = view.TimeLeft;
@@ -225,7 +225,7 @@ namespace quiz_management.Presenters.Student.Exam
         {
             using (var db = new QuizDataContext())
             {
-                _maBoDe = db.kyThiThus.Where(l => (l.ngayThi == DateTime.Now) && (l.maNguoiDung == currentUserCode))
+                _maBoDe = db.kyThiThus.Where(l => (l.ngayThi <= DateTime.Now) && (DateTime.Now <= l.ngayKT) && (l.maNguoiDung == currentUserCode))
                                     .Select(s => s.maBoDe).First();
                 // Fetch exam data
                 var exam = db.boDes.FirstOrDefault(d => d.maBoDe == _maBoDe);
@@ -358,8 +358,8 @@ namespace quiz_management.Presenters.Student.Exam
                     wrong = Questions.Count - corrected;
                     var diem = (10 * 1.0 / Questions.Count) * corrected;
 
-                    var result = db.luyenTaps.Where(t => t.nguoiDung.maNguoiDung == currentUserCode);
-                    if (!result.Any())
+                    var result = db.luyenTaps.FirstOrDefault(t => t.nguoiDung.maNguoiDung == currentUserCode);
+                    if (result != null && result.maNguoiDung == currentUserCode)
                     {
                         var user = db.nguoiDungs.FirstOrDefault(n => n.maNguoiDung == currentUserCode);
                         var lt = new luyenTap
@@ -374,8 +374,8 @@ namespace quiz_management.Presenters.Student.Exam
                     }
                     else
                     {
-                        result.FirstOrDefault().soCauDung += corrected;
-                        result.FirstOrDefault().soCauSai += wrong;
+                        result.soCauDung += corrected;
+                        result.soCauSai += wrong;
                     }
 
                     db.SubmitChanges();

@@ -39,13 +39,21 @@ namespace quiz_management.Presenters.Student.Exam
             view.Timeout += View_Timeout;
         }
 
-        private void View_Timeout(object sender, EventArgs e)
+        private void View_Timeout()
         {
             view.ShowMessage("Hết giờ", "Đã hết thời gian làm bài. Hệ thống sẽ tự động nộp bài của bạn");
             int timeLeft = view.TimeLeft;
             bool excute = UpdateResult(timeLeft, view.Remain);
             if (!excute) view.ShowMessage("Lỗi", "Đã có lỗi xảy ra");
-            else view.ShowStudentView(currentUserCode);
+            else
+            {
+                using (var db = new QuizDataContext())
+                {
+                    var result = db.ketQuas.FirstOrDefault(k => k.maKetQua == _resultCode);
+                    view.ShowMessage("Kết quả", "Bạn được " + result.diem + " điểm");
+                }
+                view.ShowStudentView(currentUserCode);
+            }
         }
 
         private void View_Submit(object sender, System.EventArgs e)

@@ -26,7 +26,7 @@ namespace quiz_management.Views.Student.Exam
 
         event EventHandler AnswerCheck;
 
-        event EventHandler Timeout;
+        event Action Timeout;
 
         event EventHandler Submit;
 
