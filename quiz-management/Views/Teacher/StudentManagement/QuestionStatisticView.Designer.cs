@@ -42,6 +42,7 @@ namespace quiz_management.Views.Teacher.StudentManagement
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -52,17 +53,19 @@ namespace quiz_management.Views.Teacher.StudentManagement
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.reportViewer1);
-            this.splitContainer1.Size = new System.Drawing.Size(1054, 450);
-            this.splitContainer1.SplitterDistance = 107;
+            this.splitContainer1.Size = new System.Drawing.Size(1405, 789);
+            this.splitContainer1.SplitterDistance = 187;
+            this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(390, 42);
+            this.label1.Location = new System.Drawing.Point(520, 52);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(240, 26);
+            this.label1.Size = new System.Drawing.Size(293, 31);
             this.label1.TabIndex = 3;
             this.label1.Text = "THỐNG KÊ CÂU HỎI";
             // 
@@ -71,17 +74,19 @@ namespace quiz_management.Views.Teacher.StudentManagement
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "quiz_management.Views.Teacher.StudentManagement.QuestionStatisticReport.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1054, 339);
+            this.reportViewer1.Size = new System.Drawing.Size(1405, 597);
             this.reportViewer1.TabIndex = 0;
             // 
             // QuestionStatisticView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1054, 450);
+            this.ClientSize = new System.Drawing.Size(1405, 789);
             this.Controls.Add(this.splitContainer1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "QuestionStatisticView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QuestionStatisticView";

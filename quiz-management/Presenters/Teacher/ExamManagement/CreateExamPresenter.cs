@@ -127,7 +127,8 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
 
         private void View_Submit(object sender, EventArgs e)
         {
-            if (lstThiSinh == null || view.DeThiChon == null)
+            var x = view.DeThiChon;
+            if (lstThiSinh == null || view.DeThiChon == "-1" )
             {
                 view.ShowMessage("Thiết thông tin để tạo lịch thi");
                 return;
@@ -162,7 +163,7 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             using (var db = new QuizDataContext())
             {
                 lstbd = new BindingList<boDe>(db.boDes.Where(p => p.maMon == maMH).Where(k => k.maKhoi == makhoi)
-                                                    .Where(c => c.trangThai == 0).ToList());
+                                                    .Where(c => c.trangThai == 1).ToList());
             }
             return lstbd;
         }

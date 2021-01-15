@@ -10,8 +10,9 @@
 	PRIMARY KEY (maNguoiDung)
 )
 
-select * from nguoiDung
 insert into nguoiDung values('c','Hqz75h972DAG+3clE0Gi9sto1yVPd8XgM1x4tSb/WvZEfKgo',1,1)
+update nguoiDung set phanQuyen = 3 where maNguoiDung = 3
+
 CREATE TABLE Lop
 (
 	maKhoiLop varchar(5),
@@ -23,7 +24,6 @@ CREATE TABLE Lop
 )
 
 alter table Lop add constraint FK_lop_khoiLop FOREIGN KEY(maKhoiLop) references khoiLop(maKhoiLop)
-select * from boDe 
 update boDe set trangThai = 0 where maBoDe =1
 insert into boDe values(20,1,'K10',1800,0)
 
@@ -191,6 +191,8 @@ CREATE TABLE lichThi
 	PRIMARY KEY(maNguoiDung,maBoDe,ngayThi,maLichThi)
 )
 select * from lichThi
+select * from boDe
+
 alter table lichThi add constraint FK_lichThi_boDe foreign key (maBoDe) references boDe(maBoDe)
 alter table lichThi add constraint FK_lichThi_nguoiDung foreign key (maNguoiDung) references nguoiDung(maNguoiDung) on Delete Cascade
 alter table lichThi add constraint FK_lichThi_monHoc foreign key (maMonHoc) references monHoc(maMonHoc)

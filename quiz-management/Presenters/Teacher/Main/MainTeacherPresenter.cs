@@ -66,7 +66,7 @@ namespace quiz_management.Presenters.Teacher.Main
         {
             using (var db = new QuizDataContext())
             {
-                var lt = db.kyThiThus.Where(l => (l.ngayThi == DateTime.Now) && (l.maNguoiDung == currentUser))
+                var lt = db.kyThiThus.Where(l => (l.ngayThi <= DateTime.Now) && (DateTime.Now <= l.ngayKT) && (l.maNguoiDung == currentUser))
                                     .Select(s => s.maBoDe);
                 if (!lt.Any())
                 {
@@ -114,7 +114,7 @@ namespace quiz_management.Presenters.Teacher.Main
                 var user = db.thongTins.Where(i => i.maNguoidung == currentUser).ToList()[0];
                 view.TeacherName = user.tenNguoiDung;
                 view.TeacherID = currentUser.ToString();
-                view.DOB = user.ngaySinh.Value.Date.ToString("d");
+                view.DOB = user.ngaySinh.Value.Date.ToString("d/M/yyyy");
             }
         }
     }

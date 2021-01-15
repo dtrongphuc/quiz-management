@@ -15,7 +15,8 @@ namespace quiz_management.Views.Student.InfoPersonal
 {
     public partial class ProfileView : Form, IProfileView
     {
-        ProfilePresenter presenter;
+        private ProfilePresenter presenter;
+
         public ProfileView(int code)
         {
             InitializeComponent();
@@ -30,6 +31,20 @@ namespace quiz_management.Views.Student.InfoPersonal
             {
                 Closebtn?.Invoke(btnSubmit, e);
             };
+
+            txtDOBStudent.GotFocus += (_, e) =>
+            {
+                if (txtDOBStudent.Text == "dd/mm/yyyy")
+                {
+                    txtDOBStudent.Text = "";
+                }
+            };
+
+            txtDOBStudent.LostFocus += (_, e) =>
+            {
+                if (string.IsNullOrWhiteSpace(txtDOBStudent.Text))
+                    txtDOBStudent.Text = "dd/mm/yyyy";
+            };
         }
 
         public string _maSo { set => txtIdStudent.Text = value; get => txtIdStudent.Text; }
@@ -37,7 +52,6 @@ namespace quiz_management.Views.Student.InfoPersonal
         public string _ngaysinh { get => txtDOBStudent.Text; set => txtDOBStudent.Text = value; }
         public List<Lop> _lop { set => cbLop.DataSource = value; }
 
-       
         public Lop _lopChon
         {
             get
@@ -47,8 +61,8 @@ namespace quiz_management.Views.Student.InfoPersonal
             set => cbLop.SelectedItem = value;
         }
 
-       
         public event EventHandler Updatebtn;
+
         public event EventHandler Closebtn;
 
         public void swichMainStudent(int code)

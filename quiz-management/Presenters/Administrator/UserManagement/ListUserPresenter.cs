@@ -38,10 +38,16 @@ namespace quiz_management.Presenters.Administrator.UserManagement
                 view.Datenow = DateTime.Now.Date.ToString("d");
 
                 //binding dgv
-                var users = db.thongTins.ToList();
+                //var users = db.thongTins.ToList();
+                var temp = db.nguoiDungs.Where(nd => nd.phanQuyen != 3).Join(db.thongTins,
+                                            ng => ng.maNguoiDung,
+                                            tt => tt.maNguoidung,
+                                            (ng, tt) => new {thongtin = tt }).ToList();
                 int stt = 1;
-                foreach(var user in users)
+                var users = temp[0].thongtin;
+                foreach (var u in temp)
                 {
+                    var user = u.thongtin;
                     InfoUser info = new InfoUser();
                     info.UserID = user.maNguoidung;
                     info.STT = stt.ToString();

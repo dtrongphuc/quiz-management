@@ -38,7 +38,7 @@ namespace quiz_management.Presenters.Student.InfoPersonal
                 {
                     MaHocSinh = dbUser.maNguoiDung,
                     TenHocSinh = dbUser.thongTin.tenNguoiDung,
-                    Lop = dbUser.thongTin.Lop.tenLopHoc,
+                    Lop = dbUser.thongTin.Lop != null ? dbUser.thongTin.Lop.tenLopHoc : " ",
                     NgaySinh = (DateTime)dbUser.thongTin.ngaySinh
                 };
 

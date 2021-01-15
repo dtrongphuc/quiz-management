@@ -2,16 +2,18 @@
 using quiz_management.Views.Teacher.Main;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace quiz_management.Presenters.Teacher.Main
 {
-    class TeacherInfoPresenter
+    internal class TeacherInfoPresenter
     {
-        ITeacherInfoView view;
-        int currentUser = 0;
+        private ITeacherInfoView view;
+        private int currentUser = 0;
+
         public TeacherInfoPresenter(ITeacherInfoView v, int code)
         {
             view = v;
@@ -27,7 +29,7 @@ namespace quiz_management.Presenters.Teacher.Main
             {
                 var user = db.thongTins.Single(i => i.maNguoidung == currentUser);
                 user.tenNguoiDung = view.TeacherName;
-                user.ngaySinh = DateTime.Parse(view.DOB);
+                user.ngaySinh = DateTime.ParseExact(view.DOB, "d/M/yyyy", CultureInfo.InvariantCulture);
                 db.SubmitChanges();
 
                 view.ShowMessage("Cập nhật thành công");
@@ -47,7 +49,7 @@ namespace quiz_management.Presenters.Teacher.Main
                 var user = db.thongTins.Where(i => i.maNguoidung == currentUser).ToList()[0];
                 view.TeacherName = user.tenNguoiDung;
                 view.TeacherID = currentUser.ToString();
-                view.DOB = user.ngaySinh.Value.Date.ToString("d");
+                view.DOB = user.ngaySinh.Value.Date.ToString("d/M/yyyy");
             }
         }
     }
