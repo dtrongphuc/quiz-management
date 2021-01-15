@@ -110,7 +110,7 @@ namespace quiz_management.Views.Student
 
         public event EventHandler StatisticClicked;
 
-        public event EventHandler Timeout;
+        public event Action Timeout;
 
         public event EventHandler Submit;
 
@@ -230,7 +230,9 @@ namespace quiz_management.Views.Student
 
             if (minutes == 0 && secconds == 0)
             {
-                Timeout.Invoke(null, null);
+                aTimer.Stop();
+                aTimer.Enabled = false;
+                Invoke(new Action(() => Timeout?.Invoke()));
                 return;
             }
 

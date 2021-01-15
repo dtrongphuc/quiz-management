@@ -188,7 +188,7 @@
             // lbClass
             // 
             this.lbClass.AutoSize = true;
-            this.lbClass.Location = new System.Drawing.Point(24, 82);
+            this.lbClass.Location = new System.Drawing.Point(20, 82);
             this.lbClass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbClass.Name = "lbClass";
             this.lbClass.Size = new System.Drawing.Size(28, 13);
@@ -208,7 +208,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(969, 63);
+            this.label5.Location = new System.Drawing.Point(948, 63);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 13);
@@ -372,7 +372,6 @@
             this.cbAnswers.HorizontalScrollbar = true;
             this.cbAnswers.Location = new System.Drawing.Point(17, 163);
             this.cbAnswers.Margin = new System.Windows.Forms.Padding(0);
-            this.cbAnswers.MultiColumn = true;
             this.cbAnswers.Name = "cbAnswers";
             this.cbAnswers.ScrollAlwaysVisible = true;
             this.cbAnswers.Size = new System.Drawing.Size(920, 120);

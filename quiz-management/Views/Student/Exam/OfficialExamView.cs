@@ -80,7 +80,7 @@ namespace quiz_management.Views.Student.Exam
 
         public event EventHandler AnswerCheck;
 
-        public event EventHandler Timeout;
+        public event Action Timeout;
 
         public event EventHandler Submit;
 
@@ -158,10 +158,11 @@ namespace quiz_management.Views.Student.Exam
             double minutes = Math.Ceiling(TimeCount / 60 * 1.0);
             int secconds = (TimeCount % 60);
 
-            if (minutes == 0 && secconds == 0)
+            if (minutes <= 0 && secconds <= 0)
             {
-                Timeout.Invoke(null, null);
                 aTimer.Stop();
+                aTimer.Enabled = false;
+                Invoke(new Action(() => Timeout?.Invoke()));
                 return;
             }
 

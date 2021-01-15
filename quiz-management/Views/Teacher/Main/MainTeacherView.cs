@@ -7,6 +7,7 @@ using quiz_management.Views.Teacher.ExamManagement;
 using quiz_management.Views.Teacher.MockExamManagement;
 using quiz_management.Views.Teacher.PaperManagement;
 using quiz_management.Views.Teacher.QuestionManagement;
+using quiz_management.Views.Teacher.StudentManagement;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -81,6 +82,21 @@ namespace quiz_management.Views.Teacher.Main
             {
                 LogoutClick?.Invoke(btnLogout, e);
             };
+
+            btnTKHS.Click += (_, e) =>
+            {
+                ShowStudentStatisticView();
+            };
+
+            btnTKKyThi.Click += (_, e) =>
+            {
+                ShowExamStatisticView();
+            };
+
+            btnTKCauHoi.Click += (_, e) =>
+            {
+                ShowQuestionStatisticView();
+            };
         }
 
         public event EventHandler UpdateInfo;
@@ -92,11 +108,17 @@ namespace quiz_management.Views.Teacher.Main
         public event EventHandler OfficialExamClick;
 
         public event EventHandler PracticExamClick;
+
         public event EventHandler ExamListClick;
+
         public event EventHandler WatchOrPrintExamCompletedClick;
+
         public event EventHandler ListMockExamClick;
+
         public event EventHandler WatchOrPrintExamClick;
+
         public event EventHandler PaperClick;
+
         public event EventHandler LogoutClick;
 
         public string TeacherName { set => tbTeacherName.Text = value; }
@@ -308,6 +330,30 @@ namespace quiz_management.Views.Teacher.Main
         {
             this.Hide();
             LoginView screen = new LoginView();
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
+        }
+
+        public void ShowStudentStatisticView()
+        {
+            this.Hide();
+            StudentStatisticView screen = new StudentStatisticView();
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
+        }
+
+        public void ShowExamStatisticView()
+        {
+            this.Hide();
+            ExamStatisticView screen = new ExamStatisticView();
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
+        }
+
+        public void ShowQuestionStatisticView()
+        {
+            this.Hide();
+            QuestionStatisticView screen = new QuestionStatisticView();
             screen.FormClosed += (_, e) => this.Close();
             screen.Show();
         }
