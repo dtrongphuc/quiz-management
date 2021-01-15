@@ -15,7 +15,7 @@ namespace quiz_management.Presenters.Student.Exam
         private int _maBoDe = 0;
         private int _resultCode = -1;
 
-        public List<Question> Questions = new List<Question>();
+        public BindingList<Question> Questions = new BindingList<Question>();
         public int QuestionSelectedIndex = 0;
 
         public OfficialExamPresenter(IOfficialExamView v, int userCode)
@@ -257,7 +257,7 @@ namespace quiz_management.Presenters.Student.Exam
                     if (time > 0) view.ExamTime = time;
                     foreach (var row in detailResult)
                     {
-                        int index = Questions.FindIndex(x => x.MaCauHoi == row.maCauHoi);
+                        int index = Questions.ToList().FindIndex(x => x.MaCauHoi == row.maCauHoi);
                         for (int j = 0; j < Questions.ElementAt(index).CauTraLoi.Count; j++)
                         {
                             if (Questions.ElementAt(index).CauTraLoi.ElementAt(j).MaCauTraLoi == row.maCauHoi)
@@ -291,7 +291,7 @@ namespace quiz_management.Presenters.Student.Exam
             view.QuestionSelected = QuestionSelectedIndex;
             view.QuestionOrder = QuestionSelectedIndex + 1;
             view.QuestionString = Questions.ElementAt(QuestionSelectedIndex).CauHoi;
-            view.Answers = Questions.ElementAt(QuestionSelectedIndex).CauTraLoi;
+            view.Answers = new BindingList<Answer>(Questions.ElementAt(QuestionSelectedIndex).CauTraLoi);
         }
 
         private void BindingCrashedData()
@@ -299,7 +299,7 @@ namespace quiz_management.Presenters.Student.Exam
             List<int> CheckedIndexes = Enumerable.Range(0, Questions.Count)
                                                 .Where(i => Questions[i].Checked == true)
                                                 .ToList();
-            view.QuestionsChecked = CheckedIndexes;
+            view.QuestionsChecked = new BindingList<int>(CheckedIndexes);
             view.Remain = Questions.Count - CheckedIndexes.Count;
             view.Completed = Questions.Count - view.Remain;
         }
