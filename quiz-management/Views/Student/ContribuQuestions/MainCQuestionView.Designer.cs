@@ -116,6 +116,7 @@
             // cbbSubject
             // 
             this.cbbSubject.DisplayMember = "tenMonHoc";
+            this.cbbSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbSubject.FormattingEnabled = true;
             this.cbbSubject.Location = new System.Drawing.Point(574, 123);
@@ -127,6 +128,7 @@
             // cbbLevel
             // 
             this.cbbLevel.DisplayMember = "tenKhoiLop";
+            this.cbbLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbLevel.FormattingEnabled = true;
             this.cbbLevel.Location = new System.Drawing.Point(278, 118);
@@ -358,9 +360,9 @@
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(659, 19);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(60, 20);
+            this.label14.Size = new System.Drawing.Size(61, 20);
             this.label14.TabIndex = 30;
-            this.label14.Text = "Mã số:";
+            this.label14.Text = "MSSV:";
             // 
             // lbStudentID
             // 

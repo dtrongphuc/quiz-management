@@ -72,7 +72,14 @@
             this.cbbDifficute.Items.AddRange(new object[] {
             "1",
             "2",
-            "3"});
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
             this.cbbDifficute.Location = new System.Drawing.Point(172, 642);
             this.cbbDifficute.Name = "cbbDifficute";
             this.cbbDifficute.Size = new System.Drawing.Size(121, 28);

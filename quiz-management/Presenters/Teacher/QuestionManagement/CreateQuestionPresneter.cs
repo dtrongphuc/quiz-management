@@ -43,6 +43,7 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
         private void Create_View(object sender, EventArgs e)
         {
             int countQuestion = 0;
+            bool checkQuestionMustAnwser = true;
 
             string Questionsstring = view.Question;
             string answerA = view.AnswerA;
@@ -67,6 +68,14 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
             int checkE = view.cbResultE ? 1 : 0;
             int checkF = view.cbResultF ? 1 : 0;
 
+            //kiem tra cau tra loi phai co cau hoi
+            checkQuestionMustAnwser = answerA == "" && checkA == 1 ? false : true;
+            checkQuestionMustAnwser = answerB == "" && checkA == 1 ? false : true;
+            checkQuestionMustAnwser = answerC == "" && checkA == 1 ? false : true;
+            checkQuestionMustAnwser = answerD == "" && checkA == 1 ? false : true;
+            checkQuestionMustAnwser = answerE == "" && checkA == 1 ? false : true;
+            checkQuestionMustAnwser = answerF == "" && checkA == 1 ? false : true;
+
             string classIDSelected = view.GradeId;
             string subjectIDSelected = view.SubjectId;
             if (checkA == 0 && checkB == 0 && checkC == 0 && checkD == 0 && checkE == 0 && checkF == 0)
@@ -76,6 +85,10 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
             else if(countQuestion <4)
             {
                 view.ShowMessage("Phải có ít nhất 4 câu hỏi");
+            }
+            else if (!checkQuestionMustAnwser)
+            {
+                view.ShowMessage("Câu trả lời phải có câu hỏi");
             }
             else
             {

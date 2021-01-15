@@ -35,6 +35,9 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
 
         private void Send_CLick(object sender, EventArgs e)
         {
+            int countQuestion = 0;
+            bool checkQuestionMustAnwser = true;
+
             string Questionsstring = view.Question;
             string answerA = view.AnswerA;
             string answerB = view.AnswerB;
@@ -43,6 +46,14 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
             string answerE = view.AnswerE;
             string answerF = view.AnswerF;
 
+            //đếm số câu hỏi đã tạo
+            countQuestion = answerA == "" ? countQuestion + 0 : countQuestion + 1;
+            countQuestion = answerB == "" ? countQuestion + 0 : countQuestion + 1;
+            countQuestion = answerC == "" ? countQuestion + 0 : countQuestion + 1;
+            countQuestion = answerD == "" ? countQuestion + 0 : countQuestion + 1;
+            countQuestion = answerE == "" ? countQuestion + 0 : countQuestion + 1;
+            countQuestion = answerF == "" ? countQuestion + 0 : countQuestion + 1;
+
             int checkA = view.cbResultA ? 1 : 0;
             int checkB = view.cbResultB ? 1 : 0;
             int checkC = view.cbResultC ? 1 : 0;
@@ -50,19 +61,32 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
             int checkE = view.cbResultE ? 1 : 0;
             int checkF = view.cbResultF ? 1 : 0;
 
+            //kiem tra cau tra loi phai co cau hoi
+            checkQuestionMustAnwser = answerA == "" && checkA == 1 ? false : true;
+            checkQuestionMustAnwser = answerB == "" && checkA == 1 ? false : true;
+            checkQuestionMustAnwser = answerC == "" && checkA == 1 ? false : true;
+            checkQuestionMustAnwser = answerD == "" && checkA == 1 ? false : true;
+            checkQuestionMustAnwser = answerE == "" && checkA == 1 ? false : true;
+            checkQuestionMustAnwser = answerF == "" && checkA == 1 ? false : true;
+
             string classIDSelected = view.ClassSelect;
             string subjectIDSelected = view.SubjectSelect;
             if (checkA == 0 && checkB == 0 && checkC == 0 && checkD == 0 && checkE == 0 && checkF == 0)
             {
                 view.ShowMessage("Phải có ít nhất 1 câu trả lời là đúng!!");
             }
+            else if (countQuestion < 4)
+            {
+                view.ShowMessage("Phải có ít nhất 4 câu hỏi");
+            }
+            else if (!checkQuestionMustAnwser)
+            {
+                view.ShowMessage("Câu trả lời phải có câu hỏi");
+            }
             else
             {
                 using (var db = new QuizDataContext())
                 {
-                    //try
-                    //{
-
                     db.dongGops.InsertOnSubmit(new dongGop
                     {
                         maNguoiDung = currentUserCode,
@@ -141,33 +165,19 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
                     }
 
                     view.ShowMessage("Đóng góp câu hỏi thành công");
-                    //}
-                    //catch(Exception )
-                    //{
-                    //    view.ShowMessage("Đã xảy ra lỗi");
-                    //}
 
                 }
             }
         }
-
+        
         public void LoadSubject()
         {
         }
 
         public void LoadClass(int code)
         {
-            //khoiLop mh1 = new khoiLop();
-            //khoiLop mh2 = new khoiLop();
-            //mh1.maKhoiLop = "K10";
-            //mh1.tenKhoiLop = "10";
-            //mh2.maKhoiLop = "K11";
-            //mh2.tenKhoiLop = "11";
-            //List<khoiLop> list = new List<khoiLop>();
-            //list.Add(mh1);
-            //list.Add(mh2);
-
             view.StudentID = code.ToString();
+            view.StudentID = currentUserCode.ToString();
             using (var db = new QuizDataContext())
             {
                 var classlist = db.khoiLops.ToList();
