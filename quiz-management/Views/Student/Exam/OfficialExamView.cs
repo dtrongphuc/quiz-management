@@ -161,6 +161,7 @@ namespace quiz_management.Views.Student.Exam
             if (minutes == 0 && secconds == 0)
             {
                 Timeout.Invoke(null, null);
+                aTimer.Stop();
                 return;
             }
 
