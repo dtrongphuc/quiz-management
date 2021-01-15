@@ -168,7 +168,6 @@
             this.tbAnswerD.Name = "tbAnswerD";
             this.tbAnswerD.Size = new System.Drawing.Size(515, 27);
             this.tbAnswerD.TabIndex = 52;
-            this.tbAnswerD.Text = "4";
             // 
             // tbAnswerC
             // 
@@ -177,7 +176,6 @@
             this.tbAnswerC.Name = "tbAnswerC";
             this.tbAnswerC.Size = new System.Drawing.Size(515, 27);
             this.tbAnswerC.TabIndex = 51;
-            this.tbAnswerC.Text = "3 ";
             // 
             // tbAnswerB
             // 
@@ -186,7 +184,6 @@
             this.tbAnswerB.Name = "tbAnswerB";
             this.tbAnswerB.Size = new System.Drawing.Size(515, 27);
             this.tbAnswerB.TabIndex = 50;
-            this.tbAnswerB.Text = "2";
             // 
             // tbAnswerA
             // 
@@ -195,7 +192,6 @@
             this.tbAnswerA.Name = "tbAnswerA";
             this.tbAnswerA.Size = new System.Drawing.Size(515, 27);
             this.tbAnswerA.TabIndex = 49;
-            this.tbAnswerA.Text = "1";
             // 
             // linkGobackMain
             // 
@@ -336,7 +332,7 @@
             this.tbQuestion.Name = "tbQuestion";
             this.tbQuestion.Size = new System.Drawing.Size(589, 105);
             this.tbQuestion.TabIndex = 34;
-            this.tbQuestion.Text = "oke câu hỏi";
+            this.tbQuestion.Text = "Điền câu hỏi";
             // 
             // label1
             // 

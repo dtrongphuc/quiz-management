@@ -30,6 +30,7 @@ namespace quiz_management.Views.Teacher.Main
 
         event EventHandler WatchOrPrintExamClick;
         event EventHandler PaperClick;
+        event EventHandler LogoutClick;
 
 
         void ShowUpdateInfo(int code);
@@ -51,6 +52,7 @@ namespace quiz_management.Views.Teacher.Main
 
         void ShowWatchOrPrintExamView(int code);
         void ShowCreatePaper(int code);
+        void ShowLogin();
 
     }
 }

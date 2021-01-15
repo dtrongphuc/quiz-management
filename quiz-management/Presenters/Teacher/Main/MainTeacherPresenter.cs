@@ -29,6 +29,12 @@ namespace quiz_management.Presenters.Teacher.Main
             view.ListMockExamClick += View_ListMockExamClick;
             view.WatchOrPrintExamClick += View_WatchOrPrintClick;
             view.PaperClick += PaperClick_View;
+            view.LogoutClick += LogoutClick_Ciew;
+        }
+
+        private void LogoutClick_Ciew(object sender, EventArgs e)
+        {
+            view.ShowLogin();
         }
 
         private void PaperClick_View(object sender, EventArgs e)
