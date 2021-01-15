@@ -29,7 +29,6 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             lstkq = new BindingList<TrainScript>();
             using (var db = new QuizDataContext())
             {
-                TenGV = db.thongTins.Where(p => p.maNguoidung == currentcode).SingleOrDefault();
                 var temp = db.ketQuas.Where(p => p.trangThai == 1)
                             .Join(db.thongTins,
                             c => c.maNguoiDung,
@@ -58,7 +57,6 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
 
         private void FILL()
         {
-            view.TeacherName = TenGV.tenNguoiDung;
             view.ExamList = lstkq;
         }
 
