@@ -52,15 +52,20 @@ namespace quiz_management.Views.Student.InfoPersonal
         private void ResultExamView_Load(object sender, EventArgs e)
         {
             reportViewer1.LocalReport.DataSources.Clear();
-            ReportParameterCollection reportParameters = new ReportParameterCollection();
-            rdsRR.Value = bsRR;
-            rdsRR.Name = "RSDataset";
-            reportParameters.Add(new ReportParameter("Ms", rsUser.MaHocSinh.ToString()));
-            reportParameters.Add(new ReportParameter("Name", rsUser.TenHocSinh));
-            reportParameters.Add(new ReportParameter("Lop", rsUser.Lop));
-            reportParameters.Add(new ReportParameter("NgaySinh", rsUser.NgaySinh.ToString("dd/MM/yyyy")));
-            reportViewer1.LocalReport.SetParameters(reportParameters);
-            reportViewer1.LocalReport.DataSources.Add(rdsRR);
+
+            if (rsUser != null)
+            {
+                ReportParameterCollection reportParameters = new ReportParameterCollection();
+                rdsRR.Value = bsRR;
+                rdsRR.Name = "RSDataset";
+                reportParameters.Add(new ReportParameter("Ms", rsUser.MaHocSinh.ToString()));
+                reportParameters.Add(new ReportParameter("Name", rsUser.TenHocSinh));
+                reportParameters.Add(new ReportParameter("Lop", rsUser.Lop));
+                reportParameters.Add(new ReportParameter("NgaySinh", rsUser.NgaySinh.ToString("dd/MM/yyyy")));
+                reportViewer1.LocalReport.SetParameters(reportParameters);
+                reportViewer1.LocalReport.DataSources.Add(rdsRR);
+            }
+
             this.reportViewer1.RefreshReport();
         }
     }
