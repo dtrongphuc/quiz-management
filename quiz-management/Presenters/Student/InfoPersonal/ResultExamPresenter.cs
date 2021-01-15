@@ -31,18 +31,18 @@ namespace quiz_management.Presenters.Student.InfoPersonal
             {
                 lstKQ = db.ketQuas.Where(p => p.maNguoiDung == currentcode)
                                 .Where(c => c.trangThai == 1).ToList();
-                if (lstKQ.Count > 0)
-                {
-                    ResultExamUser user = new ResultExamUser
-                    {
-                        MaHocSinh = (int)lstKQ.ElementAt(0).maNguoiDung,
-                        TenHocSinh = lstKQ.ElementAt(0).nguoiDung.thongTin.tenNguoiDung,
-                        Lop = lstKQ.ElementAt(0).nguoiDung.thongTin.Lop.tenLopHoc,
-                        NgaySinh = (DateTime)lstKQ.ElementAt(0).nguoiDung.thongTin.ngaySinh
-                    };
 
-                    view.User = user;
-                }
+                var dbUser = db.nguoiDungs.SingleOrDefault(n => n.maNguoiDung == currentcode);
+
+                ResultExamUser user = new ResultExamUser
+                {
+                    MaHocSinh = dbUser.maNguoiDung,
+                    TenHocSinh = dbUser.thongTin.tenNguoiDung,
+                    Lop = dbUser.thongTin.Lop.tenLopHoc,
+                    NgaySinh = (DateTime)dbUser.thongTin.ngaySinh
+                };
+
+                view.User = user;
 
                 foreach (ketQua kq in lstKQ)
                 {
