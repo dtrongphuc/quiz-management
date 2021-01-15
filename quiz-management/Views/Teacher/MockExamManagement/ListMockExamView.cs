@@ -20,6 +20,7 @@ namespace quiz_management.Views.Teacher.MockExamManagement
         public ListMockExamView(int code)
         {
             InitializeComponent();
+            dgvMockExam.AutoGenerateColumns = false;
             presenter = new ListMockExamPresenter(this, code);
             linkGoBackBefore.Click += (_, e) =>
             {
@@ -39,8 +40,8 @@ namespace quiz_management.Views.Teacher.MockExamManagement
             };
         }
 
-        public string TeacherName { set => lbTeacher.DataBindings.Add("Text", value, ""); }
-        public DataGridView MockExamList { get => dgvMockExam; }
+        public string TeacherName { set => lbTeacher.Text = value; }
+        public BindingList<MockExam> MockExamList { set => dgvMockExam.DataSource = value; }
 
         string IListMockExamView.ExamID => dgvMockExam.SelectedRows[0].Cells["ExamID"].Value.ToString();
 

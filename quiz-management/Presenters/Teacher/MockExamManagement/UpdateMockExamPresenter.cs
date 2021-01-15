@@ -134,7 +134,8 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
             BindingList<boDe> lstbd;
             using (var db = new QuizDataContext())
             {
-                lstbd = new BindingList<boDe>(db.boDes.Where(p => p.maMon == maMH).Where(k => k.maKhoi == makhoi).ToList());
+                lstbd = new BindingList<boDe>(db.boDes.Where(p => p.maMon == maMH).Where(k => k.maKhoi == makhoi)
+                                                    .Where(c => c.trangThai == 0).ToList());
             }
             return lstbd;
         }

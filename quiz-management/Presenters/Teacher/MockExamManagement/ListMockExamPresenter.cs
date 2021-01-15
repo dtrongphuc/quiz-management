@@ -14,12 +14,10 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
     {
         IListMockExamView view;
         int currentcode;
-        IList<MockExam> MockExamList;
-        BindingSource MockExamListSource;
-        
+        BindingList<MockExam> MockExamList;
+
         public ListMockExamPresenter(IListMockExamView v, int code)
         {
-            MockExamListSource = new BindingSource();
             view = v;
             currentcode = code;
             LoadPage();
@@ -49,12 +47,11 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
                     mockexam.Subject = lstlichthi[0].monHoc.tenMonHoc;
                     mockexam.StartDay = lstlichthi[0].ngayThi.Value.Date.ToString("d");
                     mockexam.EndDay = lstlichthi[0].ngayKT.Value.Date.ToString("d");
-                    mockexam.QuantityStudent = db.kyThiThus.Where(p => p.maKyThiThu == lstlichthi[0].maKyThiThu).Count();
+                    mockexam.QuantityStudent = lstlichthi.Select(p => p.maNguoiDung).Distinct().Count();
                     mockexam.PaperID = lstlichthi[0].maBoDe;
                     MockExamList.Add(mockexam);
                 }
-                MockExamListSource.DataSource = MockExamList;
-                view.MockExamList.DataSource = MockExamListSource;
+                view.MockExamList = MockExamList;
             }
         }
 
@@ -70,10 +67,9 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
 
         private void DeleteExam_View(object sender, EventArgs e)
         {
-            if (view.MockExamList.RowCount == 0)
+            if (MockExamList.Count == 0)
                 return;
-            var x = view.MockExamList.SelectedRows[0];
-            var id = x.Cells["ExamID"].Value.ToString();
+            var id = view.ExamID;
             using (var db = new QuizDataContext())
             {
                 var lt = db.kyThiThus.Where(p => p.maKyThiThu == int.Parse(id)).ToList();
@@ -87,8 +83,7 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
                 MockExamList.Remove(itemdelete[0]);
                 db.SubmitChanges();
             }
-            MockExamListSource.DataSource = MockExamList;
-            view.MockExamList.DataSource = MockExamListSource;
+           
         }
         private void Create_View(object sender, EventArgs e)
         {

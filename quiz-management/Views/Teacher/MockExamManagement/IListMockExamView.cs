@@ -1,6 +1,7 @@
 ﻿using quiz_management.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ namespace quiz_management.Views.Teacher.MockExamManagement
     {
         string TeacherName { set; }
         string ExamID { get; }
-        DataGridView MockExamList { get; }
+        BindingList<MockExam> MockExamList { set; }
 
         event EventHandler GoBackBeFore;
         event EventHandler UpdateExam;

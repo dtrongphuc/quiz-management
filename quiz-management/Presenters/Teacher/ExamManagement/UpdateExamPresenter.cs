@@ -159,6 +159,7 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
                     db.lichThis.DeleteOnSubmit(ltdelete[d]);
                 db.SubmitChanges();
 
+                var lths = db.lichThis.Where(p => p.maLichThi == currentcode).ToList();
                 foreach (thongTin i in lstThiSinh)
                 {
                     db.lichThis.InsertOnSubmit(new lichThi
