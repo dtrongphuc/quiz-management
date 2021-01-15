@@ -38,6 +38,7 @@ namespace quiz_management.Views.Student.Main
         public event EventHandler PracticExamClick;
 
         public event EventHandler PracticStatisticClick;
+
         public event EventHandler LogoutClick;
 
         public MainStudentView(int u)
