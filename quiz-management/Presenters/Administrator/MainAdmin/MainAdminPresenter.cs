@@ -30,7 +30,7 @@ namespace quiz_management.Presenters.Administrator.MainAdmin
 
         private void Desentralization_View(object sender, EventArgs e)
         {
-            view.ShowDesentralization(currentCode);
+            view.ShowMessages("Chức năng đang trong quá trình nâng cấp!");
         }
 
         private void WatchUserList_View(object sender, EventArgs e)

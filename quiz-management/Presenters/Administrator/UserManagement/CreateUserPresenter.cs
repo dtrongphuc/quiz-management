@@ -76,7 +76,7 @@ namespace quiz_management.Presenters.Administrator.UserManagement
                     {
                         tenTaiKhoan = username,
                         matKhau = pwHash,
-                        phanQuyen = view.Desentralization == "Học Sinh" ? 1 : 0,
+                        phanQuyen = view.Desentralization == "Học Sinh" ? 1 : 2,
                         TrangThai = 1
                     };
                     db.nguoiDungs.InsertOnSubmit(user);

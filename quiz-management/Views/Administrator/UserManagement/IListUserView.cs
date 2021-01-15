@@ -16,9 +16,11 @@ namespace quiz_management.Views.Administrator.UserManagement
         BindingList<InfoUser> UserList { set; }
         event EventHandler UpdateUser;
         event EventHandler GoBackBefore;
+        event EventHandler ExportExcel;
 
         void ShowMessages(string text);
         void ShowMainAdmin(int userCode);
         void ShowUpdate(int userCode, int userid);
+        void ShowExport(int code);
     }
 }
