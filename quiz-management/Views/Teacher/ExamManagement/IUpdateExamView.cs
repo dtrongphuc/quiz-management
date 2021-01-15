@@ -15,10 +15,10 @@ namespace quiz_management.Views.Teacher.ExamManagement
         string monHocChon {  set; }
         string KhoiLopChon { set; }
         string DeThiChon { set; }
-        DataGridView lstHocSinh { get; }
-        DataGridView lstThiSinh { get; }
-        
-       
+        BindingList<thongTin> lstHocSinh { set; }
+        BindingList<thongTin> lstThiSinh { set; }
+        DataGridView lstThiSinhChon { get; }
+        DataGridView lstHocSinhChon { get; }
 
         event EventHandler GoBackBefore;
         event EventHandler Submit;

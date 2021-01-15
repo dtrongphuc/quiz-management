@@ -37,21 +37,24 @@ namespace quiz_management.Views.Teacher.ExamManagement
             {
                 AddExam?.Invoke(btnThem, e);
             };
-            dgvLichThi.CellFormatting+= (_, e) =>
-            {
-                formatting?.Invoke(dgvLichThi, e);
-            };
+            
         }
 
-        
 
-        public DataGridView dtgv { get => dgvLichThi; }
+
+        public BindingList<TestSchedule> dtgv { set => dgvLichThi.DataSource = value; }
+        public DataGridView lichthichon
+        {
+            get
+            {
+                return dgvLichThi;
+            }
+        }
 
         public event EventHandler GobackBefore;
         public event EventHandler Delete;
         public event EventHandler UpdateExam;
         public event EventHandler AddExam;
-        public event EventHandler formatting;
 
        
 

@@ -12,16 +12,16 @@ namespace quiz_management.Views.Teacher.ExamManagement
     public interface ICreateExamView
     {
         DateTime NgayThi { get; }
-        ComboBox lstMonHoc { get; }
+        BindingList<monHoc> lstMonHoc { set; }
         string monHocChon { get; }
-        ComboBox lstDeThi { get; }
+        BindingList<boDe> lstDeThi { set; }
         string DeThiChon { get; }
         string KhoiLopChon { get; }
-        DataGridView lstHocSinh { get; }
-        DataGridView lstThiSinh { get; }
-        ComboBox lstKhoiLop { get; }
-       /* DataGridView lstThiSinhChon { get; }
-        DataGridView lstHocSinhChon { get; }*/
+        BindingList<thongTin> lstHocSinh { set; }
+        BindingList<thongTin> lstThiSinh { set; }
+        BindingList<khoiLop> lstKhoiLop { set; }
+        DataGridView lstThiSinhChon { get; }
+        DataGridView lstHocSinhChon { get; }
 
         event EventHandler GoBackBefore;
         event EventHandler Submit;
