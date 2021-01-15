@@ -49,8 +49,8 @@ namespace quiz_management.Views.Student.Main
             this.btnTestScheduleView = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnPracticStatistic = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.btnPracticStatistic = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -95,7 +95,7 @@ namespace quiz_management.Views.Student.Main
             this.txtclassview.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtclassview.Enabled = false;
             this.txtclassview.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtclassview.Location = new System.Drawing.Point(132, 204);
+            this.txtclassview.Location = new System.Drawing.Point(183, 204);
             this.txtclassview.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtclassview.Name = "txtclassview";
             this.txtclassview.ReadOnly = true;
@@ -127,7 +127,7 @@ namespace quiz_management.Views.Student.Main
             this.txtStudentDOBview.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtStudentDOBview.Enabled = false;
             this.txtStudentDOBview.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStudentDOBview.Location = new System.Drawing.Point(132, 159);
+            this.txtStudentDOBview.Location = new System.Drawing.Point(183, 159);
             this.txtStudentDOBview.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtStudentDOBview.Name = "txtStudentDOBview";
             this.txtStudentDOBview.ReadOnly = true;
@@ -140,7 +140,7 @@ namespace quiz_management.Views.Student.Main
             this.txtStudentIDview.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtStudentIDview.Enabled = false;
             this.txtStudentIDview.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStudentIDview.Location = new System.Drawing.Point(132, 110);
+            this.txtStudentIDview.Location = new System.Drawing.Point(183, 110);
             this.txtStudentIDview.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtStudentIDview.Name = "txtStudentIDview";
             this.txtStudentIDview.ReadOnly = true;
@@ -218,9 +218,9 @@ namespace quiz_management.Views.Student.Main
             this.lbDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDOB.Location = new System.Drawing.Point(12, 158);
             this.lbDOB.Name = "lbDOB";
-            this.lbDOB.Size = new System.Drawing.Size(88, 20);
+            this.lbDOB.Size = new System.Drawing.Size(152, 20);
             this.lbDOB.TabIndex = 1;
-            this.lbDOB.Text = "Ngày sinh:";
+            this.lbDOB.Text = "Ngày sinh (M/D/Y):";
             // 
             // txtTitle2
             // 
@@ -304,6 +304,15 @@ namespace quiz_management.Views.Student.Main
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nội dung";
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(605, 20);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(97, 33);
+            this.btnLogout.TabIndex = 9;
+            this.btnLogout.Text = "Đăng Xuất";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            // 
             // btnPracticStatistic
             // 
             this.btnPracticStatistic.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -315,22 +324,13 @@ namespace quiz_management.Views.Student.Main
             this.btnPracticStatistic.Text = "Xem Thống Kê Thi Thử";
             this.btnPracticStatistic.UseVisualStyleBackColor = true;
             // 
-            // btnLogout
-            // 
-            this.btnLogout.Location = new System.Drawing.Point(605, 20);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(97, 33);
-            this.btnLogout.TabIndex = 9;
-            this.btnLogout.Text = "Đăng Xuất";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            // 
             // MainStudentView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1123, 594);
             this.Controls.Add(this.splitContainer1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainStudentView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainStudentView";

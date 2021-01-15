@@ -23,7 +23,7 @@ CREATE TABLE Lop
 )
 
 alter table Lop add constraint FK_lop_khoiLop FOREIGN KEY(maKhoiLop) references khoiLop(maKhoiLop)
-select * from boDe 
+select * from Lop 
 update boDe set trangThai = 0 where maBoDe =1
 insert into boDe values(20,1,'K10',1800,0)
 

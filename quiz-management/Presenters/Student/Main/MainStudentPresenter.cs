@@ -114,7 +114,8 @@ namespace quiz_management.Presenters.Student.Main
             {
                 view.IdHS = info.maNguoidung.ToString();
                 view.NameHS = info.tenNguoiDung;
-                view.DOBHS = info.ngaySinh.Value.Day + "/" + info.ngaySinh.Value.Month + "/" + info.ngaySinh.Value.Year;
+                //view.DOBHS = info.ngaySinh.Value.Day + "/" + info.ngaySinh.Value.Month + "/" + info.ngaySinh.Value.Year;
+                view.DOBHS = info.ngaySinh.Value.Date.ToString("d");
                 view.LopHS = lop;
             }
         }
