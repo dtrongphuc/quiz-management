@@ -208,7 +208,7 @@
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(352, 596);
+            this.btnSend.Location = new System.Drawing.Point(374, 595);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(137, 41);
             this.btnSend.TabIndex = 14;
@@ -355,7 +355,7 @@
             // 
             // btnWatchContributeQuestion
             // 
-            this.btnWatchContributeQuestion.Location = new System.Drawing.Point(658, 42);
+            this.btnWatchContributeQuestion.Location = new System.Drawing.Point(658, 21);
             this.btnWatchContributeQuestion.Name = "btnWatchContributeQuestion";
             this.btnWatchContributeQuestion.Size = new System.Drawing.Size(119, 32);
             this.btnWatchContributeQuestion.TabIndex = 32;
@@ -367,7 +367,7 @@
             // 
             this.lbStudentID.AutoSize = true;
             this.lbStudentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStudentID.Location = new System.Drawing.Point(655, 9);
+            this.lbStudentID.Location = new System.Drawing.Point(33, 655);
             this.lbStudentID.Name = "lbStudentID";
             this.lbStudentID.Size = new System.Drawing.Size(16, 17);
             this.lbStudentID.TabIndex = 31;
@@ -377,7 +377,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(857, 667);
+            this.ClientSize = new System.Drawing.Size(841, 681);
             this.Controls.Add(this.btnWatchContributeQuestion);
             this.Controls.Add(this.lbStudentID);
             this.Controls.Add(this.label13);

@@ -68,5 +68,6 @@ namespace quiz_management.Views.Teacher.PaperManagement
             screen.FormClosed += (_, e) => this.Close();
             screen.Show();
         }
+
     }
 }
