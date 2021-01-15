@@ -28,24 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WatchOrPrintExamView));
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.dgvExam = new System.Windows.Forms.DataGridView();
             this.linkGoBackBefore = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.lbTeacher = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.StudentOfExamBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.StudentOfExamBindingSource)).BeginInit();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StudentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOBExam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExam)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(367, 549);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(165, 48);
+            this.btnPrint.TabIndex = 46;
+            this.btnPrint.Text = "In";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // dgvExam
+            // 
+            this.dgvExam.AllowUserToAddRows = false;
+            this.dgvExam.AllowUserToDeleteRows = false;
+            this.dgvExam.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvExam.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvExam.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvExam.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.STT,
+            this.StudentName,
+            this.DOBExam});
+            this.dgvExam.Location = new System.Drawing.Point(44, 167);
+            this.dgvExam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvExam.MultiSelect = false;
+            this.dgvExam.Name = "dgvExam";
+            this.dgvExam.ReadOnly = true;
+            this.dgvExam.RowHeadersVisible = false;
+            this.dgvExam.RowHeadersWidth = 51;
+            this.dgvExam.RowTemplate.Height = 24;
+            this.dgvExam.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvExam.Size = new System.Drawing.Size(824, 336);
+            this.dgvExam.TabIndex = 45;
             // 
             // linkGoBackBefore
             // 
             this.linkGoBackBefore.AutoSize = true;
-            this.linkGoBackBefore.Location = new System.Drawing.Point(31, 20);
-            this.linkGoBackBefore.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkGoBackBefore.Location = new System.Drawing.Point(41, 25);
             this.linkGoBackBefore.Name = "linkGoBackBefore";
-            this.linkGoBackBefore.Size = new System.Drawing.Size(38, 13);
+            this.linkGoBackBefore.Size = new System.Drawing.Size(49, 17);
             this.linkGoBackBefore.TabIndex = 44;
             this.linkGoBackBefore.TabStop = true;
             this.linkGoBackBefore.Text = "Trở về";
@@ -54,10 +91,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(219, 35);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(257, 85);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(341, 26);
+            this.label3.Size = new System.Drawing.Size(435, 32);
             this.label3.TabIndex = 43;
             this.label3.Text = "Danh Sách Thí Sinh Của Kì Thi";
             // 
@@ -65,10 +101,9 @@
             // 
             this.lbTeacher.AutoSize = true;
             this.lbTeacher.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTeacher.Location = new System.Drawing.Point(699, 20);
-            this.lbTeacher.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbTeacher.Location = new System.Drawing.Point(752, 25);
             this.lbTeacher.Name = "lbTeacher";
-            this.lbTeacher.Size = new System.Drawing.Size(74, 13);
+            this.lbTeacher.Size = new System.Drawing.Size(96, 17);
             this.lbTeacher.TabIndex = 42;
             this.lbTeacher.Text = "Mai Anh Tuấn";
             // 
@@ -76,56 +111,81 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(637, 20);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(669, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.Size = new System.Drawing.Size(76, 17);
             this.label1.TabIndex = 41;
             this.label1.Text = "Giáo viên: ";
             // 
-            // reportViewer1
+            // printPreviewDialog1
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            reportDataSource1.Name = "MSEDataset";
-            reportDataSource1.Value = this.StudentOfExamBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "quiz_management.Views.Teacher.ExamManagement.WatchOrPrintExamReport.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 80);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(799, 429);
-            this.reportViewer1.TabIndex = 45;
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
-            // StudentOfExamBindingSource
+            // printDocument1
             // 
-            this.StudentOfExamBindingSource.DataSource = typeof(quiz_management.Models.StudentOfExam);
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // STT
+            // 
+            this.STT.DataPropertyName = "STT";
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            // 
+            // StudentName
+            // 
+            this.StudentName.DataPropertyName = "StudentName";
+            this.StudentName.HeaderText = "Tên Thí Sinh";
+            this.StudentName.MinimumWidth = 6;
+            this.StudentName.Name = "StudentName";
+            this.StudentName.ReadOnly = true;
+            // 
+            // DOBExam
+            // 
+            this.DOBExam.DataPropertyName = "DOBExam";
+            this.DOBExam.HeaderText = "Ngày Thi";
+            this.DOBExam.MinimumWidth = 6;
+            this.DOBExam.Name = "DOBExam";
+            this.DOBExam.ReadOnly = true;
             // 
             // WatchOrPrintExamView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(799, 509);
-            this.Controls.Add(this.reportViewer1);
+            this.ClientSize = new System.Drawing.Size(908, 626);
+            this.Controls.Add(this.btnPrint);
+            this.Controls.Add(this.dgvExam);
             this.Controls.Add(this.linkGoBackBefore);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbTeacher);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "WatchOrPrintExamView";
             this.Text = "WatchOrPrintExamView";
-            this.Load += new System.EventHandler(this.WatchOrPrintExamView_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.StudentOfExamBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExam)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
+        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.DataGridView dgvExam;
         private System.Windows.Forms.LinkLabel linkGoBackBefore;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbTeacher;
         private System.Windows.Forms.Label label1;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource StudentOfExamBindingSource;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StudentName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DOBExam;
     }
 }

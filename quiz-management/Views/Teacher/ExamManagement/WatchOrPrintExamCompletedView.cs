@@ -1,5 +1,4 @@
-﻿using Microsoft.Reporting.WinForms;
-using quiz_management.Models;
+﻿using quiz_management.Models;
 using quiz_management.Views.Teacher.ExamManagement;
 using quiz_management.Views.Teacher.Main;
 using System;
@@ -17,25 +16,28 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
     public partial class WatchOrPrintExamCompletedView : Form, IWatchOrPrintExamCompletedView
     {
         private WatchOrPrintExamCompletedPresenter presenter;
-        public BindingSource bsWOPEC;
-        public ReportDataSource rdsWOPEC;
 
         public WatchOrPrintExamCompletedView(int code)
         {
             InitializeComponent();
-            bsWOPEC = new BindingSource();
-            rdsWOPEC = new ReportDataSource();
+            dgvExam.AutoGenerateColumns = false;
             presenter = new WatchOrPrintExamCompletedPresenter(this, code);
             linkGoBackBefore.Click += (_, e) =>
             {
                 GobackBefore?.Invoke(linkGoBackBefore, e);
             };
+            btnPrint.Click += (_, e) =>
+            {
+                Print?.Invoke(btnPrint, e);
+            };
         }
 
         public string TeacherName { set => lbTeacher.Text = value; }
-        public BindingList<TrainScript> ExamList { set => bsWOPEC.DataSource = value; }
+        public BindingList<TrainScript> ExamList { set => dgvExam.DataSource = value; }
 
         public event EventHandler GobackBefore;
+
+        public event EventHandler Print;
 
         public void Home(int code)
         {
@@ -50,13 +52,22 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             MessageBox.Show(text);
         }
 
-        private void WatchOrPrintExamCompletedView_Load(object sender, EventArgs e)
+        private void btnPrint_Click(object sender, EventArgs e)
         {
-            reportViewer1.LocalReport.DataSources.Clear();
-            rdsWOPEC.Value = bsWOPEC;
-            rdsWOPEC.Name = "MSECDataset";
-            reportViewer1.LocalReport.DataSources.Add(rdsWOPEC);
-            this.reportViewer1.RefreshReport();
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.PrintPreviewControl.Zoom = 1;
+            printPreviewDialog1.ShowDialog();
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Bitmap bmp = new Bitmap(dgvExam.Width, dgvExam.Height);
+
+            // draw the form image to the bitmap
+            dgvExam.DrawToBitmap(bmp, new Rectangle(0, 0, dgvExam.Width, dgvExam.Height));
+
+            // draw the bitmap image of the form onto the graphics surface
+            e.Graphics.DrawImage(bmp, new Point(0, 0));
         }
     }
 }

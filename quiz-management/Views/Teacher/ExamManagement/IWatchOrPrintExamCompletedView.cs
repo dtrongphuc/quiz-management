@@ -8,15 +8,13 @@ using System.Threading.Tasks;
 
 namespace quiz_management.Views.Teacher.ExamManagement
 {
-    internal interface IWatchOrPrintExamCompletedView
+    interface IWatchOrPrintExamCompletedView
     {
         string TeacherName { set; }
         BindingList<TrainScript> ExamList { set; }
-
         event EventHandler GobackBefore;
-
+        event EventHandler Print;
         void Message(string text);
-
         void Home(int code);
     }
 }
