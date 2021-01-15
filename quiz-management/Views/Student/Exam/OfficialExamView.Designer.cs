@@ -251,7 +251,7 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.groupBox2);
             this.splitContainer2.Size = new System.Drawing.Size(1191, 373);
-            this.splitContainer2.SplitterDistance = 258;
+            this.splitContainer2.SplitterDistance = 231;
             this.splitContainer2.SplitterWidth = 3;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -268,7 +268,7 @@
             this.gbQuestionButtons.Margin = new System.Windows.Forms.Padding(2);
             this.gbQuestionButtons.Name = "gbQuestionButtons";
             this.gbQuestionButtons.Padding = new System.Windows.Forms.Padding(2);
-            this.gbQuestionButtons.Size = new System.Drawing.Size(258, 373);
+            this.gbQuestionButtons.Size = new System.Drawing.Size(231, 373);
             this.gbQuestionButtons.TabIndex = 0;
             this.gbQuestionButtons.TabStop = false;
             this.gbQuestionButtons.Text = "Chọn câu";
@@ -325,7 +325,7 @@
             // btnSubmit
             // 
             this.btnSubmit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSubmit.Location = new System.Drawing.Point(57, 314);
+            this.btnSubmit.Location = new System.Drawing.Point(43, 314);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(129, 44);
@@ -346,7 +346,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(930, 373);
+            this.groupBox2.Size = new System.Drawing.Size(957, 373);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             // 
@@ -375,7 +375,7 @@
             this.cbAnswers.MultiColumn = true;
             this.cbAnswers.Name = "cbAnswers";
             this.cbAnswers.ScrollAlwaysVisible = true;
-            this.cbAnswers.Size = new System.Drawing.Size(904, 120);
+            this.cbAnswers.Size = new System.Drawing.Size(920, 120);
             this.cbAnswers.TabIndex = 10;
             // 
             // btnPrev
@@ -390,7 +390,7 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(590, 333);
+            this.btnNext.Location = new System.Drawing.Point(876, 324);
             this.btnNext.Margin = new System.Windows.Forms.Padding(2);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(61, 25);
@@ -408,7 +408,7 @@
             this.tbQuestion.Multiline = true;
             this.tbQuestion.Name = "tbQuestion";
             this.tbQuestion.ReadOnly = true;
-            this.tbQuestion.Size = new System.Drawing.Size(834, 110);
+            this.tbQuestion.Size = new System.Drawing.Size(888, 110);
             this.tbQuestion.TabIndex = 7;
             // 
             // label05

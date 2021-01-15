@@ -92,10 +92,10 @@
             // btnSubmit
             // 
             this.btnSubmit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSubmit.Location = new System.Drawing.Point(196, 314);
+            this.btnSubmit.Location = new System.Drawing.Point(133, 314);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(111, 44);
+            this.btnSubmit.Size = new System.Drawing.Size(113, 44);
             this.btnSubmit.TabIndex = 24;
             this.btnSubmit.Text = "Hoàn thành";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -289,7 +289,7 @@
             this.gbQuestionButtons.Margin = new System.Windows.Forms.Padding(2);
             this.gbQuestionButtons.Name = "gbQuestionButtons";
             this.gbQuestionButtons.Padding = new System.Windows.Forms.Padding(2);
-            this.gbQuestionButtons.Size = new System.Drawing.Size(363, 376);
+            this.gbQuestionButtons.Size = new System.Drawing.Size(263, 376);
             this.gbQuestionButtons.TabIndex = 0;
             this.gbQuestionButtons.TabStop = false;
             this.gbQuestionButtons.Text = "Chọn câu";
@@ -297,10 +297,10 @@
             // btnStatistic
             // 
             this.btnStatistic.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnStatistic.Location = new System.Drawing.Point(53, 314);
+            this.btnStatistic.Location = new System.Drawing.Point(11, 314);
             this.btnStatistic.Margin = new System.Windows.Forms.Padding(2);
             this.btnStatistic.Name = "btnStatistic";
-            this.btnStatistic.Size = new System.Drawing.Size(111, 44);
+            this.btnStatistic.Size = new System.Drawing.Size(103, 44);
             this.btnStatistic.TabIndex = 46;
             this.btnStatistic.Text = "Xem thống kê";
             this.btnStatistic.UseVisualStyleBackColor = true;
@@ -330,7 +330,7 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.groupBox2);
             this.splitContainer2.Size = new System.Drawing.Size(1250, 376);
-            this.splitContainer2.SplitterDistance = 363;
+            this.splitContainer2.SplitterDistance = 263;
             this.splitContainer2.SplitterWidth = 3;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -349,7 +349,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(884, 376);
+            this.groupBox2.Size = new System.Drawing.Size(984, 376);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             // 
