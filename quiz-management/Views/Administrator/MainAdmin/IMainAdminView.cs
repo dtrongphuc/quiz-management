@@ -13,10 +13,12 @@ namespace quiz_management.Views.Administrator.MainAdmin
         event EventHandler AddUser;
         event EventHandler WatchUserList;
         event EventHandler Desentralization;
+        event EventHandler Logout;
 
         void ShowAddUser(int userCode);
         void ShowWatchUserList(int userCode);
         void ShowDesentralization(int userCode);
         void ShowMessages(string text);
+        void ShowLogin();
     }
 }
