@@ -2,6 +2,7 @@
 using quiz_management.Views.Student.InfoPersonal;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,13 +10,14 @@ using System.Windows.Forms;
 
 namespace quiz_management.Presenters.Student.InfoPersonal
 {
-    class ProfilePresenter
+    internal class ProfilePresenter
     {
-        IProfileView view;
-        int currentUserCode;
-        thongTin info = null;
-        Lop lop = null;
-        List<Lop> lstLop = null;
+        private IProfileView view;
+        private int currentUserCode;
+        private thongTin info = null;
+        private Lop lop = null;
+        private List<Lop> lstLop = null;
+
         public ProfilePresenter(IProfileView v, int code)
         {
             view = v;
@@ -49,7 +51,6 @@ namespace quiz_management.Presenters.Student.InfoPersonal
                 }
 
                 lstLop = db.Lops.ToList();
-
             }
             FillHS();
         }
@@ -72,7 +73,7 @@ namespace quiz_management.Presenters.Student.InfoPersonal
         {
             try
             {
-                DateTime dt = DateTime.Parse(view._ngaysinh);
+                DateTime dt = DateTime.ParseExact(view._ngaysinh, "d/M/yyyy", CultureInfo.InvariantCulture);
                 using (var db = new QuizDataContext())
                 {
                     var temp = db.thongTins.SingleOrDefault(d => d.maNguoidung == int.Parse(view._maSo));
