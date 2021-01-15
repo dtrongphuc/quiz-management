@@ -38,6 +38,7 @@
             this.lbDOB = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lbAdminName = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnDesentalization
@@ -141,11 +142,21 @@
             this.lbAdminName.TabIndex = 19;
             this.lbAdminName.Text = "Nguyễn Hiếu Nghĩa";
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(23, 18);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(99, 31);
+            this.btnLogout.TabIndex = 20;
+            this.btnLogout.Text = "Đăng xuất";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            // 
             // MainAdminView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 518);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.lbAdminName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbDOB);
@@ -176,5 +187,6 @@
         private System.Windows.Forms.Label lbDOB;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbAdminName;
+        private System.Windows.Forms.Button btnLogout;
     }
 }

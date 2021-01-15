@@ -77,6 +77,7 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
                 //paperid = db.boDes.
                 //var it = db.ketQuas.Where(x => x.maBoDe == 1).Count();
                 //binding datagriview
+                view.Teachername = db.thongTins.Where(i => i.maNguoidung == currenuser).Select(i => i.tenNguoiDung).ToList()[0].ToString();
                 var list = db.boDes.ToList();
                 foreach (var i in list)
                 {

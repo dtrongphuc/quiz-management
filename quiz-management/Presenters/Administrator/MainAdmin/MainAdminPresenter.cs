@@ -20,6 +20,12 @@ namespace quiz_management.Presenters.Administrator.MainAdmin
             view.AddUser += AddUser_View;
             view.WatchUserList += WatchUserList_View;
             view.Desentralization += Desentralization_View;
+            view.Logout += Logout_Click;
+        }
+
+        private void Logout_Click(object sender, EventArgs e)
+        {
+            view.ShowLogin();
         }
 
         private void Desentralization_View(object sender, EventArgs e)

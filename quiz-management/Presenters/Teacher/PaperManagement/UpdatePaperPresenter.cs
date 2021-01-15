@@ -39,6 +39,11 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
         {
             try
             {
+                if(view.AllQuestionSelect.Rows.Count < 1)
+                {
+                    view.ShowMessage("Đề thi phải có câu hỏi!");
+                    return;
+                }
                 using (var db = new QuizDataContext())
                 {
                     //item trong chi tiết bộ đề

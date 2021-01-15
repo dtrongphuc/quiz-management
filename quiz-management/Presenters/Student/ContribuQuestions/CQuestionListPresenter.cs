@@ -31,11 +31,11 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
 
         private void LoadContributeQuestionList()
         {
-            view.StudentID = currenUserCode.ToString();
             listQuestion = new List<ContributeQuestion>();
             List<dongGop> listContribute = null;
             using (var db = new QuizDataContext())
             {
+                view.StudentID = db.thongTins.Where(i => i.maNguoidung == currenUserCode).Select(i => i.tenNguoiDung).ToList()[0].ToString();
                 listContribute = db.dongGops.Where(i => i.maNguoiDung == currenUserCode).ToList();
                 foreach (var contribute in listContribute)
                 {

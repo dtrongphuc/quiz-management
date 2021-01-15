@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.lbStudentID = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.linkGobackMain = new System.Windows.Forms.LinkLabel();
             this.btnClose = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,22 +46,12 @@
             // lbStudentID
             // 
             this.lbStudentID.AutoSize = true;
-            this.lbStudentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStudentID.Location = new System.Drawing.Point(959, 37);
+            this.lbStudentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStudentID.Location = new System.Drawing.Point(844, 37);
             this.lbStudentID.Name = "lbStudentID";
-            this.lbStudentID.Size = new System.Drawing.Size(36, 20);
+            this.lbStudentID.Size = new System.Drawing.Size(32, 17);
             this.lbStudentID.TabIndex = 63;
             this.lbStudentID.Text = "362";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(877, 37);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(60, 20);
-            this.label14.TabIndex = 62;
-            this.label14.Text = "Mã số:";
             // 
             // linkGobackMain
             // 
@@ -181,7 +170,6 @@
             this.ClientSize = new System.Drawing.Size(1056, 642);
             this.Controls.Add(this.dtgCQuestionList);
             this.Controls.Add(this.lbStudentID);
-            this.Controls.Add(this.label14);
             this.Controls.Add(this.linkGobackMain);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label2);
@@ -198,7 +186,6 @@
         #endregion
 
         private System.Windows.Forms.Label lbStudentID;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.LinkLabel linkGobackMain;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label2;

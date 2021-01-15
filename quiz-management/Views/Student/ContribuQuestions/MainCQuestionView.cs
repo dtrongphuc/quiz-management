@@ -86,5 +86,9 @@ namespace quiz_management.Views.Student.ContribuQuestions
             screen.Show();
         }
 
+        private void btnWatchContributeQuestion_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
