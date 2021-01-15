@@ -126,8 +126,10 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
                 view.listQuestionselected = ListQuestionselcted;
 
                 //db.cauHois.Where(i => i.maKhoiLop == view.Grade && i.maMonHoc == int.Parse(view.Subject) && i.trangThai == status).ToList();
-                var listQuestions = db.cauHois.Where(i => i.maKhoiLop == gradeID && i.maMonHoc == subjectID).ToList();
-                //var listQuestions1 = db.cauHois.Where(i => i.maKhoiLop == gradeID && i.maMonHoc == subjectID && i.trangThai == status).ToList();
+
+                var statusExam = db.boDes.Where(i => i.maBoDe == PaperId).Select(i => i.trangThai).ToList()[0];
+                //var listQuestions = db.cauHois.Where(i => i.maKhoiLop == gradeID && i.maMonHoc == subjectID).ToList();
+                var listQuestions = db.cauHois.Where(i => i.maKhoiLop == gradeID && i.maMonHoc == subjectID && i.trangThai == statusExam).ToList();
                 foreach (var i in listQuestions)
                 {
                     CreatePaperWithQuestion pp = new CreatePaperWithQuestion();
