@@ -47,6 +47,7 @@ namespace quiz_management.Views.Teacher.StudentManagement
             // 
             // cbDateTime
             // 
+            this.cbDateTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDateTime.FormattingEnabled = true;
             this.cbDateTime.Location = new System.Drawing.Point(712, 34);
             this.cbDateTime.Name = "cbDateTime";
@@ -68,11 +69,11 @@ namespace quiz_management.Views.Teacher.StudentManagement
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 29);
+            this.label2.Location = new System.Drawing.Point(12, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(283, 37);
+            this.label2.Size = new System.Drawing.Size(226, 37);
             this.label2.TabIndex = 3;
-            this.label2.Text = "THỐNG KÊ KÌ THI";
+            this.label2.Text = "Thống kê kì thi";
             // 
             // ExamStatisticView
             // 

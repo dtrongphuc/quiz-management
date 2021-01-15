@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace quiz_management.Presenters.Login
 {
-    class LoginPresenter
+    internal class LoginPresenter
     {
-        ILoginView view;
+        private ILoginView view;
 
         public LoginPresenter(ILoginView v)
         {
@@ -32,10 +32,10 @@ namespace quiz_management.Presenters.Login
 
             using (var db = new QuizDataContext())
             {
-                var user = db.nguoiDungs.SingleOrDefault(u => u.tenTaiKhoan == username);
-                if (user != null)
+                var user = db.nguoiDungs.Where(u => u.tenTaiKhoan == username);
+                if (user.Any())
                 {
-                    byte[] hashBytes = Convert.FromBase64String(user.matKhau);
+                    byte[] hashBytes = Convert.FromBase64String(user.FirstOrDefault().matKhau);
                     byte[] salt = new byte[16];
                     Array.Copy(hashBytes, 0, salt, 0, salt.Length);
                     var pbkdf2 = new Rfc2898DeriveBytes(password, salt, 10000);
@@ -48,8 +48,8 @@ namespace quiz_management.Presenters.Login
                             return;
                         }
                     }
-                    int role = user.phanQuyen.GetValueOrDefault();
-                    int userCode = user.maNguoiDung;
+                    int role = user.FirstOrDefault().phanQuyen.GetValueOrDefault();
+                    int userCode = user.FirstOrDefault().maNguoiDung;
                     RoleToView(userCode, role);
                 }
                 else
@@ -61,18 +61,20 @@ namespace quiz_management.Presenters.Login
 
         private void RoleToView(int userCode, int role)
         {
-
             switch (role)
             {
                 case 1:
                     view.ShowStudentView(userCode);
                     break;
+
                 case 2:
                     view.ShowTeacherView(userCode);
                     break;
+
                 case 3:
                     view.ShowAdminView(userCode);
                     break;
+
                 default:
                     view.ShowMessage("Không xác định được quyền hạn của tài khoản");
                     break;

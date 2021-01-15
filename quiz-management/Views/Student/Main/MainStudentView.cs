@@ -81,6 +81,7 @@ namespace quiz_management.Views.Student.Main
             {
                 PracticStatisticClick?.Invoke(btnPracticStatistic, e);
             };
+
             btnLogout.Click += (_, e) =>
             {
                 LogoutClick?.Invoke(btnLogout, e);

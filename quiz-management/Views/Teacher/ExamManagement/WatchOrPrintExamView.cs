@@ -33,12 +33,9 @@ namespace quiz_management.Views.Teacher.ExamManagement
             };
         }
 
-        public string TeacherName { set => lbTeacher.Text = value; }
         public List<StudentOfExam> ExamList { set => bsWOPR.DataSource = value; }
 
         public event EventHandler GobackBefore;
-
-        public event EventHandler Print;
 
         public void Message(string text)
         {

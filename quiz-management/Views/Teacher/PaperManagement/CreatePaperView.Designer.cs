@@ -78,7 +78,7 @@
             // 
             this.lbTeacher.AutoSize = true;
             this.lbTeacher.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTeacher.Location = new System.Drawing.Point(901, 23);
+            this.lbTeacher.Location = new System.Drawing.Point(117, 642);
             this.lbTeacher.Name = "lbTeacher";
             this.lbTeacher.Size = new System.Drawing.Size(96, 17);
             this.lbTeacher.TabIndex = 5;
@@ -88,7 +88,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(806, 23);
+            this.label1.Location = new System.Drawing.Point(35, 642);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 17);
             this.label1.TabIndex = 4;
@@ -239,7 +239,7 @@
             // 
             // btnWatchPaperList
             // 
-            this.btnWatchPaperList.Location = new System.Drawing.Point(809, 53);
+            this.btnWatchPaperList.Location = new System.Drawing.Point(818, 32);
             this.btnWatchPaperList.Name = "btnWatchPaperList";
             this.btnWatchPaperList.Size = new System.Drawing.Size(188, 35);
             this.btnWatchPaperList.TabIndex = 22;
@@ -297,7 +297,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1042, 667);
+            this.ClientSize = new System.Drawing.Size(1042, 684);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cbbExam);
             this.Controls.Add(this.label8);

@@ -47,7 +47,7 @@
             // 
             this.lbStudentID.AutoSize = true;
             this.lbStudentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStudentID.Location = new System.Drawing.Point(844, 37);
+            this.lbStudentID.Location = new System.Drawing.Point(31, 616);
             this.lbStudentID.Name = "lbStudentID";
             this.lbStudentID.Size = new System.Drawing.Size(32, 17);
             this.lbStudentID.TabIndex = 63;
@@ -167,7 +167,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1056, 642);
+            this.ClientSize = new System.Drawing.Size(1056, 648);
             this.Controls.Add(this.dtgCQuestionList);
             this.Controls.Add(this.lbStudentID);
             this.Controls.Add(this.linkGobackMain);

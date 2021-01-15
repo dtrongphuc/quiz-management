@@ -46,7 +46,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(387, 575);
+            this.btnUpdate.Location = new System.Drawing.Point(387, 555);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(165, 48);
             this.btnUpdate.TabIndex = 39;
@@ -63,7 +63,7 @@
             this.Question,
             this.QuestionID,
             this.PaperName});
-            this.dgvQuestions.Location = new System.Drawing.Point(34, 227);
+            this.dgvQuestions.Location = new System.Drawing.Point(34, 207);
             this.dgvQuestions.MultiSelect = false;
             this.dgvQuestions.Name = "dgvQuestions";
             this.dgvQuestions.ReadOnly = true;
@@ -113,7 +113,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(336, 74);
+            this.label3.Location = new System.Drawing.Point(336, 54);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(277, 32);
             this.label3.TabIndex = 36;
@@ -123,7 +123,7 @@
             // 
             this.lbTeacher.AutoSize = true;
             this.lbTeacher.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTeacher.Location = new System.Drawing.Point(786, 32);
+            this.lbTeacher.Location = new System.Drawing.Point(111, 623);
             this.lbTeacher.Name = "lbTeacher";
             this.lbTeacher.Size = new System.Drawing.Size(96, 17);
             this.lbTeacher.TabIndex = 35;
@@ -133,7 +133,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(691, 32);
+            this.label1.Location = new System.Drawing.Point(29, 623);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 17);
             this.label1.TabIndex = 34;
@@ -144,7 +144,7 @@
             this.cbbGrade.DisplayMember = "tenKhoiLop";
             this.cbbGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbGrade.FormattingEnabled = true;
-            this.cbbGrade.Location = new System.Drawing.Point(302, 150);
+            this.cbbGrade.Location = new System.Drawing.Point(302, 130);
             this.cbbGrade.Name = "cbbGrade";
             this.cbbGrade.Size = new System.Drawing.Size(121, 28);
             this.cbbGrade.TabIndex = 43;
@@ -155,7 +155,7 @@
             this.cbbSubject.DisplayMember = "tenMonHoc";
             this.cbbSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbSubject.FormattingEnabled = true;
-            this.cbbSubject.Location = new System.Drawing.Point(630, 150);
+            this.cbbSubject.Location = new System.Drawing.Point(630, 130);
             this.cbbSubject.Name = "cbbSubject";
             this.cbbSubject.Size = new System.Drawing.Size(121, 28);
             this.cbbSubject.TabIndex = 42;
@@ -165,7 +165,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(525, 153);
+            this.label4.Location = new System.Drawing.Point(525, 133);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 20);
             this.label4.TabIndex = 41;
@@ -175,7 +175,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(169, 158);
+            this.label2.Location = new System.Drawing.Point(169, 138);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(117, 20);
             this.label2.TabIndex = 40;
@@ -185,7 +185,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(952, 660);
+            this.ClientSize = new System.Drawing.Size(952, 662);
             this.Controls.Add(this.cbbGrade);
             this.Controls.Add(this.cbbSubject);
             this.Controls.Add(this.label4);

@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace quiz_management.Presenters.Teacher.ExamManagement
 {
-    class WatchOrPrintExamPresenter
+    internal class WatchOrPrintExamPresenter
     {
-        IWatchOrPrintExamView view;
-        int currentuser;
+        private IWatchOrPrintExamView view;
+        private int currentuser;
+
         public WatchOrPrintExamPresenter(IWatchOrPrintExamView v, int code)
         {
             view = v;
             currentuser = code;
             view.GobackBefore += GobackBefore_View;
-            view.Print += Print_View;
             LoadPage();
         }
 
@@ -26,9 +26,6 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             List<StudentOfExam> studentOfExams = new List<StudentOfExam>();
             using (var db = new QuizDataContext())
             {
-                var teachername = db.thongTins.Where(i => i.maNguoidung == 1).Select(i => i.tenNguoiDung).ToList();
-                view.TeacherName = teachername[0].ToString();
-
                 var officalexamlist = db.lichThis.ToList();
                 int stt = 1;
                 foreach (var i in officalexamlist)
@@ -48,11 +45,6 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
         private void GobackBefore_View(object sender, EventArgs e)
         {
             view.ShowMainTeacher(currentuser);
-        }
-
-        private void Print_View(object sender, EventArgs e)
-        {
-            
         }
     }
 }

@@ -10,7 +10,6 @@ namespace quiz_management.Views.Teacher.ExamManagement
 {
     interface IWatchOrPrintExamCompletedView
     {
-        string TeacherName { set; }
         BindingList<TrainScript> ExamList { set; }
         event EventHandler GobackBefore;
         void Message(string text);

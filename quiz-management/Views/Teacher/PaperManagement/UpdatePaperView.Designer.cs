@@ -199,7 +199,7 @@
             // 
             this.lbTeacher.AutoSize = true;
             this.lbTeacher.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTeacher.Location = new System.Drawing.Point(905, 28);
+            this.lbTeacher.Location = new System.Drawing.Point(124, 652);
             this.lbTeacher.Name = "lbTeacher";
             this.lbTeacher.Size = new System.Drawing.Size(96, 17);
             this.lbTeacher.TabIndex = 27;
@@ -209,7 +209,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(810, 28);
+            this.label1.Location = new System.Drawing.Point(42, 652);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 17);
             this.label1.TabIndex = 26;
@@ -286,7 +286,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1042, 674);
+            this.ClientSize = new System.Drawing.Size(1042, 688);
             this.Controls.Add(this.lbExam);
             this.Controls.Add(this.tbGrade);
             this.Controls.Add(this.tbSubject);

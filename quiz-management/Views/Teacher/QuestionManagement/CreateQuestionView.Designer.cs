@@ -369,7 +369,7 @@
             // 
             this.lbTeacher.AutoSize = true;
             this.lbTeacher.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTeacher.Location = new System.Drawing.Point(706, 21);
+            this.lbTeacher.Location = new System.Drawing.Point(127, 786);
             this.lbTeacher.Name = "lbTeacher";
             this.lbTeacher.Size = new System.Drawing.Size(96, 17);
             this.lbTeacher.TabIndex = 64;
@@ -379,7 +379,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(611, 21);
+            this.label14.Location = new System.Drawing.Point(32, 786);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(76, 17);
             this.label14.TabIndex = 63;
@@ -422,7 +422,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 807);
+            this.ClientSize = new System.Drawing.Size(874, 812);
             this.Controls.Add(this.cbbDifficute);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.btnShowQuestionList);

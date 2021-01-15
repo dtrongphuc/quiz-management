@@ -45,7 +45,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(263, 552);
+            this.btnUpdate.Location = new System.Drawing.Point(263, 535);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(165, 48);
             this.btnUpdate.TabIndex = 32;
@@ -65,7 +65,7 @@
             this.Grade,
             this.QuestionNum,
             this.Status});
-            this.dgvPaper.Location = new System.Drawing.Point(71, 163);
+            this.dgvPaper.Location = new System.Drawing.Point(71, 146);
             this.dgvPaper.Name = "dgvPaper";
             this.dgvPaper.ReadOnly = true;
             this.dgvPaper.RowHeadersVisible = false;
@@ -129,7 +129,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(322, 82);
+            this.label3.Location = new System.Drawing.Point(322, 65);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(261, 32);
             this.label3.TabIndex = 25;
@@ -139,7 +139,7 @@
             // 
             this.lbTeacher.AutoSize = true;
             this.lbTeacher.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTeacher.Location = new System.Drawing.Point(726, 21);
+            this.lbTeacher.Location = new System.Drawing.Point(113, 619);
             this.lbTeacher.Name = "lbTeacher";
             this.lbTeacher.Size = new System.Drawing.Size(96, 17);
             this.lbTeacher.TabIndex = 24;
@@ -149,7 +149,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(631, 21);
+            this.label1.Location = new System.Drawing.Point(31, 619);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 17);
             this.label1.TabIndex = 23;
@@ -157,7 +157,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(463, 552);
+            this.btnDelete.Location = new System.Drawing.Point(463, 535);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(165, 48);
             this.btnDelete.TabIndex = 33;
@@ -168,7 +168,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(883, 642);
+            this.ClientSize = new System.Drawing.Size(883, 655);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.dgvPaper);

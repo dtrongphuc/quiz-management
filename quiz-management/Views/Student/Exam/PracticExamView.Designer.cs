@@ -169,10 +169,13 @@
             this.cbAnswers.ColumnWidth = 10000;
             this.cbAnswers.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.cbAnswers.FormattingEnabled = true;
+            this.cbAnswers.HorizontalExtent = 10000;
+            this.cbAnswers.HorizontalScrollbar = true;
             this.cbAnswers.Location = new System.Drawing.Point(17, 123);
             this.cbAnswers.Margin = new System.Windows.Forms.Padding(0);
             this.cbAnswers.Name = "cbAnswers";
-            this.cbAnswers.Size = new System.Drawing.Size(858, 120);
+            this.cbAnswers.ScrollAlwaysVisible = true;
+            this.cbAnswers.Size = new System.Drawing.Size(958, 120);
             this.cbAnswers.TabIndex = 10;
             // 
             // txtStudentName
@@ -227,7 +230,7 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(814, 333);
+            this.btnNext.Location = new System.Drawing.Point(914, 333);
             this.btnNext.Margin = new System.Windows.Forms.Padding(2);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(61, 25);
@@ -238,7 +241,7 @@
             // lbClass
             // 
             this.lbClass.AutoSize = true;
-            this.lbClass.Location = new System.Drawing.Point(24, 82);
+            this.lbClass.Location = new System.Drawing.Point(20, 83);
             this.lbClass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbClass.Name = "lbClass";
             this.lbClass.Size = new System.Drawing.Size(28, 13);
@@ -356,7 +359,7 @@
             // cbCurrentAnswers
             // 
             this.cbCurrentAnswers.AutoSize = true;
-            this.cbCurrentAnswers.Location = new System.Drawing.Point(470, 335);
+            this.cbCurrentAnswers.Location = new System.Drawing.Point(571, 338);
             this.cbCurrentAnswers.Name = "cbCurrentAnswers";
             this.cbCurrentAnswers.Size = new System.Drawing.Size(125, 17);
             this.cbCurrentAnswers.TabIndex = 17;
@@ -379,7 +382,7 @@
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Location = new System.Drawing.Point(17, 257);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(855, 54);
+            this.groupBox3.Size = new System.Drawing.Size(955, 54);
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
             // 
@@ -408,7 +411,7 @@
             // cbAllCorrectAnswers
             // 
             this.cbAllCorrectAnswers.AutoSize = true;
-            this.cbAllCorrectAnswers.Location = new System.Drawing.Point(264, 335);
+            this.cbAllCorrectAnswers.Location = new System.Drawing.Point(365, 338);
             this.cbAllCorrectAnswers.Name = "cbAllCorrectAnswers";
             this.cbAllCorrectAnswers.Size = new System.Drawing.Size(114, 17);
             this.cbAllCorrectAnswers.TabIndex = 14;
@@ -425,7 +428,7 @@
             this.tbQuestion.Multiline = true;
             this.tbQuestion.Name = "tbQuestion";
             this.tbQuestion.ReadOnly = true;
-            this.tbQuestion.Size = new System.Drawing.Size(634, 82);
+            this.tbQuestion.Size = new System.Drawing.Size(955, 82);
             this.tbQuestion.TabIndex = 7;
             // 
             // groupBox1
