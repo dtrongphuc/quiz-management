@@ -351,6 +351,7 @@
             // cbbGrade
             // 
             this.cbbGrade.DisplayMember = "tenKhoiLop";
+            this.cbbGrade.Enabled = false;
             this.cbbGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbGrade.FormattingEnabled = true;
             this.cbbGrade.Location = new System.Drawing.Point(288, 150);
@@ -362,6 +363,7 @@
             // cbbSubject
             // 
             this.cbbSubject.DisplayMember = "tenMonHoc";
+            this.cbbSubject.Enabled = false;
             this.cbbSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbSubject.FormattingEnabled = true;
             this.cbbSubject.Location = new System.Drawing.Point(616, 150);

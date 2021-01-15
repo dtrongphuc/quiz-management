@@ -169,17 +169,16 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
                 }
             }
         }
-        
+
         public void LoadSubject()
         {
         }
 
         public void LoadClass(int code)
         {
-            view.StudentID = code.ToString();
-            view.StudentID = currentUserCode.ToString();
             using (var db = new QuizDataContext())
             {
+                view.StudentID = db.thongTins.Where(i => i.maNguoidung == currentUserCode).Select(i => i.tenNguoiDung).ToList()[0].ToString();
                 var classlist = db.khoiLops.ToList();
                 var subjects = db.monHocs.ToList();
                 if (classlist != null)

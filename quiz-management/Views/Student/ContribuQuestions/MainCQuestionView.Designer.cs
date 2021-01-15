@@ -58,9 +58,8 @@
             this.cbResultE = new System.Windows.Forms.CheckBox();
             this.cbResultD = new System.Windows.Forms.CheckBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.lbStudentID = new System.Windows.Forms.Label();
             this.btnWatchContributeQuestion = new System.Windows.Forms.Button();
+            this.lbStudentID = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -79,7 +78,7 @@
             this.tbQuestion.Location = new System.Drawing.Point(149, 174);
             this.tbQuestion.Multiline = true;
             this.tbQuestion.Name = "tbQuestion";
-            this.tbQuestion.Size = new System.Drawing.Size(546, 105);
+            this.tbQuestion.Size = new System.Drawing.Size(628, 105);
             this.tbQuestion.TabIndex = 1;
             this.tbQuestion.Text = "Điền câu hỏi";
             // 
@@ -107,7 +106,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(469, 126);
+            this.label4.Location = new System.Drawing.Point(551, 126);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 20);
             this.label4.TabIndex = 4;
@@ -119,7 +118,7 @@
             this.cbbSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbSubject.FormattingEnabled = true;
-            this.cbbSubject.Location = new System.Drawing.Point(574, 123);
+            this.cbbSubject.Location = new System.Drawing.Point(656, 123);
             this.cbbSubject.Name = "cbbSubject";
             this.cbbSubject.Size = new System.Drawing.Size(121, 28);
             this.cbbSubject.TabIndex = 5;
@@ -288,7 +287,7 @@
             // 
             this.cbResultA.AutoSize = true;
             this.cbResultA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbResultA.Location = new System.Drawing.Point(720, 337);
+            this.cbResultA.Location = new System.Drawing.Point(740, 338);
             this.cbResultA.Name = "cbResultA";
             this.cbResultA.Size = new System.Drawing.Size(18, 17);
             this.cbResultA.TabIndex = 23;
@@ -298,7 +297,7 @@
             // 
             this.cbResultB.AutoSize = true;
             this.cbResultB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbResultB.Location = new System.Drawing.Point(720, 375);
+            this.cbResultB.Location = new System.Drawing.Point(740, 376);
             this.cbResultB.Name = "cbResultB";
             this.cbResultB.Size = new System.Drawing.Size(18, 17);
             this.cbResultB.TabIndex = 24;
@@ -308,7 +307,7 @@
             // 
             this.cbResultC.AutoSize = true;
             this.cbResultC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbResultC.Location = new System.Drawing.Point(720, 416);
+            this.cbResultC.Location = new System.Drawing.Point(740, 417);
             this.cbResultC.Name = "cbResultC";
             this.cbResultC.Size = new System.Drawing.Size(18, 17);
             this.cbResultC.TabIndex = 25;
@@ -318,7 +317,7 @@
             // 
             this.cbResultF.AutoSize = true;
             this.cbResultF.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbResultF.Location = new System.Drawing.Point(720, 533);
+            this.cbResultF.Location = new System.Drawing.Point(740, 534);
             this.cbResultF.Name = "cbResultF";
             this.cbResultF.Size = new System.Drawing.Size(18, 17);
             this.cbResultF.TabIndex = 28;
@@ -328,7 +327,7 @@
             // 
             this.cbResultE.AutoSize = true;
             this.cbResultE.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbResultE.Location = new System.Drawing.Point(720, 492);
+            this.cbResultE.Location = new System.Drawing.Point(740, 493);
             this.cbResultE.Name = "cbResultE";
             this.cbResultE.Size = new System.Drawing.Size(18, 17);
             this.cbResultE.TabIndex = 27;
@@ -338,7 +337,7 @@
             // 
             this.cbResultD.AutoSize = true;
             this.cbResultD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbResultD.Location = new System.Drawing.Point(720, 454);
+            this.cbResultD.Location = new System.Drawing.Point(740, 455);
             this.cbResultD.Name = "cbResultD";
             this.cbResultD.Size = new System.Drawing.Size(18, 17);
             this.cbResultD.TabIndex = 26;
@@ -348,31 +347,11 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(695, 304);
+            this.label13.Location = new System.Drawing.Point(715, 305);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(62, 20);
             this.label13.TabIndex = 29;
             this.label13.Text = "Đáp án";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(659, 19);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(61, 20);
-            this.label14.TabIndex = 30;
-            this.label14.Text = "MSSV:";
-            // 
-            // lbStudentID
-            // 
-            this.lbStudentID.AutoSize = true;
-            this.lbStudentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStudentID.Location = new System.Drawing.Point(741, 19);
-            this.lbStudentID.Name = "lbStudentID";
-            this.lbStudentID.Size = new System.Drawing.Size(36, 20);
-            this.lbStudentID.TabIndex = 31;
-            this.lbStudentID.Text = "362";
             // 
             // btnWatchContributeQuestion
             // 
@@ -382,15 +361,25 @@
             this.btnWatchContributeQuestion.TabIndex = 32;
             this.btnWatchContributeQuestion.Text = "Xem đóng góp";
             this.btnWatchContributeQuestion.UseVisualStyleBackColor = true;
+            this.btnWatchContributeQuestion.Click += new System.EventHandler(this.btnWatchContributeQuestion_Click);
+            // 
+            // lbStudentID
+            // 
+            this.lbStudentID.AutoSize = true;
+            this.lbStudentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStudentID.Location = new System.Drawing.Point(655, 9);
+            this.lbStudentID.Name = "lbStudentID";
+            this.lbStudentID.Size = new System.Drawing.Size(16, 17);
+            this.lbStudentID.TabIndex = 31;
+            this.lbStudentID.Text = "1";
             // 
             // MainCQuestionView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(801, 667);
+            this.ClientSize = new System.Drawing.Size(857, 667);
             this.Controls.Add(this.btnWatchContributeQuestion);
             this.Controls.Add(this.lbStudentID);
-            this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.cbResultF);
             this.Controls.Add(this.cbResultE);
@@ -461,8 +450,7 @@
         private System.Windows.Forms.CheckBox cbResultE;
         private System.Windows.Forms.CheckBox cbResultD;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label lbStudentID;
         private System.Windows.Forms.Button btnWatchContributeQuestion;
+        private System.Windows.Forms.Label lbStudentID;
     }
 }
