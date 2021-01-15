@@ -278,18 +278,18 @@
             // Password_Validator
             // 
             this.Password_Validator.ControlToValidate = this.txtPassword;
-            this.Password_Validator.ErrorMessage = "";
+            this.Password_Validator.ErrorMessage = "Mật khẩu từ 3 - 10 ký tự";
             this.Password_Validator.InitialValue = null;
             this.Password_Validator.IsValid = false;
-            this.Password_Validator.Regex = null;
+            this.Password_Validator.Regex = ".{3,10}";
             // 
             // ConfirmPassword_Validator
             // 
             this.ConfirmPassword_Validator.ControlToValidate = this.txtPasswordConfirm;
-            this.ConfirmPassword_Validator.ErrorMessage = null;
+            this.ConfirmPassword_Validator.ErrorMessage = "Mật khẩu từ 3 - 10 ký tự";
             this.ConfirmPassword_Validator.InitialValue = null;
             this.ConfirmPassword_Validator.IsValid = false;
-            this.ConfirmPassword_Validator.Regex = null;
+            this.ConfirmPassword_Validator.Regex = ".{3, 10}";
             // 
             // RegisterView
             // 

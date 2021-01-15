@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label7 = new System.Windows.Forms.Label();
             this.dgvQuestionSelectedList = new System.Windows.Forms.DataGridView();
             this.MaCauHoiDaChon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CauHoiDaChon = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,15 +53,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionSelectedList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuestionList)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(582, 564);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(183, 17);
-            this.label7.TabIndex = 42;
-            this.label7.Text = "(*) Một đề ít nhất 20 câu hỏi";
             // 
             // dgvQuestionSelectedList
             // 
@@ -304,7 +294,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbPaperID);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.dgvQuestionSelectedList);
             this.Controls.Add(this.btnMoveToQuestionList);
             this.Controls.Add(this.btnMoveToSeleted);
@@ -327,7 +316,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgvQuestionSelectedList;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaCauHoiDaChon;
         private System.Windows.Forms.DataGridViewTextBoxColumn CauHoiDaChon;

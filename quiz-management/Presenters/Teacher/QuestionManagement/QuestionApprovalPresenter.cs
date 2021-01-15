@@ -35,6 +35,7 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
             listQuestion = new BindingList<ContributeQuestion>();
             using (var db = new QuizDataContext())
             {
+                view.TeacherName = db.thongTins.Where(i => i.maNguoidung == currenUserCode).Select(i => i.tenNguoiDung).ToList()[0].ToString();
                 listContribute = db.dongGops.ToList();
                 foreach (var contribute in listContribute)
                 {

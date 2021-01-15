@@ -94,6 +94,7 @@ namespace quiz_management.Views.Student
             if (confirmPassword != Password)
             {
                 errorMessage = "Mật khẩu không khớp";
+                e.Cancel = true;
             }
             errorProvider.SetError(txtPasswordConfirm, errorMessage);
         }

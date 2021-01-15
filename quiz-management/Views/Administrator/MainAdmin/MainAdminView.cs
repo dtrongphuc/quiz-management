@@ -1,5 +1,6 @@
 ﻿using quiz_management.Presenters.Administrator.MainAdmin;
 using quiz_management.Views.Administrator.UserManagement;
+using quiz_management.Views.Student;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,6 +32,10 @@ namespace quiz_management.Views.Administrator.MainAdmin
             {
                 Desentralization?.Invoke(btnDesentalization, e);
             };
+            btnLogout.Click += (_, e) =>
+            {
+                Logout?.Invoke(btnLogout, e);
+            };
         }
 
         public string DOB { set => lbDOB.Text = value; }
@@ -39,6 +44,7 @@ namespace quiz_management.Views.Administrator.MainAdmin
         public event EventHandler AddUser;
         public event EventHandler WatchUserList;
         public event EventHandler Desentralization;
+        public event EventHandler Logout;
 
         public void ShowAddUser(int userCode)
         {
@@ -54,6 +60,14 @@ namespace quiz_management.Views.Administrator.MainAdmin
             //MainCQuestionView screen = new MainCQuestionView(userCode);
             //screen.FormClosed += (_, e) => this.Close();
             //screen.Show();
+        }
+
+        public void ShowLogin()
+        {
+            this.Hide();
+            LoginView screen = new LoginView();
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
         }
 
         public void ShowMessages(string text)
