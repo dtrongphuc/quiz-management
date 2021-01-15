@@ -38,6 +38,7 @@ namespace quiz_management.Views.Student.Main
         public event EventHandler PracticExamClick;
 
         public event EventHandler PracticStatisticClick;
+
         public event EventHandler LogoutClick;
 
         public MainStudentView(int u)
@@ -146,7 +147,7 @@ namespace quiz_management.Views.Student.Main
         {
             this.Hide();
             LoginView screen = new LoginView();
-            screen.FormClosed += (_, e) => this.Show();
+            screen.FormClosed += (_, e) => this.Close();
             screen.Show();
         }
     }

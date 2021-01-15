@@ -34,21 +34,23 @@
             this.lbDOB = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.txtTitle2 = new System.Windows.Forms.Label();
-            this.dgvUser = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Desentralization = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvUser = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
             this.SuspendLayout();
             // 
             // linkGoBack
             // 
             this.linkGoBack.AutoSize = true;
-            this.linkGoBack.Location = new System.Drawing.Point(42, 30);
+            this.linkGoBack.Location = new System.Drawing.Point(32, 24);
+            this.linkGoBack.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkGoBack.Name = "linkGoBack";
-            this.linkGoBack.Size = new System.Drawing.Size(49, 17);
+            this.linkGoBack.Size = new System.Drawing.Size(38, 13);
             this.linkGoBack.TabIndex = 55;
             this.linkGoBack.TabStop = true;
             this.linkGoBack.Text = "Trở về";
@@ -56,18 +58,20 @@
             // lbAdminName
             // 
             this.lbAdminName.AutoSize = true;
-            this.lbAdminName.Location = new System.Drawing.Point(637, 30);
+            this.lbAdminName.Location = new System.Drawing.Point(478, 24);
+            this.lbAdminName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbAdminName.Name = "lbAdminName";
-            this.lbAdminName.Size = new System.Drawing.Size(131, 17);
+            this.lbAdminName.Size = new System.Drawing.Size(103, 13);
             this.lbAdminName.TabIndex = 48;
             this.lbAdminName.Text = "Nguyễn Hiếu Nghĩa";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(538, 30);
+            this.label3.Location = new System.Drawing.Point(404, 24);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 17);
+            this.label3.Size = new System.Drawing.Size(70, 13);
             this.label3.TabIndex = 47;
             this.label3.Text = "Quản trị viên:";
             // 
@@ -75,19 +79,20 @@
             // 
             this.lbDOB.AutoSize = true;
             this.lbDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDOB.Location = new System.Drawing.Point(701, 565);
+            this.lbDOB.Location = new System.Drawing.Point(526, 459);
+            this.lbDOB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDOB.Name = "lbDOB";
-            this.lbDOB.Size = new System.Drawing.Size(80, 17);
+            this.lbDOB.Size = new System.Drawing.Size(65, 13);
             this.lbDOB.TabIndex = 46;
             this.lbDOB.Text = "20/10/2000";
             // 
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(307, 522);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUpdate.Location = new System.Drawing.Point(322, 423);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(217, 60);
+            this.btnUpdate.Size = new System.Drawing.Size(163, 49);
             this.btnUpdate.TabIndex = 45;
             this.btnUpdate.Text = "Chỉnh Sửa";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -96,11 +101,53 @@
             // 
             this.txtTitle2.AutoSize = true;
             this.txtTitle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitle2.Location = new System.Drawing.Point(266, 83);
+            this.txtTitle2.Location = new System.Drawing.Point(200, 67);
+            this.txtTitle2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtTitle2.Name = "txtTitle2";
-            this.txtTitle2.Size = new System.Drawing.Size(312, 32);
+            this.txtTitle2.Size = new System.Drawing.Size(241, 26);
             this.txtTitle2.TabIndex = 44;
             this.txtTitle2.Text = "Danh Sách Người Dùng";
+            // 
+            // Desentralization
+            // 
+            this.Desentralization.DataPropertyName = "Desentralization";
+            this.Desentralization.HeaderText = "Phân Quyền";
+            this.Desentralization.MinimumWidth = 6;
+            this.Desentralization.Name = "Desentralization";
+            this.Desentralization.ReadOnly = true;
+            // 
+            // DOB
+            // 
+            this.DOB.DataPropertyName = "DOB";
+            this.DOB.HeaderText = "Ngày Sinh";
+            this.DOB.MinimumWidth = 6;
+            this.DOB.Name = "DOB";
+            this.DOB.ReadOnly = true;
+            // 
+            // UserName
+            // 
+            this.UserName.DataPropertyName = "UserName";
+            this.UserName.HeaderText = "Tên Người Dùng";
+            this.UserName.MinimumWidth = 6;
+            this.UserName.Name = "UserName";
+            this.UserName.ReadOnly = true;
+            // 
+            // UserID
+            // 
+            this.UserID.DataPropertyName = "UserID";
+            this.UserID.HeaderText = "Mã Người dùng";
+            this.UserID.MinimumWidth = 6;
+            this.UserID.Name = "UserID";
+            this.UserID.ReadOnly = true;
+            this.UserID.Visible = false;
+            // 
+            // STT
+            // 
+            this.STT.DataPropertyName = "STT";
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
             // 
             // dgvUser
             // 
@@ -114,61 +161,33 @@
             this.UserName,
             this.DOB,
             this.Desentralization});
-            this.dgvUser.Location = new System.Drawing.Point(45, 154);
+            this.dgvUser.Location = new System.Drawing.Point(34, 125);
+            this.dgvUser.Margin = new System.Windows.Forms.Padding(2);
             this.dgvUser.Name = "dgvUser";
             this.dgvUser.ReadOnly = true;
             this.dgvUser.RowHeadersWidth = 51;
             this.dgvUser.RowTemplate.Height = 24;
             this.dgvUser.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUser.Size = new System.Drawing.Size(736, 322);
+            this.dgvUser.Size = new System.Drawing.Size(552, 262);
             this.dgvUser.TabIndex = 56;
             // 
-            // STT
+            // button1
             // 
-            this.STT.DataPropertyName = "STT";
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            // 
-            // UserID
-            // 
-            this.UserID.DataPropertyName = "UserID";
-            this.UserID.HeaderText = "Mã Người dùng";
-            this.UserID.MinimumWidth = 6;
-            this.UserID.Name = "UserID";
-            this.UserID.ReadOnly = true;
-            this.UserID.Visible = false;
-            // 
-            // UserName
-            // 
-            this.UserName.DataPropertyName = "UserName";
-            this.UserName.HeaderText = "Tên Người Dùng";
-            this.UserName.MinimumWidth = 6;
-            this.UserName.Name = "UserName";
-            this.UserName.ReadOnly = true;
-            // 
-            // DOB
-            // 
-            this.DOB.DataPropertyName = "DOB";
-            this.DOB.HeaderText = "Ngày Sinh";
-            this.DOB.MinimumWidth = 6;
-            this.DOB.Name = "DOB";
-            this.DOB.ReadOnly = true;
-            // 
-            // Desentralization
-            // 
-            this.Desentralization.DataPropertyName = "Desentralization";
-            this.Desentralization.HeaderText = "Phân Quyền";
-            this.Desentralization.MinimumWidth = 6;
-            this.Desentralization.Name = "Desentralization";
-            this.Desentralization.ReadOnly = true;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(95, 423);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(163, 49);
+            this.button1.TabIndex = 57;
+            this.button1.Text = "Xuất Excel";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // ListUserView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(815, 610);
+            this.ClientSize = new System.Drawing.Size(611, 496);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvUser);
             this.Controls.Add(this.linkGoBack);
             this.Controls.Add(this.lbAdminName);
@@ -176,6 +195,7 @@
             this.Controls.Add(this.lbDOB);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.txtTitle2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ListUserView";
             this.Text = "ListUserView";
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
@@ -191,11 +211,12 @@
         private System.Windows.Forms.Label lbDOB;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label txtTitle2;
-        private System.Windows.Forms.DataGridView dgvUser;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UserID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UserName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DOB;
         private System.Windows.Forms.DataGridViewTextBoxColumn Desentralization;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DOB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UserName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UserID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridView dgvUser;
+        private System.Windows.Forms.Button button1;
     }
 }
