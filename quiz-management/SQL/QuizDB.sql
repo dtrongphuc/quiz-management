@@ -11,6 +11,7 @@
 )
 
 select * from nguoiDung
+update nguoiDung set phanQuyen = 3 where maNguoiDung = 3
 insert into nguoiDung values('c','Hqz75h972DAG+3clE0Gi9sto1yVPd8XgM1x4tSb/WvZEfKgo',1,1)
 CREATE TABLE Lop
 (
