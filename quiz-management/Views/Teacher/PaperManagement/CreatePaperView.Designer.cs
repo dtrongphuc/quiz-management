@@ -180,6 +180,7 @@
             // cbbGrade
             // 
             this.cbbGrade.DisplayMember = "tenKhoiLop";
+            this.cbbGrade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbGrade.FormattingEnabled = true;
             this.cbbGrade.Location = new System.Drawing.Point(484, 151);
@@ -256,6 +257,7 @@
             // cbbSubject
             // 
             this.cbbSubject.DisplayMember = "tenMonHoc";
+            this.cbbSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbSubject.FormattingEnabled = true;
             this.cbbSubject.Location = new System.Drawing.Point(818, 151);
@@ -277,6 +279,7 @@
             // cbbExam
             // 
             this.cbbExam.DisplayMember = "tenKhoiLop";
+            this.cbbExam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbExam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbExam.FormattingEnabled = true;
             this.cbbExam.Items.AddRange(new object[] {
@@ -286,7 +289,6 @@
             this.cbbExam.Name = "cbbExam";
             this.cbbExam.Size = new System.Drawing.Size(186, 28);
             this.cbbExam.TabIndex = 26;
-            this.cbbExam.Text = "Chính thức";
             this.cbbExam.ValueMember = "maKhoiLop";
             // 
             // CreatePaperView

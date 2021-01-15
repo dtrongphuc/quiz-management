@@ -47,6 +47,8 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
         {
             view.listQuestion = null;
             view.listQuestionselected = null;
+            ListQuestionselcted = null;
+            listQT = null;
             FillAll();
         }
 
@@ -54,6 +56,8 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
         {
             view.listQuestion = null;
             view.listQuestionselected = null;
+            ListQuestionselcted = null;
+            listQT = null;
             FillAll();
         }
 
