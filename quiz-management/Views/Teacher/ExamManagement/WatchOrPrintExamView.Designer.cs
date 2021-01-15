@@ -32,8 +32,6 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.linkGoBackBefore = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
-            this.lbTeacher = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.StudentOfExamBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.StudentOfExamBindingSource)).BeginInit();
@@ -42,7 +40,7 @@
             // linkGoBackBefore
             // 
             this.linkGoBackBefore.AutoSize = true;
-            this.linkGoBackBefore.Location = new System.Drawing.Point(31, 20);
+            this.linkGoBackBefore.Location = new System.Drawing.Point(11, 9);
             this.linkGoBackBefore.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkGoBackBefore.Name = "linkGoBackBefore";
             this.linkGoBackBefore.Size = new System.Drawing.Size(38, 13);
@@ -60,28 +58,6 @@
             this.label3.Size = new System.Drawing.Size(341, 26);
             this.label3.TabIndex = 43;
             this.label3.Text = "Danh Sách Thí Sinh Của Kì Thi";
-            // 
-            // lbTeacher
-            // 
-            this.lbTeacher.AutoSize = true;
-            this.lbTeacher.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTeacher.Location = new System.Drawing.Point(699, 20);
-            this.lbTeacher.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbTeacher.Name = "lbTeacher";
-            this.lbTeacher.Size = new System.Drawing.Size(74, 13);
-            this.lbTeacher.TabIndex = 42;
-            this.lbTeacher.Text = "Mai Anh Tuấn";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(637, 20);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
-            this.label1.TabIndex = 41;
-            this.label1.Text = "Giáo viên: ";
             // 
             // reportViewer1
             // 
@@ -108,8 +84,6 @@
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.linkGoBackBefore);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.lbTeacher);
-            this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "WatchOrPrintExamView";
             this.Text = "WatchOrPrintExamView";
@@ -123,8 +97,6 @@
         #endregion
         private System.Windows.Forms.LinkLabel linkGoBackBefore;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lbTeacher;
-        private System.Windows.Forms.Label label1;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource StudentOfExamBindingSource;
     }
