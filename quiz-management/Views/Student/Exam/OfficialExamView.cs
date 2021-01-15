@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Timers;
 using quiz_management.Models;
 using quiz_management.Views.Student.Main;
+using quiz_management.Views.Teacher.Main;
 
 namespace quiz_management.Views.Student.Exam
 {
@@ -98,6 +99,14 @@ namespace quiz_management.Views.Student.Exam
         {
             this.Hide();
             MainStudentView screen = new MainStudentView(userCode);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
+        }
+
+        public void ShowTeacherView(int userCode)
+        {
+            this.Hide();
+            MainTeacherView screen = new MainTeacherView(userCode);
             screen.FormClosed += (_, e) => this.Close();
             screen.Show();
         }

@@ -10,8 +10,6 @@
 	PRIMARY KEY (maNguoiDung)
 )
 
-insert into nguoiDung values('c','Hqz75h972DAG+3clE0Gi9sto1yVPd8XgM1x4tSb/WvZEfKgo',1,1)
-update nguoiDung set phanQuyen = 3 where maNguoiDung = 3
 
 CREATE TABLE Lop
 (
@@ -24,7 +22,6 @@ CREATE TABLE Lop
 )
 
 alter table Lop add constraint FK_lop_khoiLop FOREIGN KEY(maKhoiLop) references khoiLop(maKhoiLop)
-update boDe set trangThai = 0 where maBoDe =1
 insert into boDe values(20,1,'K10',1800,0)
 
 
@@ -38,8 +35,6 @@ CREATE TABLE khoiLop
 )
 select * from khoiLop
 
-
-
 CREATE TABLE thongTin
 (
 	maNguoidung INT,
@@ -50,9 +45,6 @@ CREATE TABLE thongTin
 	CONSTRAINT PK_thongtin
 	PRIMARY KEY (maNguoidung)
 )
-select * from thongTin
-insert into thongTin(maNguoidung,tenNguoiDung,ngaySinh,maLopHoc)values('3','Thành Phú','2000-05-05',1)
-
 
 ALTER TABLE thongTin
 ADD CONSTRAINT df_maLopHoc
@@ -69,7 +61,7 @@ CREATE TABLE monHoc
 	CONSTRAINT PK_monHoc
 	PRIMARY KEY(maMonHoc)
 )
-select * from monHoc
+
 CREATE TABLE boDe
 (
 	maBoDe INT IDENTITY,
@@ -82,7 +74,6 @@ CREATE TABLE boDe
 	CONSTRAINT PK_boDe
 	PRIMARY KEY (maBoDe)
 )
-select * from boDe
 
 ALTER TABLE dbo.boDe ADD CONSTRAINT FK_boDe_monHoc FOREIGN KEY(maMon) REFERENCES dbo.monHoc(maMonHoc)
 ALTER TABLE boDe ADD CONSTRAINT FK_boDe_khoiLop FOREIGN KEY(maKhoi) REFERENCES khoiLop(maKhoiLop)
@@ -104,7 +95,6 @@ alter table cauhoi alter column cauHoi nvarchar(500)
 alter table cauHoi add constraint df_trangthai default 1 for trangThai
 alter table cauHoi add constraint FK_cauHoi_monHoc foreign key(maMonHoc) references monHoc(maMonHoc)
 alter table cauHoi add constraint FK_cauHoi_khoiLop foreign key(maKhoiLop) references khoiLop(maKhoiLop)
-select * from cauHoi
 
 CREATE TABLE cTBoDe
 (
@@ -128,7 +118,6 @@ CREATE TABLE dapAn
 	CONSTRAINT PK_dapAn
 	PRIMARY KEY (maCauHoi,maCauTraLoi)
 )
-
 
 ALTER TABLE dbo.dapAn ADD CONSTRAINT FK_dapan_cauHoi FOREIGN KEY (maCauHoi) REFERENCES dbo.cauHoi (maCauHoi)
 
@@ -154,14 +143,9 @@ alter table ketQua add constraint df_causai default 0 for cauSai;
 alter table ketQua add constraint df_ngaylam default getdate() for ngayLam;
 --alter table ketQua add constraint df_cauchualam default 0 for chuaLam;
 
-update ketQua set trangThai=0 where maKetQua=2
 select * from ketQua
 ALTER TABLE dbo.ketQua ADD CONSTRAINT FK_ketQua_nguoiDung FOREIGN KEY(maNguoiDung) REFERENCES dbo.nguoiDung(maNguoiDung)
 ALTER TABLE  dbo.ketQua ADD CONSTRAINT FK_ketQua_boDe FOREIGN KEY(maBoDe) REFERENCES dbo.boDe(maBoDe)
-
-insert into ketQua
-values(1, 1, null, null, null, null, null, null, null)
-go
 
 CREATE TABLE cTKetQua
 (
@@ -173,7 +157,6 @@ CREATE TABLE cTKetQua
 	CONSTRAINT PK_cTKetQua
 	PRIMARY KEY (maKetQua,maCauHoi,maCauTraLoi)
 )
-
 
 ALTER TABLE dbo.cTKetQua ADD CONSTRAINT FK_cTKetQua_ketQua FOREIGN KEY (maKetQua) REFERENCES dbo.ketQua(maKetQua)
 ALTER TABLE  dbo.cTKetQua ADD CONSTRAINT FK_cTKetQua_cauHoi FOREIGN KEY (maCauHoi) REFERENCES dbo.cauHoi(maCauHoi)
@@ -190,8 +173,6 @@ CREATE TABLE lichThi
 	CONSTRAINT PK_lichThi
 	PRIMARY KEY(maNguoiDung,maBoDe,ngayThi,maLichThi)
 )
-select * from lichThi
-select * from boDe
 
 alter table lichThi add constraint FK_lichThi_boDe foreign key (maBoDe) references boDe(maBoDe)
 alter table lichThi add constraint FK_lichThi_nguoiDung foreign key (maNguoiDung) references nguoiDung(maNguoiDung) on Delete Cascade
@@ -214,9 +195,6 @@ alter table kyThiThu add constraint FK_kyThiThu_boDe foreign key (maBoDe) refere
 alter table kyThiThu add constraint FK_kyThiThu_KhoiLop foreign key (maKhoiLop) references khoiLop(maKhoiLop)
 alter table kyThiThu add constraint FK_kyThiThu_monHoc foreign key (maMonHoc) references monHoc(maMonHoc)
 alter table kyThiThu add constraint FK_kyThiThu_nguoiDung foreign key (maNguoiDung) references nguoiDung(maNguoiDung) on Delete Cascade
-
-select * from kyThiThu
-
 
 CREATE TABLE luyenTap
 (
@@ -249,7 +227,6 @@ CREATE TABLE dongGop
 ALTER TABLE dongGop ADD CONSTRAINT FK_dongGop_khoiLop FOREIGN KEY(maKhoiLop) REFERENCES khoiLop(maKhoiLop)
 ALTER TABLE dbo.dongGop ADD CONSTRAINT FK_dongGop_nguoiDung FOREIGN KEY(maNguoiDung) REFERENCES dbo.nguoiDung(maNguoiDung) on Delete Cascade
 ALTER TABLE  dbo.dongGop ADD CONSTRAINT FK_dongGop_monHoc FOREIGN KEY(maMonHoc) REFERENCES dbo.monHoc (maMonHoc)
-select * from dongGop
 
 CREATE TABLE cTDongGop
 (
@@ -507,22 +484,6 @@ VALUES
     5  -- maCauHoi - int
     )
 GO
-
-
-insert into ketQua(maNguoiDung,MaBoDe,CauDung,TrangThai,ThoiGian,diem)
-values (1,1,1,1,60,10)
-go
-insert into cTKetQua(maKetQua,maCauHoi,maCauTraLoi,thoiGian)
-values(1,1,4,60)
-go
-
-insert into lichThi (maNguoiDung,maMonHoc,ngayThi)
-values (1,1,getdate())
-go
-select * from nguoiDung
-select * from thongtin
-select * from lop
-update thongtin set maLopHoc = 1
 
 ---bắt đầu từ đây
 --select * from khoiLop
@@ -853,8 +814,7 @@ values
     10
 )
 insert into cTBoDe values (2, 7), (2, 6)
-select * from cTBoDe
-select * from boDe
+
 INSERT INTO dbo.boDe
 (
     thoiGian,
@@ -889,13 +849,11 @@ insert into dongGop values
     N'Gió bắt đầu từ đâu??',
     'K11'
 )
-select * from cTDongGop
 insert into cTDongGop values ( 1, N'trả lời 1', 0), ( 1, N'trả lời 2', 1), ( 1, N'trả lời 3', 0), ( 1, N'trả lời 4', 0),
                              ( 2, N'trả lời 1', 1), ( 2, N'trả lời 2', 0), ( 2, N'trả lời 3', 0), ( 2, N'trả lời 4', 0) 
                              
 insert into nguoiDung values ('b', 'NW5hmDQ+PyC/HJ1oS9ENKd+L63PHQxhyAjLf6eK1NW+NaY5r', 2, 1)
 insert into thongTin values (2, N'Nguyễn Hiếu Nghĩa', '2000-10-20', null)
-select * from boDe
 update cauHoi set trangThai = 0 where maCauHoi = 14 or maCauHoi = 15
 insert into kyThiThu values (1, 1, 1, '2020-10-10', '2020-12-12', 1, 'K10')
 
