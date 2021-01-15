@@ -71,7 +71,7 @@ namespace quiz_management.Presenters.Register
                     var userInfor = new thongTin();
                     userInfor.maNguoidung = userId;
                     userInfor.tenNguoiDung = view.FullName;
-                    userInfor.ngaySinh = Convert.ToDateTime(view.Birthday);
+                    userInfor.ngaySinh = DateTime.ParseExact(view.Birthday, "d/M/yyyy", CultureInfo.InvariantCulture);
                     if (selected != null)
                         userInfor.maLopHoc = selected?.maLopHoc;
 
@@ -82,6 +82,7 @@ namespace quiz_management.Presenters.Register
                 catch (Exception)
                 {
                     view.ShowMessage("Đã xảy ra lỗi");
+                    return;
                 }
             }
         }

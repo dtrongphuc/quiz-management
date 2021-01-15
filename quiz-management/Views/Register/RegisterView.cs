@@ -53,7 +53,7 @@ namespace quiz_management.Views.Student
 
             btnSubmit.Click += (_, e) =>
             {
-                if (!ValidateChildren())
+                if (!this.ValidateChildren())
                 {
                     MessageBox.Show("Vui lòng điền đầy đủ dữ liệu hợp lệ");
                     return;
@@ -70,6 +70,20 @@ namespace quiz_management.Views.Student
             ToLoginView.Click += (_, e) =>
             {
                 SwitchToLoginView.Invoke(ToLoginView, e);
+            };
+
+            txtBirthday.GotFocus += (_, e) =>
+            {
+                if (txtBirthday.Text == "dd/mm/yyyy")
+                {
+                    txtBirthday.Text = "";
+                }
+            };
+
+            txtBirthday.LostFocus += (_, e) =>
+            {
+                if (string.IsNullOrWhiteSpace(txtBirthday.Text))
+                    txtBirthday.Text = "dd/mm/yyyy";
             };
         }
 

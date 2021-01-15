@@ -52,6 +52,8 @@
             this.txtCompleted = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbCurrentAnswers = new System.Windows.Forms.CheckBox();
+            this.lbQuestionCountSelected = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lbCorrectAnswers = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -63,8 +65,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.lbQuestionCountSelected = new System.Windows.Forms.Label();
-            this.cbCurrentAnswers = new System.Windows.Forms.CheckBox();
             this.gbQuestionButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
@@ -92,7 +92,7 @@
             // btnSubmit
             // 
             this.btnSubmit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSubmit.Location = new System.Drawing.Point(155, 314);
+            this.btnSubmit.Location = new System.Drawing.Point(196, 314);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(111, 44);
@@ -172,7 +172,7 @@
             this.cbAnswers.Location = new System.Drawing.Point(17, 123);
             this.cbAnswers.Margin = new System.Windows.Forms.Padding(0);
             this.cbAnswers.Name = "cbAnswers";
-            this.cbAnswers.Size = new System.Drawing.Size(634, 120);
+            this.cbAnswers.Size = new System.Drawing.Size(858, 120);
             this.cbAnswers.TabIndex = 10;
             // 
             // txtStudentName
@@ -227,7 +227,7 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(590, 333);
+            this.btnNext.Location = new System.Drawing.Point(814, 333);
             this.btnNext.Margin = new System.Windows.Forms.Padding(2);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(61, 25);
@@ -289,7 +289,7 @@
             this.gbQuestionButtons.Margin = new System.Windows.Forms.Padding(2);
             this.gbQuestionButtons.Name = "gbQuestionButtons";
             this.gbQuestionButtons.Padding = new System.Windows.Forms.Padding(2);
-            this.gbQuestionButtons.Size = new System.Drawing.Size(279, 376);
+            this.gbQuestionButtons.Size = new System.Drawing.Size(363, 376);
             this.gbQuestionButtons.TabIndex = 0;
             this.gbQuestionButtons.TabStop = false;
             this.gbQuestionButtons.Text = "Chọn câu";
@@ -297,7 +297,7 @@
             // btnStatistic
             // 
             this.btnStatistic.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnStatistic.Location = new System.Drawing.Point(12, 314);
+            this.btnStatistic.Location = new System.Drawing.Point(53, 314);
             this.btnStatistic.Margin = new System.Windows.Forms.Padding(2);
             this.btnStatistic.Name = "btnStatistic";
             this.btnStatistic.Size = new System.Drawing.Size(111, 44);
@@ -329,8 +329,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.groupBox2);
-            this.splitContainer2.Size = new System.Drawing.Size(955, 376);
-            this.splitContainer2.SplitterDistance = 279;
+            this.splitContainer2.Size = new System.Drawing.Size(1250, 376);
+            this.splitContainer2.SplitterDistance = 363;
             this.splitContainer2.SplitterWidth = 3;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -349,9 +349,29 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(673, 376);
+            this.groupBox2.Size = new System.Drawing.Size(884, 376);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
+            // 
+            // cbCurrentAnswers
+            // 
+            this.cbCurrentAnswers.AutoSize = true;
+            this.cbCurrentAnswers.Location = new System.Drawing.Point(470, 335);
+            this.cbCurrentAnswers.Name = "cbCurrentAnswers";
+            this.cbCurrentAnswers.Size = new System.Drawing.Size(125, 17);
+            this.cbCurrentAnswers.TabIndex = 17;
+            this.cbCurrentAnswers.Text = "Xem đáp án câu này";
+            this.cbCurrentAnswers.UseVisualStyleBackColor = true;
+            // 
+            // lbQuestionCountSelected
+            // 
+            this.lbQuestionCountSelected.AutoSize = true;
+            this.lbQuestionCountSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQuestionCountSelected.Location = new System.Drawing.Point(14, 15);
+            this.lbQuestionCountSelected.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbQuestionCountSelected.Name = "lbQuestionCountSelected";
+            this.lbQuestionCountSelected.Size = new System.Drawing.Size(0, 17);
+            this.lbQuestionCountSelected.TabIndex = 16;
             // 
             // groupBox3
             // 
@@ -359,7 +379,7 @@
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Location = new System.Drawing.Point(17, 257);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(634, 54);
+            this.groupBox3.Size = new System.Drawing.Size(855, 54);
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
             // 
@@ -388,7 +408,7 @@
             // cbAllCorrectAnswers
             // 
             this.cbAllCorrectAnswers.AutoSize = true;
-            this.cbAllCorrectAnswers.Location = new System.Drawing.Point(156, 338);
+            this.cbAllCorrectAnswers.Location = new System.Drawing.Point(264, 335);
             this.cbAllCorrectAnswers.Name = "cbAllCorrectAnswers";
             this.cbAllCorrectAnswers.Size = new System.Drawing.Size(114, 17);
             this.cbAllCorrectAnswers.TabIndex = 14;
@@ -430,7 +450,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(955, 146);
+            this.groupBox1.Size = new System.Drawing.Size(1250, 146);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
@@ -486,36 +506,16 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(955, 525);
+            this.splitContainer1.Size = new System.Drawing.Size(1250, 525);
             this.splitContainer1.SplitterDistance = 146;
             this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 1;
-            // 
-            // lbQuestionCountSelected
-            // 
-            this.lbQuestionCountSelected.AutoSize = true;
-            this.lbQuestionCountSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbQuestionCountSelected.Location = new System.Drawing.Point(14, 15);
-            this.lbQuestionCountSelected.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbQuestionCountSelected.Name = "lbQuestionCountSelected";
-            this.lbQuestionCountSelected.Size = new System.Drawing.Size(0, 17);
-            this.lbQuestionCountSelected.TabIndex = 16;
-            // 
-            // cbCurrentAnswers
-            // 
-            this.cbCurrentAnswers.AutoSize = true;
-            this.cbCurrentAnswers.Location = new System.Drawing.Point(362, 338);
-            this.cbCurrentAnswers.Name = "cbCurrentAnswers";
-            this.cbCurrentAnswers.Size = new System.Drawing.Size(125, 17);
-            this.cbCurrentAnswers.TabIndex = 17;
-            this.cbCurrentAnswers.Text = "Xem đáp án câu này";
-            this.cbCurrentAnswers.UseVisualStyleBackColor = true;
             // 
             // PracticExamView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(955, 525);
+            this.ClientSize = new System.Drawing.Size(1250, 525);
             this.Controls.Add(this.splitContainer1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PracticExamView";

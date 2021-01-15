@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterView));
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lbRegister = new System.Windows.Forms.Label();
@@ -144,6 +145,7 @@
             this.txtBirthday.Name = "txtBirthday";
             this.txtBirthday.Size = new System.Drawing.Size(127, 20);
             this.txtBirthday.TabIndex = 19;
+            this.txtBirthday.Text = "dd/mm/yyyy";
             // 
             // txtPassword
             // 
@@ -160,6 +162,7 @@
             this.txtPasswordConfirm.Size = new System.Drawing.Size(346, 20);
             this.txtPasswordConfirm.TabIndex = 21;
             this.txtPasswordConfirm.UseSystemPasswordChar = true;
+            this.txtPasswordConfirm.Validating += new System.ComponentModel.CancelEventHandler(this.txtConfirmPassword_Validating);
             // 
             // btnSubmit
             // 
@@ -248,31 +251,31 @@
             // Username_Validator
             // 
             this.Username_Validator.ControlToValidate = this.txtUsername;
-            this.Username_Validator.ErrorMessage = null;
+            this.Username_Validator.ErrorMessage = "Tên đăng nhập không hợp lệ";
             this.Username_Validator.InitialValue = null;
             this.Username_Validator.IsValid = false;
-            this.Username_Validator.Regex = null;
+            this.Username_Validator.Regex = "^([a-z])[a-z0-9]{3,16}$";
             // 
             // FullName_Validator
             // 
             this.FullName_Validator.ControlToValidate = this.txtFullName;
-            this.FullName_Validator.ErrorMessage = null;
+            this.FullName_Validator.ErrorMessage = "Họ tên không hợp lệ";
             this.FullName_Validator.InitialValue = null;
             this.FullName_Validator.IsValid = false;
-            this.FullName_Validator.Regex = null;
+            this.FullName_Validator.Regex = "[a-z]";
             // 
             // Date_Validator
             // 
             this.Date_Validator.ControlToValidate = this.txtBirthday;
-            this.Date_Validator.ErrorMessage = null;
+            this.Date_Validator.ErrorMessage = "Ngày sinh không hợp lệ";
             this.Date_Validator.InitialValue = null;
             this.Date_Validator.IsValid = false;
-            this.Date_Validator.Regex = null;
+            this.Date_Validator.Regex = resources.GetString("Date_Validator.Regex");
             // 
             // Password_Validator
             // 
             this.Password_Validator.ControlToValidate = this.txtPassword;
-            this.Password_Validator.ErrorMessage = null;
+            this.Password_Validator.ErrorMessage = "";
             this.Password_Validator.InitialValue = null;
             this.Password_Validator.IsValid = false;
             this.Password_Validator.Regex = null;
