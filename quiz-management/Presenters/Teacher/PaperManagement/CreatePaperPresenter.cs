@@ -10,13 +10,14 @@ using System.Windows.Forms;
 
 namespace quiz_management.Presenters.Teacher.PaperManagement
 {
-    class CreatePaperPresenter
+    internal class CreatePaperPresenter
     {
-        ICreatePaperView view;
-        int currenUserCode;
-        BindingList<CreatePaperWithQuestion> ListQuestionselcted = null;
-        BindingList<CreatePaperWithQuestion> listQT = null;
-        int status = 1; // 0 là đóng góp/ 1 chính thức
+        private ICreatePaperView view;
+        private int currenUserCode;
+        private BindingList<CreatePaperWithQuestion> ListQuestionselcted = null;
+        private BindingList<CreatePaperWithQuestion> listQT = null;
+        private int status = 1; // 0 là đóng góp/ 1 chính thức
+
         public CreatePaperPresenter(ICreatePaperView v, int code)
         {
             view = v;
@@ -28,7 +29,6 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
             view.MoveToLeft += MoveToLeft_View;
             //view.MoveAllToLeft += MoveAllToLeft_View;
             view.CreatePaper += CreatePaper_View;
-            view.GoBackBefore += GoBackBFore_View;
             view.WatchPaperList += WatchPaperList_View;
             view.GradeChange += GradeChange_View;
             view.SubjectChange += SubjectChange_View;
@@ -73,7 +73,6 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
 
         private void Loadpage(int code)
         {
-
             using (var db = new QuizDataContext())
             {
                 //string teachername = db.nguoiDungs.Select(i => i.maNguoiDung == code).ToString();
@@ -144,6 +143,7 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
                 view.ShowPaperListView(currenUserCode);
             }
         }
+
         private void MoveToLeft_View(object sender, EventArgs e)
         {
             if (ListQuestionselcted == null)
@@ -162,7 +162,6 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
             view.listQuestion = listQT;
         }
 
-
         private void MoveToRight_View(object sender, EventArgs e)
         {
             if (ListQuestionselcted == null)
@@ -179,7 +178,6 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
             }
             view.listQuestion = listQT;
             view.listQuestionselected = ListQuestionselcted;
-
         }
 
         private void GoBackBefore_View(object sender, EventArgs e)
