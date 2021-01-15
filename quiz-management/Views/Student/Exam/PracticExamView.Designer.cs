@@ -135,7 +135,7 @@
             // 
             this.txtTimeSeconds.AutoSize = true;
             this.txtTimeSeconds.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimeSeconds.Location = new System.Drawing.Point(855, 67);
+            this.txtTimeSeconds.Location = new System.Drawing.Point(1099, 53);
             this.txtTimeSeconds.Margin = new System.Windows.Forms.Padding(0);
             this.txtTimeSeconds.Name = "txtTimeSeconds";
             this.txtTimeSeconds.Size = new System.Drawing.Size(0, 26);
@@ -145,7 +145,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(843, 67);
+            this.label4.Location = new System.Drawing.Point(1087, 53);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(18, 26);
@@ -155,7 +155,7 @@
             // txtExamCode
             // 
             this.txtExamCode.AutoSize = true;
-            this.txtExamCode.Location = new System.Drawing.Point(494, 77);
+            this.txtExamCode.Location = new System.Drawing.Point(655, 86);
             this.txtExamCode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtExamCode.Name = "txtExamCode";
             this.txtExamCode.Size = new System.Drawing.Size(0, 13);
@@ -188,7 +188,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(766, 77);
+            this.label5.Location = new System.Drawing.Point(1010, 63);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 13);
@@ -199,7 +199,7 @@
             // 
             this.txtTimeMinutes.AutoSize = true;
             this.txtTimeMinutes.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimeMinutes.Location = new System.Drawing.Point(815, 67);
+            this.txtTimeMinutes.Location = new System.Drawing.Point(1059, 53);
             this.txtTimeMinutes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtTimeMinutes.Name = "txtTimeMinutes";
             this.txtTimeMinutes.Size = new System.Drawing.Size(0, 26);
@@ -249,7 +249,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(404, 26);
+            this.label1.Location = new System.Drawing.Point(565, 35);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(148, 31);
@@ -458,7 +458,7 @@
             // cbExamCode
             // 
             this.cbExamCode.FormattingEnabled = true;
-            this.cbExamCode.Location = new System.Drawing.Point(422, 98);
+            this.cbExamCode.Location = new System.Drawing.Point(583, 107);
             this.cbExamCode.Name = "cbExamCode";
             this.cbExamCode.Size = new System.Drawing.Size(121, 21);
             this.cbExamCode.TabIndex = 21;
@@ -466,7 +466,7 @@
             // cbCourses
             // 
             this.cbCourses.FormattingEnabled = true;
-            this.cbCourses.Location = new System.Drawing.Point(422, 69);
+            this.cbCourses.Location = new System.Drawing.Point(583, 78);
             this.cbCourses.Name = "cbCourses";
             this.cbCourses.Size = new System.Drawing.Size(121, 21);
             this.cbCourses.TabIndex = 20;
@@ -474,7 +474,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(344, 101);
+            this.label3.Location = new System.Drawing.Point(505, 110);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
@@ -484,7 +484,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(344, 72);
+            this.label2.Location = new System.Drawing.Point(505, 81);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
