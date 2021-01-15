@@ -66,7 +66,7 @@ namespace quiz_management.Presenters.Teacher.Main
         {
             using (var db = new QuizDataContext())
             {
-                var lt = db.kyThiThus.Where(l => (l.ngayThi == DateTime.Now) && (l.maNguoiDung == currentUser))
+                var lt = db.kyThiThus.Where(l => (l.ngayThi <= DateTime.Now) && (DateTime.Now <= l.ngayKT) && (l.maNguoiDung == currentUser))
                                     .Select(s => s.maBoDe);
                 if (!lt.Any())
                 {
