@@ -176,7 +176,8 @@ namespace quiz_management.Presenters.Student.Exam
                 // Fetch user data
                 var user = db.nguoiDungs.SingleOrDefault(u => u.maNguoiDung == currentUserCode);
                 string name = user.thongTin.tenNguoiDung as string;
-                string className = db.Lops.SingleOrDefault(l => l.maLopHoc == user.thongTin.maLopHoc).tenLopHoc as string;
+                string className = db.Lops.SingleOrDefault(l => l.maLopHoc == user.thongTin.maLopHoc) != null ? 
+                    db.Lops.SingleOrDefault(l => l.maLopHoc == user.thongTin.maLopHoc).tenLopHoc as string : " ";
                 // Set user data
                 SetUserDataView(name, className);
 

@@ -45,6 +45,7 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
                 lstLop = new BindingList<khoiLop>(db.khoiLops.ToList());
             }
             if (lstMonHoc.Count != 0) lstbode = FindBymonHocIdVaLopId(lstMonHoc[0].maMonHoc, lstLop[0].maKhoiLop);
+            
             lstHocSinh = FindByBoDeId(lstLop[0].maKhoiLop);
             Fill();
         }
@@ -176,8 +177,9 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
                 var temp = db.Lops.Where(l => l.maKhoiLop == mak).Join(db.thongTins,
                                             lh => lh.maLopHoc,
                                             tt => tt.maLopHoc,
-                                            (lh, tt) => new { tt = tt }).ToList();
-
+                                            (lh, tt) => new { tt = tt }).Where( p => p.tt.maNguoidung != 3).ToList();
+                lsttt = new BindingList<thongTin>(db.thongTins.Where(p => p.maNguoidung == 2).ToList());
+                
                 foreach (var i in temp)
                 {
                     thongTin t = new thongTin();

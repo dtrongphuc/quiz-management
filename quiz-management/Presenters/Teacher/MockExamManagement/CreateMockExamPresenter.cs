@@ -63,8 +63,8 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
                 var temp = db.Lops.Where(l => l.maKhoiLop == mak).Join(db.thongTins,
                                             lh => lh.maLopHoc,
                                             tt => tt.maLopHoc,
-                                            (lh, tt) => new { tt = tt }).ToList();
-
+                                            (lh, tt) => new { tt = tt }).Where(p => p.tt.maNguoidung != 3).ToList();
+                lsttt = new BindingList<thongTin>(db.thongTins.Where(p => p.maNguoidung == 2).ToList());
                 foreach (var i in temp)
                 {
                     thongTin t = new thongTin();
