@@ -64,7 +64,7 @@ namespace quiz_management.Views.Teacher.ExamManagement
             }
         }
 
-        public string DeThiChon => cbBoDe.SelectedValue.ToString();
+        public string DeThiChon => cbBoDe.SelectedValue.ToString() != null ? cbBoDe.SelectedValue.ToString() : "-1";
 
         public DataGridView lstThiSinhChon
         {

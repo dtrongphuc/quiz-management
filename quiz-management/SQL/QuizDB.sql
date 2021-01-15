@@ -191,6 +191,8 @@ CREATE TABLE lichThi
 	PRIMARY KEY(maNguoiDung,maBoDe,ngayThi,maLichThi)
 )
 select * from lichThi
+select * from boDe
+
 alter table lichThi add constraint FK_lichThi_boDe foreign key (maBoDe) references boDe(maBoDe)
 alter table lichThi add constraint FK_lichThi_nguoiDung foreign key (maNguoiDung) references nguoiDung(maNguoiDung) on Delete Cascade
 alter table lichThi add constraint FK_lichThi_monHoc foreign key (maMonHoc) references monHoc(maMonHoc)

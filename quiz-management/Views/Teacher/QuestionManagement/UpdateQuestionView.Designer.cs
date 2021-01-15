@@ -67,6 +67,7 @@
             // cbbDifficute
             // 
             this.cbbDifficute.CausesValidation = false;
+            this.cbbDifficute.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbDifficute.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbDifficute.FormattingEnabled = true;
             this.cbbDifficute.Items.AddRange(new object[] {
@@ -78,7 +79,6 @@
             this.cbbDifficute.Size = new System.Drawing.Size(121, 28);
             this.cbbDifficute.TabIndex = 103;
             this.cbbDifficute.Tag = "";
-            this.cbbDifficute.Text = "1";
             // 
             // label15
             // 

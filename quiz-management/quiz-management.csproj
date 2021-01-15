@@ -547,6 +547,9 @@
     <EmbeddedResource Include="Views\Teacher\QuestionManagement\QuestionListView.resx">
       <DependentUpon>QuestionListView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Teacher\QuestionManagement\UpdateQuestionView.resx">
+      <DependentUpon>UpdateQuestionView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Teacher\StudentManagement\ExamStatisticReport.rdlc" />
     <EmbeddedResource Include="Views\Teacher\StudentManagement\ExamStatisticView.resx">
       <DependentUpon>ExamStatisticView.cs</DependentUpon>
