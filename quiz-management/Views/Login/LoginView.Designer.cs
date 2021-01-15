@@ -36,6 +36,8 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.ToRegisterView = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
+            this.username = new _18600209.RequiredFieldValidator();
+            this.password = new _18600209.RequiredFieldValidator();
             this.SuspendLayout();
             // 
             // lbLogin
@@ -122,6 +124,22 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Chưa có tài khoản?";
             // 
+            // username
+            // 
+            this.username.ControlToValidate = this.txtUsername;
+            this.username.ErrorMessage = "Tên đăng nhập không hợp lệ";
+            this.username.InitialValue = null;
+            this.username.IsValid = false;
+            this.username.Regex = null;
+            // 
+            // password
+            // 
+            this.password.ControlToValidate = this.txtPassword;
+            this.password.ErrorMessage = "Mật khẩu không hợp lệ";
+            this.password.InitialValue = null;
+            this.password.IsValid = false;
+            this.password.Regex = "";
+            // 
             // LoginView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,5 +172,7 @@
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.LinkLabel ToRegisterView;
         private System.Windows.Forms.Label label3;
+        private _18600209.RequiredFieldValidator username;
+        private _18600209.RequiredFieldValidator password;
     }
 }
