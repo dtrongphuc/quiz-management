@@ -40,17 +40,16 @@
             this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvUser = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnExportExcel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
             this.SuspendLayout();
             // 
             // linkGoBack
             // 
             this.linkGoBack.AutoSize = true;
-            this.linkGoBack.Location = new System.Drawing.Point(32, 24);
-            this.linkGoBack.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkGoBack.Location = new System.Drawing.Point(43, 30);
             this.linkGoBack.Name = "linkGoBack";
-            this.linkGoBack.Size = new System.Drawing.Size(38, 13);
+            this.linkGoBack.Size = new System.Drawing.Size(49, 17);
             this.linkGoBack.TabIndex = 55;
             this.linkGoBack.TabStop = true;
             this.linkGoBack.Text = "Trở về";
@@ -58,20 +57,18 @@
             // lbAdminName
             // 
             this.lbAdminName.AutoSize = true;
-            this.lbAdminName.Location = new System.Drawing.Point(478, 24);
-            this.lbAdminName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbAdminName.Location = new System.Drawing.Point(637, 30);
             this.lbAdminName.Name = "lbAdminName";
-            this.lbAdminName.Size = new System.Drawing.Size(103, 13);
+            this.lbAdminName.Size = new System.Drawing.Size(131, 17);
             this.lbAdminName.TabIndex = 48;
             this.lbAdminName.Text = "Nguyễn Hiếu Nghĩa";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(404, 24);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(539, 30);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 13);
+            this.label3.Size = new System.Drawing.Size(93, 17);
             this.label3.TabIndex = 47;
             this.label3.Text = "Quản trị viên:";
             // 
@@ -79,20 +76,19 @@
             // 
             this.lbDOB.AutoSize = true;
             this.lbDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDOB.Location = new System.Drawing.Point(526, 459);
-            this.lbDOB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbDOB.Location = new System.Drawing.Point(701, 565);
             this.lbDOB.Name = "lbDOB";
-            this.lbDOB.Size = new System.Drawing.Size(65, 13);
+            this.lbDOB.Size = new System.Drawing.Size(80, 17);
             this.lbDOB.TabIndex = 46;
             this.lbDOB.Text = "20/10/2000";
             // 
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(322, 423);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdate.Location = new System.Drawing.Point(429, 521);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(163, 49);
+            this.btnUpdate.Size = new System.Drawing.Size(217, 60);
             this.btnUpdate.TabIndex = 45;
             this.btnUpdate.Text = "Chỉnh Sửa";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -101,10 +97,9 @@
             // 
             this.txtTitle2.AutoSize = true;
             this.txtTitle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitle2.Location = new System.Drawing.Point(200, 67);
-            this.txtTitle2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.txtTitle2.Location = new System.Drawing.Point(267, 82);
             this.txtTitle2.Name = "txtTitle2";
-            this.txtTitle2.Size = new System.Drawing.Size(241, 26);
+            this.txtTitle2.Size = new System.Drawing.Size(312, 32);
             this.txtTitle2.TabIndex = 44;
             this.txtTitle2.Text = "Danh Sách Người Dùng";
             // 
@@ -161,33 +156,33 @@
             this.UserName,
             this.DOB,
             this.Desentralization});
-            this.dgvUser.Location = new System.Drawing.Point(34, 125);
-            this.dgvUser.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvUser.Location = new System.Drawing.Point(45, 154);
+            this.dgvUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvUser.Name = "dgvUser";
             this.dgvUser.ReadOnly = true;
             this.dgvUser.RowHeadersWidth = 51;
             this.dgvUser.RowTemplate.Height = 24;
             this.dgvUser.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUser.Size = new System.Drawing.Size(552, 262);
+            this.dgvUser.Size = new System.Drawing.Size(736, 322);
             this.dgvUser.TabIndex = 56;
             // 
-            // button1
+            // btnExportExcel
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(95, 423);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 49);
-            this.button1.TabIndex = 57;
-            this.button1.Text = "Xuất Excel";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnExportExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportExcel.Location = new System.Drawing.Point(127, 521);
+            this.btnExportExcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExportExcel.Name = "btnExportExcel";
+            this.btnExportExcel.Size = new System.Drawing.Size(217, 60);
+            this.btnExportExcel.TabIndex = 57;
+            this.btnExportExcel.Text = "Xuất Excel";
+            this.btnExportExcel.UseVisualStyleBackColor = true;
             // 
             // ListUserView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(611, 496);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(815, 610);
+            this.Controls.Add(this.btnExportExcel);
             this.Controls.Add(this.dgvUser);
             this.Controls.Add(this.linkGoBack);
             this.Controls.Add(this.lbAdminName);
@@ -195,8 +190,9 @@
             this.Controls.Add(this.lbDOB);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.txtTitle2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ListUserView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ListUserView";
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
             this.ResumeLayout(false);
@@ -217,6 +213,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn UserID;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridView dgvUser;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnExportExcel;
     }
 }
