@@ -1580,3 +1580,27 @@ select * from boDe
 select * from cTBoDe
 select * from dapAn
 select * from cauHoi
+
+
+insert into nguoiDung (tenTaiKhoan, matKhau, phanQuyen, TrangThai) values
+('nghia', 'RwQ1leHcocga+tg7w/qhqmijrTDM6I4VrmbvSyh/TqMWRONh', 1, 1),
+('phu', 'RwQ1leHcocga+tg7w/qhqmijrTDM6I4VrmbvSyh/TqMWRONh', 2, 1),
+('phuc', 'RwQ1leHcocga+tg7w/qhqmijrTDM6I4VrmbvSyh/TqMWRONh', 3, 1)
+go
+
+insert into thongTin values
+(1, N'Nguyễn Hiếu Nghĩa', '2000-10-10', 1),
+(2, N'Đinh Thành Phú', '2000-10-14', null),
+(3, N'Dương Trọng Phúc', '2000-11-01', null)
+go
+
+insert into bode values 
+(10, 1, 'K10', 900, 1),
+(10, 3, 'K10', 900, 1),
+(10, 2, 'K11', 900, 1),
+(10, 1, 'K11', 900, 1),
+(10, 4, 'K12', 900, 1),
+(10, 2, 'K12', 900, 1)
+go
+
+--(10, 1, 'K10', 900, 0)

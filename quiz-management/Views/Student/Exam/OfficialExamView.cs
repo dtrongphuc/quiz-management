@@ -131,6 +131,8 @@ namespace quiz_management.Views.Student.Exam
 
             btnSubmit.Click += (_, e) =>
             {
+                aTimer.Stop();
+                aTimer.Enabled = false;
                 Submit.Invoke(btnSubmit, e);
             };
 
@@ -167,7 +169,7 @@ namespace quiz_management.Views.Student.Exam
             double minutes = Math.Ceiling(TimeCount / 60 * 1.0);
             int secconds = (TimeCount % 60);
 
-            if (minutes <= 0 && secconds <= 0)
+            if (minutes == 0 && secconds == 0)
             {
                 aTimer.Stop();
                 aTimer.Enabled = false;

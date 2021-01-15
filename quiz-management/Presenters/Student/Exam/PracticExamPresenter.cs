@@ -140,7 +140,21 @@ namespace quiz_management.Presenters.Student.Exam
             int timeLeft = view.TimeLeft;
             bool excute = UpdateResult();
             if (!excute) view.ShowMessage("Lỗi", "Đã có lỗi xảy ra");
-            else view.ShowStudentView(currentUserCode);
+            else
+            {
+                using (var db = new QuizDataContext())
+                {
+                    var user = db.nguoiDungs.SingleOrDefault(n => n.maNguoiDung == currentUserCode);
+                    if (user.phanQuyen == 1)
+                    {
+                        view.ShowStudentView(currentUserCode);
+                    }
+                    else
+                    {
+                        view.ShowTeacherView(currentUserCode);
+                    }
+                }
+            }
         }
 
         private void View_Submit(object sender, System.EventArgs e)
@@ -158,7 +172,21 @@ namespace quiz_management.Presenters.Student.Exam
             if (confirm == false) return;
             bool excute = UpdateResult();
             if (!excute) view.ShowMessage("Lỗi", "Đã có lỗi xảy ra");
-            else view.ShowStudentView(currentUserCode);
+            else
+            {
+                using (var db = new QuizDataContext())
+                {
+                    var user = db.nguoiDungs.SingleOrDefault(n => n.maNguoiDung == currentUserCode);
+                    if (user.phanQuyen == 1)
+                    {
+                        view.ShowStudentView(currentUserCode);
+                    }
+                    else
+                    {
+                        view.ShowTeacherView(currentUserCode);
+                    }
+                }
+            }
         }
 
         private void View_Next(object sender, System.EventArgs e)
