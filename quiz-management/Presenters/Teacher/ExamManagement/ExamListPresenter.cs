@@ -89,7 +89,7 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
 
         private void View_GoBackBefore(object sender, EventArgs e)
         {
-            view.ShowMainTeachView(currentcode);
+            view.ShowMainTeachView(currentcode);    
         }
 
         private void Fill()

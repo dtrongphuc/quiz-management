@@ -8,7 +8,6 @@ namespace quiz_management.Models
 {
     public class MockExam
     {
-        int _sTT;
         string _ExamID;
         string _subject;
         string _grade;
@@ -18,7 +17,6 @@ namespace quiz_management.Models
         int _paperID;
         int _quantityStudent;
 
-        public int STT { get => _sTT; set => _sTT = value; }
         public string Subject { get => _subject; set => _subject = value; }
         public string Grade { get => _grade; set => _grade = value; }
         public string StartDay { get => _startDay; set => _startDay = value; }
