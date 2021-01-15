@@ -1,6 +1,7 @@
 ﻿using quiz_management.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace quiz_management.Views.Student.Exam
 {
@@ -18,8 +19,8 @@ namespace quiz_management.Views.Student.Exam
         int Completed { get; set; }
         int Remain { get; set; }
         string QuestionString { set; }
-        List<Answer> Answers { set; }
-        List<int> QuestionsChecked { set; }
+        BindingList<Answer> Answers { set; }
+        BindingList<int> QuestionsChecked { set; }
 
         event EventHandler QuestionChange;
 

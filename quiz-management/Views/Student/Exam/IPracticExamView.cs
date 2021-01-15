@@ -1,6 +1,7 @@
 ﻿using quiz_management.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,9 @@ namespace quiz_management.Views.Student.Exam
         int Completed { get; set; }
         int Remain { get; set; }
         string QuestionString { set; }
-        List<Answer> Answers { set; }
+        BindingList<Answer> Answers { set; }
         List<int> QuestionsChecked { set; }
-        List<monHoc> Courses { set; }
+        BindingList<monHoc> Courses { set; }
         List<int> ExamCodes { set; }
         List<int> CorrectAnswers { set; }
 
