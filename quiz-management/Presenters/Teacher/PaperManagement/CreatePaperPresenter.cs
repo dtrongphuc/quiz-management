@@ -114,7 +114,11 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
         {
             //string paperID = view.PaperID;
             int questionnum = view.AllQuestionSelect.Rows.Count;
-
+            if (questionnum < 1)
+            {
+                view.ShowMessage("Đề thi phải có câu hỏi!");
+                return;
+            }
             using (var db = new QuizDataContext())
             {
                 db.boDes.InsertOnSubmit(new boDe
