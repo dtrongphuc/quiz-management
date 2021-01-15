@@ -132,7 +132,7 @@ namespace quiz_management.Views.Student.Main
         {
             this.Hide();
             PracticExamView screen = new PracticExamView(userCode);
-            screen.FormClosed += (_, e) => this.Show();
+            screen.FormClosed += (_, e) => this.Close();
             screen.Show();
         }
 
@@ -140,7 +140,7 @@ namespace quiz_management.Views.Student.Main
         {
             this.Hide();
             PracticStatisticView screen = new PracticStatisticView(userCode);
-            screen.FormClosed += (_, e) => this.Show();
+            screen.FormClosed += (_, e) => this.Close();
             screen.Show();
         }
 
