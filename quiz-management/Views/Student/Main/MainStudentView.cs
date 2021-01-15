@@ -81,6 +81,7 @@ namespace quiz_management.Views.Student.Main
             {
                 PracticStatisticClick?.Invoke(btnPracticStatistic, e);
             };
+
             btnLogout.Click += (_, e) =>
             {
                 LogoutClick?.Invoke(btnLogout, e);
@@ -131,7 +132,7 @@ namespace quiz_management.Views.Student.Main
         {
             this.Hide();
             PracticExamView screen = new PracticExamView(userCode);
-            screen.FormClosed += (_, e) => this.Close();
+            screen.FormClosed += (_, e) => this.Show();
             screen.Show();
         }
 
