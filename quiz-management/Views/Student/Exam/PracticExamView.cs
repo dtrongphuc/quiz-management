@@ -51,7 +51,7 @@ namespace quiz_management.Views.Student
         public int Remain { get => int.Parse(txtRemain.Text); set => txtRemain.Text = value.ToString(); }
         public string QuestionString { set => tbQuestion.Text = value; }
 
-        public List<Answer> Answers
+        public BindingList<Answer> Answers
         {
             set
             {
@@ -78,7 +78,7 @@ namespace quiz_management.Views.Student
             }
         }
 
-        public List<monHoc> Courses { set => cbCourses.DataSource = value; }
+        public BindingList<monHoc> Courses { set => cbCourses.DataSource = value; }
 
         public List<int> ExamCodes
         {

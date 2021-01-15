@@ -51,7 +51,7 @@ namespace quiz_management.Views.Student.Exam
         public int Remain { get => int.Parse(txtRemain.Text); set => txtRemain.Text = value.ToString(); }
         public string QuestionString { set => tbQuestion.Text = value; }
 
-        public List<Answer> Answers
+        public BindingList<Answer> Answers
         {
             set
             {
@@ -65,7 +65,7 @@ namespace quiz_management.Views.Student.Exam
             }
         }
 
-        public List<int> QuestionsChecked
+        public BindingList<int> QuestionsChecked
         {
             set
             {

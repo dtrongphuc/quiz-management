@@ -2,6 +2,7 @@
 using quiz_management.Views.Student.Exam;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace quiz_management.Presenters.Student.Exam
         private int _maBoDe = 1;
         private int _selectedCourses;
 
-        public List<Question> Questions = new List<Question>();
+        public BindingList<Question> Questions = new BindingList<Question>();
         public int QuestionSelectedIndex = 0;
 
         public PracticExamPresenter(IPracticExamView v, int userCode)
@@ -118,7 +119,7 @@ namespace quiz_management.Presenters.Student.Exam
                 {
                     _selectedCourses = courses.ElementAt(0).maMonHoc;
                 }
-                view.Courses = courses;
+                view.Courses = new BindingList<monHoc>(courses);
             };
         }
 
@@ -323,7 +324,7 @@ namespace quiz_management.Presenters.Student.Exam
             view.QuestionSelected = QuestionSelectedIndex;
             view.QuestionOrder = QuestionSelectedIndex + 1;
             view.QuestionString = Questions.ElementAt(QuestionSelectedIndex).CauHoi;
-            view.Answers = Questions.ElementAt(QuestionSelectedIndex).CauTraLoi;
+            view.Answers = new BindingList<Answer>(Questions.ElementAt(QuestionSelectedIndex).CauTraLoi);
         }
 
         private bool UpdateResult()

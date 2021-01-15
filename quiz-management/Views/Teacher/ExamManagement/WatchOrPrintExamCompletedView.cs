@@ -36,6 +36,7 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
         public BindingList<TrainScript> ExamList { set => bsWOPEC.DataSource = value; }
 
         public event EventHandler GobackBefore;
+        public event EventHandler Print;
 
         public void Home(int code)
         {

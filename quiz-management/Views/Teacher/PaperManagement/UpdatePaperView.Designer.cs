@@ -68,6 +68,7 @@
             // 
             this.dgvQuestionSelectedList.AllowUserToAddRows = false;
             this.dgvQuestionSelectedList.AllowUserToDeleteRows = false;
+            this.dgvQuestionSelectedList.AllowUserToResizeRows = false;
             this.dgvQuestionSelectedList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvQuestionSelectedList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvQuestionSelectedList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -151,6 +152,7 @@
             // 
             this.dgvQuestionList.AllowUserToAddRows = false;
             this.dgvQuestionList.AllowUserToDeleteRows = false;
+            this.dgvQuestionList.AllowUserToResizeRows = false;
             this.dgvQuestionList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvQuestionList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvQuestionList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
