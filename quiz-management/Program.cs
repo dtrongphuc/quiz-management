@@ -31,7 +31,7 @@ namespace quiz_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new OfficialExamView(1));
+            Application.Run(new CreatePaperView(2));
         }
     }
 }

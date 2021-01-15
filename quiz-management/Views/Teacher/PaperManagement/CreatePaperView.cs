@@ -20,6 +20,7 @@ namespace quiz_management.Views.Teacher.PaperManagement
         {
             InitializeComponent();
             dgvQuestionList.AutoGenerateColumns = false;
+            dgvQuestionSelectedList.AutoGenerateColumns = false;
             presenter = new CreatePaperPresenter(this, code);
             linkGoBackBefore.Click += (_, e) =>
             {

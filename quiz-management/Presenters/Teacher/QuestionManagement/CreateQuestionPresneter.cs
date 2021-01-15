@@ -27,7 +27,7 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
             using (var db = new QuizDataContext())
             {
                 //ten gv
-                view.TeacherName = db.thongTins.Where(i => i.maNguoidung == 1).Select(i => i.tenNguoiDung).ToList()[0].ToString();
+                view.TeacherName = db.thongTins.Where(i => i.maNguoidung == currentUser).Select(i => i.tenNguoiDung).ToList()[0].ToString();
                 //monhoc
                 view.GradeList = db.khoiLops.ToList();
                 //monhoc
@@ -42,6 +42,8 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
 
         private void Create_View(object sender, EventArgs e)
         {
+            int countQuestion = 0;
+
             string Questionsstring = view.Question;
             string answerA = view.AnswerA;
             string answerB = view.AnswerB;
@@ -49,6 +51,14 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
             string answerD = view.AnswerD;
             string answerE = view.AnswerE;
             string answerF = view.AnswerF;
+
+            //đếm số câu hỏi đã tạo
+            countQuestion = answerA == "" ? countQuestion + 0 : countQuestion + 1;
+            countQuestion = answerB == "" ? countQuestion + 0 : countQuestion + 1;
+            countQuestion = answerC == "" ? countQuestion + 0 : countQuestion + 1;
+            countQuestion = answerD == "" ? countQuestion + 0 : countQuestion + 1;
+            countQuestion = answerE == "" ? countQuestion + 0 : countQuestion + 1;
+            countQuestion = answerF == "" ? countQuestion + 0 : countQuestion + 1;
 
             int checkA = view.cbResultA ? 1 : 0;
             int checkB = view.cbResultB ? 1 : 0;
@@ -62,6 +72,10 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
             if (checkA == 0 && checkB == 0 && checkC == 0 && checkD == 0 && checkE == 0 && checkF == 0)
             {
                 view.ShowMessage("Phải có ít nhất 1 câu trả lời là đúng!!");
+            }
+            else if(countQuestion <4)
+            {
+                view.ShowMessage("Phải có ít nhất 4 câu hỏi");
             }
             else
             {
