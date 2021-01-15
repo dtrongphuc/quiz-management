@@ -28,6 +28,10 @@ namespace quiz_management.Views.Administrator.UserManagement
             {
                 UpdateUser?.Invoke(btnUpdate, e);
             };
+            btnExportExcel.Click += (_, e) =>
+            {
+                ExportExcel?.Invoke(btnExportExcel, e);
+            };
         }
 
         public string AdminName { set => lbAdminName.Text = value; }
@@ -38,6 +42,15 @@ namespace quiz_management.Views.Administrator.UserManagement
 
         public event EventHandler UpdateUser;
         public event EventHandler GoBackBefore;
+        public event EventHandler ExportExcel;
+
+        public void ShowExport(int code)
+        {
+            this.Hide();
+            ExportUserView screen = new ExportUserView(code);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
+        }
 
         public void ShowMainAdmin(int userCode)
         {

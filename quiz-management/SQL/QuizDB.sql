@@ -10,9 +10,9 @@
 	PRIMARY KEY (maNguoiDung)
 )
 
-select * from nguoiDung
-update nguoiDung set phanQuyen = 3 where maNguoiDung = 3
 insert into nguoiDung values('c','Hqz75h972DAG+3clE0Gi9sto1yVPd8XgM1x4tSb/WvZEfKgo',1,1)
+update nguoiDung set phanQuyen = 3 where maNguoiDung = 3
+
 CREATE TABLE Lop
 (
 	maKhoiLop varchar(5),
@@ -24,7 +24,6 @@ CREATE TABLE Lop
 )
 
 alter table Lop add constraint FK_lop_khoiLop FOREIGN KEY(maKhoiLop) references khoiLop(maKhoiLop)
-select * from Lop 
 update boDe set trangThai = 0 where maBoDe =1
 insert into boDe values(20,1,'K10',1800,0)
 

@@ -13,7 +13,8 @@ namespace quiz_management.Views.Teacher.Main
 {
     public partial class TeacherInfoView : Form, ITeacherInfoView
     {
-        TeacherInfoPresenter presenter;
+        private TeacherInfoPresenter presenter;
+
         public TeacherInfoView(int code)
         {
             InitializeComponent();
@@ -22,9 +23,24 @@ namespace quiz_management.Views.Teacher.Main
             {
                 UpdateInfo?.Invoke(btnUpdate, e);
             };
+
             btnClose.Click += (_, e) =>
             {
                 ClosePage?.Invoke(btnClose, e);
+            };
+
+            tbDOB.GotFocus += (_, e) =>
+            {
+                if (tbDOB.Text == "dd/mm/yyyy")
+                {
+                    tbDOB.Text = "";
+                }
+            };
+
+            tbDOB.LostFocus += (_, e) =>
+            {
+                if (string.IsNullOrWhiteSpace(tbDOB.Text))
+                    tbDOB.Text = "dd/mm/yyyy";
             };
         }
 
@@ -33,6 +49,7 @@ namespace quiz_management.Views.Teacher.Main
         public string DOB { get => tbDOB.Text; set => tbDOB.Text = value; }
 
         public event EventHandler ClosePage;
+
         public event EventHandler UpdateInfo;
 
         public void ShowMainTeacher(int code)

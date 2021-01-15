@@ -21,6 +21,12 @@ namespace quiz_management.Presenters.Administrator.UserManagement
             LoadPage();
             view.GoBackBefore += GoBackBefore_View;
             view.UpdateUser += UpdateUser_View;
+            view.ExportExcel += ExportExcel_View;
+        }
+
+        private void ExportExcel_View(object sender, EventArgs e)
+        {
+            view.ShowExport(currentuser);
         }
 
         private void LoadPage()
