@@ -53,10 +53,11 @@ namespace quiz_management.Views.Teacher.ExamManagement
         public BindingList<monHoc> lstMonHoc { set => cbMonHoc.DataSource = value; }
         public BindingList<thongTin> lstHocSinh { set => dtgHocSinh.DataSource = value; }
         public BindingList<thongTin> lstThiSinh { set => dgvThiSinh.DataSource = value; }
-        public BindingList<boDe> lstDeThi { set =>cbBoDe.DataSource = value; }
+        public BindingList<boDe> lstDeThi { set => cbBoDe.DataSource = value; }
         public BindingList<khoiLop> lstKhoiLop { set => cbbKhoiLop.DataSource = value; }
 
-        public string monHocChon {
+        public string monHocChon
+        {
             get
             {
                 return cbMonHoc.SelectedValue.ToString();
@@ -83,7 +84,7 @@ namespace quiz_management.Views.Teacher.ExamManagement
 
         public string KhoiLopChon => cbbKhoiLop.SelectedValue.ToString();
 
-        
+
 
         public event EventHandler GoBackBefore;
         public event EventHandler Submit;

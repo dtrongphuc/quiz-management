@@ -20,6 +20,7 @@ namespace quiz_management.Views.Teacher.MockExamManagement
         public ListMockExamView(int code)
         {
             InitializeComponent();
+            dgvMockExam.AutoGenerateColumns = false;
             presenter = new ListMockExamPresenter(this, code);
             linkGoBackBefore.Click += (_, e) =>
             {
@@ -40,7 +41,7 @@ namespace quiz_management.Views.Teacher.MockExamManagement
         }
 
         public string TeacherName { set => lbTeacher.Text = value; }
-        public List<MockExam> MockExamList { set => dgvMockExam.DataSource = value; }
+        public BindingList<MockExam> MockExamList { set => dgvMockExam.DataSource = value; }
 
         string IListMockExamView.ExamID => dgvMockExam.SelectedRows[0].Cells["ExamID"].Value.ToString();
 
@@ -78,6 +79,18 @@ namespace quiz_management.Views.Teacher.MockExamManagement
             UpdateMockExamView screen = new UpdateMockExamView(code,userid);
             screen.FormClosed += (_, e) => this.Close();
             screen.Show();
+        }
+
+        private void dgvMockExam_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex < 0 || e.RowIndex == this.dgvMockExam.NewRowIndex)
+            {
+                return;
+            }
+            if (e.ColumnIndex == this.dgvMockExam.Columns["STT"].Index)
+            {
+                e.Value = e.RowIndex + 1;
+            }
         }
     }
 }

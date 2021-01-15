@@ -36,6 +36,7 @@ namespace quiz_management.Views.Teacher.ExamManagement
             this.label3 = new System.Windows.Forms.Label();
             this.btnThem = new System.Windows.Forms.Button();
             this.maLichThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaDe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SLThiSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,20 +46,20 @@ namespace quiz_management.Views.Teacher.ExamManagement
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(415, 457);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDelete.Location = new System.Drawing.Point(553, 562);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(124, 39);
+            this.btnDelete.Size = new System.Drawing.Size(165, 48);
             this.btnDelete.TabIndex = 40;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(269, 457);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdate.Location = new System.Drawing.Point(359, 562);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(124, 39);
+            this.btnUpdate.Size = new System.Drawing.Size(165, 48);
             this.btnUpdate.TabIndex = 39;
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -71,12 +72,13 @@ namespace quiz_management.Views.Teacher.ExamManagement
             this.dgvLichThi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLichThi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maLichThi,
+            this.STT,
             this.TenMonHoc,
             this.MaDe,
             this.SLThiSinh,
             this.ngayThi});
-            this.dgvLichThi.Location = new System.Drawing.Point(64, 141);
-            this.dgvLichThi.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvLichThi.Location = new System.Drawing.Point(85, 174);
+            this.dgvLichThi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvLichThi.MultiSelect = false;
             this.dgvLichThi.Name = "dgvLichThi";
             this.dgvLichThi.ReadOnly = true;
@@ -84,16 +86,16 @@ namespace quiz_management.Views.Teacher.ExamManagement
             this.dgvLichThi.RowHeadersWidth = 51;
             this.dgvLichThi.RowTemplate.Height = 24;
             this.dgvLichThi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLichThi.Size = new System.Drawing.Size(563, 273);
+            this.dgvLichThi.Size = new System.Drawing.Size(751, 336);
             this.dgvLichThi.TabIndex = 38;
+            this.dgvLichThi.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvLichThi_CellFormatting);
             // 
             // linkGoBackBefore
             // 
             this.linkGoBackBefore.AutoSize = true;
-            this.linkGoBackBefore.Location = new System.Drawing.Point(33, 26);
-            this.linkGoBackBefore.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkGoBackBefore.Location = new System.Drawing.Point(44, 32);
             this.linkGoBackBefore.Name = "linkGoBackBefore";
-            this.linkGoBackBefore.Size = new System.Drawing.Size(38, 13);
+            this.linkGoBackBefore.Size = new System.Drawing.Size(49, 17);
             this.linkGoBackBefore.TabIndex = 37;
             this.linkGoBackBefore.TabStop = true;
             this.linkGoBackBefore.Text = "Trở về";
@@ -102,19 +104,18 @@ namespace quiz_management.Views.Teacher.ExamManagement
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(253, 76);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(337, 94);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(219, 26);
+            this.label3.Size = new System.Drawing.Size(280, 32);
             this.label3.TabIndex = 36;
             this.label3.Text = "Danh Sách Lịch Thi";
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(126, 457);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(2);
+            this.btnThem.Location = new System.Drawing.Point(168, 562);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(124, 39);
+            this.btnThem.Size = new System.Drawing.Size(165, 48);
             this.btnThem.TabIndex = 41;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
@@ -123,10 +124,19 @@ namespace quiz_management.Views.Teacher.ExamManagement
             // 
             this.maLichThi.DataPropertyName = "MaLichThi";
             this.maLichThi.FillWeight = 20.80711F;
-            this.maLichThi.HeaderText = "STT";
+            this.maLichThi.HeaderText = ".";
             this.maLichThi.MinimumWidth = 6;
             this.maLichThi.Name = "maLichThi";
             this.maLichThi.ReadOnly = true;
+            this.maLichThi.Visible = false;
+            // 
+            // STT
+            // 
+            this.STT.FillWeight = 20.80711F;
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
             // 
             // TenMonHoc
             // 
@@ -166,15 +176,16 @@ namespace quiz_management.Views.Teacher.ExamManagement
             // 
             // ExamListView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(662, 522);
+            this.ClientSize = new System.Drawing.Size(883, 642);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.dgvLichThi);
             this.Controls.Add(this.linkGoBackBefore);
             this.Controls.Add(this.label3);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ExamListView";
             this.Text = "ExamListView";
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichThi)).EndInit();
@@ -192,6 +203,7 @@ namespace quiz_management.Views.Teacher.ExamManagement
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.DataGridViewTextBoxColumn maLichThi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenMonHoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaDe;
         private System.Windows.Forms.DataGridViewTextBoxColumn SLThiSinh;

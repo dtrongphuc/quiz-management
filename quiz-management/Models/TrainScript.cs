@@ -8,7 +8,6 @@ namespace quiz_management.Models
 {
     public class TrainScript
     {
-        int _sTT;
         int _maKQ;
         string _studentName;
         string _subjectName;
@@ -16,7 +15,6 @@ namespace quiz_management.Models
         DateTime _date;//ngày thi
         float _score;
 
-        public int STT { get => _sTT; set => _sTT = value; }
         public string StudentName { get => _studentName; set => _studentName = value; }
         public string SubjectName { get => _subjectName; set => _subjectName = value; }
         public int PaperID { get => _paperID; set => _paperID = value; }

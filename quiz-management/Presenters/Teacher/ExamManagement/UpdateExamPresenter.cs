@@ -21,7 +21,8 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
         boDe DeThiChon;
         monHoc MonHocChon;
         khoiLop KhoiLopChon;
-        
+
+
 
         public UpdateExamPresenter(IUpdateExamView v, int code, int userid)
         {
@@ -40,6 +41,8 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
 
             lstThiSinh = new BindingList<thongTin>();
             lstHocSinh = new BindingList<thongTin>();
+
+
             using (var db = new QuizDataContext())
             {
                 var temp = db.lichThis.Where(l => l.maLichThi == currentcode)
@@ -77,9 +80,11 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             view.monHocChon = MonHocChon.tenMonHoc;
             view.DeThiChon = DeThiChon.maBoDe.ToString();
             view.KhoiLopChon = KhoiLopChon.tenKhoiLop;
+
+
         }
 
-
+       
 
         private void View_MoveLeft(object sender, EventArgs e)
         {
@@ -142,7 +147,7 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
 
         private void View_Submit(object sender, EventArgs e)
         {
-            if (lstThiSinh.Count == 0)
+            if (lstThiSinh == null)
             {
                 view.ShowMessage("Cần có thi Sinh Thi.");
                 return;
@@ -154,6 +159,7 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
                     db.lichThis.DeleteOnSubmit(ltdelete[d]);
                 db.SubmitChanges();
 
+                var lths = db.lichThis.Where(p => p.maLichThi == currentcode).ToList();
                 foreach (thongTin i in lstThiSinh)
                 {
                     db.lichThis.InsertOnSubmit(new lichThi

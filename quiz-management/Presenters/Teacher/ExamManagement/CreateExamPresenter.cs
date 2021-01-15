@@ -19,6 +19,9 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
         BindingList<khoiLop> lstLop;
         BindingList<boDe> lstbode;
         BindingList<thongTin> lstThiSinh;
+
+
+
         public CreateExamPresenter(ICreateExamView v, int code)
         {
             view = v;
@@ -66,6 +69,8 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             view.lstKhoiLop = lstLop;
         }
 
+       
+
         private void View_SubjectChange(object sender, EventArgs e)
         {
             string idkhoilop = view.KhoiLopChon;
@@ -91,7 +96,10 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             }
             view.lstHocSinh = lstHocSinh;
             view.lstThiSinh = lstThiSinh;
+            
         }
+
+      
 
         private void View_MoveRight(object sender, EventArgs e)
         {
@@ -126,7 +134,7 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             }
             using (var db = new QuizDataContext())
             {
-                int malt = db.lichThis.Max(p => p.maLichThi);
+                int malt = db.lichThis.DefaultIfEmpty().Max(p => p == null ? 0 : p.maLichThi);
                 foreach (thongTin i in lstThiSinh)
                 {
                     db.lichThis.InsertOnSubmit(new lichThi
@@ -153,7 +161,8 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             BindingList<boDe> lstbd;
             using (var db = new QuizDataContext())
             {
-                lstbd = new BindingList<boDe>(db.boDes.Where(p => p.maMon == maMH).Where(k => k.maKhoi == makhoi).ToList());
+                lstbd = new BindingList<boDe>(db.boDes.Where(p => p.maMon == maMH).Where(k => k.maKhoi == makhoi)
+                                                    .Where(c => c.trangThai == 0).ToList());
             }
             return lstbd;
         }

@@ -44,7 +44,6 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
                 for (int i = 0; i < temp.Count; i++)
                 {
                     TrainScript ts = new TrainScript();
-                    ts.STT = i + 1;
                     ts.StudentName = temp[i].tennguoidung;
                     ts.MaKQ = temp[i].id;
                     ts.PaperID = temp[i].mabode;

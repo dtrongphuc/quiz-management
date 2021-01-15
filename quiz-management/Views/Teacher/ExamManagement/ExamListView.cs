@@ -37,16 +37,26 @@ namespace quiz_management.Views.Teacher.ExamManagement
             {
                 AddExam?.Invoke(btnThem, e);
             };
+            
         }
 
-        
 
-        public DataGridView dtgv { get => dgvLichThi; }
+
+        public BindingList<TestSchedule> dtgv { set => dgvLichThi.DataSource = value; }
+        public DataGridView lichthichon
+        {
+            get
+            {
+                return dgvLichThi;
+            }
+        }
 
         public event EventHandler GobackBefore;
         public event EventHandler Delete;
         public event EventHandler UpdateExam;
         public event EventHandler AddExam;
+
+       
 
         public void ShowCreateExamView(int code)
         {
@@ -77,6 +87,18 @@ namespace quiz_management.Views.Teacher.ExamManagement
             UpdateExamView screen = new UpdateExamView(code,userid);
             screen.FormClosed += (_, e) => this.Close();
             screen.Show();
+        }
+
+        private void dgvLichThi_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex < 0 || e.RowIndex == this.dgvLichThi.NewRowIndex)
+            {
+                return;
+            }
+            if (e.ColumnIndex == this.dgvLichThi.Columns["STT"].Index)
+            {
+                e.Value = e.RowIndex + 1;
+            }
         }
     }
 }

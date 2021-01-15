@@ -1,9 +1,11 @@
 ﻿using quiz_management.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace quiz_management.Views.Teacher.MockExamManagement
 {
@@ -11,7 +13,7 @@ namespace quiz_management.Views.Teacher.MockExamManagement
     {
         string TeacherName { set; }
         string ExamID { get; }
-        List<MockExam> MockExamList { set; }
+        BindingList<MockExam> MockExamList { set; }
 
         event EventHandler GoBackBeFore;
         event EventHandler UpdateExam;

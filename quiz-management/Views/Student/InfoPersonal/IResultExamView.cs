@@ -7,14 +7,13 @@ using System.Threading.Tasks;
 
 namespace quiz_management.Views.Student.InfoPersonal
 {
-    interface IResultExamView
+    internal interface IResultExamView
     {
+        ResultExamUser User { set; }
         List<ResultExam> ResultExam { set; }
-       
 
         event EventHandler BackMain;
+
         void swichMainStudent(int code);
-
-
     }
 }

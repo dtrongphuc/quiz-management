@@ -17,10 +17,8 @@ namespace quiz_management.Views.Teacher.ExamManagement
         string DeThiChon { set; }
         BindingList<thongTin> lstHocSinh { set; }
         BindingList<thongTin> lstThiSinh { set; }
-        
         DataGridView lstThiSinhChon { get; }
         DataGridView lstHocSinhChon { get; }
-
 
         event EventHandler GoBackBefore;
         event EventHandler Submit;

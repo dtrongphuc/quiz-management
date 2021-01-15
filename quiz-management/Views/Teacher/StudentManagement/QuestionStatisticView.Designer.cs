@@ -83,6 +83,7 @@ namespace quiz_management.Views.Teacher.StudentManagement
             this.ClientSize = new System.Drawing.Size(1054, 450);
             this.Controls.Add(this.splitContainer1);
             this.Name = "QuestionStatisticView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QuestionStatisticView";
             this.Load += new System.EventHandler(this.QuestionStatisticView_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
