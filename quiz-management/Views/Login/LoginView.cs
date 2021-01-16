@@ -102,5 +102,31 @@ namespace quiz_management.Views.Student
                 Submit?.Invoke(btnSubmit, e);
             }
         }
+
+        private void txtUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!ValidateChildren())
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ dữ liệu hợp lệ");
+                    return;
+                }
+                Submit?.Invoke(btnSubmit, e);
+            }
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!ValidateChildren())
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ dữ liệu hợp lệ");
+                    return;
+                }
+                Submit?.Invoke(btnSubmit, e);
+            }
+        }
     }
 }
