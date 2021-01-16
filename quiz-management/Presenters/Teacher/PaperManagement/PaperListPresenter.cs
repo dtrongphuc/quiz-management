@@ -25,7 +25,7 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
             using (var db = new QuizDataContext())
             {
                 //binding tên giáo viên
-                var teachername = db.thongTins.Where(i => i.maNguoidung == 1).Select(i => i.tenNguoiDung).ToList();
+                var teachername = db.thongTins.Where(i => i.maNguoidung == currenuser).Select(i => i.tenNguoiDung).ToList();
                 view.Teachername = teachername[0].ToString();
             }
             LoadPage(code);
