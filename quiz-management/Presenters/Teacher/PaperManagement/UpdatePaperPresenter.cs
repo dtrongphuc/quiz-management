@@ -63,6 +63,10 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
                         });
                         db.SubmitChanges();
                     }
+                    //cập nhật lại thời gian cho bộ đề
+                    var paper = db.boDes.Where(i => i.maBoDe == int.Parse(view.PaperID)).ToList()[0];
+                    paper.thoiGian = view.AllQuestionSelect.Rows.Count * 60;
+                    db.SubmitChanges();
                 }
                 //hiển thị thông báo thành công và quay lại trang danh sách đề thi 
                 view.ShowMessage("Cập nhật thành cộng");
