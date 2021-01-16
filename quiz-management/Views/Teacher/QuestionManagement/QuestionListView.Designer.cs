@@ -142,6 +142,7 @@
             // cbbGrade
             // 
             this.cbbGrade.DisplayMember = "tenKhoiLop";
+            this.cbbGrade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbGrade.FormattingEnabled = true;
             this.cbbGrade.Location = new System.Drawing.Point(302, 130);
@@ -153,6 +154,7 @@
             // cbbSubject
             // 
             this.cbbSubject.DisplayMember = "tenMonHoc";
+            this.cbbSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbSubject.FormattingEnabled = true;
             this.cbbSubject.Location = new System.Drawing.Point(630, 130);

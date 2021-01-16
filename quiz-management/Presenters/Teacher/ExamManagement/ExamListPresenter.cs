@@ -84,14 +84,16 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
 
             var x = view.lichthichon.SelectedRows[0];
             var id = x.Cells["maLichThi"].Value.ToString();
+            var de = x.Cells["MaDe"].Value.ToString();
             bool check = false;
             using (var db = new QuizDataContext())
             {
-                var temp = db.ketQuas.Where(p => p.maKetQua == int.Parse(id)).ToList();
+                var temp = db.ketQuas.Where(p => p.maKetQua == int.Parse(id))
+                                    .Where(c => c.maBoDe == int.Parse(de)).ToList();
                 if (temp == null || temp.Count == 0)
                     check = true;
             }
-            if (check == true)
+            if (check == false)
             {
                 view.ShowMessage("Lich thi này đã được thi nên không thể chỉnh sửa");
                 return;

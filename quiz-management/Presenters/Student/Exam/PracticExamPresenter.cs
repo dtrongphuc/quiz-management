@@ -387,7 +387,7 @@ namespace quiz_management.Presenters.Student.Exam
                     var diem = Math.Round((10 * 1.0 / Questions.Count) * corrected, 2, MidpointRounding.ToEven);
 
                     var result = db.luyenTaps.FirstOrDefault(t => t.nguoiDung.maNguoiDung == currentUserCode);
-                    if (result != null && result.maNguoiDung == currentUserCode)
+                    if (result == null)
                     {
                         var user = db.nguoiDungs.FirstOrDefault(n => n.maNguoiDung == currentUserCode);
                         var lt = new luyenTap
