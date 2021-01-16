@@ -20,7 +20,7 @@ namespace quiz_management.Views.Student.Exam
         int Remain { get; set; }
         string QuestionString { set; }
         BindingList<Answer> Answers { set; }
-        BindingList<int> QuestionsChecked { set; }
+        List<int> QuestionsChecked { set; }
 
         event EventHandler QuestionChange;
 

@@ -66,7 +66,7 @@ namespace quiz_management.Views.Student.Exam
             }
         }
 
-        public BindingList<int> QuestionsChecked
+        public List<int> QuestionsChecked
         {
             set
             {
