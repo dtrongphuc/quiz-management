@@ -30,6 +30,9 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
 
         private void UpdateQuestion_View(object sender, EventArgs e)
         {
+            int countQuestion = 0;
+            int checkQuestionMustAnwser = 0;
+
             string Questionsstring = view.Question;
             string answerA = view.AnswerA;
             string answerB = view.AnswerB;
@@ -38,6 +41,14 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
             string answerE = view.AnswerE;
             string answerF = view.AnswerF;
 
+            //đếm số câu hỏi đã tạo
+            countQuestion = answerA == "" ? countQuestion + 0 : countQuestion + 1;
+            countQuestion = answerB == "" ? countQuestion + 0 : countQuestion + 1;
+            countQuestion = answerC == "" ? countQuestion + 0 : countQuestion + 1;
+            countQuestion = answerD == "" ? countQuestion + 0 : countQuestion + 1;
+            countQuestion = answerE == "" ? countQuestion + 0 : countQuestion + 1;
+            countQuestion = answerF == "" ? countQuestion + 0 : countQuestion + 1;
+
             int checkA = view.cbResultA ? 1 : 0;
             int checkB = view.cbResultB ? 1 : 0;
             int checkC = view.cbResultC ? 1 : 0;
@@ -45,11 +56,27 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
             int checkE = view.cbResultE ? 1 : 0;
             int checkF = view.cbResultF ? 1 : 0;
 
+            //kiem tra cau tra loi phai co cau hoi
+            checkQuestionMustAnwser = answerA == "" && checkA == 1 ? checkQuestionMustAnwser + 1 : checkQuestionMustAnwser + 0;
+            checkQuestionMustAnwser = answerB == "" && checkB == 1 ? checkQuestionMustAnwser + 1 : checkQuestionMustAnwser + 0;
+            checkQuestionMustAnwser = answerC == "" && checkC == 1 ? checkQuestionMustAnwser + 1 : checkQuestionMustAnwser + 0;
+            checkQuestionMustAnwser = answerD == "" && checkD == 1 ? checkQuestionMustAnwser + 1 : checkQuestionMustAnwser + 0;
+            checkQuestionMustAnwser = answerE == "" && checkE == 1 ? checkQuestionMustAnwser + 1 : checkQuestionMustAnwser + 0;
+            checkQuestionMustAnwser = answerF == "" && checkF == 1 ? checkQuestionMustAnwser + 1 : checkQuestionMustAnwser + 0;
+
             string classIDSelected = view.GradeId;
             string subjectIDSelected = view.SubjectId;
             if (checkA == 0 && checkB == 0 && checkC == 0 && checkD == 0 && checkE == 0 && checkF == 0)
             {
                 view.ShowMessage("Phải có ít nhất 1 câu trả lời là đúng!!");
+            }
+            else if (countQuestion < 4)
+            {
+                view.ShowMessage("Phải có ít nhất 4 câu hỏi");
+            }
+            else if (checkQuestionMustAnwser > 0)
+            {
+                view.ShowMessage("Câu trả lời phải có câu hỏi");
             }
             else
             {
