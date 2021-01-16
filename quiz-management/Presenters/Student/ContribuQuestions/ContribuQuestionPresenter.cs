@@ -36,7 +36,7 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
         private void Send_CLick(object sender, EventArgs e)
         {
             int countQuestion = 0;
-            bool checkQuestionMustAnwser = true;
+            int checkQuestionMustAnwser = 0;
 
             string Questionsstring = view.Question;
             string answerA = view.AnswerA;
@@ -62,12 +62,12 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
             int checkF = view.cbResultF ? 1 : 0;
 
             //kiem tra cau tra loi phai co cau hoi
-            checkQuestionMustAnwser = answerA == "" && checkA == 1 ? false : true;
-            checkQuestionMustAnwser = answerB == "" && checkB == 1 ? false : true;
-            checkQuestionMustAnwser = answerC == "" && checkC == 1 ? false : true;
-            checkQuestionMustAnwser = answerD == "" && checkD == 1 ? false : true;
-            checkQuestionMustAnwser = answerE == "" && checkE == 1 ? false : true;
-            checkQuestionMustAnwser = answerF == "" && checkF == 1 ? false : true;
+            checkQuestionMustAnwser = answerA == "" && checkA == 1 ? checkQuestionMustAnwser + 1 : checkQuestionMustAnwser + 0;
+            checkQuestionMustAnwser = answerB == "" && checkB == 1 ? checkQuestionMustAnwser + 1 : checkQuestionMustAnwser + 0;
+            checkQuestionMustAnwser = answerC == "" && checkC == 1 ? checkQuestionMustAnwser + 1 : checkQuestionMustAnwser + 0;
+            checkQuestionMustAnwser = answerD == "" && checkD == 1 ? checkQuestionMustAnwser + 1 : checkQuestionMustAnwser + 0;
+            checkQuestionMustAnwser = answerE == "" && checkE == 1 ? checkQuestionMustAnwser + 1 : checkQuestionMustAnwser + 0;
+            checkQuestionMustAnwser = answerF == "" && checkF == 1 ? checkQuestionMustAnwser + 1 : checkQuestionMustAnwser + 0;
 
             string classIDSelected = view.ClassSelect;
             string subjectIDSelected = view.SubjectSelect;
@@ -79,7 +79,7 @@ namespace quiz_management.Presenters.Student.ContribuQuestions
             {
                 view.ShowMessage("Phải có ít nhất 4 câu hỏi");
             }
-            else if (!checkQuestionMustAnwser)
+            else if (checkQuestionMustAnwser > 0)
             {
                 view.ShowMessage("Câu trả lời phải có câu hỏi");
             }

@@ -1666,3 +1666,42 @@ insert into CTBode values
 go
 
 --(10, 1, 'K10', 900, 0)
+
+insert into dongGop (maNguoiDung, maMonHoc, trangthai, ngay, cauHoi, maKhoiLop) values
+(7, 2, 0, '2020-12-12', N'Phản ứng nào sau đây được sử dụng để điều chế CO trong phòng thí nghiệm', 'K11'),
+(7, 2, 0, '2020-12-12', N'Quặng nào sau đây chứa CaCO3 ?', 'K11'),
+(7, 2, 0, '2020-12-12', N'Cho hỗn hợp khí gồm CO2 và CO. dùng chất nào sau đây có thể thu được CO2 tinh khiết hơn ?', 'K11'),
+(7, 2, 0, '2020-12-12', N'Na2CO3 lẫn tạp chất là NaHCO3. Cách nào sau đây có thể thu được Na2CO3 tinh khiết ?', 'K11'),
+(7, 3, 0, '2020-12-12', N'The children/ spend/ afternoon/ play/ in the garden.', 'K10'),
+(7, 3, 0, '2020-12-12', N'The restaurant/ turn/ out/ be/ surprisingly cheap.', 'K10'),
+(7, 3, 0, '2020-12-12', N'These students are made to study so much by their parents.', 'K10')
+
+insert into cTDongGop values
+(2, N'HCOOH (xt H2SO4 đặc) → H2O + CO', 1),
+(2, N'C + H2O (hơi) → CO + H2', 0),
+(2, N'C + CO2 → 2CO', 0),
+(2, N'2C + O2 → CO', 0),
+(3, N'dolomit', 1),
+(3, N'cacnalit', 0),
+(3, N'pirit', 0),
+(3, N'xiderit', 0),
+(4, N'dung dịch NaOH', 0),
+(4, N'CuO (to cao)', 1),
+(4, N'O2', 0),
+(4, N'dung dịch BaCl2', 0),
+(5, N'hòa tan vào nước rồi lọc', 0),
+(5, N'nung nóng', 1),
+(5, N'cho tác dụng với NaOH dư', 0),
+(5, N'cho tác dụng với dung dịch Ca(OH)2 dư', 0),
+(6, N'The children spent the afternoon playing in the garden.', 1),
+(6, N'The children spent the afternoon play in the garden.', 0),
+(6, N'The children spent the afternoon to playing in the garden.', 0),
+(6, N'The children spent the afternoon to play in the garden.', 0),
+(7, N'The restaurant turn out to be surprisingly cheap.', 0),
+(7, N' The restaurant turn out be surprisingly cheap.', 0),
+(7, N'The restaurant turned out be surprisingly cheap.', 0),
+(7, N'The restaurant turned out to be surprisingly cheap.', 1),
+(8, N'Their parents make these students to study so much.', 0),
+(8, N'Their parents make these students study so much.', 1),
+(8, N'Their parents made these students study so much.', 0),
+(8, N'Their parents made these students to study so much.', 0)

@@ -66,7 +66,18 @@ namespace quiz_management.Presenters.Student.InfoPersonal
 
         private void View_BackMain(object sender, EventArgs e)
         {
-            view.swichMainStudent(currentcode);
+            using (var db = new QuizDataContext())
+            {
+                var user = db.nguoiDungs.SingleOrDefault(n => n.maNguoiDung == currentcode);
+                if (user.phanQuyen == 1)
+                {
+                    view.swichMainStudent(currentcode);
+                }
+                else
+                {
+                    view.ShowMainTeacherView(currentcode);
+                }
+            }
         }
 
         private void Fill()
