@@ -104,7 +104,7 @@
             this.panelThongKe.MaximumSize = new System.Drawing.Size(214, 178);
             this.panelThongKe.MinimumSize = new System.Drawing.Size(214, 57);
             this.panelThongKe.Name = "panelThongKe";
-            this.panelThongKe.Size = new System.Drawing.Size(214, 178);
+            this.panelThongKe.Size = new System.Drawing.Size(214, 57);
             this.panelThongKe.TabIndex = 2;
             // 
             // btnTKCauHoi
@@ -177,11 +177,11 @@
             this.panelLamBaiThi.Controls.Add(this.btnOfficialExam);
             this.panelLamBaiThi.Controls.Add(this.btnLamBaiThi);
             this.panelLamBaiThi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLamBaiThi.Location = new System.Drawing.Point(3, 187);
+            this.panelLamBaiThi.Location = new System.Drawing.Point(3, 66);
             this.panelLamBaiThi.MaximumSize = new System.Drawing.Size(214, 137);
             this.panelLamBaiThi.MinimumSize = new System.Drawing.Size(214, 57);
             this.panelLamBaiThi.Name = "panelLamBaiThi";
-            this.panelLamBaiThi.Size = new System.Drawing.Size(214, 137);
+            this.panelLamBaiThi.Size = new System.Drawing.Size(214, 57);
             this.panelLamBaiThi.TabIndex = 2;
             // 
             // btnPracticExam
@@ -241,7 +241,7 @@
             this.btnQLDeThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLDeThi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnQLDeThi.ForeColor = System.Drawing.Color.Black;
-            this.btnQLDeThi.Location = new System.Drawing.Point(3, 330);
+            this.btnQLDeThi.Location = new System.Drawing.Point(3, 129);
             this.btnQLDeThi.Name = "btnQLDeThi";
             this.btnQLDeThi.Size = new System.Drawing.Size(214, 41);
             this.btnQLDeThi.TabIndex = 6;
@@ -258,7 +258,7 @@
             this.panelQLCauHoi.MaximumSize = new System.Drawing.Size(214, 135);
             this.panelQLCauHoi.MinimumSize = new System.Drawing.Size(214, 57);
             this.panelQLCauHoi.Name = "panelQLCauHoi";
-            this.panelQLCauHoi.Size = new System.Drawing.Size(214, 135);
+            this.panelQLCauHoi.Size = new System.Drawing.Size(214, 57);
             this.panelQLCauHoi.TabIndex = 1;
             // 
             // btnApproval
@@ -337,7 +337,7 @@
             this.tbDOB.Enabled = false;
             this.tbDOB.Location = new System.Drawing.Point(111, 182);
             this.tbDOB.Name = "tbDOB";
-            this.tbDOB.Size = new System.Drawing.Size(169, 27);
+            this.tbDOB.Size = new System.Drawing.Size(169, 32);
             this.tbDOB.TabIndex = 24;
             // 
             // label1
@@ -378,7 +378,7 @@
             this.tbTeacherID.Enabled = false;
             this.tbTeacherID.Location = new System.Drawing.Point(111, 130);
             this.tbTeacherID.Name = "tbTeacherID";
-            this.tbTeacherID.Size = new System.Drawing.Size(169, 27);
+            this.tbTeacherID.Size = new System.Drawing.Size(169, 32);
             this.tbTeacherID.TabIndex = 16;
             // 
             // label2
@@ -397,7 +397,7 @@
             this.tbTeacherName.Location = new System.Drawing.Point(46, 64);
             this.tbTeacherName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tbTeacherName.Name = "tbTeacherName";
-            this.tbTeacherName.Size = new System.Drawing.Size(175, 24);
+            this.tbTeacherName.Size = new System.Drawing.Size(223, 29);
             this.tbTeacherName.TabIndex = 12;
             this.tbTeacherName.Text = "Giáo Viên Siêu Cấp";
             // 
@@ -432,7 +432,7 @@
             this.txtTitle2.Location = new System.Drawing.Point(57, 104);
             this.txtTitle2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtTitle2.Name = "txtTitle2";
-            this.txtTitle2.Size = new System.Drawing.Size(356, 26);
+            this.txtTitle2.Size = new System.Drawing.Size(464, 32);
             this.txtTitle2.TabIndex = 3;
             this.txtTitle2.Text = "Trường đại học Khoa Học Tự Nhiên ";
             // 
@@ -443,7 +443,7 @@
             this.txtTitle1.Location = new System.Drawing.Point(212, 64);
             this.txtTitle1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtTitle1.Name = "txtTitle1";
-            this.txtTitle1.Size = new System.Drawing.Size(121, 17);
+            this.txtTitle1.Size = new System.Drawing.Size(140, 20);
             this.txtTitle1.TabIndex = 2;
             this.txtTitle1.Text = "Thi trắc nghiệm";
             // 
@@ -465,11 +465,11 @@
             this.panelQLKyThi.Controls.Add(this.btnLichKyThi);
             this.panelQLKyThi.Controls.Add(this.btnQLKyThi);
             this.panelQLKyThi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelQLKyThi.Location = new System.Drawing.Point(3, 144);
+            this.panelQLKyThi.Location = new System.Drawing.Point(3, 66);
             this.panelQLKyThi.MaximumSize = new System.Drawing.Size(214, 180);
             this.panelQLKyThi.MinimumSize = new System.Drawing.Size(214, 57);
             this.panelQLKyThi.Name = "panelQLKyThi";
-            this.panelQLKyThi.Size = new System.Drawing.Size(214, 180);
+            this.panelQLKyThi.Size = new System.Drawing.Size(214, 57);
             this.panelQLKyThi.TabIndex = 1;
             // 
             // btnTongKetKT
@@ -544,7 +544,7 @@
             this.btnQLKyThiThu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLKyThiThu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnQLKyThiThu.ForeColor = System.Drawing.Color.Black;
-            this.btnQLKyThiThu.Location = new System.Drawing.Point(3, 330);
+            this.btnQLKyThiThu.Location = new System.Drawing.Point(3, 129);
             this.btnQLKyThiThu.Name = "btnQLKyThiThu";
             this.btnQLKyThiThu.Size = new System.Drawing.Size(214, 41);
             this.btnQLKyThiThu.TabIndex = 4;
