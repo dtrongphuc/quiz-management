@@ -79,7 +79,7 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
             using (var db = new QuizDataContext())
             {
                 //ten gv
-                view.TeacherName = db.thongTins.Where(i => i.maNguoidung == 1).Select(i => i.tenNguoiDung).ToList()[0].ToString();
+                view.TeacherName = db.thongTins.Where(i => i.maNguoidung == currenUser).Select(i => i.tenNguoiDung).ToList()[0].ToString();
                 //monhoc
                 view.GradeList = db.khoiLops.ToList();
                 //monhoc
