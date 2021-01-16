@@ -50,7 +50,6 @@ namespace quiz_management.Views.Teacher.QuestionManagement
 
         public List<khoiLop> GradeList { set => cbbGrade.DataSource = value; }
         public List<monHoc> SubjectList { set => cbbSubject.DataSource = value; }
-        //{ get => cbbDifficute.SelectedValue; set => cbbDifficute.SelectedValue = value; }
         public string lvDifficute { get => cbbDifficute.Text; set => cbbDifficute.Text = value; }
 
         public string Question { get => tbQuestion.Text; set => tbQuestion.Text = value; }

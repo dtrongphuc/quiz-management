@@ -35,11 +35,11 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
             using (var db = new QuizDataContext())
             {
                 //ktr nếu có trong đề thi thì ko cho xóa
-                var checkDelete = db.ketQuas.Where(i => i.maBoDe == int.Parse(view.PaperID)).ToList();
+                var checkDelete = db.lichThis.Where(i => i.maBoDe == int.Parse(view.PaperID)).ToList();
 
                 if(checkDelete.Count > 0)
                 {
-                    view.ShowMessage("Câu hỏi có trong đề thi không thể xóa");
+                    view.ShowMessage("Câu hỏi có trong lịch thi không thể xóa!");
                     return;
                 }    
                 //item trong chi tiết bộ đề
@@ -55,7 +55,7 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
                 db.boDes.DeleteOnSubmit(itemspaper);
                 db.SubmitChanges();
             }
-            view.ShowMessage("Xóa thành công.");
+            view.ShowMessage("Xóa thành công");
             LoadPage(currenuser);
         }
 
@@ -86,7 +86,7 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
                     p.Subject = i.monHoc.tenMonHoc.ToString();
                     p.Grade = i.khoiLop.tenKhoiLop.ToString();
                     p.QuestionNum = i.cTBoDes.Where(x => x.maBoDe == int.Parse(i.maBoDe.ToString())).Count();
-                    p.Status = (i.ketQuas.Where(x => x.maBoDe == i.maBoDe).Count()) > 0 ? "Đã có trong kì thi" : "Chưa có trong kì thi";
+                    p.Status = (i.lichThis.Where(x => x.maBoDe == i.maBoDe).Count()) > 0 ? "Đã có trong kì thi" : "Chưa có trong kì thi";
                     paperList.Add(p);
                 }
                 view.papers = paperList;
