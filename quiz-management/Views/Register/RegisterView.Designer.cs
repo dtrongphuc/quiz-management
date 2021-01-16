@@ -255,7 +255,7 @@
             this.Username_Validator.ErrorMessage = "Tên đăng nhập không hợp lệ";
             this.Username_Validator.InitialValue = null;
             this.Username_Validator.IsValid = false;
-            this.Username_Validator.Regex = "^([a-z])[a-z0-9]{3,16}$";
+            this.Username_Validator.Regex = "^([a-z])[a-z0-9]{2,16}$";
             // 
             // FullName_Validator
             // 
@@ -279,7 +279,7 @@
             this.Password_Validator.ErrorMessage = "Mật khẩu từ 3 - 10 ký tự";
             this.Password_Validator.InitialValue = null;
             this.Password_Validator.IsValid = false;
-            this.Password_Validator.Regex = ".{3,10}";
+            this.Password_Validator.Regex = "^\\S{3,10}$";
             // 
             // ConfirmPassword_Validator
             // 
@@ -287,7 +287,7 @@
             this.ConfirmPassword_Validator.ErrorMessage = "Mật khẩu từ 3 - 10 ký tự";
             this.ConfirmPassword_Validator.InitialValue = null;
             this.ConfirmPassword_Validator.IsValid = false;
-            this.ConfirmPassword_Validator.Regex = ".{3,10}";
+            this.ConfirmPassword_Validator.Regex = "^\\S{3,10}$";
             // 
             // RegisterView
             // 
@@ -311,7 +311,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbRegister);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RegisterView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterView";
