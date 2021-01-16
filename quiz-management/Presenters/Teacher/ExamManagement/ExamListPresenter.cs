@@ -61,7 +61,7 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
                 if (temp == null || temp.Count == 0)
                     check = true;
             }
-            if (check == true)
+            if (check == false)
             {
                 view.ShowMessage("Lich thi này đã được thi nên không thể chỉnh sửa");
                 return;
