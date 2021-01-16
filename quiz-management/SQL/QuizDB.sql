@@ -1589,9 +1589,9 @@ insert into nguoiDung (tenTaiKhoan, matKhau, phanQuyen, TrangThai) values
 go
 
 insert into thongTin values
-(1, N'Nguyễn Hiếu Nghĩa', '2000-10-10', 1),
-(2, N'Đinh Thành Phú', '2000-10-14', null),
-(3, N'Dương Trọng Phúc', '2000-11-01', null)
+(4, N'Nguyễn Hiếu Nghĩa', '2000-10-10', 1),
+(5, N'Đinh Thành Phú', '2000-10-14', null),
+(6, N'Dương Trọng Phúc', '2000-11-01', null)
 go
 
 insert into bode values 
