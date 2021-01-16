@@ -50,7 +50,7 @@ namespace quiz_management.Views.Student.InfoPersonal
             screen.Show();
         }
 
-        public void ShowMainTeacher(int code)
+        public void ShowMainTeacherView(int code)
         {
             this.Hide();
             MainTeacherView screen = new MainTeacherView(code);
