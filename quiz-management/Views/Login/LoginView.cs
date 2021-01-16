@@ -80,10 +80,27 @@ namespace quiz_management.Views.Student
                 Submit?.Invoke(btnSubmit, e);
             };
 
+            btnSubmit.KeyPress += BtnSubmit_KeyPress;
+            {
+            };
+
             ToRegisterView.Click += (_, e) =>
             {
                 SwitchToRegisterView.Invoke(ToRegisterView, e);
             };
+        }
+
+        private void BtnSubmit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                if (!ValidateChildren())
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ dữ liệu hợp lệ");
+                    return;
+                }
+                Submit?.Invoke(btnSubmit, e);
+            }
         }
     }
 }

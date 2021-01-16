@@ -75,6 +75,7 @@
             this.Controls.Add(this.label3);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "WatchOrPrintExamCompletedView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WatchOrPrintExamCompletedView";
             this.Load += new System.EventHandler(this.WatchOrPrintExamCompletedView_Load);
             this.ResumeLayout(false);

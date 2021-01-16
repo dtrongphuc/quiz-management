@@ -31,12 +31,12 @@ namespace quiz_management.Views.Administrator.SystemManagement
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dgvThongTin = new System.Windows.Forms.DataGridView();
-            this.linkBack = new System.Windows.Forms.LinkLabel();
             this.maNguoiDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenNguoiDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quyen = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.linkBack = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThongTin)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,16 +65,6 @@ namespace quiz_management.Views.Administrator.SystemManagement
             this.dgvThongTin.Size = new System.Drawing.Size(590, 279);
             this.dgvThongTin.TabIndex = 1;
             // 
-            // linkBack
-            // 
-            this.linkBack.AutoSize = true;
-            this.linkBack.Location = new System.Drawing.Point(27, 25);
-            this.linkBack.Name = "linkBack";
-            this.linkBack.Size = new System.Drawing.Size(39, 13);
-            this.linkBack.TabIndex = 2;
-            this.linkBack.TabStop = true;
-            this.linkBack.Text = "Trở Về";
-            // 
             // maNguoiDung
             // 
             this.maNguoiDung.HeaderText = ".";
@@ -102,6 +92,16 @@ namespace quiz_management.Views.Administrator.SystemManagement
             this.quyen.HeaderText = "Phân Quyền";
             this.quyen.Name = "quyen";
             // 
+            // linkBack
+            // 
+            this.linkBack.AutoSize = true;
+            this.linkBack.Location = new System.Drawing.Point(27, 25);
+            this.linkBack.Name = "linkBack";
+            this.linkBack.Size = new System.Drawing.Size(39, 13);
+            this.linkBack.TabIndex = 2;
+            this.linkBack.TabStop = true;
+            this.linkBack.Text = "Trở Về";
+            // 
             // DecentralizationView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -111,6 +111,7 @@ namespace quiz_management.Views.Administrator.SystemManagement
             this.Controls.Add(this.dgvThongTin);
             this.Controls.Add(this.label1);
             this.Name = "DecentralizationView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DecentralizationView";
             ((System.ComponentModel.ISupportInitialize)(this.dgvThongTin)).EndInit();
             this.ResumeLayout(false);

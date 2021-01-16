@@ -85,6 +85,7 @@ namespace quiz_management.Views.Teacher.StudentManagement
             this.Controls.Add(this.cbDateTime);
             this.Controls.Add(this.reportViewer1);
             this.Name = "ExamStatisticView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ExamStatisticView";
             this.Load += new System.EventHandler(this.Form_Loaded);
             this.ResumeLayout(false);
