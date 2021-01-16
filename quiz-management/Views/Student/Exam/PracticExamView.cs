@@ -2,6 +2,7 @@
 using quiz_management.Presenters.Student.Exam;
 using quiz_management.Views.Student.Exam;
 using quiz_management.Views.Student.Main;
+using quiz_management.Views.Teacher.Main;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -132,6 +133,14 @@ namespace quiz_management.Views.Student
             screen.Show();
         }
 
+        public void ShowTeacherView(int userCode)
+        {
+            this.Hide();
+            MainTeacherView screen = new MainTeacherView(userCode);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
+        }
+
         public void ShowStatisticView(int userCode)
         {
             this.Hide();
@@ -189,6 +198,8 @@ namespace quiz_management.Views.Student
 
             btnSubmit.Click += (_, e) =>
             {
+                aTimer.Stop();
+                aTimer.Enabled = false;
                 Submit.Invoke(btnSubmit, e);
             };
 

@@ -36,7 +36,7 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
             using (var db = new QuizDataContext())
             {
                 view.TeacherName = db.thongTins.Where(i => i.maNguoidung == currenUserCode).Select(i => i.tenNguoiDung).ToList()[0].ToString();
-                listContribute = db.dongGops.ToList();
+                listContribute = db.dongGops.Where(i => i.trangthai == 0).ToList();
                 foreach (var contribute in listContribute)
                 {
                     ContributeQuestion cq = new ContributeQuestion();
@@ -71,6 +71,8 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
                     //xóa câu hỏi đã phê duyệt ra khỏi dgv
                     var temp = listQuestion.Where(x => x.MaDongGop == CQid.ToString()).ToList();
                     listQuestion.Remove(temp[0]);
+                    //boDe itemspaper = db.boDes.SingleOrDefault(i => i.maBoDe == int.Parse(view.PaperID));
+                    //db.boDes.DeleteOnSubmit(itemspaper);
 
                     db.SubmitChanges();
                     //thêm đóng góp dô câu hỏi
@@ -114,7 +116,7 @@ namespace quiz_management.Presenters.Teacher.QuestionManagement
                     });
                     db.SubmitChanges();
                     AnswerID++;
-                } 
+                }
                 //view.ShowMessage("Tạo câu hỏi thành công");
                 //view.ShowQuestionList(currentUser, view.GradeId, int.Parse(view.SubjectId));
 

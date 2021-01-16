@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Timers;
 using quiz_management.Models;
 using quiz_management.Views.Student.Main;
+using quiz_management.Views.Teacher.Main;
 
 namespace quiz_management.Views.Student.Exam
 {
@@ -102,6 +103,14 @@ namespace quiz_management.Views.Student.Exam
             screen.Show();
         }
 
+        public void ShowTeacherView(int userCode)
+        {
+            this.Hide();
+            MainTeacherView screen = new MainTeacherView(userCode);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
+        }
+
         public OfficialExamView(int userCode)
         {
             InitializeComponent();
@@ -122,6 +131,8 @@ namespace quiz_management.Views.Student.Exam
 
             btnSubmit.Click += (_, e) =>
             {
+                aTimer.Stop();
+                aTimer.Enabled = false;
                 Submit.Invoke(btnSubmit, e);
             };
 
@@ -158,7 +169,7 @@ namespace quiz_management.Views.Student.Exam
             double minutes = Math.Ceiling(TimeCount / 60 * 1.0);
             int secconds = (TimeCount % 60);
 
-            if (minutes <= 0 && secconds <= 0)
+            if (minutes == 0 && secconds == 0)
             {
                 aTimer.Stop();
                 aTimer.Enabled = false;

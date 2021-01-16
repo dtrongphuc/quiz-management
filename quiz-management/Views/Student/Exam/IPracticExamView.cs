@@ -53,6 +53,8 @@ namespace quiz_management.Views.Student.Exam
 
         void ShowStudentView(int userCode);
 
+        void ShowTeacherView(int userCode);
+
         void ShowStatisticView(int userCode);
     }
 }

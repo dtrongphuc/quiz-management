@@ -51,8 +51,16 @@ namespace quiz_management.Presenters.Student.Exam
                 {
                     var result = db.ketQuas.FirstOrDefault(k => k.maKetQua == _resultCode);
                     view.ShowMessage("Kết quả", "Bạn được " + result.diem + " điểm");
+                    var user = db.nguoiDungs.SingleOrDefault(n => n.maNguoiDung == currentUserCode);
+                    if (user.phanQuyen == 1)
+                    {
+                        view.ShowStudentView(currentUserCode);
+                    }
+                    else
+                    {
+                        view.ShowTeacherView(currentUserCode);
+                    }
                 }
-                view.ShowStudentView(currentUserCode);
             }
         }
 
@@ -78,8 +86,16 @@ namespace quiz_management.Presenters.Student.Exam
                 {
                     var result = db.ketQuas.FirstOrDefault(k => k.maKetQua == _resultCode);
                     view.ShowMessage("Kết quả", "Bạn được " + result.diem + " điểm");
+                    var user = db.nguoiDungs.SingleOrDefault(n => n.maNguoiDung == currentUserCode);
+                    if (user.phanQuyen == 1)
+                    {
+                        view.ShowStudentView(currentUserCode);
+                    }
+                    else
+                    {
+                        view.ShowTeacherView(currentUserCode);
+                    }
                 }
-                view.ShowStudentView(currentUserCode);
             }
         }
 
