@@ -58,7 +58,7 @@
             // btnSubmit
             // 
             this.btnSubmit.Location = new System.Drawing.Point(354, 591);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(124, 39);
             this.btnSubmit.TabIndex = 33;
@@ -179,7 +179,7 @@
             // btnMoveLeft
             // 
             this.btnMoveLeft.Location = new System.Drawing.Point(397, 434);
-            this.btnMoveLeft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMoveLeft.Margin = new System.Windows.Forms.Padding(2);
             this.btnMoveLeft.Name = "btnMoveLeft";
             this.btnMoveLeft.Size = new System.Drawing.Size(34, 55);
             this.btnMoveLeft.TabIndex = 48;
@@ -189,7 +189,7 @@
             // btnMoveRight
             // 
             this.btnMoveRight.Location = new System.Drawing.Point(397, 362);
-            this.btnMoveRight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMoveRight.Margin = new System.Windows.Forms.Padding(2);
             this.btnMoveRight.Name = "btnMoveRight";
             this.btnMoveRight.Size = new System.Drawing.Size(34, 55);
             this.btnMoveRight.TabIndex = 47;
@@ -273,7 +273,7 @@
             this.dgvBoDe.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maBoDe});
             this.dgvBoDe.Location = new System.Drawing.Point(544, 110);
-            this.dgvBoDe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvBoDe.Margin = new System.Windows.Forms.Padding(2);
             this.dgvBoDe.Name = "dgvBoDe";
             this.dgvBoDe.RowHeadersWidth = 51;
             this.dgvBoDe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -291,7 +291,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(836, 609);
+            this.ClientSize = new System.Drawing.Size(836, 645);
             this.Controls.Add(this.dgvBoDe);
             this.Controls.Add(this.dtNgayThiKT);
             this.Controls.Add(this.label8);
@@ -309,7 +309,7 @@
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.linkGoBackBefore);
             this.Controls.Add(this.label3);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CreateMockExamView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateMockExamView";

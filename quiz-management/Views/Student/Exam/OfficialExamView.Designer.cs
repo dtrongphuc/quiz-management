@@ -30,6 +30,8 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbCourse = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.txtClass = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtStudentClass = new System.Windows.Forms.Label();
@@ -92,6 +94,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lbCourse);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtClass);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txtStudentClass);
@@ -113,6 +117,25 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
+            // 
+            // lbCourse
+            // 
+            this.lbCourse.AutoSize = true;
+            this.lbCourse.Location = new System.Drawing.Point(641, 106);
+            this.lbCourse.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbCourse.Name = "lbCourse";
+            this.lbCourse.Size = new System.Drawing.Size(0, 13);
+            this.lbCourse.TabIndex = 19;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(583, 106);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 13);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Môn thi: ";
             // 
             // txtClass
             // 
@@ -482,5 +505,7 @@
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.TextBox tbQuestion;
         private System.Windows.Forms.Label label05;
+        private System.Windows.Forms.Label lbCourse;
+        private System.Windows.Forms.Label label3;
     }
 }

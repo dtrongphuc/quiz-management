@@ -263,7 +263,7 @@
             this.FullName_Validator.ErrorMessage = "Họ tên không hợp lệ";
             this.FullName_Validator.InitialValue = null;
             this.FullName_Validator.IsValid = false;
-            this.FullName_Validator.Regex = "[a-z]";
+            this.FullName_Validator.Regex = "^[^\\d]+$";
             // 
             // Date_Validator
             // 
