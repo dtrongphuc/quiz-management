@@ -30,12 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.StudentOfExamBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.linkGoBackBefore = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.StudentOfExamBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.StudentOfExamBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // StudentOfExamBindingSource
+            // 
+            this.StudentOfExamBindingSource.DataSource = typeof(quiz_management.Models.StudentOfExam);
             // 
             // linkGoBackBefore
             // 
@@ -72,10 +76,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(799, 429);
             this.reportViewer1.TabIndex = 45;
             // 
-            // StudentOfExamBindingSource
-            // 
-            this.StudentOfExamBindingSource.DataSource = typeof(quiz_management.Models.StudentOfExam);
-            // 
             // WatchOrPrintExamView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -86,6 +86,7 @@
             this.Controls.Add(this.label3);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "WatchOrPrintExamView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WatchOrPrintExamView";
             this.Load += new System.EventHandler(this.WatchOrPrintExamView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.StudentOfExamBindingSource)).EndInit();

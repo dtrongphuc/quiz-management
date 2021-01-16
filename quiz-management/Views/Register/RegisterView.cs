@@ -67,6 +67,8 @@ namespace quiz_management.Views.Student
                 Submit?.Invoke(btnSubmit, e);
             };
 
+            btnSubmit.KeyPress += BtnSubmit_KeyPress;
+
             ToLoginView.Click += (_, e) =>
             {
                 SwitchToLoginView.Invoke(ToLoginView, e);
@@ -85,6 +87,22 @@ namespace quiz_management.Views.Student
                 if (string.IsNullOrWhiteSpace(txtBirthday.Text))
                     txtBirthday.Text = "dd/mm/yyyy";
             };
+        }
+
+        private void BtnSubmit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!this.ValidateChildren())
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ dữ liệu hợp lệ");
+                return;
+            }
+
+            if (rbHs.Checked == true && cbClass.SelectedItem == null)
+            {
+                MessageBox.Show("Vui lòng chọn lớp");
+                return;
+            }
+            Submit?.Invoke(btnSubmit, e);
         }
 
         private void txtConfirmPassword_Validating(object sender, CancelEventArgs e)

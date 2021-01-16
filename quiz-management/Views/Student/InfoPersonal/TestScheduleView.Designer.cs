@@ -30,9 +30,9 @@
         {
             this.lbLogin = new System.Windows.Forms.Label();
             this.dgvSchedule = new System.Windows.Forms.DataGridView();
-            this.linkBack = new System.Windows.Forms.LinkLabel();
             this.tenMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngayThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.linkBack = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,17 +67,6 @@
             this.dgvSchedule.Size = new System.Drawing.Size(342, 236);
             this.dgvSchedule.TabIndex = 3;
             // 
-            // linkBack
-            // 
-            this.linkBack.AutoSize = true;
-            this.linkBack.Location = new System.Drawing.Point(25, 24);
-            this.linkBack.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkBack.Name = "linkBack";
-            this.linkBack.Size = new System.Drawing.Size(36, 13);
-            this.linkBack.TabIndex = 12;
-            this.linkBack.TabStop = true;
-            this.linkBack.Text = "Trở lại";
-            // 
             // tenMonHoc
             // 
             this.tenMonHoc.DataPropertyName = "TenMonHoc";
@@ -92,6 +81,17 @@
             this.ngayThi.Name = "ngayThi";
             this.ngayThi.ReadOnly = true;
             // 
+            // linkBack
+            // 
+            this.linkBack.AutoSize = true;
+            this.linkBack.Location = new System.Drawing.Point(25, 24);
+            this.linkBack.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkBack.Name = "linkBack";
+            this.linkBack.Size = new System.Drawing.Size(36, 13);
+            this.linkBack.TabIndex = 12;
+            this.linkBack.TabStop = true;
+            this.linkBack.Text = "Trở lại";
+            // 
             // TestScheduleView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -102,6 +102,7 @@
             this.Controls.Add(this.lbLogin);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TestScheduleView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TestScheduleView";
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).EndInit();
             this.ResumeLayout(false);

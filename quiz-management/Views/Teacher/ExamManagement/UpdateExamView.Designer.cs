@@ -289,6 +289,7 @@ namespace quiz_management.Views.Teacher.ExamManagement
             this.Controls.Add(this.linkGoForBack);
             this.Controls.Add(this.label3);
             this.Name = "UpdateExamView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UpdateExamView";
             ((System.ComponentModel.ISupportInitialize)(this.dtgHocSinh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThiSinh)).EndInit();

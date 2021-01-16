@@ -286,6 +286,7 @@
             this.Controls.Add(this.label3);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CreateExamView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateExamView";
             ((System.ComponentModel.ISupportInitialize)(this.dgvThiSinh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgHocSinh)).EndInit();
