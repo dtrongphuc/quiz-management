@@ -122,7 +122,7 @@
             // txtUsername
             // 
             this.txtUsername.Location = new System.Drawing.Point(208, 124);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(460, 22);
             this.txtUsername.TabIndex = 17;
@@ -130,7 +130,7 @@
             // txtFullName
             // 
             this.txtFullName.Location = new System.Drawing.Point(208, 169);
-            this.txtFullName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFullName.Margin = new System.Windows.Forms.Padding(4);
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.Size = new System.Drawing.Size(460, 22);
             this.txtFullName.TabIndex = 18;
@@ -138,7 +138,7 @@
             // txtBirthday
             // 
             this.txtBirthday.Location = new System.Drawing.Point(208, 213);
-            this.txtBirthday.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBirthday.Margin = new System.Windows.Forms.Padding(4);
             this.txtBirthday.Name = "txtBirthday";
             this.txtBirthday.Size = new System.Drawing.Size(168, 22);
             this.txtBirthday.TabIndex = 19;
@@ -147,7 +147,7 @@
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(208, 263);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(460, 22);
             this.txtPassword.TabIndex = 20;
@@ -156,7 +156,7 @@
             // txtPasswordConfirm
             // 
             this.txtPasswordConfirm.Location = new System.Drawing.Point(208, 311);
-            this.txtPasswordConfirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPasswordConfirm.Margin = new System.Windows.Forms.Padding(4);
             this.txtPasswordConfirm.Name = "txtPasswordConfirm";
             this.txtPasswordConfirm.Size = new System.Drawing.Size(460, 22);
             this.txtPasswordConfirm.TabIndex = 21;
@@ -166,7 +166,7 @@
             // btnSubmit
             // 
             this.btnSubmit.Location = new System.Drawing.Point(324, 367);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(180, 62);
             this.btnSubmit.TabIndex = 22;
@@ -207,7 +207,7 @@
             this.cbClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbClass.FormattingEnabled = true;
             this.cbClass.Location = new System.Drawing.Point(508, 212);
-            this.cbClass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbClass.Margin = new System.Windows.Forms.Padding(4);
             this.cbClass.Name = "cbClass";
             this.cbClass.Size = new System.Drawing.Size(160, 24);
             this.cbClass.TabIndex = 26;
@@ -217,9 +217,9 @@
             this.gbRole.Controls.Add(this.rbHs);
             this.gbRole.Controls.Add(this.rbGv);
             this.gbRole.Location = new System.Drawing.Point(55, 50);
-            this.gbRole.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbRole.Margin = new System.Windows.Forms.Padding(4);
             this.gbRole.Name = "gbRole";
-            this.gbRole.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbRole.Padding = new System.Windows.Forms.Padding(4);
             this.gbRole.Size = new System.Drawing.Size(615, 52);
             this.gbRole.TabIndex = 27;
             this.gbRole.TabStop = false;
@@ -230,7 +230,7 @@
             this.rbHs.AutoSize = true;
             this.rbHs.Checked = true;
             this.rbHs.Location = new System.Drawing.Point(153, 23);
-            this.rbHs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbHs.Margin = new System.Windows.Forms.Padding(4);
             this.rbHs.Name = "rbHs";
             this.rbHs.Size = new System.Drawing.Size(84, 21);
             this.rbHs.TabIndex = 31;
@@ -243,7 +243,7 @@
             // 
             this.rbGv.AutoSize = true;
             this.rbGv.Location = new System.Drawing.Point(396, 23);
-            this.rbGv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbGv.Margin = new System.Windows.Forms.Padding(4);
             this.rbGv.Name = "rbGv";
             this.rbGv.Size = new System.Drawing.Size(89, 21);
             this.rbGv.TabIndex = 30;
@@ -289,7 +289,7 @@
             this.ConfirmPassword_Validator.ErrorMessage = "Mật khẩu từ 3 - 10 ký tự";
             this.ConfirmPassword_Validator.InitialValue = null;
             this.ConfirmPassword_Validator.IsValid = false;
-            this.ConfirmPassword_Validator.Regex = ".{3, 10}";
+            this.ConfirmPassword_Validator.Regex = ".{3,10}";
             // 
             // RegisterView
             // 

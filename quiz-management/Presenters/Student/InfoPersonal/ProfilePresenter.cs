@@ -59,7 +59,7 @@ namespace quiz_management.Presenters.Student.InfoPersonal
         {
             view._hoTen = info.tenNguoiDung;
             view._maSo = info.maNguoidung.ToString();
-            view._ngaysinh = info.ngaySinh.Value.Date.ToString("d");
+            view._ngaysinh = info.ngaySinh.Value.Date.ToString("d/M/yyyy");
             //view._ngaysinh = info.ngaySinh.Value.Day + "/" + info.ngaySinh.Value.Month + "/" + info.ngaySinh.Value.Year;
             view._lopChon = lop;
             view._lop = lstLop;
@@ -79,8 +79,8 @@ namespace quiz_management.Presenters.Student.InfoPersonal
                 {
                     var temp = db.thongTins.SingleOrDefault(d => d.maNguoidung == int.Parse(view._maSo));
                     temp.tenNguoiDung = view._hoTen;
-                    var x = DateTime.Parse(view._ngaysinh);
-                    temp.ngaySinh = x;
+                   /* var x = DateTime.Parse(view._ngaysinh);*/
+                    temp.ngaySinh = dt;
                     temp.maLopHoc = view._lopChon.maLopHoc;
 
                     db.SubmitChanges();

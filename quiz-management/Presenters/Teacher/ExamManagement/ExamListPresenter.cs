@@ -54,7 +54,19 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
                 return;
             var x = view.lichthichon.SelectedRows[0];
             var id = x.Cells["maLichThi"].Value.ToString();
-            view.ShowUpdateExamView(int.Parse(id),currentcode);
+            bool check = false;
+            using (var db = new QuizDataContext ())
+            {
+                var temp = db.ketQuas.Where(p => p.maKetQua == int.Parse(id)).ToList();
+                if (temp == null || temp.Count == 0)
+                    check = true;
+            }
+            if (check == true)
+            {
+                view.ShowMessage("Lich thi này đã được thi nên không thể chỉnh sửa");
+                return;
+            }    
+            view.ShowUpdateExamView(int.Parse(id), currentcode);
 
         }
 
@@ -65,10 +77,26 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
 
         private void View_Delete(object sender, EventArgs e)
         {
+
+
             if (view.lichthichon.RowCount == 0)
                 return;
+
             var x = view.lichthichon.SelectedRows[0];
             var id = x.Cells["maLichThi"].Value.ToString();
+            bool check = false;
+            using (var db = new QuizDataContext())
+            {
+                var temp = db.ketQuas.Where(p => p.maKetQua == int.Parse(id)).ToList();
+                if (temp == null || temp.Count == 0)
+                    check = true;
+            }
+            if (check == true)
+            {
+                view.ShowMessage("Lich thi này đã được thi nên không thể chỉnh sửa");
+                return;
+            }
+            
             using (var db = new QuizDataContext())
             {
                 var lt = db.lichThis.Where(p => p.maLichThi == int.Parse(id)).ToList();
