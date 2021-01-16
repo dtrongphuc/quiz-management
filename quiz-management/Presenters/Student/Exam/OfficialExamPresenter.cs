@@ -192,7 +192,7 @@ namespace quiz_management.Presenters.Student.Exam
                 // Fetch user data
                 var user = db.nguoiDungs.SingleOrDefault(u => u.maNguoiDung == currentUserCode);
                 string name = user.thongTin.tenNguoiDung as string;
-                string className = db.Lops.SingleOrDefault(l => l.maLopHoc == user.thongTin.maLopHoc) != null ? 
+                string className = db.Lops.SingleOrDefault(l => l.maLopHoc == user.thongTin.maLopHoc) != null ?
                     db.Lops.SingleOrDefault(l => l.maLopHoc == user.thongTin.maLopHoc).tenLopHoc as string : " ";
                 // Set user data
                 SetUserDataView(name, className);
@@ -421,7 +421,7 @@ namespace quiz_management.Presenters.Student.Exam
                 result.cauDung = corrected;
                 result.cauSai = wrong;
                 result.chuaLam = remainCount;
-                result.diem = (10 * 1.0 / Questions.Count) * corrected;
+                result.diem = Math.Round((10 * 1.0 / Questions.Count) * corrected, 2, MidpointRounding.ToEven);
                 result.thoiGian = time;
                 result.trangThai = 1;
                 db.SubmitChanges();
