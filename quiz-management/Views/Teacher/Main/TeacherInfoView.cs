@@ -19,8 +19,14 @@ namespace quiz_management.Views.Teacher.Main
         {
             InitializeComponent();
             presenter = new TeacherInfoPresenter(this, code);
+            AutoValidate = AutoValidate.Disable;
             btnUpdate.Click += (_, e) =>
             {
+                if (!ValidateChildren())
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ dữ liệu hợp lệ");
+                    return;
+                }
                 UpdateInfo?.Invoke(btnUpdate, e);
             };
 
