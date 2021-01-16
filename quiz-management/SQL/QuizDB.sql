@@ -1603,6 +1603,23 @@ insert into bode values
 (10, 2, 'K12', 900, 1)
 go
 
+insert into bode values
+(10, 2, 'K11', 900, 0)
+go
+
+insert into CTBode values
+(11, 124),
+(11, 125),
+(11, 126),
+(11, 127),
+(11, 128),
+(11, 129),
+(11, 130),
+(11, 131),
+(11, 132),
+(11, 123)
+go
+
 insert into CTBode values 
 (5, 1),
 (5, 2),
