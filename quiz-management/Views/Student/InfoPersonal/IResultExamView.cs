@@ -15,5 +15,7 @@ namespace quiz_management.Views.Student.InfoPersonal
         event EventHandler BackMain;
 
         void swichMainStudent(int code);
+
+        void ShowMainTeacherView(int code);
     }
 }

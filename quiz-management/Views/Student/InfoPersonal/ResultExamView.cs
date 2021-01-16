@@ -3,6 +3,7 @@ using quiz_management.Models;
 using quiz_management.Presenters.Student.InfoPersonal;
 using quiz_management.Views.Student.ContribuQuestions;
 using quiz_management.Views.Student.Main;
+using quiz_management.Views.Teacher.Main;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,6 +46,14 @@ namespace quiz_management.Views.Student.InfoPersonal
         {
             this.Hide();
             MainStudentView screen = new MainStudentView(code);
+            screen.FormClosed += (_, e) => this.Close();
+            screen.Show();
+        }
+
+        public void ShowMainTeacherView(int code)
+        {
+            this.Hide();
+            MainTeacherView screen = new MainTeacherView(code);
             screen.FormClosed += (_, e) => this.Close();
             screen.Show();
         }
