@@ -77,7 +77,7 @@ CREATE TABLE boDe
 
 ALTER TABLE dbo.boDe ADD CONSTRAINT FK_boDe_monHoc FOREIGN KEY(maMon) REFERENCES dbo.monHoc(maMonHoc)
 ALTER TABLE boDe ADD CONSTRAINT FK_boDe_khoiLop FOREIGN KEY(maKhoi) REFERENCES khoiLop(maKhoiLop)
-
+select * from boDe
 
 CREATE TABLE cauHoi
 (
@@ -1601,6 +1601,23 @@ insert into bode values
 (10, 1, 'K11', 900, 1),
 (10, 4, 'K12', 900, 1),
 (10, 2, 'K12', 900, 1)
+go
+
+insert into bode values
+(10, 2, 'K11', 900, 0)
+go
+
+insert into CTBode values
+(11, 124),
+(11, 125),
+(11, 126),
+(11, 127),
+(11, 128),
+(11, 129),
+(11, 130),
+(11, 131),
+(11, 132),
+(11, 123)
 go
 
 insert into CTBode values 

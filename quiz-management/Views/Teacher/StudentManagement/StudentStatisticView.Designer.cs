@@ -49,6 +49,7 @@ namespace quiz_management.Views.Teacher.StudentManagement
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "StudentStatisticView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StudentStatisticView";
             this.Load += new System.EventHandler(this.Form_Loaded);
             this.ResumeLayout(false);

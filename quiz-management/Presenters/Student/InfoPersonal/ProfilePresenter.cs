@@ -2,6 +2,7 @@
 using quiz_management.Views.Student.InfoPersonal;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,7 @@ namespace quiz_management.Presenters.Student.InfoPersonal
         private int currentUserCode;
         private thongTin info = null;
         private Lop lop = null;
-        private List<Lop> lstLop = null;
+        private BindingList<Lop> lstLop = null;
 
         public ProfilePresenter(IProfileView v, int code)
         {
@@ -50,7 +51,7 @@ namespace quiz_management.Presenters.Student.InfoPersonal
                     if (temp2.Count > 0) lop = temp2[0];
                 }
 
-                lstLop = db.Lops.ToList();
+                lstLop = new BindingList<Lop>( db.Lops.ToList());
             }
             FillHS();
         }
@@ -61,8 +62,8 @@ namespace quiz_management.Presenters.Student.InfoPersonal
             view._maSo = info.maNguoidung.ToString();
             view._ngaysinh = info.ngaySinh.Value.Date.ToString("d/M/yyyy");
             //view._ngaysinh = info.ngaySinh.Value.Day + "/" + info.ngaySinh.Value.Month + "/" + info.ngaySinh.Value.Year;
-            view._lopChon = lop;
             view._lop = lstLop;
+            view._lopChon = lop;
         }
 
         private void View_Closebtn(object sender, EventArgs e)

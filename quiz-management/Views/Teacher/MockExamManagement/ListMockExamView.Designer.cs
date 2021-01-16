@@ -49,18 +49,20 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(560, 532);
+            this.btnDelete.Location = new System.Drawing.Point(420, 432);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(165, 48);
+            this.btnDelete.Size = new System.Drawing.Size(124, 39);
             this.btnDelete.TabIndex = 40;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(342, 532);
+            this.btnUpdate.Location = new System.Drawing.Point(256, 432);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(165, 48);
+            this.btnUpdate.Size = new System.Drawing.Size(124, 39);
             this.btnUpdate.TabIndex = 39;
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -80,14 +82,15 @@
             this.QuantityStudent,
             this.ExamID,
             this.PaperID});
-            this.dgvMockExam.Location = new System.Drawing.Point(36, 144);
+            this.dgvMockExam.Location = new System.Drawing.Point(27, 117);
+            this.dgvMockExam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvMockExam.Name = "dgvMockExam";
             this.dgvMockExam.ReadOnly = true;
             this.dgvMockExam.RowHeadersVisible = false;
             this.dgvMockExam.RowHeadersWidth = 51;
             this.dgvMockExam.RowTemplate.Height = 24;
             this.dgvMockExam.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMockExam.Size = new System.Drawing.Size(824, 336);
+            this.dgvMockExam.Size = new System.Drawing.Size(618, 273);
             this.dgvMockExam.TabIndex = 38;
             this.dgvMockExam.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvMockExam_CellFormatting);
             // 
@@ -160,9 +163,10 @@
             // linkGoBackBefore
             // 
             this.linkGoBackBefore.AutoSize = true;
-            this.linkGoBackBefore.Location = new System.Drawing.Point(35, 31);
+            this.linkGoBackBefore.Location = new System.Drawing.Point(26, 25);
+            this.linkGoBackBefore.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkGoBackBefore.Name = "linkGoBackBefore";
-            this.linkGoBackBefore.Size = new System.Drawing.Size(49, 17);
+            this.linkGoBackBefore.Size = new System.Drawing.Size(38, 13);
             this.linkGoBackBefore.TabIndex = 37;
             this.linkGoBackBefore.TabStop = true;
             this.linkGoBackBefore.Text = "Trở về";
@@ -171,9 +175,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(298, 69);
+            this.label3.Location = new System.Drawing.Point(224, 56);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(311, 32);
+            this.label3.Size = new System.Drawing.Size(243, 26);
             this.label3.TabIndex = 36;
             this.label3.Text = "Danh Sách Kì Thi Thử";
             // 
@@ -181,9 +186,10 @@
             // 
             this.lbTeacher.AutoSize = true;
             this.lbTeacher.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTeacher.Location = new System.Drawing.Point(119, 631);
+            this.lbTeacher.Location = new System.Drawing.Point(89, 513);
+            this.lbTeacher.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTeacher.Name = "lbTeacher";
-            this.lbTeacher.Size = new System.Drawing.Size(96, 17);
+            this.lbTeacher.Size = new System.Drawing.Size(74, 13);
             this.lbTeacher.TabIndex = 35;
             this.lbTeacher.Text = "Mai Anh Tuấn";
             // 
@@ -191,26 +197,28 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 631);
+            this.label1.Location = new System.Drawing.Point(18, 513);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 17);
+            this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 34;
             this.label1.Text = "Giáo viên: ";
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(122, 532);
+            this.btnAdd.Location = new System.Drawing.Point(92, 432);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(165, 48);
+            this.btnAdd.Size = new System.Drawing.Size(124, 39);
             this.btnAdd.TabIndex = 41;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // ListMockExamView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(896, 670);
+            this.ClientSize = new System.Drawing.Size(672, 544);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
@@ -219,7 +227,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbTeacher);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ListMockExamView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ListMockExamView";
             ((System.ComponentModel.ISupportInitialize)(this.dgvMockExam)).EndInit();
             this.ResumeLayout(false);

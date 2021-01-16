@@ -49,6 +49,7 @@ namespace quiz_management.Views.Student.Exam
             this.ClientSize = new System.Drawing.Size(695, 508);
             this.Controls.Add(this.reportViewer1);
             this.Name = "PracticStatisticView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PracticStatisticView";
             this.Load += new System.EventHandler(this.PracticStatisticView_Load);
             this.ResumeLayout(false);
