@@ -308,6 +308,7 @@ namespace quiz_management.Presenters.Student.Exam
             if (exam == null) return;
             view.ExamTime = (int)exam.thoiGian;
             view.ExamCode = exam.maBoDe.ToString();
+            view.ExamCourse = exam.monHoc.tenMonHoc;
             view.QuestionQuantity = quantity;
         }
 

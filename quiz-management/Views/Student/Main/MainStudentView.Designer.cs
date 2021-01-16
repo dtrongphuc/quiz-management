@@ -30,7 +30,6 @@ namespace quiz_management.Views.Student.Main
         private void InitializeComponent()
         {
             this.btnPracticExam = new System.Windows.Forms.Button();
-            this.lbTestDOB = new System.Windows.Forms.Label();
             this.txtTitle1 = new System.Windows.Forms.Label();
             this.txtclassview = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -62,22 +61,12 @@ namespace quiz_management.Views.Student.Main
             // 
             this.btnPracticExam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPracticExam.Location = new System.Drawing.Point(112, 355);
-            this.btnPracticExam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPracticExam.Margin = new System.Windows.Forms.Padding(2);
             this.btnPracticExam.Name = "btnPracticExam";
             this.btnPracticExam.Size = new System.Drawing.Size(139, 49);
             this.btnPracticExam.TabIndex = 7;
             this.btnPracticExam.Text = "Thi Thử";
             this.btnPracticExam.UseVisualStyleBackColor = true;
-            // 
-            // lbTestDOB
-            // 
-            this.lbTestDOB.AutoSize = true;
-            this.lbTestDOB.Location = new System.Drawing.Point(445, 460);
-            this.lbTestDOB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbTestDOB.Name = "lbTestDOB";
-            this.lbTestDOB.Size = new System.Drawing.Size(65, 13);
-            this.lbTestDOB.TabIndex = 2;
-            this.lbTestDOB.Text = "01/12/2020";
             // 
             // txtTitle1
             // 
@@ -97,7 +86,7 @@ namespace quiz_management.Views.Student.Main
             this.txtclassview.Enabled = false;
             this.txtclassview.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtclassview.Location = new System.Drawing.Point(99, 166);
-            this.txtclassview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtclassview.Margin = new System.Windows.Forms.Padding(2);
             this.txtclassview.Name = "txtclassview";
             this.txtclassview.ReadOnly = true;
             this.txtclassview.Size = new System.Drawing.Size(153, 16);
@@ -131,7 +120,7 @@ namespace quiz_management.Views.Student.Main
             this.txtStudentDOBview.Enabled = false;
             this.txtStudentDOBview.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStudentDOBview.Location = new System.Drawing.Point(99, 129);
-            this.txtStudentDOBview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtStudentDOBview.Margin = new System.Windows.Forms.Padding(2);
             this.txtStudentDOBview.Name = "txtStudentDOBview";
             this.txtStudentDOBview.ReadOnly = true;
             this.txtStudentDOBview.Size = new System.Drawing.Size(153, 16);
@@ -144,7 +133,7 @@ namespace quiz_management.Views.Student.Main
             this.txtStudentIDview.Enabled = false;
             this.txtStudentIDview.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStudentIDview.Location = new System.Drawing.Point(99, 89);
-            this.txtStudentIDview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtStudentIDview.Margin = new System.Windows.Forms.Padding(2);
             this.txtStudentIDview.Name = "txtStudentIDview";
             this.txtStudentIDview.ReadOnly = true;
             this.txtStudentIDview.Size = new System.Drawing.Size(153, 16);
@@ -165,7 +154,7 @@ namespace quiz_management.Views.Student.Main
             // 
             this.btnQuestions.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuestions.Location = new System.Drawing.Point(284, 355);
-            this.btnQuestions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnQuestions.Margin = new System.Windows.Forms.Padding(2);
             this.btnQuestions.Name = "btnQuestions";
             this.btnQuestions.Size = new System.Drawing.Size(139, 49);
             this.btnQuestions.TabIndex = 8;
@@ -176,7 +165,7 @@ namespace quiz_management.Views.Student.Main
             // 
             this.btnOfficialExam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOfficialExam.Location = new System.Drawing.Point(112, 279);
-            this.btnOfficialExam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOfficialExam.Margin = new System.Windows.Forms.Padding(2);
             this.btnOfficialExam.Name = "btnOfficialExam";
             this.btnOfficialExam.Size = new System.Drawing.Size(139, 49);
             this.btnOfficialExam.TabIndex = 5;
@@ -187,7 +176,7 @@ namespace quiz_management.Views.Student.Main
             // 
             this.btnInfoStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInfoStudent.Location = new System.Drawing.Point(71, 221);
-            this.btnInfoStudent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInfoStudent.Margin = new System.Windows.Forms.Padding(2);
             this.btnInfoStudent.Name = "btnInfoStudent";
             this.btnInfoStudent.Size = new System.Drawing.Size(139, 49);
             this.btnInfoStudent.TabIndex = 1;
@@ -198,7 +187,7 @@ namespace quiz_management.Views.Student.Main
             // 
             this.btnExamResultView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExamResultView.Location = new System.Drawing.Point(71, 382);
-            this.btnExamResultView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExamResultView.Margin = new System.Windows.Forms.Padding(2);
             this.btnExamResultView.Name = "btnExamResultView";
             this.btnExamResultView.Size = new System.Drawing.Size(139, 49);
             this.btnExamResultView.TabIndex = 3;
@@ -241,9 +230,9 @@ namespace quiz_management.Views.Student.Main
             this.groupBox1.Controls.Add(this.lbDOB);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(303, 483);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -253,7 +242,7 @@ namespace quiz_management.Views.Student.Main
             // 
             this.btnTestScheduleView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTestScheduleView.Location = new System.Drawing.Point(71, 302);
-            this.btnTestScheduleView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTestScheduleView.Margin = new System.Windows.Forms.Padding(2);
             this.btnTestScheduleView.Name = "btnTestScheduleView";
             this.btnTestScheduleView.Size = new System.Drawing.Size(139, 47);
             this.btnTestScheduleView.TabIndex = 2;
@@ -264,7 +253,7 @@ namespace quiz_management.Views.Student.Main
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -286,14 +275,13 @@ namespace quiz_management.Views.Student.Main
             this.groupBox2.Controls.Add(this.btnQuestions);
             this.groupBox2.Controls.Add(this.btnOfficialExam);
             this.groupBox2.Controls.Add(this.btnPracticExam);
-            this.groupBox2.Controls.Add(this.lbTestDOB);
             this.groupBox2.Controls.Add(this.txtTitle2);
             this.groupBox2.Controls.Add(this.txtTitle1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(536, 483);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
@@ -302,7 +290,7 @@ namespace quiz_management.Views.Student.Main
             // btnLogout
             // 
             this.btnLogout.Location = new System.Drawing.Point(454, 16);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(73, 27);
             this.btnLogout.TabIndex = 9;
@@ -313,7 +301,7 @@ namespace quiz_management.Views.Student.Main
             // 
             this.btnPracticStatistic.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPracticStatistic.Location = new System.Drawing.Point(284, 280);
-            this.btnPracticStatistic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPracticStatistic.Margin = new System.Windows.Forms.Padding(2);
             this.btnPracticStatistic.Name = "btnPracticStatistic";
             this.btnPracticStatistic.Size = new System.Drawing.Size(139, 49);
             this.btnPracticStatistic.TabIndex = 6;
@@ -344,7 +332,6 @@ namespace quiz_management.Views.Student.Main
         #endregion
 
         private System.Windows.Forms.Button btnPracticExam;
-        private System.Windows.Forms.Label lbTestDOB;
         private System.Windows.Forms.Label txtTitle1;
         private System.Windows.Forms.TextBox txtclassview;
         private System.Windows.Forms.Label label2;

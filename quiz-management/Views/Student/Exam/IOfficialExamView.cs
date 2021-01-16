@@ -10,6 +10,7 @@ namespace quiz_management.Views.Student.Exam
         string StudentName { set; }
         string StudentClass { set; }
         string ExamCode { set; }
+        string ExamCourse { set; }
         int QuestionOrder { set; }
         int QuestionQuantity { set; }
         int QuestionSelected { set; }

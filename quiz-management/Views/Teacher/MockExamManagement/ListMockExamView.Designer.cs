@@ -41,16 +41,16 @@
             this.PaperID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.linkGoBackBefore = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
-            this.lbTeacher = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.lbTeacher = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMockExam)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(420, 432);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(124, 39);
             this.btnDelete.TabIndex = 40;
@@ -60,7 +60,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Location = new System.Drawing.Point(256, 432);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(124, 39);
             this.btnUpdate.TabIndex = 39;
@@ -83,7 +83,7 @@
             this.ExamID,
             this.PaperID});
             this.dgvMockExam.Location = new System.Drawing.Point(27, 117);
-            this.dgvMockExam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvMockExam.Margin = new System.Windows.Forms.Padding(2);
             this.dgvMockExam.Name = "dgvMockExam";
             this.dgvMockExam.ReadOnly = true;
             this.dgvMockExam.RowHeadersVisible = false;
@@ -182,17 +182,6 @@
             this.label3.TabIndex = 36;
             this.label3.Text = "Danh Sách Kì Thi Thử";
             // 
-            // lbTeacher
-            // 
-            this.lbTeacher.AutoSize = true;
-            this.lbTeacher.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTeacher.Location = new System.Drawing.Point(89, 513);
-            this.lbTeacher.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbTeacher.Name = "lbTeacher";
-            this.lbTeacher.Size = new System.Drawing.Size(74, 13);
-            this.lbTeacher.TabIndex = 35;
-            this.lbTeacher.Text = "Mai Anh Tuấn";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -207,12 +196,22 @@
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(92, 432);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(124, 39);
             this.btnAdd.TabIndex = 41;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // lbTeacher
+            // 
+            this.lbTeacher.AutoSize = true;
+            this.lbTeacher.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTeacher.Location = new System.Drawing.Point(89, 513);
+            this.lbTeacher.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbTeacher.Name = "lbTeacher";
+            this.lbTeacher.Size = new System.Drawing.Size(0, 13);
+            this.lbTeacher.TabIndex = 35;
             // 
             // ListMockExamView
             // 
@@ -227,7 +226,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbTeacher);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ListMockExamView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ListMockExamView";
@@ -244,7 +243,6 @@
         private System.Windows.Forms.DataGridView dgvMockExam;
         private System.Windows.Forms.LinkLabel linkGoBackBefore;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lbTeacher;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnAdd;
@@ -256,5 +254,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn QuantityStudent;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExamID;
         private System.Windows.Forms.DataGridViewTextBoxColumn PaperID;
+        private System.Windows.Forms.Label lbTeacher;
     }
 }

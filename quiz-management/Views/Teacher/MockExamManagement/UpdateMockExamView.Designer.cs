@@ -68,7 +68,7 @@
             this.dgvBoDe.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maBoDe});
             this.dgvBoDe.Location = new System.Drawing.Point(200, 218);
-            this.dgvBoDe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvBoDe.Margin = new System.Windows.Forms.Padding(2);
             this.dgvBoDe.Name = "dgvBoDe";
             this.dgvBoDe.RowHeadersWidth = 51;
             this.dgvBoDe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -168,7 +168,7 @@
             // btnMoveLeft
             // 
             this.btnMoveLeft.Location = new System.Drawing.Point(402, 483);
-            this.btnMoveLeft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMoveLeft.Margin = new System.Windows.Forms.Padding(2);
             this.btnMoveLeft.Name = "btnMoveLeft";
             this.btnMoveLeft.Size = new System.Drawing.Size(34, 55);
             this.btnMoveLeft.TabIndex = 67;
@@ -178,7 +178,7 @@
             // btnMoveRight
             // 
             this.btnMoveRight.Location = new System.Drawing.Point(402, 395);
-            this.btnMoveRight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMoveRight.Margin = new System.Windows.Forms.Padding(2);
             this.btnMoveRight.Name = "btnMoveRight";
             this.btnMoveRight.Size = new System.Drawing.Size(34, 55);
             this.btnMoveRight.TabIndex = 66;
@@ -231,7 +231,7 @@
             // btnSubmit
             // 
             this.btnSubmit.Location = new System.Drawing.Point(359, 589);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(124, 39);
             this.btnSubmit.TabIndex = 63;
@@ -269,7 +269,7 @@
             this.dgvDeThiChon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maDeThi});
             this.dgvDeThiChon.Location = new System.Drawing.Point(469, 218);
-            this.dgvDeThiChon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvDeThiChon.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDeThiChon.Name = "dgvDeThiChon";
             this.dgvDeThiChon.RowHeadersWidth = 51;
             this.dgvDeThiChon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -304,7 +304,7 @@
             // btnMoveLeftBoDe
             // 
             this.btnMoveLeftBoDe.Location = new System.Drawing.Point(402, 276);
-            this.btnMoveLeftBoDe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMoveLeftBoDe.Margin = new System.Windows.Forms.Padding(2);
             this.btnMoveLeftBoDe.Name = "btnMoveLeftBoDe";
             this.btnMoveLeftBoDe.Size = new System.Drawing.Size(34, 40);
             this.btnMoveLeftBoDe.TabIndex = 84;
@@ -314,7 +314,7 @@
             // btnMoveRightBoDe
             // 
             this.btnMoveRightBoDe.Location = new System.Drawing.Point(402, 230);
-            this.btnMoveRightBoDe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMoveRightBoDe.Margin = new System.Windows.Forms.Padding(2);
             this.btnMoveRightBoDe.Name = "btnMoveRightBoDe";
             this.btnMoveRightBoDe.Size = new System.Drawing.Size(34, 43);
             this.btnMoveRightBoDe.TabIndex = 83;
@@ -325,7 +325,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(836, 609);
+            this.ClientSize = new System.Drawing.Size(836, 637);
             this.Controls.Add(this.btnMoveLeftBoDe);
             this.Controls.Add(this.btnMoveRightBoDe);
             this.Controls.Add(this.lbMonHoc);
@@ -345,7 +345,7 @@
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.linkGoBackBefore);
             this.Controls.Add(this.label3);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UpdateMockExamView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UpdateMockExamView";

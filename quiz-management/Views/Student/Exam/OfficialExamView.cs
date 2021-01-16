@@ -27,6 +27,7 @@ namespace quiz_management.Views.Student.Exam
         public string StudentName { set => txtStudentName.Text = value; }
         public string StudentClass { set => txtClass.Text = value; }
         public string ExamCode { set => txtExamCode.Text = value; }
+        public string ExamCourse { set => lbCourse.Text = value; }
         public int QuestionOrder { set => lbQuestionCountSelected.Text = value.ToString(); }
 
         public int QuestionQuantity
