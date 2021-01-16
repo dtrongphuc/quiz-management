@@ -285,7 +285,7 @@ namespace quiz_management.Presenters.Student.Exam
                         int index = Questions.ToList().FindIndex(x => x.MaCauHoi == row.maCauHoi);
                         for (int j = 0; j < Questions.ElementAt(index).CauTraLoi.Count; j++)
                         {
-                            if (Questions.ElementAt(index).CauTraLoi.ElementAt(j).MaCauTraLoi == row.maCauHoi)
+                            if (Questions.ElementAt(index).CauTraLoi.ElementAt(j).MaCauTraLoi == row.maCauTraLoi)
                             {
                                 Questions.ElementAt(index).Checked = true;
                                 Questions.ElementAt(index).CauTraLoi.ElementAt(j).Checked = true;
@@ -324,7 +324,7 @@ namespace quiz_management.Presenters.Student.Exam
             List<int> CheckedIndexes = Enumerable.Range(0, Questions.Count)
                                                 .Where(i => Questions[i].Checked == true)
                                                 .ToList();
-            view.QuestionsChecked = new BindingList<int>(CheckedIndexes);
+            view.QuestionsChecked = CheckedIndexes;
             view.Remain = Questions.Count - CheckedIndexes.Count;
             view.Completed = Questions.Count - view.Remain;
         }
