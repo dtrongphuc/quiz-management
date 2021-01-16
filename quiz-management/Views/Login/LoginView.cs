@@ -81,8 +81,8 @@ namespace quiz_management.Views.Student
             };
 
             btnSubmit.KeyPress += BtnSubmit_KeyPress;
-            {
-            };
+
+            //btnSubmit
 
             ToRegisterView.Click += (_, e) =>
             {
