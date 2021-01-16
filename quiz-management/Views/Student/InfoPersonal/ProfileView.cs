@@ -21,9 +21,15 @@ namespace quiz_management.Views.Student.InfoPersonal
         {
             InitializeComponent();
             presenter = new ProfilePresenter(this, code);
+            AutoValidate = AutoValidate.Disable;
 
             btnSubmit.Click += (_, e) =>
             {
+                if (!ValidateChildren())
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ dữ liệu hợp lệ");
+                    return;
+                }
                 Updatebtn?.Invoke(btnSubmit, e);
             };
 
