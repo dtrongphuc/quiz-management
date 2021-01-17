@@ -116,7 +116,7 @@ namespace quiz_management.Presenters.Student.Exam
             {
                 var courses = db.kyThiThus.Where(k => (k.ngayThi <= DateTime.Now) &&
                 (k.ngayKT >= DateTime.Now) && (k.maNguoiDung == currentUserCode))
-                                            .Select(s => s.monHoc).ToList<monHoc>();
+                                            .Select(s => s.monHoc).Distinct().ToList<monHoc>();
                 if (courses.Count > 0)
                 {
                     _selectedCourses = courses.ElementAt(0).maMonHoc;
