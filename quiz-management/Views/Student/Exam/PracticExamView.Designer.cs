@@ -460,6 +460,7 @@
             // 
             // cbExamCode
             // 
+            this.cbExamCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbExamCode.FormattingEnabled = true;
             this.cbExamCode.Location = new System.Drawing.Point(583, 107);
             this.cbExamCode.Name = "cbExamCode";
@@ -468,6 +469,7 @@
             // 
             // cbCourses
             // 
+            this.cbCourses.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCourses.FormattingEnabled = true;
             this.cbCourses.Location = new System.Drawing.Point(583, 78);
             this.cbCourses.Name = "cbCourses";

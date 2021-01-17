@@ -14,7 +14,7 @@ namespace quiz_management.Presenters.Student.Exam
     {
         private IPracticExamView view;
         private int currentUserCode;
-        private int _maBoDe = 1;
+        private int _maBoDe = 0;
         private int _selectedCourses;
 
         public BindingList<Question> Questions = new BindingList<Question>();
@@ -106,6 +106,8 @@ namespace quiz_management.Presenters.Student.Exam
 
                 view.ExamCodes = exam;
             };
+            GetData();
+            BindingQuestion();
         }
 
         private void BindingCourses()
@@ -253,8 +255,11 @@ namespace quiz_management.Presenters.Student.Exam
         {
             using (var db = new QuizDataContext())
             {
-                _maBoDe = db.kyThiThus.Where(l => (l.ngayThi <= DateTime.Now) && (DateTime.Now <= l.ngayKT) && (l.maNguoiDung == currentUserCode))
+                if (_maBoDe == 0)
+                {
+                    _maBoDe = db.kyThiThus.Where(l => (l.ngayThi <= DateTime.Now) && (DateTime.Now <= l.ngayKT) && (l.maNguoiDung == currentUserCode))
                                     .Select(s => s.maBoDe).First();
+                }
                 // Fetch exam data
                 var exam = db.boDes.FirstOrDefault(d => d.maBoDe == _maBoDe);
                 var questions = db.cTBoDes.Where(b => b.maBoDe == _maBoDe).Join(
