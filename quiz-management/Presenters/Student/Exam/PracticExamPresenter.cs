@@ -402,8 +402,16 @@ namespace quiz_management.Presenters.Student.Exam
                     }
                     else
                     {
-                        result.soCauDung += corrected;
-                        result.soCauSai += wrong;
+                        var user = db.nguoiDungs.FirstOrDefault(n => n.maNguoiDung == currentUserCode);
+                        var lt = new luyenTap
+                        {
+                            nguoiDung = user,
+                            ngay = DateTime.Now,
+                            soCauDung = corrected + result.soCauDung,
+                            soCauSai = wrong + result.soCauSai
+                        };
+
+                        result = lt;
                     }
 
                     db.SubmitChanges();

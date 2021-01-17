@@ -97,11 +97,14 @@ namespace quiz_management.Presenters.Student.Main
         {
             using (var db = new QuizDataContext())
             {
-                var lt = db.lichThis.Where(l => (l.ngayThi == DateTime.Now) && (l.maNguoiDung == currentUserCode))
+                var bd = db.lichThis.Where(l => (l.ngayThi == DateTime.Now) && (l.maNguoiDung == currentUserCode))
                                     .Select(s => s.maBoDe);
-                if (!lt.Any())
+                var lt = db.lichThis.Where(l => (l.ngayThi == DateTime.Now) && (l.maNguoiDung == currentUserCode))
+                                    .Select(s => s.maLichThi);
+                var kq = db.ketQuas.Where(k => (k.malichthi == lt.First()) && (k.trangThai == 1));
+                if (!lt.Any() || kq.Any())
                 {
-                    MessageBox.Show("Bạn không có lịch thi hôm nay");
+                    MessageBox.Show("Bạn không có lịch thi hôm nay/Bạn đã thi rồi");
                     return;
                 }
             }
