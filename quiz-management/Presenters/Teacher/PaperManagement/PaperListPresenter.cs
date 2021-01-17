@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace quiz_management.Presenters.Teacher.PaperManagement
 {
-
-    class PaperListPresenter
+    internal class PaperListPresenter
     {
-        IPaperListView view;
-        int currenuser = 0;
-        int paperidpresent = 0;//ma bộ đề hiện tại
+        private IPaperListView view;
+        private int currenuser = 0;
+        private int paperidpresent = 0;//ma bộ đề hiện tại
+
         public PaperListPresenter(IPaperListView v, int code)
         {
             view = v;
@@ -30,6 +30,7 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
             }
             LoadPage(code);
         }
+
         private void Delete_View(object sender, EventArgs e)
         {
             using (var db = new QuizDataContext())
@@ -37,11 +38,11 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
                 //ktr nếu có trong đề thi thì ko cho xóa
                 var checkDelete = db.lichThis.Where(i => i.maBoDe == int.Parse(view.PaperID)).ToList();
 
-                if(checkDelete.Count > 0)
+                if (checkDelete.Count > 0)
                 {
-                    view.ShowMessage("Câu hỏi có trong lịch thi không thể xóa!");
+                    view.ShowMessage("Đề thi có trong lịch thi không thể xóa!");
                     return;
-                }    
+                }
                 //item trong chi tiết bộ đề
                 var itemsDetailpaper = db.cTBoDes.Where(i => i.maBoDe == int.Parse(view.PaperID)).ToList();
                 foreach (var i in itemsDetailpaper)
@@ -61,6 +62,17 @@ namespace quiz_management.Presenters.Teacher.PaperManagement
 
         private void UpdatePaper_View(object sender, EventArgs e)
         {
+            using (var db = new QuizDataContext())
+            {
+                //ktr nếu có trong đề thi thì ko cho xóa
+                var checkDelete = db.lichThis.Where(i => i.maBoDe == int.Parse(view.PaperID)).ToList();
+
+                if (checkDelete.Count > 0)
+                {
+                    view.ShowMessage("Đề thi có trong lịch thi không thể Sửa!");
+                    return;
+                }
+            }
             view.ShowUpdatePaperView(currenuser, int.Parse(view.PaperID));
         }
 

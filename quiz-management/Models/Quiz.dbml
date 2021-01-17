@@ -105,6 +105,7 @@
       <Column Name="trangThai" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="thoiGian" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="diem" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="malichthi" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="ketQua_cTKetQua" Member="cTKetQuas" ThisKey="maKetQua" OtherKey="maKetQua" Type="cTKetQua" />
       <Association Name="boDe_ketQua" Member="boDe" ThisKey="maBoDe" OtherKey="maBoDe" Type="boDe" IsForeignKey="true" />
       <Association Name="nguoiDung_ketQua" Member="nguoiDung" ThisKey="maNguoiDung" OtherKey="maNguoiDung" Type="nguoiDung" IsForeignKey="true" />

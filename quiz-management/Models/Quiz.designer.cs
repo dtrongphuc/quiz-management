@@ -2343,6 +2343,8 @@ namespace quiz_management.Models
 		
 		private System.Nullable<double> _diem;
 		
+		private System.Nullable<int> _malichthi;
+		
 		private EntitySet<cTKetQua> _cTKetQuas;
 		
 		private EntityRef<boDe> _boDe;
@@ -2373,6 +2375,8 @@ namespace quiz_management.Models
     partial void OnthoiGianChanged();
     partial void OndiemChanging(System.Nullable<double> value);
     partial void OndiemChanged();
+    partial void OnmalichthiChanging(System.Nullable<int> value);
+    partial void OnmalichthiChanged();
     #endregion
 		
 		public ketQua()
@@ -2587,6 +2591,26 @@ namespace quiz_management.Models
 					this._diem = value;
 					this.SendPropertyChanged("diem");
 					this.OndiemChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_malichthi", DbType="Int")]
+		public System.Nullable<int> malichthi
+		{
+			get
+			{
+				return this._malichthi;
+			}
+			set
+			{
+				if ((this._malichthi != value))
+				{
+					this.OnmalichthiChanging(value);
+					this.SendPropertyChanging();
+					this._malichthi = value;
+					this.SendPropertyChanged("malichthi");
+					this.OnmalichthiChanged();
 				}
 			}
 		}

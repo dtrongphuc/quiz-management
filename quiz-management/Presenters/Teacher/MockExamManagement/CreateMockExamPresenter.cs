@@ -12,20 +12,19 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
 {
     public class CreateMockExamPresenter
     {
-        ICreateMockExamView view;
-        int currentcode;
-        BindingList<thongTin> lstHocSinh;
-        BindingList<monHoc> lstMonHoc;
-        BindingList<khoiLop> lstLop;
-        BindingList<boDe> lstbode;
-        BindingList<thongTin> lstThiSinh;
+        private ICreateMockExamView view;
+        private int currentcode;
+        private BindingList<thongTin> lstHocSinh;
+        private BindingList<monHoc> lstMonHoc;
+        private BindingList<khoiLop> lstLop;
+        private BindingList<boDe> lstbode;
+        private BindingList<thongTin> lstThiSinh;
 
         public CreateMockExamPresenter(ICreateMockExamView v, int code)
         {
             view = v;
             currentcode = code;
             Initialize();
-
         }
 
         private void Initialize()
@@ -47,6 +46,7 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
             lstHocSinh = FindByBoDeId(lstLop[0].maKhoiLop);
             Fill();
         }
+
         private void Fill()
         {
             view.lstMonHoc = lstMonHoc;
@@ -74,6 +74,7 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
             }
             return lsttt;
         }
+
         private BindingList<boDe> FindBymonHocIdVaLopId(int maMH, string makhoi)
         {
             BindingList<boDe> lstbd;
@@ -84,6 +85,7 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
             }
             return lstbd;
         }
+
         private void View_ClassChange(object sender, EventArgs e)
         {
             string idkhoilop = view.KhoiLopChon;
@@ -147,7 +149,7 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
 
         private void View_Submit(object sender, EventArgs e)
         {
-            if(view.NgayBD > view.NgayKT)
+            if (view.NgayBD.Date > view.NgayKT.Date)
             {
                 view.ShowMessage("Ngày Không Tồn Tại");
                 return;
@@ -160,7 +162,7 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
             using (var db = new QuizDataContext())
             {
                 int malt = db.kyThiThus.ToList().Count == 0 ? 0 : db.kyThiThus.Max(i => i.maKyThiThu);
-                
+
                 foreach (thongTin i in lstThiSinh)
                 {
                     foreach (DataGridViewRow k in view.lstBoDeChon.SelectedRows)
@@ -179,7 +181,6 @@ namespace quiz_management.Presenters.Teacher.MockExamManagement
                     }
                     db.SubmitChanges();
                 }
-
             }
             view.ShowMessage("Thành Công.");
         }

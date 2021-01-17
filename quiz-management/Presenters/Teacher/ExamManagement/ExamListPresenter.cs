@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace quiz_management.Presenters.Teacher.ExamManagement
 {
-    class ExamListPresenter
+    internal class ExamListPresenter
     {
-        IExamListView view;
-        BindingList<TestSchedule> lst;
-        int currentcode;
+        private IExamListView view;
+        private BindingList<TestSchedule> lst;
+        private int currentcode;
+
         public ExamListPresenter(IExamListView v, int code)
         {
             view = v;
@@ -31,7 +32,7 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             view.UpdateExam += View_UpdateExam;
             using (var db = new QuizDataContext())
             {
-                var temp = db.lichThis.GroupBy(x => x.maLichThi).Select(xs => new { lt = xs.Select(d => d)}).ToList();
+                var temp = db.lichThis.GroupBy(x => x.maLichThi).Select(xs => new { lt = xs.Select(d => d) }).ToList();
                 foreach (var i in temp)
                 {
                     var lstlichthi = i.lt.ToList();
@@ -47,7 +48,6 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             }
         }
 
-    
         private void View_UpdateExam(object sender, EventArgs e)
         {
             if (view.lichthichon.RowCount == 0)
@@ -55,9 +55,9 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             var x = view.lichthichon.SelectedRows[0];
             var id = x.Cells["maLichThi"].Value.ToString();
             bool check = false;
-            using (var db = new QuizDataContext ())
+            using (var db = new QuizDataContext())
             {
-                var temp = db.ketQuas.Where(p => p.maKetQua == int.Parse(id)).ToList();
+                var temp = db.ketQuas.Where(p => p.malichthi == int.Parse(id)).ToList();
                 if (temp == null || temp.Count == 0)
                     check = true;
             }
@@ -65,9 +65,8 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             {
                 view.ShowMessage("Lich thi này đã được thi nên không thể chỉnh sửa");
                 return;
-            }    
+            }
             view.ShowUpdateExamView(int.Parse(id), currentcode);
-
         }
 
         private void view_CreateExam(object sender, EventArgs e)
@@ -77,8 +76,6 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
 
         private void View_Delete(object sender, EventArgs e)
         {
-
-
             if (view.lichthichon.RowCount == 0)
                 return;
 
@@ -88,37 +85,36 @@ namespace quiz_management.Presenters.Teacher.ExamManagement
             bool check = false;
             using (var db = new QuizDataContext())
             {
-                var temp = db.ketQuas.Where(p => p.maKetQua == int.Parse(id))
+                var temp = db.ketQuas.Where(p => p.malichthi == int.Parse(id))
                                     .Where(c => c.maBoDe == int.Parse(de)).ToList();
                 if (temp == null || temp.Count == 0)
                     check = true;
             }
             if (check == false)
             {
-                view.ShowMessage("Lich thi này đã được thi nên không thể chỉnh sửa");
+                view.ShowMessage("Lich thi này đã được thi nên không thể Xóa");
                 return;
             }
-            
+
             using (var db = new QuizDataContext())
             {
                 var lt = db.lichThis.Where(p => p.maLichThi == int.Parse(id)).ToList();
                 var itemdelete = lst.Where(i => i.MaLichThi == int.Parse(id)).ToList();
 
-                for (int i=0;i<lt.Count();i++)
+                for (int i = 0; i < lt.Count(); i++)
                 {
                     db.lichThis.DeleteOnSubmit(lt[i]);
-                   
                 }
                 lst.Remove(itemdelete[0]);
                 db.SubmitChanges();
             }
-            
+
             Fill();
         }
 
         private void View_GoBackBefore(object sender, EventArgs e)
         {
-            view.ShowMainTeachView(currentcode);    
+            view.ShowMainTeachView(currentcode);
         }
 
         private void Fill()

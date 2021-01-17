@@ -137,6 +137,8 @@ CREATE TABLE ketQua
 	CONSTRAINT PK_ketQua
 	PRIMARY KEY (maKetQua)
 )
+
+alter table ketQua add malichthi int
 alter table ketQua add constraint df_cauchualam default 0 for chuaLam;
 alter table ketQua add constraint df_cau default 0 for cauDung;
 alter table ketQua add constraint df_causai default 0 for cauSai;

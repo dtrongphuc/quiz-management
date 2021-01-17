@@ -343,6 +343,8 @@ namespace quiz_management.Presenters.Student.Exam
                     if (result.Any()) _resultCode = result.FirstOrDefault();
                     else
                     {
+                        var lt = db.lichThis.Where(l => (l.ngayThi == DateTime.Now) && (l.maNguoiDung == currentUserCode))
+                                    .Select(s => s.maLichThi);
                         //Tao ket qua moi neu chua ton tai
                         //Trang thai = 0 -> chua hoan thanh bai thi
                         var newResult = new ketQua
@@ -355,7 +357,8 @@ namespace quiz_management.Presenters.Student.Exam
                             ngayLam = DateTime.Today,
                             trangThai = 0,
                             thoiGian = null,
-                            diem = null
+                            diem = null,
+                            malichthi = lt.First()
                         };
 
                         db.ketQuas.InsertOnSubmit(newResult);
@@ -391,7 +394,42 @@ namespace quiz_management.Presenters.Student.Exam
 
         private bool UpdateResult(int time, int remainCount)
         {
-            if (_resultCode <= 0) return false;
+            if (_resultCode <= 0)
+            {
+                using (var db = new QuizDataContext())
+                {
+                    var result = db.ketQuas.Where(k => k.maNguoiDung == currentUserCode)
+                                        .Where(k => k.maBoDe == _maBoDe)
+                                        .Where(k => k.trangThai == 0)
+                                        .Select(s => s.maKetQua);
+                    if (result.Any()) _resultCode = result.FirstOrDefault();
+                    else
+                    {
+                        var lt = db.lichThis.Where(l => (l.ngayThi == DateTime.Now) && (l.maNguoiDung == currentUserCode))
+                                    .Select(s => s.maLichThi);
+                        //Tao ket qua moi neu chua ton tai
+                        //Trang thai = 0 -> chua hoan thanh bai thi
+                        var newResult = new ketQua
+                        {
+                            maNguoiDung = currentUserCode,
+                            maBoDe = _maBoDe,
+                            cauDung = null,
+                            cauSai = null,
+                            chuaLam = null,
+                            ngayLam = DateTime.Today,
+                            trangThai = 0,
+                            thoiGian = null,
+                            diem = null,
+                            malichthi = lt.First()
+                        };
+
+                        db.ketQuas.InsertOnSubmit(newResult);
+                        db.SubmitChanges();
+
+                        _resultCode = newResult.maKetQua;
+                    }
+                }
+            }
             using (var db = new QuizDataContext())
             {
                 int corrected = 0;
